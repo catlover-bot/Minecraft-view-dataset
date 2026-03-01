@@ -248,6 +248,7 @@ buildings_100_v4 / anthropic_claude_haiku_4_5_20251001
 auto_score_mean=0.6893, IoU=0.1205, F1=0.2130, material_match=0.2893
 
 ## 実験結果サマリ
+- 最終報告（本実験全体）: `reports/final_experiment_report_ja.md`
 - 最新の考察・比較まとめ: `reports/experiment_summary_2026-03-01.md`
 - 再建築評価（IoU/F1等）の詳説: `reports/rebuild_metrics_guide_ja.md`
 - 2種類実験（baseline vs 強化プロンプト）の比較: `reports/two_experiment_types_summary_ja.md`
