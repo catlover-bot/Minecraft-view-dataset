@@ -123,6 +123,24 @@ Baseline比（最終設定）:
 
 `description` の評価は 0〜1 スコアなので、以下は `%` 併記です。
 
+まず、各指標の意味:
+- `auto_score_mean`:
+  - 説明文全体の総合点（形・材質・寸法の情報がどれだけ含まれるか）
+- `strict_material_f1`:
+  - 材質を厳密に一致判定（例: `stone_brick` と `stone` は別扱い）
+- `coarse_material_f1`:
+  - 材質を粗カテゴリで判定（例: どちらも STONE 系なら一致）
+- `dimension_score`:
+  - 幅・奥行き・高さなど、寸法情報の一致度
+
+読み方のコツ:
+- `coarse` が高く `strict` が低い場合:
+  - 材質系統は当たっているが、ID/語彙が粗い（表記粒度が足りない）
+- `dimension_score` が低い場合:
+  - 形の大きさ説明が曖昧で、再建築時のスケール崩れを誘発しやすい
+- `auto` が高くても再建築が高得点とは限らない:
+  - 後段の `plan/render` でのスキーマ整合が崩れると最終IoU/F1は下がる
+
 | 条件 | auto_score_mean | strict_material_f1 | coarse_material_f1 | dimension_score |
 |---|---:|---:|---:|---:|
 | v1 / OpenAI | 0.8102（81.02%） | 0.7269（72.69%） | 0.9138（91.38%） | 0.6547（65.47%） |
@@ -134,6 +152,11 @@ Baseline比（最終設定）:
 - OpenAI平均: `auto 78.11%`, `strict 67.08%`, `coarse 88.98%`, `dimension 62.97%`
 - Claude平均: `auto 70.47%`, `strict 57.11%`, `coarse 76.92%`, `dimension 56.44%`
 - 全体平均: `auto 74.29%`, `strict 62.09%`, `coarse 82.95%`, `dimension 59.71%`
+
+今回結果のわかりやすい解釈:
+- description単体では OpenAI の方が高得点（特に `strict/coarse`）。
+- ただし最終再建築は description だけでは決まらず、`plan/render` の整合が支配的。
+- そのため本研究では、description改善に加えて **parser強化 + self_refine** が必須だった。
 
 補足:
 - `description` は比較的高品質でも、最終IoU/F1は `plan/render` の整合に強く依存するため、  
