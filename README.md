@@ -250,5 +250,7 @@ auto_score_mean=0.6893, IoU=0.1205, F1=0.2130, material_match=0.2893
 ## 実験結果サマリ
 - 最新の考察・比較まとめ: `reports/experiment_summary_2026-03-01.md`
 - 再建築評価（IoU/F1等）の詳説: `reports/rebuild_metrics_guide_ja.md`
+- 2種類実験（baseline vs 強化プロンプト）の比較: `reports/two_experiment_types_summary_ja.md`
 - 図を再生成する場合: `python3 tools/plot_experiment_figures.py`
+- 2種類比較図を再生成する場合: `python3 tools/plot_experiment_type_comparison.py`
 - 日本語ラベル版図は `reports/figures/*_ja.svg` に出力
