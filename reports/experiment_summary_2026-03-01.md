@@ -68,3 +68,26 @@ Interpretation:
   - add explicit material budget constraints,
   - add per-face material assignment checks,
   - add post-plan material sanity critic before rendering.
+
+## 7) Figures
+
+### Rebuild quality (latest)
+![Rebuild latest metrics](figures/rebuild_latest_metrics.svg)
+
+### Rebuild level pass rates
+![Rebuild level pass rates](figures/rebuild_level_pass_rates.svg)
+
+### Description quality
+![Description quality metrics](figures/description_quality_metrics.svg)
+
+### Baseline vs repaired delta
+![Baseline vs repaired deltas](figures/baseline_vs_repaired_deltas.svg)
+
+### Plan parser stability
+![Plan repair and fallback rates](figures/plan_repair_and_fallback_rates.svg)
+
+### All-levels pass rate
+![All levels pass rate](figures/all_levels_pass_rate.svg)
+
+Figure source data:
+- `reports/figures/figure_data_2026-03-01.json`
