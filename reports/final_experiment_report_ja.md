@@ -1,4 +1,4 @@
-# Minecraft I2T2B 実験 最終報告（日本語）
+# Minecraft I2T2B 実験 最終報告
 
 更新日: 2026-03-01
 
