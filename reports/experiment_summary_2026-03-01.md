@@ -91,3 +91,23 @@ Interpretation:
 
 Figure source data:
 - `reports/figures/figure_data_2026-03-01.json`
+
+## 8) Japanese-labeled Figures
+
+### 再建築メトリクス（最新・修復後）
+![再建築メトリクス](figures/rebuild_latest_metrics_ja.svg)
+
+### 再建築 レベル別合格率
+![再建築レベル別合格率](figures/rebuild_level_pass_rates_ja.svg)
+
+### 説明文品質メトリクス
+![説明文品質メトリクス](figures/description_quality_metrics_ja.svg)
+
+### 差分：修復後 - ベースライン（再建築）
+![差分図](figures/baseline_vs_repaired_deltas_ja.svg)
+
+### Planスキーマ修復率とFallback率
+![Plan修復率とFallback率](figures/plan_repair_and_fallback_rates_ja.svg)
+
+### 全レベル合格率（100件あたり）
+![全レベル合格率](figures/all_levels_pass_rate_ja.svg)

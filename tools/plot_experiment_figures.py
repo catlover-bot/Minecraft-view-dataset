@@ -37,6 +37,7 @@ def _draw_grouped_bars_svg(
     y_min: float,
     y_max: float,
     y_ticks: int = 5,
+    font_family: str = "Arial, sans-serif",
 ) -> None:
     width, height = 1800, 1080
     margin_l, margin_r, margin_t, margin_b = 140, 80, 120, 220
@@ -57,7 +58,7 @@ def _draw_grouped_bars_svg(
     lines.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">')
     lines.append('<rect x="0" y="0" width="100%" height="100%" fill="white"/>')
     lines.append(
-        f'<text x="{(x0 + x1) / 2:.1f}" y="58" text-anchor="middle" font-size="40" font-family="Arial, sans-serif" fill="#111111">{_esc(title)}</text>'
+        f'<text x="{(x0 + x1) / 2:.1f}" y="58" text-anchor="middle" font-size="40" font-family="{_esc(font_family)}" fill="#111111">{_esc(title)}</text>'
     )
 
     # Plot frame.
@@ -70,7 +71,7 @@ def _draw_grouped_bars_svg(
         v = y_min + t * (y_max - y_min)
         lines.append(f'<line x1="{x0}" y1="{y:.1f}" x2="{x1}" y2="{y:.1f}" stroke="#E5E7EB" stroke-width="1"/>')
         lines.append(
-            f'<text x="16" y="{y + 6:.1f}" font-size="20" font-family="Arial, sans-serif" fill="#374151">{v:.2f}</text>'
+            f'<text x="16" y="{y + 6:.1f}" font-size="20" font-family="{_esc(font_family)}" fill="#374151">{v:.2f}</text>'
         )
 
     # Axes.
@@ -90,7 +91,7 @@ def _draw_grouped_bars_svg(
             gx = x0 + ci * group_w
             start_x = gx + (group_w - bar_group_w) / 2.0
             lines.append(
-                f'<text x="{gx + group_w / 2.0:.1f}" y="{y1 + 48:.1f}" text-anchor="middle" font-size="22" font-family="Arial, sans-serif" fill="#111827">{_esc(cat)}</text>'
+                f'<text x="{gx + group_w / 2.0:.1f}" y="{y1 + 48:.1f}" text-anchor="middle" font-size="22" font-family="{_esc(font_family)}" fill="#111827">{_esc(cat)}</text>'
             )
             for si, _name in enumerate(series_names):
                 v = float(values[si][ci])
@@ -105,7 +106,7 @@ def _draw_grouped_bars_svg(
                 )
                 label_y = top - 10 if v >= 0 else bottom + 20
                 lines.append(
-                    f'<text x="{(bx0 + bx1) / 2.0:.1f}" y="{label_y:.1f}" text-anchor="middle" font-size="17" font-family="Arial, sans-serif" fill="#111827">{v:.3f}</text>'
+                    f'<text x="{(bx0 + bx1) / 2.0:.1f}" y="{label_y:.1f}" text-anchor="middle" font-size="17" font-family="{_esc(font_family)}" fill="#111827">{v:.3f}</text>'
                 )
 
     # Legend.
@@ -115,7 +116,7 @@ def _draw_grouped_bars_svg(
         color = colors[i % len(colors)]
         lines.append(f'<rect x="{lx}" y="{yy}" width="24" height="20" fill="{color}" stroke="#374151" stroke-width="1"/>')
         lines.append(
-            f'<text x="{lx + 34}" y="{yy + 16}" font-size="21" font-family="Arial, sans-serif" fill="#111827">{_esc(name)}</text>'
+            f'<text x="{lx + 34}" y="{yy + 16}" font-size="21" font-family="{_esc(font_family)}" fill="#111827">{_esc(name)}</text>'
         )
 
     lines.append("</svg>")
@@ -208,6 +209,7 @@ def main() -> None:
 
     categories = ["v1/OpenAI", "v1/Claude", "v4/OpenAI", "v4/Claude"]
     key_order = ["v1/openai", "v1/claude", "v4/openai", "v4/claude"]
+    ja_font = "Hiragino Sans, Yu Gothic, Meiryo, Noto Sans CJK JP, sans-serif"
 
     iou_vals = [rebuild_pairs[k]["repaired"]["aggregate"]["metrics"]["iou"] for k in key_order]
     f1_vals = [rebuild_pairs[k]["repaired"]["aggregate"]["metrics"]["f1"] for k in key_order]
@@ -220,6 +222,16 @@ def main() -> None:
         values=[iou_vals, f1_vals, mat_vals],
         y_min=0.0,
         y_max=0.5,
+    )
+    _draw_grouped_bars_svg(
+        out_path=out_dir / "rebuild_latest_metrics_ja.svg",
+        title="再建築メトリクス（最新・修復後）",
+        categories=categories,
+        series_names=["IoU", "F1", "材質一致率"],
+        values=[iou_vals, f1_vals, mat_vals],
+        y_min=0.0,
+        y_max=0.5,
+        font_family=ja_font,
     )
 
     l0 = [rebuild_pairs[k]["repaired"]["aggregate"]["pass_rates"]["level0_shift_pass_rate"] for k in key_order]
@@ -237,6 +249,16 @@ def main() -> None:
         y_min=0.0,
         y_max=1.0,
     )
+    _draw_grouped_bars_svg(
+        out_path=out_dir / "rebuild_level_pass_rates_ja.svg",
+        title="再建築 レベル別合格率",
+        categories=categories,
+        series_names=["L0 位置合わせ", "L1 形状", "L2 粗材質", "L3 厳密材質", "L4 構造成分", "全レベル"],
+        values=[l0, l1, l2, l3, l4, all_levels],
+        y_min=0.0,
+        y_max=1.0,
+        font_family=ja_font,
+    )
 
     auto_vals = [desc_data[k]["aggregate"]["auto_score_mean"] for k in key_order]
     strict_vals = [desc_data[k]["aggregate"]["strict_material_f1_mean"] for k in key_order]
@@ -251,6 +273,16 @@ def main() -> None:
         y_min=0.0,
         y_max=1.0,
     )
+    _draw_grouped_bars_svg(
+        out_path=out_dir / "description_quality_metrics_ja.svg",
+        title="説明文品質メトリクス",
+        categories=categories,
+        series_names=["総合スコア", "厳密材質F1", "粗材質F1", "寸法スコア"],
+        values=[auto_vals, strict_vals, coarse_vals, dim_vals],
+        y_min=0.0,
+        y_max=1.0,
+        font_family=ja_font,
+    )
 
     diou = [rebuild_pairs[k]["repaired"]["aggregate"]["metrics"]["iou"] - rebuild_pairs[k]["baseline"]["aggregate"]["metrics"]["iou"] for k in key_order]
     df1 = [rebuild_pairs[k]["repaired"]["aggregate"]["metrics"]["f1"] - rebuild_pairs[k]["baseline"]["aggregate"]["metrics"]["f1"] for k in key_order]
@@ -264,6 +296,16 @@ def main() -> None:
         y_min=-0.2,
         y_max=0.08,
     )
+    _draw_grouped_bars_svg(
+        out_path=out_dir / "baseline_vs_repaired_deltas_ja.svg",
+        title="差分：修復後 - ベースライン（再建築）",
+        categories=categories,
+        series_names=["IoU差分", "F1差分", "材質一致差分"],
+        values=[diou, df1, dmat],
+        y_min=-0.2,
+        y_max=0.08,
+        font_family=ja_font,
+    )
 
     fallback_rate = [note_stats[k]["fallback_rate"] for k in key_order]
     repaired_rate = [note_stats[k]["repaired_rate"] for k in key_order]
@@ -276,6 +318,16 @@ def main() -> None:
         values=[repaired_rate, draft_rate, fallback_rate],
         y_min=0.0,
         y_max=1.0,
+    )
+    _draw_grouped_bars_svg(
+        out_path=out_dir / "plan_repair_and_fallback_rates_ja.svg",
+        title="Planスキーマ修復率とFallback率",
+        categories=categories,
+        series_names=["スキーマ修復率", "Draft救済率", "Fallback率"],
+        values=[repaired_rate, draft_rate, fallback_rate],
+        y_min=0.0,
+        y_max=1.0,
+        font_family=ja_font,
     )
 
     all_pass_count = [
@@ -291,6 +343,16 @@ def main() -> None:
         values=[all_pass_rate],
         y_min=0.0,
         y_max=0.2,
+    )
+    _draw_grouped_bars_svg(
+        out_path=out_dir / "all_levels_pass_rate_ja.svg",
+        title="全レベル合格率（100件あたり）",
+        categories=categories,
+        series_names=["全レベル合格率"],
+        values=[all_pass_rate],
+        y_min=0.0,
+        y_max=0.2,
+        font_family=ja_font,
     )
 
     bundle = {

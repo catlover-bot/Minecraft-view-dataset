@@ -250,3 +250,4 @@ auto_score_mean=0.6893, IoU=0.1205, F1=0.2130, material_match=0.2893
 ## 実験結果サマリ
 - 最新の考察・比較まとめ: `reports/experiment_summary_2026-03-01.md`
 - 図を再生成する場合: `python3 tools/plot_experiment_figures.py`
+- 日本語ラベル版図は `reports/figures/*_ja.svg` に出力
