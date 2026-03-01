@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-03-02",
+  "stages": [
+    "Baseline",
+    "pe_v2",
+    "pe_v2+parser_v6",
+    "v5+tuned_self_refine"
+  ],
+  "mean_metrics_400": {
+    "iou": [
+      0.2155863011269133,
+      0.2150772348115283,
+      0.23033820194341958,
+      0.24563693780179702
+    ],
+    "f1": [
+      0.3440414325732646,
+      0.34247234953237504,
+      0.36642604745445617,
+      0.38656605533236976
+    ],
+    "material_match": [
+      0.27148715642637755,
+      0.2892020813494537,
+      0.24878086958955514,
+      0.2426316454743795
+    ]
+  },
+  "fallback_aggregate": {
+    "total": 400,
+    "baseline": {
+      "accepted_zero": 43,
+      "accepted_zero_rate": 0.1075,
+      "missing_or_none": 81,
+      "missing_or_none_rate": 0.2025
+    },
+    "parser_v6": {
+      "accepted_zero": 0,
+      "accepted_zero_rate": 0.0,
+      "missing_or_none": 0,
+      "missing_or_none_rate": 0.0
+    }
+  }
+}

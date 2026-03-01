@@ -176,6 +176,10 @@ python3 tools/llm_config.py
   - 説明文の自動評価
 - `tools/evaluate_rebuild_metrics.py`
   - 再建築の一致度評価（Level 0-4）
+- `tools/repair_rebuild_plans.py`
+  - 既存 `rebuild_plan` を新しいスキーマ拘束・材質整合ロジックで再修復（LLM再呼び出し不要）
+- `tools/self_refine_rebuild_plans_no_gt.py`
+  - planを一度レンダリングして自己整合スコアを計算し、GTなしで反復補正（post-render self-refine）
 - `tools/run_i2t2b_experiment.py`
   - 上記を一括実行
 - `scripts/run_i2t2b_experiment.sh`
@@ -196,6 +200,162 @@ python3 tools/llm_config.py
   - それでも空ならヒューリスティックへフォールバック
 
 `plan.json` には `coerce_report` が保存され、`plan.request.json` にも `parse_report/coerce_report` が残るため、どこで修復されたか追跡できます。
+
+### rebuild_plan の材質制約強化（role固定 + budget + strict schema）
+`prompts/rebuild_plan_strict_material_v3.json` を使うと以下を有効化できます。
+
+- role固定:
+  - 非`carve`操作は `role` を推定/補完し、`block == palette[role]` へ自動修復
+- material budget:
+  - `material_budget`（wall/roof/trim/glass/light/floor）を必須化
+  - `target_blocks` と実測ブロック量の乖離を `validation_report.budget_violations` へ記録
+- strict schema:
+  - `bbox/operations/palette/material_budget/self_check` の整合を検証し `validation_report` を保存
+  - `max_operations` を超えた場合は切り詰めて `issues` に記録
+
+実行例:
+```bash
+scripts/run_i2t2b_experiment.sh \
+  --dataset_root datasets/buildings_100_v1 \
+  --provider openai \
+  --dotenv .env \
+  --plan_prompt_profile prompts/rebuild_plan_strict_material_v3.json \
+  --plan_critic_revise
+```
+
+`plan.json` と `plan.request.json` の両方に `validation_report` が保存されます。
+
+### 既存planを後段だけ強化して再評価（v5）
+LLM再実行せず、既存の `rebuild_plan_*` を後処理ロジックで修復できます。
+
+```bash
+python3 tools/repair_rebuild_plans.py \
+  --dataset_root datasets/buildings_100_v1 \
+  --source_plan_subdir rebuild_plan_pe_v2_openai_gpt_5_mini \
+  --out_plan_subdir rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini \
+  --description_subdir description_openai_gpt_5_mini \
+  --strict_schema --enforce_role_fixed --require_material_budget \
+  --prefer_description_palette \
+  --material_budget_tolerance 0.35 \
+  --role_fix_min_confidence 0.78
+```
+
+その後:
+```bash
+python3 tools/render_rebuild_from_plan.py \
+  --dataset_root datasets/buildings_100_v1 \
+  --plan_subdir rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini \
+  --out_subdir rebuild_world_schema_material_v5_repair_openai_gpt_5_mini \
+  --overwrite
+
+python3 tools/evaluate_rebuild_metrics.py \
+  --gt_root datasets/buildings_100_v1 \
+  --pred_root datasets/buildings_100_v1 \
+  --pred_subdir rebuild_world_schema_material_v5_repair_openai_gpt_5_mini \
+  --out datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_openai_gpt_5_mini.json
+```
+
+v5ロジックの主変更:
+- `description.materials` 由来で palette を補正（role別）
+- operation の role 推定を幾何特徴（高さ・境界接触・薄板判定）込みで実施
+- `block == palette[role]` の強制は `role_fix_min_confidence` 以上の高信頼操作に限定
+- `self-repair pass` を追加（plan -> renderer 前）:
+  - 欠落要素（floor/wall/roof/window/entrance/light）を最小追加
+  - `window` 材質ミスマッチの自動補正
+  - `coarse -> decorative` の2段並び替えを強制
+- 高レベルopの内部展開に対応:
+  - `roof_template`, `window_pattern`, `slope`
+  - 内部で `fill/carve/set` に展開して実行
+
+### post-render自己整合補正（GTなし）
+`tools/self_refine_rebuild_plans_no_gt.py` は、既存 plan を仮想レンダリングして自己整合スコアを計算し、スコアが改善する場合のみ補正opを採用します。
+
+- 評価成分（GT不要）:
+  - 材質比率整合（material budget / 推定比率）
+  - 形状寸法整合（descriptionの `dimensions_estimate`）
+  - 屋根整合（上層のroof比率 + taper）
+  - 窓/入口の存在整合
+- 補正内容:
+  - `roof_template` / `window_pattern` / 入口 carve / role別不足分の補強
+  - 補正後に再検証し、`min_score_gain` 未満なら不採用
+  - render後に材質budget再投影（不足role追加 + 過剰role削減）を実行可能
+  - 屋根/窓は単一案ではなく複数テンプレ候補を探索して最良案を採用
+
+単体実行例:
+```bash
+python3 tools/self_refine_rebuild_plans_no_gt.py \
+  --dataset_root datasets/buildings_100_v1 \
+  --plan_subdir rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini \
+  --description_subdir description_openai_gpt_5_mini \
+  --out_plan_subdir rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt \
+  --max_iterations 2 \
+  --min_score_gain 0.01 \
+  --max_added_ops_per_iter 64 \
+  --roof_search_variants 8 \
+  --window_search_variants 8 \
+  --max_search_candidates 20 \
+  --enable_material_budget_reprojection \
+  --material_budget_reprojection_strength 0.6 \
+  --material_budget_reprojection_min_deficit_ratio 0.025 \
+  --material_budget_reprojection_trigger_material_score 0.78 \
+  --selection_op_penalty 0.001
+```
+
+一括パイプラインで有効化する場合:
+```bash
+scripts/run_i2t2b_experiment.sh \
+  --dataset_root datasets/buildings_100_v1 \
+  --provider openai \
+  --dotenv .env \
+  --description_subdir description_openai_gpt_5_mini \
+  --plan_subdir rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini \
+  --enable_self_refine_no_gt \
+  --self_refine_plan_subdir rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt \
+  --self_refine_max_iterations 2 \
+  --self_refine_min_score_gain 0.01
+```
+
+モデル別最適設定（tuned, 200件フル）:
+- OpenAI（弱め再投影）: `strength=0.4`, `selection_op_penalty=0.0015`
+- Claude（強め再投影）: `strength=0.6`, `selection_op_penalty=0.001`
+
+実行例（OpenAI tuned plan -> render -> eval）:
+```bash
+python3 tools/self_refine_rebuild_plans_no_gt.py \
+  --dataset_root datasets/buildings_100_v1 \
+  --plan_subdir rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini \
+  --description_subdir description_openai_gpt_5_mini \
+  --out_plan_subdir rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned \
+  --roof_search_variants 8 \
+  --window_search_variants 8 \
+  --max_search_candidates 20 \
+  --material_budget_reprojection_strength 0.4 \
+  --selection_op_penalty 0.0015
+python3 tools/render_rebuild_from_plan.py \
+  --dataset_root datasets/buildings_100_v1 \
+  --plan_subdir rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned \
+  --out_subdir rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned
+python3 tools/evaluate_rebuild_metrics.py \
+  --gt_root datasets/buildings_100_v1 \
+  --pred_root datasets/buildings_100_v1 \
+  --pred_subdir rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned \
+  --out datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned.json
+```
+
+limit=10 の実測（buildings_100_v1, v5_repair系）:
+
+- OpenAI:
+  - baseline: IoU `0.2970`, F1 `0.4406`, material_match `0.2193`
+  - self_refine_no_gt: IoU `0.3344`, F1 `0.4903`, material_match `0.3967`
+- Claude:
+  - baseline: IoU `0.2289`, F1 `0.3697`, material_match `0.1567`
+  - self_refine_no_gt: IoU `0.2526`, F1 `0.4000`, material_match `0.1884`
+
+評価JSON:
+- `datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_openai_gpt_5_mini_l10_baseline_compare.json`
+- `datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_l10.json`
+- `datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_l10_baseline_compare.json`
+- `datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_self_refine_no_gt_l10.json`
 
 ### 一括実行（推奨）
 ```bash
@@ -248,10 +408,21 @@ buildings_100_v4 / anthropic_claude_haiku_4_5_20251001
 auto_score_mean=0.6893, IoU=0.1205, F1=0.2130, material_match=0.2893
 
 ## 実験結果サマリ
+- まず最初に見る（結論だけ）: `reports/final_results_concise_ja.md`
 - 最終報告（本実験全体）: `reports/final_experiment_report_ja.md`
 - 最新の考察・比較まとめ: `reports/experiment_summary_2026-03-01.md`
+- 統計的検証 + アブレーション + 外的妥当性（CI/p値付き）: `reports/statistical_validity_ablation_external_validity_ja.md`
 - 再建築評価（IoU/F1等）の詳説: `reports/rebuild_metrics_guide_ja.md`
 - 2種類実験（baseline vs 強化プロンプト）の比較: `reports/two_experiment_types_summary_ja.md`
+- 統計JSON集計: `reports/statistics/stat_ablation_external_summary_2026-03-01.json`
+- 検定のseed反復安定性（resampling）: `reports/statistics/seed_repeat_resampling/summary.md`
+- 低IoU失敗ケースの系統分析（件数 + 修正優先順位）: `reports/failure_analysis/low_iou_failure_taxonomy_2026-03-01.md`
+- fallback削減（schema拘束 + parser_v6）の図付きレポート: `reports/fallback_reduction_parser_v6_report_ja.md`
+- モデル別外的妥当性比較:
+  - `reports/statistics/external_validity_openai_gpt_5_mini.md`
+  - `reports/statistics/external_validity_anthropic_claude_haiku_4_5_20251001.md`
 - 図を再生成する場合: `python3 tools/plot_experiment_figures.py`
 - 2種類比較図を再生成する場合: `python3 tools/plot_experiment_type_comparison.py`
+- self_refine比較図を再生成する場合: `python3 tools/plot_self_refine_comparison.py`
+- parser_v6 fallback比較図を再生成する場合: `python3 tools/plot_fallback_reduction_parser_v6.py`
 - 日本語ラベル版図は `reports/figures/*_ja.svg` に出力

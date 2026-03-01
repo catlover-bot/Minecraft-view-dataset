@@ -1,0 +1,193 @@
+{
+  "created_at": "2026-03-02T00:00:00Z",
+  "runs": [
+    {
+      "dataset": "v1",
+      "model": "openai_gpt_5_mini",
+      "plan_baseline": {
+        "total": 100,
+        "accepted_zero": 7,
+        "accepted_zero_rate": 0.07,
+        "missing_or_none": 43,
+        "missing_or_none_rate": 0.43,
+        "source_counts": {
+          "<none>": 36,
+          "root.operations": 57,
+          "missing": 7
+        },
+        "accepted_avg": 18.07
+      },
+      "plan_parser_v6": {
+        "total": 100,
+        "accepted_zero": 0,
+        "accepted_zero_rate": 0.0,
+        "missing_or_none": 0,
+        "missing_or_none_rate": 0.0,
+        "source_counts": {
+          "root.operations": 100
+        },
+        "accepted_avg": 25.68
+      },
+      "metrics_baseline": {
+        "iou": 0.26215219961275893,
+        "f1": 0.4015680526382394,
+        "material_match": 0.2375860017271051,
+        "coarse_material_match": 0.4124785699376508
+      },
+      "metrics_parser_v6": {
+        "iou": 0.3058378532021364,
+        "f1": 0.4618913264143442,
+        "material_match": 0.2716229748906657,
+        "coarse_material_match": 0.4716093559416813
+      },
+      "metrics_delta": {
+        "iou": 0.04368565358937748,
+        "f1": 0.0603232737761048,
+        "material_match": 0.034036973163560635,
+        "coarse_material_match": 0.05913078600403049
+      }
+    },
+    {
+      "dataset": "v1",
+      "model": "anthropic_claude_haiku_4_5_20251001",
+      "plan_baseline": {
+        "total": 100,
+        "accepted_zero": 0,
+        "accepted_zero_rate": 0.0,
+        "missing_or_none": 1,
+        "missing_or_none_rate": 0.01,
+        "source_counts": {
+          "root.operations": 99,
+          "<none>": 1
+        },
+        "accepted_avg": 27.01
+      },
+      "plan_parser_v6": {
+        "total": 100,
+        "accepted_zero": 0,
+        "accepted_zero_rate": 0.0,
+        "missing_or_none": 0,
+        "missing_or_none_rate": 0.0,
+        "source_counts": {
+          "root.operations": 100
+        },
+        "accepted_avg": 32.44
+      },
+      "metrics_baseline": {
+        "iou": 0.2938968824271887,
+        "f1": 0.4492649644634332,
+        "material_match": 0.286465625714657,
+        "coarse_material_match": 0.4973274186913967
+      },
+      "metrics_parser_v6": {
+        "iou": 0.2471477526524668,
+        "f1": 0.3899567076497621,
+        "material_match": 0.18379534698928146,
+        "coarse_material_match": 0.32911235952405216
+      },
+      "metrics_delta": {
+        "iou": -0.0467491297747219,
+        "f1": -0.059308256813671134,
+        "material_match": -0.10267027872537554,
+        "coarse_material_match": -0.16821505916734453
+      }
+    },
+    {
+      "dataset": "v4",
+      "model": "openai_gpt_5_mini",
+      "plan_baseline": {
+        "total": 100,
+        "accepted_zero": 35,
+        "accepted_zero_rate": 0.35,
+        "missing_or_none": 36,
+        "missing_or_none_rate": 0.36,
+        "source_counts": {
+          "<none>": 5,
+          "missing": 31,
+          "root.operations": 59,
+          "root.steps": 4,
+          "root.ops": 1
+        },
+        "accepted_avg": 13.36
+      },
+      "plan_parser_v6": {
+        "total": 100,
+        "accepted_zero": 0,
+        "accepted_zero_rate": 0.0,
+        "missing_or_none": 0,
+        "missing_or_none_rate": 0.0,
+        "source_counts": {
+          "root.operations": 99,
+          "root.ops": 1
+        },
+        "accepted_avg": 26.99
+      },
+      "metrics_baseline": {
+        "iou": 0.1514512865882482,
+        "f1": 0.25793186297834764,
+        "material_match": 0.3104437666205785,
+        "coarse_material_match": 0.4351118427236232
+      },
+      "metrics_parser_v6": {
+        "iou": 0.1943600594028621,
+        "f1": 0.32143531209856085,
+        "material_match": 0.29711213642283796,
+        "coarse_material_match": 0.4593052438954781
+      },
+      "metrics_delta": {
+        "iou": 0.042908772814613916,
+        "f1": 0.06350344912021322,
+        "material_match": -0.01333163019774053,
+        "coarse_material_match": 0.024193401171854922
+      }
+    },
+    {
+      "dataset": "v4",
+      "model": "anthropic_claude_haiku_4_5_20251001",
+      "plan_baseline": {
+        "total": 100,
+        "accepted_zero": 1,
+        "accepted_zero_rate": 0.01,
+        "missing_or_none": 1,
+        "missing_or_none_rate": 0.01,
+        "source_counts": {
+          "root.operations": 99,
+          "missing": 1
+        },
+        "accepted_avg": 28.92
+      },
+      "plan_parser_v6": {
+        "total": 100,
+        "accepted_zero": 0,
+        "accepted_zero_rate": 0.0,
+        "missing_or_none": 0,
+        "missing_or_none_rate": 0.0,
+        "source_counts": {
+          "root.operations": 100
+        },
+        "accepted_avg": 40.16
+      },
+      "metrics_baseline": {
+        "iou": 0.15280857061791742,
+        "f1": 0.26112451804948,
+        "material_match": 0.3223129313354741,
+        "coarse_material_match": 0.45004135110269755
+      },
+      "metrics_parser_v6": {
+        "iou": 0.1740071425162131,
+        "f1": 0.29242084365515764,
+        "material_match": 0.24259302005543543,
+        "coarse_material_match": 0.36881879619412944
+      },
+      "metrics_delta": {
+        "iou": 0.021198571898295687,
+        "f1": 0.03129632560567763,
+        "material_match": -0.07971991128003869,
+        "coarse_material_match": -0.08122255490856811
+      }
+    }
+  ],
+  "notes": [
+    "v4/claude parser_v6 metrics computed with max_shift_xy=24,max_shift_y=4,top_shift_candidates=12 for runtime control."
+  ]
+}

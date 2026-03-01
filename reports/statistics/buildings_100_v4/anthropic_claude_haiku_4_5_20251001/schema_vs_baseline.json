@@ -1,0 +1,100 @@
+{
+  "created_at": "2026-03-01T14:32:34.668019+00:00",
+  "label": "buildings_100_v4:anthropic_claude_haiku_4_5_20251001:schema_vs_baseline",
+  "baseline": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/metrics_levels_pe_v2_anthropic_claude_haiku_4_5_20251001.json",
+  "variant": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/metrics_levels_ablation_schema_only_anthropic_claude_haiku_4_5_20251001.json",
+  "settings": {
+    "bootstrap_samples": 6000,
+    "permutation_samples": 12000,
+    "seed": 42,
+    "metrics": [
+      "iou",
+      "f1",
+      "material_match",
+      "coarse_material_match",
+      "component_f1"
+    ]
+  },
+  "results": {
+    "iou": {
+      "n_pairs": 100,
+      "baseline_aggregate": 0.15280857061791742,
+      "variant_aggregate": 0.17197783414866866,
+      "paired_mean_diff": 0.01916926353075124,
+      "paired_std_diff": 0.058496467069425635,
+      "effect_size_dz": 0.3276995088951354,
+      "bootstrap_ci95": [
+        0.007710161287157604,
+        0.030405806310538745
+      ],
+      "sign_flip_pvalue_two_sided": 0.0019998333472210647,
+      "improved_count": 66,
+      "worsened_count": 34,
+      "tied_count": 0
+    },
+    "f1": {
+      "n_pairs": 100,
+      "baseline_aggregate": 0.26112451804948,
+      "variant_aggregate": 0.28901319710901047,
+      "paired_mean_diff": 0.027888679059530436,
+      "paired_std_diff": 0.08560454724211612,
+      "effect_size_dz": 0.3257850191141439,
+      "bootstrap_ci95": [
+        0.010670815173502119,
+        0.043919585158089074
+      ],
+      "sign_flip_pvalue_two_sided": 0.0014998750104157988,
+      "improved_count": 66,
+      "worsened_count": 34,
+      "tied_count": 0
+    },
+    "material_match": {
+      "n_pairs": 100,
+      "baseline_aggregate": 0.3223129313354741,
+      "variant_aggregate": 0.18444943356577592,
+      "paired_mean_diff": -0.13786349776969814,
+      "paired_std_diff": 0.2218568874246443,
+      "effect_size_dz": -0.621407337721371,
+      "bootstrap_ci95": [
+        -0.18169559178799244,
+        -0.09610429559876614
+      ],
+      "sign_flip_pvalue_two_sided": 8.332638946754438e-05,
+      "improved_count": 29,
+      "worsened_count": 71,
+      "tied_count": 0
+    },
+    "coarse_material_match": {
+      "n_pairs": 100,
+      "baseline_aggregate": 0.45004135110269755,
+      "variant_aggregate": 0.3379862395100231,
+      "paired_mean_diff": -0.11205511159267441,
+      "paired_std_diff": 0.23980183469394106,
+      "effect_size_dz": -0.4672821279106988,
+      "bootstrap_ci95": [
+        -0.1588121764380766,
+        -0.06676110047354407
+      ],
+      "sign_flip_pvalue_two_sided": 8.332638946754438e-05,
+      "improved_count": 29,
+      "worsened_count": 71,
+      "tied_count": 0
+    },
+    "component_f1": {
+      "n_pairs": 100,
+      "baseline_aggregate": 0.04839318484013111,
+      "variant_aggregate": 0.04058321563052881,
+      "paired_mean_diff": -0.007809969209602296,
+      "paired_std_diff": 0.03059946774271467,
+      "effect_size_dz": -0.25523219146391024,
+      "bootstrap_ci95": [
+        -0.013815426809543356,
+        -0.0018717913027322022
+      ],
+      "sign_flip_pvalue_two_sided": 0.011749020914923757,
+      "improved_count": 6,
+      "worsened_count": 25,
+      "tied_count": 69
+    }
+  }
+}

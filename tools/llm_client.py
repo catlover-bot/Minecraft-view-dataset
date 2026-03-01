@@ -195,6 +195,7 @@ def _openai_v1_responses(
     image_paths: Sequence[Path],
     temperature: float,
     max_tokens: int,
+    llm_seed: Optional[int] = None,
 ) -> LLMCompletion:
     content: List[Dict[str, Any]] = [{"type": "input_text", "text": user_prompt}]
     for path in image_paths:
@@ -215,6 +216,8 @@ def _openai_v1_responses(
             {"role": "user", "content": content},
         ],
     }
+    if llm_seed is not None and int(llm_seed) >= 0:
+        payload["seed"] = int(llm_seed)
     if _openai_supports_custom_temperature(cfg.openai_model):
         payload["temperature"] = float(temperature)
     if _is_openai_gpt5_family(cfg.openai_model):
@@ -244,6 +247,7 @@ def _openai_chat_completions(
     image_paths: Sequence[Path],
     temperature: float,
     max_tokens: int,
+    llm_seed: Optional[int] = None,
 ) -> LLMCompletion:
     user_content: List[Dict[str, Any]] = [{"type": "text", "text": user_prompt}]
     for path in image_paths:
@@ -266,6 +270,8 @@ def _openai_chat_completions(
             {"role": "user", "content": user_content},
         ],
     }
+    if llm_seed is not None and int(llm_seed) >= 0:
+        payload["seed"] = int(llm_seed)
     if _openai_supports_custom_temperature(cfg.openai_model):
         payload["temperature"] = float(temperature)
     headers = {
@@ -293,6 +299,7 @@ def _anthropic_messages(
     image_paths: Sequence[Path],
     temperature: float,
     max_tokens: int,
+    llm_seed: Optional[int] = None,
 ) -> LLMCompletion:
     content: List[Dict[str, Any]] = [{"type": "text", "text": user_prompt}]
     for path in image_paths:
@@ -342,6 +349,7 @@ def complete_multimodal_with_meta(
     image_paths: Optional[Sequence[Path]] = None,
     temperature: float = 0.2,
     max_tokens: int = 1600,
+    llm_seed: Optional[int] = None,
 ) -> LLMCompletion:
     provider = (cfg.provider or "").strip().lower()
     images = list(image_paths or [])
@@ -357,6 +365,7 @@ def complete_multimodal_with_meta(
                     image_paths=images,
                     temperature=temperature,
                     max_tokens=max_tokens,
+                    llm_seed=llm_seed,
                 )
             except Exception as exc:  # noqa: BLE001
                 last_exc = exc
@@ -371,6 +380,7 @@ def complete_multimodal_with_meta(
             image_paths=images,
             temperature=temperature,
             max_tokens=max_tokens,
+            llm_seed=llm_seed,
         )
 
     if provider == "mock":
@@ -398,6 +408,7 @@ def complete_multimodal(
     image_paths: Optional[Sequence[Path]] = None,
     temperature: float = 0.2,
     max_tokens: int = 1600,
+    llm_seed: Optional[int] = None,
 ) -> str:
     res = complete_multimodal_with_meta(
         cfg=cfg,
@@ -406,6 +417,7 @@ def complete_multimodal(
         image_paths=image_paths,
         temperature=temperature,
         max_tokens=max_tokens,
+        llm_seed=llm_seed,
     )
     return res.text
 

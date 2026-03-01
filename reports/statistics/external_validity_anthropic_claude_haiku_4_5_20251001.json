@@ -1,0 +1,74 @@
+{
+  "created_at": "2026-03-01T14:33:10.310235+00:00",
+  "title": "External Validity (Claude Haiku 4.5)",
+  "v1_summary_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/ablation_summary_anthropic_claude_haiku_4_5_20251001.json",
+  "v4_summary_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/ablation_summary_anthropic_claude_haiku_4_5_20251001.json",
+  "conditions": [
+    "full_stack",
+    "material_only",
+    "schema_only",
+    "self_refine_only"
+  ],
+  "rows": [
+    {
+      "condition": "full_stack",
+      "v1_iou": 0.2796618471530912,
+      "v4_iou": 0.1947194160402571,
+      "gap_v4_minus_v1_iou": -0.08494243111283412,
+      "v1_f1": 0.42945788500418014,
+      "v4_f1": 0.32195037140165816,
+      "gap_v4_minus_v1_f1": -0.10750751360252198,
+      "v1_material_match": 0.21407555748431858,
+      "v4_material_match": 0.24365172657662634,
+      "gap_v4_minus_v1_material_match": 0.029576169092307758
+    },
+    {
+      "condition": "material_only",
+      "v1_iou": 0.2361846735384276,
+      "v4_iou": 0.17180433564352207,
+      "gap_v4_minus_v1_iou": -0.06438033789490552,
+      "v1_f1": 0.37688777567905213,
+      "v4_f1": 0.2888476757819485,
+      "gap_v4_minus_v1_f1": -0.08804009989710365,
+      "v1_material_match": 0.1725929015766095,
+      "v4_material_match": 0.22808950522268923,
+      "gap_v4_minus_v1_material_match": 0.05549660364607972
+    },
+    {
+      "condition": "schema_only",
+      "v1_iou": 0.23616048675838763,
+      "v4_iou": 0.17197783414866866,
+      "gap_v4_minus_v1_iou": -0.06418265260971898,
+      "v1_f1": 0.3768482388078233,
+      "v4_f1": 0.28901319710901047,
+      "gap_v4_minus_v1_f1": -0.08783504169881284,
+      "v1_material_match": 0.1466524553299426,
+      "v4_material_match": 0.18444943356577592,
+      "gap_v4_minus_v1_material_match": 0.037796978235833334
+    },
+    {
+      "condition": "self_refine_only",
+      "v1_iou": 0.2752610660462681,
+      "v4_iou": 0.19520307013493352,
+      "gap_v4_minus_v1_iou": -0.08005799591133458,
+      "v1_f1": 0.42398804375342025,
+      "v4_f1": 0.32207351852446087,
+      "gap_v4_minus_v1_f1": -0.10191452522895939,
+      "v1_material_match": 0.12816637512006848,
+      "v4_material_match": 0.16266060519981354,
+      "gap_v4_minus_v1_material_match": 0.03449423007974506
+    }
+  ],
+  "best_condition": {
+    "v1": {
+      "iou": "full_stack",
+      "f1": "full_stack",
+      "material_match": "full_stack"
+    },
+    "v4": {
+      "iou": "self_refine_only",
+      "f1": "self_refine_only",
+      "material_match": "full_stack"
+    }
+  }
+}

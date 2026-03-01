@@ -1,0 +1,74 @@
+{
+  "created_at": "2026-03-01T14:33:10.098280+00:00",
+  "title": "External Validity (OpenAI GPT-5 mini)",
+  "v1_summary_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/ablation_summary_openai_gpt_5_mini.json",
+  "v4_summary_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/ablation_summary_openai_gpt_5_mini.json",
+  "conditions": [
+    "full_stack",
+    "material_only",
+    "schema_only",
+    "self_refine_only"
+  ],
+  "rows": [
+    {
+      "condition": "full_stack",
+      "v1_iou": 0.3031176058020177,
+      "v4_iou": 0.20395156041150764,
+      "gap_v4_minus_v1_iou": -0.09916604539051005,
+      "v1_f1": 0.4591336331852211,
+      "v4_f1": 0.33410984409770816,
+      "gap_v4_minus_v1_f1": -0.12502378908751294,
+      "v1_material_match": 0.22707746531202502,
+      "v4_material_match": 0.3016984142324192,
+      "gap_v4_minus_v1_material_match": 0.0746209489203942
+    },
+    {
+      "condition": "material_only",
+      "v1_iou": 0.28724597836765964,
+      "v4_iou": 0.18985289007502457,
+      "gap_v4_minus_v1_iou": -0.09739308829263507,
+      "v1_f1": 0.4397580988686351,
+      "v4_f1": 0.3142161580400356,
+      "gap_v4_minus_v1_f1": -0.12554194082859949,
+      "v1_material_match": 0.2192617307630489,
+      "v4_material_match": 0.29338287095705273,
+      "gap_v4_minus_v1_material_match": 0.07412114019400384
+    },
+    {
+      "condition": "schema_only",
+      "v1_iou": 0.27899642687819437,
+      "v4_iou": 0.1840426511740476,
+      "gap_v4_minus_v1_iou": -0.09495377570414676,
+      "v1_f1": 0.4302264755019939,
+      "v4_f1": 0.30561998120415335,
+      "gap_v4_minus_v1_f1": -0.12460649429784054,
+      "v1_material_match": 0.16141885832776662,
+      "v4_material_match": 0.19391334589079276,
+      "gap_v4_minus_v1_material_match": 0.03249448756302614
+    },
+    {
+      "condition": "self_refine_only",
+      "v1_iou": 0.30376310167007914,
+      "v4_iou": 0.2048387003903938,
+      "gap_v4_minus_v1_iou": -0.09892440127968533,
+      "v1_f1": 0.4593353371408064,
+      "v4_f1": 0.33493107575190295,
+      "gap_v4_minus_v1_f1": -0.12440426138890343,
+      "v1_material_match": 0.11758858146788555,
+      "v4_material_match": 0.17864418716340075,
+      "gap_v4_minus_v1_material_match": 0.0610556056955152
+    }
+  ],
+  "best_condition": {
+    "v1": {
+      "iou": "self_refine_only",
+      "f1": "self_refine_only",
+      "material_match": "full_stack"
+    },
+    "v4": {
+      "iou": "self_refine_only",
+      "f1": "self_refine_only",
+      "material_match": "full_stack"
+    }
+  }
+}

@@ -65,6 +65,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing descriptions.")
     parser.add_argument("--temperature", type=float, default=0.2, help="LLM temperature.")
     parser.add_argument("--max_tokens", type=int, default=1800, help="LLM max output tokens.")
+    parser.add_argument("--llm_seed", type=int, default=-1, help="Optional LLM seed (OpenAI only, -1 disables).")
     parser.add_argument("--dotenv", default="", help="Optional .env path.")
     parser.add_argument("--provider", default="", help="Optional provider override: openai|anthropic|mock")
     return parser.parse_args()
@@ -227,6 +228,7 @@ def main() -> None:
                 image_paths=images,
                 temperature=float(args.temperature),
                 max_tokens=int(args.max_tokens),
+                llm_seed=(int(args.llm_seed) if int(args.llm_seed) >= 0 else None),
             )
             response_text = completion.text
             desc_obj = extract_json_object(response_text)
@@ -305,6 +307,7 @@ def main() -> None:
         desc_obj["model"] = cfg.openai_model if cfg.provider == "openai" else cfg.anthropic_model
         desc_obj["building"] = bdir.name
         desc_obj["created_at"] = datetime.now(timezone.utc).isoformat()
+        desc_obj["llm_seed"] = int(args.llm_seed)
 
         out_json.write_text(json.dumps(desc_obj, ensure_ascii=False, indent=2), encoding="utf-8")
         out_raw.write_text(response_text, encoding="utf-8")
@@ -319,6 +322,7 @@ def main() -> None:
                     "prompt": user_prompt,
                     "temperature": float(args.temperature),
                     "max_tokens": int(args.max_tokens),
+                    "llm_seed": int(args.llm_seed),
                     "created_at": datetime.now(timezone.utc).isoformat(),
                 },
                 ensure_ascii=False,

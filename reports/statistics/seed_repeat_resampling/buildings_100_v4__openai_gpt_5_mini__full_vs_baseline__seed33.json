@@ -1,0 +1,100 @@
+{
+  "created_at": "2026-03-01T14:36:07.711059+00:00",
+  "label": "buildings_100_v4:openai_gpt_5_mini:full_vs_baseline:seed33",
+  "baseline": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/metrics_levels_pe_v2_openai_gpt_5_mini.json",
+  "variant": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/metrics_levels_ablation_full_openai_gpt_5_mini.json",
+  "settings": {
+    "bootstrap_samples": 2000,
+    "permutation_samples": 4000,
+    "seed": 33,
+    "metrics": [
+      "iou",
+      "f1",
+      "material_match",
+      "coarse_material_match",
+      "component_f1"
+    ]
+  },
+  "results": {
+    "iou": {
+      "n_pairs": 100,
+      "baseline_aggregate": 0.1514512865882482,
+      "variant_aggregate": 0.20395156041150764,
+      "paired_mean_diff": 0.05250027382325937,
+      "paired_std_diff": 0.05697402458336297,
+      "effect_size_dz": 0.9214773610813167,
+      "bootstrap_ci95": [
+        0.04148949474584675,
+        0.06318072918637184
+      ],
+      "sign_flip_pvalue_two_sided": 0.00024993751562109475,
+      "improved_count": 85,
+      "worsened_count": 15,
+      "tied_count": 0
+    },
+    "f1": {
+      "n_pairs": 100,
+      "baseline_aggregate": 0.25793186297834764,
+      "variant_aggregate": 0.33410984409770816,
+      "paired_mean_diff": 0.0761779811193605,
+      "paired_std_diff": 0.08263101182922802,
+      "effect_size_dz": 0.9219054617992106,
+      "bootstrap_ci95": [
+        0.06038988549920201,
+        0.09192915048009324
+      ],
+      "sign_flip_pvalue_two_sided": 0.00024993751562109475,
+      "improved_count": 85,
+      "worsened_count": 15,
+      "tied_count": 0
+    },
+    "material_match": {
+      "n_pairs": 100,
+      "baseline_aggregate": 0.3104437666205785,
+      "variant_aggregate": 0.3016984142324192,
+      "paired_mean_diff": -0.008745352388159166,
+      "paired_std_diff": 0.20108737976989707,
+      "effect_size_dz": -0.043490309526964914,
+      "bootstrap_ci95": [
+        -0.04792969517712332,
+        0.029367083968329988
+      ],
+      "sign_flip_pvalue_two_sided": 0.6663334166458386,
+      "improved_count": 49,
+      "worsened_count": 50,
+      "tied_count": 1
+    },
+    "coarse_material_match": {
+      "n_pairs": 100,
+      "baseline_aggregate": 0.4351118427236232,
+      "variant_aggregate": 0.44523576881776045,
+      "paired_mean_diff": 0.01012392609413707,
+      "paired_std_diff": 0.24429645438598827,
+      "effect_size_dz": 0.04144115034163071,
+      "bootstrap_ci95": [
+        -0.039741935714634954,
+        0.05555535969769127
+      ],
+      "sign_flip_pvalue_two_sided": 0.6850787303174206,
+      "improved_count": 58,
+      "worsened_count": 42,
+      "tied_count": 0
+    },
+    "component_f1": {
+      "n_pairs": 100,
+      "baseline_aggregate": 0.04789318484013111,
+      "variant_aggregate": 0.047630899022192835,
+      "paired_mean_diff": -0.00026228581793827084,
+      "paired_std_diff": 0.013326228992774133,
+      "effect_size_dz": -0.019681923376860012,
+      "bootstrap_ci95": [
+        -0.0028226451600900453,
+        0.0022799575821845176
+      ],
+      "sign_flip_pvalue_two_sided": 0.8085478630342414,
+      "improved_count": 3,
+      "worsened_count": 3,
+      "tied_count": 94
+    }
+  }
+}
