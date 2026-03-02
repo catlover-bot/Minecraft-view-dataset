@@ -18,7 +18,7 @@
 - 空operations (`accepted_zero`): **43件 -> 0件**
 - `missing_or_none`: **81件 -> 0件**
 
-つまり、**壊れたplanで止まる/空になる問題はほぼ潰せた**。
+つまり、**壊れたplanで止まる/空になる問題はほぼ潰せたぜ**。
 
 ### B. 再建築の最終精度（形状）は改善
 
@@ -34,7 +34,7 @@
 Baseline比（最終設定）:
 - IoU: **+0.0301**
 - F1: **+0.0425**
-- material: **-0.0289**（材質はまだトレードオフ）
+- material: **-0.0289**（材質はまだトレードオフ）材質がマジで合わん。
 
 ## 3. 研究としての一言結論
 
@@ -54,18 +54,14 @@ Baseline比（最終設定）:
 - `reports/figures/final_overview_data_2026-03-02.json`
 - `reports/figures/parser_v6_data_2026-03-02.json`
 
-## 5. どれを見ればよいか
-
-まずこのファイルだけ見ればOK:
 - `reports/final_results_concise_ja.md`
 
 詳細が必要なときだけ:
 - `reports/two_experiment_types_summary_ja.md`
 - `reports/statistical_validity_ablation_external_validity_ja.md`
 
-## 6. 発表用1ページサマリ（図1枚 + 表1枚）
-
-### 6.1 実験は何をしたか
+### 6 実験の雑なまとめ
+### 6.1 実験
 
 - タスク: `画像 -> 説明文 -> 再建築plan -> ボクセル再建築 -> GT比較`
 - データ: `buildings_100_v1` + `buildings_100_v4`（合計200建築）
@@ -78,7 +74,7 @@ Baseline比（最終設定）:
 
 ### 6.2 どう評価したか
 
-- 再建築評価（最重要）:
+- 再建築評価:
   - `IoU`: 形状の重なり
   - `F1`: 形状の総合一致
   - `material_match`: 材質まで含む一致
@@ -113,15 +109,15 @@ Baseline比（最終設定）:
 | v4 / OpenAI | 0.2045（20.45%） | 0.3348（33.48%） | 0.2952（29.52%） |
 | v4 / Claude | 0.1957（19.57%） | 0.3234（32.34%） | 0.2413（24.13%） |
 
-### 6.5 解釈（短く）
+### 6.5 解釈
 
-- 本実験の最大成果は、**壊れにくい再建築パイプラインを作れたこと**（fallbackほぼ解消）。
+- 本実験の最大成果は、**壊れにくい再建築パイプラインを作れた**（fallbackほぼ解消）。
 - その上で、**形状再現（IoU/F1）を一貫して引き上げた**。
-- 残課題は **材質一致の改善** で、今後はモデル別に材質制約を最適化するのが有効。
+- 残課題は **材質一致の改善** で、今後はモデル別に材質制約を最適化するのが有効。（無理ゲー？？）
 
 ### 6.6 Description評価（%）
 
-`description` の評価は 0〜1 スコアなので、以下は `%` 併記です。
+`description` の評価は 0〜1 スコアなので、以下は `%` 併記。
 
 まず、各指標の意味:
 - `auto_score_mean`:
@@ -133,7 +129,7 @@ Baseline比（最終設定）:
 - `dimension_score`:
   - 幅・奥行き・高さなど、寸法情報の一致度
 
-読み方のコツ:
+考察？:
 - `coarse` が高く `strict` が低い場合:
   - 材質系統は当たっているが、ID/語彙が粗い（表記粒度が足りない）
 - `dimension_score` が低い場合:
@@ -153,7 +149,7 @@ Baseline比（最終設定）:
 - Claude平均: `auto 70.47%`, `strict 57.11%`, `coarse 76.92%`, `dimension 56.44%`
 - 全体平均: `auto 74.29%`, `strict 62.09%`, `coarse 82.95%`, `dimension 59.71%`
 
-今回結果のわかりやすい解釈:
+今回結果:
 - description単体では OpenAI の方が高得点（特に `strict/coarse`）。
 - ただし最終再建築は description だけでは決まらず、`plan/render` の整合が支配的。
 - そのため本研究では、description改善に加えて **parser強化 + self_refine** が必須だった。
