@@ -121,7 +121,7 @@ Baseline比（最終設定）:
 
 各指標の意味:
 - `auto_score_mean`:
-  - 説明文全体の総合点（形・材質・寸法の情報がどれだけ含まれるか）
+  - 説明文全体の総合点（形・材質・寸法の情報）
 - `strict_material_f1`:
   - 材質を厳密に一致判定（例: `stone_brick` と `stone` は別扱い）ここが低い、rebuildにもつながっている
 - `coarse_material_f1`:
@@ -151,9 +151,9 @@ Baseline比（最終設定）:
 
 今回結果:
 - description単体では OpenAI の方が高得点（特に `strict/coarse`）。
-- ただし最終再建築は description だけでは決まらず、`plan/render` の整合が支配的。
-- そのため本研究では、description改善に加えて **parser強化 + self_refine** が必須だった。
+- ただし最終再建築は description だけでは決まらず、、、、、悲しい、、、
+- description改善に加えて **parser強化 + self_refine** が必須だった。
 
 補足:
 - `description` は比較的高品質でも、最終IoU/F1は `plan/render` の整合に強く依存するため、  
-  本研究では **parser強化とself_refineが最終品質を左右**した。
+   **parser強化とself_refineが最終品質を左右**した。
