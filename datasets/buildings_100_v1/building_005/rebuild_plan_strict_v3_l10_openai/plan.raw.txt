@@ -1,0 +1,340 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v3_strict",
+  "bbox": {"xmin":0,"xmax":12,"ymin":0,"ymax":7,"zmin":0,"zmax":12},
+  "palette": {
+    "wall":"stonebrick",
+    "roof":"wood",
+    "trim":"brick",
+    "glass":"glass",
+    "light":"glowstone",
+    "floor":"wood"
+  },
+  "material_budget": {
+    "wall": {"role":"wall","block":"stonebrick","target_blocks": 360},
+    "roof": {"role":"roof","block":"wood","target_blocks": 180},
+    "trim": {"role":"trim","block":"brick","target_blocks": 60},
+    "glass": {"role":"glass","block":"glass","target_blocks": 20},
+    "light": {"role":"light","block":"glowstone","target_blocks": 4},
+    "floor": {"role":"floor","block":"wood","target_blocks": 144}
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type":"rectangle|l_shape|u_shape|complex",
+      "segments":[
+        {"x1":0,"z1":0,"x2":12,"z2":12}
+      ]
+    },
+    "floors": [
+      {"floor_index":0,"y_range":{"ymin":0,"ymax":0},"perimeter_profile":"single ground floor with raised 1-block stone base and 1-block high walls above base"}
+    ],
+    "openings": [
+      {"kind":"door","face":"south","x1":6,"y1":1,"z1":12,"x2":6,"y2":2,"z2":12},
+      {"kind":"window","face":"east","x1":12,"y1":2,"z1":3,"x2":12,"y2":2,"z2":5},
+      {"kind":"window","face":"east","x1":12,"y1":2,"z1":7,"x2":12,"y2":2,"z2":9},
+      {"kind":"window","face":"west","x1":0,"y1":2,"z1":3,"x2":0,"y2":2,"z2":5},
+      {"kind":"window","face":"west","x1":0,"y1":2,"z1":7,"x2":0,"y2":2,"z2":9},
+      {"kind":"window","face":"north","x1":4,"y1":2,"z1":0,"x2":6,"y2":2,"z2":0},
+      {"kind":"window","face":"south","x1":4,"y1":2,"z1":12,"x2":6,"y2":2,"z2":12}
+    ],
+    "roof_profile": {
+      "type":"hip",
+      "base_y":5,
+      "ridge_axis":"none",
+      "layers":[
+        {"y":5,"offset":0},
+        {"y":6,"offset":1}
+      ]
+    }
+  },
+  "operations": [
+    {"op":"fill","role":"floor","x1":1,"y1":0,"z1":1,"x2":11,"y2":0,"z2":11,"block":"wood","purpose":"interior_floor"},
+    {"op":"fill","role":"trim","x1":0,"y1":0,"z1":0,"x2":12,"y2":0,"z2":12,"block":"brick","purpose":"raised_stonebase_coping"}, 
+    {"op":"fill","role":"wall","x1":1,"y1":1,"z1":1,"x2":11,"y2":4,"z2":11,"block":"stonebrick","purpose":"wall_infill"},
+    {"op":"fill","role":"trim","x1":0,"y1":1,"z1":0,"x2":12,"y2":1,"z2":12,"block":"brick","purpose":"stone_coping_under_roof"},
+    {"op":"fill","role":"trim","x1":0,"y1":1,"z1":0,"x2":0,"y2":3,"z2":0,"block":"brick","purpose":"corner_post_nw"},
+    {"op":"fill","role":"trim","x1":12,"y1":1,"z1":0,"x2":12,"y2":3,"z2":0,"block":"brick","purpose":"corner_post_ne"},
+    {"op":"fill","role":"trim","x1":0,"y1":1,"z1":12,"x2":0,"y2":3,"z2":12,"block":"brick","purpose":"corner_post_sw"},
+    {"op":"fill","role":"trim","x1":12,"y1":1,"z1":12,"x2":12,"y2":3,"z2":12,"block":"brick","purpose":"corner_post_se"},
+    {"op":"carve","x1":6,"y1":1,"z1":12,"x2":6,"y2":2,"z2":12,"purpose":"entrance_doorway_clear"},
+    {"op":"carve","x1":12,"y1":2,"z1":3,"x2":12,"y2":2,"z2":5,"purpose":"east_windows_clear"},
+    {"op":"carve","x1":12,"y1":2,"z1":7,"x2":12,"y2":2,"z2":9,"purpose":"east_windows_clear_2"},
+    {"op":"carve","x1":0,"y1":2,"z1":3,"x2":0,"y2":2,"z2":5,"purpose":"west_windows_clear"},
+    {"op":"carve","x1":0,"y1":2,"z1":7,"x2":0,"y2":2,"z2":9,"purpose":"west_windows_clear_2"},
+    {"op":"carve","x1":4,"y1":2,"z1":0,"x2":6,"y2":2,"z2":0,"purpose":"north_window_clear"},
+    {"op":"carve","x1":4,"y1":2,"z1":12,"x2":6,"y2":2,"z2":12,"purpose":"south_window_clear"},
+    {"op":"set","role":"glass","x":12,"y":2,"z":4,"block":"glass","purpose":"east_window_1"},
+    {"op":"set","role":"glass","x":12,"y":2,"z":8,"block":"glass","purpose":"east_window_2"},
+    {"op":"set","role":"glass","x":0,"y":2,"z":4,"block":"glass","purpose":"west_window_1"},
+    {"op":"set","role":"glass","x":0,"y":2,"z":8,"block":"glass","purpose":"west_window_2"},
+    {"op":"set","role":"glass","x":5,"y":2,"z":0,"block":"glass","purpose":"north_window_center"},
+    {"op":"set","role":"glass","x":5,"y":2,"z":12,"block":"glass","purpose":"south_window_center"},
+    {"op":"fill","role":"roof","x1":0,"y1":5,"z1":0,"x2":12,"y2":5,"z2":12,"block":"wood","purpose":"roof_layer_base"},
+    {"op":"fill","role":"roof","x1":1,"y1":6,"z1":1,"x2":11,"y2":6,"z2":11,"block":"wood","purpose":"roof_layer_upper"},
+    {"op":"set","role":"light","x":6,"y":1,"z":6,"block":"glowstone","purpose":"interior_light_center"},
+    {"op":"set","role":"light","x":3,"y":1,"z":3,"block":"glowstone","purpose":"interior_light_corner1"},
+    {"op":"set","role":"light","x":9,"y":1,"z":9
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 12,
+  "ymin": 0,
+  "ymax": 7,
+  "zmin": 0,
+  "zmax": 12,
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 11,
+      "y2": 0,
+      "z2": 11,
+      "block": "wood",
+      "purpose": "interior_floor"
+    },
+    {
+      "op": "fill",
+      "role": "base",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "raised_stonebase"
+    },
+    {
+      "op": "fill",
+      "role": "base_trim",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 12,
+      "block": "slab_stone",
+      "purpose": "outer_slab_ledge"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 4,
+      "z2": 11,
+      "block": "wood",
+      "purpose": "oak_wall_infill"
+    },
+    {
+      "op": "fill",
+      "role": "post",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 3,
+      "z2": 0,
+      "block": "wood",
+      "purpose": "corner_post_nw"
+    },
+    {
+      "op": "fill",
+      "role": "post",
+      "x1": 12,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 3,
+      "z2": 0,
+      "block": "wood",
+      "purpose": "corner_post_ne"
+    },
+    {
+      "op": "fill",
+      "role": "post",
+      "x1": 0,
+      "y1": 1,
+      "z1": 12,
+      "x2": 0,
+      "y2": 3,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "corner_post_sw"
+    },
+    {
+      "op": "fill",
+      "role": "post",
+      "x1": 12,
+      "y1": 1,
+      "z1": 12,
+      "x2": 12,
+      "y2": 3,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "corner_post_se"
+    },
+    {
+      "op": "fill",
+      "role": "coping",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 1,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "stone_coping_under_roof"
+    },
+    {
+      "op": "carve",
+      "x1": 6,
+      "y1": 1,
+      "z1": 12,
+      "x2": 6,
+      "y2": 2,
+      "z2": 12,
+      "purpose": "entrance_doorway_clear"
+    },
+    {
+      "op": "fill",
+      "role": "door",
+      "x1": 6,
+      "y1": 1,
+      "z1": 12,
+      "x2": 6,
+      "y2": 2,
+      "z2": 12,
+      "block": "air",
+      "purpose": "entrance_space"
+    },
+    {
+      "op": "carve",
+      "x1": 12,
+      "y1": 2,
+      "z1": 3,
+      "x2": 12,
+      "y2": 2,
+      "z2": 5,
+      "purpose": "east_windows_clear"
+    },
+    {
+      "op": "carve",
+      "x1": 12,
+      "y1": 2,
+      "z1": 7,
+      "x2": 12,
+      "y2": 2,
+      "z2": 9,
+      "purpose": "east_windows_clear_2"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 2,
+      "z1": 3,
+      "x2": 0,
+      "y2": 2,
+      "z2": 5,
+      "purpose": "west_windows_clear"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 2,
+      "z1": 7,
+      "x2": 0,
+      "y2": 2,
+      "z2": 9,
+      "purpose": "west_windows_clear_2"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 2,
+      "z1": 0,
+      "x2": 6,
+      "y2": 2,
+      "z2": 0,
+      "purpose": "north_window_clear"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 2,
+      "z1": 12,
+      "x2": 6,
+      "y2": 2,
+      "z2": 12,
+      "purpose": "south_window_clear"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 12,
+      "y": 2,
+      "z": 4,
+      "block": "glass",
+      "purpose": "east_window_1"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 12,
+      "y": 2,
+      "z": 8,
+      "block": "glass",
+      "purpose": "east_window_2"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 0,
+      "y": 2,
+      "z": 4,
+      "block": "glass",
+      "purpose": "west_window_1"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 0,
+      "y": 2,
+      "z": 8,
+      "block": "glass",
+      "purpose": "west_window_2"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 5,
+      "y": 2,
+      "z": 0,
+      "block": "glass",
+      "purpose": "north_window_center"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 5,
+      "y": 2,
+      "z": 12,
+      "block": "glass",
+      "purpose": "south_window_center"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 12,
+      "y2": 5,
+      "z2": 12,
+      "block": "brick",

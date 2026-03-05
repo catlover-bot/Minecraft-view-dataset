@@ -1,0 +1,80 @@
+{
+  "summary": "A single rectangular two-level stylized fort or compound with four corner towers and raised flat layered roofs. Exterior walls use horizontal decorative bands (brick, sandstone-like band, glass strips) with prominent vertical white pillars and stone corner towers. Central courtyard is open to sky; a continuous second-floor walkway/roof runs around the courtyard edge.",
+  "building_type": "fort/compound",
+  "shape": {
+    "overall_form": "rectangular outer wall with large rectangular inner courtyard (hollow rectangle), four corner towers connected by lower walls",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis (mirrored left-right); towers at corners create rotational hint but details show primary mirror symmetry",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 25,
+    "depth": 17,
+    "height": 12
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "primary_wall_band",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "tower_corners/vertical_trim",
+      "confidence": 0.8
+    },
+    {
+      "name": "wood",
+      "role": "roof_dark_planks (likely netherbrick)",
+      "confidence": 0.7
+    },
+    {
+      "name": "glass",
+      "role": "window_strips",
+      "confidence": 0.9
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof_edge and base coping",
+      "confidence": 0.85
+    },
+    {
+      "name": "slab_wood",
+      "role": "possible thin roof layers or decorative slabs",
+      "confidence": 0.4
+    },
+    {
+      "name": "fence",
+      "role": "small decorative posts between roof crenellations (uncertain)",
+      "confidence": 0.3
+    }
+  ],
+  "elements": [
+    "corner towers (tall, square, with layered flat roof)",
+    "outer walls with horizontal bands (brick + lighter band + glass strip)",
+    "vertical white pillars at regular intervals on walls",
+    "raised layered flat roofs with overhangs on towers and perimeter",
+    "open central courtyard",
+    "ground-level white block base/footing around perimeter"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular outer shell with a hollow central courtyard (hollow rectangle). Place the long sides longer than short sides matching footprint ratio (~25x17).",
+    "Construct four identical square corner towers rising above the wall; use darker stone for tower faces and stonebrick or similar for vertical corner trim.",
+    "Create wall decoration in horizontal bands: lower thin mossy/dirty band (uncertain material), large brick band, a lighter sand-colored band, a repeating glass window strip, then a top thin white coping and dark roof layer (netherbrick-like) with small crenellations.",
+    "Add white vertical pillars (two-block wide) evenly spaced on walls that extend from base to just below top coping to break the brick bands.",
+    "Top towers with stacked flat slab layers producing a large overhang; add glow source (glowstone) centered on each tower roof.",
+    "Place white footing blocks (single-block spaced pattern) along exterior ground edge as decorative foundation stones."
+  ],
+  "uncertainties": [
+    "Exact block types for dark roof appear to be netherbrick or dark wood planks — identified as 'wood' with moderate confidence.",
+    "Thin lighter horizontal band may be sandstone or birch planks; material ID uncertain.",
+    "Small decorative elements between crenellations and on tower faces (iron bars or chains or fence) are not fully clear.",
+    "Interior courtyard ground treatment and any internal floors/stairs are not visible in detail.",
+    "Exact overall dimensions counted in blocks are estimated from perspective; could differ by a few blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_030",
+  "created_at": "2026-02-28T15:11:20.212068+00:00"
+}

@@ -1,0 +1,487 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 44
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "spruce_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 44,
+          "label": "main_plot"
+        }
+      ],
+      "symmetry": "bilateral_about_center_x"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground level entrance hall along central spine, flanking service spaces in wings",
+        "perimeter_profile": "rectangle with rear twin wings massed"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "main residential floor with continuous window bands",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 10,
+          "ymax": 14
+        },
+        "rooms_hint": "upper bedrooms; continued window bands",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 15,
+          "ymax": 17
+        },
+        "rooms_hint": "roof base/attic volume under gable",
+        "perimeter_profile": "steep gable volumes on spine and rear wings"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 10,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 6,
+        "z1": 0,
+        "x2": 4,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 16,
+        "y1": 6,
+        "z1": 0,
+        "x2": 18,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 6,
+        "z1": 44,
+        "x2": 5,
+        "y2": 6,
+        "z2": 44
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 15,
+        "y1": 6,
+        "z1": 44,
+        "x2": 17,
+        "y2": 6,
+        "z2": 44
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 15,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 15,
+          "x1": 0,
+          "z1": 28,
+          "x2": 20,
+          "z2": 44,
+          "block": "brick"
+        },
+        {
+          "y": 15,
+          "x1": 0,
+          "z1": 8,
+          "x2": 20,
+          "z2": 28,
+          "block": "brick"
+        },
+        {
+          "y": 15,
+          "x1": 4,
+          "z1": 0,
+          "x2": 16,
+          "z2": 8,
+          "block": "brick"
+        },
+        {
+          "y": 16,
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 42,
+          "block": "brick"
+        },
+        {
+          "y": 17,
+          "x1": 5,
+          "z1": 6,
+          "x2": 15,
+          "z2": 36,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 44,
+      "block": "dirt",
+      "purpose": "plot_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 44,
+      "block": "spruce_planks",
+      "purpose": "raised_floor_base"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 18,
+      "y2": 14,
+      "z2": 42,
+      "block": "sandstone",
+      "purpose": "main_wall_mass"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 20,
+      "y2": 2,
+      "z2": 44,
+      "block": "quartz_block",
+      "purpose": "ground_trim_belt"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 20,
+      "y2": 5,
+      "z2": 44,
+      "block": "quartz_block",
+      "purpose": "belt_course_floor1"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 10,
+      "z1": 0,
+      "x2": 20,
+      "y2": 10,
+      "z2": 44,
+      "block": "quartz_block",
+      "purpose": "belt_course_floor2"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 2,
+      "z1": 3,
+      "x2": 17,
+      "y2": 14,
+      "z2": 41,
+      "purpose": "interior_volume_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 2,
+      "z1": 2,
+      "x2": 11,
+      "y2": 14,
+      "z2": 42,
+      "block": "sandstone",
+      "purpose": "central_spine_solid_core"
+    },
+    {
+      "op": "carve",
+      "x1": 10,
+      "y1": 2,
+      "z1": 3,
+      "x2": 10,
+      "y2": 14,
+      "z2": 41,
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 44,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "dirt",
+      "from": [0, 0, 0],
+      "to": [20, 0, 44],
+      "meta": {},
+      "comment": "ground_plot base"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 1, 0],
+      "to": [20, 1, 44],
+      "meta": {},
+      "comment": "raised white base course / plinth (1-high)"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 1, 0],
+      "to": [20, 3, 0],
+      "meta": {},
+      "comment": "front low fence along front edge (inner decorative; extends as low border) - kept inside bbox"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 1, 44],
+      "to": [20, 3, 44],
+      "meta": {},
+      "comment": "rear low fence"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 1, 0],
+      "to": [0, 3, 44],
+      "meta": {},
+      "comment": "left side fence"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [20, 1, 0],
+      "to": [20, 3, 44],
+      "meta": {},
+      "comment": "right side fence"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [4, 2, 6],
+      "to": [16, 2, 38],
+      "meta": {},
+      "comment": "floor ground level (first floor subfloor) inside building footprint; 1-high layer at y=2"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [4, 3, 6],
+      "to": [16, 7, 38],
+      "meta": {},
+      "comment": "walls: main wall volume covering floors 1-3 (y=3..7). Leaves room for trim and window bands."
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [2, 3, 22],
+      "to": [18, 7, 36],
+      "meta": {},
+      "comment": "rear wings (extend footprint wider at rear). Overlaps planned wings; overlap is inside bbox"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [4, 6, 6],
+      "to": [16, 6, 38],
+      "meta": {},
+      "comment": "horizontal belt course between second and third floors (1-high trim band at y=6)"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [4, 4, 6],
+      "to": [16, 4, 38],
+      "meta": {},
+      "comment": "horizontal belt course between first and second floors (1-high trim band at y=4)"
+    },
+    {
+      "op": "place_rows",
+      "pattern": {
+        "type": "window_band",
+        "material": "glass"
+      },
+      "rows": [
+        {
+          "from": [5, 5, 7],
+          "to": [15, 5, 7],
+          "repeat": 1,
+          "comment": "narrow horizontal window band on second floor front spine (y=5)"
+        },
+        {
+          "from": [5, 3, 7],
+          "to": [15, 3, 7],
+          "repeat": 1,
+          "comment": "narrow horizontal window band on first floor front spine (y=3)"
+        },
+        {
+          "from": [5, 7, 7],
+          "to": [15, 7, 7],
+          "repeat": 1,
+          "comment": "narrow horizontal window band on third floor front spine (y=7)"
+        },
+        {
+          "from": [3, 5, 23],
+          "to": [19, 5, 23],
+          "repeat": 1,
+          "comment": "rear wide wing window band second floor"
+        },
+        {
+          "from": [3, 3, 23],
+          "to": [19, 3, 23],
+          "repeat": 1,
+          "comment": "rear wide wing window band first floor"
+        },
+        {
+          "from": [3, 7, 23],
+          "to": [19, 7, 23],
+          "repeat": 1,
+          "comment": "rear wide wing window band third floor"
+        }
+      ]
+    },
+    {
+      "op": "hollow_out",
+      "block": "air",
+      "from": [5, 2, 8],
+      "to": [15, 6, 36],
+      "meta": {},
+      "comment": "interior volume hollowed for rooms and corridor; preserves walls thickness"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [5, 3, 7],
+      "to": [15, 3, 7],
+      "meta": {},
+      "comment": "explicitly set window band material (glass) first floor"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [5, 5, 7],
+      "to": [15, 5, 7],
+      "meta": {},
+      "comment": "glass second floor"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [5, 7, 7],
+      "to": [15, 7, 7],
+      "meta": {},
+      "comment": "glass third floor"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [3, 3, 23],
+      "to": [19, 3, 23],
+      "meta": {},
+      "comment": "rear wing first floor windows"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [3, 5, 23],
+      "to": [19, 5, 23],
+      "meta": {},
+      "comment": "rear wing second floor windows"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [3, 7, 23],
+      "to": [19, 7, 23],
+      "meta": {},
+      "comment": "rear wing third floor windows"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone_slab",
+      "from": [4, 2, 6],
+      "to": [16, 2, 38],
+      "meta": {},
+      "comment": "interior floor finish (slab) atop subfloor to suggest floor layering"
+    },
+    {
+      "op": "clear",
+      "from": [9, 2, 6],
+      "to": [11, 4, 6],
+      "block": "air",
+      "meta": {},
+      "comment": "entrance opening (doorway) at front center aligned with spine; 2 wide x 3 high"
+    },
+    {
+      "op": "place",
+      "block": "quartz_stairs",
+      "from": [9

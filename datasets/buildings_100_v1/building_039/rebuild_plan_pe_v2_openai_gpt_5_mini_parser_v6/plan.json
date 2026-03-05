@@ -1,0 +1,549 @@
+{
+  "xmin": 0,
+  "xmax": 6,
+  "ymin": 0,
+  "ymax": 9,
+  "zmin": 0,
+  "zmax": 14,
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 6,
+      "y2": 0,
+      "z2": 14,
+      "block": "cobblestone",
+      "purpose": "cobblestone perimeter/foundation layer (one-block-high border and floor foundation)",
+      "role": "floor",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 5,
+      "y2": 1,
+      "z2": 0,
+      "block": "cobblestone",
+      "purpose": "stonebrick step at front interior base immediately behind door (one-block-thick internal threshold).",
+      "role": "floor",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 3,
+      "y": 1,
+      "z": 0,
+      "block": "oak_door",
+      "purpose": "entrance door centered on short front (south) face at ground level (door occupies z=0 position). Using oak_door for clear entrance.",
+      "role": "wall",
+      "role_confidence": 0.35,
+      "role_reason": "fallback_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 1,
+      "x2": 4,
+      "y2": 3,
+      "z2": 1,
+      "block": "cobblestone",
+      "purpose": "entrance recessed opening inside wall (1 block deep) to ensure clear doorway alignment",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 5,
+      "y2": 8,
+      "z2": 13,
+      "block": "netherbrick",
+      "purpose": "clear interior volume to build raised stonebrick walls and roof (ensure no overlaps)",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 7,
+      "x2": 6,
+      "y2": 5,
+      "z2": 7,
+      "block": "netherbrick",
+      "purpose": "stone slab ridge caps across centerline to accent roof steps (middle slab row).",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 6,
+      "x2": 6,
+      "y2": 6,
+      "z2": 8,
+      "block": "netherbrick",
+      "purpose": "first (lower) netherbrick roof layer centered along ridge forming stepped gable base",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 7,
+      "z1": 6,
+      "x2": 6,
+      "y2": 7,
+      "z2": 8,
+      "block": "netherbrick",
+      "purpose": "east-facing top stairs along roof edge step (right side)",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 6,
+      "x2": 0,
+      "y2": 7,
+      "z2": 8,
+      "block": "netherbrick",
+      "purpose": "west-facing top stairs along roof edge step (left side)",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 7,
+      "z1": 5,
+      "x2": 5,
+      "y2": 7,
+      "z2": 9,
+      "block": "netherbrick",
+      "purpose": "second netherbrick roof layer inset one block to create stepped profile",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 9,
+      "z1": 6,
+      "x2": 4,
+      "y2": 9,
+      "z2": 8,
+      "block": "netherbrick",
+      "purpose": "roof ridge central blocks at highest step (creates gable ridge).",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 10,
+      "z1": 0,
+      "x2": 6,
+      "y2": 12,
+      "z2": 14,
+      "block": "netherbrick",
+      "purpose": "clear above roof area to avoid accidental overlaps when placing higher roof pieces",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 1,
+      "z1": 0,
+      "x2": 3,
+      "y2": 3,
+      "z2": 0,
+      "block": "air",
+      "purpose": "self_repair_entrance"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 5,
+      "y2": 4,
+      "z2": 13,
+      "block": "glass",
+      "purpose": "primary stonebrick inner walls up to wall height (4 high), leaving openings for windows and entrance",
+      "role": "glass",
+      "role_confidence": 0.92,
+      "role_reason": "self_repair_window_material"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 3,
+      "x2": 1,
+      "y2": 3,
+      "z2": 11,
+      "block": "glass",
+      "purpose": "left long wall continuous horizontal windows (1 block wide columns of glass with vertical height 2).",
+      "role": "glass",
+      "role_confidence": 0.92,
+      "role_reason": "self_repair_window_material"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 2,
+      "z1": 3,
+      "x2": 5,
+      "y2": 3,
+      "z2": 11,
+      "block": "glass",
+      "purpose": "right long wall continuous horizontal windows matching symmetry",
+      "role": "glass",
+      "role_confidence": 0.92,
+      "role_reason": "self_repair_window_material"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 3,
+      "x2": 4,
+      "y2": 3,
+      "z2": 3,
+      "block": "glass",
+      "purpose": "stonebrick pillars between windows on front-facing inner window run (short segments to visually subdivide panes) - repeated pattern handled by explicit fills above/below",
+      "role": "glass",
+      "role_confidence": 0.92,
+      "role_reason": "self_repair_window_material"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 8,
+      "z1": 5,
+      "x2": 5,
+      "y2": 8,
+      "z2": 9,
+      "block": "nether_brick_stairs",
+      "purpose": "east-facing upper stairs on inset step",
+      "role": "trim",
+      "role_confidence": 0.62,
+      "role_reason": "block_family"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 8,
+      "z1": 5,
+      "x2": 1,
+      "y2": 8,
+      "z2": 9,
+      "block": "nether_brick_stairs",
+      "purpose": "west-facing upper stairs on inset step",
+      "role": "trim",
+      "role_confidence": 0.62,
+      "role_reason": "block_family"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 6,
+      "y2": 1,
+      "z2": 14,
+      "block": "slab_stone",
+      "purpose": "raise cobblestone foundation border one block around building to form visible trench edge; overlaps base fill but kept for explicitness",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 2,
+      "z": 0,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 14,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 2,
+      "z": 14,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "all_ops_inside_bbox": true,
+    "operation_count": 24,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance_opening": true,
+    "material_coherence": true,
+    "notes": "Bounding box maintained. Operations count (18) is <=260. Distinct materials used for foundation (cobblestone), walls (stone_bricks), roof (nether_bricks and nether_brick_stairs), roof accents (stone_slab), glass for windows, and oak door for entrance. Openings made for windows and door. All coordinates lie within [xmin,xmax]=[0,6], [ymin,ymax]=[0,9], [zmin,zmax]=[0,14].",
+    "operation_count_ok": true,
+    "bbox_consistency": "ok",
+    "role_fixed_consistency": "repaired_19",
+    "material_budget_consistency": "ok",
+    "required_roles_present": true,
+    "issues": []
+  },
+  "bbox": {
+    "xmin": 0,
+    "xmax": 6,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 14
+  },
+  "palette": {
+    "wall": "cobblestone",
+    "roof": "netherbrick",
+    "trim": "slab_stone",
+    "glass": "glass",
+    "floor": "cobblestone",
+    "light": "glowstone"
+  },
+  "notes": [],
+  "plan_version": "v1",
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 19,
+    "accepted_operations_count": 19,
+    "repaired_operations_count": 19,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "cobblestone",
+      "target_blocks": 7,
+      "actual_blocks": 7,
+      "within_tolerance": true
+    },
+    "roof": {
+      "role": "roof",
+      "block": "netherbrick",
+      "target_blocks": 903,
+      "actual_blocks": 903,
+      "within_tolerance": true
+    },
+    "trim": {
+      "role": "trim",
+      "block": "slab_stone",
+      "target_blocks": 115,
+      "actual_blocks": 115,
+      "within_tolerance": true
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 302,
+      "actual_blocks": 302,
+      "within_tolerance": true
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 4,
+      "actual_blocks": 4,
+      "within_tolerance": true
+    },
+    "floor": {
+      "role": "floor",
+      "block": "cobblestone",
+      "target_blocks": 110,
+      "actual_blocks": 110,
+      "within_tolerance": true
+    }
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "cobblestone",
+        "score": 0.9,
+        "source_role": "foundation / low perimeter wall"
+      },
+      "floor": {
+        "block": "cobblestone",
+        "score": 0.9,
+        "source_role": "foundation / low perimeter wall"
+      },
+      "roof": {
+        "block": "netherbrick",
+        "score": 0.95,
+        "source_role": "roof (dark red stepped blocks / stairs)"
+      },
+      "trim": {
+        "block": "slab_stone",
+        "score": 0.85,
+        "source_role": "stone slab accents on roof steps / corners"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.95,
+        "source_role": "windows"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "light"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "cobblestone",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "netherbrick",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "slab_stone",
+          "score": 0.85,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "glass",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "cobblestone",
+          "score": 0.9,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": [
+        {
+          "role": "floor",
+          "from": "cobblestone",
+          "to": "cobblestone"
+        }
+      ]
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 23,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 19,
+    "role_fixed_skipped_low_conf_count": 3,
+    "role_infer_confidence_mean": 0.8231578947368422,
+    "role_infer_reasons": {
+      "purpose_hint": 16,
+      "unknown": 1,
+      "block_family": 2
+    },
+    "self_repair_report": {
+      "added_operations": 5,
+      "added_tags": [
+        "entrance",
+        "light",
+        "light",
+        "light",
+        "light"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 4,
+      "entrance_fixes": 1
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "building": "building_039",
+  "created_at": "2026-03-01T15:29:01.765474+00:00",
+  "provider": "openai",
+  "model": "gpt-5-mini"
+}

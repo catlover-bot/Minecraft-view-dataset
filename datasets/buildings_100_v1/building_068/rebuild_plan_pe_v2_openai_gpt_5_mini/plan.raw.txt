@@ -1,0 +1,457 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 5,
+    "zmin": 0,
+    "zmax": 18
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 17,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single open pavilion interior",
+        "perimeter_profile": "rectangular raised platform with recessed roof field"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 17,
+        "x2": 5,
+        "y2": 2,
+        "z2": 17
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 9,
+        "y1": 2,
+        "z1": 4,
+        "x2": 9,
+        "y2": 3,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 9,
+        "y1": 2,
+        "z1": 8,
+        "x2": 9,
+        "y2": 3,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 9,
+        "y1": 2,
+        "z1": 12,
+        "x2": 9,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 9,
+        "y1": 2,
+        "z1": 16,
+        "x2": 9,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 4,
+        "x2": 1,
+        "y2": 3,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 8,
+        "x2": 1,
+        "y2": 3,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 12,
+        "x2": 1,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 16,
+        "x2": 1,
+        "y2": 3,
+        "z2": 16
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 4,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 17,
+          "block": "stone_slab"
+        },
+        {
+          "y": 3,
+          "x1": 2,
+          "z1": 2,
+          "x2": 8,
+          "z2": 16,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 18,
+      "block": "quartz",
+      "purpose": "raised_perimeter_platform_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 9,
+      "y2": 0,
+      "z2": 17,
+      "block": "oak_planks",
+      "purpose": "interior_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 17,
+      "block": "oak_planks",
+      "purpose": "lower_wall_plank_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 3,
+      "z2": 17,
+      "block": "sandstone",
+      "purpose": "middle_sandstone_band_with_window_slots"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 4,
+      "x2": 1,
+      "y2": 3,
+      "z2": 4,
+      "purpose": "window_west_1"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 8,
+      "x2": 1,
+      "y2": 3,
+      "z2": 8,
+      "purpose": "window_west_2"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 12,
+      "x2": 1,
+      "y2": 3,
+      "z2": 12,
+      "purpose": "window_west_3"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 16,
+      "x2": 1,
+      "y2": 3,
+      "z2": 16,
+      "purpose": "window_west_4"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 2,
+      "z1": 4,
+      "x2": 9,
+      "y2": 3,
+      "z2": 4,
+      "purpose": "window_east_1"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 2,
+      "z1": 8,
+      "x2": 9,
+      "y2": 3,
+      "z2": 8,
+      "purpose": "window_east_2"
+    },
+    {
+      "op": "carve",
+      "x1":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 5,
+  "zmin": 0,
+  "zmax": 18,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 10, 0, 18],
+      "block": "slab_quartz",
+      "comment": "raised 1-block-high perimeter platform (slab layer at ground level) covering footprint"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 9, 1, 17],
+      "block": "planks_oak",
+      "comment": "lower wood plank base (1 block high) inset 1 from slab edge"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 9, 3, 17],
+      "block": "sandstone",
+      "comment": "sandstone middle band (2 blocks high) - includes window openings to be carved next"
+    },
+    {
+      "op": "set",
+      "pos": [2, 2, 2],
+      "block": "glass",
+      "comment": "window 1 long face west"
+    },
+    {
+      "op": "set",
+      "pos": [4, 2, 2],
+      "block": "glass",
+      "comment": "window 2 long face west"
+    },
+    {
+      "op": "set",
+      "pos": [6, 2, 2],
+      "block": "glass",
+      "comment": "window 3 long face west"
+    },
+    {
+      "op": "set",
+      "pos": [8, 2, 2],
+      "block": "glass",
+      "comment": "window 4 long face west"
+    },
+    {
+      "op": "set",
+      "pos": [2, 2, 16],
+      "block": "glass",
+      "comment": "window 1 long face east"
+    },
+    {
+      "op": "set",
+      "pos": [4, 2, 16],
+      "block": "glass",
+      "comment": "window 2 long face east"
+    },
+    {
+      "op": "set",
+      "pos": [6, 2, 16],
+      "block": "glass",
+      "comment": "window 3 long face east"
+    },
+    {
+      "op": "set",
+      "pos": [8, 2, 16],
+      "block": "glass",
+      "comment": "window 4 long face east"
+    },
+    {
+      "op": "fill",
+      "box": [1, 4, 1, 9, 4, 17],
+      "block": "quartz_block",
+      "comment": "upper white quartz band (1 block high)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 5, 1, 9, 5, 17],
+      "block": "brick",
+      "comment": "single brick course under slab coping (1 block high)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 6, 0, 10, 6, 18],
+      "block": "slab_stone",
+      "comment": "stone slab coping rim (1 block high as slabs placed at top) surrounding roof edge"
+    },
+    {
+      "op": "fill",
+      "box": [1, 5, 1, 9, 5, 17],
+      "block_replace": "air",
+      "comment": "ensure roof field cleared before filling with brick core (operation reserved, no-op if none)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 5, 2, 8, 5, 16],
+      "block": "brick",
+      "comment": "internal flat roof field (brick) recessed inside slab coping"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 0, 5, 0],
+      "block": "stonebrick",
+      "comment": "corner northwest vertical pillar (front-left) from base up to coping"
+    },
+    {
+      "op": "fill",
+      "box": [10, 1, 0, 10, 5, 0],
+      "block": "stonebrick",
+      "comment": "corner northeast vertical pillar (front-right)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 18, 0, 5, 18],
+      "block": "stonebrick",
+      "comment": "corner southwest vertical pillar (back-left)"
+    },
+    {
+      "op": "fill",
+      "box": [10, 1, 18, 10, 5, 18],
+      "block": "stonebrick",
+      "comment": "corner southeast vertical pillar (back-right)"
+    },
+    {
+      "op": "fill",
+      "box": [5, 1, 0, 5, 2, 0],
+      "block": "air",
+      "comment": "entrance opening on front face centered (1 block wide, 2 blocks high). Removes wall and platform slab above to make opening"
+    },
+    {
+      "op": "set",
+      "pos": [5, 1, 0],
+      "block": "air",
+      "comment": "ensure ground-level opening clear (redundant explicit set)"
+    },
+    {
+      "op": "set",
+      "pos": [5, 2, 0],
+      "block": "air",
+      "comment": "ensure second-block high opening clear"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 9, 1, 17],
+      "block_replace": "planks_oak",
+      "comment": "reassert floor layer material (interior floor at y=1 is oak planks)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 3, 8, 4, 15],
+      "block": "air",
+      "comment": "clear interior open space above floor up to below roof to guarantee open interior"
+    }
+  ],
+  "self_check": {
+    "bbox_integrity": {
+      "valid": true,
+      "notes": "All operation coordinates lie within bbox [0..10] x [0..5] x [0..18]."
+    },
+    "operation_count": {
+      "count": 24,
+      "within_limit": true,
+      "notes": "24 operations <= 260."
+    },
+    "required_elements": {
+      "floor": true,
+      "walls": true,
+      "roof": true,
+      "windows": true,
+      "entrance_opening": true,
+      "notes": "Plan includes a floor (planks), layered walls (planks, sandstone, quartz, brick, slab coping), recessed brick roof, glass windows, and a centered entrance opening."
+    },
+    "material_coherence": {
+      "valid": true,
+      "notes": "Materials separated by role: planks (base/floor), sandstone (middle band), quartz (upper band), brick (roof field and course), slab_stone (coping), stonebrick (corners), glass (windows), slab_quartz (platform). No collapsing of distinct roles."
+    },
+    "structural_faithfulness": {
+      "valid": true,
+      "notes": "Footprint matches 11x19 estimate mapped to bbox (x 0..10 => 11, z 0..18 => 19). Floor is layered, walls have bands and pillars, windows evenly spaced along long faces, roof has coping and recessed brick interior, entrance opening provided centered on front."
+    },
+    "other_checks": {
+      "notes": "Window placement uses 4 per long side at y=2 within sandstone band. Corner pillars extend through bands. Slab platform surrounds building. Interior cleared for open space. Operations avoid writing outside bbox and

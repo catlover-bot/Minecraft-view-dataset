@@ -1,0 +1,72 @@
+{
+  "summary": "A single-story square/rectangular modern box building with a raised stone-slab rim roof, layered horizontal banding on the walls (wood planks, white smooth blocks, stonebrick and wooden trim), a row of regularly spaced glass windows around the midwall, and an outer low white slab border/pedestal. The structure sits recessed into a dirt pit; interior appears to be an open wooden floor. ",
+  "building_type": "small modern commercial/utility box",
+  "shape": {
+    "overall_form": "simple rectangular box with flat roof and a raised stone slab coping around the roof edge",
+    "footprint_hint": "rectangle",
+    "symmetry": "largely symmetrical on all four sides (repeating window rhythm and continuous horizontal bands)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 12,
+    "depth": 12,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "lower wall band / decorative blocks",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood",
+      "role": "horizontal trim bands and interior floor (planks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof coping / rim",
+      "confidence": 0.9
+    },
+    {
+      "name": "quartz",
+      "role": "outer low border / pedestal (white smooth blocks/slabs)",
+      "confidence": 0.6
+    },
+    {
+      "name": "cobblestone",
+      "role": "corner/vertical accent (small column visible)",
+      "confidence": 0.6
+    }
+  ],
+  "elements": [
+    "continuous horizontal banding (bottom wooden trim, stonebrick mid-band, white smooth mid-upper band, upper wooden plank band)",
+    "row of 6 narrow windows on each visible side separated by stonebrick frames",
+    "flat roof with raised stone slab coping and recessed interior (wooden plank roof/floor visible from top)",
+    "outer low white slab border forming a surrounding pedestal",
+    "small protruding entrance/step feature visible at one corner (uncertain side)"
+  ],
+  "rebuild_hints": [
+    "Footprint: roughly square ~12x12 blocks based on aerial view; build a 12x12 exterior wall then inset roof coping one block in.",
+    "Walls: stack layers from bottom: 1 block wooden trim base, 1 block stonebrick band with window cutouts (windows 1x1 with 1-block spacing), 1 block white smooth band, 1 block wooden plank band near top.",
+    "Windows: place a continuous sequence of 1x1 glass panes centered within the stonebrick band with stonebrick vertical separators every 1-2 blocks.",
+    "Roof: create a flat roof recessed 1 block from the coping; place stone slab coping around edge and fill interior with wooden planks.",
+    "Pedestal: surround building with 1-block wide white slab border at ground level, set into a dug dirt pit as shown."
+  ],
+  "uncertainties": [
+    "Exact footprint dimensions - aerial images suggest a square but precise block count uncertain; estimated 12x12 could be ±2 blocks.",
+    "The white smooth material around the mid and pedestal looks like quartz but could be another white block (confidence 0.6).",
+    "Lower corner accent appears cobblestone but might be a different rough stone (confidence moderate).",
+    "Location and design of main entrance is unclear; a small protruding step is visible in one image but full doorway not shown."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_007",
+  "created_at": "2026-02-28T13:58:44.409931+00:00"
+}

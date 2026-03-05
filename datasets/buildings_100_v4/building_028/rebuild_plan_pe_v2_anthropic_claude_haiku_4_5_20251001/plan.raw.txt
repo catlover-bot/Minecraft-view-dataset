@@ -1,0 +1,271 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 25,
+    "ymin": 0,
+    "ymax": 15,
+    "zmin": 0,
+    "zmax": 21
+  },
+  "palette": {
+    "wall": "sandstone",
+    "wall_alt": "sandstone",
+    "parapet": "brick",
+    "coping": "stonebrick",
+    "pilaster": "quartz_block",
+    "border": "quartz_block",
+    "glass": "glass",
+    "floor": "grass_block",
+    "roof": "stonebrick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 25,
+          "z2": 21,
+          "label": "outer_perimeter"
+        }
+      ],
+      "symmetry": "bilateral_x_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 9
+        },
+        "rooms_hint": "enclosed courtyard with interior grass and perimeter walls",
+        "perimeter_profile": "rectangle_with_towers"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "entrance",
+        "face": "north",
+        "x1": 11,
+        "y1": 1,
+        "z1": 0,
+        "x2": 14,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "entrance",
+        "face": "south",
+        "x1": 11,
+        "y1": 1,
+        "z1": 21,
+        "x2": 14,
+        "y2": 4,
+        "z2": 21
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 6,
+        "z1": 0,
+        "x2": 2,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 23,
+        "y1": 6,
+        "z1": 0,
+        "x2": 23,
+        "y2": 7,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 9,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 9,
+          "x1": 0,
+          "z1": 0,
+          "x2": 25,
+          "z2": 21,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 0,
+          "z1": 0,
+          "x2": 25,
+          "z2": 21,
+          "block": "stonebrick"
+        },
+        {
+          "y": 11,
+          "x1": 2,
+          "z1": 2,
+          "x2": 23,
+          "z2": 19,
+          "block": "stonebrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 25,
+      "y2": 0,
+      "z2": 21,
+      "block": "grass_block",
+      "purpose": "ground_level"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 3,
+      "y2": 8,
+      "z2": 21,
+      "block": "sandstone",
+      "purpose": "west_wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 22,
+      "y1": 1,
+      "z1": 0,
+      "x2": 25,
+      "y2": 8,
+      "z2": 21,
+      "block": "sandstone",
+      "purpose": "east_wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 25,
+      "y2": 8,
+      "z2": 3,
+      "block": "sandstone",
+      "purpose": "north_wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 18,
+      "x2": 25,
+      "y2": 8,
+      "z2": 21,
+      "block": "sandstone",
+      "purpose": "south_wall_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 24,
+      "y2": 8,
+      "z2": 20,
+      "purpose": "courtyard_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 24,
+      "y2": 1,
+      "z2": 20,
+      "block": "grass_block",
+      "purpose": "courtyard_grass"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 9,
+      "z1": 0,
+      "x2": 25,
+      "y2": 9,
+      "z2": 21,
+      "block": "brick",
+      "purpose": "parapet_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 10,
+      "z1": 0,
+      "x2": 25,
+      "y2": 10,
+      "z2": 21,
+      "block": "stonebrick",
+      "purpose": "coping_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 4,
+      "x2": 0,
+      "y2": 8,
+      "z2": 4,
+      "block": "quartz_block",
+      "purpose": "pilaster_west_1"
+    },
+    {
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 25,
+  "ymin": 0,
+  "ymax": 15,
+  "zmin": 0,
+  "zmax": 21,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 25, "y2": 15, "z2": 0, "block": "grass_block", "description": "floor"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 24, "y2": 14, "z2": 1, "block": "grass_block", "description": "interior courtyard floor"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 0, "y2": 15, "z2": 8, "block": "sandstone", "description": "west wall lower stripe"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 5, "x2": 0, "y2": 15, "z2": 5, "block": "quartz_block", "description": "west wall pilaster trim"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 6, "x2": 0, "y2": 15, "z2": 8, "block": "sandstone_smooth", "description": "west wall upper stripe"},
+    {"type": "fill", "x1": 25, "y1": 0, "z1": 1, "x2": 25, "y2": 15, "z2": 8, "block": "sandstone", "description": "east wall lower stripe"},
+    {"type": "fill", "x1": 25, "y1": 0, "z1": 5, "x2": 25, "y2": 15, "z2": 5, "block": "quartz_block", "description": "east wall pilaster trim"},
+    {"type": "fill", "x1": 25, "y1": 0, "z1": 6, "x2": 25, "y2": 15, "z2": 8, "block": "sandstone_smooth", "description": "east wall upper stripe"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 25, "y2": 0, "z2": 8, "block": "sandstone", "description": "north wall lower stripe"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 5, "x2": 25, "y2": 0, "z2": 5, "block": "quartz_block", "description": "north wall pilaster trim"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 6, "x2": 25, "y2": 0, "z2": 8, "block": "sandstone_smooth", "description": "north wall upper stripe"},
+    {"type": "fill", "x1": 0, "y1": 15, "z1": 1, "x2": 25, "y2": 15, "z2": 8, "block": "sandstone", "description": "south wall lower stripe"},
+    {"type": "fill", "x1": 0, "y1": 15, "z1": 5, "x2": 25, "y2": 15, "z2": 5, "block": "quartz_block", "description": "south wall pilaster trim"},
+    {"type": "fill", "x1": 0, "y1": 15, "z1": 6, "x2": 25, "y2": 15, "z2": 8, "block": "sandstone_smooth", "description": "south wall upper stripe"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 9, "x2": 0, "y2": 15, "z2": 9, "block": "brick", "description": "west wall parapet"},
+    {"type": "fill", "x1": 25, "y1": 0, "z1": 9, "x2": 25, "y2": 15, "z2": 9, "block": "brick", "description": "east wall parapet"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 9, "x2": 25, "y2": 0, "z2": 9, "block": "brick", "description": "north wall parapet"},
+    {"type": "fill", "x1": 0, "y1": 15, "z1": 9, "x2": 25, "y2": 15, "z2": 9, "block": "brick", "description": "south wall parapet"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 10, "x2": 0, "y2": 15, "z2": 10, "block": "stonebrick", "description": "west wall coping"},
+    {"type": "fill", "x1": 25, "y1": 0, "z1": 10, "x2": 25, "y2": 15, "z2": 10, "block": "stonebrick", "description": "east wall coping"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 10, "x2": 25, "y2": 0, "z2": 10, "block": "stonebrick", "description": "north wall coping"},
+    {"type": "fill", "x1": 0, "y1": 15, "z1": 10, "x2": 25, "y2": 15, "z2": 10, "block": "stonebrick", "description": "south wall coping"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 25, "y2": 15, "z2": 1, "block": "quartz_block", "description": "outer perimeter border base"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 1, "y2": 15, "z2": 1, "block": "air", "description": "clear west interior"},
+    {"type": "fill", "x1": 24, "y1": 0, "z1": 1, "x2": 25, "y2": 15, "z2": 1, "block": "air", "description": "clear east interior"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 25, "y2": 1, "z2": 1, "block": "air", "description": "clear north interior"},
+    {"type

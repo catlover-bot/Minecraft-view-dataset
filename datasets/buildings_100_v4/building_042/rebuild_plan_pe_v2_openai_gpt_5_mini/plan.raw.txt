@@ -1,0 +1,457 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 30,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 24
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "slab_stone",
+    "trim": "quartz",
+    "glass": "glass_pane",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "u_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 30,
+          "z2": 24,
+          "label": "outer_bounds"
+        },
+        {
+          "x1": 4,
+          "z1": 4,
+          "x2": 26,
+          "z2": 20,
+          "label": "courtyard_cutout"
+        }
+      ],
+      "symmetry": "bilateral_x_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground-level circulation, entrance corridor, perimeter rooms",
+        "perimeter_profile": "u_shape_with_inner_courtyard"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 7
+        },
+        "rooms_hint": "upper rooms with continuous window bands",
+        "perimeter_profile": "u_shape_with_banding"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 8,
+          "ymax": 11
+        },
+        "rooms_hint": "top floor and roof cornice",
+        "perimeter_profile": "u_shape_roof_access"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 14,
+        "y1": 1,
+        "z1": 0,
+        "x2": 16,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "courtyard",
+        "x1": 4,
+        "y1": 1,
+        "z1": 12,
+        "x2": 6,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 5,
+        "z1": 24,
+        "x2": 28,
+        "y2": 6,
+        "z2": 24
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 24,
+        "x2": 28,
+        "y2": 3,
+        "z2": 24
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 30,
+        "y1": 2,
+        "z1": 6,
+        "x2": 30,
+        "y2": 6,
+        "z2": 18
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 11,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 11,
+          "x1": 0,
+          "z1": 0,
+          "x2": 30,
+          "z2": 24,
+          "block": "slab_stone"
+        },
+        {
+          "y": 12,
+          "x1": 12,
+          "z1": 9,
+          "x2": 16,
+          "z2": 13,
+          "block": "stonebrick"
+        },
+        {
+          "y": 13,
+          "x1": 12,
+          "z1": 9,
+          "x2": 16,
+          "z2": 13,
+          "block": "slab_stone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 30,
+      "y2": 0,
+      "z2": 24,
+      "block": "dirt",
+      "purpose": "ground_floor_surface"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 30,
+      "y2": 11,
+      "z2": 24,
+      "block": "brick",
+      "purpose": "outer_shell_solid"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 1,
+      "z1": 4,
+      "x2": 26,
+      "y2": 10,
+      "z2": 20,
+      "purpose": "courtyard_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 11,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "west_corner_quartz_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 30,
+      "y1": 1,
+      "z1": 0,
+      "x2": 30,
+      "y2": 11,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "east_corner_quartz_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 30,
+      "y2": 1,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "ground_level_quartz_border"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 30,
+      "y2": 4,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "horizontal_band_between_floor1_2"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 30,
+      "y2": 8,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "horizontal_band_between_floor2_3"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 10,
+      "z1": 0,
+      "x2": 30,
+      "y2": 10,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "roof_cornice_band"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 24,
+      "x2": 29,
+      "y2": 3,
+      "z2": 24,
+      "purpose": "north_floor1_window_row"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 31,
+  "ymin": 0,
+  "ymax": 13,
+  "zmin": 0,
+  "zmax": 25,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill_area",
+      "block": "dirt",
+      "from": [0, 0, 0],
+      "to": [31, 0, 25],
+      "comment": "ground/foundation layer (level 0) across plot"
+    },
+    {
+      "id": 2,
+      "action": "fill_area",
+      "block": "stone",
+      "from": [0, 1, 0],
+      "to": [31, 1, 25],
+      "comment": "ground floor slab (level 1) to separate dirt and building floor"
+    },
+    {
+      "id": 3,
+      "action": "fill_area",
+      "block": "brick",
+      "from": [0, 2, 0],
+      "to": [30, 9, 24],
+      "comment": "main outer shell walls (full three-story height: floors at y=2..9). Using 1-block wall thickness; leave courtyard and openings by subtracting later."
+    },
+    {
+      "id": 4,
+      "action": "carve_area",
+      "block": "air",
+      "from": [6, 2, 6],
+      "to": [24, 9, 24],
+      "comment": "create inner U-shaped courtyard/open space (open to rear along z axis). This produces a courtyard offset toward one side as U-shape when combined with front opening."
+    },
+    {
+      "id": 5,
+      "action": "fill_area",
+      "block": "quartz_block",
+      "from": [0, 2, 0],
+      "to": [0, 9, 24],
+      "comment": "left exterior vertical corner/column accent"
+    },
+    {
+      "id": 6,
+      "action": "fill_area",
+      "block": "quartz_block",
+      "from": [30, 2, 0],
+      "to": [30, 9, 24],
+      "comment": "right exterior vertical corner/column accent"
+    },
+    {
+      "id": 7,
+      "action": "fill_area",
+      "block": "quartz_block",
+      "from": [0, 9, 0],
+      "to": [30, 9, 24],
+      "comment": "horizontal cornice/band at roofline (continuous trim)"
+    },
+    {
+      "id": 8,
+      "action": "fill_area",
+      "block": "quartz_block",
+      "from": [0, 5, 0],
+      "to": [30, 5, 24],
+      "comment": "middle horizontal band between floors (between first and second floor)"
+    },
+    {
+      "id": 9,
+      "action": "fill_area",
+      "block": "quartz_block",
+      "from": [0, 7, 0],
+      "to": [30, 7, 24],
+      "comment": "upper horizontal band between second and third floor"
+    },
+    {
+      "id": 10,
+      "action": "fill_area",
+      "block": "stonebrick",
+      "from": [13, 10, 10],
+      "to": [17, 12, 14],
+      "comment": "central rooftop tower base (5x3 footprint in x and z spanning y=10..12). Slightly raised above roofline"
+    },
+    {
+      "id": 11,
+      "action": "fill_area",
+      "block": "stone_slab",
+      "from": [12, 12, 9],
+      "to": [18, 12, 15],
+      "comment": "tower cap tier (dark slab cap around tower) at topmost level"
+    },
+    {
+      "id": 12,
+      "action": "fill_area",
+      "block": "dark_oak_slab",
+      "from": [1, 9, 1],
+      "to": [29, 9, 23],
+      "comment": "roof walkway/flat roof surface aligned with top of walls; will be trimmed by quartz cornice already placed"
+    },
+    {
+      "id": 13,
+      "action": "carve_area",
+      "block": "air",
+      "from": [13, 9, 10],
+      "to": [17, 9, 14],
+      "comment": "clear area beneath tower on roof walkway for tower footprint; ensures tower sits on roof"
+    },
+    {
+      "id": 14,
+      "action": "fill_area",
+      "block": "brick",
+      "from": [6, 2, 0],
+      "to": [24, 4, 0],
+      "comment": "front wall segment forming bottom of U-shape with an entrance opening carved next"
+    },
+    {
+      "id": 15,
+      "action": "carve_area",
+      "block": "air",
+      "from": [13, 2, 0],
+      "to": [17, 4, 0],
+      "comment": "main entrance opening (3-block wide, 2-block tall) at ground level centered on front"
+    },
+    {
+      "id": 16,
+      "action": "fill_area",
+      "block": "glass_pane",
+      "from": [2, 3, 1],
+      "to": [28, 6, 1],
+      "comment": "row of windows on first floor (y=3..6) front face; spaced as continuous panes for simplicity"
+    },
+    {
+      "id": 17,
+      "action": "fill_area",
+      "block": "glass_pane",
+      "from": [2, 6, 2],
+      "to": [28, 8, 2],
+      "comment": "row of windows on second floor (y=6..8) front face"
+    },
+    {
+      "id": 18,
+      "action": "fill_area",
+      "block": "glass_pane",
+      "from": [2, 8, 3],
+      "to": [28, 9, 3],
+      "comment": "row of windows on third floor (y=8..9) front face; short band to reflect smaller top window row"
+    },
+    {
+      "id": 19,
+      "action": "fill_area",
+      "block": "brick",
+      "from": [6, 2, 24],
+      "to": [24, 9, 24],
+      "comment": "rear wall closing remaining side of U-shape to produce U courtyard; leave openings for courtyard access if desired"
+    },
+    {
+      "id": 20,
+      "action": "carve_area",
+      "block": "air",
+      "from": [10, 2, 24],
+      "to": [12, 4, 24],
+      "comment": "small service opening on rear wall (2x2) at ground level"
+    },
+    {
+      "id": 21,
+      "action": "fill_area",
+      "block": "quartz_slab",
+      "from": [0, 1, 0],
+      "to": [30, 1, 24],
+      "comment": "low perimeter decorative white border at ground level (single height) inside exterior edge"
+    },
+    {
+      "id": 22,
+      "action": "fill_area",
+      "block": "brick_stairs",
+      "from": [13, 1, 0],
+      "to": [17, 2, 0],
+      "comment": "entrance step detail in front of main entrance (one-stair depth). Use stairs as decorative step; overlaps allowed"
+    },
+    {
+      "id": 23,
+      "action": "fill_area",
+      "block": "air",
+      "from": [6, 2, 1],
+      "to": [

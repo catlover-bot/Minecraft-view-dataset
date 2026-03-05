@@ -1,0 +1,169 @@
+{
+  "building": "building_011",
+  "source_plan": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini/plan.json",
+  "description_path": "description_openai_gpt_5_mini/description.json",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 21,
+    "accepted_operations_count": 21,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "floor": {
+        "block": "stonebrick",
+        "score": 0.95,
+        "source_role": "foundation/edge coping"
+      },
+      "roof": {
+        "block": "nether_brick",
+        "score": 0.9,
+        "source_role": "roof (stepped slabs/stairs)"
+      },
+      "wall": {
+        "block": "wood",
+        "score": 0.9,
+        "source_role": "wall infill"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.98,
+        "source_role": "windows"
+      },
+      "trim": {
+        "block": "slab_stone",
+        "score": 0.75,
+        "source_role": "stone slab accents on roof corners and coping"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [],
+      "coherence_repairs": []
+    },
+    "budget_source": "root.material_budget",
+    "budget_present_in_input": true,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 25,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 8,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 1.0,
+    "role_infer_reasons": {
+      "explicit_role": 21
+    },
+    "self_repair_report": {
+      "added_operations": 5,
+      "added_tags": [
+        "entrance",
+        "light",
+        "light",
+        "light",
+        "light"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 4,
+      "entrance_fixes": 1
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [
+      {
+        "role": "glass",
+        "target_blocks": 24,
+        "actual_blocks": 88,
+        "relative_error": 2.666667
+      },
+      {
+        "role": "light",
+        "target_blocks": 0,
+        "actual_blocks": 4,
+        "relative_error": 1.0
+      }
+    ],
+    "schema_violations": [],
+    "strict_blocking_issues": [
+      "material_budget_violation"
+    ],
+    "valid_strict": false
+  },
+  "self_refine_no_gt": {
+    "enabled": true,
+    "accepted_iterations": 0,
+    "total_added_ops": 0,
+    "final_score": 0.6661393114004523,
+    "final_components": {
+      "material": 0.8666991388738271,
+      "dim": 0.563973063973064,
+      "roof": 1.0,
+      "window": 0.0,
+      "entrance": 0.5
+    },
+    "history": [
+      {
+        "iter": 0,
+        "accepted": true,
+        "score": 0.6661393114004523,
+        "components": {
+          "material": 0.8666991388738271,
+          "dim": 0.563973063973064,
+          "roof": 1.0,
+          "window": 0.0,
+          "entrance": 0.5
+        },
+        "added_ops": 0
+      },
+      {
+        "iter": 1,
+        "accepted": false,
+        "gain": -0.0327755423290621,
+        "score": 0.6333637690713902,
+        "components": {
+          "material": 0.7076856539968156,
+          "dim": 0.563973063973064,
+          "roof": 0.6143958868894601,
+          "window": 1.0,
+          "entrance": 0.0
+        },
+        "added_ops": 21,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 4
+        }
+      }
+    ],
+    "profile": {
+      "max_iterations": 2,
+      "min_score_gain": 0.01,
+      "max_added_ops_per_iter": 64,
+      "strict_schema": true,
+      "enforce_role_fixed": true,
+      "require_material_budget": true,
+      "material_budget_tolerance": 0.35,
+      "role_fix_min_confidence": 0.78,
+      "prefer_description_palette": true
+    }
+  },
+  "created_at": "2026-03-01T11:24:48.542036+00:00"
+}

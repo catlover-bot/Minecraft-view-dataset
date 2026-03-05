@@ -1,0 +1,72 @@
+{
+  "summary": "A small single-story rectangular building with a recessed dark roof center, raised stonebrick perimeter platform, oak-plank walls with vertical log corner posts, a continuous band of windows on the visible long sides, and layered trim of stone and dark nether bricks near the roofline.",
+  "building_type": "small_house_or_shed",
+  "shape": {
+    "overall_form": "rectangular box with central recessed roof area (courtyard-like shallow pit)",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along long axis (appears symmetric on both long sides)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 11,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "foundation/edge slab",
+      "confidence": 0.95
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof/upper trim",
+      "confidence": 0.9
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof band / dark trim",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood",
+      "role": "wall (oak planks)",
+      "confidence": 0.9
+    },
+    {
+      "name": "log",
+      "role": "vertical corner posts",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    }
+  ],
+  "elements": [
+    "continuous row of 3-4 glass windows on each long side set in oak plank wall",
+    "stonebrick raised border/platform around the building one block high",
+    "vertical log corner posts (two visible on long side)",
+    "layered trim near roof: stone slab band then dark nether-brick band then stone slab cap",
+    "central recessed roof area filled with dark blocks (nether_brick) below the slab cap"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular oak-plank box ~9x9 interior with vertical log posts at each corner.",
+    "Place a one-block-high stonebrick border platform around the exterior footprint extending one block out.",
+    "Add a horizontal band: stone slab layer directly above windows, then 1 block tall nether brick layer, then stone slab cap around the top edge.",
+    "Inset a recessed central roof area two blocks inside the slab cap and fill it with nether_brick flat surface.",
+    "Windows: place contiguous glass panes/windows (3 or 4) along the long walls between log posts at head-height."
+  ],
+  "uncertainties": [
+    "Exact block types: stone slab vs stone brick slab are inferred from appearance; named as stone_slab and stonebrick with high but not certain confidence.",
+    "Exact internal layout and presence of an entrance door: no clear door visible on shown sides; entrance location uncertain (possibly on short side not shown).",
+    "Precise footprint dimensions: estimated from visible block counts and top-down images; could be off by a couple of blocks.",
+    "Roof depth: recessed center depth and whether central area is open to sky or covered with dark blocks inferred from top views but not fully certain."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_041",
+  "created_at": "2026-02-28T14:07:08.035061+00:00"
+}

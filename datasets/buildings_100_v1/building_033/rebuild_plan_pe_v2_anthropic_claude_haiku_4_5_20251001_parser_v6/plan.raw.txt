@@ -1,0 +1,293 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 16,
+    "ymin": 0,
+    "ymax": 7,
+    "zmin": 0,
+    "zmax": 20
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "stone_slab",
+    "trim": "nether_brick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "nether_brick",
+    "base": "cobblestone",
+    "ground": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 2,
+          "z1": 2,
+          "x2": 14,
+          "z2": 19,
+          "label": "main_building"
+        }
+      ],
+      "symmetry": "x_and_z_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 6
+        },
+        "rooms_hint": "single open industrial space with recessed interior courtyard",
+        "perimeter_profile": "rectangle_with_open_top"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 4,
+        "z1": 2,
+        "x2": 4,
+        "y2": 4,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 4,
+        "z1": 2,
+        "x2": 8,
+        "y2": 4,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 12,
+        "y1": 4,
+        "z1": 2,
+        "x2": 12,
+        "y2": 4,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 4,
+        "y1": 4,
+        "z1": 19,
+        "x2": 4,
+        "y2": 4,
+        "z2": 19
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 8,
+        "y1": 4,
+        "z1": 19,
+        "x2": 8,
+        "y2": 4,
+        "z2": 19
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 12,
+        "y1": 4,
+        "z1": 19,
+        "x2": 12,
+        "y2": 4,
+        "z2": 19
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 14,
+        "y1": 4,
+        "z1": 5,
+        "x2": 14,
+        "y2": 4,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 14,
+        "y1": 4,
+        "z1": 10,
+        "x2": 14,
+        "y2": 4,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 14,
+        "y1": 4,
+        "z1": 15,
+        "x2": 14,
+        "y2": 4,
+        "z2": 15
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 2,
+        "y1": 4,
+        "z1": 5,
+        "x2": 2,
+        "y2": 4,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 2,
+        "y1": 4,
+        "z1": 10,
+        "x2": 2,
+        "y2": 4,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 2,
+        "y1": 4,
+        "z1": 15,
+        "x2": 2,
+        "y2": 4,
+        "z2": 15
+      },
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 8,
+        "y1": 2,
+        "z1": 2,
+        "x2": 8,
+        "y2": 3,
+        "z2": 2
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 6,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 2,
+          "x2": 14,
+          "z2": 19,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 20,
+      "block": "dirt",
+      "purpose": "ground_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 15,
+      "y2": 1,
+      "z2": 19,
+      "block": "cobblestone",
+      "purpose": "platform_ledge"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 14,
+      "y2": 2,
+      "z2": 19,
+      "block": "stonebrick",
+      "purpose": "wall_base_row_1"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 2,
+      "x2": 14,
+      "y2": 3,
+      "z2": 19,
+      "block
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 16,
+  "ymin": 0,
+  "ymax": 7,
+  "zmin": 0,
+  "zmax": 20,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 16, "y2": 7, "z2": 0, "block": "cobblestone", "description": "base platform"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 1, "x2": 14, "y2": 6, "z2": 1, "block": "stonebrick", "description": "floor level 1"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 2, "x2": 14, "y2": 6, "z2": 3, "block": "stonebrick", "description": "lower wall rows 1-2"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 4, "x2": 14, "y2": 6, "z2": 4, "block": "cobblestone", "description": "wall row 3 texture band"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 5, "x2": 14, "y2": 6, "z2": 5, "block": "nether_brick", "description": "dark band below coping"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 6, "x2": 14, "y2": 6, "z2": 6, "block": "stone_slab", "description": "top coping rim"},
+    {"type": "set", "x": 3, "y": 1, "z": 5, "block": "glass", "description": "window 1 south"},
+    {"type": "set", "x": 5, "y": 1, "z": 5, "block": "glass", "description": "window 2 south"},
+    {"type": "set", "x": 7, "y": 1, "z": 5, "block": "glass", "description": "window 3 south"},
+    {"type": "set", "x": 9, "y": 1, "z": 5, "block": "glass", "description": "window 4 south"},
+    {"type": "set", "x": 11, "y": 1, "z": 5, "block": "glass", "description": "window 5 south"},
+    {"type": "set", "x": 3, "y": 6, "z": 5, "block": "glass", "description": "window 1 north"},
+    {"type": "set", "x": 5, "y": 6, "z": 5, "block": "glass", "description": "window 2 north"},
+    {"type": "set", "x": 7, "y": 6, "z": 5, "block": "glass", "description": "window 3 north"},
+    {"type": "set", "x": 9, "y": 6, "z": 5, "block": "glass", "description": "window 4 north"},
+    {"type": "set", "x": 11, "y": 6, "z": 5, "block": "glass", "description": "window 5 north"},
+    {"type": "set", "x": 2, "y": 3, "z": 5, "block": "glass", "description": "window 1 west"},
+    {"type": "set", "x": 2, "y": 4, "z": 5, "block": "glass", "description": "window 2 west"},
+    {"type": "set", "x": 14, "y": 3, "z": 5, "block": "glass", "description": "window 1 east"},
+    {"type": "set", "x": 14, "y": 4, "z": 5, "block": "glass", "description": "window 2 east"},
+    {"type": "set", "x": 7, "y": 1, "z": 2, "block": "air", "description": "entrance opening south"},
+    {"type": "set", "x": 7, "y": 1, "z": 3, "block": "air", "description": "entrance opening south upper"},
+    {"type": "fill", "x1": 3, "y1": 2, "z1": 1, "x2": 13, "y2": 5, "z2": 1, "block": "nether_brick", "description": "interior floor"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 7, "z2": 0, "block": "dirt", "description": "trench west edge"},
+    {"type": "fill", "x1": 16, "y1": 0, "z1": 0, "x2": 16, "y2": 7, "z2": 0, "block": "dirt", "description": "trench east edge"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 16, "y2": 0, "z2": 0, "block": "dirt", "description": "trench south edge"},
+    {"type": "fill", "x1": 0, "y1": 7, "z1": 0, "x2": 16, "y2": 7, "z2": 0, "block": "dirt", "description": "trench north edge"}
+  ],
+  "operation_count": 25,
+  "self_check": {
+    "bbox_valid": true,
+    "all_coords_in_bbox": true,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,
+    "material_coherence": true,
+    "structural_fidelity": true,
+    "notes": "Rectangular 13x6 footprint (interior 11x4) on cobblestone base. 4-block wall height with stonebrick lower rows, cobblestone texture band, glass windows at row 4, nether_brick dark band, stone slab coping. Open-topped interior with nether_brick floor. Entrance opening on south wall. Surrounded by dirt trench. All 25 operations within bbox and operation limit."
+  }
+}
+```

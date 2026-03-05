@@ -1,0 +1,489 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "sea_lantern",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "complex",
+      "segments": [
+        {
+          "x1": 6,
+          "z1": 6,
+          "x2": 18,
+          "z2": 26,
+          "label": "central_core"
+        },
+        {
+          "x1": 0,
+          "z1": 13,
+          "x2": 6,
+          "z2": 19,
+          "label": "west_wing_base"
+        },
+        {
+          "x1": 18,
+          "z1": 13,
+          "x2": 24,
+          "z2": 19,
+          "label": "east_wing_base"
+        },
+        {
+          "x1": 10,
+          "z1": 0,
+          "x2": 14,
+          "z2": 6,
+          "label": "north_wing_base"
+        },
+        {
+          "x1": 10,
+          "z1": 26,
+          "x2": 14,
+          "z2": 32,
+          "label": "south_wing_base"
+        },
+        {
+          "x1": 20,
+          "z1": 22,
+          "x2": 22,
+          "z2": 25,
+          "label": "annex_tower"
+        },
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 23,
+          "z2": 31,
+          "label": "plot_boundary"
+        }
+      ],
+      "symmetry": "rough_fourfold_centered (annex breaks symmetry)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground terraces and circulation",
+        "perimeter_profile": "cruciform with stepped wings"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 3,
+          "ymax": 7
+        },
+        "rooms_hint": "mid tiers, narrower footprint than ground",
+        "perimeter_profile": "stepped reduced cruciform"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 7,
+          "ymax": 10
+        },
+        "rooms_hint": "upper tiers and central pavilion base",
+        "perimeter_profile": "small core"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 10,
+          "ymax": 12
+        },
+        "rooms_hint": "pavilion roof / slab roof and parapet",
+        "perimeter_profile": "pavilion and walkway"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 11,
+        "y1": 1,
+        "z1": 6,
+        "x2": 12,
+        "y2": 3,
+        "z2": 6
+      },
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 11,
+        "y1": 1,
+        "z1": 26,
+        "x2": 12,
+        "y2": 3,
+        "z2": 26
+      },
+      {
+        "kind": "door",
+        "face": "west",
+        "x1": 6,
+        "y1": 1,
+        "z1": 15,
+        "x2": 6,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "door",
+        "face": "east",
+        "x1": 18,
+        "y1": 1,
+        "z1": 15,
+        "x2": 18,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 4,
+        "z1": 6,
+        "x2": 15,
+        "y2": 5,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 9,
+        "y1": 4,
+        "z1": 26,
+        "x2": 15,
+        "y2": 5,
+        "z2": 26
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 6,
+        "y1": 4,
+        "z1": 12,
+        "x2": 6,
+        "y2": 5,
+        "z2": 18
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 18,
+        "y1": 4,
+        "z1": 12,
+        "x2": 18,
+        "y2": 5,
+        "z2": 18
+      },
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 10,
+        "y1": 11,
+        "z1": 14,
+        "x2": 14,
+        "y2": 11,
+        "z2": 18
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 10,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 10,
+          "x1": 8,
+          "z1": 8,
+          "x2": 16,
+          "z2": 24,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 9,
+          "z1": 9,
+          "x2": 15,
+          "z2": 23,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 10,
+          "z1": 11,
+          "x2": 14,
+          "z2": 21,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 23,
+      "y2": 0,
+      "z2": 31,
+      "block": "dirt",
+      "purpose": "plot_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 23,
+      "y2": 1,
+      "z2": 31,
+      "block": "quartz",
+      "purpose": "low_plot_boundary_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 23,
+      "y2": 2,
+      "z2": 31,
+      "block": "quartz",
+      "purpose": "low_plot_boundary_top"
+    },
+    {
+      "op": "fill",
+      "x1
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 32,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "dirt",
+      "from": [0, 0, 0],
+      "to": [24, 0, 32],
+      "desc": "ground/floor base (replace interior ground with dirt)"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [6, 1, 8],
+      "to": [18, 4, 24],
+      "desc": "central core main walls - base tiers (3 high)"
+    },
+    {
+      "op": "hollow",
+      "block": "sandstone",
+      "from": [7, 1, 9],
+      "to": [17, 3, 23],
+      "desc": "hollow central interior (leave one-block wall thickness)"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [6, 1, 8],
+      "to": [6, 4, 24],
+      "desc": "quartz western corner column/trim for central core"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [18, 1, 8],
+      "to": [18, 4, 24],
+      "desc": "quartz eastern corner column/trim for central core"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [7, 4, 9],
+      "to": [17, 4, 23],
+      "desc": "central horizontal quartz trim band at top of core (wrap)"
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [8, 5, 10],
+      "to": [16, 5, 22],
+      "desc": "central pavilion slab roof (raised slab platform)"
+    },
+    {
+      "op": "setblock",
+      "block": "sea_lantern",
+      "pos": [12, 5, 16],
+      "desc": "central pavilion light"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [0, 1, 12],
+      "to": [6, 3, 20],
+      "desc": "west wing base tier walls"
+    },
+    {
+      "op": "hollow",
+      "block": "sandstone",
+      "from": [1, 1, 13],
+      "to": [5, 2, 19],
+      "desc": "west wing interior hollow"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [18, 1, 12],
+      "to": [24, 3, 20],
+      "desc": "east wing base tier walls"
+    },
+    {
+      "op": "hollow",
+      "block": "sandstone",
+      "from": [19, 1, 13],
+      "to": [23, 2, 19],
+      "desc": "east wing interior hollow"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [8, 1, 0],
+      "to": [16, 3, 8],
+      "desc": "north wing base tier walls"
+    },
+    {
+      "op": "hollow",
+      "block": "sandstone",
+      "from": [9, 1, 1],
+      "to": [15, 2, 7],
+      "desc": "north wing interior hollow"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [8, 1, 24],
+      "to": [16, 3, 32],
+      "desc": "south wing base tier walls"
+    },
+    {
+      "op": "hollow",
+      "block": "sandstone",
+      "from": [9, 1, 25],
+      "to": [15, 2, 31],
+      "desc": "south wing interior hollow"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [4, 3, 10],
+      "to": [20, 5, 22],
+      "desc": "middle tier connecting band across wings (stepped up)"
+    },
+    {
+      "op": "hollow",
+      "block": "sandstone",
+      "from": [5, 3, 11],
+      "to": [19, 4, 21],
+      "desc": "hollow middle tier"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [4, 3, 10],
+      "to": [20, 3, 10],
+      "desc": "quartz trim band on north face of middle tier"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [4, 3, 22],
+      "to": [20, 3, 22],
+      "desc": "quartz trim band on south face of middle tier"
+    },
+    {
+      "op": "fill",
+      "block": "brick_block",
+      "from": [10, 5, 12],
+      "to": [14, 5, 20],
+      "desc": "upper walkway cross (brick band) visible from above"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [8, 2, 11],
+      "to": [16, 2, 11],
+      "desc": "north-facing narrow windows on central block (row)"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [8, 2, 21],
+      "to": [16, 2, 21],
+      "desc": "south-facing narrow windows on central block (row)"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [7, 2, 13],
+      "to": [7, 2, 19],
+      "desc": "west-facing narrow windows on central block (column)"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [17, 2, 13],
+      "to": [17, 2, 19],
+      "desc": "east-facing narrow windows on central block (column)"
+    },
+    {
+      "op": "setblock",
+      "block": "air",
+      "pos": [12, 1, 8],
+      "desc": "entrance opening on north face into central core (1 block high)"
+    },
+    {
+      "op": "setblock",
+      "block": "air",
+      "pos": [6, 1, 16],
+      "desc": "entrance opening on west wing (1 block)"
+    },
+    {
+      "op": "setblock",
+      "block": "air",
+      "pos": [18, 1, 16],
+      "desc": "entrance opening on east wing (1 block)"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_stairs",
+      "from": [11, 1, 16],
+      "to": [13, 1, 16],
+      "desc": "simple step/threshold in front of central entrance"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [20, 1, 4],
+      "to": [22, 6, 6],
+      "desc": "detached small tower/ann

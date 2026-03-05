@@ -1,0 +1,72 @@
+{
+  "summary": "A simple two-story rectangular modern/industrial building with thick stone base trim, uniform horizontal window bands on each floor, smooth stone brick walls with a cobblestone trim band between floors, a dark (nether) brick flat top area surrounded by a stone slab coping, and a low surrounding cobblestone perimeter platform.",
+  "building_type": "small commercial/warehouse style",
+  "shape": {
+    "overall_form": "boxy rectangular block, two stacked volumes with a slight setback at top edge",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric on the front elevation (left-right)",
+    "floors_estimate": 2,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 12,
+    "depth": 10,
+    "height": 7
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "primary_wall_blocks (smooth block rows)",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "band_between_floors and perimeter_platform",
+      "confidence": 0.95
+    },
+    {
+      "name": "netherbrick",
+      "role": "upper dark decorative band under roof",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof_coping / top edge trim",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows (panes)",
+      "confidence": 1.0
+    },
+    {
+      "name": "wood",
+      "role": "possible door/frame material (uncertain)",
+      "confidence": 0.2
+    }
+  ],
+  "elements": [
+    "horizontal window bands: two rows of evenly spaced rectangular windows (ground and first floor)",
+    "entrance: small recessed doorway visible on one corner (uncertain detail)",
+    "roof: flat dark netherbrick field with stone slab perimeter coping",
+    "mid-level cobblestone belt separating floors",
+    "perimeter cobblestone platform / low retaining wall"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular footprint with a one-block-high cobblestone perimeter platform offset from the main walls by one block.",
+    "Construct two stacked stories: each story approx 3 blocks tall of stonebrick with a full-length horizontal window band (1x1 windows with glass panes) inset one block from top of each story.",
+    "Place a continuous cobblestone course between the first and second story (rough textured band) and add stonebrick stairs/blocks as a sill/detail beneath the upper windows.",
+    "Top the structure with a one-block-wide dark netherbrick band and cap with stone slabs forming a flat roof coping; roof interior filled with netherbrick blocks.",
+    "Front entrance is small and recessed into a corner wall with glowstone visible in doorway area (lighting) — this is somewhat uncertain."
+  ],
+  "uncertainties": [
+    "Exact internal layout and whether there is an internal floor between stories (floors_estimate based on exterior window rows).",
+    "Precise footprint dimensions (width/depth integers are estimates based on visible window count and rooftop aerial shots).",
+    "Material identification for the dark band is inferred as netherbrick from color; could be another dark brick block.",
+    "Door material and small decorative details at the entrance are partially occluded and uncertain."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_063",
+  "created_at": "2026-02-28T14:13:16.762480+00:00"
+}

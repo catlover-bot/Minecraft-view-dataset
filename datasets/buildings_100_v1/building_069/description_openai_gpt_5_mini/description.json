@@ -1,0 +1,73 @@
+{
+  "summary": "A small two-story rectangular stone building with a raised cobblestone perimeter foundation and a flat dark-roof inset. Both floors have a continuous row of narrow windows on the visible facades; walls are mostly smooth stone bricks with a cobblestone band between floors and a stone brick slab coping at the roof edge. The roof center is filled with dark nether-brick (or similar dark block) and bordered by light stone slabs. Entrance appears centered on one long side with glowstone above the door (uncertain).",
+  "building_type": "small residential or utility building",
+  "shape": {
+    "overall_form": "compact rectangular box with raised perimeter foundation",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along long axis (windows and banding repeat), roof inset centered",
+    "floors_estimate": 2,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 13,
+    "height": 7
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "wall and decorative band (smooth stone bricks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "cobblestone",
+      "role": "foundation/perimeter and horizontal band",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof center (dark block)",
+      "confidence": 0.7
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof border coping (light slabs)",
+      "confidence": 0.9
+    },
+    {
+      "name": "glowstone",
+      "role": "possible entrance light",
+      "confidence": 0.5
+    }
+  ],
+  "elements": [
+    "continuous narrow windows (two rows: ground and first floor)",
+    "single main entrance on one long side with lit block above (uncertain)",
+    "raised cobblestone perimeter foundation / short wall",
+    "flat inset roof: dark center block surrounded by stone slabs",
+    "cobblestone horizontal band between floors"
+  ],
+  "rebuild_hints": [
+    "Use a rectangular footprint approx 9 x 13 blocks; center the building on a raised cobblestone perimeter one block high.",
+    "Walls: build two full storeys of stonebrick with a one-block-high cobblestone band running horizontally between floors and around corners.",
+    "Windows: place narrow 1x2 or 1x1 glass window openings in a continuous row (spacing: roughly windows every 2-3 blocks) on the long facades for both floors.",
+    "Roof: create a recessed roof area filled with dark nether-brick (or dark block) and border it with stone slabs one block wide around the top edge.",
+    "Entrance: center a doorway on one long side with a glowstone (or light block) directly above the door; include a short cobblestone step from the perimeter wall into the doorway."
+  ],
+  "uncertainties": [
+    "Exact footprint dimensions (width/depth) are estimated from perspective; actual block counts may differ by a few blocks.",
+    "Roof center material identified as nether_brick based on color; could be another dark block (concrete, terracotta) instead.",
+    "Entrance details: door type and presence of glowstone above are partially occluded; lamp may be glowstone but could be another light-emitting block.",
+    "Window exact height (1 or 2 blocks) and internal floor heights are not visible; assumed standard single-block windows stacked across two floors.",
+    "Ground trench around site and exact cobblestone perimeter height are visible but exact depth of surrounding dirt area is approximate."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_069",
+  "created_at": "2026-02-28T14:14:50.708751+00:00"
+}

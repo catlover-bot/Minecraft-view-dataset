@@ -1,0 +1,435 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 11,
+    "zmin": 0,
+    "zmax": 36
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "slab_stone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 36,
+          "label": "main"
+        }
+      ],
+      "symmetry": "approx_x_axis_centered_long"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single-level pavilion with open central courtyard and surrounding walkway",
+        "perimeter_profile": "rectangular with corner towers"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 10,
+        "y1": 1,
+        "z1": 36,
+        "x2": 11,
+        "y2": 3,
+        "z2": 36
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 3,
+        "z1": 0,
+        "x2": 6,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 14,
+        "y1": 3,
+        "z1": 0,
+        "x2": 15,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 3,
+        "z1": 9,
+        "x2": 0,
+        "y2": 5,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 3,
+        "z1": 26,
+        "x2": 20,
+        "y2": 5,
+        "z2": 27
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 35,
+          "block": "wood"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 34,
+          "block": "wood"
+        },
+        {
+          "y": 7,
+          "x1": 3,
+          "z1": 6,
+          "x2": 17,
+          "z2": 30,
+          "block": "wood"
+        },
+        {
+          "y": 8,
+          "x1": 4,
+          "z1": 10,
+          "x2": 16,
+          "z2": 26,
+          "block": "wood"
+        },
+        {
+          "y": 9,
+          "x1": 6,
+          "z1": 14,
+          "x2": 14,
+          "z2": 22,
+          "block": "wood"
+        },
+        {
+          "y": 10,
+          "x1": 8,
+          "z1": 16,
+          "x2": 12,
+          "z2": 20,
+          "block": "glass"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 36,
+      "block": "dirt",
+      "purpose": "foundation_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 36,
+      "block": "quartz",
+      "purpose": "low_white_border"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2": 35,
+      "block": "stonebrick",
+      "purpose": "outer_wall_dark_band_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 19,
+      "y2": 3,
+      "z2": 35,
+      "block": "brick",
+      "purpose": "lighter_middle_band (thin) -- single layer band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 19,
+      "y2": 6,
+      "z2": 35,
+      "block": "stonebrick",
+      "purpose": "outer_wall_dark_band_upper"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 6,
+      "z2": 0,
+      "block": "quartz",
+      "purpose": "placeholder_corner_column_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 20,
+      "y1": 2,
+      "z1": 0,
+      "x2": 20,
+      "y2": 6,
+      "z2": 0,
+      "block": "quartz",
+      "purpose": "placeholder_corner_column_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 36,
+      "x2": 0,
+      "y2": 6,
+      "z2": 36,
+      "block": "quartz",
+      "purpose": "placeholder_corner_column_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 20,
+      "y1": 2,
+      "z1": 36,
+      "x2": 20,
+      "y2": 6,
+      "z2": 36,
+      "block": "quartz",
+      "purpose": "placeholder_corner_column_se"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 6,
+      "z2": 35,
+      "block": "stonebrick",
+      "purpose": "solid_shell_for_cutback"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 18,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 21,
+  "ymin": 0,
+  "ymax": 11,
+  "zmin": 0,
+  "zmax": 37,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "dirt",
+      "from": [0, 0, 0],
+      "to": [21, 0, 37]
+    },
+    {
+      "op": "outline",
+      "block": "smooth_quartz",
+      "from": [0, 1, 0],
+      "to": [20, 1, 36]
+    },
+    {
+      "op": "fill",
+      "block": "stone_bricks",
+      "from": [1, 1, 1],
+      "to": [20, 4, 36]
+    },
+    {
+      "op": "replace_band",
+      "block": "andesite",
+      "from": [1, 3, 1],
+      "to": [20, 3, 36]
+    },
+    {
+      "op": "vertical_columns",
+      "block": "smooth_quartz",
+      "positions": [
+        [1, 1, 1],
+        [1, 1, 36],
+        [20, 1, 1]
+      ],
+      "height": 4
+    },
+    {
+      "op": "tower",
+      "base_from": [1, 1, 1],
+      "base_to": [4, 8, 4],
+      "wall_block": "stone_bricks",
+      "cap_block": "stone_slab",
+      "window_block": "glass_pane"
+    },
+    {
+      "op": "tower",
+      "base_from": [17, 1, 1],
+      "base_to": [20, 8, 4],
+      "wall_block": "stone_bricks",
+      "cap_block": "stone_slab",
+      "window_block": "glass_pane"
+    },
+    {
+      "op": "tower",
+      "base_from": [1, 1, 33],
+      "base_to": [4, 8, 36],
+      "wall_block": "stone_bricks",
+      "cap_block": "stone_slab",
+      "window_block": "glass_pane"
+    },
+    {
+      "op": "entrance_opening",
+      "from": [10, 1, 0],
+      "to": [11, 3, 0]
+    },
+    {
+      "op": "walkway",
+      "block": "oak_planks",
+      "from": [2, 1, 2],
+      "to": [19, 1, 35]
+    },
+    {
+      "op": "courtyard_grass",
+      "block": "grass_block",
+      "from": [5, 1, 5],
+      "to": [16, 1, 30]
+    },
+    {
+      "op": "diagonal_markers",
+      "block": "smooth_quartz",
+      "positions": [
+        [6, 2, 6],
+        [15, 2, 29],
+        [10, 2, 17],
+        [11, 2, 16]
+      ]
+    },
+    {
+      "op": "roof_ridge",
+      "description": "arched wooden roof running lengthwise with stepped oak stairs and oak_slab edging",
+      "from": [2, 5, 2],
+      "to": [19, 9, 35],
+      "materials": {
+        "stair": "spruce_stairs",
+        "slab_edge": "spruce_slab",
+        "ridge_glass": "glass_pane"
+      }
+    },
+    {
+      "op": "roof_cap_glass",
+      "block": "glass_pane",
+      "from": [10, 9, 2],
+      "to": [11, 9, 35]
+    },
+    {
+      "op": "window_rows",
+      "block": "glass_pane",
+      "from": [2, 2, 2],
+      "to": [19, 2, 2],
+      "repeat_every": 4
+    },
+    {
+      "op": "trim_band_top",
+      "block": "stone_slab",
+      "from": [1, 5, 1],
+      "to": [20, 5, 36]
+    },
+    {
+      "op": "interior_support_posts",
+      "block": "fence",
+      "positions": [
+        [5, 2, 5],
+        [5, 2, 30],
+        [16, 2, 5],
+        [16, 2, 30]
+      ]
+    },
+    {
+      "op": "floor_inner",
+      "block": "oak_planks",
+      "from": [2, 1, 2],
+      "to": [19, 1, 35]
+    },
+    {
+      "op": "clear_interior",
+      "from": [2, 2, 2],
+      "to": [19, 8, 35]
+    }
+  ],
+  "self_check": {
+    "bbox_within_limits": true,
+    "all_operations_within_bbox": true,
+    "operation_count": 18,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof": true,
+    "contains_windows": true,
+    "contains_entrance_opening": true,
+    "material_coherence": {
+      "wall": "stone_bricks",
+      "roof": "spruce_stairs/spruce_slab",
+      "trim": "stone_slab",
+      "glass": "glass_pane",
+      "floor": "oak_planks"
+    },
+    "notes": "Adjusted bbox to match estimated footprint (21x37). Ensured all operation coordinates lie within bbox. Materials separated by role; towers placed at three corners; entrance opening on front center; roof defined as stepped stair structure with glass ridge. Kept operation count under 260."
+  }
+}

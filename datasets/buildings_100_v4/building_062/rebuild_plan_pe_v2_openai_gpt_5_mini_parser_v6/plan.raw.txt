@@ -1,0 +1,453 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 27,
+    "ymin": 0,
+    "ymax": 13,
+    "zmin": 0,
+    "zmax": 19
+  },
+  "palette": {
+    "wall": "smooth_sandstone",
+    "roof": "brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 19,
+          "label": "main"
+        },
+        {
+          "x1": 10,
+          "z1": 0,
+          "x2": 17,
+          "z2": 3,
+          "label": "projecting_entrance_wing"
+        },
+        {
+          "x1": 6,
+          "z1": 16,
+          "x2": 21,
+          "z2": 19,
+          "label": "recessed_notch"
+        }
+      ],
+      "symmetry": "approx_x_axis_centered_with_offset_entrance"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground-level hall with peripheral rooms",
+        "perimeter_profile": "rectangular with small wing and rear notch"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "upper floor level",
+        "perimeter_profile": "same as ground, reduced interior"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 10,
+          "ymax": 12
+        },
+        "rooms_hint": "attic/roof base and turret",
+        "perimeter_profile": "roof volume"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 12,
+        "y1": 1,
+        "z1": 0,
+        "x2": 14,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 2,
+        "z1": 19,
+        "x2": 6,
+        "y2": 4,
+        "z2": 19
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 21,
+        "y1": 2,
+        "z1": 19,
+        "x2": 23,
+        "y2": 4,
+        "z2": 19
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 27,
+        "y1": 2,
+        "z1": 6,
+        "x2": 27,
+        "y2": 4,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 6,
+        "x2": 0,
+        "y2": 4,
+        "z2": 8
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 10,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 10,
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 19,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 1,
+          "z1": 1,
+          "x2": 26,
+          "z2": 18,
+          "block": "brick"
+        },
+        {
+          "y": 12,
+          "x1": 3,
+          "z1": 3,
+          "x2": 24,
+          "z2": 16,
+          "block": "brick"
+        },
+        {
+          "y": 12,
+          "x1": 12,
+          "z1": 8,
+          "x2": 15,
+          "z2": 11,
+          "block": "quartz_block"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 27,
+      "y2": 0,
+      "z2": 19,
+      "block": "oak_planks",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 27,
+      "y2": 4,
+      "z2": 19,
+      "block": "smooth_sandstone",
+      "purpose": "wall_bands_base_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 27,
+      "y2": 4,
+      "z2": 19,
+      "block": "stonebrick",
+      "purpose": "foundation_cap_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 27,
+      "y2": 9,
+      "z2": 19,
+      "block": "smooth_sandstone",
+      "purpose": "upper_wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 27,
+      "y2": 2,
+      "z2": 19,
+      "block": "oak_planks",
+      "purpose": "thin_horizontal_stripe_1"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 27,
+      "y2": 6,
+      "z2": 19,
+      "block": "oak_planks",
+      "purpose": "thin_horizontal_stripe_2"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 27,
+      "y2": 8,
+      "z2": 19,
+      "block": "oak_planks",
+      "purpose": "thin_horizontal_stripe_3"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 27,
+      "y2": 9,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "south_wall_base_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 19,
+      "x2": 27,
+      "y2": 9,
+      "z2": 19,
+      "block": "stonebrick",
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 27,
+  "ymin": 0,
+  "ymax": 13,
+  "zmin": 0,
+  "zmax": 19,
+  "ops": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 27, 0, 19],
+      "block": "dirt",
+      "comment": "ground/dirt plot base"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 26, 1, 18],
+      "block": "stone_bricks",
+      "comment": "raised foundation first layer (stone/gray base)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 26, 2, 18],
+      "block": "stone_bricks",
+      "comment": "raised foundation second layer for a visible plinth"
+    },
+    {
+      "op": "fill",
+      "box": [1, 3, 1, 26, 9, 18],
+      "block": "smooth_sandstone",
+      "comment": "main wall mass (light band blocks) spanning wall heights; leaves room for horizontal banding via carved stripes"
+    },
+    {
+      "op": "outline",
+      "box": [1, 3, 1, 26, 9, 18],
+      "block": "quartz_block",
+      "comment": "vertical white corner/column accents at building perimeter - outline will place quartz at edges"
+    },
+    {
+      "op": "fill",
+      "box": [3, 4, 1, 24, 4, 18],
+      "block": "oak_planks",
+      "comment": "first thin horizontal stripe (wood) running around at y=4"
+    },
+    {
+      "op": "fill",
+      "box": [3, 6, 1, 24, 6, 18],
+      "block": "oak_planks",
+      "comment": "second thin horizontal stripe (wood) at y=6"
+    },
+    {
+      "op": "fill",
+      "box": [3, 8, 1, 24, 8, 18],
+      "block": "oak_planks",
+      "comment": "third thin horizontal stripe (wood) at y=8"
+    },
+    {
+      "op": "replace",
+      "box": [1, 3, 1, 26, 9, 1],
+      "block": "glass_pane",
+      "filter_block": "smooth_sandstone",
+      "comment": "front wall windows (left-to-right) along front z=1: replace some sandstone with glass panes to create windows - will be refined with openings next"
+    },
+    {
+      "op": "replace",
+      "box": [1, 3, 18, 26, 9, 18],
+      "block": "glass_pane",
+      "filter_block": "smooth_sandstone",
+      "comment": "rear wall windows along z=18"
+    },
+    {
+      "op": "replace",
+      "box": [1, 3, 3, 1, 9, 16],
+      "block": "glass_pane",
+      "filter_block": "smooth_sandstone",
+      "comment": "left side windows along x=1"
+    },
+    {
+      "op": "replace",
+      "box": [26, 3, 3, 26, 9, 16],
+      "block": "glass_pane",
+      "filter_block": "smooth_sandstone",
+      "comment": "right side windows along x=26"
+    },
+    {
+      "op": "cut",
+      "box": [13, 3, 1, 14, 5, 1],
+      "comment": "entrance opening (2 wide x 2 high) at front center; ensures an entrance opening exists"
+    },
+    {
+      "op": "set",
+      "pos": [13, 3, 1],
+      "block": "air",
+      "comment": "ensure clear space for door"
+    },
+    {
+      "op": "set",
+      "pos": [14, 3, 1],
+      "block": "air",
+      "comment": "ensure clear space for door"
+    },
+    {
+      "op": "set",
+      "pos": [13, 4, 1],
+      "block": "air",
+      "comment": "head of entrance opening"
+    },
+    {
+      "op": "set",
+      "pos": [14, 4, 1],
+      "block": "air",
+      "comment": "head of entrance opening"
+    },
+    {
+      "op": "fill",
+      "box": [12, 2, 0, 15, 2, 0],
+      "block": "stone_bricks",
+      "comment": "small front step on dirt outside entrance"
+    },
+    {
+      "op": "fill",
+      "box": [11, 3, 2, 16, 3, 2],
+      "block": "oak_planks",
+      "comment": "interior floor layer just inside entrance (y=3 floor) continuous interior floor"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 25, 2, 17],
+      "block": "oak_planks",
+      "comment": "main raised interior floor (covers most interior area) at y=2 to sit on foundation"
+    },
+    {
+      "op": "fill",
+      "box": [10, 9, 1, 17, 9, 18],
+      "block": "air",
+      "comment": "clear roof space above top of wall for roof construction (ensure no overhang conflicts)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 10, 2, 25, 10, 17],
+      "block": "brick",
+      "comment": "roof base layer on top of walls starting at y=10"
+    },
+    {
+      "op": "fill",
+      "box": [3, 11, 3, 24, 11, 16],
+      "block": "brick",
+      "comment": "second roof layer narrower to create stepped gable profile"
+    },
+    {
+      "op": "fill",
+      "box": [4, 12, 4, 23, 12, 15],
+      "block": "brick",
+      "comment": "third roof layer forming steeper slope"
+    },
+    {
+      "op": "fill",
+      "box": [8, 13, 8, 19, 13, 11],
+      "block": "brick",
+      "comment": "roof ridge/top cap forming small centered ridge area; inside bbox y<=13 so top at y=13"
+    },
+    {
+      "op": "fill",
+      "box": [11, 13, 9, 16, 13, 10],
+      "block": "brick_slab",
+      "comment": "small roof turret cap on ridge (single-block cap using slabs to avoid exceeding bbox height)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 0, 26, 1, 19],
+      "block": "white_concrete",
+      "replace_only": false,
+      "comment": "perimeter low white bollard border along plot edge at y=1 (overlays dirt/ground). Note: overlaps foundation edges intentionally thin"
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 0, 25, 1, 0],
+      "block": "air",
+      "comment": "clear space in front of entrance path if needed"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 1, 25, 3, 18],
+      "block": "air",
+      "comment": "interior room clear space between floor and ceiling; ensures interior

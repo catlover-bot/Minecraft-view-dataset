@@ -1,0 +1,439 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 18,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 18,
+          "z2": 10,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_along_x_center"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single hall / open interior",
+        "perimeter_profile": "rectangle with parapet"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 9,
+        "y1": 1,
+        "z1": 10,
+        "x2": 10,
+        "y2": 3,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 18,
+        "y1": 2,
+        "z1": 2,
+        "x2": 18,
+        "y2": 2,
+        "z2": 3
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 18,
+        "y1": 2,
+        "z1": 5,
+        "x2": 18,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 18,
+        "y1": 2,
+        "z1": 8,
+        "x2": 18,
+        "y2": 2,
+        "z2": 9
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 2,
+        "x2": 0,
+        "y2": 2,
+        "z2": 3
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 5,
+        "x2": 0,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 8,
+        "x2": 0,
+        "y2": 2,
+        "z2": 9
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 4,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 1,
+          "z1": 1,
+          "x2": 17,
+          "z2": 9,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 2,
+          "z1": 2,
+          "x2": 16,
+          "z2": 8,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 4,
+          "z1": 3,
+          "x2": 14,
+          "z2": 7,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 18,
+      "y2": 0,
+      "z2": 10,
+      "block": "oak_planks",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 18,
+      "y2": 3,
+      "z2": 10,
+      "block": "brick",
+      "purpose": "wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 18,
+      "y2": 1,
+      "z2": 10,
+      "block": "oak_planks",
+      "purpose": "lower_wood_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 18,
+      "y2": 3,
+      "z2": 10,
+      "block": "quartz_block",
+      "purpose": "parapet_trim_top"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 3,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "west_corner_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 18,
+      "y1": 1,
+      "z1": 0,
+      "x2": 18,
+      "y2": 3,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "east_corner_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 18,
+      "y2": 1,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "ground_border_front"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 10,
+      "x2": 18,
+      "y2": 1,
+      "z2": 10,
+      "block": "quartz_block",
+      "purpose": "ground_border_back"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 1,
+      "x2": 0,
+      "y2": 1,
+      "z2": 9,
+      "block": "quartz_block",
+      "purpose": "ground_border_west"
+    },
+    {
+      "op": "fill",
+      "x1": 18,
+      "y1": 1,
+      "z1": 1,
+      "x2": 18,
+      "y2": 1,
+      "z2": 9,
+      "block": "quartz_block",
+      "purpose": "ground_border_east"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 17,
+      "y2": 2,
+      "z2": 9,
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 18,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "box": [0, 0, 0, 10, 0, 18],
+      "block": "grass",
+      "comment": "ground base under building and surrounding shallow border area"
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "box": [0, 0, 0, 10, 0, 18],
+      "block": "quartz_slab",
+      "comment": "shallow white border at ground level (one-block thick appearance). Placed on same Y=0 layer as visible low border; overlaps replaced by grass where intended by client — kept as visible shallow border across footprint."
+    },
+    {
+      "id": 3,
+      "action": "fill",
+      "box": [1, 1, 1, 9, 1, 17],
+      "block": "oak_planks",
+      "comment": "interior floor layer (one block thick) inset by 1 from outer parapet/border"
+    },
+    {
+      "id": 4,
+      "action": "fill",
+      "box": [1, 2, 1, 9, 4, 17],
+      "block": "brick_block",
+      "comment": "main brick wall body (3 blocks high from Y=2 to Y=4 inclusive). Footprint interior walls inset by 1 to allow parapet/border thickness"
+    },
+    {
+      "id": 5,
+      "action": "fill",
+      "box": [0, 2, 0, 10, 4, 18],
+      "block": "stone_bricks",
+      "comment": "stonebrick corner and vertical accents: full-height pillars and corner thickness. Using stone_bricks around perimeter corners to create visible vertical accents; will be overwriting some brick body where overlapping to preserve accents"
+    },
+    {
+      "id": 6,
+      "action": "replace",
+      "box": [1, 2, 1, 9, 4, 17],
+      "filter": "brick_block",
+      "block": "brick_block",
+      "comment": "ensure brick body remains where stone pillars don't override (no-op to respect order)"
+    },
+    {
+      "id": 7,
+      "action": "fill",
+      "box": [0, 5, 0, 10, 5, 18],
+      "block": "quartz_block",
+      "comment": "top white trim/parapet one block high around entire outer wall at Y=5"
+    },
+    {
+      "id": 8,
+      "action": "fill",
+      "box": [1, 2, 2, 2, 2, 16],
+      "block": "glass_pane",
+      "comment": "row of narrow horizontal windows (left long wall) spaced along wall. Windows are 1 high at Y=2 between wood band and parapet; created as continuous strips separated by 1-block vertical brick columns (handled by not filling columns)."
+    },
+    {
+      "id": 9,
+      "action": "fill",
+      "box": [8, 2, 2, 9, 2, 16],
+      "block": "glass_pane",
+      "comment": "row of narrow horizontal windows (right long wall)"
+    },
+    {
+      "id": 10,
+      "action": "fill",
+      "box": [2, 1, 1, 8, 1, 1],
+      "block": "oak_planks",
+      "comment": "front interior floor continuation; ensures continuity at entrance area"
+    },
+    {
+      "id": 11,
+      "action": "fill",
+      "box": [4, 2, 0, 6, 4, 0],
+      "block": "air",
+      "comment": "entrance opening centered on short side (Z=0 face). Opening 2 wide (X=4-5) and 3 high (Y=2-4)."
+    },
+    {
+      "id": 12,
+      "action": "fill",
+      "box": [4, 1, 0, 6, 1, 0],
+      "block": "oak_planks",
+      "comment": "threshold at entrance on ground level"
+    },
+    {
+      "id": 13,
+      "action": "fill",
+      "box": [1, 1, 1, 9, 1, 17],
+      "block": "oak_planks",
+      "comment": "wood lower band: single-block-high oak strip around interior perimeter at Y=1 (visible as lower wood band from exterior because walls are inset)"
+    },
+    {
+      "id": 14,
+      "action": "replace",
+      "box": [0, 2, 0, 0, 4, 0],
+      "filter": "stone_bricks",
+      "block": "stone_bricks",
+      "comment": "ensure corner pillar blocks remain stone (no-op placeholder for pillar integrity)"
+    },
+    {
+      "id": 15,
+      "action": "fill",
+      "box": [1, 4, 1, 9, 4, 17],
+      "block": "brick_block",
+      "comment": "upper course of brick just below parapet to give 3-block wall thickness visually (Y=4)."
+    },
+    {
+      "id": 16,
+      "action": "fill",
+      "box": [3, 5, 6, 7, 5, 12],
+      "block": "nether_brick",
+      "comment": "roof central flat top platform one block thick at Y=5 inset by 3 from outer walls"
+    },
+    {
+      "id": 17,
+      "action": "fill",
+      "box": [2, 5, 5, 8, 5, 13],
+      "block": "nether_brick_slab",
+      "comment": "first descending roof step around central platform (netherbrick slab), creating stepped profile"
+    },
+    {
+      "id": 18,
+      "action": "fill",
+      "box": [1, 5, 4, 9, 5, 14],
+      "block": "nether_brick_slab",
+      "comment": "second roof step (slab) producing broader overhang toward outer parapet"
+    },
+    {
+      "id": 19,
+      "action": "fill",
+      "box": [3, 6, 6, 7, 6, 12],
+      "block": "nether_brick_stairs",
+      "comment": "small vertical stair caps at center top to provide a stepped hip appearance (Y=6). Roof peak detail"
+    },
+    {
+      "id": 20,
+      "action": "fill",
+      "box": [2, 6, 5, 8, 6, 13],
+      "block": "smooth_stone_slab",
+      "comment": "light-colored caps on roof step edges (slab caps). These are decorative and kept minimal."
+    },
+    {
+      "id": 21,
+      "action": "fill",
+      "box": [0, 1, 0, 10, 1, 18],
+      "block": "quartz_block",
+      "comment": "outer visible low surrounding border at ground level (reinforce border over grass). Overwrites earlier grass/quartz where intended."
+    }
+  ],
+  "metadata": {
+    "operation_count": 21,
+    "bbox_valid": true,
+    "all_ops_within_bbox": true,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof": true,
+    "contains_windows": true,
+    "contains_entrance": true,
+    "material_coherence": true,
+    "notes": "Revised bbox to match footprint width=11 (X

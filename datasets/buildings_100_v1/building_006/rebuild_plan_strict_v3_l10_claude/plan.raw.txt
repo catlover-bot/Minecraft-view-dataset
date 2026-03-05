@@ -1,0 +1,388 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v3_strict",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 11,
+    "ymin": -3,
+    "ymax": 5,
+    "zmin": 0,
+    "zmax": 7
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "wood",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "concrete"
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "brick",
+      "target_blocks": 280
+    },
+    "roof": {
+      "role": "roof",
+      "block": "wood",
+      "target_blocks": 96
+    },
+    "trim": {
+      "role": "trim",
+      "block": "stonebrick",
+      "target_blocks": 80
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 0
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 0
+    },
+    "floor": {
+      "role": "floor",
+      "block": "concrete",
+      "target_blocks": 120
+    }
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "corner": "northwest",
+          "x": 0,
+          "z": 0
+        },
+        {
+          "corner": "northeast",
+          "x": 11,
+          "z": 0
+        },
+        {
+          "corner": "southeast",
+          "x": 11,
+          "z": 7
+        },
+        {
+          "corner": "southwest",
+          "x": 0,
+          "z": 7
+        }
+      ]
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": -3,
+          "ymax": -3
+        },
+        "perimeter_profile": "sunken_foundation"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 0
+        },
+        "perimeter_profile": "ground_level_platform"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 4,
+        "y1": 0,
+        "z1": 7,
+        "x2": 7,
+        "y2": 3,
+        "z2": 7
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "material": "wood",
+          "coverage": "full"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": -3,
+      "z1": 0,
+      "x2": 11,
+      "y2": -3,
+      "z2": 7,
+      "block": "concrete",
+      "purpose": "foundation_base"
+    },
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 11,
+      "y2": 0,
+      "z2": 7,
+      "block": "concrete",
+      "purpose": "ground_platform"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 1,
+      "z2": 7,
+      "block": "stonebrick",
+      "purpose": "lower_trim_band"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 11,
+      "y2": 4,
+      "z2": 7,
+      "block": "brick",
+      "purpose": "main_walls"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 11,
+      "y2": 4,
+      "z2": 7,
+      "block": "stonebrick",
+      "purpose": "upper_trim_band"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 11,
+      "y2": 5,
+      "z2": 7,
+      "block": "wood",
+      "purpose": "flat_roof"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 10,
+      "y2": 3,
+      "z2": 6,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 0,
+      "z1": 7,
+      "x2": 7,
+      "y2": 3,
+      "z2": 7,
+      "purpose": "door_opening"
+    }
+  ],
+  "self_check": {
+    "bbox_consistency": "ok",
+    "operation_count": 8,
+    "operation_count_ok": true,
+    "material_budget_consistency": "ok",
+    "role_fixed_consistency": "ok",
+    "openings_present": true,
+    "entrance_present": true,
+    "issues": []
+  },
+  "notes": [
+    "Rectangular bunker structure with 8×12 footprint (12×8 in blocks)",
+    "Partially sunken design: foundation at y=-3, ground platform at y=0, walls rise to y=4, roof at y=5",
+    "Brick primary walls with stonebrick trim bands at y=1 and y=4",
+    "Concrete foundation and platform represent white concrete elements",
+    "Single centered door opening on south face (z=7) from y=0 to y=3",
+    "Flat wood roof with full coverage",
+    "Interior hollowed out for storage functionality",
+    "Symmetrical bilateral design along length axis (x-axis)"
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 11,
+  "ymin": -3,
+  "ymax": 5,
+  "zmin": 0,
+  "zmax": 7,
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": -3,
+      "z1": 0,
+      "x2": 11,
+      "y2": -3,
+      "z2": 7,
+      "block": "concrete",
+      "purpose": "foundation_base"
+    },
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 11,
+      "y2": 0,
+      "z2": 7,
+      "block": "concrete",
+      "purpose": "ground_platform"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 1,
+      "z2": 7,
+      "block": "stonebrick",
+      "purpose": "lower_trim_band"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 11,
+      "y2": 3,
+      "z2": 7,
+      "block": "brick",
+      "purpose": "main_walls"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 11,
+      "y2": 4,
+      "z2": 7,
+      "block": "stonebrick",
+      "purpose": "upper_trim_band"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 11,
+      "y2": 5,
+      "z2": 7,
+      "block": "dark_oak_wood",
+      "purpose": "flat_roof"
+    },
+    {
+      "op": "fill",
+      "role": "window",
+      "x1": 4,
+      "y1": 2,
+      "z1": 7,
+      "x2": 7,
+      "y2": 2,
+      "z2": 7,
+      "block": "glass",
+      "purpose": "ventilation_window"
+    },
+    {
+      "op": "fill",
+      "role": "entrance",
+      "x1": 5,
+      "y1": 0,
+      "z1": 7,
+      "x2": 6,
+      "y2": 3,
+      "z2": 7,
+      "block": "dark_oak_door",
+      "purpose": "main_entrance_door"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 10,
+      "y2": 4,
+      "z2": 6,
+      "purpose": "interior_hollow"
+    }
+  ],
+  "material_budget": {
+    "concrete": {
+      "target_blocks": 32,
+      "role": "floor"
+    },
+    "stonebrick": {
+      "target_blocks": 48,
+      "role": "wall"
+    },
+    "brick": {
+      "target_blocks": 48,
+      "role": "wall"
+    },
+    "dark_oak_wood": {
+      "target_blocks": 24,
+      "role": "roof"
+    },
+    "glass": {
+      "target_blocks": 4,
+      "role": "window"
+    },
+    "dark_oak_door": {
+      "target_blocks": 4,
+      "role": "entrance"
+    }
+  }
+}
+```
+
+**Corrections made:**
+1. ✅ **bbox check**: All operations now strictly within [0,11]×[-3,5]×[0,7]
+2. ✅ **operation_count**: 9 operations ≤ 260
+3. ✅ **role validity**: All non-carve ops use valid roles (floor, wall, roof, window, entrance)
+4. ✅ **block-role mapping**: Each block matches its role (concrete→floor, stonebrick/brick→wall, dark_oak_wood→roof, glass→window, dark_oak_door→entrance)
+5. ✅ **material_budget**: All required roles present with non-negative targets
+6. ✅ **required elements**: floor (y=-3,0), wall (y=1-4), roof (y=5), window (glass), entrance (dark_oak_door) all present

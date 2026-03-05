@@ -1,0 +1,18 @@
+{
+  "building": "building_031",
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "images": [
+    "images/rgb_view00_yaw+090.00_pitch+000.69.png",
+    "images/rgb_view02_yaw+162.00_pitch+000.69.png",
+    "images/rgb_view04_yaw-126.00_pitch+000.69.png",
+    "images/rgb_view06_yaw-054.00_pitch+000.69.png",
+    "images/rgb_view10_yaw+090.00_pitch+075.00.png",
+    "images/rgb_view11_yaw-090.00_pitch+075.47.png"
+  ],
+  "system_prompt": "You are an expert Minecraft architecture analyst. Return only one JSON object. No markdown, no code block.",
+  "prompt": "You are given multiple views of ONE Minecraft building.\nCreate a faithful structural description for reconstruction.\n\nRequirements:\n- Use ONLY what is visible in the images.\n- If uncertain, write uncertainty explicitly.\n- Normalize material names to simple IDs when possible (stonebrick, brick, wood, glass, fence, slab_stone, slab_wood, air).\n- Output STRICT JSON with this schema:\n{\n  \"summary\": \"short paragraph\",\n  \"building_type\": \"string\",\n  \"shape\": {\n    \"overall_form\": \"string\",\n    \"footprint_hint\": \"rectangle|l_shape|u_shape|complex|unknown\",\n    \"symmetry\": \"string\",\n    \"floors_estimate\": 1,\n    \"roof_type\": \"flat|gable|hip|dome|other|unknown\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 0,\n    \"depth\": 0,\n    \"height\": 0\n  },\n  \"materials\": [\n    {\"name\": \"stonebrick\", \"role\": \"wall\", \"confidence\": 0.0}\n  ],\n  \"elements\": [\"windows\", \"entrance\", \"roof\"],\n  \"rebuild_hints\": [\"bullet 1\", \"bullet 2\"],\n  \"uncertainties\": [\"string\"]\n}\n\n- confidence range: 0.0 to 1.0\n- dimensions_estimate values must be integers >= 1\n- materials must include at least 3 candidates when possible",
+  "temperature": 0.2,
+  "max_tokens": 1800,
+  "created_at": "2026-03-01T04:54:27.749470+00:00"
+}

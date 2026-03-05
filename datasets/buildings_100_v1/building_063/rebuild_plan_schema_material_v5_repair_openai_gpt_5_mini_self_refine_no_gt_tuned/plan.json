@@ -1,0 +1,1569 @@
+{
+  "op": "fill",
+  "block": "cobblestone",
+  "from": [
+    -1,
+    0,
+    -1
+  ],
+  "to": [
+    12,
+    0,
+    10
+  ],
+  "note": "perimeter cobblestone platform one block thick extending one block beyond walls on all sides",
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 11,
+      "y2": 4,
+      "z2": 9,
+      "block": "cobblestone",
+      "purpose": "cobblestone belt between floors at y=4 (1 block high)",
+      "role": "floor",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 12,
+      "y2": 0,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "perimeter cobblestone platform one block thick extending one block beyond walls on all sides",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 7,
+      "z2": 9,
+      "block": "stonebrick",
+      "purpose": "clear interior/building volume before construction",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "block": "stonebrick",
+      "purpose": "ensure corner where entrance will recess is clear",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "block": "stonebrick",
+      "purpose": "clear block in front of recessed entrance",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 1,
+      "z": 1,
+      "block": "stonebrick",
+      "purpose": "place door at recessed corner entrance (door occupies y=1..2). Using oak_door as justified door material rather than uncertain 'wood'",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 11,
+      "y2": 4,
+      "z2": 9,
+      "block": "stonebrick",
+      "purpose": "confirm belt continuity (idempotent)",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": -1,
+      "x2": 12,
+      "y2": 6,
+      "z2": 10,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "self_refine_wall_balance"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": -1,
+      "x2": 12,
+      "y2": 6,
+      "z2": -1,
+      "block": "stonebrick",
+      "purpose": "budget_reproject_wall_north",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": 10,
+      "x2": 12,
+      "y2": 6,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "budget_reproject_wall_south",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": -1,
+      "x2": -1,
+      "y2": 6,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "budget_reproject_wall_west",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 1,
+      "z1": -1,
+      "x2": 12,
+      "y2": 6,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "budget_reproject_wall_east",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 2,
+      "y": 1,
+      "z": 3,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 4,
+      "y": 1,
+      "z": 6,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 1,
+      "z": 9,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 9,
+      "y": 1,
+      "z": 2,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 11,
+      "y": 1,
+      "z": 5,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 2,
+      "z": 7,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 4,
+      "y": 2,
+      "z": -1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 2,
+      "z": 2,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 2,
+      "z": 4,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 10,
+      "y": 2,
+      "z": 7,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 3,
+      "z": 9,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 3,
+      "y": 3,
+      "z": 2,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 3,
+      "z": 4,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 7,
+      "y": 3,
+      "z": 7,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 9,
+      "y": 3,
+      "z": 9,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 4,
+      "z": 2,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 4,
+      "z": 9,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 5,
+      "z": 8,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 11,
+      "y": 5,
+      "z": 1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 6,
+      "z": 4,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 3,
+      "y": 6,
+      "z": 7,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 6,
+      "z": 0,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 6,
+      "z": 3,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 0,
+      "z": -1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_trim"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": -1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_trim"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 0,
+      "z": -1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_trim"
+    },
+    {
+      "op": "set",
+      "x": 2,
+      "y": 0,
+      "z": -1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_trim"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": -1,
+      "x2": 12,
+      "y2": 6,
+      "z2": 10,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "self_refine_wall_balance"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": -1,
+      "x2": 12,
+      "y2": 6,
+      "z2": -1,
+      "block": "stonebrick",
+      "purpose": "budget_reproject_wall_north",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": 10,
+      "x2": 12,
+      "y2": 6,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "budget_reproject_wall_south",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": -1,
+      "x2": -1,
+      "y2": 6,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "budget_reproject_wall_west",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 1,
+      "z1": -1,
+      "x2": 12,
+      "y2": 6,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "budget_reproject_wall_east",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 2,
+      "y": 1,
+      "z": 3,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 4,
+      "y": 1,
+      "z": 6,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 1,
+      "z": 9,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 9,
+      "y": 1,
+      "z": 2,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 11,
+      "y": 1,
+      "z": 5,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 2,
+      "z": 7,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 4,
+      "y": 2,
+      "z": -1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 2,
+      "z": 2,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 2,
+      "z": 4,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 10,
+      "y": 2,
+      "z": 7,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 3,
+      "z": 9,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 3,
+      "y": 3,
+      "z": 2,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 3,
+      "z": 4,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 7,
+      "y": 3,
+      "z": 7,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 9,
+      "y": 3,
+      "z": 9,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 4,
+      "z": 2,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 4,
+      "z": 9,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 5,
+      "z": 8,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 11,
+      "y": 5,
+      "z": 1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 6,
+      "z": 4,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 3,
+      "y": 6,
+      "z": 7,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 6,
+      "z": 0,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 6,
+      "z": 3,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_glass"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 0,
+      "z": -1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_trim"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": -1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_trim"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 0,
+      "z": -1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_trim"
+    },
+    {
+      "op": "set",
+      "x": 2,
+      "y": 0,
+      "z": -1,
+      "block": "stonebrick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "budget_reproject_reduce_trim"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 10,
+      "y2": 3,
+      "z2": 8,
+      "block": "air",
+      "purpose": "ground-floor continuous horizontal window band: y=3 (one block high) inset one block from each outer wall, full-length on front and back"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 10,
+      "y2": 6,
+      "z2": 8,
+      "block": "air",
+      "purpose": "second-floor horizontal window band: y=6 (one block high) inset one block from outer walls"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 11,
+      "y2": 6,
+      "z2": 9,
+      "block": "netherbrick",
+      "purpose": "second floor walls (1 block high here to match estimated total height and allow roof band at y=7)",
+      "role": "roof",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 11,
+      "y2": 7,
+      "z2": 9,
+      "block": "netherbrick",
+      "purpose": "upper dark band under roof at y=7 (1 block high)",
+      "role": "roof",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 11,
+      "y2": 8,
+      "z2": 9,
+      "block": "netherbrick",
+      "purpose": "stone slab coping (roof perimeter) at y=8 (slabs placed as top layer); slabs defined inside bbox top+1 are allowed as slabs occupy same y but represent coping",
+      "role": "roof",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 7,
+      "z1": 1,
+      "x2": 10,
+      "y2": 7,
+      "z2": 8,
+      "block": "netherbrick",
+      "purpose": "roof interior fill of netherbrick one-block inset to create coping appearance; kept at same y as band for flat roof profile",
+      "role": "roof",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 6,
+      "z1": -1,
+      "x2": 12,
+      "y2": 6,
+      "z2": 10,
+      "block": "netherbrick",
+      "role": "roof",
+      "purpose": "self_refine_roof_v1",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": -1,
+      "x2": 5,
+      "y2": 3,
+      "z2": -1,
+      "block": "air",
+      "purpose": "self_repair_entrance"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": -1,
+      "x2": 5,
+      "y2": 3,
+      "z2": -1,
+      "block": "air",
+      "purpose": "self_refine_entrance"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 3,
+      "z2": 9,
+      "block": "glass",
+      "purpose": "ground floor wall solid base (2 blocks tall: y=1..3 exclusive of window openings)",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 1,
+      "z": 2,
+      "block": "cobblestone",
+      "purpose": "small step/sill inside recessed entrance for detail",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 1,
+      "block": "glowstone",
+      "purpose": "lighting inside recessed entrance",
+      "role": "light",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 1,
+      "z2": 9,
+      "block": "glass",
+      "purpose": "reaffirm outer wall edges to ensure continuous stonebrick except where windows/entrance/cobblestone belt occur_outline_face_0",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 11,
+      "y2": 6,
+      "z2": 9,
+      "block": "glass",
+      "purpose": "reaffirm outer wall edges to ensure continuous stonebrick except where windows/entrance/cobblestone belt occur_outline_face_1",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 6,
+      "z2": 9,
+      "block": "glass",
+      "purpose": "reaffirm outer wall edges to ensure continuous stonebrick except where windows/entrance/cobblestone belt occur_outline_face_2",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 6,
+      "z2": 9,
+      "block": "glass",
+      "purpose": "reaffirm outer wall edges to ensure continuous stonebrick except where windows/entrance/cobblestone belt occur_outline_face_3",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 6,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "reaffirm outer wall edges to ensure continuous stonebrick except where windows/entrance/cobblestone belt occur_outline_face_4",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 9,
+      "x2": 11,
+      "y2": 6,
+      "z2": 9,
+      "block": "glass",
+      "purpose": "reaffirm outer wall edges to ensure continuous stonebrick except where windows/entrance/cobblestone belt occur_outline_face_5",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 12,
+      "y2": 0,
+      "z2": 10,
+      "block": "cobblestone",
+      "purpose": "outline platform edge_outline_face_0",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": -1,
+      "y2": 0,
+      "z2": 10,
+      "block": "cobblestone",
+      "purpose": "outline platform edge_outline_face_1",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 0,
+      "z1": -1,
+      "x2": 12,
+      "y2": 0,
+      "z2": 10,
+      "block": "cobblestone",
+      "purpose": "outline platform edge_outline_face_2",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 12,
+      "y2": 0,
+      "z2": -1,
+      "block": "cobblestone",
+      "purpose": "outline platform edge_outline_face_3",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": 10,
+      "x2": 12,
+      "y2": 0,
+      "z2": 10,
+      "block": "cobblestone",
+      "purpose": "outline platform edge_outline_face_4",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": -1,
+      "x2": 0,
+      "y2": 3,
+      "z2": -1,
+      "block": "glass",
+      "role": "glass",
+      "purpose": "self_refine_window_v1",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 2,
+      "z1": -1,
+      "x2": 4,
+      "y2": 3,
+      "z2": -1,
+      "block": "glass",
+      "role": "glass",
+      "purpose": "self_refine_window_v1",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 2,
+      "z1": -1,
+      "x2": 8,
+      "y2": 3,
+      "z2": -1,
+      "block": "glass",
+      "role": "glass",
+      "purpose": "self_refine_window_v1",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    }
+  ],
+  "bbox": {
+    "xmin": -1,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": -1,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "netherbrick",
+    "trim": "cobblestone",
+    "glass": "glass",
+    "floor": "cobblestone",
+    "light": "glowstone"
+  },
+  "notes": [
+    "schema_repair_from_raw_response"
+  ],
+  "plan_version": "v1",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 27,
+    "accepted_operations_count": 27,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "building": "building_063",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "created_at": "2026-03-01T12:16:51.730920+00:00",
+  "schema_repair_at": "2026-03-01T05:14:38.468693+00:00",
+  "parse_report": {
+    "method": "ops_array:operations",
+    "candidate_count": 19,
+    "selected_candidate_score": 20,
+    "used_ops_array_repair": true,
+    "used_op_objects_repair": false
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "stonebrick",
+      "target_blocks": 1995,
+      "actual_blocks": 3827,
+      "within_tolerance": false
+    },
+    "roof": {
+      "role": "roof",
+      "block": "netherbrick",
+      "target_blocks": 560,
+      "actual_blocks": 728,
+      "within_tolerance": true
+    },
+    "trim": {
+      "role": "trim",
+      "block": "cobblestone",
+      "target_blocks": 221,
+      "actual_blocks": 221,
+      "within_tolerance": true
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 0,
+      "actual_blocks": 870,
+      "within_tolerance": false
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 1,
+      "actual_blocks": 1,
+      "within_tolerance": true
+    },
+    "floor": {
+      "role": "floor",
+      "block": "cobblestone",
+      "target_blocks": 120,
+      "actual_blocks": 120,
+      "within_tolerance": true
+    }
+  },
+  "self_check": {
+    "operation_count": 99,
+    "operation_count_ok": true,
+    "bbox_consistency": "ok",
+    "role_fixed_consistency": "ok",
+    "material_budget_consistency": "warning",
+    "required_roles_present": true,
+    "issues": [
+      "material_budget_violations=2",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=1",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2",
+      "material_budget_violations=2"
+    ]
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "primary_wall_blocks (smooth block rows)"
+      },
+      "trim": {
+        "block": "cobblestone",
+        "score": 0.95,
+        "source_role": "band_between_floors and perimeter_platform"
+      },
+      "floor": {
+        "block": "cobblestone",
+        "score": 0.95,
+        "source_role": "band_between_floors and perimeter_platform"
+      },
+      "roof": {
+        "block": "netherbrick",
+        "score": 0.9,
+        "source_role": "upper dark decorative band under roof"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 1.0,
+        "source_role": "windows (panes)"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [],
+      "coherence_repairs": [
+        {
+          "role": "trim",
+          "from": "cobblestone",
+          "to": "cobblestone"
+        }
+      ]
+    },
+    "budget_source": "root.material_budget",
+    "budget_present_in_input": true,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 95,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 0,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 0.9919191919191921,
+    "role_infer_reasons": {
+      "explicit_role": 95,
+      "purpose_hint": 2,
+      "carve_entrance": 2
+    },
+    "self_repair_report": {
+      "added_operations": 0,
+      "added_tags": [],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [
+      {
+        "role": "wall",
+        "target_blocks": 1995,
+        "actual_blocks": 3827,
+        "relative_error": 0.918296
+      },
+      {
+        "role": "glass",
+        "target_blocks": 0,
+        "actual_blocks": 870,
+        "relative_error": 1.0
+      }
+    ],
+    "schema_violations": [],
+    "strict_blocking_issues": [
+      "material_budget_violation"
+    ],
+    "valid_strict": false
+  },
+  "repair_source_plan_subdir": "rebuild_plan_pe_v2_openai_gpt_5_mini",
+  "repair_profile": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "prefer_description_palette": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "self_refine_no_gt": {
+    "enabled": true,
+    "accepted_iterations": 2,
+    "total_added_ops": 70,
+    "final_score": 0.6753872238336768,
+    "final_components": {
+      "material": 0.5077223335357282,
+      "dim": 0.7825396825396825,
+      "roof": 0.7058823529411765,
+      "window": 1.0,
+      "entrance": 0.5
+    },
+    "history": [
+      {
+        "iter": 0,
+        "accepted": true,
+        "score": 0.5203001949958571,
+        "components": {
+          "material": 0.3727397861559638,
+          "dim": 0.7825396825396825,
+          "roof": 0.6666666666666666,
+          "window": 0.0,
+          "entrance": 1.0
+        },
+        "added_ops": 0
+      },
+      {
+        "iter": 1,
+        "accepted": true,
+        "gain": 0.14218380303136802,
+        "score": 0.6624839980272251,
+        "components": {
+          "material": 0.538082864845026,
+          "dim": 0.7825396825396825,
+          "roof": 0.5882352941176471,
+          "window": 1.0,
+          "entrance": 0.5
+        },
+        "added_ops": 36,
+        "candidate_index": 1,
+        "candidates_tested": 8,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 32,
+        "budget_reproject_report": {
+          "added_by_role": {
+            "wall": 4
+          },
+          "reduced_by_role": {
+            "glass": 24,
+            "trim": 3
+          },
+          "total_added_ops": 32
+        },
+        "selection_score": 0.6084839980272251,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 1
+        }
+      },
+      {
+        "iter": 2,
+        "accepted": true,
+        "gain": 0.012903225806451646,
+        "score": 0.6753872238336768,
+        "components": {
+          "material": 0.5077223335357282,
+          "dim": 0.7825396825396825,
+          "roof": 0.7058823529411765,
+          "window": 1.0,
+          "entrance": 0.5
+        },
+        "added_ops": 35,
+        "candidate_index": 1,
+        "candidates_tested": 8,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 32,
+        "budget_reproject_report": {
+          "added_by_role": {
+            "wall": 4
+          },
+          "reduced_by_role": {
+            "glass": 24,
+            "trim": 3,
+            "roof": 0
+          },
+          "total_added_ops": 32
+        },
+        "selection_score": 0.6228872238336768,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 2
+        }
+      }
+    ],
+    "profile": {
+      "max_iterations": 2,
+      "min_score_gain": 0.01,
+      "max_added_ops_per_iter": 64,
+      "roof_search_variants": 8,
+      "window_search_variants": 8,
+      "max_search_candidates": 20,
+      "enable_material_budget_reprojection": true,
+      "material_budget_reprojection_strength": 0.4,
+      "material_budget_reprojection_min_deficit_ratio": 0.025,
+      "material_budget_reprojection_trigger_material_score": 0.78,
+      "selection_op_penalty": 0.0015,
+      "strict_schema": true,
+      "enforce_role_fixed": true,
+      "require_material_budget": true,
+      "material_budget_tolerance": 0.35,
+      "role_fix_min_confidence": 0.78,
+      "prefer_description_palette": true
+    }
+  }
+}

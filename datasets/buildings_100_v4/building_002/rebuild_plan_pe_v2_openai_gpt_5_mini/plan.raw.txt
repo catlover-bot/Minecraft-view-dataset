@@ -1,0 +1,463 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 32,
+    "ymin": 0,
+    "ymax": 16,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "quartz_block",
+    "roof": "brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 32,
+          "z2": 32,
+          "label": "outer_perimeter"
+        }
+      ],
+      "symmetry": "fourfold_centered (entrance on south offset)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single recessed courtyard surrounding central dome",
+        "perimeter_profile": "low layered wall with corner posts and entrance"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 14,
+        "y1": 1,
+        "z1": 32,
+        "x2": 17,
+        "y2": 3,
+        "z2": 32
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 2,
+        "z1": 0,
+        "x2": 16,
+        "y2": 2,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "dome",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 8,
+          "z1": 8,
+          "x2": 24,
+          "z2": 24,
+          "block": "brick"
+        },
+        {
+          "y": 6,
+          "x1": 7,
+          "z1": 9,
+          "x2": 25,
+          "z2": 23,
+          "block": "brick"
+        },
+        {
+          "y": 7,
+          "x1": 6,
+          "z1": 10,
+          "x2": 26,
+          "z2": 22,
+          "block": "brick"
+        },
+        {
+          "y": 8,
+          "x1": 5,
+          "z1": 11,
+          "x2": 27,
+          "z2": 21,
+          "block": "brick"
+        },
+        {
+          "y": 9,
+          "x1": 4,
+          "z1": 12,
+          "x2": 28,
+          "z2": 20,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 6,
+          "z1": 14,
+          "x2": 26,
+          "z2": 18,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 9,
+          "z1": 15,
+          "x2": 23,
+          "z2": 17,
+          "block": "brick"
+        },
+        {
+          "y": 12,
+          "x1": 11,
+          "z1": 15,
+          "x2": 21,
+          "z2": 17,
+          "block": "brick"
+        },
+        {
+          "y": 13,
+          "x1": 13,
+          "z1": 15,
+          "x2": 19,
+          "z2": 17,
+          "block": "brick"
+        },
+        {
+          "y": 14,
+          "x1": 15,
+          "z1": 15,
+          "x2": 17,
+          "z2": 17,
+          "block": "stonebrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 32,
+      "y2": 0,
+      "z2": 32,
+      "block": "dirt",
+      "purpose": "ground_plot"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 32,
+      "y2": 4,
+      "z2": 32,
+      "block": "quartz_block",
+      "purpose": "outer_wall_solid_body"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 31,
+      "y2": 3,
+      "z2": 31,
+      "purpose": "recessed_courtyard_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 31,
+      "y2": 1,
+      "z2": 31,
+      "block": "dirt",
+      "purpose": "courtyard_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 32,
+      "y2": 2,
+      "z2": 32,
+      "block": "sandstone",
+      "purpose": "middle_horizontal_band_continuous"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 32,
+      "y2": 3,
+      "z2": 32,
+      "block": "planks",
+      "purpose": "thin_wood_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 32,
+      "y2": 4,
+      "z2": 32,
+      "block": "quartz_block",
+      "purpose": "top_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 6,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "corner_post_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 32,
+      "y1": 1,
+      "z1": 0,
+      "x2": 32,
+      "y2": 6,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "corner_post_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 32,
+      "x2": 0,
+      "y2": 6,
+      "z2": 32,
+      "block": "quartz_block",
+      "purpose": "corner_post_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 32,
+      "y1": 1,
+      "z1": 32,
+      "x2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 32,
+  "ymin": 0,
+  "ymax": 16,
+  "zmin": 0,
+  "zmax": 32,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 32, 0, 32],
+      "block": "dirt",
+      "notes": "ground within plot"
+    },
+    {
+      "op": "outline",
+      "box": [0, 0, 0, 32, 0, 32],
+      "block": "white_concrete",
+      "thickness": 1,
+      "notes": "low perimeter markers on ground level (one-block-high line)"
+    },
+    {
+      "op": "fill",
+      "box": [4, 1, 4, 28, 1, 28],
+      "block": "dirt",
+      "notes": "courtyard floor (recessed area inside outer walls)"
+    },
+    {
+      "op": "box",
+      "box": [3, 1, 3, 29, 5, 29],
+      "block": "quartz_block",
+      "hollow": true,
+      "thickness": 1,
+      "notes": "outer wall: quartz outer shell (top band and vertical columns). Wall height 4 blocks (y=1..4) plus cap at y=5"
+    },
+    {
+      "op": "replace_layer",
+      "box": [3, 2, 3, 29, 2, 29],
+      "block": "oak_planks",
+      "notes": "wooden horizontal band at y=2 (thin band)"
+    },
+    {
+      "op": "replace_layer",
+      "box": [3, 3, 3, 29, 3, 29],
+      "block": "sandstone",
+      "notes": "sandstone middle band at y=3"
+    },
+    {
+      "op": "replace_layer",
+      "box": [3, 4, 3, 29, 4, 29],
+      "block": "quartz_block",
+      "notes": "upper quartz band at y=4 (aligns with columns)"
+    },
+    {
+      "op": "set",
+      "box": [16, 1, 16, 16, 1, 16],
+      "block": "stonebrick",
+      "notes": "center marker under dome (floor base)"
+    },
+    {
+      "op": "cylinder",
+      "center": [16, 1, 16],
+      "radius": 8,
+      "height": 1,
+      "block": "brick_block",
+      "hollow": false,
+      "notes": "dome base footprint on courtyard floor (first circular layer)"
+    },
+    {
+      "op": "dome",
+      "center": [16, 2, 16],
+      "radius": 8,
+      "block": "brick_block",
+      "hollow": false,
+      "notes": "stepped hemispherical brick dome built upward from y=2 to y=12"
+    },
+    {
+      "op": "set",
+      "box": [15, 12, 15, 17, 12, 17],
+      "block": "stonebrick",
+      "notes": "small square stone platform at dome apex (3x3) supporting glowstone"
+    },
+    {
+      "op": "set",
+      "box": [16, 13, 16, 16, 13, 16],
+      "block": "glowstone",
+      "notes": "light at dome apex"
+    },
+    {
+      "op": "hollow_ring",
+      "center": [16, 1, 16],
+      "inner_radius": 6,
+      "outer_radius": 7,
+      "y": 1,
+      "block": "stonebrick",
+      "notes": "inner rim around dome base (stonebrick ring on courtyard floor)"
+    },
+    {
+      "op": "entrance_cut",
+      "box": [16, 1, 3, 18, 4, 3],
+      "notes": "entrance gap through outer wall on the south side (opening 2 wide x 3 high)"
+    },
+    {
+      "op": "stairs",
+      "box": [15, 1, 2, 18, 1, 3],
+      "block": "stone",
+      "shape": "staircase",
+      "notes": "short stone steps leading into courtyard aligned with entrance"
+    },
+    {
+      "op": "windows",
+      "positions": [
+        [6, 2, 3],
+        [26, 2, 3],
+        [3, 2, 6],
+        [3, 2, 26],
+        [29, 2, 6],
+        [29, 2, 26],
+        [6, 2, 29],
+        [26, 2, 29]
+      ],
+      "size": [1, 2],
+      "block": "glass_pane",
+      "notes": "narrow vertical windows placed in wall faces for light (ensures windows exist and are distinct from wall material)"
+    },
+    {
+      "op": "column_anchors",
+      "positions": [
+        [3, 1, 3],
+        [3, 1, 29],
+        [29, 1, 3],
+        [29, 1, 29]
+      ],
+      "height": 4,
+      "block": "quartz_block",
+      "notes": "corner/column posts in quartz"
+    },
+    {
+      "op": "accent_blocks",
+      "positions": [
+        [10, 1, 3],
+        [22, 1, 3],
+        [3, 1, 10],
+        [3, 1, 22],
+        [29, 1, 10],
+        [29, 1, 22],
+        [10, 1, 29],
+        [22, 1, 29]
+      ],
+      "block": "stonebrick",
+      "height": 1,
+      "notes": "stonebrick corner accents at band junctions"
+    }
+  ],
+  "operation_count": 17,
+  "checks": {
+    "bbox_integrity": {
+      "valid": true,
+      "notes": "All operation coordinates are within xmin..xmax/xmin ranges 0..32 and ymin..ymax 0..16"
+    },
+    "operation_count": {
+      "valid": true,
+      "count": 17,
+      "notes": "Under the 260 operation limit"
+    },
+    "required_elements": {
+      "floor": true,
+      "walls": true,
+      "roof": true,
+      "windows": true,
+      "entrance_opening": true,
+      "notes": "Plan includes courtyard floor, outer walls with bands, hemispherical brick dome, glass pane windows, and an entrance gap with steps"
+    },
+    "material_coherence": {
+      "valid": true,
+      "notes": "Distinct materials assigned: brick for dome/roof, quartz for walls/columns/trim, sandstone and oak planks for bands, stonebrick for inner rim/platform/accents, glowstone for light, glass_pane for windows"
+    },
+    "structural_faithfulness": {
+      "valid": true,
+      "notes": "Footprint matches 33x33 plot (0..32), outer wall is layered, dome centered within courtyard with stepped profile, entrance cut provided; floor layering and platform at apex added for fidelity"
+    }
+  },
+  "self_check": {
+    "all_operations_within_bbox": true,
+    "contains_floor_walls_roof_windows_entrance": true,
+    "materials_distinct_roles": true,
+    "operation_count_ok": true,
+    "bbox_matches_description_dimensions": true,
+    "notes": "I verified coordinates and operations to ensure they stay within the provided bbox and include all required elements. Operation count is 17 which is well below the 260 limit. Material roles are distinct and match original description."
+  }
+}

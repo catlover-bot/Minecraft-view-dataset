@@ -1,0 +1,182 @@
+{
+  "building": "building_031",
+  "source_plan_subdir": "rebuild_plan_pe_v2_openai_gpt_5_mini",
+  "source_plan_path": "rebuild_plan_pe_v2_openai_gpt_5_mini/plan.json",
+  "description_path": "description_openai_gpt_5_mini/description.json",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "parse_report": {
+    "method": "operation_object_scan",
+    "candidate_count": 56,
+    "selected_candidate_score": 20,
+    "used_ops_array_repair": false,
+    "used_op_objects_repair": true,
+    "jsonish_loader_used": false
+  },
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 16,
+    "accepted_operations_count": 16,
+    "repaired_operations_count": 5,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "tower wall / structural verticals"
+      },
+      "roof": {
+        "block": "wood",
+        "score": 0.95,
+        "source_role": "main pitched roof and tower roof floor"
+      },
+      "floor": {
+        "block": "wood",
+        "score": 0.95,
+        "source_role": "main pitched roof and tower roof floor"
+      },
+      "trim": {
+        "block": "slab_stone",
+        "score": 0.85,
+        "source_role": "horizontal banding / roof edging / tower cap edges"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.8,
+        "source_role": "small windows in towers and side openings"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "light"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "wood",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "slab_stone",
+          "score": 0.85,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "glass",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.8,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "wood",
+          "score": 0.95,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": []
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 45,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 1,
+    "role_fixed_skipped_low_conf_count": 5,
+    "role_infer_confidence_mean": 0.6699999999999999,
+    "role_infer_reasons": {
+      "thin_outer_detail": 5,
+      "purpose_hint": 4,
+      "unknown": 1,
+      "block_family": 6
+    },
+    "self_repair_report": {
+      "added_operations": 30,
+      "added_tags": [
+        "roof",
+        "roof",
+        "roof",
+        "roof",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "fallback_triggered": false,
+  "created_at": "2026-03-01T15:29:23.322282+00:00",
+  "settings": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  }
+}

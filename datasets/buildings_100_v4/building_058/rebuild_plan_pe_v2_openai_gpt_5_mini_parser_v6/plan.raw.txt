@@ -1,0 +1,470 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 27,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 27
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "quartz"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 27,
+          "label": "outer_perimeter"
+        }
+      ],
+      "symmetry": "fourfold_approx_with_one_side_asymmetric"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground-level courtyard + perimeter corridor",
+        "perimeter_profile": "ring with inner courtyard"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "second level gallery around courtyard",
+        "perimeter_profile": "ring"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 10,
+          "ymax": 14
+        },
+        "rooms_hint": "third level, parapet and tower bases",
+        "perimeter_profile": "ring"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 13,
+        "y1": 1,
+        "z1": 27,
+        "x2": 14,
+        "y2": 3,
+        "z2": 27
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 6,
+        "z1": 0,
+        "x2": 4,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 10,
+        "y1": 6,
+        "z1": 0,
+        "x2": 10,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 6,
+        "z1": 0,
+        "x2": 16,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 22,
+        "y1": 6,
+        "z1": 0,
+        "x2": 22,
+        "y2": 6,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 14,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 14,
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 27,
+          "block": "brick"
+        },
+        {
+          "y": 15,
+          "x1": 6,
+          "z1": 13,
+          "x2": 20,
+          "z2": 27,
+          "block": "brick"
+        },
+        {
+          "y": 16,
+          "x1": 8,
+          "z1": 15,
+          "x2": 18,
+          "z2": 27,
+          "block": "brick"
+        },
+        {
+          "y": 17,
+          "x1": 10,
+          "z1": 17,
+          "x2": 16,
+          "z2": 27,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 27,
+      "y2": 0,
+      "z2": 27,
+      "block": "quartz",
+      "purpose": "courtyard_floor_and_base_course_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 26,
+      "y2": 14,
+      "z2": 26,
+      "block": "sandstone",
+      "purpose": "outer_wall_shell_solid"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 25,
+      "y2": 13,
+      "z2": 25,
+      "purpose": "hollow_interior_courtyard_space"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 26,
+      "y2": 1,
+      "z2": 26,
+      "block": "quartz",
+      "purpose": "continuous_white_base_course"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 26,
+      "y2": 5,
+      "z2": 26,
+      "block": "quartz",
+      "purpose": "horizontal_band_floor1"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 10,
+      "z1": 1,
+      "x2": 26,
+      "y2": 10,
+      "z2": 26,
+      "block": "quartz",
+      "purpose": "horizontal_band_floor2"
+    },
+    {
+      "op": "carve",
+      "x1": 13,
+      "y1": 1,
+      "z1": 27,
+      "x2": 14,
+      "y2": 3,
+      "z2": 27,
+      "purpose": "main_entrance_cut"
+    },
+    {
+      "op": "fill",
+      "x1": 13,
+      "y1": 1,
+      "z1": 27,
+      "x2": 14,
+      "y2": 3,
+      "z2": 27,
+      "block": "sandstone",
+      "purpose": "entrance_frame"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 6,
+      "z1": 0,
+      "x2": 4,
+      "y2": 6,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "north_windows_row"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 6,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "north_windows_row"
+    },
+    {
+      "op": "fill",
+      "x1": 16,
+      "y1": 6,
+      "z1": 0,
+      "x2": 16,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 27,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 27,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [0, 0, 0],
+      "to": [27, 18, 27],
+      "comment": "clear interior volume to ensure build space is empty"
+    },
+    {
+      "op": "box",
+      "block": "sandstone",
+      "from": [1, 0, 1],
+      "to": [26, 11, 26],
+      " hollow": false,
+      "comment": "main exterior walls solid shell base (will carve floors/openings). Keeps within bbox."
+    },
+    {
+      "op": "hollow_out",
+      "block": "air",
+      "from": [2, 1, 2],
+      "to": [25, 10, 25],
+      "comment": "create interior courtyard space and internal rooms; leaves 1-block-thick outer wall and 1-block boundary"
+    },
+    {
+      "op": "fill_layer",
+      "block": "quartz_block",
+      "y": 0,
+      "from": [1, 0, 1],
+      "to": [26, 0, 26],
+      "comment": "ground/base course continuous white base around building footprint"
+    },
+    {
+      "op": "line",
+      "block": "quartz_slab",
+      "from": [1, 1, 1],
+      "to": [26, 1, 1],
+      "comment": "internal white base course visible around courtyard (front edge)"
+    },
+    {
+      "op": "line",
+      "block": "quartz_slab",
+      "from": [1, 1, 26],
+      "to": [26, 1, 26],
+      "comment": "internal white base course back edge"
+    },
+    {
+      "op": "line",
+      "block": "quartz_slab",
+      "from": [1, 1, 2],
+      "to": [1, 1, 25],
+      "comment": "left edge base course"
+    },
+    {
+      "op": "line",
+      "block": "quartz_slab",
+      "from": [26, 1, 2],
+      "to": [26, 1, 25],
+      "comment": "right edge base course"
+    },
+    {
+      "op": "box",
+      "block": "sandstone",
+      "from": [1, 11, 1],
+      "to": [26, 11, 26],
+      " hollow": false,
+      "comment": "third-story parapet/top band to reach ~12 blocks height for three storeys (keeps within ymax)"
+    },
+    {
+      "op": "fill_layer",
+      "block": "quartz_block",
+      "y": 4,
+      "from": [1, 4, 1],
+      "to": [26, 4, 26],
+      "comment": "horizontal white banding between 1st and 2nd floors"
+    },
+    {
+      "op": "fill_layer",
+      "block": "quartz_block",
+      "y": 8,
+      "from": [1, 8, 1],
+      "to": [26, 8, 26],
+      "comment": "horizontal white banding between 2nd and 3rd floors"
+    },
+    {
+      "op": "windows_grid",
+      "block": "glass_pane",
+      "start_y": 2,
+      "spacing_y": 3,
+      "levels": 3,
+      "from_x": 3,
+      "to_x": 24,
+      "z_positions": [1,26],
+      "comment": "regular small narrow windows along front and back walls on each floor; stays within bbox"
+    },
+    {
+      "op": "windows_grid",
+      "block": "glass_pane",
+      "start_y": 2,
+      "spacing_y": 3,
+      "levels": 3,
+      "from_z": 3,
+      "to_z": 24,
+      "x_positions": [1,26],
+      "comment": "regular small windows along left and right walls"
+    },
+    {
+      "op": "door_opening",
+      "from": [13, 1, 26],
+      "to": [15, 3, 26],
+      "comment": "main entrance opening centered on front wall leading to courtyard (2-block high x 3 wide) - ensures entrance present"
+    },
+    {
+      "op": "tower",
+      "material": "sandstone",
+      "trim": "stonebrick",
+      "slab_trim": "stone_slab",
+      "from": [1, 0, 1],
+      "to": [4, 14, 4],
+      "comment": "southwest corner tower footprint 3x3 internal thickness 3-4, height 14 (within bbox)"
+    },
+    {
+      "op": "tower",
+      "material": "sandstone",
+      "trim": "stonebrick",
+      "slab_trim": "stone_slab",
+      "from": [23, 0, 1],
+      "to": [26, 14, 4],
+      "comment": "southeast corner tower"
+    },
+    {
+      "op": "tower",
+      "material": "sandstone",
+      "trim": "stonebrick",
+      "slab_trim": "stone_slab",
+      "from": [1, 0, 23],
+      "to": [4, 14, 26],
+      "comment": "northwest corner tower"
+    },
+    {
+      "op": "tower",
+      "material": "sandstone",
+      "trim": "stonebrick",
+      "slab_trim": "stone_slab",
+      "from": [23, 0, 23],
+      "to": [26, 14, 26],
+      "comment": "northeast corner tower"
+    },
+    {
+      "op": "tower_caps",
+      "cap_size": 5,
+      "material": "stonebrick",
+      "slab": "stone_slab",
+      "positions": [
+        [0, 14, 0],
+        [22, 14, 0],
+        [0, 14, 22],
+        [22, 14, 22]
+      ],
+      "comment": "place 5x5 overhanging layered caps atop each tower. Coordinates are offsets relative to tower footprints; implementation should clamp to bbox (caps centered at tower tops)."
+    },
+    {
+      "op": "tower_detail",
+      "from": [1, 12, 1],
+      "to": [4, 13, 4],
+      "block": "stonebrick",
+      "comment": "stonebrick trim near tower tops"
+    },
+    {
+      "op": "courtyard_floor",
+      "block": "sandstone_slab",
+      "from": [2, 1, 2],
+      "to": [25, 1, 25],
+      "comment": "ground finish of courtyard, one slab thick"
+    },
+    {
+      "op": "semicircular_hall_floor",
+      "block": "sandstone",
+      "from": [11, 1, 26],
+      "to": [16, 1, 25],
+      "comment": "flat base for semicircular hall aligned with front wall inside courtyard; footprint semi-circle will start here"
+    },
+    {
+      "op": "semicircular_hall_steps",
+      "material": "brick_stairs",
+      "center": [13.5, 1, 21],
+      "radius_steps": [2,4,6],
+      "levels": [2,4,6],
+      "comment": "layered stepped semicircular roof rising toward center. Implementation must approximate semicircle using stairs and full brick blocks within bbox and not exceed ymax"
+    },
+    {
+      "op": "semicircular_backwall",
+      "block": "brick

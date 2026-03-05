@@ -1,0 +1,204 @@
+{
+  "building": "building_085",
+  "source_plan": "rebuild_plan_pe_v2_anthropic_claude_haiku_4_5_20251001/plan.json",
+  "description_path": "description_anthropic_claude_haiku_4_5_20251001/description.json",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 30,
+    "accepted_operations_count": 30,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": false,
+    "enforce_role_fixed": false,
+    "require_material_budget": false,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": false,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "roof": {
+        "block": "wood",
+        "score": 0.95,
+        "source_role": "roof and main barn structure"
+      },
+      "wall": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "tower walls and foundation accents"
+      },
+      "trim": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "tower walls and foundation accents"
+      },
+      "floor": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "tower walls and foundation accents"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [],
+      "coherence_repairs": []
+    },
+    "budget_source": "root.material_budget",
+    "budget_present_in_input": true,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 63,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 0,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 1.0,
+    "role_infer_reasons": {
+      "explicit_role": 63
+    },
+    "self_repair_report": {
+      "added_operations": 0,
+      "added_tags": [],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 1,
+    "budget_violations": [
+      {
+        "role": "wall",
+        "target_blocks": 8533,
+        "actual_blocks": 16761,
+        "relative_error": 0.964256
+      },
+      {
+        "role": "roof",
+        "target_blocks": 286,
+        "actual_blocks": 2870,
+        "relative_error": 9.034965
+      },
+      {
+        "role": "glass",
+        "target_blocks": 60,
+        "actual_blocks": 112,
+        "relative_error": 0.866667
+      },
+      {
+        "role": "floor",
+        "target_blocks": 748,
+        "actual_blocks": 1496,
+        "relative_error": 1.0
+      }
+    ],
+    "schema_violations": [],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "self_refine_no_gt": {
+    "enabled": true,
+    "accepted_iterations": 2,
+    "total_added_ops": 2,
+    "final_score": 0.8146894890295528,
+    "final_components": {
+      "material": 0.6699033235625607,
+      "dim": 0.6972222222222223,
+      "roof": 0.9538944066910611,
+      "window": 1.0,
+      "entrance": 1.0
+    },
+    "history": [
+      {
+        "iter": 0,
+        "accepted": true,
+        "score": 0.6663108476869182,
+        "components": {
+          "material": 0.8990008422557805,
+          "dim": 0.6763888888888889,
+          "roof": 0.5819138755980862,
+          "window": 0.0,
+          "entrance": 1.0
+        },
+        "added_ops": 0
+      },
+      {
+        "iter": 1,
+        "accepted": true,
+        "gain": 0.0674538021505161,
+        "score": 0.7337646498374343,
+        "components": {
+          "material": 0.4592036840109426,
+          "dim": 0.6972222222222223,
+          "roof": 0.9179945799457994,
+          "window": 1.0,
+          "entrance": 1.0
+        },
+        "added_ops": 31,
+        "candidate_index": 13,
+        "candidates_tested": 20,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 0,
+        "budget_reproject_report": {},
+        "selection_score": 0.7027646498374343,
+        "validation_report": {
+          "strict_blocking_issues": [],
+          "budget_violations_count": 3
+        }
+      },
+      {
+        "iter": 2,
+        "accepted": true,
+        "gain": 0.08092483919211857,
+        "score": 0.8146894890295528,
+        "components": {
+          "material": 0.6699033235625607,
+          "dim": 0.6972222222222223,
+          "roof": 0.9538944066910611,
+          "window": 1.0,
+          "entrance": 1.0
+        },
+        "added_ops": 1,
+        "candidate_index": 0,
+        "candidates_tested": 1,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 0,
+        "budget_reproject_report": {},
+        "selection_score": 0.8136894890295528,
+        "validation_report": {
+          "strict_blocking_issues": [],
+          "budget_violations_count": 4
+        }
+      }
+    ],
+    "profile": {
+      "max_iterations": 2,
+      "min_score_gain": 0.01,
+      "max_added_ops_per_iter": 64,
+      "roof_search_variants": 8,
+      "window_search_variants": 8,
+      "max_search_candidates": 20,
+      "enable_material_budget_reprojection": false,
+      "material_budget_reprojection_strength": 0.6,
+      "material_budget_reprojection_min_deficit_ratio": 0.025,
+      "material_budget_reprojection_trigger_material_score": 0.78,
+      "selection_op_penalty": 0.001,
+      "strict_schema": false,
+      "enforce_role_fixed": false,
+      "require_material_budget": false,
+      "material_budget_tolerance": 0.35,
+      "role_fix_min_confidence": 0.78,
+      "prefer_description_palette": false
+    }
+  },
+  "created_at": "2026-03-01T14:12:20.770698+00:00"
+}

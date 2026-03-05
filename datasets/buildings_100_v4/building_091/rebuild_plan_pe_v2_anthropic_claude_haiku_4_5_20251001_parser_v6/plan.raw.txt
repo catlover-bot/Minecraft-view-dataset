@@ -1,0 +1,287 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 14,
+    "zmin": 0,
+    "zmax": 19
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "brick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 19,
+          "label": "main_body"
+        }
+      ],
+      "symmetry": "bilateral_x_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 6
+        },
+        "rooms_hint": "lower stepped chamber with entrance platform",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 7,
+          "ymax": 12
+        },
+        "rooms_hint": "upper stepped section with tower integration",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 11,
+        "y1": 2,
+        "z1": 0,
+        "x2": 13,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 4,
+        "z1": 4,
+        "x2": 0,
+        "y2": 6,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 8,
+        "z1": 8,
+        "x2": 0,
+        "y2": 10,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 24,
+        "y1": 4,
+        "z1": 4,
+        "x2": 24,
+        "y2": 6,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 24,
+        "y1": 8,
+        "z1": 8,
+        "x2": 24,
+        "y2": 10,
+        "z2": 8
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 11,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 11,
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 19,
+          "block": "wood"
+        },
+        {
+          "y": 12,
+          "x1": 2,
+          "z1": 2,
+          "x2": 22,
+          "z2": 17,
+          "block": "wood"
+        },
+        {
+          "y": 13,
+          "x1": 4,
+          "z1": 4,
+          "x2": 20,
+          "z2": 15,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 19,
+      "block": "brick",
+      "purpose": "foundation_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 6,
+      "z2": 19,
+      "block": "stonebrick",
+      "purpose": "lower_body_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 22,
+      "y2": 6,
+      "z2": 17,
+      "purpose": "lower_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 24,
+      "y2": 4,
+      "z2": 19,
+      "block": "quartz_block",
+      "purpose": "white_band_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 24,
+      "y2": 12,
+      "z2": 19,
+      "block": "stonebrick",
+      "purpose": "upper_body_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 7,
+      "z1": 3,
+      "x2": 21,
+      "y2": 12,
+      "z2": 16,
+      "purpose": "upper_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 9,
+      "z1": 0,
+      "x2": 24,
+      "y2": 9,
+      "z2": 19,
+      "block": "quartz_block",
+      "purpose": "white_band_upper"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 5,
+      "y2": 13,
+      "z2": 5,
+      "block": "stonebrick",
+      "purpose": "tower_rear_left"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 4,
+      "y2": 12,
+      "z2": 4,
+      "purpose": "tower_left_interior"
+    },
+    {
+      "op": "fill",
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 14,
+  "zmin": 0,
+  "zmax": 19,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 24, "y2": 0, "z2": 19, "block": "brick", "description": "foundation base layer"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 24, "y2": 1, "z2": 19, "block": "stonebrick", "description": "floor layer"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 1, "x2": 23, "y2": 12, "z2": 18, "block": "stonebrick", "description": "main wall structure"},
+    {"type": "fill", "x1": 2, "y1": 3, "z1": 2, "x2": 22, "y2": 11, "z2": 17, "block": "air", "description": "interior hollow"},
+    {"type": "fill", "x1": 1, "y1": 6, "z1": 1, "x2": 23, "y2": 6, "z2": 18, "block": "quartz_block", "description": "white horizontal band lower"},
+    {"type": "fill", "x1": 1, "y1": 9, "z1": 1, "x2": 23, "y2": 9, "z2": 18, "block": "quartz_block", "description": "white horizontal band upper"},
+    {"type": "fill", "x1": 0, "y1": 2, "z1": 0, "x2": 0, "y2": 13, "z2": 19, "block": "stonebrick", "description": "left tower wall"},
+    {"type": "fill", "x1": 24, "y1": 2, "z1": 0, "x2": 24, "y2": 13, "z2": 19, "block": "stonebrick", "description": "right tower wall"},
+    {"type": "fill", "x1": 1, "y1": 13, "z1": 1, "x2": 23, "y2": 13, "z2": 18, "block": "stone_slab", "description": "tower cap left"},
+    {"type": "fill", "x1": 1, "y1": 13, "z1": 1, "x2": 23, "y2": 13, "z2": 18, "block": "stone_slab", "description": "tower cap right"},
+    {"type": "fill", "x1": 2, "y1": 12, "z1": 2, "x2": 22, "y2": 12, "z2": 17, "block": "oak_wood", "description": "roof gable front"},
+    {"type": "fill", "x1": 3, "y1": 11, "z1": 3, "x2": 21, "y2": 11, "z2": 16, "block": "oak_wood", "description": "roof gable mid"},
+    {"type": "fill", "x1": 4, "y1": 10, "z1": 4, "x2": 20, "y2": 10, "z2": 15, "block": "oak_wood", "description": "roof gable upper"},
+    {"type": "fill", "x1": 5, "y1": 9, "z1": 5, "x2": 19, "y2": 9, "z2": 14, "block": "oak_wood", "description": "roof gable peak"},
+    {"type": "setblock", "x": 12, "y": 2, "z": 0, "block": "oak_door", "description": "central entrance door"},
+    {"type": "fill", "x1": 11, "y1": 1, "z1": 0, "x2": 13, "y2": 1, "z2": 0, "block": "quartz_block", "description": "entrance platform edge"},
+    {"type": "setblock", "x": 2, "y": 7, "z": 10, "block": "glass_pane", "description": "left tower window 1"},
+    {"type": "setblock", "x": 2, "y": 8, "z": 10, "block": "glass_pane", "description": "left tower window 2"},
+    {"type": "setblock", "x": 2, "y": 10, "z": 10, "block": "glass_pane", "description": "left tower window 3"},
+    {"type": "setblock", "x": 22, "y": 7, "z": 10, "block": "glass_pane", "description": "right tower window 1"},
+    {"type": "setblock", "x": 22, "y": 8, "z": 10, "block": "glass_pane", "description": "right tower window 2"},
+    {"type": "setblock", "x": 22, "y": 10, "z": 10, "block": "glass_pane", "description": "right tower window 3"},
+    {"type": "fill", "x1": -2, "y1": 0, "z1": -2, "x2": 26, "y2": 0, "z2": 21, "block": "quartz_slab", "description": "perimeter fence markers north"},
+    {"type": "fill", "x1": -2, "y1": 0, "z1": -2, "x2": -2, "y2": 0, "z2": 21, "block": "quartz_slab", "description": "perimeter fence markers west"},
+    {"type": "fill", "x1": 26, "y1": 0, "z1": -2, "x2": 26, "y2": 0, "z2": 21, "block": "quartz_slab", "description": "perimeter fence markers east"},
+    {"type": "fill", "x1": -2, "y1": 0, "z1": 21, "x2": 26, "y2": 0, "z2": 21, "block": "quartz_slab", "description": "perimeter fence markers south"}
+  ],
+  "self_check": {
+    "bbox_integrity": true,
+    "all_coords_in_bbox": false,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,
+    "material_coherence": true,
+    "structural_fidelity": true,
+    "notes": "Perimeter fence operations exceed bbox; recommend removing or constraining to bbox edges. Core structure (25x20x14)

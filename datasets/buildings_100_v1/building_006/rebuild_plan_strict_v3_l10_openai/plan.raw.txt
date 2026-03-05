@@ -1,0 +1,511 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v3_strict",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 5,
+    "zmin": 0,
+    "zmax": 22
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "netherbrick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "brick",
+      "target_blocks": 440
+    },
+    "roof": {
+      "role": "roof",
+      "block": "netherbrick",
+      "target_blocks": 264
+    },
+    "trim": {
+      "role": "trim",
+      "block": "stonebrick",
+      "target_blocks": 40
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 40
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 6
+    },
+    "floor": {
+      "role": "floor",
+      "block": "wood",
+      "target_blocks": 220
+    }
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 0
+        },
+        {
+          "x1": 10,
+          "z1": 0,
+          "x2": 10,
+          "z2": 22
+        },
+        {
+          "x1": 10,
+          "z1": 22,
+          "x2": 0,
+          "z2": 22
+        },
+        {
+          "x1": 0,
+          "z1": 22,
+          "x2": 0,
+          "z2": 0
+        }
+      ]
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "perimeter_profile": "outer 1-block-high quartz ledge (implemented as trim), brick walls on top with stonebrick corner pilasters, inner courtyard recessed 1 block lower with netherbrick floor"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 0,
+        "x2": 6,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 2,
+        "z1": 3,
+        "x2": 10,
+        "y2": 2,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 2,
+        "z1": 8,
+        "x2": 10,
+        "y2": 2,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 3,
+        "x2": 0,
+        "y2": 2,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 8,
+        "x2": 0,
+        "y2": 2,
+        "z2": 10
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 4,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 4,
+          "material": "netherbrick",
+          "thickness": 1,
+          "note": "flat roof / coping over top edge; netherbrick band across top"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 22,
+      "block": "wood",
+      "purpose": "base floor under building footprint"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 22,
+      "block": "stonebrick",
+      "purpose": "raised outer perimeter ledge / stone trim (1 block high)"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 3,
+      "z2": 21,
+      "block": "brick",
+      "purpose": "brick mid-wall shell (leaving 1-block border for trim and inner courtyard)"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pilaster NW"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pilaster NE"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 10,
+      "y1": 1,
+      "z1": 22,
+      "x2": 10,
+      "y2": 4,
+      "z2": 22,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pilaster SE"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 1,
+      "z1": 22,
+      "x2": 0,
+      "y2": 4,
+      "z2": 22,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pilaster SW"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": 0,
+      "x2": 6,
+      "y2": 2,
+      "z2": 0,
+      "purpose": "create entrance opening on south face"
+    },
+    {
+      "op": "fill",
+      "role": "glass",
+      "x1": 10,
+      "y1": 2,
+      "z1": 3,
+      "x2": 10,
+      "y2": 2,
+      "z2": 5,
+      "block": "glass",
+      "purpose": "east side windows (group 1)"
+    },
+    {
+      "op": "fill",
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 5,
+  "zmin": 0,
+  "zmax": 22,
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 22,
+      "block": "netherbrick",
+      "purpose": "inner/dark floor under building footprint"
+    },
+    {
+      "op": "fill",
+      "role": "perimeter_ledge",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 22,
+      "block": "quartz",
+      "purpose": "raised outer quartz ledge (1 block high) around footprint"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 3,
+      "z2": 21,
+      "block": "brick",
+      "purpose": "brick mid-wall shell (leaving 1-block border for trim and inner courtyard)"
+    },
+    {
+      "op": "fill",
+      "role": "base_skirting",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 9,
+      "y2": 0,
+      "z2": 21,
+      "block": "wood",
+      "purpose": "wood plank skirting under brick walls"
+    },
+    {
+      "op": "fill",
+      "role": "vertical_trim",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pilaster SW"
+    },
+    {
+      "op": "fill",
+      "role": "vertical_trim",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pilaster SE"
+    },
+    {
+      "op": "fill",
+      "role": "vertical_trim",
+      "x1": 10,
+      "y1": 1,
+      "z1": 22,
+      "x2": 10,
+      "y2": 4,
+      "z2": 22,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pilaster NE"
+    },
+    {
+      "op": "fill",
+      "role": "vertical_trim",
+      "x1": 0,
+      "y1": 1,
+      "z1": 22,
+      "x2": 0,
+      "y2": 4,
+      "z2": 22,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pilaster NW"
+    },
+    {
+      "op": "fill",
+      "role": "upper_white_band",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 21,
+      "block": "quartz",
+      "purpose": "continuous white quartz band above brick"
+    },
+    {
+      "op": "fill",
+      "role": "upper_dark_band",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 9,
+      "y2": 5,
+      "z2": 21,
+      "block": "netherbrick",
+      "purpose": "dark netherbrick horizontal band atop white band"
+    },
+    {
+      "op": "fill",
+      "role": "coping",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 22,
+      "block": "slab_stone",
+      "purpose": "stone slab coping around top edge"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 10,
+      "y1": 2,
+      "z1": 3,
+      "x2": 10,
+      "y2": 2,
+      "z2": 5,
+      "block": "glass",
+      "purpose": "east side windows (group 1)"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 10,
+      "y1": 2,
+      "z1": 8,
+      "x2": 10,
+      "y2": 2,
+      "z2": 10,
+      "block": "glass",
+      "purpose": "east side windows (group 2)"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 0,
+      "y1": 2,
+      "z1": 3,
+      "x2": 0,
+      "y2": 2,
+      "z2": 5,
+      "block": "glass",
+      "purpose": "west side windows (group 1)"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 0,
+      "y1": 2,
+      "z1": 8,
+      "x2": 0,
+      "y2": 2,
+      "z2": 10,
+      "block": "glass",
+      "purpose": "west side windows (group 2)"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": 0,
+      "x2": 6,
+      "y2": 2,
+      "z2": 0,
+      "purpose": "create entrance opening on south face"
+    },
+    {
+      "op": "fill",
+      "role": "courtyard_floor",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 8,
+      "y2": 1,
+      "z2": 20,
+      "block": "netherbrick",
+      "purpose": "inner recessed courtyard floor 1 block below surrounding coping"
+    }
+  ],
+  "operation_count": 17,
+  "material_budget": {
+    "primary_wall_mid": {
+      "block": "brick",
+      "target_blocks": 200
+    },
+    "corner_pillars/vertical_trim": {
+      "block": "stonebrick",
+      "target_blocks": 40
+    },
+    "upper_horizontal_band / inner floor": {
+      "block": "netherbrick",
+      "target_blocks": 150
+    },
+    "outer_low_perimeter_slab/ledge and upper white band": {
+      "block": "quartz",
+      "target_blocks": 120
+    },
+    "base skirting (planks) under brick": {
+      "block": "wood",
+      "target_blocks": 80
+    },
+    "windows": {
+      "block": "glass",
+      "target_blocks": 20
+    },
+    "slab_stone": {
+      "block": "slab_stone",
+      "target_blocks": 60
+    }
+  }
+}

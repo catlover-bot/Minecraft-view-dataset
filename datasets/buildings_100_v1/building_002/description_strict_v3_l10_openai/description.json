@@ -1,0 +1,76 @@
+{
+  "summary": "Small single-storey rectangular house with a stepped brick gable roof, light-coloured stone trim and a raised foundation area; walls have a lower wood band, a middle sandstone band with long horizontal windows, and corner stone pillars. A white stone (likely quartz) low perimeter border surrounds the building on a dirt plot.",
+  "building_type": "residential_small_house",
+  "shape": {
+    "overall_form": "rectangular box with a central pitched/stepped gable roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the roof ridge (front-back)",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 7,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner_pillars/accents (looks like darker chiseled stone)",
+      "confidence": 0.7
+    },
+    {
+      "name": "quartz",
+      "role": "upper trim / perimeter border",
+      "confidence": 0.85
+    },
+    {
+      "name": "sandstone",
+      "role": "middle wall band",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood",
+      "role": "lower wall band / planks",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof edge caps / step slabs",
+      "confidence": 0.8
+    }
+  ],
+  "elements": [
+    "long horizontal windows on each side (three window panes visible on front side)",
+    "central stepped brick gable roof with stone slab edging",
+    "white stone perimeter border (low wall) around building",
+    "corner vertical stone blocks/pillars",
+    "wooden lower skirting around base"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular footprint roughly 11x7 blocks; raise a 1-block high wooden skirting around the base, then a 3-block high sandstone band with 3-wide horizontal window openings on longer sides.",
+    "Place quartz (or white) blocks as a continuous trim band above the windows and as a low perimeter border 1 block away from the building edge.",
+    "Construct a stepped brick gable roof centered on the long axis: brick slabs/blocks in successive smaller layers with stone slabs at the exposed step edges to match the cap detail.",
+    "Use darker stone bricks or stonebrick blocks at the four vertical corners spanning from base to trim to reproduce corner pillars."
+  ],
+  "uncertainties": [
+    "Exact block types for corner pillars: appear as darker stone (stonebrick or polished andesite) — identified as stonebrick with moderate confidence.",
+    "The white trim material might be quartz blocks or smooth sandstone/white concrete; quartz chosen with high but not absolute confidence.",
+    "Precise internal floor height and presence of interior details are not visible from provided views.",
+    "Exact footprint dimensions estimated from pixel views; actual block counts may differ by ±1-2 blocks in each axis."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_002",
+  "created_at": "2026-03-01T07:49:53.430717+00:00"
+}

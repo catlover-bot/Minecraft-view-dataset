@@ -1,0 +1,453 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "accent": "quartz"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 10,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single large hall with recessed central courtyard",
+        "perimeter_profile": "rectangle with inner recessed courtyard"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 10,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 2,
+        "z1": 0,
+        "x2": 4,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 2,
+        "z1": 0,
+        "x2": 16,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 6,
+        "z1": 4,
+        "x2": 20,
+        "y2": 8,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 6,
+        "x2": 0,
+        "y2": 8,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 9,
+          "block": "stonebrick"
+        },
+        {
+          "y": 7,
+          "x1": 3,
+          "z1": 2,
+          "x2": 17,
+          "z2": 8,
+          "block": "stonebrick"
+        },
+        {
+          "y": 9,
+          "x1": 6,
+          "z1": 3,
+          "x2": 14,
+          "z2": 7,
+          "block": "stonebrick"
+        },
+        {
+          "y": 10,
+          "x1": 8,
+          "z1": 4,
+          "x2": 12,
+          "z2": 6,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 9,
+          "z1": 4,
+          "x2": 11,
+          "z2": 6,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 10,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 10,
+      "block": "dirt",
+      "purpose": "cleared_dirt_pad"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 10,
+      "block": "sandstone",
+      "purpose": "outer_shell_base_bands"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 3,
+      "z2": 9,
+      "purpose": "interior_hall_recess"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 1,
+      "z2": 9,
+      "block": "wood",
+      "purpose": "interior_floor_stepdown"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 10,
+      "block": "quartz",
+      "purpose": "perimeter_white_sill"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 19,
+      "y2": 2,
+      "z2": 9,
+      "block": "sandstone",
+      "purpose": "wall_mid_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 19,
+      "y2": 3,
+      "z2": 9,
+      "block": "wood",
+      "purpose": "wall_dark_stripe"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2": 9,
+      "block": "sandstone",
+      "purpose": "wall_upper_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 10,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "west_tower_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 20,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 10,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "east_tower_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 13,
+  "zmin": 0,
+  "zmax": 11,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 20, 0, 10],
+      "block": "dirt",
+      "desc": "clear pad base (ground level) filled with dirt to match described cleared dirt pad"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 19, 1, 9],
+      "block": "sandstone",
+      "desc": "floor layer 1 (main interior floor) inset one block from perimeter to allow perimeter sill"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 19, 2, 9],
+      "block": "wood",
+      "desc": "floor layer 2 (darker interior band) to create layered floor feel"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 0, 19, 1, 0],
+      "block": "quartz",
+      "desc": "front perimeter sill (z=0 row) continuous white perimeter detail"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 9, 19, 1, 9],
+      "block": "quartz",
+      "desc": "rear perimeter sill (z=9 row)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 1, 0, 1, 9],
+      "block": "quartz",
+      "desc": "left perimeter sill (x=0 column)"
+    },
+    {
+      "op": "fill",
+      "box": [20, 1, 1, 20, 1, 9],
+      "block": "quartz",
+      "desc": "right perimeter sill (x=20 column)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 19, 6, 9],
+      "block": "sandstone",
+      "desc": "main wall panels (light bands) - base section from y=2 to y=6"
+    },
+    {
+      "op": "fill",
+      "box": [1, 6, 1, 19, 6, 9],
+      "block": "terracotta",
+      "desc": "darker horizontal stripe at mid-wall (single layer) to alternate with sandstone"
+    },
+    {
+      "op": "outline",
+      "box": [1, 2, 1, 19, 11, 9],
+      "block": "sandstone",
+      "desc": "upper wall sandstone continuation (outline to allow windows and vertical accents)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 2, 0, 0, 11, 10],
+      "block": "stonebrick",
+      "desc": "left corner tower column (stonebrick trim) from ground to tower cap"
+    },
+    {
+      "op": "fill",
+      "box": [20, 2, 0, 20, 11, 10],
+      "block": "stonebrick",
+      "desc": "right corner tower column (stonebrick trim)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 2, 0, 20, 11, 0],
+      "block": "stonebrick",
+      "desc": "front tower row base trim along front edge connecting left and right trims (1-block thick) to visually anchor towers"
+    },
+    {
+      "op": "fill",
+      "box": [0, 2, 10, 20, 11, 10],
+      "block": "stonebrick",
+      "desc": "rear tower row base trim along rear edge"
+    },
+    {
+      "op": "fill",
+      "box": [0, 12, 0, 0, 12, 10],
+      "block": "brick",
+      "desc": "left tower flat cap (overhang row) using brick for red tile cap"
+    },
+    {
+      "op": "fill",
+      "box": [20, 12, 0, 20, 12, 10],
+      "block": "brick",
+      "desc": "right tower flat cap"
+    },
+    {
+      "op": "fill",
+      "box": [0, 11, 0, 0, 11, 10],
+      "block": "quartz",
+      "desc": "left tower cap edge trim (white edging below brick cap)"
+    },
+    {
+      "op": "fill",
+      "box": [20, 11, 0, 20, 11, 10],
+      "block": "quartz",
+      "desc": "right tower cap edge trim"
+    },
+    {
+      "op": "fill",
+      "box": [3, 11, 2, 17, 11, 8],
+      "block": "stone_slab",
+      "desc": "stepped roof outer slab ring (first step) surrounding recessed central roof area"
+    },
+    {
+      "op": "fill",
+      "box": [4, 12, 3, 16, 12, 7],
+      "block": "stone_slab",
+      "desc": "stepped roof second slab layer"
+    },
+    {
+      "op": "fill",
+      "box": [6, 13, 4, 14, 13, 6],
+      "block": "brick",
+      "desc": "central roof top (raised red tile) small rectangle as described; top placed at y=13"
+    },
+    {
+      "op": "fill",
+      "box": [10, 13, 5, 10, 13, 5],
+      "block": "glowstone",
+      "desc": "central glow block accent on roof top"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 0, 18, 10, 0],
+      "block": "glass",
+      "desc": "front narrow windows set into front stonebrick trim (towers/windows area) - vertical band of glass at front wall (z=0) inset from corners"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 10, 18, 10, 10],
+      "block": "glass",
+      "desc": "rear narrow windows set into rear stonebrick trim (z=10)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 3, 2, 0, 10, 8],
+      "block": "glass",
+      "desc": "left tower windows (vertical panes) within left tower face"
+    },
+    {
+      "op": "fill",
+      "box": [20, 3, 2, 20, 10, 8],
+      "block": "glass",
+      "desc": "right tower windows"
+    },
+    {
+      "op": "replace",
+      "box": [10, 2, 0, 10, 4, 0],
+      "block": "air",
+      "desc": "front entrance opening: 1-block wide central doorway inset in front wall (open passage through perimeter sill and wall)"
+    },
+    {
+      "op": "replace",
+      "box": [10, 2, 10, 10, 4, 10],
+      "block": "air",
+      "desc": "rear entrance opening (matching) to satisfy entrance opening requirement and axial symmetry"
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 2, 18, 1, 8],
+      "block": "sandstone",
+      "desc": "recessed inner courtyard floor (lowered relative to outer perimeter by leaving inner area as

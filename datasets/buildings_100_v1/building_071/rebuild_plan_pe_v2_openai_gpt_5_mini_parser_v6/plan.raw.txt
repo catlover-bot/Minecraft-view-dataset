@@ -1,0 +1,465 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 6
+  },
+  "palette": {
+    "wall": "wood",
+    "roof": "netherbrick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 11,
+          "z2": 5,
+          "label": "main_inset"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single chamber interior",
+        "perimeter_profile": "rectangle_with_raised_border"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 6,
+        "y1": 1,
+        "z1": 5,
+        "x2": 6,
+        "y2": 2,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 11,
+        "y1": 2,
+        "z1": 2,
+        "x2": 11,
+        "y2": 3,
+        "z2": 3
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 2,
+        "x2": 1,
+        "y2": 3,
+        "z2": 3
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 11,
+        "y1": 2,
+        "z1": 3,
+        "x2": 11,
+        "y2": 3,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 3,
+        "x2": 1,
+        "y2": 3,
+        "z2": 4
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 6,
+          "block": "stonebrick"
+        },
+        {
+          "y": 4,
+          "x1": 2,
+          "z1": 2,
+          "x2": 10,
+          "z2": 4,
+          "block": "netherbrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 6,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 4,
+      "z2": 5,
+      "block": "wood",
+      "purpose": "wall_fill_between_logs"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 1,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "raised_stone_border_foundation"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "block": "log",
+      "purpose": "corner_log_sw"
+    },
+    {
+      "op": "set",
+      "x": 11,
+      "y": 1,
+      "z": 1,
+      "block": "log",
+      "purpose": "corner_log_se"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 1,
+      "z": 5,
+      "block": "log",
+      "purpose": "corner_log_nw"
+    },
+    {
+      "op": "set",
+      "x": 11,
+      "y": 1,
+      "z": 5,
+      "block": "log",
+      "purpose": "corner_log_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 11,
+      "y2": 3,
+      "z2": 5,
+      "block": "glass",
+      "purpose": "continuous_window_band_between_logs"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 4,
+      "z2": 1,
+      "block": "wood",
+      "purpose": "south_wall_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 5,
+      "x2": 11,
+      "y2": 4,
+      "z2": 5,
+      "block": "wood",
+      "purpose": "north_wall_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 1,
+      "y2": 4,
+      "z2": 5,
+      "block": "wood",
+      "purpose": "west_wall_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 4,
+      "z2": 5,
+      "block": "wood",
+      "purpose": "east_wall_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 11,
+      "y2": 4,
+      "z2": 5,
+      "block": "stonebrick",
+      "purpose": "stone_course_above_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 11,
+      "y2": 5,
+      "z2": 5,
+      "block": "stonebrick",
+      "purpose": "stone_slab_rim_base"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 4,
+      "z1": 2,
+      "x2": 10,
+      "y2": 4,
+      "z2": 4,
+      "block": "nether
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 12,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 13,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [0, 0, 0],
+      "to": [12, 0, 13],
+      "comment": "ground/ground-level base under foundation (ensure consistent ground under building footprint)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [1, 1, 1],
+      "to": [11, 1, 12],
+      "comment": "raised stonebrick border/foundation 1 block high forming perimeter; inner footprint is inset by one from outer bbox"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [1, 2, 1],
+      "comment": "front-left vertical corner post bottom"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [1, 3, 1],
+      "comment": "front-left corner post middle"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [1, 4, 1],
+      "comment": "front-left corner post top"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [11, 2, 1],
+      "comment": "front-right corner post bottom"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [11, 3, 1],
+      "comment": "front-right corner post middle"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [11, 4, 1],
+      "comment": "front-right corner post top"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [1, 2, 12],
+      "comment": "back-left corner post bottom"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [1, 3, 12],
+      "comment": "back-left corner post middle"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [1, 4, 12],
+      "comment": "back-left corner post top"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [11, 2, 12],
+      "comment": "back-right corner post bottom"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [11, 3, 12],
+      "comment": "back-right corner post middle"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:log",
+      "pos": [11, 4, 12],
+      "comment": "back-right corner post top"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:planks",
+      "from": [2, 2, 1],
+      "to": [10, 3, 12],
+      "comment": "wood plank walls between logs 2 blocks high (y=2..3). Leaves space for top trim and interior headroom."
+    },
+    {
+      "op": "clear",
+      "block": "minecraft:air",
+      "from": [6, 2, 1],
+      "to": [6, 3, 1],
+      "comment": "entrance opening centered on front wall: 1-wide door opening 2 blocks high (will be left open as air)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [1, 4, 1],
+      "to": [11, 4, 12],
+      "comment": "stonebrick course above wood wall (trim). Overlaps corner logs at same y to create continuous band."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:nether_bricks",
+      "from": [2, 5, 2],
+      "to": [10, 5, 11],
+      "comment": "netherbrick decorative band (single block high) above the stonebrick trim; inset one to not cover corner posts' top caps"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_slab",
+      "from": [1, 6, 1],
+      "to": [11, 6, 12],
+      "comment": "stone slab coping around roof perimeter (slab level at y=6). Using full-block coords for slabs; engine should place slabs appropriately."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:nether_bricks",
+      "from": [2, 5, 2],
+      "to": [10, 5, 11],
+      "comment": "inner roof netherbrick surface recessed one block below slab rim (y=5). Re-declared to ensure fill over interior range."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [3, 3, 1],
+      "to": [8, 3, 1],
+      "comment": "continuous horizontal glass row centered on front long wall (3 to 6 panes long depending on indexing). Placed at y=3 between logs"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [3, 3, 12],
+      "to": [8, 3, 12],
+      "comment": "continuous horizontal glass row on back long wall matching front placement"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [1, 3, 4],
+      "to": [1, 3, 9],
+      "comment": "left short-side window row centered vertically"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [11, 3, 4],
+      "to": [11, 3, 9],
+      "comment": "right short-side window row centered vertically"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:air",
+      "from": [2, 2, 2],
+      "to": [10, 4, 11],
+      "comment": "interior air cavity: clear interior space (headroom up to beneath netherbrick roof); keeps interior empty"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_planks",
+      "from": [2, 1, 2],
+      "to": [10, 1, 11],
+      "comment": "interior floor of wooden planks one block above foundation (y=1)"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "all_ops_inside_bbox": true,
+    "operation_count_ok": true,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof": true,
+    "contains_windows": true,
+    "contains_entrance": true,
+    "materials_coherent": true,
+    "structural_faithfulness_notes": "Adjusted footprint to 11x12 inner area (overall bbox 0..12 x 0..13) to match draft hints. Walls have vertical logs and plank infill; stonebrick base and trim, netherbrick band and recessed inner roof, stone slab coping. Entrance created as a 1-wide 2-high opening on front. Floor layer added. Windows on long and short sides.",
+    "notes":

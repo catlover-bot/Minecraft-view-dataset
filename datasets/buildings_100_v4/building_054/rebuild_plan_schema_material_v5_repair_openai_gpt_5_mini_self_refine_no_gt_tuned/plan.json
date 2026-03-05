@@ -1,0 +1,840 @@
+{
+  "op": "fill",
+  "block": "dirt",
+  "from": [
+    0,
+    0,
+    0
+  ],
+  "to": [
+    20,
+    0,
+    12
+  ],
+  "desc": "ground layer",
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "ground layer",
+      "role": "floor",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 12,
+      "block": "brick",
+      "purpose": "light-colored perimeter/base slab layer under walls (covers entire footprint as base floor)",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 18,
+      "y2": 6,
+      "z2": 10,
+      "block": "brick",
+      "purpose": "open central courtyard (open to sky) -- keeps interior empty; coordinates inside bbox",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 19,
+      "y2": 2,
+      "z2": 11,
+      "block": "brick",
+      "purpose": "exterior wall base (brick) one block thick sitting on slab base",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 19,
+      "y2": 3,
+      "z2": 11,
+      "block": "brick",
+      "purpose": "exterior wall second course (brick) to form layered wall",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2": 11,
+      "block": "brick",
+      "purpose": "white trim band horizontally across walls",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 2,
+      "z1": 1,
+      "x2": 11,
+      "y2": 5,
+      "z2": 1,
+      "block": "brick",
+      "purpose": "entrance opening on front wall (2 wide x 3 high) centered on front face",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 2,
+      "z1": 11,
+      "x2": 11,
+      "y2": 5,
+      "z2": 11,
+      "block": "brick",
+      "purpose": "rear symmetrical opening (optional) left as open (keeps near symmetry)",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 2,
+      "y2": 8,
+      "z2": 2,
+      "block": "brick",
+      "purpose": "inner shaft of front-left tower (brick) for mass; ensures tower thickness",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 10,
+      "x2": 2,
+      "y2": 8,
+      "z2": 10,
+      "block": "brick",
+      "purpose": "inner shaft of rear-left tower",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 18,
+      "y1": 2,
+      "z1": 2,
+      "x2": 18,
+      "y2": 8,
+      "z2": 2,
+      "block": "brick",
+      "purpose": "inner shaft of front-right tower",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 18,
+      "y1": 2,
+      "z1": 10,
+      "x2": 18,
+      "y2": 8,
+      "z2": 10,
+      "block": "brick",
+      "purpose": "inner shaft of rear-right tower",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 9,
+      "z2": 12,
+      "block": "brick",
+      "role": "wall",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "self_refine_wall_balance"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 9,
+      "z1": 0,
+      "x2": 20,
+      "y2": 9,
+      "z2": 12,
+      "block": "nether_brick",
+      "purpose": "roof edging slab plane (stone slab) across full footprint forming continuous cap under roof slabs",
+      "role": "roof",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 10,
+      "z1": 1,
+      "x2": 19,
+      "y2": 10,
+      "z2": 11,
+      "block": "nether_brick",
+      "purpose": "primary dark roof slabs covering long spans; two raised roof spans implied by leaving a 2-block center gap",
+      "role": "roof",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 10,
+      "z1": 5,
+      "x2": 11,
+      "y2": 11,
+      "z2": 7,
+      "block": "nether_brick",
+      "purpose": "central crenellated gap between the two raised roof spans to reflect recessed inner short walls (keeps symmetry)",
+      "role": "roof",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 11,
+      "z1": 1,
+      "x2": 19,
+      "y2": 11,
+      "z2": 1,
+      "block": "nether_brick",
+      "purpose": "overhang slab on front edge for slight layered roof effect (thin)",
+      "role": "roof",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 18,
+      "y2": 2,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "ground-level interior floor ring (thin brick band) along courtyard edge",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 19,
+      "y2": 6,
+      "z2": 11,
+      "block": "glass",
+      "purpose": "upper brick wall band (2-block tall) with space reserved for windows (windows placed next op)",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 5,
+      "z1": 1,
+      "x2": 17,
+      "y2": 5,
+      "z2": 1,
+      "block": "glass",
+      "purpose": "front long wall windows (one-row horizontal) centered on long sides",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 5,
+      "z1": 11,
+      "x2": 17,
+      "y2": 5,
+      "z2": 11,
+      "block": "glass",
+      "purpose": "back long wall windows",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 3,
+      "x2": 1,
+      "y2": 5,
+      "z2": 9,
+      "block": "glass",
+      "purpose": "left short wall windows",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 19,
+      "y1": 5,
+      "z1": 3,
+      "x2": 19,
+      "y2": 5,
+      "z2": 9,
+      "block": "glass",
+      "purpose": "right short wall windows",
+      "role": "glass",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 1,
+      "y2": 8,
+      "z2": 1,
+      "block": "stonebrick",
+      "purpose": "front-left corner tower pillar (stonebrick vertical trim) base up to tower height",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 11,
+      "x2": 1,
+      "y2": 8,
+      "z2": 11,
+      "block": "stonebrick",
+      "purpose": "rear-left corner tower pillar",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 19,
+      "y1": 2,
+      "z1": 1,
+      "x2": 19,
+      "y2": 8,
+      "z2": 1,
+      "block": "stonebrick",
+      "purpose": "front-right corner tower pillar",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 19,
+      "y1": 2,
+      "z1": 11,
+      "x2": 19,
+      "y2": 8,
+      "z2": 11,
+      "block": "stonebrick",
+      "purpose": "rear-right corner tower pillar",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 11,
+      "z1": 11,
+      "x2": 19,
+      "y2": 11,
+      "z2": 11,
+      "block": "stonebrick",
+      "purpose": "overhang slab on rear edge",
+      "role": "trim",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 20,
+      "y": 2,
+      "z": 0,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 12,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 20,
+      "y": 2,
+      "z": 12,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 0,
+      "x2": 1,
+      "y2": 4,
+      "z2": 0,
+      "block": "glass",
+      "role": "glass",
+      "purpose": "self_refine_window_v6",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 3,
+      "z1": 0,
+      "x2": 5,
+      "y2": 4,
+      "z2": 0,
+      "block": "glass",
+      "role": "glass",
+      "purpose": "self_refine_window_v6",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 3,
+      "z1": 0,
+      "x2": 9,
+      "y2": 4,
+      "z2": 0,
+      "block": "glass",
+      "role": "glass",
+      "purpose": "self_refine_window_v6",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 13,
+      "y1": 3,
+      "z1": 0,
+      "x2": 13,
+      "y2": 4,
+      "z2": 0,
+      "block": "glass",
+      "role": "glass",
+      "purpose": "self_refine_window_v6",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    },
+    {
+      "op": "fill",
+      "x1": 17,
+      "y1": 3,
+      "z1": 0,
+      "x2": 17,
+      "y2": 4,
+      "z2": 0,
+      "block": "glass",
+      "role": "glass",
+      "purpose": "self_refine_window_v6",
+      "role_confidence": 1.0,
+      "role_reason": "explicit_role"
+    }
+  ],
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 11,
+    "zmin": 0,
+    "zmax": 12
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "notes": [
+    "schema_repair_from_raw_response"
+  ],
+  "plan_version": "v1",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 27,
+    "accepted_operations_count": 27,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "building": "building_054",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "created_at": "2026-03-01T12:17:00.596039+00:00",
+  "schema_repair_at": "2026-03-01T05:14:42.605710+00:00",
+  "parse_report": {
+    "method": "operation_object_scan",
+    "candidate_count": 27,
+    "selected_candidate_score": 20,
+    "used_ops_array_repair": false,
+    "used_op_objects_repair": true
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "brick",
+      "target_blocks": 2179,
+      "actual_blocks": 4174,
+      "within_tolerance": false
+    },
+    "roof": {
+      "role": "roof",
+      "block": "nether_brick",
+      "target_blocks": 519,
+      "actual_blocks": 519,
+      "within_tolerance": true
+    },
+    "trim": {
+      "role": "trim",
+      "block": "stonebrick",
+      "target_blocks": 200,
+      "actual_blocks": 200,
+      "within_tolerance": true
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 0,
+      "actual_blocks": 472,
+      "within_tolerance": false
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 0,
+      "actual_blocks": 4,
+      "within_tolerance": false
+    },
+    "floor": {
+      "role": "floor",
+      "block": "wood",
+      "target_blocks": 273,
+      "actual_blocks": 273,
+      "within_tolerance": true
+    }
+  },
+  "self_check": {
+    "operation_count": 38,
+    "operation_count_ok": true,
+    "bbox_consistency": "ok",
+    "role_fixed_consistency": "ok",
+    "material_budget_consistency": "warning",
+    "required_roles_present": true,
+    "issues": [
+      "material_budget_violations=2",
+      "material_budget_violations=3",
+      "material_budget_violations=3",
+      "material_budget_violations=3",
+      "material_budget_violations=3",
+      "material_budget_violations=3",
+      "material_budget_violations=3",
+      "material_budget_violations=3",
+      "material_budget_violations=3",
+      "material_budget_violations=3"
+    ]
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "brick",
+        "score": 0.95,
+        "source_role": "primary wall"
+      },
+      "trim": {
+        "block": "stonebrick",
+        "score": 0.8,
+        "source_role": "tower vertical trim / corner pillars"
+      },
+      "roof": {
+        "block": "nether_brick",
+        "score": 0.9,
+        "source_role": "roof/wall cap (dark maroon slabs)"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.95,
+        "source_role": "windows"
+      },
+      "light": {
+        "block": "glowstone",
+        "score": 0.7,
+        "source_role": "small rooftop lights"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [],
+      "coherence_repairs": []
+    },
+    "budget_source": "root.material_budget",
+    "budget_present_in_input": true,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 37,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 0,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 1.0,
+    "role_infer_reasons": {
+      "explicit_role": 37
+    },
+    "self_repair_report": {
+      "added_operations": 0,
+      "added_tags": [],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [
+      {
+        "role": "wall",
+        "target_blocks": 2179,
+        "actual_blocks": 4174,
+        "relative_error": 0.915558
+      },
+      {
+        "role": "glass",
+        "target_blocks": 0,
+        "actual_blocks": 472,
+        "relative_error": 1.0
+      },
+      {
+        "role": "light",
+        "target_blocks": 0,
+        "actual_blocks": 4,
+        "relative_error": 1.0
+      }
+    ],
+    "schema_violations": [],
+    "strict_blocking_issues": [
+      "material_budget_violation"
+    ],
+    "valid_strict": false
+  },
+  "repair_source_plan_subdir": "rebuild_plan_pe_v2_openai_gpt_5_mini",
+  "repair_profile": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "prefer_description_palette": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "self_refine_no_gt": {
+    "enabled": true,
+    "accepted_iterations": 1,
+    "total_added_ops": 1,
+    "final_score": 0.9373892839750889,
+    "final_components": {
+      "material": 0.8416361394697383,
+      "dim": 1.0,
+      "roof": 0.9640831758034026,
+      "window": 1.0,
+      "entrance": 1.0
+    },
+    "history": [
+      {
+        "iter": 0,
+        "accepted": true,
+        "score": 0.7238276004801499,
+        "components": {
+          "material": 0.6600313294841982,
+          "dim": 1.0,
+          "roof": 0.9640831758034026,
+          "window": 0.0,
+          "entrance": 1.0
+        },
+        "added_ops": 0
+      },
+      {
+        "iter": 1,
+        "accepted": true,
+        "gain": 0.21356168349493898,
+        "score": 0.9373892839750889,
+        "components": {
+          "material": 0.8416361394697383,
+          "dim": 1.0,
+          "roof": 0.9640831758034026,
+          "window": 1.0,
+          "entrance": 1.0
+        },
+        "added_ops": 6,
+        "candidate_index": 6,
+        "candidates_tested": 8,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 0,
+        "budget_reproject_report": {},
+        "selection_score": 0.9283892839750889,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 3
+        }
+      },
+      {
+        "iter": 2,
+        "accepted": false,
+        "gain": 0.0,
+        "score": 0.9373892839750889,
+        "components": {
+          "material": 0.8416361394697383,
+          "dim": 1.0,
+          "roof": 0.9640831758034026,
+          "window": 1.0,
+          "entrance": 1.0
+        },
+        "added_ops": 1,
+        "candidate_index": 0,
+        "candidates_tested": 1,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 0,
+        "budget_reproject_report": {},
+        "selection_score": 0.935889283975089,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 3
+        }
+      }
+    ],
+    "profile": {
+      "max_iterations": 2,
+      "min_score_gain": 0.01,
+      "max_added_ops_per_iter": 64,
+      "roof_search_variants": 8,
+      "window_search_variants": 8,
+      "max_search_candidates": 20,
+      "enable_material_budget_reprojection": true,
+      "material_budget_reprojection_strength": 0.4,
+      "material_budget_reprojection_min_deficit_ratio": 0.025,
+      "material_budget_reprojection_trigger_material_score": 0.78,
+      "selection_op_penalty": 0.0015,
+      "strict_schema": true,
+      "enforce_role_fixed": true,
+      "require_material_budget": true,
+      "material_budget_tolerance": 0.35,
+      "role_fix_min_confidence": 0.78,
+      "prefer_description_palette": true
+    }
+  }
+}

@@ -1,0 +1,487 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 7,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "slab_stone": "smooth_stone_slab",
+    "band_wood": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 10,
+          "label": "main"
+        }
+      ],
+      "symmetry": "x_z_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground floor open hall, simple interior",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 7
+        },
+        "rooms_hint": "upper floor simple",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 5,
+        "y1": 1,
+        "z1": 0,
+        "x2": 5,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 2,
+        "z1": 0,
+        "x2": 4,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 2,
+        "z1": 0,
+        "x2": 6,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 2,
+        "z1": 0,
+        "x2": 8,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 5,
+        "z1": 0,
+        "x2": 2,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 5,
+        "z1": 0,
+        "x2": 4,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 5,
+        "z1": 0,
+        "x2": 6,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 5,
+        "z1": 0,
+        "x2": 8,
+        "y2": 5,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 7,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 10,
+          "block": "stonebrick"
+        },
+        {
+          "y": 6,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 9,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 11,
+      "y2": 0,
+      "z2": 11,
+      "block": "smooth_stone_slab",
+      "purpose": "raised_perimeter_foundation"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 10,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 10,
+      "block": "sandstone",
+      "purpose": "lower_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 10,
+      "block": "wood",
+      "purpose": "wooden_band_floor_separation"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 10,
+      "block": "sandstone",
+      "purpose": "upper_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "roof_edge_top_slab_support"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 9,
+      "y2": 6,
+      "z2": 9,
+      "block": "brick",
+      "purpose": "flat_roof_field"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 6,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 0,
+      "block": "stonebrick",
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 7,
+  "zmin": 0,
+  "zmax": 10,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "block": "air",
+      "from": [1, 1, 1],
+      "to": [9, 6, 9],
+      "comment": "Clear interior space for two floors (leave floor/ceil defined by separate ops)."
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "block": "smooth_stone_slab",
+      "from": [0, 0, 0],
+      "to": [10, 0, 10],
+      "comment": "Perimeter foundation/ground border: one-block-high slab layer across site (matches white slab border)."
+    },
+    {
+      "id": 3,
+      "action": "fill",
+      "block": "sandstone",
+      "from": [1, 1, 1],
+      "to": [9, 1, 9],
+      "comment": "Ground floor interior base (floor surface) single layer of sandstone matching wall material to simplify interior; can be changed to planks if desired."
+    },
+    {
+      "id": 4,
+      "action": "outline",
+      "block": "sandstone",
+      "from": [1, 1, 1],
+      "to": [9, 6, 9],
+      "thickness": 1,
+      "comment": "Build outer sandstone walls full height of building (y=1..6). Outline operation creates walls; openings added below."
+    },
+    {
+      "id": 5,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [1, 3, 1],
+      "to": [9, 3, 9],
+      "comment": "Horizontal wooden band separating floors: one-block-high continuous band at y=3 (between floor 1 and 2)."
+    },
+    {
+      "id": 6,
+      "action": "replace",
+      "block": "glass",
+      "from": [2, 2, 1],
+      "to": [8, 2, 1],
+      "pattern": {
+        "x_stride": 2,
+        "count": 4,
+        "size": [1, 1]
+      },
+      "comment": "Front face (z=1) narrow 1x1 windows on ground floor spaced every other block: x=2,4,6,8 at y=2."
+    },
+    {
+      "id": 7,
+      "action": "replace",
+      "block": "glass",
+      "from": [2, 5, 1],
+      "to": [8, 5, 1],
+      "pattern": {
+        "x_stride": 2,
+        "count": 4,
+        "size": [1, 1]
+      },
+      "comment": "Front face upper floor windows at y=5 (positions x=2,4,6,8)."
+    },
+    {
+      "id": 8,
+      "action": "replace",
+      "block": "glass",
+      "from": [9, 2, 2],
+      "to": [9, 2, 8],
+      "pattern": {
+        "z_stride": 2,
+        "count": 4,
+        "size": [1, 1]
+      },
+      "comment": "Right face ground floor windows at x=9, z=2,4,6,8 y=2."
+    },
+    {
+      "id": 9,
+      "action": "replace",
+      "block": "glass",
+      "from": [9, 5, 2],
+      "to": [9, 5, 8],
+      "pattern": {
+        "z_stride": 2,
+        "count": 4,
+        "size": [1, 1]
+      },
+      "comment": "Right face upper floor windows at y=5."
+    },
+    {
+      "id": 10,
+      "action": "replace",
+      "block": "glass",
+      "from": [2, 2, 9],
+      "to": [8, 2, 9],
+      "pattern": {
+        "x_stride": 2,
+        "count": 4,
+        "size": [1, 1]
+      },
+      "comment": "Back face ground floor windows."
+    },
+    {
+      "id": 11,
+      "action": "replace",
+      "block": "glass",
+      "from": [2, 5, 9],
+      "to": [8, 5, 9],
+      "pattern": {
+        "x_stride": 2,
+        "count": 4,
+        "size": [1, 1]
+      },
+      "comment": "Back face upper floor windows."
+    },
+    {
+      "id": 12,
+      "action": "replace",
+      "block": "glass",
+      "from": [1, 2, 2],
+      "to": [1, 2, 8],
+      "pattern": {
+        "z_stride": 2,
+        "count": 4,
+        "size": [1, 1]
+      },
+      "comment": "Left face ground floor windows at x=1."
+    },
+    {
+      "id": 13,
+      "action": "replace",
+      "block": "glass",
+      "from": [1, 5, 2],
+      "to": [1, 5, 8],
+      "pattern": {
+        "z_stride": 2,
+        "count": 4,
+        "size": [1, 1]
+      },
+      "comment": "Left face upper floor windows."
+    },
+    {
+      "id": 14,
+      "action": "setblock",
+      "block": "stonebrick",
+      "pos": [1, 1, 1],
+      "comment": "Corner pillar blocks (bottom) - will be built up with column ops."
+    },
+    {
+      "id": 15,
+      "action": "column",
+      "block": "stonebrick",
+      "from": [1, 1, 1],
+      "to": [1, 4, 1],
+      "comment": "Front-left corner pillar up to just above wooden band (y=1..4)."
+    },
+    {
+      "id": 16,
+      "action": "column",
+      "block": "stonebrick",
+      "from": [9, 1, 1],
+      "to": [9, 4, 1],
+      "comment": "Front-right corner pillar."
+    },
+    {
+      "id": 17,
+      "action": "column",
+      "block": "stonebrick",
+      "from": [9, 1, 9],
+      "to": [9, 4, 9],
+      "comment": "Back-right corner pillar."
+    },
+    {
+      "id": 18,
+      "action": "column",
+      "block": "stonebrick",
+      "from": [1, 1, 9],
+      "to": [1, 4, 9],
+      "comment": "Back-left corner pillar."
+    },
+    {
+      "id": 19,
+      "action": "setblock",
+      "block": "oak_slab",
+      "pos": [2, 2, 1],
+      "comment": "Optional window sills: place slabs below some windows for visual detail (low confidence)."
+    },
+    {
+      "id": 20,
+      "action": "setblock",
+      "block": "oak_slab",
+      "pos": [4, 2, 1],
+      "comment": "Window sill."
+    },
+    {
+      "id": 21,
+      "action": "setblock",
+      "block": "oak_slab",
+      "pos": [6, 2, 1],
+      "comment": "Window sill."
+    },
+    {
+      "id": 22,
+      "action": "

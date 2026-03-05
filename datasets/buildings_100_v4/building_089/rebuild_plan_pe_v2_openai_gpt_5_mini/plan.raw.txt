@@ -1,0 +1,267 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 34
+  },
+  "palette": {
+    "wall": "hay_block",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "planks_oak"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "l_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 20,
+          "label": "main_long_block"
+        },
+        {
+          "x1": 8,
+          "z1": 20,
+          "x2": 18,
+          "z2": 34,
+          "label": "short_perp_wing"
+        }
+      ],
+      "symmetry": "approximate_along_long_ridge (asymmetric wing lengths)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single tall hall; walkthrough interior unknown",
+        "perimeter_profile": "l_shape with continuous lower band"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 11,
+        "y1": 1,
+        "z1": 0,
+        "x2": 12,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 24,
+        "y1": 2,
+        "z1": 8,
+        "x2": 24,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 10,
+        "y1": 2,
+        "z1": 34,
+        "x2": 14,
+        "y2": 3,
+        "z2": 34
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 4,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 20,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 23,
+          "z2": 19,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 2,
+          "x2": 22,
+          "z2": 18,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 3,
+          "z1": 3,
+          "x2": 21,
+          "z2": 17,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 8,
+          "z1": 20,
+          "x2": 18,
+          "z2": 34,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 20,
+          "x2": 18,
+          "z2": 34,
+          "block": "nether_brick"
+        },
+        {
+          "y": 4,
+          "x1": 8,
+          "z1": 20,
+          "x2": 18,
+          "z2": 34,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 3,
+          "z1": 3,
+          "x2": 21,
+          "z2": 17,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 20,
+      "block": "planks_oak",
+      "purpose": "floor_main"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 0,
+      "z1": 20,
+      "x2": 18,
+      "y2": 0,
+      "z2": 34,
+      "block": "planks_oak",
+      "purpose": "floor_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 3,
+      "z2": 20,
+      "block": "hay_block",
+      "purpose": "lower_wall_band_main"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 20,
+      "x2": 18,
+      "y2": 3,
+      "z2": 34,
+      "block": "hay_block",
+      "purpose": "lower_wall_band_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 24,
+      "y2": 4,
+      "z2": 20,
+      "block": "stonebrick",
+      "purpose": "horizontal_stone_band_main"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 3,
+      "z1": 20,
+      "x2": 18,
+      "y2": 4,
+      "z2": 34,
+      "block": "stonebrick",
+      "purpose": "horizontal_stone_band_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 24,
+      "y2": 4,
+      "z2": 20,
+      "block": "nether_brick",
+      "purpose": "upper_wall_base_main"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 4,
+      "z1": 20,
+      "x2": 18,
+      "y2": 4,
+      "z2": 34,
+      "block": "nether_brick",
+      "purpose": "upper_wall_base_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 6,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "stone_pillar_corner_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 24,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 6,
+      "z2": 0,
+      "block": "stonebrick
+
+[REVISED_RESPONSE_ERROR]
+OpenAI request failed: OpenAI chat completions endpoint returned no text output.

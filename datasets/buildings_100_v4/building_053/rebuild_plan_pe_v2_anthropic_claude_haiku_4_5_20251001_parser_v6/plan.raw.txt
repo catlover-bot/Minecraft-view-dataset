@@ -1,0 +1,269 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 30,
+    "ymin": 0,
+    "ymax": 17,
+    "zmin": 0,
+    "zmax": 20
+  },
+  "palette": {
+    "wall": "oak_planks",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dark_oak_log",
+    "slab": "stone_brick_slab",
+    "tower": "dark_oak_log"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 30,
+          "z2": 20,
+          "label": "outer_perimeter"
+        },
+        {
+          "x1": 8,
+          "z1": 5,
+          "x2": 22,
+          "z2": 15,
+          "label": "courtyard_inner"
+        }
+      ],
+      "symmetry": "fourfold_rotational"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 2
+        },
+        "rooms_hint": "foundation and base perimeter",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 3,
+          "ymax": 8
+        },
+        "rooms_hint": "lower wall band with courtyard",
+        "perimeter_profile": "rectangle_with_courtyard"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 9,
+          "ymax": 16
+        },
+        "rooms_hint": "tower shafts",
+        "perimeter_profile": "four_corner_towers"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 14,
+        "y1": 10,
+        "z1": 0,
+        "x2": 16,
+        "y2": 12,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 14,
+        "y1": 10,
+        "z1": 20,
+        "x2": 16,
+        "y2": 12,
+        "z2": 20
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 30,
+        "y1": 10,
+        "z1": 9,
+        "x2": 30,
+        "y2": 12,
+        "z2": 11
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 10,
+        "z1": 9,
+        "x2": 0,
+        "y2": 12,
+        "z2": 11
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 16,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 16,
+          "x1": 2,
+          "z1": 2,
+          "x2": 28,
+          "z2": 18,
+          "block": "nether_brick"
+        },
+        {
+          "y": 17,
+          "x1": 3,
+          "z1": 3,
+          "x2": 27,
+          "z2": 17,
+          "block": "stone_brick_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 30,
+      "y2": 0,
+      "z2": 20,
+      "block": "stonebrick",
+      "purpose": "foundation_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 30,
+      "y2": 2,
+      "z2": 20,
+      "block": "stonebrick",
+      "purpose": "foundation_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 30,
+      "y2": 8,
+      "z2": 20,
+      "block": "oak_planks",
+      "purpose": "outer_perimeter_wall"
+    },
+    {
+      "op": "carve",
+      "x1": 8,
+      "y1": 3,
+      "z1": 5,
+      "x2": 22,
+      "y2": 8,
+      "z2": 15,
+      "purpose": "courtyard_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 3,
+      "z1": 5,
+      "x2": 22,
+      "y2": 3,
+      "z2": 15,
+      "block": "nether_brick",
+      "purpose": "courtyard_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 9,
+      "z1": 2,
+      "x2": 4,
+      "y2": 16,
+      "z2": 4,
+      "block": "dark_oak_log",
+      "purpose": "tower_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 26,
+      "y1": 9,
+      "z1": 2,
+      "x2": 28,
+      "y2": 16,
+      "z2": 4,
+      "block": "dark_oak_log",
+      "purpose": "tower_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 9,
+      "z1": 16,
+      "x2": 4,
+      "y2": 16,
+      "z2": 18,
+      "block": "dark_oak_log",
+      "purpose": "tower_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 26,
+      "y1": 9,
+      "z1": 16,
+      "
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 30,
+  "ymin": 0,
+  "ymax": 20,
+  "zmin": 0,
+  "zmax": 18,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 30, "y2": 20, "z2": 0, "block": "stone_bricks", "description": "foundation layer"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 29, "y2": 19, "z2": 1, "block": "oak_planks", "description": "floor layer"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 2, "x2": 28, "y2": 18, "z2": 2, "block": "oak_planks", "description": "floor top"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 3, "x2": 27, "y2": 17, "z2": 3, "block": "air", "description": "courtyard interior"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 3, "x2": 28, "y2": 18, "z2": 3, "block": "air", "description": "clear courtyard"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 3, "x2": 2, "y2": 19, "z2": 7, "block": "dark_oak_log", "description": "west wall lower"},
+    {"type": "fill", "x1": 28, "y1": 1, "z1": 3, "x2": 29, "y2": 19, "z2": 7, "block": "dark_oak_log", "description": "east wall lower"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 3, "x2": 28, "y2": 2, "z2": 7, "block": "dark_oak_log", "description": "north wall lower"},
+    {"type": "fill", "x1": 2, "y1": 18, "z1": 3, "x2": 28, "y2": 19, "z2": 7, "block": "dark_oak_log", "description": "south wall lower"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 7, "x2": 2, "y2": 19, "z2": 8, "block": "stone_brick_slab", "description": "west wall cap"},
+    {"type": "fill", "x1": 28, "y1": 1, "z1": 7, "x2": 29, "y2": 19, "z2": 8, "block": "stone_brick_slab", "description": "east wall cap"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 7, "x2": 28, "y2": 2, "z2": 8, "block": "stone_brick_slab", "description": "north wall cap"},
+    {"type": "fill", "x1": 2, "y1": 18, "z1": 7, "x2": 28, "y2": 19, "z2": 8, "block": "stone_brick_slab", "description": "south wall cap"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 3, "x2": 5, "y2": 5, "z2": 15, "block": "dark_oak_log", "description": "NW corner tower"},
+    {"type": "fill", "x1": 25, "y1": 2, "z1": 3, "x2": 28, "y2": 5, "z2": 15, "block": "dark_oak_log", "description": "NE corner tower"},
+    {"type": "fill", "x1": 2, "y1": 15, "z1": 3, "x2": 5, "y2": 18, "z2": 15, "block": "dark_oak_log", "description": "SW corner tower"},
+    {"type": "fill", "x1": 25, "y1": 15, "z1": 3, "x2": 28, "y2": 18, "z2": 15, "block": "dark_oak_log", "description": "SE corner tower"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 15, "x2": 5, "y2": 5, "z2": 16, "block": "nether_bricks", "description": "NW tower roof inner"},
+    {"type": "fill", "x1": 25, "y1": 2, "z1": 15, "x2": 28, "y2": 5, "z2": 16, "block": "nether_bricks", "description": "NE tower roof inner"},
+    {"type": "fill", "x1": 2, "y1": 15, "z1": 15, "x2": 5, "y2": 18, "z2": 16, "block": "nether_bricks", "description": "SW tower roof inner"},
+    {"type": "fill", "x1": 25, "y1": 15, "z1": 15, "x2": 28, "y2": 18, "z2": 16, "block": "nether_bricks", "description": "SE tower roof inner"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 15, "x2": 6, "y2": 6, "z2": 16, "block": "stone_brick_slab", "description": "NW tower roof rim"},
+    {"type": "fill", "x1": 24, "y1": 1, "z1": 15, "x2": 29, "y2": 6, "z2": 16, "block": "stone_brick_slab", "description": "NE tower roof rim"},
+    {"type": "fill", "x1": 1, "y1": 14, "z1": 15, "x2": 6, "y2": 19, "z2": 16, "block": "stone_brick_slab", "description": "SW tower roof rim"},
+    {"type": "fill", "x1": 24, "y1": 14, "z1": 15, "x2": 29, "y2": 19, "z2": 16, "block": "stone_brick_slab", "description": "SE tower roof rim"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 15

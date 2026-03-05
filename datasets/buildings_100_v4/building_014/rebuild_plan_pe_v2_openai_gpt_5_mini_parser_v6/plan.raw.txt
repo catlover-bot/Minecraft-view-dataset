@@ -1,0 +1,454 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 34
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 34,
+          "label": "compound_outer"
+        }
+      ],
+      "symmetry": "z_axis_centered (front-back approximate)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground platform + foundation",
+        "perimeter_profile": "outer compound with inner boundary"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 10
+        },
+        "rooms_hint": "main tier 1 and intermediate spaces",
+        "perimeter_profile": "central block first tier"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 11,
+          "ymax": 14
+        },
+        "rooms_hint": "second tier (inset)",
+        "perimeter_profile": "central block second tier"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 15,
+          "ymax": 17
+        },
+        "rooms_hint": "third/top tier below roof",
+        "perimeter_profile": "central block top tier"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 11,
+        "y1": 1,
+        "z1": 34,
+        "x2": 13,
+        "y2": 3,
+        "z2": 34
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 24,
+        "y1": 6,
+        "z1": 14,
+        "x2": 24,
+        "y2": 7,
+        "z2": 17
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 14,
+        "x2": 0,
+        "y2": 7,
+        "z2": 17
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 17,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 17,
+          "x1": 6,
+          "z1": 6,
+          "x2": 18,
+          "z2": 28,
+          "block": "brick"
+        },
+        {
+          "y": 16,
+          "x1": 5,
+          "z1": 7,
+          "x2": 19,
+          "z2": 27,
+          "block": "brick"
+        },
+        {
+          "y": 15,
+          "x1": 4,
+          "z1": 8,
+          "x2": 20,
+          "z2": 26,
+          "block": "brick"
+        },
+        {
+          "y": 14,
+          "x1": 6,
+          "z1": 9,
+          "x2": 18,
+          "z2": 25,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 34,
+      "block": "dirt",
+      "purpose": "ground_pad"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 22,
+      "y2": 1,
+      "z2": 32,
+      "block": "quartz_block",
+      "purpose": "inner_low_white_boundary_line"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 1,
+      "z1": 3,
+      "x2": 21,
+      "y2": 4,
+      "z2": 31,
+      "purpose": "compound_walk_area_clearance"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 1,
+      "z1": 6,
+      "x2": 18,
+      "y2": 4,
+      "z2": 28,
+      "block": "sandstone",
+      "purpose": "central_tier0_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 5,
+      "z1": 7,
+      "x2": 19,
+      "y2": 8,
+      "z2": 27,
+      "block": "sandstone",
+      "purpose": "central_tier1_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 7,
+      "y1": 11,
+      "z1": 9,
+      "x2": 17,
+      "y2": 14,
+      "z2": 25,
+      "block": "sandstone",
+      "purpose": "central_tier2_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 4,
+      "z1": 7,
+      "x2": 20,
+      "y2": 4,
+      "z2": 27,
+      "block": "quartz_block",
+      "purpose": "tier0_trim_band (horizontal)"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 9,
+      "z1": 8,
+      "x2": 20,
+      "y2": 9,
+      "z2": 26,
+      "block": "quartz_block",
+      "purpose": "tier1_trim_band (horizontal)"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 15,
+      "z1": 9,
+      "x2": 18,
+      "y2": 15,
+      "z2": 25,
+      "block": "quartz_block",
+      "purpose": "tier2_trim_band (horizontal)"
+    },
+    {
+      "op": "carve",
+      "x1": 7,
+      "y1": 2,
+      "z1": 7,
+      "x2": 17,
+      "y2": 3,
+      "z2": 27,
+      "purpose": "interior_main_hall_clearance_floor0"
+    },
+    {
+      "op": "carve",
+      "x1": 6,
+      "y1": 6,
+      "z1": 8,
+      "x2": 18,
+      "y2": 8,
+      "z2": 26,
+      "purpose": "interior_tier1_clearance"
+    },
+    {
+      "op": "carve",
+      "x1": 8,
+      "y1":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 20,
+  "zmin": 0,
+  "zmax": 34,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 24, 0, 34],
+      "block": "brown_terracotta",
+      "count_estimate": 825,
+      "note": "ground pad inside compound (one-block thick)."
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 2, 22, 1, 32],
+      "block": "white_concrete",
+      "count_estimate": 441,
+      "note": "inner low white spaced boundary / continuous one-block-high band (changed from spaced to continuous for structural coherence)."
+    },
+    {
+      "op": "fill",
+      "box": [3, 1, 3, 21, 4, 31],
+      "block": "sandstone",
+      "count_estimate": 1026,
+      "note": "main building - tier 1 walls (base)."
+    },
+    {
+      "op": "replace",
+      "box": [6, 2, 3, 18, 3, 3],
+      "block": "glass",
+      "count_estimate": 39,
+      "note": "row of small horizontal windows on tier 1 (front)."
+    },
+    {
+      "op": "replace",
+      "box": [6, 2, 31, 18, 3, 31],
+      "block": "glass",
+      "count_estimate": 39,
+      "note": "row of small horizontal windows on tier 1 (back)."
+    },
+    {
+      "op": "fill",
+      "box": [4, 4, 4, 20, 6, 30],
+      "block": "sandstone_slab",
+      "count_estimate": 340,
+      "note": "tier 1 top surface / floor for tier 2 (half slab to visually step)."
+    },
+    {
+      "op": "fill",
+      "box": [5, 5, 5, 19, 9, 29],
+      "block": "sandstone",
+      "count_estimate": 1190,
+      "note": "main building - tier 2 walls (inset)."
+    },
+    {
+      "op": "replace",
+      "box": [7, 6, 5, 17, 7, 5],
+      "block": "glass",
+      "count_estimate": 22,
+      "note": "row of small horizontal windows on tier 2 (front)."
+    },
+    {
+      "op": "replace",
+      "box": [7, 6, 29, 17, 7, 29],
+      "block": "glass",
+      "count_estimate": 22,
+      "note": "row of small horizontal windows on tier 2 (back)."
+    },
+    {
+      "op": "fill",
+      "box": [6, 9, 6, 18, 11, 28],
+      "block": "sandstone_slab",
+      "count_estimate": 260,
+      "note": "tier 2 top surface / floor for tier 3."
+    },
+    {
+      "op": "fill",
+      "box": [7, 10, 7, 17, 14, 27],
+      "block": "sandstone",
+      "count_estimate": 816,
+      "note": "main building - tier 3 walls (top tier)."
+    },
+    {
+      "op": "replace",
+      "box": [9, 11, 7, 15, 12, 7],
+      "block": "glass",
+      "count_estimate": 14,
+      "note": "row of small horizontal windows on tier 3 (front)."
+    },
+    {
+      "op": "replace",
+      "box": [9, 11, 27, 15, 12, 27],
+      "block": "glass",
+      "count_estimate": 14,
+      "note": "row of small horizontal windows on tier 3 (back)."
+    },
+    {
+      "op": "fill",
+      "box": [3, 1, 3, 21, 1, 31],
+      "block": "quartz_block",
+      "count_estimate": 684,
+      "note": "white horizontal trim band at base height (overwrites parts of base walls for visible band)."
+    },
+    {
+      "op": "fill",
+      "box": [4, 5, 4, 20, 5, 30],
+      "block": "quartz_block",
+      "count_estimate": 612,
+      "note": "white horizontal trim between tier1 and tier2."
+    },
+    {
+      "op": "fill",
+      "box": [5, 9, 5, 19, 9, 29],
+      "block": "quartz_block",
+      "count_estimate": 440,
+      "note": "white horizontal trim between tier2 and tier3."
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 2, 3, 15, 4],
+      "block": "stone_bricks",
+      "count_estimate": 312,
+      "note": "southwest corner tower shaft (stonebrick edges with sandstone filler)."
+    },
+    {
+      "op": "fill",
+      "box": [20, 1, 2, 22, 15, 4],
+      "block": "stone_bricks",
+      "count_estimate": 312,
+      "note": "southeast corner tower shaft."
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 28, 4, 15, 30],
+      "block": "stone_bricks",
+      "count_estimate": 312,
+      "note": "northwest corner tower shaft."
+    },
+    {
+      "op": "fill",
+      "box": [20, 1, 28, 22, 15, 30],
+      "block": "stone_bricks",
+      "count_estimate": 312,
+      "note": "northeast corner tower shaft."
+    },
+    {
+      "op": "fill",
+      "box": [2, 15, 2, 22, 16, 31],
+      "block": "stone_slab",
+      "count_estimate": 600,
+      "note": "flat platforms topping towers (continuous slab roof over compound edges)."
+    },
+    {
+      "op": "fill",
+      "box": [7, 14, 7, 17, 16, 27],
+      "block": "brick_block",
+      "count_estimate": 408,
+      "note": "start of gabled roof core (solid fill under decorative stairs)."
+    },
+    {
+      "op": "overlay_roof",
+      "box": [6, 16, 6, 18, 18, 28],
+      "block": "brick_stairs",
+      "count_estimate": 280,
+      "note": "stair-step brick roof slopes on both sides of central ridge (applied symmetrically)."
+    },
+    {
+      "op": "fill",
+      "box": [11, 18, 6, 12, 18, 28],
+      "block": "brick_block",
+      "count_estimate": 24,
+      "note": "central ridge line of roof (two-block ridge)."
+    },
+    {
+      "op": "fill",
+      "box": [10, 16, 6, 13, 16, 28],
+      "block": "stone_slab",
+      "count_estimate": 156,
+      "note": "stone slab edging at roof eaves."
+    },
+    {
+      "op": "replace",
+      "box": [12, 1, 17, 12,

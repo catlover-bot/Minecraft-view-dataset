@@ -1,0 +1,429 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 18
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "oak_planks",
+    "trim": "stone_slab",
+    "glass": "glass_pane",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 2,
+          "z1": 2,
+          "x2": 21,
+          "z2": 15,
+          "label": "main_lot"
+        }
+      ],
+      "symmetry": "approximately_bilateral_along_x_center"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "raised foundation + ground level circulation",
+        "perimeter_profile": "rectangular raised plinth with pathway"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "lower terrace level",
+        "perimeter_profile": "stepped terrace (first step)"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 10,
+          "ymax": 14
+        },
+        "rooms_hint": "upper terrace level / top volume",
+        "perimeter_profile": "stepped terrace (second step)"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 11,
+        "y1": 1,
+        "z1": 2,
+        "x2": 12,
+        "y2": 3,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 7,
+        "y1": 6,
+        "z1": 15,
+        "x2": 7,
+        "y2": 8,
+        "z2": 15
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 15,
+        "y1": 6,
+        "z1": 15,
+        "x2": 15,
+        "y2": 8,
+        "z2": 15
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 2,
+        "y1": 6,
+        "z1": 8,
+        "x2": 2,
+        "y2": 8,
+        "z2": 8
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 15,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 4,
+          "z1": 4,
+          "x2": 19,
+          "z2": 13,
+          "block": "oak_planks"
+        },
+        {
+          "y": 10,
+          "x1": 6,
+          "z1": 6,
+          "x2": 17,
+          "z2": 11,
+          "block": "oak_planks"
+        },
+        {
+          "y": 15,
+          "x1": 9,
+          "z1": 8,
+          "x2": 14,
+          "z2": 10,
+          "block": "oak_planks"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 18,
+      "block": "oak_planks",
+      "purpose": "site_ground_floor_fill"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 21,
+      "y2": 4,
+      "z2": 15,
+      "block": "stonebrick",
+      "purpose": "main_plinth_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 1,
+      "z1": 3,
+      "x2": 20,
+      "y2": 4,
+      "z2": 14,
+      "purpose": "plinth_interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 5,
+      "z1": 4,
+      "x2": 19,
+      "y2": 9,
+      "z2": 13,
+      "block": "stonebrick",
+      "purpose": "terrace_level_1_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 5,
+      "z1": 5,
+      "x2": 18,
+      "y2": 9,
+      "z2": 12,
+      "purpose": "terrace_1_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 10,
+      "z1": 6,
+      "x2": 17,
+      "y2": 14,
+      "z2": 11,
+      "block": "stonebrick",
+      "purpose": "terrace_level_2_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 7,
+      "y1": 10,
+      "z1": 7,
+      "x2": 16,
+      "y2": 14,
+      "z2": 10,
+      "purpose": "terrace_2_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 15,
+      "z1": 8,
+      "x2": 14,
+      "y2": 15,
+      "z2": 10,
+      "block": "oak_planks",
+      "purpose": "top_roof_platform"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 5,
+      "z1": 4,
+      "x2": 19,
+      "y2": 5,
+      "z2": 13,
+      "block": "stone_slab",
+      "purpose": "slab_band_terrace_1"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 10,
+      "z1": 6,
+      "x2": 17,
+      "y2": 10,
+      "z2": 11,
+      "block": "stone_slab",
+      "purpose": "slab_band_terrace_2"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 15,
+      "z1": 8,
+      "x2": 14,
+      "y2": 15,
+      "z2": 10,
+      "block": "stone_slab",
+      "purpose": "slab_cap_top"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 4,
+      "z1": 3,
+      "x2": 6,
+      "y2": 17,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 18,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [1, 0, 1, 22, 0, 16],
+      "block": "oak_planks",
+      "note": "ground floor base/floor layer (oak planks) filling the building footprint interior one-block thick"
+    },
+    {
+      "op": "walls",
+      "box": [1, 1, 1, 22, 6, 16],
+      "block": "smooth_quartz",
+      "thickness": 1,
+      "note": "external primary walls of main rectangular mass (white edging / corner posts simulated with smooth_quartz). Leaves openings for windows and entrance."
+    },
+    {
+      "op": "cut",
+      "box": [11, 1, 1, 12, 3, 1],
+      "block": "air",
+      "note": "entrance opening centered on front (2 wide x 2 high) facing -Z (front is z=1 side). Ensures an entrance opening"
+    },
+    {
+      "op": "windows",
+      "boxes": [
+        [4, 3, 1, 4, 4, 1],
+        [7, 3, 1, 7, 4, 1],
+        [10, 3, 1, 10, 4, 1],
+        [13, 3, 1, 13, 4, 1],
+        [16, 3, 1, 16, 4, 1],
+        [19, 3, 1, 19, 4, 1],
+        [4, 3, 16, 4, 4, 16],
+        [7, 3, 16, 7, 4, 16],
+        [10, 3, 16, 10, 4, 16],
+        [13, 3, 16, 13, 4, 16],
+        [16, 3, 16, 16, 4, 16],
+        [19, 3, 16, 19, 4, 16]
+      ],
+      "block": "glass_pane",
+      "note": "regular small windows in main mass front and back faces (single-pane tall slots)"
+    },
+    {
+      "op": "band",
+      "box": [1, 6, 1, 22, 6, 16],
+      "block": "stone_slab",
+      "note": "horizontal slab band around main mass at top of first floor (stone slab single layer)."
+    },
+    {
+      "op": "terrace_layer_2",
+      "box": [3, 7, 3, 20, 7, 14],
+      "block": "oak_planks",
+      "note": "second terrace floor (set back 2 blocks from footprint) wooden platform"
+    },
+    {
+      "op": "walls_layer_2",
+      "box": [3, 8, 3, 20, 12, 14],
+      "block": "smooth_quartz",
+      "thickness": 1,
+      "note": "second level walls (white) with window slots"
+    },
+    {
+      "op": "windows_layer_2",
+      "boxes": [
+        [6, 9, 3, 6, 10, 3],
+        [15, 9, 3, 15, 10, 3],
+        [6, 9, 14, 6, 10, 14],
+        [15, 9, 14, 15, 10, 14]
+      ],
+      "block": "glass_pane",
+      "note": "windows on second terrace faces"
+    },
+    {
+      "op": "band_2",
+      "box": [3, 12, 3, 20, 12, 14],
+      "block": "stone_slab",
+      "note": "horizontal slab band at top of second floor"
+    },
+    {
+      "op": "terrace_layer_3",
+      "box": [6, 13, 6, 17, 13, 10],
+      "block": "oak_planks",
+      "note": "third/top terrace platform (setback again) wooden"
+    },
+    {
+      "op": "walls_towers_stone_left",
+      "box": [1, 1, 1, 4, 16, 4],
+      "block": "stonebrick",
+      "thickness": 1,
+      "note": "left main stonebrick tower (3x3 footprint at x=1..4 z=1..4), full height."
+    },
+    {
+      "op": "cap_tower_left",
+      "box": [0, 16, 0, 5, 16, 5],
+      "block": "stone_slab",
+      "note": "overhanging slab cap for left tower (1 slab overhang all around)."
+    },
+    {
+      "op": "light_tower_left",
+      "box": [2, 16, 2, 3, 16, 3],
+      "block": "sea_lantern",
+      "note": "light source centered on left tower top platform"
+    },
+    {
+      "op": "tower_windows_left",
+      "boxes": [
+        [2, 4, 1, 2, 4, 1],
+        [2, 8, 1, 2, 8, 1],
+        [2, 12, 1, 2, 12, 1]
+      ],
+      "block": "glass_pane",
+      "note": "stacked small windows on left tower front face"
+    },
+    {
+      "op": "walls_towers_stone_right",
+      "box": [19, 1, 13, 22, 16, 16],
+      "block": "stonebrick",
+      "thickness": 1,
+      "note": "right main stonebrick tower (3x3) anchored at opposite corner."
+    },
+    {
+      "op": "cap_tower_right",
+      "box": [18, 16, 12, 23, 16, 17],
+      "block": "stone_slab",
+      "note": "overhanging slab cap for right tower."
+    },
+    {
+      "op": "light_tower_right",
+      "box": [20, 16, 14, 21, 16, 15],
+      "block": "sea_lantern",
+      "note": "light source for right tower"
+    },
+    {
+      "op": "tower_windows_right",
+      "boxes": [
+        [20, 4, 16, 20, 4, 16],
+        [20, 8, 16, 20, 8, 16],
+        [20, 12, 16, 20, 12, 16]
+      ],
+      "block": "glass_pane",
+      "note": "stacked windows on right tower"
+    },
+    {
+      "op": "tower_brick_small",
+      "box": [23, 1, 6, 23, 10, 8],
+      "block": "brick",
+      "note": "narrow red-brick tower (1x3 footprint) outside main footprint connected by pathway; height 10"
+    },
+    {
+      "op": "cap_tower_brick",
+      "box": [22, 10, 5, 24, 10, 9],
+      "block": "nether_bricks",
+      "note": "dark roof cap for red brick tower (small overhang)"
+    },
+    {
+      "op": "perimeter_edge",
+      "boxes": [
+        [0, 0, 0, 24, 0, 18],
+        [0, 1, 0, 24, 1, 18]
+      ],
+      "block

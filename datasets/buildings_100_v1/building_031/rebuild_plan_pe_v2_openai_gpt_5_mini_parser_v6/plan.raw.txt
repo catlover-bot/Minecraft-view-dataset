@@ -1,0 +1,460 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 4,
+    "zmin": 0,
+    "zmax": 12
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "slab_stone",
+    "trim": "cobblestone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 12,
+          "label": "main"
+        }
+      ],
+      "symmetry": "z_axis_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single open hall (utility)",
+        "perimeter_profile": "rectangular recessed central floor with raised rim"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 4,
+        "y1": 1,
+        "z1": 12,
+        "x2": 5,
+        "y2": 2,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 1,
+        "z1": 3,
+        "x2": 8,
+        "y2": 1,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 1,
+        "z1": 6,
+        "x2": 8,
+        "y2": 1,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 1,
+        "z1": 9,
+        "x2": 8,
+        "y2": 1,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 1,
+        "z1": 3,
+        "x2": 0,
+        "y2": 1,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 1,
+        "z1": 6,
+        "x2": 0,
+        "y2": 1,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 1,
+        "z1": 9,
+        "x2": 0,
+        "y2": 1,
+        "z2": 10
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 3,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 3,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 12,
+          "block": "slab_stone"
+        },
+        {
+          "y": 2,
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 11,
+          "block": "air"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "interior_floor_and_plank_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 2,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "main_wall_band_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 8,
+      "y2": 2,
+      "z2": 12,
+      "block": "slab_stone",
+      "purpose": "stone_slab_parapet_row (thin cap) -- represented as full layer for simplicity"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 2,
+      "z2": 12,
+      "block": "cobblestone",
+      "purpose": "west_cobble_column"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 2,
+      "z2": 12,
+      "block": "cobblestone",
+      "purpose": "east_cobble_column"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 8,
+      "y2": 2,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "upper_wood_band"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 2,
+      "z2": 11,
+      "purpose": "recess_center_to_create_inset_floor_area_and_interior_space"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "redundant_floor_guard (ensures floor coverage)"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 1,
+      "z1": 12,
+      "x2": 5,
+      "y2": 2,
+      "z2": 12,
+      "purpose": "entrance_opening_south"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 3,
+      "x2": 0,
+      "y2": 1,
+      "z2": 4,
+      "block": "glass",
+      "purpose": "window_west_1"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 6,
+      "x2": 0,
+      "y2": 1,
+      "z2": 7,
+      "block": "glass",
+      "purpose": "window_west_2"
+    },
+    {
+      "op": "fill",
+      "x
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 4,
+  "zmin": 0,
+  "zmax": 12,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "white_concrete",
+      "from": [0, 0, 0],
+      "to": [8, 0, 12],
+      "note": "low outer rim base at ground level (one-block thick rim around footprint)."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [1, 1, 1],
+      "to": [7, 1, 11],
+      "note": "interior first floor layer (wooden floor, inset one block from outer rim)."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [1, 0, 1],
+      "to": [7, 0, 11],
+      "note": "bottom trim of oak planks directly adjacent to white rim at ground level under floor edges for continuity."
+    },
+    {
+      "op": "replace",
+      "block": "stone_bricks",
+      "from": [1, 1, 0],
+      "to": [7, 2, 0],
+      "note": "front wall lower stonebrick band along z=0 side (two vertical layers to create visible band)."
+    },
+    {
+      "op": "replace",
+      "block": "stone_bricks",
+      "from": [1, 1, 12],
+      "to": [7, 2, 12],
+      "note": "back wall lower stonebrick band along z=12 side."
+    },
+    {
+      "op": "replace",
+      "block": "stone_bricks",
+      "from": [0, 1, 1],
+      "to": [0, 2, 11],
+      "note": "left wall lower stonebrick band along x=0 side."
+    },
+    {
+      "op": "replace",
+      "block": "stone_bricks",
+      "from": [8, 1, 1],
+      "to": [8, 2, 11],
+      "note": "right wall lower stonebrick band along x=8 side."
+    },
+    {
+      "op": "replace",
+      "block": "cobblestone",
+      "from": [0, 1, 0],
+      "to": [0, 2, 0],
+      "note": "front-left corner cobblestone vertical accent (two high)."
+    },
+    {
+      "op": "replace",
+      "block": "cobblestone",
+      "from": [8, 1, 0],
+      "to": [8, 2, 0],
+      "note": "front-right corner cobblestone vertical accent."
+    },
+    {
+      "op": "replace",
+      "block": "cobblestone",
+      "from": [0, 1, 12],
+      "to": [0, 2, 12],
+      "note": "back-left corner cobblestone vertical accent."
+    },
+    {
+      "op": "replace",
+      "block": "cobblestone",
+      "from": [8, 1, 12],
+      "to": [8, 2, 12],
+      "note": "back-right corner cobblestone vertical accent."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [2, 2, 0],
+      "to": [6, 2, 0],
+      "note": "front horizontal windows (glass panes) centered on front wall at y=2; three panes with supports at ends."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [2, 2, 12],
+      "to": [6, 2, 12],
+      "note": "back horizontal windows matching front."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [0, 2, 3],
+      "to": [0, 2, 9],
+      "note": "left side horizontal windows at y=2 between z=3 and z=9."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [8, 2, 3],
+      "to": [8, 2, 9],
+      "note": "right side horizontal windows matching left."
+    },
+    {
+      "op": "replace",
+      "block": "smooth_quartz",
+      "from": [1, 3, 1],
+      "to": [7, 3, 11],
+      "note": "smooth white mid-band above windows (one block tall continuous band inside walls)."
+    },
+    {
+      "op": "replace",
+      "block": "oak_planks",
+      "from": [1, 4, 1],
+      "to": [7, 4, 11],
+      "note": "upper wood trim band above white band (one block tall)."
+    },
+    {
+      "op": "replace",
+      "block": "stone_slab",
+      "from": [0, 5, 0],
+      "to": [8, 5, 12],
+      "note": "stone slab parapet/top edging forming flat roof border at y=5 (slab layer covering full footprint perimeter)."
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [1, 5, 1],
+      "to": [7, 5, 11],
+      "note": "roof inset/open center left open to create recessed roof; ensures interior headspace (air)."
+    },
+    {
+      "op": "replace",
+      "block": "oak_planks",
+      "from": [4, 1, 0],
+      "to": [4, 2, 0],
+      "note": "front center doorway placeholder (two-block-high opening will be cleared next)."
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [4, 1, 0],
+      "to": [4, 2, 0],
+      "note": "entrance opening at front center (one block wide, two blocks high) cleared to create door space."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [1, 1, 0],
+      "to": [3, 1, 0],
+      "note": "front low trim continuation adjacent to doorway to visually match bottom trim."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [5, 1, 0],
+      "to": [7, 1, 0],
+      "note": "front low trim continuation on other side of doorway."
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [2, 2, 0],
+      "to": [2, 2, 0],
+      "note": "clear single block to ensure glass pane placement logic near doorway (no overlap)."
+    },
+    {
+      "op": "replace",
+      "block": "stone_bricks",
+      "from": [1, 2, 0],
+      "to": [3, 2, 0],
+      "note": "stonebrick support pieces above front trim to align window band."
+    },
+    {
+      "op": "replace",
+      "block": "stone_bricks",
+      "from": [5, 2, 0],
+      "to": [7, 2, 0],
+      "note": "stonebrick support pieces above front trim other side."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [0, 1, 0],
+      "

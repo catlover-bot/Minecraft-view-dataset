@@ -1,0 +1,477 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v3_strict",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 11,
+    "ymin": 0,
+    "ymax": 10,
+    "zmin": 0,
+    "zmax": 11
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "concrete"
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "sandstone",
+      "target_blocks": 180
+    },
+    "roof": {
+      "role": "roof",
+      "block": "brick",
+      "target_blocks": 140
+    },
+    "trim": {
+      "role": "trim",
+      "block": "stonebrick",
+      "target_blocks": 48
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 32
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 4
+    },
+    "floor": {
+      "role": "floor",
+      "block": "concrete",
+      "target_blocks": 144
+    }
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "corner": "northwest",
+          "x": 1,
+          "z": 1
+        },
+        {
+          "corner": "northeast",
+          "x": 10,
+          "z": 1
+        },
+        {
+          "corner": "southeast",
+          "x": 10,
+          "z": 10
+        },
+        {
+          "corner": "southwest",
+          "x": 1,
+          "z": 10
+        }
+      ]
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 2,
+          "ymax": 2
+        },
+        "perimeter_profile": "concrete_foundation_platform"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 4,
+        "z1": 1,
+        "x2": 4,
+        "y2": 5,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 7,
+        "y1": 4,
+        "z1": 1,
+        "x2": 8,
+        "y2": 5,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 3,
+        "y1": 4,
+        "z1": 10,
+        "x2": 4,
+        "y2": 5,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 7,
+        "y1": 4,
+        "z1": 10,
+        "x2": 8,
+        "y2": 5,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 4,
+        "z1": 4,
+        "x2": 10,
+        "y2": 5,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 4,
+        "z1": 4,
+        "x2": 1,
+        "y2": 5,
+        "z2": 5
+      },
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 1,
+        "x2": 6,
+        "y2": 4,
+        "z2": 1
+      }
+    ],
+    "roof_profile": {
+      "type": "pyramid",
+      "base_y": 6,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "layer_index": 0,
+          "y": 6,
+          "x_range": {
+            "xmin": 1,
+            "xmax": 10
+          },
+          "z_range": {
+            "zmin": 1,
+            "zmax": 10
+          }
+        },
+        {
+          "layer_index": 1,
+          "y": 7,
+          "x_range": {
+            "xmin": 2,
+            "xmax": 9
+          },
+          "z_range": {
+            "zmin": 2,
+            "zmax": 9
+          }
+        },
+        {
+          "layer_index": 2,
+          "y": 8,
+          "x_range": {
+            "xmin": 3,
+            "xmax": 8
+          },
+          "z_range": {
+            "zmin": 3,
+            "zmax": 8
+          }
+        },
+        {
+          "layer_index": 3,
+          "y": 9,
+          "x_range": {
+            "xmin": 4,
+            "xmax": 7
+          },
+          "z_range": {
+            "zmin": 4,
+            "zmax": 7
+          }
+        },
+        {
+          "layer_index": 4,
+          "y": 10,
+          "x_range": {
+            "xmin": 5,
+            "xmax": 6
+          },
+          "z_range": {
+            "zmin": 5,
+            "zmax": 6
+          }
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 11,
+      "y2": 1,
+      "z2": 11,
+      "block": "concrete",
+      "purpose": "excavation_pit_base_and_foundation_platform"
+    },
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 10,
+      "y2": 2,
+      "z2": 10,
+      "block": "concrete",
+      "purpose": "interior_floor"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 1,
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 11,
+  "ymin": 0,
+  "ymax": 10,
+  "zmin": 0,
+  "zmax": 11,
+  "palette": {
+    "floor": "concrete",
+    "wall_main": "sandstone",
+    "roof_stepped_pyramid": "brick",
+    "windows_yellow_tinted": "yellow_stained_glass",
+    "trim_and_frame": "stone_brick",
+    "foundation_platform": "concrete"
+  },
+  "material_budget": {
+    "floor": {
+      "target_blocks": 200
+    },
+    "wall_main": {
+      "target_blocks": 180
+    },
+    "roof_stepped_pyramid": {
+      "target_blocks": 120
+    },
+    "windows_yellow_tinted": {
+      "target_blocks": 24
+    },
+    "trim_and_frame": {
+      "target_blocks": 40
+    },
+    "foundation_platform": {
+      "target_blocks": 100
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "role": "foundation_platform",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 11,
+      "y2": 1,
+      "z2": 11,
+      "block": "concrete",
+      "purpose": "excavation_pit_base_and_foundation_platform"
+    },
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 10,
+      "y2": 2,
+      "z2": 10,
+      "block": "concrete",
+      "purpose": "interior_floor"
+    },
+    {
+      "op": "fill",
+      "role": "wall_main",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 10,
+      "y2": 5,
+      "z2": 1,
+      "block": "sandstone",
+      "purpose": "north_wall"
+    },
+    {
+      "op": "fill",
+      "role": "wall_main",
+      "x1": 1,
+      "y1": 3,
+      "z1": 10,
+      "x2": 10,
+      "y2": 5,
+      "z2": 10,
+      "block": "sandstone",
+      "purpose": "south_wall"
+    },
+    {
+      "op": "fill",
+      "role": "wall_main",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 1,
+      "y2": 5,
+      "z2": 10,
+      "block": "sandstone",
+      "purpose": "west_wall"
+    },
+    {
+      "op": "fill",
+      "role": "wall_main",
+      "x1": 10,
+      "y1": 3,
+      "z1": 1,
+      "x2": 10,
+      "y2": 5,
+      "z2": 10,
+      "block": "sandstone",
+      "purpose": "east_wall"
+    },
+    {
+      "op": "fill",
+      "role": "trim_and_frame",
+      "x1": 2,
+      "y1": 3,
+      "z1": 1,
+      "x2": 5,
+      "y2": 3,
+      "z2": 1,
+      "block": "stone_brick",
+      "purpose": "north_window_frame_left"
+    },
+    {
+      "op": "fill",
+      "role": "trim_and_frame",
+      "x1": 6,
+      "y1": 3,
+      "z1": 1,
+      "x2": 9,
+      "y2": 3,
+      "z2": 1,
+      "block": "stone_brick",
+      "purpose": "north_window_frame_right"
+    },
+    {
+      "op": "fill",
+      "role": "trim_and_frame",
+      "x1": 2,
+      "y1": 3,
+      "z1": 10,
+      "x2": 5,
+      "y2": 3,
+      "z2": 10,
+      "block": "stone_brick",
+      "purpose": "south_window_frame_left"
+    },
+    {
+      "op": "fill",
+      "role": "trim_and_frame",
+      "x1": 6,
+      "y1": 3,
+      "z1": 10,
+      "x2": 9,
+      "y2": 3,
+      "z2": 10,
+      "block": "stone_brick",
+      "purpose": "south_window_frame_right"
+    },
+    {
+      "kind": "window",
+      "role": "windows_yellow_tinted",
+      "face": "north",
+      "x1": 3,
+      "y1": 4,
+      "z1": 1,
+      "x2": 4,
+      "y2": 5,
+      "z2": 1,
+      "block": "yellow_stained_glass"
+    },
+    {
+      "kind": "window",
+      "role": "windows_yellow_tinted",
+      "face": "north",
+      "x1": 7,
+      "y1": 4,
+      "z1": 1,
+      "x2": 8,
+      "y2": 5,
+      "z2": 1,
+      "block": "yellow_stained_glass"
+    },
+    {
+      "kind": "window",
+      "role": "windows_yellow_tinted",
+      "face": "south",
+      "x1": 3,
+      "y1": 4,
+      "z1": 10,
+      "x2": 4,
+      "y2": 5,
+      "z2": 10,
+      "block": "yellow_stained_glass"
+    },
+    {
+      "kind": "window",
+      "role": "windows_yellow_tinted",
+      "face": "south",
+      "x1": 7,
+      "y1": 4,
+      "z1": 10,
+      "x2": 8,
+      "y2": 5,
+      "z2": 10,
+      "block": "yellow_stained_glass"
+    },
+    {
+      "kind": "window",
+      "role": "windows_yellow_tinted",
+      "face": "east",
+      "x1": 10,
+      "y1": 4,
+      "z1": 4,
+      "x2": 10,
+      "y2": 5,
+      "z2": 5,
+      "block": "yellow_stained_glass"
+    },
+    {

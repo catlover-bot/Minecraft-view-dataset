@@ -1,0 +1,88 @@
+{
+  "summary": "Single-storey rectangular building with a flat roof (slab/trim around a central brick surface). Walls are a layered composition: lower wood planks base, a full sand-colored (sandstone) band with evenly spaced glass windows, a white stone band (likely quartz) above, then a single brick course under a thin stone slab coping. Corner vertical supports use darker stone bricks. A raised white slab perimeter platform surrounds the building.",
+  "building_type": "small pavilion / single-storey commercial",
+  "shape": {
+    "overall_form": "simple rectangular box with an internal recessed roof area (roof perimeter coping and central brick surface)",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along long axis (windows evenly spaced), approximated rotational symmetry 180°",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 19,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof_field",
+      "confidence": 0.95
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof_coping/edge",
+      "confidence": 0.9
+    },
+    {
+      "name": "quartz",
+      "role": "upper_wall_band / perimeter_plinth",
+      "confidence": 0.7
+    },
+    {
+      "name": "sandstone",
+      "role": "middle_wall_band",
+      "confidence": 0.85
+    },
+    {
+      "name": "wood",
+      "role": "lower_wall_planks/base_board",
+      "confidence": 0.7
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner_pillars",
+      "confidence": 0.8
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "slab_wood",
+      "role": "window_sill / thin trim under windows (uncertain)",
+      "confidence": 0.4
+    },
+    {
+      "name": "air",
+      "role": "interior open space above windows",
+      "confidence": 0.6
+    }
+  ],
+  "elements": [
+    "evenly spaced horizontal windows (4 visible along long face)",
+    "corner vertical stonebrick supports",
+    "white slab perimeter platform surrounding building",
+    "flat brick roof recessed inside stone slab coping",
+    "continuous sandstone middle band and quartz upper band"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular footprint ~11x19 blocks (width x depth) on a raised 1-block white slab perimeter platform.",
+    "Construct lower 1-2 block high wood plank base, then a 2-block high sandstone band with 1-block high windows evenly spaced (4 windows along each long side visible).",
+    "Above windows place a 1-block high quartz (white) band, then a single row of brick blocks, capped by a stone slab coping one block wide forming the roof edge.",
+    "Corners: extend stonebrick pillar blocks up through the sandstone/quartz layers to meet the slab coping at each corner.",
+    "Fill roof interior with brick blocks at roof level, leaving the slab coping as the outer rim to create the recessed flat roof look."
+  ],
+  "uncertainties": [
+    "Exact block counts for width/depth/height are estimated from pixels; actual must be verified in-game.",
+    "Material IDs mapped to nearest simple names (quartz used for white smooth band and white perimeter; sandstone used for pale sandy band) — these could be other white/sand variants.",
+    "Lower base could be oak planks or stripped wood; the thin trim below windows might be wood slab or different slab material.",
+    "Interior layout and presence of doors/entrance not visible in provided images; entrance location is unknown.",
+    "Ground surrounding raised white platform appears dug out; depth and base material not fully visible."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_068",
+  "created_at": "2026-02-28T14:14:36.328512+00:00"
+}

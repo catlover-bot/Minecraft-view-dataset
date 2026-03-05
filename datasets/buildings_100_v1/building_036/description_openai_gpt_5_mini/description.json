@@ -1,0 +1,83 @@
+{
+  "summary": "Small single-story rectangular building with a recessed central roof void. Walls are brick with stone-corner pillars, a lower wooden plinth, and a band of white blocks below a dark brick (nether) trim; surrounded by a raised white slab/parapet walk and set inside a shallow dirt moat.",
+  "building_type": "small commercial or utility (shop-like)",
+  "shape": {
+    "overall_form": "compact rectangular box with inner recessed roof opening (courtyard-like void).",
+    "footprint_hint": "rectangle",
+    "symmetry": "roughly symmetric on long axis; appears symmetric on short axis as well",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 13,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "main_wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner_pillar/trim",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood",
+      "role": "lower_plinth/floor_border (oak planks)",
+      "confidence": 0.85
+    },
+    {
+      "name": "nether_brick",
+      "role": "upper_trim/band",
+      "confidence": 0.9
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof_edge/parapet (stone slabs)",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.95
+    },
+    {
+      "name": "slab_wood",
+      "role": "possible window sill or interior step",
+      "confidence": 0.4
+    },
+    {
+      "name": "air",
+      "role": "interior/roof_void",
+      "confidence": 0.95
+    }
+  ],
+  "elements": [
+    "continuous row windows along visible facades (3 windows on each long side in view)",
+    "stone corner pillars at each facade edge",
+    "white band below nether brick trim (possibly quartz blocks)",
+    "raised white outer border/parapet around building (quartz slabs or blocks)",
+    "recessed central roof area filled with dark nether bricks"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular 9x13 footprint (estimate) with walls 4 blocks tall of brick on top of a 1-block-high wooden plinth.",
+    "Place stonebrick blocks at all four vertical corners as 1-block-wide pillars reaching full wall height.",
+    "Add a continuous white band (quartz blocks likely) above the brick walls, then a 1-block-high dark nether brick band above that, capped with stone slabs as roof edge.",
+    "Leave a centered rectangular recessed roof opening (inner rectangle ~5x7) filled with nether brick floor and surrounded by the stone-slab cap.",
+    "Install horizontal window groups (glass panes) in the middle of the brick wall on long sides, with wooden slab or plank row directly above ground level as interior/threshold."
+  ],
+  "uncertainties": [
+    "Exact footprint dimensions (width/depth) are estimated from perspective/top views; could be off by ±2 blocks.",
+    "White band material appears to be quartz blocks but could be white concrete or another white block.",
+    "Raised outer border around the building likely quartz slabs/blocks — exact block vs slab and thickness uncertain.",
+    "The dark band appears to be nether brick blocks; could be nether brick slabs or another dark brick variant.",
+    "Interior layout and whether there is an entrance door on a hidden face is not visible."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_036",
+  "created_at": "2026-02-28T14:05:51.721187+00:00"
+}

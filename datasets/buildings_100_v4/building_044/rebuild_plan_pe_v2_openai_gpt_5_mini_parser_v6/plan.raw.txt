@@ -1,0 +1,448 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 12
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 12,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_along_x_centerline"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground floor corridor + rooms",
+        "perimeter_profile": "rectangular with corner posts"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 6
+        },
+        "rooms_hint": "second floor apartments",
+        "perimeter_profile": "rectangular with banding"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 7,
+          "ymax": 9
+        },
+        "rooms_hint": "third floor apartments",
+        "perimeter_profile": "rectangular with banding"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 10,
+          "ymax": 11
+        },
+        "rooms_hint": "attic/roof base and raised spine",
+        "perimeter_profile": "roof base and central spine"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 10,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 2,
+        "z1": 0,
+        "x2": 8,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 13,
+        "y1": 2,
+        "z1": 0,
+        "x2": 13,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 2,
+        "z1": 0,
+        "x2": 16,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 12,
+        "x2": 2,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 2,
+        "z1": 12,
+        "x2": 5,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 5,
+        "z1": 3,
+        "x2": 20,
+        "y2": 6,
+        "z2": 3
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 5,
+        "z1": 3,
+        "x2": 0,
+        "y2": 6,
+        "z2": 3
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 10,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 10,
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 12,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 11,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 12,
+      "block": "dirt",
+      "purpose": "courtyard_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 12,
+      "block": "sandstone",
+      "purpose": "temporary_ground_cover"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 11,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "outer_shell_base_blocks"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 10,
+      "z2": 11,
+      "purpose": "hollow_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 1,
+      "z2": 11,
+      "block": "dirt",
+      "purpose": "interior_ground_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "ground_floor_band_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 20,
+      "y2": 3,
+      "z2": 12,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 13,
+  "zmin": 0,
+  "zmax": 12,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 20, 0, 12],
+      "block": "dirt",
+      "note": "ground/dirt courtyard base"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 20, 1, 12],
+      "block": "dirt",
+      "note": "ground layer (y=1) consistent courtyard/base"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 19, 1, 11],
+      "block": "sandstone",
+      "note": "floor slab for first floor inset from perimeter by 1"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 19, 4, 11],
+      "block": "sandstone",
+      "note": "main wall band for floors 1-2 (two vertical blocks to represent floor height)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 4, 1, 19, 4, 11],
+      "block": "stone_slab",
+      "note": "horizontal darker band between floor 2 and 3 (floor division/trim)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 5, 1, 19, 7, 11],
+      "block": "sandstone",
+      "note": "main wall band for floor 3 (second stacked band)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 7, 1, 19, 7, 11],
+      "block": "stone_slab",
+      "note": "horizontal band under roof / top trim"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 0, 7, 12],
+      "block": "quartz",
+      "note": "west corner vertical pilaster (quartz) — full height"
+    },
+    {
+      "op": "fill",
+      "box": [20, 1, 0, 20, 7, 12],
+      "block": "quartz",
+      "note": "east corner vertical pilaster (quartz) — full height"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 20, 1, 0],
+      "block": "quartz",
+      "note": "north perimeter low white block (front) single layer"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 12, 20, 1, 12],
+      "block": "quartz",
+      "note": "south perimeter low white block (back) single layer"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 0, 1, 12],
+      "block": "quartz",
+      "note": "west perimeter low white block single layer"
+    },
+    {
+      "op": "fill",
+      "box": [20, 1, 0, 20, 1, 12],
+      "block": "quartz",
+      "note": "east perimeter low white block single layer"
+    },
+    {
+      "op": "hollow",
+      "box": [3, 2, 1, 17, 6, 11],
+      "note": "internal empty volume for rooms/corridors (leaves outer walls intact)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 3, 3, 3],
+      "block": "glass",
+      "note": "sample window — repeated pattern will be applied"
+    },
+    {
+      "op": "repeat",
+      "pattern": {
+        "op": "fill",
+        "box": ["X", "Y", "Z", "X+0", "Y+1", "Z+1"],
+        "block": "glass"
+      },
+      "positions": [
+        [3,2,2],[6,2,2],[9,2,2],[12,2,2],[15,2,2],
+        [3,5,2],[6,5,2],[9,5,2],[12,5,2],[15,5,2],
+        [3,2,9],[6,2,9],[9,2,9],[12,2,9],[15,2,9],
+        [3,5,9],[6,5,9],[9,5,9],[12,5,9],[15,5,9]
+      ],
+      "note": "regular 1x1 windows on each visible wall band for three floors (y positions 2 and 5 represent lower and upper window rows)"
+    },
+    {
+      "op": "fill",
+      "box": [10, 8, 5, 10, 10, 6],
+      "block": "brick",
+      "note": "chimney near center-back on roof ridge (vertical 3-block stack)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 8, 1, 19, 9, 11],
+      "block": "brick",
+      "note": "roof ridge run — central low gable ridge represented as a 1-block high brick band"
+    },
+    {
+      "op": "fill",
+      "box": [1, 9, 1, 19, 9, 11],
+      "block": "brick_slab",
+      "note": "roof outer tiles (slab) to create low gable feel (topmost step)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 8, 1, 1, 8, 11],
+      "block": "brick_slab",
+      "note": "west roof slope edge (single-layer stepped)"
+    },
+    {
+      "op": "fill",
+      "box": [19, 8, 1, 19, 8, 11],
+      "block": "brick_slab",
+      "note": "east roof slope edge (single-layer stepped)"
+    },
+    {
+      "op": "fill",
+      "box": [9, 2, 0, 11, 3, 0],
+      "block": "air",
+      "note": "entrance opening at front center (opens the front quartz perimeter) — 2 wide x 1 high opening at ground level"
+    },
+    {
+      "op": "fill",
+      "box": [9, 2, 11, 11, 3, 11],
+      "block": "air",
+      "note": "rear entrance/opening (optional symmetrical opening)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 1, 4, 1],
+      "block": "quartz",
+      "note": "front-left pilaster inset decorative post (quartz) spanning floors"
+    },
+    {
+      "op": "fill",
+      "box": [19, 2, 1, 19, 4, 1],
+      "block": "quartz",
+      "note": "front-right pilaster inset decorative post (quartz) spanning floors"
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 2, 18, 1, 10],
+      "block": "dirt",
+      "note": "courtyard fill inside perimeter (dirt)"
+    }
+  ],
+  "self_check": {
+    "bbox_integrity": "corrected: ymax increased to 13 so roof elements (y up to 9) fit within bbox; all operations' coordinates are inside [0

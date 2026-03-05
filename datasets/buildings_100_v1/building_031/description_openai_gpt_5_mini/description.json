@@ -1,0 +1,80 @@
+{
+  "summary": "Small single-story rectangular building with layered perimeter walls: a low outer rim of white blocks, a short foundation of wooden planks, a middle band of stonebrick and cobblestone accents with horizontal windows, a smooth white mid-band, a wooden plank top band and a stone slab parapet. Interior floor appears wooden. Roof is flat/roofless with raised slab border.",
+  "building_type": "small house / utility building",
+  "shape": {
+    "overall_form": "compact rectangular box with recessed central floor and raised slab perimeter",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along the long axis (windows evenly spaced)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 13,
+    "height": 4
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "lower wall band / decorative row",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "corner/column accents",
+      "confidence": 0.8
+    },
+    {
+      "name": "wood",
+      "role": "upper and lower horizontal trim and interior floor (planks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "slab_stone",
+      "role": "parapet / top edging",
+      "confidence": 0.9
+    },
+    {
+      "name": "slab_wood",
+      "role": "possible interior edging (uncertain)",
+      "confidence": 0.3
+    },
+    {
+      "name": "air",
+      "role": "interior empty space",
+      "confidence": 1.0
+    }
+  ],
+  "elements": [
+    "row of horizontal windows (3-4 per visible long side) at chest-head height",
+    "white outer rim (low) surrounding building footprint",
+    "wood plank trim bands above and below the stone band",
+    "stone slab parapet around flat roof",
+    "cobblestone vertical accents at corners",
+    "interior wooden floor"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular foundation of white blocks forming a low rim one block thick around the building footprint.",
+    "Place a bottom trim of oak (or wood) planks directly adjacent to the white rim, one block high.",
+    "Construct the main wall with a lower row of stonebrick (use stonebrick stairs/regular to match shown), include cobblestone at corners.",
+    "Insert a continuous horizontal band of windows (glass panes) separated by stonebrick columns; above that place a smooth white block band one block tall.",
+    "Add an upper band of wood planks one block tall, then cap walls with stone slab (stone slab parapet) to form a flat roof edge.",
+    "Floor the interior with wood planks; roof is flat/inset so leave center open or covered with wood as shown and surround with slabs."
+  ],
+  "uncertainties": [
+    "Exact block types for the white band (could be quartz vs white concrete vs smooth quartz); identified generically as white blocks.",
+    "Whether the stone band uses full stonebrick blocks, stonebrick stairs, or a mix for detailing; assumed stonebrick.",
+    "Precise footprint dimensions: counted visually and estimated as 9x13; could be off by several blocks.",
+    "Possible additional detailing on unseen back side and presence/location of an entrance (not visible in provided views).",
+    "Interior layout and any internal walls or doors are not visible and therefore unknown."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_031",
+  "created_at": "2026-02-28T14:04:35.155342+00:00"
+}

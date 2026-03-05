@@ -1,0 +1,143 @@
+{
+  "building": "building_006",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "description_path": "description_openai_gpt_5_mini/description.json",
+  "mode": "llm",
+  "llm_attempted": true,
+  "llm_failed": true,
+  "prompt_profile": {
+    "name": "rebuild_plan_schema_material_v5",
+    "version": "2026-03-01-v5",
+    "path": "/Users/hirotaka-m/Minecraft-view-dataset/prompts/rebuild_plan_schema_material_v5.json",
+    "critic_revise_enabled": true,
+    "few_shots_count": 1,
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "system_prompt": "You are a strict Minecraft reconstruction planner. Output one JSON object only. No markdown.",
+  "prompt": "You are given one building description JSON. Produce an executable rebuild plan with strict schema and material-role constraints.\\n\\nAllowed operations only: fill, carve, set.\\n\\nSTRICT OUTPUT SCHEMA:\\n{\\n  \"plan_version\": \"v3_strict\",\\n  \"bbox\": {\"xmin\":0,\"xmax\":0,\"ymin\":0,\"ymax\":0,\"zmin\":0,\"zmax\":0},\\n  \"palette\": {\\n    \"wall\":\"stonebrick\",\\n    \"roof\":\"wood\",\\n    \"trim\":\"brick\",\\n    \"glass\":\"glass\",\\n    \"light\":\"glowstone\",\\n    \"floor\":\"wood\"\\n  },\\n  \"material_budget\": {\\n    \"wall\": {\"role\":\"wall\",\"block\":\"stonebrick\",\"target_blocks\":0},\\n    \"roof\": {\"role\":\"roof\",\"block\":\"wood\",\"target_blocks\":0},\\n    \"trim\": {\"role\":\"trim\",\"block\":\"brick\",\"target_blocks\":0},\\n    \"glass\": {\"role\":\"glass\",\"block\":\"glass\",\"target_blocks\":0},\\n    \"light\": {\"role\":\"light\",\"block\":\"glowstone\",\"target_blocks\":0},\\n    \"floor\": {\"role\":\"floor\",\"block\":\"wood\",\"target_blocks\":0}\\n  },\\n  \"structure_spec\": {\\n    \"footprint_2d\": {\"type\":\"rectangle|l_shape|u_shape|complex\",\"segments\":[]},\\n    \"floors\": [{\"floor_index\":0,\"y_range\":{\"ymin\":0,\"ymax\":0},\"perimeter_profile\":\"string\"}],\\n    \"openings\": [{\"kind\":\"door|window\",\"face\":\"north|south|east|west|roof\",\"x1\":0,\"y1\":0,\"z1\":0,\"x2\":0,\"y2\":0,\"z2\":0}],\\n    \"roof_profile\": {\"type\":\"flat|gable|hip|dome|other|unknown\",\"base_y\":0,\"ridge_axis\":\"x|z|none\",\"layers\":[]}\\n  },\\n  \"operations\": [\\n    {\"op\":\"fill\",\"role\":\"wall\",\"x1\":0,\"y1\":0,\"z1\":0,\"x2\":0,\"y2\":0,\"z2\":0,\"block\":\"stonebrick\",\"purpose\":\"example\"},\\n    {\"op\":\"carve\",\"x1\":0,\"y1\":0,\"z1\":0,\"x2\":0,\"y2\":0,\"z2\":0,\"purpose\":\"example\"},\\n    {\"op\":\"set\",\"role\":\"light\",\"x\":0,\"y\":0,\"z\":0,\"block\":\"glowstone\",\"purpose\":\"example\"}\\n  ],\\n  \"self_check\": {\\n    \"bbox_consistency\":\"ok|fix_needed\",\\n    \"operation_count\":0,\\n    \"operation_count_ok\":true,\\n    \"material_budget_consistency\":\"ok|warning\",\\n    \"role_fixed_consistency\":\"ok|warning\",\\n    \"openings_present\":true,\\n    \"entrance_present\":true,\\n    \"issues\":[]\\n  },\\n  \"notes\": []\\n}\\n\\nHard constraints:\\n- All coordinates are integers.\\n- Every operation must be inside bbox.\\n- operations count <= 260.\\n- Non-carve operation MUST include role in {wall,roof,trim,glass,light,floor}.\\n- Non-carve operation block MUST equal palette[role].\\n- material_budget must exist for all 6 roles and represent estimated target block counts by role.\\n- Include full structure: floor, walls, roof, windows, entrance.\\n\\nBefore final output, do internal checks (do not output chain-of-thought):\\n1) role coverage: all required roles in palette and budget\\n2) budget sanity: target blocks are non-negative and coherent with operation scale\\n3) bbox integrity and operation bounds\\n4) windows and entrance exist\\n\\nFew-shot references:\\n[Few-shot 1: small_house_minimal]\nDescription JSON:\n{\n  \"building_type\": \"small house\",\n  \"shape\": {\n    \"footprint_hint\": \"rectangle\",\n    \"floors_estimate\": 1,\n    \"roof_type\": \"gable\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 10,\n    \"depth\": 8,\n    \"height\": 7\n  },\n  \"materials\": [\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"wall\"\n    },\n    {\n      \"name\": \"wood\",\n      \"role\": \"roof\"\n    },\n    {\n      \"name\": \"glass\",\n      \"role\": \"window\"\n    }\n  ]\n}\n\nTarget Plan JSON:\n{\n  \"plan_version\": \"v3_strict\",\n  \"bbox\": {\n    \"xmin\": 0,\n    \"xmax\": 9,\n    \"ymin\": 0,\n    \"ymax\": 8,\n    \"zmin\": 0,\n    \"zmax\": 7\n  },\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"material_budget\": {\n    \"wall\": {\n      \"role\": \"wall\",\n      \"block\": \"stonebrick\",\n      \"target_blocks\": 220\n    },\n    \"roof\": {\n      \"role\": \"roof\",\n      \"block\": \"wood\",\n      \"target_blocks\": 110\n    },\n    \"trim\": {\n      \"role\": \"trim\",\n      \"block\": \"brick\",\n      \"target_blocks\": 24\n    },\n    \"glass\": {\n      \"role\": \"glass\",\n      \"block\": \"glass\",\n      \"target_blocks\": 20\n    },\n    \"light\": {\n      \"role\": \"light\",\n      \"block\": \"glowstone\",\n      \"target_blocks\": 4\n    },\n    \"floor\": {\n      \"role\": \"floor\",\n      \"block\": \"wood\",\n      \"target_blocks\": 80\n    }\n  },\n  \"operations\": [\n    {\n      \"op\": \"fill\",\n      \"role\": \"floor\",\n      \"x1\": 0,\n      \"y1\": 0,\n      \"z1\": 0,\n      \"x2\": 9,\n      \"y2\": 0,\n      \"z2\": 7,\n      \"block\": \"wood\",\n      \"purpose\": \"floor\"\n    },\n    {\n      \"op\": \"fill\",\n      \"role\": \"wall\",\n      \"x1\": 0,\n      \"y1\": 1,\n      \"z1\": 0,\n      \"x2\": 9,\n      \"y2\": 4,\n      \"z2\": 7,\n      \"block\": \"stonebrick\",\n      \"purpose\": \"outer_shell\"\n    }\n  ],\n  \"self_check\": {\n    \"bbox_consistency\": \"ok\",\n    \"operation_count\": 2,\n    \"operation_count_ok\": true,\n    \"material_budget_consistency\": \"ok\",\n    \"role_fixed_consistency\": \"ok\",\n    \"openings_present\": true,\n    \"entrance_present\": true,\n    \"issues\": []\n  },\n  \"notes\": [\n    \"few-shot compact sample\"\n  ]\n}\\n\\nDescription JSON:\\n{\n  \"summary\": \"Small single-story rectangular building with a raised central flat roof area, brick lower walls with stone-corner pillars, a white trim band above the bricks, a dark narrow course near the top, and a surrounding low white ledge/planter on ground level.\",\n  \"building_type\": \"small commercial or utility building\",\n  \"shape\": {\n    \"overall_form\": \"simple rectangular block with an inner recessed flat roof section\",\n    \"footprint_hint\": \"rectangle\",\n    \"symmetry\": \"bilaterally symmetrical along long axis (appears symmetric front-to-back and left-to-right)\",\n    \"floors_estimate\": 1,\n    \"roof_type\": \"flat\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 11,\n    \"depth\": 25,\n    \"height\": 5\n  },\n  \"materials\": [\n    {\n      \"name\": \"brick\",\n      \"role\": \"lower wall\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"corner pillars / top inner rim\",\n      \"confidence\": 0.85\n    },\n    {\n      \"name\": \"quartz\",\n      \"role\": \"white trim band and exterior low ledge\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"nether_brick\",\n      \"role\": \"dark horizontal band near roof\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"glass\",\n      \"role\": \"windows\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"wood\",\n      \"role\": \"narrow base trim under brick (planks)\",\n      \"confidence\": 0.6\n    },\n    {\n      \"name\": \"slab_stone\",\n      \"role\": \"topmost coping around inner roof recess\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"elements\": [\n    \"windows\",\n    \"corner stone pillars\",\n    \"white trim band\",\n    \"dark brick band near roof\",\n    \"raised inner roof area (flat)\",\n    \"exterior white low ledge / planter\"\n  ],\n  \"rebuild_hints\": [\n    \"Footprint: rectangular with an inner recessed rectangle (roof pit) centered inside the building — outer white ledge follows outer footprint with a one-block gap to building walls.\",\n    \"Wall composition (bottom to top): 1 block tall wooden plank trim at base, 2–3 blocks tall brick field with equally spaced 1x1 glass window openings, stonebrick pillar blocks at corners rising full wall height, then a continuous white band (quartz) 1 block tall, topped by a single dark nether_brick course, then 1 block high stonebrick slab coping forming inner roof rim.\",\n    \"Windows are small horizontally repeated openings (approximately 1x1 or 1x2) set in the brick band with glass panes; count and spacing should match visible repeated pattern along long sides.\",\n    \"Overall building height is short (single story). Inner recessed roof area is filled with dark nether_brick blocks and surrounded by a raised stone slab rim.\"\n  ],\n  \"uncertainties\": [\n    \"Exact block IDs for white trim and low ledge: appears quartz or smooth quartz but could be another white block; labeled as quartz with high confidence but not certain.\",\n    \"Base trim material under brick appears wooden planks but could be another wood type or stripped log — confidence moderate.\",\n    \"Precise internal plan and presence/location of entrance not visible in provided views — entrance location and door type are unknown.\",\n    \"Dimensions (width/depth/height) are approximate counts inferred from window spacing and rooftop top-down images; actual block counts may differ by a few blocks.\"\n  ],\n  \"provider\": \"openai\",\n  \"model\": \"gpt-5-mini\",\n  \"building\": \"building_006\",\n  \"created_at\": \"2026-02-28T13:58:29.604974+00:00\"\n}",
+  "planner_system_prompt": "You are a strict Minecraft reconstruction planner. Output one JSON object only. No markdown.",
+  "planner_prompt": "You are given one building description JSON. Produce an executable rebuild plan with strict schema and material-role constraints.\\n\\nAllowed operations only: fill, carve, set.\\n\\nSTRICT OUTPUT SCHEMA:\\n{\\n  \"plan_version\": \"v3_strict\",\\n  \"bbox\": {\"xmin\":0,\"xmax\":0,\"ymin\":0,\"ymax\":0,\"zmin\":0,\"zmax\":0},\\n  \"palette\": {\\n    \"wall\":\"stonebrick\",\\n    \"roof\":\"wood\",\\n    \"trim\":\"brick\",\\n    \"glass\":\"glass\",\\n    \"light\":\"glowstone\",\\n    \"floor\":\"wood\"\\n  },\\n  \"material_budget\": {\\n    \"wall\": {\"role\":\"wall\",\"block\":\"stonebrick\",\"target_blocks\":0},\\n    \"roof\": {\"role\":\"roof\",\"block\":\"wood\",\"target_blocks\":0},\\n    \"trim\": {\"role\":\"trim\",\"block\":\"brick\",\"target_blocks\":0},\\n    \"glass\": {\"role\":\"glass\",\"block\":\"glass\",\"target_blocks\":0},\\n    \"light\": {\"role\":\"light\",\"block\":\"glowstone\",\"target_blocks\":0},\\n    \"floor\": {\"role\":\"floor\",\"block\":\"wood\",\"target_blocks\":0}\\n  },\\n  \"structure_spec\": {\\n    \"footprint_2d\": {\"type\":\"rectangle|l_shape|u_shape|complex\",\"segments\":[]},\\n    \"floors\": [{\"floor_index\":0,\"y_range\":{\"ymin\":0,\"ymax\":0},\"perimeter_profile\":\"string\"}],\\n    \"openings\": [{\"kind\":\"door|window\",\"face\":\"north|south|east|west|roof\",\"x1\":0,\"y1\":0,\"z1\":0,\"x2\":0,\"y2\":0,\"z2\":0}],\\n    \"roof_profile\": {\"type\":\"flat|gable|hip|dome|other|unknown\",\"base_y\":0,\"ridge_axis\":\"x|z|none\",\"layers\":[]}\\n  },\\n  \"operations\": [\\n    {\"op\":\"fill\",\"role\":\"wall\",\"x1\":0,\"y1\":0,\"z1\":0,\"x2\":0,\"y2\":0,\"z2\":0,\"block\":\"stonebrick\",\"purpose\":\"example\"},\\n    {\"op\":\"carve\",\"x1\":0,\"y1\":0,\"z1\":0,\"x2\":0,\"y2\":0,\"z2\":0,\"purpose\":\"example\"},\\n    {\"op\":\"set\",\"role\":\"light\",\"x\":0,\"y\":0,\"z\":0,\"block\":\"glowstone\",\"purpose\":\"example\"}\\n  ],\\n  \"self_check\": {\\n    \"bbox_consistency\":\"ok|fix_needed\",\\n    \"operation_count\":0,\\n    \"operation_count_ok\":true,\\n    \"material_budget_consistency\":\"ok|warning\",\\n    \"role_fixed_consistency\":\"ok|warning\",\\n    \"openings_present\":true,\\n    \"entrance_present\":true,\\n    \"issues\":[]\\n  },\\n  \"notes\": []\\n}\\n\\nHard constraints:\\n- All coordinates are integers.\\n- Every operation must be inside bbox.\\n- operations count <= 260.\\n- Non-carve operation MUST include role in {wall,roof,trim,glass,light,floor}.\\n- Non-carve operation block MUST equal palette[role].\\n- material_budget must exist for all 6 roles and represent estimated target block counts by role.\\n- Include full structure: floor, walls, roof, windows, entrance.\\n\\nBefore final output, do internal checks (do not output chain-of-thought):\\n1) role coverage: all required roles in palette and budget\\n2) budget sanity: target blocks are non-negative and coherent with operation scale\\n3) bbox integrity and operation bounds\\n4) windows and entrance exist\\n\\nFew-shot references:\\n[Few-shot 1: small_house_minimal]\nDescription JSON:\n{\n  \"building_type\": \"small house\",\n  \"shape\": {\n    \"footprint_hint\": \"rectangle\",\n    \"floors_estimate\": 1,\n    \"roof_type\": \"gable\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 10,\n    \"depth\": 8,\n    \"height\": 7\n  },\n  \"materials\": [\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"wall\"\n    },\n    {\n      \"name\": \"wood\",\n      \"role\": \"roof\"\n    },\n    {\n      \"name\": \"glass\",\n      \"role\": \"window\"\n    }\n  ]\n}\n\nTarget Plan JSON:\n{\n  \"plan_version\": \"v3_strict\",\n  \"bbox\": {\n    \"xmin\": 0,\n    \"xmax\": 9,\n    \"ymin\": 0,\n    \"ymax\": 8,\n    \"zmin\": 0,\n    \"zmax\": 7\n  },\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"material_budget\": {\n    \"wall\": {\n      \"role\": \"wall\",\n      \"block\": \"stonebrick\",\n      \"target_blocks\": 220\n    },\n    \"roof\": {\n      \"role\": \"roof\",\n      \"block\": \"wood\",\n      \"target_blocks\": 110\n    },\n    \"trim\": {\n      \"role\": \"trim\",\n      \"block\": \"brick\",\n      \"target_blocks\": 24\n    },\n    \"glass\": {\n      \"role\": \"glass\",\n      \"block\": \"glass\",\n      \"target_blocks\": 20\n    },\n    \"light\": {\n      \"role\": \"light\",\n      \"block\": \"glowstone\",\n      \"target_blocks\": 4\n    },\n    \"floor\": {\n      \"role\": \"floor\",\n      \"block\": \"wood\",\n      \"target_blocks\": 80\n    }\n  },\n  \"operations\": [\n    {\n      \"op\": \"fill\",\n      \"role\": \"floor\",\n      \"x1\": 0,\n      \"y1\": 0,\n      \"z1\": 0,\n      \"x2\": 9,\n      \"y2\": 0,\n      \"z2\": 7,\n      \"block\": \"wood\",\n      \"purpose\": \"floor\"\n    },\n    {\n      \"op\": \"fill\",\n      \"role\": \"wall\",\n      \"x1\": 0,\n      \"y1\": 1,\n      \"z1\": 0,\n      \"x2\": 9,\n      \"y2\": 4,\n      \"z2\": 7,\n      \"block\": \"stonebrick\",\n      \"purpose\": \"outer_shell\"\n    }\n  ],\n  \"self_check\": {\n    \"bbox_consistency\": \"ok\",\n    \"operation_count\": 2,\n    \"operation_count_ok\": true,\n    \"material_budget_consistency\": \"ok\",\n    \"role_fixed_consistency\": \"ok\",\n    \"openings_present\": true,\n    \"entrance_present\": true,\n    \"issues\": []\n  },\n  \"notes\": [\n    \"few-shot compact sample\"\n  ]\n}\\n\\nDescription JSON:\\n{\n  \"summary\": \"Small single-story rectangular building with a raised central flat roof area, brick lower walls with stone-corner pillars, a white trim band above the bricks, a dark narrow course near the top, and a surrounding low white ledge/planter on ground level.\",\n  \"building_type\": \"small commercial or utility building\",\n  \"shape\": {\n    \"overall_form\": \"simple rectangular block with an inner recessed flat roof section\",\n    \"footprint_hint\": \"rectangle\",\n    \"symmetry\": \"bilaterally symmetrical along long axis (appears symmetric front-to-back and left-to-right)\",\n    \"floors_estimate\": 1,\n    \"roof_type\": \"flat\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 11,\n    \"depth\": 25,\n    \"height\": 5\n  },\n  \"materials\": [\n    {\n      \"name\": \"brick\",\n      \"role\": \"lower wall\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"corner pillars / top inner rim\",\n      \"confidence\": 0.85\n    },\n    {\n      \"name\": \"quartz\",\n      \"role\": \"white trim band and exterior low ledge\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"nether_brick\",\n      \"role\": \"dark horizontal band near roof\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"glass\",\n      \"role\": \"windows\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"wood\",\n      \"role\": \"narrow base trim under brick (planks)\",\n      \"confidence\": 0.6\n    },\n    {\n      \"name\": \"slab_stone\",\n      \"role\": \"topmost coping around inner roof recess\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"elements\": [\n    \"windows\",\n    \"corner stone pillars\",\n    \"white trim band\",\n    \"dark brick band near roof\",\n    \"raised inner roof area (flat)\",\n    \"exterior white low ledge / planter\"\n  ],\n  \"rebuild_hints\": [\n    \"Footprint: rectangular with an inner recessed rectangle (roof pit) centered inside the building — outer white ledge follows outer footprint with a one-block gap to building walls.\",\n    \"Wall composition (bottom to top): 1 block tall wooden plank trim at base, 2–3 blocks tall brick field with equally spaced 1x1 glass window openings, stonebrick pillar blocks at corners rising full wall height, then a continuous white band (quartz) 1 block tall, topped by a single dark nether_brick course, then 1 block high stonebrick slab coping forming inner roof rim.\",\n    \"Windows are small horizontally repeated openings (approximately 1x1 or 1x2) set in the brick band with glass panes; count and spacing should match visible repeated pattern along long sides.\",\n    \"Overall building height is short (single story). Inner recessed roof area is filled with dark nether_brick blocks and surrounded by a raised stone slab rim.\"\n  ],\n  \"uncertainties\": [\n    \"Exact block IDs for white trim and low ledge: appears quartz or smooth quartz but could be another white block; labeled as quartz with high confidence but not certain.\",\n    \"Base trim material under brick appears wooden planks but could be another wood type or stripped log — confidence moderate.\",\n    \"Precise internal plan and presence/location of entrance not visible in provided views — entrance location and door type are unknown.\",\n    \"Dimensions (width/depth/height) are approximate counts inferred from window spacing and rooftop top-down images; actual block counts may differ by a few blocks.\"\n  ],\n  \"provider\": \"openai\",\n  \"model\": \"gpt-5-mini\",\n  \"building\": \"building_006\",\n  \"created_at\": \"2026-02-28T13:58:29.604974+00:00\"\n}",
+  "critic_system_prompt": "",
+  "critic_prompt": "",
+  "draft_parse_report": {},
+  "revise_parse_report": {},
+  "temperature": 0.2,
+  "max_tokens": 1800,
+  "fallback_triggered": false,
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 29,
+    "accepted_operations_count": 29,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "fallback_coerce_report": null,
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "brick",
+        "score": 0.95,
+        "source_role": "lower wall"
+      },
+      "trim": {
+        "block": "quartz",
+        "score": 0.9,
+        "source_role": "white trim band and exterior low ledge"
+      },
+      "roof": {
+        "block": "nether_brick",
+        "score": 0.9,
+        "source_role": "dark horizontal band near roof"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.95,
+        "source_role": "windows"
+      },
+      "floor": {
+        "block": "wood",
+        "score": 0.6,
+        "source_role": "narrow base trim under brick (planks)"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "glass",
+          "from": "brick",
+          "to": "glass",
+          "score": 0.95,
+          "reason": "description_preferred"
+        }
+      ],
+      "coherence_repairs": [
+        {
+          "role": "light",
+          "from": "brick",
+          "to": "glowstone"
+        },
+        {
+          "role": "floor",
+          "from": "brick",
+          "to": "wood"
+        }
+      ]
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 27,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 25,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 0.862068965517241,
+    "role_infer_reasons": {
+      "purpose_hint": 27,
+      "unknown": 1,
+      "carve_entrance": 1
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "created_at": "2026-03-01T09:41:04.053984+00:00"
+}

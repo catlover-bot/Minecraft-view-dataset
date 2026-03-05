@@ -1,0 +1,68 @@
+{
+  "summary": "A small rectangular single-story house with a raised stonebrick border and a stepped dark red (nether-brick) hipped-like roof. Walls are primarily horizontal wood planks with vertical log corner posts, a row of glass windows on the long sides, and a stonebrick slab coping between walls and roof.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "compact rectangular block with a centered raised stepped roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral along the long axis (mirrored front/back and left/right along center)",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 7,
+    "depth": 15,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "low border/foundation and slab coping",
+      "confidence": 0.9
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof (stepped/slab and full blocks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "wood",
+      "role": "wall (horizontal plank siding)",
+      "confidence": 0.9
+    },
+    {
+      "name": "log",
+      "role": "vertical corner posts/trim",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.95
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof edge/step accents (stone slabs on roof steps and border)",
+      "confidence": 0.8
+    }
+  ],
+  "elements": [
+    "continuous stonebrick border one block high around the base",
+    "single row of glass windows along each long wall (three or four panes with frames)",
+    "vertical log corner posts at each corner of the wooden walls",
+    "raised stepped nether-brick roof with stone slab highlights on steps",
+    "stonebrick slab/trim separating walls and roof"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular wooden box (plank walls) with vertical log blocks at corners; make the internal wall height about 3 blocks.",
+    "Surround the wooden box with a 1-block high stonebrick border 1 block out from the wall (visible as a ledge).",
+    "Place a horizontal band of stonebrick slabs/blocks atop the walls as a coping layer, then construct a centered stepped nether-brick roof rising two to three steps to a short ridge.",
+    "Add a continuous row of glass panes in the upper middle of the long walls (aligned beneath the stone coping).",
+    "Repeat stone slab accents on alternating roof steps (visible as light gray slabs on the dark roof)."
+  ],
+  "uncertainties": [
+    "Exact interior layout and presence/location of doors are not visible from exterior images.",
+    "Precise block counts for width/depth/height are estimated from perspective; actual footprint may differ by a few blocks.",
+    "The material identified as 'nether_brick' for the roof is inferred from color; could be another dark red block variant in some texture packs.",
+    "Corner trim blocks inferred as 'log' type; could be a different wood species though appearance suggests typical log texture."
+  ]
+}

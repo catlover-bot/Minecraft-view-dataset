@@ -1,0 +1,449 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 14,
+    "zmin": 0,
+    "zmax": 19
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "wood",
+    "trim": "slab_stone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "band": "white_concrete",
+    "tower_wall": "stonebrick",
+    "fence": "quartz_block"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 19,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_center_x=12"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground slab + hollow interior",
+        "perimeter_profile": "rectangular base with stepped front terraces"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 10
+        },
+        "rooms_hint": "upper massing and tower connections",
+        "perimeter_profile": "reduced upper tier with banding"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 11,
+        "y1": 3,
+        "z1": 0,
+        "x2": 13,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 3,
+        "y1": 7,
+        "z1": 19,
+        "x2": 5,
+        "y2": 9,
+        "z2": 19
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 19,
+        "y1": 7,
+        "z1": 19,
+        "x2": 21,
+        "y2": 9,
+        "z2": 19
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 24,
+        "y1": 6,
+        "z1": 8,
+        "x2": 24,
+        "y2": 8,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 8,
+        "x2": 0,
+        "y2": 8,
+        "z2": 10
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 11,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 11,
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 12,
+          "block": "wood"
+        },
+        {
+          "y": 12,
+          "x1": 2,
+          "z1": 1,
+          "x2": 22,
+          "z2": 11,
+          "block": "wood"
+        },
+        {
+          "y": 13,
+          "x1": 6,
+          "z1": 2,
+          "x2": 18,
+          "z2": 10,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 19,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 5,
+      "z2": 19,
+      "block": "brick",
+      "purpose": "main_mass_walls_base"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 23,
+      "y2": 5,
+      "z2": 18,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 5,
+      "z1": 0,
+      "x2": 20,
+      "y2": 7,
+      "z2": 12,
+      "block": "brick",
+      "purpose": "second_tier_wall"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 5,
+      "z1": 1,
+      "x2": 19,
+      "y2": 7,
+      "z2": 11,
+      "purpose": "second_tier_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 8,
+      "z1": 0,
+      "x2": 18,
+      "y2": 9,
+      "z2": 6,
+      "block": "brick",
+      "purpose": "front_stepped_terrace_top"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 6,
+      "z1": 0,
+      "x2": 16,
+      "y2": 6,
+      "z2": 3,
+      "block": "brick",
+      "purpose": "front_stepped_mid"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 4,
+      "z1": 0,
+      "x2": 14,
+      "y2": 4,
+      "z2": 2,
+      "block": "brick",
+      "purpose": "front_stepped_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 24,
+      "y2": 6,
+      "z2": 19,
+      "block": "white_concrete",
+      "purpose": "horizontal_white_banding_midsection"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 24,
+      "y2": 7,
+      "z2": 19,
+      "block": "white_concrete",
+      "purpose": "thin_white_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 0,
+      "y2": 9,
+      "z2": 0,
+      "block": "white_concrete",
+      "purpose": "corner_marker_west_north"
+    },
+    {
+      "op": "fill",
+      "x1": 24,
+      "y1": 6,
+      "z1": 0,
+      "x2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 14,
+  "zmin": 0,
+  "zmax": 19,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 24, 0, 19],
+      "block": "brick",
+      "notes": "ground/foundation layer (y=0)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 2, 22, 1, 17],
+      "block": "brick",
+      "notes": "floor slab interior/main floor (y=1)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 22, 2, 17],
+      "block": "brick",
+      "notes": "second thin foundation layer to give base visual weight (y=2)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 2, 22, 6, 17],
+      "block": "stonebrick",
+      "notes": "main wall volume (ground-to-mid), leaving openings for entrance and windows"
+    },
+    {
+      "op": "replace",
+      "box": [11, 3, 2, 13, 5, 2],
+      "block": "air",
+      "notes": "central entrance opening - two-block wide recess at front face (front z=2). Creates doorway 2 wide x 3 tall"
+    },
+    {
+      "op": "fill",
+      "box": [10, 1, 1, 14, 1, 1],
+      "block": "slab_stone",
+      "notes": "front step slab in front of entrance (y=1, z=1)"
+    },
+    {
+      "op": "fill",
+      "box": [11, 2, 2, 13, 2, 2],
+      "block": "wood",
+      "notes": "entrance small platform (2x1) aligned with doorway at y=2"
+    },
+    {
+      "op": "fill",
+      "box": [4, 5, 2, 20, 5, 17],
+      "block": "white_concrete",
+      "notes": "horizontal white band wrapping building midsection (single layer band at y=5)"
+    },
+    {
+      "op": "fill",
+      "box": [4, 6, 2, 20, 8, 17],
+      "block": "stonebrick",
+      "notes": "upper wall band above white band (adds contrast)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 7, 2, 18, 10, 17],
+      "block": "wood",
+      "notes": "stepped front pyramidal/terraced mass inset from sides (creates tiered terraces). This occupies interior front portion and rises above mid band"
+    },
+    {
+      "op": "fill",
+      "box": [8, 9, 2, 16, 11, 17],
+      "block": "wood",
+      "notes": "upper tier of stepped front (smaller footprint)"
+    },
+    {
+      "op": "fill",
+      "box": [10, 11, 2, 14, 12, 17],
+      "block": "wood",
+      "notes": "peak tier of stepped front (small central peak)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 15, 4, 12, 17],
+      "block": "stonebrick",
+      "notes": "rear-left tower column (2x10 footprint from y=3 to y=12)"
+    },
+    {
+      "op": "fill",
+      "box": [20, 3, 15, 22, 12, 17],
+      "block": "stonebrick",
+      "notes": "rear-right tower column"
+    },
+    {
+      "op": "replace",
+      "box": [3, 6, 15, 3, 6, 15],
+      "block": "glass",
+      "notes": "small tower window on rear-left tower (single block inset)"
+    },
+    {
+      "op": "replace",
+      "box": [3, 8, 15, 3, 8, 15],
+      "block": "glass",
+      "notes": "small tower window on rear-left tower (upper)"
+    },
+    {
+      "op": "replace",
+      "box": [21, 6, 15, 21, 6, 15],
+      "block": "glass",
+      "notes": "small tower window on rear-right tower (single)"
+    },
+    {
+      "op": "replace",
+      "box": [21, 8, 15, 21, 8, 15],
+      "block": "glass",
+      "notes": "small tower window on rear-right tower (upper)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 12, 15, 23, 12, 17],
+      "block": "slab_stone",
+      "notes": "tower caps - continuous slab cap across rear to unify caps (y=12)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 13, 2, 22, 13, 17],
+      "block": "slab_stone",
+      "notes": "roof base slab around upper perimeter (creates slightly flat cap where gable meets tower)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 12, 2, 18, 13, 17],
+      "block": "wood",
+      "notes": "upper roof backing layer (supports gable shape)"
+    },
+    {
+      "op": "replace",
+      "box": [6, 13, 3, 18, 13, 16],
+      "block": "air",
+      "notes": "allow space for gable slope - clearing inner volume so gable appears"
+    },
+    {
+      "op": "fill",
+      "box": [5, 13, 2, 19, 13, 2],
+      "block": "wood",
+      "notes": "front gable slope row 1 (frontmost z=2 at y=13)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 13, 2, 18, 13, 2],
+      "block": "wood",
+      "notes": "front gable slope row 2 (adds stepped look). These are shallow to stay within height limit"
+    },
+    {
+      "op": "fill",
+      "box": [8, 12, 2, 16, 12, 2],
+      "block": "wood",
+      "notes": "gable peak detail lower row"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 1, 22, 3, 1],
+      "block": "fence",
+      "notes": "front low perimeter fence around entrance area (z=1 row) continuous markers"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 0, 23, 1, 19],
+      "block": "dirt",
+      "notes": "ground plane outside building to ensure consistent surrounding ground (y=1 outer ring overlaps foundation safely)"
+    },
+    {
+      "op": "replace",
+      "box": [11, 3, 2, 12, 4, 2],
+      "block": "air",
+      "notes": "ensure full 3-block-tall doorway clearance (y=3 included)"
+    },
+    {
+      "op": "fill",
+      "box": [4, 4, 2, 20, 4, 17],
+      "block": "white_concrete",
+      "notes": "extend white band as 2-block

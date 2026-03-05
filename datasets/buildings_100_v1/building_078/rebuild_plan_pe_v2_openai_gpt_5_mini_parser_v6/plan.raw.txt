@@ -1,0 +1,486 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 8
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 8,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_x_and_z_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground floor hall, unknown interior",
+        "perimeter_profile": "rectangle with raised foundation"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 7
+        },
+        "rooms_hint": "second floor rooms, repeated window row",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 2,
+        "z1": 0,
+        "x2": 1,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 2,
+        "z1": 0,
+        "x2": 3,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 7,
+        "y1": 2,
+        "z1": 0,
+        "x2": 7,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 2,
+        "z1": 0,
+        "x2": 9,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 5,
+        "z1": 0,
+        "x2": 1,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 5,
+        "z1": 0,
+        "x2": 3,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 5,
+        "z1": 0,
+        "x2": 5,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 7,
+        "y1": 5,
+        "z1": 0,
+        "x2": 7,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 5,
+        "z1": 0,
+        "x2": 9,
+        "y2": 5,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 7,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 7,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 8,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 8,
+      "block": "wood_planks",
+      "purpose": "ground_floor_slab_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 8,
+      "block": "quartz_slab",
+      "purpose": "raised_foundation_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 7,
+      "block": "quartz_slab",
+      "purpose": "foundation_inset_fill"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 7,
+      "block": "brick",
+      "purpose": "lower_wall_mass"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 9,
+      "y2": 7,
+      "z2": 7,
+      "block": "brick",
+      "purpose": "upper_wall_mass"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "corner_column_west"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 2,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "corner_column_east"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 0,
+      "x2": 9,
+      "y2": 2,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "front_base_trim_under_windows"
+    },
+    {
+      "op": "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 7,
+  "zmin": 0,
+  "zmax": 8,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 10, 0, 8],
+      "block": "quartz_slab",
+      "description": "raised white slab foundation border (single layer) across entire footprint at ground level forming a continuous border"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 9, 1, 7],
+      "block": "quartz_slab",
+      "description": "inner foundation slab inset (1 block inset from outer slab) to create stepped perimeter"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 9, 3, 7],
+      "block": "brick",
+      "description": "ground floor brick walls (up to y=3). This fills wall area but will be carved for windows and entrance."
+    },
+    {
+      "op": "fill",
+      "box": [1, 4, 1, 9, 6, 7],
+      "block": "brick",
+      "description": "second floor brick walls (y=4..6). Leave space at y=3 for horizontal trim band."
+    },
+    {
+      "op": "fill",
+      "box": [1, 3, 1, 9, 3, 7],
+      "block": "wood_planks",
+      "description": "horizontal trim band between floors at y=3 (1 block high continuous)"
+    },
+    {
+      "op": "set",
+      "pos": [1, 1, 1],
+      "block": "stonebrick",
+      "description": "corner column front-left base block"
+    },
+    {
+      "op": "set",
+      "pos": [1, 2, 1],
+      "block": "stonebrick",
+      "description": "corner column front-left mid"
+    },
+    {
+      "op": "set",
+      "pos": [1, 3, 1],
+      "block": "stonebrick",
+      "description": "corner column front-left top"
+    },
+    {
+      "op": "set",
+      "pos": [1, 4, 1],
+      "block": "stonebrick",
+      "description": "corner column front-left second floor"
+    },
+    {
+      "op": "set",
+      "pos": [1, 5, 1],
+      "block": "stonebrick",
+      "description": "corner column front-left second floor top"
+    },
+    {
+      "op": "set",
+      "pos": [1, 6, 1],
+      "block": "stonebrick",
+      "description": "corner column front-left roof level"
+    },
+    {
+      "op": "set",
+      "pos": [9, 1, 1],
+      "block": "stonebrick",
+      "description": "corner column front-right base"
+    },
+    {
+      "op": "set",
+      "pos": [9, 2, 1],
+      "block": "stonebrick",
+      "description": "corner column front-right mid"
+    },
+    {
+      "op": "set",
+      "pos": [9, 3, 1],
+      "block": "stonebrick",
+      "description": "corner column front-right top"
+    },
+    {
+      "op": "set",
+      "pos": [9, 4, 1],
+      "block": "stonebrick",
+      "description": "corner column front-right second floor"
+    },
+    {
+      "op": "set",
+      "pos": [9, 5, 1],
+      "block": "stonebrick",
+      "description": "corner column front-right second floor top"
+    },
+    {
+      "op": "set",
+      "pos": [9, 6, 1],
+      "block": "stonebrick",
+      "description": "corner column front-right roof level"
+    },
+    {
+      "op": "set",
+      "pos": [1, 1, 7],
+      "block": "stonebrick",
+      "description": "corner column back-left base"
+    },
+    {
+      "op": "set",
+      "pos": [1, 2, 7],
+      "block": "stonebrick",
+      "description": "corner column back-left mid"
+    },
+    {
+      "op": "set",
+      "pos": [1, 3, 7],
+      "block": "stonebrick",
+      "description": "corner column back-left top"
+    },
+    {
+      "op": "set",
+      "pos": [1, 4, 7],
+      "block": "stonebrick",
+      "description": "corner column back-left second floor"
+    },
+    {
+      "op": "set",
+      "pos": [1, 5, 7],
+      "block": "stonebrick",
+      "description": "corner column back-left second floor top"
+    },
+    {
+      "op": "set",
+      "pos": [1, 6, 7],
+      "block": "stonebrick",
+      "description": "corner column back-left roof level"
+    },
+    {
+      "op": "set",
+      "pos": [9, 1, 7],
+      "block": "stonebrick",
+      "description": "corner column back-right base"
+    },
+    {
+      "op": "set",
+      "pos": [9, 2, 7],
+      "block": "stonebrick",
+      "description": "corner column back-right mid"
+    },
+    {
+      "op": "set",
+      "pos": [9, 3, 7],
+      "block": "stonebrick",
+      "description": "corner column back-right top"
+    },
+    {
+      "op": "set",
+      "pos": [9, 4, 7],
+      "block": "stonebrick",
+      "description": "corner column back-right second floor"
+    },
+    {
+      "op": "set",
+      "pos": [9, 5, 7],
+      "block": "stonebrick",
+      "description": "corner column back-right second floor top"
+    },
+    {
+      "op": "set",
+      "pos": [9, 6, 7],
+      "block": "stonebrick",
+      "description": "corner column back-right roof level"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 1, 8, 2, 1],
+      "block": "glass",
+      "description": "front row ground floor windows: (six positions across width 2..8 at z=1, y=2) single-block-high glass; total 7 blocks, leaving columns at x=1 and x=9 for stone"
+    },
+    {
+      "op": "fill",
+      "box": [2, 5, 1, 8, 5, 1],
+      "block": "glass",
+      "description": "front row second-floor windows at y=5 across same x positions"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 2, 1, 5, 6],
+      "block": "glass",
+      "description": "left side windows: a vertical strip with spaced windows between y=2 and y=5 at x=1 (avoids corners). Single column width"
+    },
+    {
+      "op": "fill",
+      "box": [9, 2, 2, 9, 5, 6],
+      "block": "glass",
+      "description": "right side windows symmetrical to left side"
+    },
+    {
+      "op": "set",
+      "pos": [5, 1, 1],
+      "block": "air",
+      "description": "main entrance opening at front center ground level (single block wide opening at x=5,z=1,y=1). Leave threshold open."
+    },
+    {
+      "op":

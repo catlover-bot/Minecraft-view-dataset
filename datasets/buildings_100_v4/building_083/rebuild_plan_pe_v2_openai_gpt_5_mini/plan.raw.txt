@@ -1,0 +1,447 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 16
+  },
+  "palette": {
+    "wall": "wood",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "l_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 12,
+          "label": "main_long_block"
+        },
+        {
+          "x1": 0,
+          "z1": 12,
+          "x2": 12,
+          "z2": 16,
+          "label": "rear_short_appendage"
+        }
+      ],
+      "symmetry": "approximate_bilateral_along_x_center"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single large hall with potential subdivisions",
+        "perimeter_profile": "l_shape with towers at corners"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 10,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 2,
+        "z1": 0,
+        "x2": 4,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 2,
+        "z1": 0,
+        "x2": 17,
+        "y2": 3,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 5,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 12,
+          "block": "brick"
+        },
+        {
+          "y": 6,
+          "x1": 0,
+          "z1": 1,
+          "x2": 20,
+          "z2": 11,
+          "block": "brick"
+        },
+        {
+          "y": 7,
+          "x1": 0,
+          "z1": 2,
+          "x2": 20,
+          "z2": 10,
+          "block": "brick"
+        },
+        {
+          "y": 8,
+          "x1": 1,
+          "z1": 3,
+          "x2": 19,
+          "z2": 9,
+          "block": "brick"
+        },
+        {
+          "y": 9,
+          "x1": 2,
+          "z1": 4,
+          "x2": 18,
+          "z2": 8,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 6,
+          "z1": 5,
+          "x2": 14,
+          "z2": 7,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 16,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "main_wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 12,
+      "x2": 12,
+      "y2": 4,
+      "z2": 16,
+      "block": "wood",
+      "purpose": "rear_appendage_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "foundation_trim_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "stone_trim_roofline"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 3,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_nw_step1"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 20,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 16,
+      "x2": 0,
+      "y2": 4,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 1,
+      "z1": 16,
+      "x2": 12,
+      "y2": 4,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_rear"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 3,
+      "z2": 11,
+      "purpose": "interior_hallway_cavity"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 12,
+      "x2": 11,
+      "y2": 3,
+      "z2": 15,
+      "purpose
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 21,
+  "ymin": 0,
+  "ymax": 13,
+  "zmin": 0,
+  "zmax": 17,
+  "operations": [
+    {
+      "op": "fill",
+      "from": [0, 0, 0],
+      "to": [21, 0, 17],
+      "block": "grass_block",
+      "purpose": "ground plane (base) - ensures consistent ground under building and yard"
+    },
+    {
+      "op": "fill",
+      "from": [1, 1, 1],
+      "to": [20, 1, 16],
+      "block": "stonebrick",
+      "purpose": "foundation / kerb base layer (stonebrick outline flush with inside edge of yard kerb)"
+    },
+    {
+      "op": "outline",
+      "from": [0, 1, 0],
+      "to": [21, 1, 17],
+      "block": "stonebrick",
+      "purpose": "outer low stone kerb surrounding yard (1-block high)"
+    },
+    {
+      "op": "fill",
+      "from": [2, 2, 2],
+      "to": [19, 2, 15],
+      "block": "coarse_dirt",
+      "purpose": "yard ground between kerb and building"
+    },
+    {
+      "op": "fill",
+      "from": [3, 2, 4],
+      "to": [18, 2, 13],
+      "block": "oak_planks",
+      "purpose": "floor layer 1 (main interior floor); inset from kerb and leaves 1-block foundation"
+    },
+    {
+      "op": "fill",
+      "from": [3, 3, 4],
+      "to": [18, 6, 13],
+      "block": "oak_planks",
+      "purpose": "main wall panels (horizontal bands will be added as layering); primary wall volume"
+    },
+    {
+      "op": "replace_layer",
+      "y": 4,
+      "from": [3, 4, 4],
+      "to": [18, 4, 13],
+      "block": "stonebrick",
+      "purpose": "mid-height stone trim band wrapping building (at interior wall y=4) to break wood bands"
+    },
+    {
+      "op": "replace_layer",
+      "y": 6,
+      "from": [3, 6, 4],
+      "to": [18, 6, 13],
+      "block": "stonebrick",
+      "purpose": "roofline stone trim band (upper decorative band) at top of walls"
+    },
+    {
+      "op": "pillars_vertical",
+      "positions": [[3,2,4],[3,2,13],[18,2,4],[18,2,13]],
+      "height": 5,
+      "block": "stonebrick",
+      "purpose": "corner vertical stone pillars (reinforce corners and tower bases)"
+    },
+    {
+      "op": "carve",
+      "from": [10, 2, 4],
+      "to": [11, 4, 4],
+      "purpose": "entrance opening (1-block wide inset door opening centered on long wall facing front)",
+      "note": "opening carved through wall bands; leave space for door placement"
+    },
+    {
+      "op": "hollow",
+      "from": [3, 2, 4],
+      "to": [18, 6, 13],
+      "block": "air",
+      "purpose": "ensure interior hollow (clears any overlapped fill); preserves walls defined by stone trim and pillars"
+    },
+    {
+      "op": "windows",
+      "positions": [
+        {"from": [5,3,4],"to":[6,4,4]},
+        {"from": [8,3,4],"to":[9,4,4]},
+        {"from": [12,3,4],"to":[13,4,4]},
+        {"from": [15,3,4],"to":[16,4,4]},
+        {"from": [5,3,13],"to":[6,4,13]},
+        {"from": [8,3,13],"to":[9,4,13]},
+        {"from": [12,3,13],"to":[13,4,13]},
+        {"from": [15,3,13],"to":[16,4,13]}
+      ],
+      "block": "glass",
+      "purpose": "small wall windows (2x2) evenly spaced on long walls"
+    },
+    {
+      "op": "build_tower",
+      "base_from": [3, 6, 4],
+      "base_to": [5, 9, 6],
+      "height": 6,
+      "wall_block": "oak_planks",
+      "pillar_block": "stonebrick",
+      "window_block": "glass",
+      "canopy_block": "brick",
+      "canopy_rim": "slab_stone",
+      "glow_center": "glowstone",
+      "purpose": "front-left tower: 3x3 footprint (including pillar trim), rises above roof with overhanging flat canopy"
+    },
+    {
+      "op": "build_tower",
+      "base_from": [16, 6, 4],
+      "base_to": [18, 9, 6],
+      "height": 6,
+      "wall_block": "oak_planks",
+      "pillar_block": "stonebrick",
+      "window_block": "glass",
+      "canopy_block": "brick",
+      "canopy_rim": "slab_stone",
+      "glow_center": "glowstone",
+      "purpose": "front-right tower"
+    },
+    {
+      "op": "build_tower",
+      "base_from": [16, 6, 11],
+      "base_to": [18, 9, 13],
+      "height": 6,
+      "wall_block": "oak_planks",
+      "pillar_block": "stonebrick",
+      "window_block": "glass",
+      "canopy_block": "brick",
+      "canopy_rim": "slab_stone",
+      "glow_center": "glowstone",
+      "purpose": "rear-right tower"
+    },
+    {
+      "op": "tower_windows",
+      "positions": [
+        {"from":[3,8,5],"to":[5,9,5]},
+        {"from":[16,8,5],"to":[18,9,5]},
+        {"from":[16,8,12],"to":[18,9,12]}
+      ],
+      "block": "glass",
+      "purpose": "tall narrow tower windows (2x2) centered on tower faces"
+    },
+    {
+      "op": "canopy_overhang",
+      "positions": [
+        {"from":[2,12,3],"to":[6,12,7]},
+        {"from":[15,12,3],"to":[19,12,7]},
+        {"from":[15,12,10],"to":[19,12,14]}
+      ],
+      "block": "brick",
+      "rim": "slab_stone",
+      "center_glow": "glowstone",
+      "purpose": "flat overhanging canopies atop towers with stone slab rim and glowstone centers"
+    },
+    {
+      "op": "carve_roof_volume",
+      "from": [3,7,4],
+      "to": [18,11,13],
+      "purpose": "define roof support volume (ensure roof sits above walls and integrates towers). This is a placeholder step to ensure roof coordinates are within bbox"
+    },
+    {
+      "op": "build_gabled_roof",
+      "ridge_line": {"from":[3,11,8],"to":[18,11,8]},
+      "eaves_levels": [
+        {"y":11,"from":[3,11,4],"to":[18,11,13]},
+        {"y":12,"from":[4,12,5],"to":[17,12,12]},
+        {"y":13,"from":[6,13,6],"to":[15,

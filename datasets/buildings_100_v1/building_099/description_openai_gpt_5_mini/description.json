@@ -1,0 +1,67 @@
+{
+  "summary": "A small two-story rectangular stone building on a raised cobblestone perimeter platform with rows of glass windows on both floors and a dark red sloped roof capped with light-colored slabs at the gable ends.",
+  "building_type": "residential_small",
+  "shape": {
+    "overall_form": "rectangular box with a pitched roof centered on top and a surrounding low perimeter platform",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis (mirrored window rows, roof shape)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 7,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "primary_wall",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "foundation/platform",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof_trim/gable_cap",
+      "confidence": 0.6
+    }
+  ],
+  "elements": [
+    "two floors with horizontal window rows (four-to-five windows per side)",
+    "raised cobblestone perimeter platform surrounding base (~1 block higher than ground)",
+    "nether-brick sloped gable roof with stepped edges and light slabs at the top",
+    "stonebrick wall detailing band between floors and corner pilasters",
+    "single centered entrance (uncertain interior door type) with small recessed porch"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular stonebrick box roughly 11x7 blocks footprint, 6 blocks tall for two floors (3 blocks per floor) plus roof and foundation.",
+    "Place a 1-block high cobblestone platform extending 1 block outward around the base.",
+    "Install continuous rows of glass panes on both long sides centered vertically (approximately 4–5 panes per row).",
+    "Create a nether-brick gable roof peaked along the long axis with 1-block stepped slope; cap the gable ends with light colored stone slabs.",
+    "Add a decorative stonebrick band (one block depth) between the first and second floor and stonebrick corner columns."
+  ],
+  "uncertainties": [
+    "Exact internal floor heights and interior layout are not visible.",
+    "Precise footprint dimensions (width/depth) are estimated from images and top-down views; could be off by a few blocks.",
+    "Material identification for roof trim appears to be a light stone slab (stone_slab) but could be another pale slab variant.",
+    "Entrance details and whether there is an interior staircase or second-floor access are unknown."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_099",
+  "created_at": "2026-02-28T14:22:13.428278+00:00"
+}

@@ -1,0 +1,466 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 11,
+    "zmin": 0,
+    "zmax": 16
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 16,
+          "label": "outer_perimeter"
+        },
+        {
+          "x1": 4,
+          "z1": 4,
+          "x2": 20,
+          "z2": 12,
+          "label": "inner_courtyard"
+        }
+      ],
+      "symmetry": "mirror_x_centered_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "continuous single-story perimeter with open central courtyard; walkway at second layer around courtyard",
+        "perimeter_profile": "hollow_rectangle_with_towers"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "raised walkway/roof edge; tower upper levels",
+        "perimeter_profile": "continuous_walkway_plus_tower_risers"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 11,
+        "y1": 1,
+        "z1": 0,
+        "x2": 12,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 2,
+        "z1": 0,
+        "x2": 21,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 3,
+        "y1": 2,
+        "z1": 16,
+        "x2": 21,
+        "y2": 2,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 3,
+        "x2": 0,
+        "y2": 2,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 24,
+        "y1": 2,
+        "z1": 3,
+        "x2": 24,
+        "y2": 2,
+        "z2": 13
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 9,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 16,
+          "block": "nether_brick"
+        },
+        {
+          "y": 9,
+          "x1": 2,
+          "z1": 2,
+          "x2": 22,
+          "z2": 14,
+          "block": "nether_brick"
+        },
+        {
+          "y": 10,
+          "x1": 4,
+          "z1": 4,
+          "x2": 20,
+          "z2": 12,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 16,
+      "block": "wood",
+      "purpose": "ground_floor_slab_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 4,
+      "z2": 16,
+      "block": "brick",
+      "purpose": "outer_wall_shell_mid"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 1,
+      "z1": 4,
+      "x2": 20,
+      "y2": 7,
+      "z2": 12,
+      "purpose": "central_courtyard_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_placeholder"
+    },
+    {
+      "op": "fill",
+      "x1": 24,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 7,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_placeholder"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 16,
+      "x2": 0,
+      "y2": 7,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_placeholder"
+    },
+    {
+      "op": "fill",
+      "x1": 24,
+      "y1": 1,
+      "z1": 16,
+      "x2": 24,
+      "y2": 7,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_placeholder"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 24,
+      "y2": 4,
+      "z2": 16,
+      "block": "stone_slab",
+      "purpose": "top_coping_continuous"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 23,
+      "y2": 3,
+      "z2": 15,
+      "block": "brick",
+      "purpose": "wall_brick_band_inset"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 23,
+      "y2": 3,
+      "z2": 15,
+      "block": "sandstone",
+      "purpose": "lighter_horizontal_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 23,
+      "y2": 2,
+      "z2": 15,
+      "block": "glass",
+      "purpose": "glass
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 11,
+  "zmin": 0,
+  "zmax": 16,
+  "operations": [
+    {
+      "id": 1,
+      "type": "fill",
+      "block": "stone_bricks",
+      "from": [0, 0, 0],
+      "to": [24, 0, 16],
+      "comment": "ground base/foundation layer (single layer) around perimeter and courtyard floor base"
+    },
+    {
+      "id": 2,
+      "type": "hollow_rectangle_walls",
+      "block": "brick_block",
+      "from": [1, 1, 1],
+      "to": [23, 6, 15],
+      "thickness": 1,
+      "comment": "outer walls main body with brick band from y=1 to y=6 (5 blocks height)"
+    },
+    {
+      "id": 3,
+      "type": "fill",
+      "block": "sandstone",
+      "from": [1, 5, 1],
+      "to": [23, 5, 15],
+      "comment": "lighter horizontal band (single row) at y=5 overlapping wall area"
+    },
+    {
+      "id": 4,
+      "type": "fill",
+      "block": "white_terracotta",
+      "from": [1, 6, 1],
+      "to": [23, 6, 15],
+      "comment": "top thin white coping band directly below roofline"
+    },
+    {
+      "id": 5,
+      "type": "replace_strip",
+      "block": "glass",
+      "from": [3, 3, 1],
+      "to": [21, 3, 1],
+      "axis": "x",
+      "comment": "glass window strip on front wall (south side). Ensure windows are within wall bounds."
+    },
+    {
+      "id": 6,
+      "type": "replace_strip",
+      "block": "glass",
+      "from": [3, 3, 15],
+      "to": [21, 3, 15],
+      "axis": "x",
+      "comment": "glass window strip on back wall (north side)"
+    },
+    {
+      "id": 7,
+      "type": "replace_strip",
+      "block": "glass",
+      "from": [1, 3, 3],
+      "to": [1, 3, 13],
+      "axis": "z",
+      "comment": "glass window strip on west wall"
+    },
+    {
+      "id": 8,
+      "type": "replace_strip",
+      "block": "glass",
+      "from": [23, 3, 3],
+      "to": [23, 3, 13],
+      "axis": "z",
+      "comment": "glass window strip on east wall"
+    },
+    {
+      "id": 9,
+      "type": "pillars",
+      "block": "quartz_block",
+      "positions": [
+        [2, 1, 1],
+        [2, 1, 15],
+        [10, 1, 1],
+        [10, 1, 15],
+        [18, 1, 1],
+        [18, 1, 15],
+        [22, 1, 1],
+        [22, 1, 15],
+        [1, 1, 4],
+        [1, 1, 8],
+        [1, 1, 12],
+        [23, 1, 4],
+        [23, 1, 8],
+        [23, 1, 12]
+      ],
+      "size": [2, 5, 1],
+      "comment": "vertical white pillars (2 blocks wide) from y=1 to y=5 placed evenly along walls; size is [width,xHeight,depth] with each pillar being 2x5"
+    },
+    {
+      "id": 10,
+      "type": "towers",
+      "block": "stone_bricks",
+      "positions": [
+        [0, 1, 0],
+        [0, 1, 16],
+        [24, 1, 0],
+        [24, 1, 16]
+      ],
+      "size": [3, 9, 3],
+      "comment": "four corner towers: 3x3 footprint, 9 blocks tall (from y=1 to y=9). Towers sit flush at corners inside bbox; ensure they do not exceed xmax/zmax"
+    },
+    {
+      "id": 11,
+      "type": "tower_corner_trim",
+      "block": "stonebrick",
+      "positions": [
+        [0, 1, 0],
+        [0, 1, 16],
+        [24, 1, 0],
+        [24, 1, 16]
+      ],
+      "size": [3, 9, 3],
+      "comment": "stonebrick vertical corner trim on towers for visual contrast"
+    },
+    {
+      "id": 12,
+      "type": "tower_roofs",
+      "block": "nether_brick_slab",
+      "positions": [
+        [0, 9, 0],
+        [0, 9, 16],
+        [24, 9, 0],
+        [24, 9, 16]
+      ],
+      "size": [5, 1, 5],
+      "comment": "stacked flat slab roof overhang for each tower centered to create 1-block overhang"
+    },
+    {
+      "id": 13,
+      "type": "glow",
+      "block": "glowstone",
+      "positions": [
+        [1, 9, 1],
+        [1, 9, 15],
+        [23, 9, 1],
+        [23, 9, 15]
+      ],
+      "comment": "glowstone centered on each tower roof"
+    },
+    {
+      "id": 14,
+      "type": "roof_perimeter",
+      "block": "nether_bricks",
+      "from": [1, 7, 1],
+      "to": [23, 7, 15],
+      "comment": "continuous dark flat roof layer (walkway) at y=7 around courtyard edge (second-floor roof/walkway). Thickness 1."
+    },
+    {
+      "id": 15,
+      "type": "roof_edge_slab",
+      "block": "stone_slab",
+      "from": [0, 7, 0],
+      "to": [24, 7, 16],
+      "comment": "roof edge coping slab around entire structure (overhang one block)"
+    },
+    {
+      "id": 16,
+      "type": "crenellations",
+      "block": "nether_brick_fence",
+      "positions": [
+        [2, 8, 1],
+        [6, 8, 1],
+        [10, 8, 1],
+        [14, 8, 1],
+        [18, 8, 1],
+        [22, 8, 1],
+        [2, 8, 15],
+        [6, 8, 15],
+        [10, 8, 15],
+        [14, 8, 15],
+        [18, 8, 15],
+        [22, 8, 15]
+      ],
+      "comment": "small decorative posts along roof edge; placed at y=8 on north/south ridges"
+    },
+    {
+      "id": 17,
+      "type": "courtyard_clear",
+      "block": "air",
+      "from": [2, 1, 2],
+      "to": [22, 6, 14],
+      "comment": "clear the central courtyard interior through wall aperture leaving open-to-sky space to y=11"
+    },
+    {
+      "id": 18,
+      "type": "entrance_opening",
+      "block": "air",
+      "from":

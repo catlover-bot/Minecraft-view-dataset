@@ -1,0 +1,513 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 14,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 18
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "stone_slab",
+    "trim": "nether_brick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "nether_brick",
+    "base": "cobblestone",
+    "ground": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 13,
+          "z2": 17,
+          "label": "main_wall"
+        }
+      ],
+      "symmetry": "x_and_z_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single open recessed interior",
+        "perimeter_profile": "solid rectangular wall with recessed open-top interior"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 7,
+        "y1": 1,
+        "z1": 1,
+        "x2": 7,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 3,
+        "z1": 1,
+        "x2": 12,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 3,
+        "z1": 17,
+        "x2": 12,
+        "y2": 3,
+        "z2": 17
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 3,
+        "z1": 5,
+        "x2": 1,
+        "y2": 3,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 13,
+        "y1": 3,
+        "z1": 5,
+        "x2": 13,
+        "y2": 3,
+        "z2": 13
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 13,
+          "z2": 17,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "surrounding_ground_base"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 18,
+      "purpose": "ensure_ground_flat"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "ground_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 14,
+      "y2": 1,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "outer_dirt_rim_height1"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 14,
+      "y2": 1,
+      "z2": 18,
+      "purpose": "shape_outer_rim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "final_ground_comp"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "ensure_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 14,
+      "y2": 1,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "dirt_rim_redundant"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "ground_final_pass"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "ground_stabilize"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "ground_final"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 14,
+      "y2": 1,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "outer_rim"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 14,
+      "y2": 1,
+      "z2": 18,
+      "purpose": "form_trench_area"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 18,
+      "block": "dirt",
+      "purpose
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 13,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 17,
+  "operations": [
+    {
+      "op": "fill",
+      "cube": [0, 0, 0, 12, 0, 16],
+      "block": "cobblestone"
+    },
+    {
+      "op": "fill",
+      "cube": [1, 1, 1, 11, 4, 15],
+      "block": "air"
+    },
+    {
+      "op": "fill",
+      "cube": [2, 1, 2, 10, 1, 14],
+      "block": "nether_brick"
+    },
+    {
+      "op": "fill",
+      "cube": [2, 2, 2, 10, 2, 14],
+      "block": "stonebrick"
+    },
+    {
+      "op": "fill",
+      "cube": [2, 3, 2, 10, 3, 14],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set",
+      "pos": [2, 4, 2],
+      "block": "nether_brick"
+    },
+    {
+      "op": "set",
+      "pos": [3, 4, 2],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [4, 4, 2],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [5, 4, 2],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [6, 4, 2],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [7, 4, 2],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [8, 4, 2],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [9, 4, 2],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [10, 4, 2],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [2, 4, 3],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [2, 4, 4],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [2, 4, 5],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [2, 4, 6],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [2, 4, 7],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [2, 4, 8],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [2, 4, 9],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [2, 4, 10],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [10, 4, 2],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [10, 4, 3],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [10, 4, 4],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [10, 4, 5],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [10, 4, 6],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [10, 4, 7],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [10, 4, 8],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [10, 4, 9],
+      "block": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [10, 4, 10],
+      "block": "stone_slab"
+    },
+    {
+      "op": "fill",
+      "cube": [3, 2, 2, 9, 2, 2],
+      "block": "glass"
+    },
+    {
+      "op": "fill",
+      "cube": [3, 2, 14, 9, 2, 14],
+      "block": "glass"
+    },
+    {
+      "op": "fill",
+      "cube": [2, 2, 3, 2, 2, 9],
+      "block": "glass"
+    },
+    {
+      "op": "fill",
+      "cube": [10, 2, 3, 10, 2, 9],
+      "block": "glass"
+    },
+    {
+      "op": "fill",
+      "cube": [6, 1, 1, 6, 2, 1],
+      "block": "air"
+    },
+    {
+      "op": "set",
+      "pos": [6, 1, 1],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set",
+      "pos": [6, 1, 0],
+      "block": "cobblestone"
+    },
+    {
+      "op": "fill",
+      "cube": [1, 0, 1, 11, 0, 15],
+      "block": "cobblestone"
+    },
+    {
+      "op": "fill",
+      "cube": [0, 0, 0, 12, 0, 16],
+      "block": "dirt"
+    },
+    {
+      "op": "fill",
+      "cube": [0, 0, 0, 12, 0, 16],
+      "block": "cobblestone"
+    },
+    {
+      "op": "fill",
+      "cube": [1, 1, 1, 11, 1, 15],
+      "block": "nether_brick"
+    },
+    {
+      "op": "fill",
+      "cube": [1, 1, 1, 11, 1, 15],
+      "block": "stonebrick"
+    },
+    {
+      "op": "fill",
+      "cube": [1, 2, 1, 11, 2, 15],
+      "block": "stonebrick"
+    },
+    {
+      "op": "fill",
+      "cube": [1, 3, 1, 11, 3, 15],
+      "block": "stonebrick"
+    },
+    {
+      "op": "fill",
+      "cube": [1, 4, 1, 11, 4, 15],
+      "block": "stone_slab"
+    },
+    {
+      "op": "fill",
+      "cube": [0, 0, 0, 12, 0, 16],
+      "block": "dirt"
+    },
+    {
+      "op": "fill",
+      "cube": [0, 0, 0

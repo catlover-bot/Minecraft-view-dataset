@@ -1,0 +1,279 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 16,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "oak_wood",
+    "roof": "dark_oak_wood",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_wood",
+    "slab": "stone_slab",
+    "foundation": "stonebrick",
+    "accent": "nether_brick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 10,
+          "label": "main_block"
+        }
+      ],
+      "symmetry": "bilateral_x_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 5
+        },
+        "rooms_hint": "ground floor with central courtyard access",
+        "perimeter_profile": "rectangle_with_towers"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 6,
+          "ymax": 11
+        },
+        "rooms_hint": "second floor with balconies",
+        "perimeter_profile": "rectangle_with_towers"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 12,
+          "ymax": 17
+        },
+        "rooms_hint": "third floor with tower extensions",
+        "perimeter_profile": "rectangle_with_towers"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 7,
+        "y1": 1,
+        "z1": 0,
+        "x2": 9,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 11,
+        "y1": 2,
+        "z1": 0,
+        "x2": 11,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 14,
+        "y1": 2,
+        "z1": 0,
+        "x2": 14,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 8,
+        "z1": 0,
+        "x2": 2,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 8,
+        "z1": 0,
+        "x2": 5,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 11,
+        "y1": 8,
+        "z1": 0,
+        "x2": 11,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 14,
+        "y1": 8,
+        "z1": 0,
+        "x2": 14,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 14,
+        "z1": 0,
+        "x2": 2,
+        "y2": 14,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 14,
+        "z1": 0,
+        "x2": 5,
+        "y2": 14,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 11,
+        "y1": 14,
+        "z1": 0,
+        "x2": 11,
+        "y2": 14,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 14,
+        "y1": 14,
+        "z1": 0,
+        "x2": 14,
+        "y2": 14,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 17,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 17,
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 10,
+          "block": "oak_wood"
+        },
+        {
+          "y": 18,
+          "x1": 2,
+          "z1": 2,
+          "x2": 14,
+          "z2": 8,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 10,
+      "block": "oak_wood",
+      "purpose": "ground_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 16,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 10,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 16, "y2": 0, "z2": 10, "material": "stonebrick", "label": "foundation_base"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 0, "x2": 15, "y2": 9, "z2": 0, "material": "oak_planks", "label": "floor_level_1"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 5, "x2": 15, "y2": 9, "z2": 5, "material": "oak_planks", "label": "floor_level_2"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 10, "x2": 15, "y2": 9, "z2": 10, "material": "oak_planks", "label": "floor_level_3"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 1, "x2": 0, "y2": 9, "z2": 4, "material": "oak_planks", "label": "wall_west_lower"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 6, "x2": 0, "y2": 9, "z2": 9, "material": "oak_planks", "label": "wall_west_upper"},
+    {"type": "fill", "x1": 16, "y1": 1, "z1": 1, "x2": 16, "y2": 9, "z2": 4, "material": "oak_planks", "label": "wall_east_lower"},
+    {"type": "fill", "x1": 16, "y1": 1, "z1": 6, "x2": 16, "y2": 9, "z2": 9, "material": "oak_planks", "label": "wall_east_upper"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 15, "y2": 1, "z2": 4, "material": "oak_planks", "label": "wall_north_lower"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 6, "x2": 15, "y2": 1, "z2": 9, "material": "oak_planks", "label": "wall_north_upper"},
+    {"type": "fill", "x1": 1, "y1": 9, "z1": 1, "x2": 15, "y2": 9, "z2": 4, "material": "oak_planks", "label": "wall_south_lower"},
+    {"type": "fill", "x1": 1, "y1": 9, "z1": 6, "x2": 15, "y2": 9, "z2": 9, "material": "oak_planks", "label": "wall_south_upper"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 1, "x2": 0, "y2": 1, "z2": 10, "material": "dark_oak_log", "label": "tower_nw_vertical"},
+    {"type": "fill", "x1": 0, "y1": 9, "z1": 1, "x2": 0, "y2": 9, "z2": 10, "material": "dark_oak_log", "label": "tower_sw_vertical"},
+    {"type": "fill", "x1": 16, "y1": 1, "z1": 1, "x2": 16, "y2": 1, "z2": 10, "material": "dark_oak_log", "label": "tower_ne_vertical"},
+    {"type": "fill", "x1": 16, "y1": 9, "z1": 1, "x2": 16, "y2": 9, "z2": 10, "material": "dark_oak_log", "label": "tower_se_vertical"},
+    {"type": "set", "x": 0, "y": 1, "z": 11, "material": "stone_slab", "label": "tower_nw_cap_slab"},
+    {"type": "set", "x": 0, "y": 9, "z": 11, "material": "stone_slab", "label": "tower_sw_cap_slab"},
+    {"type": "set", "x": 16, "y": 1, "z": 11, "material": "stone_slab", "label": "tower_ne_cap_slab"},
+    {"type": "set", "x": 16, "y": 9, "z": 11, "material": "stone_slab", "label": "tower_se_cap_slab"},
+    {"type": "set", "x": 0, "y": 1, "z": 12, "material": "nether_brick", "label": "tower_nw_roof_red"},
+    {"type": "set", "x": 0, "y": 9, "z": 12, "material": "nether_brick", "label": "tower_sw_roof_red"},
+    {"type": "set", "x": 16, "y": 1, "z": 12, "material": "nether_brick", "label": "tower_ne_roof_red"},
+    {"type": "set", "x": 16, "y": 9, "z": 12, "material": "nether_brick", "label": "tower_se_roof_red"},
+    {"type": "set", "x": 0, "y": 1, "z": 13, "material": "glowstone", "label": "tower_nw_light"},
+    {"type": "set", "x": 0, "y": 9, "z": 13, "material": "glowstone", "label": "tower_sw_light"},
+    {"type": "set", "x": 16, "y": 1, "z": 13, "material": "glowstone", "label": "tower_ne_light"},
+    {"type": "set", "x": 16, "y": 9, "z": 13, "material": "glowstone", "label": "tower_se_light"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 5, "x2": 15, "y2": 1, "z2": 5, "material": "stone_slab", "label": "band_north_floor2"},

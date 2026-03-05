@@ -1,0 +1,706 @@
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 9,
+  "zmin": 0,
+  "zmax": 7,
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "Stonebrick foundation/floor border row (ground-level ring) around footprint; base layer at y=0.",
+      "role": "floor",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 5,
+      "block": "stonebrick",
+      "purpose": "Ground floor interior subfloor (single layer of wood planks at y=1).",
+      "role": "floor",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "Floor/foundation interior layer at y=1 under slabs to ensure consistent base (overwrites earlier where necessary).",
+      "role": "floor",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "block": "oak_door",
+      "purpose": "Place doors in entrance opening (right/left door blocks).",
+      "role": "wall",
+      "role_confidence": 0.35,
+      "role_reason": "fallback_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 6,
+      "block": "nether_brick",
+      "purpose": "Corner vertical log (west side) from ground to roof base (reinforces corner posts).",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 2,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 6,
+      "block": "nether_brick",
+      "purpose": "Corner vertical log (east side) from ground to roof base.",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 1,
+      "z1": 0,
+      "x2": 6,
+      "y2": 3,
+      "z2": 0,
+      "block": "air",
+      "purpose": "Entrance opening (double door width) centered on front long side at z=0 spanning y=1-2 for doorway clearance. Ensures an explicit entrance."
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 10,
+      "y2": 8,
+      "z2": 6,
+      "block": "nether_brick",
+      "purpose": "Roof ridge base row (nether_brick) forming central ridge at y=8.",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 7,
+      "z1": 1,
+      "x2": 9,
+      "y2": 7,
+      "z2": 5,
+      "block": "nether_brick",
+      "purpose": "First stepped roof layer under ridge to create curved profile (nether_brick).",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 6,
+      "z1": 2,
+      "x2": 8,
+      "y2": 6,
+      "z2": 4,
+      "block": "nether_brick",
+      "purpose": "Second stepped roof layer inset to enhance barrel curvature.",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 6,
+      "block": "nether_brick",
+      "purpose": "Lighter stone slab edging under roofline and at roof edges for visible trim._outline_face_0",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 6,
+      "block": "nether_brick",
+      "purpose": "Lighter stone slab edging under roofline and at roof edges for visible trim._outline_face_1",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 7,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 6,
+      "block": "nether_brick",
+      "purpose": "Lighter stone slab edging under roofline and at roof edges for visible trim._outline_face_2",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 0,
+      "block": "nether_brick",
+      "purpose": "Lighter stone slab edging under roofline and at roof edges for visible trim._outline_face_3",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 6,
+      "x2": 10,
+      "y2": 7,
+      "z2": 6,
+      "block": "nether_brick",
+      "purpose": "Lighter stone slab edging under roofline and at roof edges for visible trim._outline_face_4",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "Raised 1-block high stone_slab border (slab acting as trim) around perimeter sitting on foundation ring; ensures visible slab border._outline_face_0",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "Raised 1-block high stone_slab border (slab acting as trim) around perimeter sitting on foundation ring; ensures visible slab border._outline_face_1",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 0,
+      "y2": 1,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "Raised 1-block high stone_slab border (slab acting as trim) around perimeter sitting on foundation ring; ensures visible slab border._outline_face_2",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "Raised 1-block high stone_slab border (slab acting as trim) around perimeter sitting on foundation ring; ensures visible slab border._outline_face_3",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "Raised 1-block high stone_slab border (slab acting as trim) around perimeter sitting on foundation ring; ensures visible slab border._outline_face_4",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 6,
+      "x2": 10,
+      "y2": 1,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "Raised 1-block high stone_slab border (slab acting as trim) around perimeter sitting on foundation ring; ensures visible slab border._outline_face_5",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 5,
+      "block": "glass",
+      "purpose": "First-floor walls (wood planks) from y=2 to y=4, leaving window openings per window rows.",
+      "role": "glass",
+      "role_confidence": 0.92,
+      "role_reason": "self_repair_window_material"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 2,
+      "x2": 9,
+      "y2": 3,
+      "z2": 2,
+      "block": "glass",
+      "purpose": "Lower-floor continuous 1-high window band along long sides. (This operation is per-side; coordinates ensure windows at y=3.)",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 4,
+      "x2": 9,
+      "y2": 3,
+      "z2": 4,
+      "block": "glass",
+      "purpose": "Lower-floor continuous 1-high window band along opposite long side at y=3.",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 9,
+      "y2": 7,
+      "z2": 5,
+      "block": "glass",
+      "purpose": "Second-floor walls (wood planks) from y=5 to y=7, leaving upper window rows.",
+      "role": "glass",
+      "role_confidence": 0.92,
+      "role_reason": "self_repair_window_material"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 2,
+      "x2": 9,
+      "y2": 6,
+      "z2": 2,
+      "block": "glass",
+      "purpose": "Upper-floor continuous 1-high window band along long side at y=6.",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 4,
+      "x2": 9,
+      "y2": 6,
+      "z2": 4,
+      "block": "glass",
+      "purpose": "Upper-floor continuous 1-high window band along opposite long side at y=6.",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 10,
+      "y2": 2,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "Corner/front-back logs along north edge lower supporting posts (front corners).",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 6,
+      "x2": 10,
+      "y2": 2,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "Corner/back logs along south edge lower supporting posts (back corners).",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 5,
+      "block": "stonebrick",
+      "purpose": "Stonebrick horizontal belt between first and second floor at y=4 acting as trim.",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "block": "slab_stone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 10,
+      "y": 2,
+      "z": 0,
+      "block": "slab_stone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 7,
+      "block": "slab_stone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 10,
+      "y": 2,
+      "z": 7,
+      "block": "slab_stone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "operations_within_bbox": true,
+    "operation_count_ok": true,
+    "contains_floor_walls_roof_windows_entrance": true,
+    "material_coherence": true,
+    "structural_faithfulness": true,
+    "notes": "BBox extended zmax to 7 to allow roof ridge at y=8 local height mapping; operations kept within integer bbox. Operations count is 20 (under 260). Separated roles for wood (walls/floor), stonebrick (foundation/trim), nether_brick (roof), stone_slab (edging), spruce_log (corner posts), glass_pane (windows). Entrance opening explicitly created and doors placed. Roof built as stepped layers to approximate curved barrel shape. All operation coordinates lie within the bbox [xmin..xmax] [ymin..ymax] [zmin..zmax].",
+    "operation_count": 34,
+    "bbox_consistency": "ok",
+    "role_fixed_consistency": "repaired_18",
+    "material_budget_consistency": "ok",
+    "required_roles_present": true,
+    "issues": []
+  },
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 7
+  },
+  "palette": {
+    "wall": "wood",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "slab_stone",
+    "floor": "stonebrick"
+  },
+  "notes": [],
+  "plan_version": "v1",
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 22,
+    "accepted_operations_count": 21,
+    "repaired_operations_count": 21,
+    "expanded_operations_count": 9,
+    "dropped_operations_count": 1,
+    "dropped_examples": [
+      {
+        "index": 21,
+        "reason": "unsupported_op_kind",
+        "raw_kind": "check"
+      }
+    ]
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "wood",
+      "target_blocks": 1,
+      "actual_blocks": 1,
+      "within_tolerance": true
+    },
+    "roof": {
+      "role": "roof",
+      "block": "nether_brick",
+      "target_blocks": 340,
+      "actual_blocks": 340,
+      "within_tolerance": true
+    },
+    "trim": {
+      "role": "trim",
+      "block": "stonebrick",
+      "target_blocks": 293,
+      "actual_blocks": 293,
+      "within_tolerance": true
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 306,
+      "actual_blocks": 306,
+      "within_tolerance": true
+    },
+    "light": {
+      "role": "light",
+      "block": "slab_stone",
+      "target_blocks": 4,
+      "actual_blocks": 4,
+      "within_tolerance": true
+    },
+    "floor": {
+      "role": "floor",
+      "block": "stonebrick",
+      "target_blocks": 199,
+      "actual_blocks": 199,
+      "within_tolerance": true
+    }
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "wood",
+        "score": 0.95,
+        "source_role": "wall (horizontal planks)"
+      },
+      "trim": {
+        "block": "stonebrick",
+        "score": 0.95,
+        "source_role": "foundation/trim/slab border"
+      },
+      "floor": {
+        "block": "stonebrick",
+        "score": 0.95,
+        "source_role": "foundation/trim/slab border"
+      },
+      "roof": {
+        "block": "nether_brick",
+        "score": 0.9,
+        "source_role": "roof (dark stepped blocks)"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.99,
+        "source_role": "windows"
+      },
+      "light": {
+        "block": "slab_stone",
+        "score": 0.6,
+        "source_role": "roof edging/trim (lighter stone slabs visible on roof edges)"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "wood",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "nether_brick",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "glass",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.99,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "light",
+          "from": "<missing>",
+          "to": "slab_stone",
+          "score": 0.6,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.95,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": [
+        {
+          "role": "light",
+          "from": "slab_stone",
+          "to": "slab_stone"
+        },
+        {
+          "role": "trim",
+          "from": "stonebrick",
+          "to": "stonebrick"
+        }
+      ]
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 33,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 18,
+    "role_fixed_skipped_low_conf_count": 1,
+    "role_infer_confidence_mean": 0.863333333333333,
+    "role_infer_reasons": {
+      "purpose_hint": 28,
+      "carve_entrance": 1,
+      "unknown": 1
+    },
+    "self_repair_report": {
+      "added_operations": 4,
+      "added_tags": [
+        "light",
+        "light",
+        "light",
+        "light"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 2,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "building": "building_077",
+  "created_at": "2026-03-01T15:29:03.748436+00:00",
+  "provider": "openai",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,82 @@
+{
+  "summary": "A two-story rectangular residential building with a flat roof topped by a brick parapet. The structure features a concrete foundation platform, alternating horizontal bands of sandstone and wood siding on walls, and regularly spaced window openings on both floors. Each floor contains approximately 4-5 windows arranged symmetrically across the front and side facades.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "rectangular_box",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral_symmetry_front_facing",
+    "floors_estimate": 2,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 12,
+    "depth": 12,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof_parapet_trim",
+      "confidence": 0.95
+    },
+    {
+      "name": "sandstone",
+      "role": "wall_primary",
+      "confidence": 0.85
+    },
+    {
+      "name": "wood",
+      "role": "wall_horizontal_bands",
+      "confidence": 0.8
+    },
+    {
+      "name": "stonebrick",
+      "role": "wall_corner_trim",
+      "confidence": 0.75
+    },
+    {
+      "name": "concrete",
+      "role": "foundation_platform",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.95
+    }
+  ],
+  "elements": [
+    "windows_upper_floor",
+    "windows_lower_floor",
+    "brick_parapet_roof_trim",
+    "horizontal_wood_siding_bands",
+    "concrete_foundation_platform",
+    "corner_pilasters",
+    "window_frames"
+  ],
+  "rebuild_hints": [
+    "Build rectangular footprint approximately 12x12 blocks",
+    "Create two-story structure with 4 blocks height per floor",
+    "Construct concrete foundation platform extending 1-2 blocks beyond building perimeter",
+    "Alternate horizontal bands: sandstone blocks with wood plank rows between floors",
+    "Place corner pilasters using stonebrick at all four corners",
+    "Install 4-5 evenly-spaced window openings per floor (appears to be 2-block wide windows)",
+    "Top structure with flat roof using brick blocks",
+    "Add brick parapet trim along all roof edges",
+    "Ensure windows are recessed slightly into walls for depth",
+    "Use concrete or light gray blocks for foundation platform base"
+  ],
+  "uncertainties": [
+    "Exact window dimensions and spacing pattern - appears regular but precise block count unclear from angles",
+    "Interior floor structure not visible - assume solid construction",
+    "Exact material composition of horizontal bands - wood type uncertain (oak, spruce, or generic planks)",
+    "Roof interior structure hidden by parapet - likely flat with solid blocks",
+    "Door location not visible in any view - may be on rear or side not shown",
+    "Foundation depth below ground level unknown",
+    "Precise height-to-width ratio estimated from perspective - could vary by 1-2 blocks"
+  ],
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "building": "building_044",
+  "created_at": "2026-03-01T04:55:48.440924+00:00"
+}

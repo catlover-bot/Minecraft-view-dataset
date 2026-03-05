@@ -1,0 +1,562 @@
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 20,
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 11,
+      "y2": 0,
+      "z2": 21,
+      "block": "stonebrick",
+      "purpose": "stonebrick foundation/floor base (ground level floor under building)",
+      "role": "floor",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "northwest corner vertical accent (3 blocks high above floor)",
+      "role": "floor",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 12,
+      "y2": 0,
+      "z2": 22,
+      "block": "stonebrick",
+      "purpose": "raised quartz platform (1-block high) surrounding the building footprint; platform extends one block beyond walls on all sides",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 4,
+      "z2": 0,
+      "block": "cobblestone",
+      "purpose": "northeast corner vertical accent",
+      "role": "wall",
+      "role_confidence": 0.62,
+      "role_reason": "block_family"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 21,
+      "x2": 0,
+      "y2": 4,
+      "z2": 21,
+      "block": "cobblestone",
+      "purpose": "southwest corner vertical accent",
+      "role": "wall",
+      "role_confidence": 0.62,
+      "role_reason": "block_family"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 21,
+      "x2": 11,
+      "y2": 4,
+      "z2": 21,
+      "block": "cobblestone",
+      "purpose": "southeast corner vertical accent",
+      "role": "wall",
+      "role_confidence": 0.62,
+      "role_reason": "block_family"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 21,
+      "x2": 10,
+      "y2": 3,
+      "z2": 21,
+      "block": "stonebrick",
+      "purpose": "back lower wall stonebrick band",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 1,
+      "x2": 0,
+      "y2": 3,
+      "z2": 20,
+      "block": "stonebrick",
+      "purpose": "left lower wall stonebrick band (west side) excluding corners already cobblestone",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 3,
+      "z2": 20,
+      "block": "stonebrick",
+      "purpose": "right lower wall stonebrick band (east side)",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "block": "air",
+      "purpose": "entrance opening at front center (2 blocks high, 1 block wide) providing door-sized opening",
+      "role": "wall",
+      "role_confidence": 0.35,
+      "role_reason": "fallback_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 10,
+      "y2": 4,
+      "z2": 20,
+      "block": "stonebrick",
+      "purpose": "upper siding/trim row of wood above the stoneband (top course of walls at y=4)",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 11,
+      "y2": 5,
+      "z2": 21,
+      "block": "wood",
+      "purpose": "first roof slab layer forming wide eaves one block beyond walls (slab layer at y=5)",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 10,
+      "y2": 6,
+      "z2": 20,
+      "block": "wood",
+      "purpose": "second slab layer stepping inward (note: ymax is 6 so this is top; fills small flat top area). This op is inside bbox since ymax updated to 6 allowing y=6.",
+      "role": "roof",
+      "role_confidence": 0.86,
+      "role_reason": "top_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 10,
+      "x2": 11,
+      "y2": 5,
+      "z2": 10,
+      "block": "wood",
+      "purpose": "roof edge stairs for visual hip shaping along midline; limited placement to keep ops deterministic",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 10,
+      "y2": 3,
+      "z2": 20,
+      "block": "wood",
+      "purpose": "clear interior space (remove any accidental blocks inside interior). Ensures 2-block interior height under roof",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 10,
+      "y2": 1,
+      "z2": 20,
+      "block": "wood",
+      "purpose": "interior wooden floor (1-block thick) inset one block from platform edge",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "front lower wall stonebrick band (3 blocks tall) leaving space for windows at middle course",
+      "role": "glass",
+      "role_confidence": 0.92,
+      "role_reason": "self_repair_window_material"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 2,
+      "z1": 0,
+      "x2": 8,
+      "y2": 2,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "continuous 1-block-high glass pane window strip centered on the front long side (replaces middle course stonebrick from x=3 to x=8)",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 2,
+      "z1": 21,
+      "x2": 8,
+      "y2": 2,
+      "z2": 21,
+      "block": "glass",
+      "purpose": "continuous window strip on the back long side",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 6,
+      "x2": 0,
+      "y2": 2,
+      "z2": 15,
+      "block": "glass",
+      "purpose": "continuous window strip on left short side (centered span)",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 2,
+      "z1": 6,
+      "x2": 11,
+      "y2": 2,
+      "z2": 15,
+      "block": "glass",
+      "purpose": "continuous window strip on right short side",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 2,
+      "z": -1,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 12,
+      "y": 2,
+      "z": -1,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 2,
+      "z": 22,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 12,
+      "y": 2,
+      "z": 22,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    }
+  ],
+  "bbox": {
+    "xmin": -1,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": -1,
+    "zmax": 22
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "wood",
+    "glass": "glass",
+    "floor": "stonebrick",
+    "light": "glowstone"
+  },
+  "notes": [],
+  "plan_version": "v1",
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 21,
+    "accepted_operations_count": 21,
+    "repaired_operations_count": 20,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "stonebrick",
+      "target_blocks": 699,
+      "actual_blocks": 699,
+      "within_tolerance": true
+    },
+    "roof": {
+      "role": "roof",
+      "block": "wood",
+      "target_blocks": 876,
+      "actual_blocks": 876,
+      "within_tolerance": true
+    },
+    "trim": {
+      "role": "trim",
+      "block": "wood",
+      "target_blocks": 200,
+      "actual_blocks": 200,
+      "within_tolerance": true
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 62,
+      "actual_blocks": 62,
+      "within_tolerance": true
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 4,
+      "actual_blocks": 4,
+      "within_tolerance": true
+    },
+    "floor": {
+      "role": "floor",
+      "block": "stonebrick",
+      "target_blocks": 268,
+      "actual_blocks": 268,
+      "within_tolerance": true
+    }
+  },
+  "self_check": {
+    "operation_count": 25,
+    "operation_count_ok": true,
+    "bbox_consistency": "ok",
+    "role_fixed_consistency": "repaired_8",
+    "material_budget_consistency": "ok",
+    "required_roles_present": true,
+    "issues": []
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "roof": {
+        "block": "wood",
+        "score": 0.95,
+        "source_role": "roof, trim, upper siding"
+      },
+      "trim": {
+        "block": "wood",
+        "score": 0.95,
+        "source_role": "roof, trim, upper siding"
+      },
+      "wall": {
+        "block": "stonebrick",
+        "score": 0.85,
+        "source_role": "lower wall course / foundation"
+      },
+      "floor": {
+        "block": "stonebrick",
+        "score": 0.85,
+        "source_role": "lower wall course / foundation"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.95,
+        "source_role": "windows (panes)"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "light"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.85,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "wood",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "wood",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "glass",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.85,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": [
+        {
+          "role": "floor",
+          "from": "stonebrick",
+          "to": "stonebrick"
+        },
+        {
+          "role": "trim",
+          "from": "wood",
+          "to": "wood"
+        }
+      ]
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 25,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 8,
+    "role_fixed_skipped_low_conf_count": 4,
+    "role_infer_confidence_mean": 0.8152380952380953,
+    "role_infer_reasons": {
+      "purpose_hint": 16,
+      "block_family": 3,
+      "unknown": 1,
+      "top_layer": 1
+    },
+    "self_repair_report": {
+      "added_operations": 4,
+      "added_tags": [
+        "light",
+        "light",
+        "light",
+        "light"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 1,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "building": "building_085",
+  "created_at": "2026-03-01T15:29:04.082093+00:00",
+  "provider": "openai",
+  "model": "gpt-5-mini"
+}

@@ -1,0 +1,73 @@
+{
+  "summary": "A two-story rectangular Minecraft building with a stepped wooden gable roof, stone-based walls with a middle horizontal band of white blocks, repetitive window rows on both floors, and a raised white border/ledge around the ground perimeter.",
+  "building_type": "residential_like (uncertain)",
+  "shape": {
+    "overall_form": "rectangular box with a centered pitched/stepped roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long central axis (front/back mirror)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 7,
+    "height": 9
+  },
+  "materials": [
+    {
+      "name": "wood",
+      "role": "roof / horizontal trim",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "lower wall course",
+      "confidence": 0.85
+    },
+    {
+      "name": "cobblestone",
+      "role": "corner/vertical accents",
+      "confidence": 0.75
+    },
+    {
+      "name": "quartz",
+      "role": "middle horizontal band and perimeter ledge",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    },
+    {
+      "name": "slab_wood",
+      "role": "narrow horizontal trim between floors",
+      "confidence": 0.7
+    }
+  ],
+  "elements": [
+    "continuous horizontal row of windows on each floor (three or four per visible face)",
+    "front entrance likely centered but not clearly visible (uncertain)",
+    "stepped/terraced wooden gable roof with stone slab edge",
+    "raised white perimeter ledge (1 block high) around base",
+    "stonebrick lower wall band with cobblestone corner blocks",
+    "thin wooden plank trim between ground and first floor and under roof"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular footprint ~11x7 blocks (visible top-down shows an inward inset of walls compared to outer white ledge).",
+    "Build two full stories of wall: lower story with stonebrick facing and cobblestone corners; upper story repeats lower pattern separated by a white quartz band and wooden trim.",
+    "Place continuous 1x1 windows (glass) in a horizontal strip on both stories centered between stonebrick rows; spacing appears uniform (3–4 windows per long face).",
+    "Add a stepped wooden gable roof centered on the long axis: wooden planks stacked with 1-block inward offsets per layer and stone slab/stonebrick slab edging at the roof base/steps.",
+    "Surround the building with a 1-block-high white quartz ledge/trim inset from the outer edge of a dirt foundation (visible raised border)."
+  ],
+  "uncertainties": [
+    "Exact footprint dimensions: top-down images show symmetry but scale could be off by ±2 blocks.",
+    "Material identification between stonebrick and smooth stone slab on some horizontal edges is uncertain; I labeled primary candidates.",
+    "Entrance location not visible in provided views; assumed centered on a long side (uncertain).",
+    "Some thin trims could be slabs (stone or wooden slabs) rather than full blocks; slab vs full block uncertain."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_001",
+  "created_at": "2026-02-28T13:57:11.058203+00:00"
+}

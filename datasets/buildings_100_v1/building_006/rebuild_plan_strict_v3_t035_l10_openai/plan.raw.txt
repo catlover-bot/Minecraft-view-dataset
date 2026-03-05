@@ -1,0 +1,508 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v3_strict",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 5,
+    "zmin": 0,
+    "zmax": 8
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "brick",
+      "target_blocks":  (18*4)
+    },
+    "roof": {
+      "role": "roof",
+      "block": "nether_brick",
+      "target_blocks":  (18*6)
+    },
+    "trim": {
+      "role": "trim",
+      "block": "stonebrick",
+      "target_blocks":  40
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks":  10
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks":  4
+    },
+    "floor": {
+      "role": "floor",
+      "block": "wood",
+      "target_blocks":  9*21
+    }
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 8
+        }
+      ]
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 5
+        },
+        "perimeter_profile": "1-high wooden floor, 1-high wood baseboard, 3-high brick walls, 1-high quartz (white) band, 1-high nether_brick upper band, stone_slab coping at y=5 forming parapet"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 10,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 2,
+        "z1": 1,
+        "x2": 20,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 1,
+        "x2": 0,
+        "y2": 2,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "material": "stone_slab (coping)",
+          "description": "1-block-high parapet coping along perimeter"
+        },
+        {
+          "y": 4,
+          "material": "nether_brick",
+          "description": "recessed roof interior filled with nether_brick up to same level as upper band"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 8,
+      "block": "wood",
+      "purpose": "main_floor"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 8,
+      "block": "brick",
+      "purpose": "wooden baseboard row represented as wall-role brick (visual base)"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 8,
+      "block": "brick",
+      "purpose": "main brick wall bulk (3 high band)"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pillars / trim band (top coping support)"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2": 7,
+      "block": "nether_brick",
+      "purpose": "recessed roof interior fill with nether_brick"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 20,
+      "y2": 5,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "stone slab coping represented as stonebrick trim at parapet level"
+    },
+    {
+      "op": "carve",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 2,
+      "z2": 0,
+      "purpose": "create doorway opening on south face"
+    },
+    {
+      "op": "carve",
+      "x1": 20,
+      "y1": 2,
+      "z1": 1,
+      "x2": 20,
+      "y2": 2,
+      "z2": 6,
+      "purpose": "create horizontal strip window on east long side"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 2,
+      "z1": 1,
+      "x2": 0,
+      "y2": 2,
+      "z2": 6,
+      "purpose": "create horizontal strip window on west long side"
+    },
+    {
+      "op": "set",
+      "role": "glass",
+      "x": 20,
+      "y": 2,
+      "z": 2,
+      "block": "glass",
+      "purpose": "glass pane in east window (sample central pane)"
+    },
+    {
+      "op": "set",
+      "role": "glass",
+      "x": 20,
+      "y": 2,
+      "z": 3,
+      "block": "glass",
+      "purpose": "glass pane in east window"
+    },
+    {
+      "op": "set",
+      "role": "glass",
+      "x": 20,
+      "y": 2,
+      "z": 4,
+      "block": "glass",
+      "purpose": "glass pane in east window"
+    },
+    {
+      "op": "set",
+      "role": "glass",
+      "x": 20,
+      "y": 2,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 5,
+  "zmin": 0,
+  "zmax": 8,
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 8,
+      "block": "wood",
+      "purpose": "main_floor"
+    },
+    {
+      "op": "fill",
+      "role": "lower_wall",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 8,
+      "block": "brick",
+      "purpose": "wooden baseboard row represented using lower_wall role (brick chosen to match palette role)"
+    },
+    {
+      "op": "fill",
+      "role": "lower_wall",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 20,
+      "y2": 3,
+      "z2": 8,
+      "block": "brick",
+      "purpose": "main brick wall bulk (2 high band to reach visual height while keeping overall height)"
+    },
+    {
+      "op": "fill",
+      "role": "middle_band",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 20,
+      "y2": 3,
+      "z2": 8,
+      "block": "quartz",
+      "purpose": "white middle band"
+    },
+    {
+      "op": "fill",
+      "role": "upper_band",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 8,
+      "block": "nether_brick",
+      "purpose": "dark nether-brick upper band"
+    },
+    {
+      "op": "fill",
+      "role": "corner_pillars",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pillar NW"
+    },
+    {
+      "op": "fill",
+      "role": "corner_pillars",
+      "x1": 20,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pillar NE"
+    },
+    {
+      "op": "fill",
+      "role": "corner_pillars",
+      "x1": 0,
+      "y1": 1,
+      "z1": 8,
+      "x2": 0,
+      "y2": 4,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pillar SW"
+    },
+    {
+      "op": "fill",
+      "role": "corner_pillars",
+      "x1": 20,
+      "y1": 1,
+      "z1": 8,
+      "x2": 20,
+      "y2": 4,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "stonebrick corner pillar SE"
+    },
+    {
+      "op": "fill",
+      "role": "outer_ledge",
+      "x1": -1,
+      "y1": 1,
+      "z1": -1,
+      "x2": 21,
+      "y2": 1,
+      "z2": 9,
+      "block": "quartz",
+      "purpose": "white outer ledge (one-block-high low perimeter ledge surrounding building footprint)"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2": 7,
+      "block": "nether_brick",
+      "purpose": "recessed roof interior fill with nether_brick"
+    },
+    {
+      "op": "fill",
+      "role": "roof_coping",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 20,
+      "y2": 5,
+      "z2": 8,
+      "block": "slab_stone",
+      "purpose": "stone-slab coping around roof edge"
+    },
+    {
+      "op": "carve",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 2,
+      "z2": 0,
+      "purpose": "create doorway opening on south face"
+    },
+    {
+      "op": "carve",
+      "x1": 20,
+      "y1": 2,
+      "z1": 1,
+      "x2": 20,
+      "y2": 2,
+      "z2": 6,
+      "purpose": "create horizontal strip window on east long side"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 2,
+      "z1": 1,
+      "x2": 0,
+      "y2": 2,
+      "z2": 6,
+      "purpose": "create horizontal strip window on west long side"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 20,
+      "y": 2,
+      "z": 2,
+      "block": "glass",
+      "purpose": "glass pane in east window"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 20,
+      "y": 2,
+      "z": 3,
+      "block": "glass",
+      "purpose": "glass pane in east window"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 20,
+      "y": 2,
+      "z": 4,
+      "block": "glass",
+      "purpose": "glass pane in east window"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 0,
+      "y": 2,
+      "z": 2,
+      "block": "glass",
+      "purpose": "glass pane in west window"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 0,
+      "y": 2,
+      "z": 3,
+      "block": "glass",
+      "purpose": "glass pane in west window"
+    },
+    {
+      "op": "set",
+      "role": "windows",
+      "x": 0,
+      "y": 2,
+      "z": 4,
+      "block": "glass",
+      "purpose": "glass pane in west window"
+    }
+  ],
+  "operation_count": 22,
+  "material_budget": {
+    "lower_wall": 0,
+    "middle_band": 0,
+    "upper_band": 0,
+    "corner_pillars": 0,
+    "outer_ledge": 0,
+    "roof": 0,
+    "roof_coping": 0,
+    "floor": 0,
+    "windows":

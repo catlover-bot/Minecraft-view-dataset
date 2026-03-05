@@ -1,0 +1,468 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 27,
+    "ymin": 0,
+    "ymax": 14,
+    "zmin": 0,
+    "zmax": 17
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 26,
+          "z2": 16,
+          "label": "main"
+        },
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 17,
+          "label": "parapet_ring"
+        }
+      ],
+      "symmetry": "approx_long_axis_centered_with_asymmetrical_tower_at_east"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground hall with perimeter circulation; unknown interior partitions",
+        "perimeter_profile": "rectangular with parapet"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "upper level with repetitive narrow windows; open central volume",
+        "perimeter_profile": "rectangular"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 13,
+        "y1": 1,
+        "z1": 1,
+        "x2": 14,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 2,
+        "z1": 1,
+        "x2": 24,
+        "y2": 2,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 6,
+        "z1": 1,
+        "x2": 24,
+        "y2": 6,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 3,
+        "y1": 2,
+        "z1": 16,
+        "x2": 24,
+        "y2": 2,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 3,
+        "y1": 6,
+        "z1": 16,
+        "x2": 24,
+        "y2": 6,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 26,
+        "y1": 3,
+        "z1": 5,
+        "x2": 26,
+        "y2": 7,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 3,
+        "z1": 5,
+        "x2": 1,
+        "y2": 7,
+        "z2": 12
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 10,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 10,
+          "x1": 1,
+          "z1": 1,
+          "x2": 26,
+          "z2": 16,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 2,
+          "z1": 2,
+          "x2": 25,
+          "z2": 15,
+          "block": "brick"
+        },
+        {
+          "y": 12,
+          "x1": 3,
+          "z1": 3,
+          "x2": 24,
+          "z2": 14,
+          "block": "brick"
+        },
+        {
+          "y": 13,
+          "x1": 4,
+          "z1": 4,
+          "x2": 23,
+          "z2": 13,
+          "block": "brick"
+        },
+        {
+          "y": 14,
+          "x1": 12,
+          "z1": 8,
+          "x2": 13,
+          "z2": 9,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 27,
+      "y2": 0,
+      "z2": 17,
+      "block": "oak_planks",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 26,
+      "y2": 4,
+      "z2": 16,
+      "block": "sandstone",
+      "purpose": "outer_shell_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 26,
+      "y2": 9,
+      "z2": 16,
+      "block": "sandstone",
+      "purpose": "outer_shell_upper"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 27,
+      "y2": 1,
+      "z2": 17,
+      "block": "quartz_block",
+      "purpose": "foundation_coping_front"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 27,
+      "y2": 4,
+      "z2": 17,
+      "block": "quartz_block",
+      "purpose": "horizontal_band_between_floors"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 9,
+      "z1": 0,
+      "x2": 27,
+      "y2": 9,
+      "z2": 17,
+      "block": "quartz_block",
+      "purpose": "cornice_band_under_roof"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 9,
+      "z2": 17,
+      "block": "stonebrick",
+      "purpose": "parapet_west"
+    },
+    {
+      "op": "fill",
+      "x1": 27,
+      "y1": 1,
+      "z1": 0,
+      "x2": 27,
+      "y2": 9,
+      "z2": 17,
+      "block": "stonebrick",
+      "purpose": "par
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 28,
+  "ymin": 0,
+  "ymax": 14,
+  "zmin": 0,
+  "zmax": 18,
+  "operations": [
+    {
+      "id": 1,
+      "type": "fill",
+      "block": "sandstone",
+      "from": [1, 0, 1],
+      "to": [26, 0, 17],
+      "description": "ground floor slab (solid foundation/floor layer)"
+    },
+    {
+      "id": 2,
+      "type": "fill",
+      "block": "sandstone",
+      "from": [1, 1, 1],
+      "to": [26, 6, 17],
+      "description": "main wall volume floor-to-ceiling for two storeys (interior shell). Keeps interior hollowing later."
+    },
+    {
+      "id": 3,
+      "type": "replace_layer",
+      "block": "quartz",
+      "from": [1, 0, 1],
+      "to": [26, 0, 17],
+      "y": 0,
+      "description": "ground-level quartz coping/foundation band overlay on floor for visible white base"
+    },
+    {
+      "id": 4,
+      "type": "fill",
+      "block": "quartz",
+      "from": [1, 1, 1],
+      "to": [1, 13, 17],
+      "description": "west corner quartz vertical pier"
+    },
+    {
+      "id": 5,
+      "type": "fill",
+      "block": "quartz",
+      "from": [26, 1, 1],
+      "to": [26, 13, 17],
+      "description": "east corner quartz vertical pier"
+    },
+    {
+      "id": 6,
+      "type": "fill",
+      "block": "quartz",
+      "from": [1, 7, 1],
+      "to": [26, 7, 17],
+      "description": "horizontal quartz band between floors (continuous)"
+    },
+    {
+      "id": 7,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [0, 1, 0],
+      "to": [27, 1, 18],
+      "description": "perimeter low stonebrick parapet/wall surrounding building footprint (one block high). Coordinates extend to include outer coping; still within bbox."
+    },
+    {
+      "id": 8,
+      "type": "fill",
+      "block": "stone_slab",
+      "from": [1, 13, 1],
+      "to": [26, 13, 17],
+      "description": "roof eave/ledge stone slabs at base of roof (one slab layer)"
+    },
+    {
+      "id": 9,
+      "type": "fill_stairs_gable",
+      "block": "bricks",
+      "from": [2, 14, 2],
+      "to": [25, 20, 16],
+      "axis": "x",
+      "slope": "stepped",
+      "description": "steep stepped brick gable roof along long axis with ridge centered. Roof occupies y 14-20 but bbox ymax is 18; roof clipped to top of bbox (max y 14 roof base plus slabs). Adjusted to keep main visible stepped profile within bbox by using partial roof height ending at ymax 18."
+    },
+    {
+      "id": 10,
+      "type": "fill",
+      "block": "stone_slab",
+      "from": [2, 18, 2],
+      "to": [25, 18, 16],
+      "description": "roof ridge slab edge (topmost visible slab row). Placed at bbox top y=18"
+    },
+    {
+      "id": 11,
+      "type": "hollow_out",
+      "from": [2, 1, 2],
+      "to": [25, 6, 16],
+      "description": "hollow interior ground floor space leaving 1-block thick walls"
+    },
+    {
+      "id": 12,
+      "type": "hollow_out",
+      "from": [2, 8, 2],
+      "to": [25, 12, 16],
+      "description": "hollow interior second-floor space leaving 1-block thick walls"
+    },
+    {
+      "id": 13,
+      "type": "fill",
+      "block": "glass",
+      "from": [3, 3, 3],
+      "to": [24, 3, 3],
+      "description": "row of narrow horizontal windows on ground floor north face (y-level 3)"
+    },
+    {
+      "id": 14,
+      "type": "fill",
+      "block": "glass",
+      "from": [3, 10, 3],
+      "to": [24, 10, 3],
+      "description": "row of narrow horizontal windows on first floor north face (y-level 10)"
+    },
+    {
+      "id": 15,
+      "type": "fill",
+      "block": "glass",
+      "from": [3, 3, 15],
+      "to": [24, 3, 15],
+      "description": "row of narrow horizontal windows on ground floor south face (z=15)"
+    },
+    {
+      "id": 16,
+      "type": "fill",
+      "block": "glass",
+      "from": [3, 10, 15],
+      "to": [24, 10, 15],
+      "description": "row of narrow horizontal windows on first floor south face (z=15)"
+    },
+    {
+      "id": 17,
+      "type": "fill",
+      "block": "quartz",
+      "from": [13, 1, 0],
+      "to": [14, 6, 0],
+      "description": "entrance quartz surround at north face (opening will be carved)."
+    },
+    {
+      "id": 18,
+      "type": "hollow_out",
+      "from": [13, 1, 0],
+      "to": [14, 5, 0],
+      "description": "entrance opening (2 wide x 4 high) cleared at north center; ensures entrance exists"
+    },
+    {
+      "id": 19,
+      "type": "fill",
+      "block": "sandstone",
+      "from": [13, 1, 0],
+      "to": [14, 1, 0],
+      "description": "entrance doorstep (keeps base) at y=1"
+    },
+    {
+      "id": 20,
+      "type": "fill",
+      "block": "sandstone",
+      "from": [22, 1, 5],
+      "to": [24, 11, 7],
+      "description": "separate rectangular tower shaft attached asymmetrically on east side (3x3 footprint, height to y=11)"
+    },
+    {
+      "id": 21,
+      "type": "fill",
+      "block": "quartz",
+      "from": [22, 11, 5],
+      "to": [24, 12, 7],
+      "description": "tower cap quartz layer"
+    },
+    {
+      "id": 22,
+      "type": "fill",
+      "block": "stone_slab",
+      "from": [22, 12, 5],
+      "to": [24, 12, 7],
+      "description": "tower slab cap detail"
+    },
+    {
+      "id": 23,
+      "type": "fill",
+      "block": "glass",
+      "from": [23, 4, 6],
+      "to": [23, 6, 6],
+      "description": "small tower window"
+    },
+    {
+      "id": 24,
+      "type": "outline",
+      "block": "quartz",
+      "from": [2, 1, 2],
+      "to": [

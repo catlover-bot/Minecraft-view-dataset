@@ -1,0 +1,73 @@
+{
+  "summary": "A rectangular fortified hall with four tall corner towers and four intermediate towers (two per long side) surrounding a recessed dark-red roof; raised stone plinth and decorative stone trim around the top of the outer walls. The towers have layered flat caps with light sources at their centers. Exterior shows repeated small glass-pane windows and cobblestone/stone brick detailing at the base.",
+  "building_type": "fortified hall / keep",
+  "shape": {
+    "overall_form": "rectangular central hall with towers at corners and along long sides; open courtyard area not visible inside",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along the long axis and the short axis (approximate mirror symmetry)",
+    "floors_estimate": 2,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 16,
+    "depth": 24,
+    "height": 18
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "primary wall blocks and tower shafts",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "base decorations/protrusions",
+      "confidence": 0.7
+    },
+    {
+      "name": "nether_brick",
+      "role": "central roof (dark red)",
+      "confidence": 0.85
+    },
+    {
+      "name": "quartz_block",
+      "role": "roof caps/trim (white border on tower tops)",
+      "confidence": 0.6
+    },
+    {
+      "name": "glass",
+      "role": "small windows (glass panes)",
+      "confidence": 0.95
+    },
+    {
+      "name": "glowstone",
+      "role": "light source on tower caps",
+      "confidence": 0.6
+    }
+  ],
+  "elements": [
+    "towers",
+    "windows",
+    "entrance (uncertain location)",
+    "roof",
+    "stone plinth/base trim",
+    "tower cap lights"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular outer wall roughly 16 x 24 blocks footprint with a stepped stone trim ~3 blocks high and decorative pattern bands mid-wall.",
+    "Place four large square towers at each corner rising ~18 blocks from ground; add two additional towers centered on each long side (total 8 towers) though two inner side towers are slightly set back.",
+    "Top each tower with a layered flat cap: a dark center (nether_brick) surrounded by a white border (quartz or similar) and a single light (glowstone) in the center.",
+    "Fill the recessed central roof area with dark-red blocks (nether_brick) with a crenellated top edge along the long sides.",
+    "Add small 1x1 glass-pane windows in vertical pairs on tower faces and repeat small cobblestone/stonebrick protrusions along the base every few blocks."
+  ],
+  "uncertainties": [
+    "Exact block types for white trim and dark-red roof are inferred (likely quartz and nether_brick) but could be other white/dark-red blocks.",
+    "Precise interior layout and presence/location of main entrance(s) not visible from exterior images.",
+    "Exact footprint dimensions and tower spacing are estimated from perspective; actual block counts may differ.",
+    "Number of floors is estimated as 2 based on tower height relative to wall; interior floor divisions unseen."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_057",
+  "created_at": "2026-02-28T15:18:25.101948+00:00"
+}

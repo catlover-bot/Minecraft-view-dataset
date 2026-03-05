@@ -1,0 +1,74 @@
+{
+  "summary": "A two-story rectangular residential building with stone brick walls, a gable roof made of dark wood/nether brick, and a foundation platform. The structure features multiple windows on both floors arranged symmetrically, with a single entrance visible on the front facade. The building sits on a raised dirt foundation surrounded by grass.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "rectangular_two_story_with_gable_roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral_symmetry_front_facing",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 8,
+    "depth": 8,
+    "height": 10
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "primary_wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.9
+    },
+    {
+      "name": "gravel",
+      "role": "foundation_platform",
+      "confidence": 0.8
+    },
+    {
+      "name": "wood",
+      "role": "door_frame",
+      "confidence": 0.7
+    }
+  ],
+  "elements": [
+    "windows_upper_floor_4_panes",
+    "windows_lower_floor_4_panes",
+    "entrance_door_front_center",
+    "gable_roof_dark_material",
+    "foundation_platform",
+    "window_frames_light_colored"
+  ],
+  "rebuild_hints": [
+    "Build 8x8 footprint base with stonebrick walls",
+    "Create two full stories with 3-block wall height each",
+    "Place 4 windows per floor in symmetric pattern (2x2 arrangement visible from front)",
+    "Add centered entrance door on ground floor front face",
+    "Construct gable roof using nether_brick or dark wood blocks with stepped pyramid profile",
+    "Add gravel/stone foundation platform extending 1-2 blocks around base perimeter",
+    "Ensure window frames are lighter material (likely stone or concrete) contrasting with dark glass",
+    "Roof peaks at center with symmetrical slopes on both sides"
+  ],
+  "uncertainties": [
+    "Exact window pane count per window uncertain from distance; appears to be 2x2 or 3x3 panes",
+    "Door material and exact dimensions not clearly visible",
+    "Interior layout and room configuration unknown",
+    "Exact height of each floor unclear; estimated at 3 blocks per story",
+    "Foundation depth and composition partially obscured",
+    "Roof material could be nether_brick or dark wood_planks; appears very dark",
+    "Whether building has basement or cellar unknown"
+  ],
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "building": "building_009",
+  "created_at": "2026-03-01T09:18:43.485109+00:00"
+}

@@ -1,0 +1,455 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 8
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "wood",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "pillar": "stonebrick",
+    "base_slab": "quartz_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 8,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_along_center_x"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground floor hall (unknown interior partitioning)",
+        "perimeter_profile": "rectangle with continuous windows on front/back"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 7
+        },
+        "rooms_hint": "upper floor rooms (unknown layout)",
+        "perimeter_profile": "rectangle with continuous windows on front/back and roof eave slab course"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 8,
+        "x2": 5,
+        "y2": 2,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 2,
+        "z1": 8,
+        "x2": 9,
+        "y2": 2,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 5,
+        "z1": 8,
+        "x2": 9,
+        "y2": 5,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 2,
+        "z1": 0,
+        "x2": 9,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 5,
+        "z1": 0,
+        "x2": 9,
+        "y2": 5,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 8,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 8,
+          "block": "brick"
+        },
+        {
+          "y": 9,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 7,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 2,
+          "z1": 2,
+          "x2": 8,
+          "z2": 6,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 3,
+          "z1": 3,
+          "x2": 7,
+          "z2": 5,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 8,
+      "block": "wood",
+      "purpose": "floor_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 8,
+      "block": "sandstone",
+      "purpose": "exterior_shell_sandstone"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "pillar_northwest"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "pillar_northeast"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 8,
+      "x2": 0,
+      "y2": 7,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "pillar_southwest"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 1,
+      "z1": 8,
+      "x2": 10,
+      "y2": 7,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "pillar_southeast"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 10,
+      "y2": 4,
+      "z2": 8,
+      "block": "wood",
+      "purpose": "horizontal_trim_between_floors"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 10,
+      "y2": 8,
+      "z2": 8,
+      "block": "quartz_slab",
+      "purpose": "eave_slab_course_under_roof"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 11,
+      "y2": 0,
+      "z2": 9,
+      "block": "quartz_slab",
+      "purpose": "surrounding_base_slab"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 7,
+      "z2": 7,
+      "purpose": "interior_hollowing"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": 8,
+      "x2": 5,
+      "y2": 2,
+      "z2": 8
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 8,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 10, 0, 8],
+      "block": "quartz_slab",
+      "notes": "one-block-thick white slab base surrounding footprint (floor base at y=0)"
+    },
+    {
+      "op": "set_block",
+      "pos": [1, 1, 1],
+      "block": "sandstone",
+      "notes": "start front-left interior corner wall block"
+    },
+    {
+      "op": "build_walls",
+      "box": [1, 1, 1, 9, 6, 7],
+      "material": "sandstone",
+      "thickness": 1,
+      "notes": "external walls from x=1..9, z=1..7, y=1..6 (two storeys). Hollow interior"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 9, 1, 7],
+      "block": "oak_planks",
+      "notes": "ground floor wooden subfloor (y=1)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 4, 1, 9, 4, 7],
+      "block": "oak_planks",
+      "notes": "second floor base (y=4) to create two storeys: ground floor height y=1..3, second floor y=4..6"
+    },
+    {
+      "op": "horizontal_band",
+      "box": [1, 3, 1, 9, 3, 7],
+      "block": "oak_planks",
+      "notes": "continuous wooden horizontal trim separating floors at y=3 (visible band)"
+    },
+    {
+      "op": "pillars",
+      "positions": [
+        [1, 1, 1],
+        [9, 1, 1],
+        [1, 1, 7],
+        [9, 1, 7]
+      ],
+      "height": 6,
+      "block": "stonebrick",
+      "notes": "corner stonebrick pillars full height y=1..6"
+    },
+    {
+      "op": "windows_row",
+      "face": "front",
+      "y": 2,
+      "x1": 2,
+      "x2": 8,
+      "z": 1,
+      "block": "glass_pane",
+      "notes": "continuous 1-high glass row on ground floor (y=2) from x=2..8, leaving pillars and door opening spaces"
+    },
+    {
+      "op": "windows_row",
+      "face": "front",
+      "y": 5,
+      "x1": 2,
+      "x2": 8,
+      "z": 1,
+      "block": "glass_pane",
+      "notes": "continuous 1-high glass row on second floor (y=5) from x=2..8 aligned with lower windows"
+    },
+    {
+      "op": "entrance",
+      "box": [5, 1, 1, 6, 3, 1],
+      "block": "air",
+      "notes": "central front entrance opening 1 wide x 2 high (y=1..2) at x=5 (leaves lintel at y=3)"
+    },
+    {
+      "op": "lintel",
+      "pos": [5, 3, 1],
+      "block": "sandstone_slab",
+      "notes": "thin lintel above entrance at y=3"
+    },
+    {
+      "op": "rear_windows_row",
+      "y": 2,
+      "x1": 2,
+      "x2": 8,
+      "z": 7,
+      "block": "glass_pane",
+      "notes": "rear ground floor window row aligned with front"
+    },
+    {
+      "op": "rear_windows_row",
+      "y": 5,
+      "x1": 2,
+      "x2": 8,
+      "z": 7,
+      "block": "glass_pane",
+      "notes": "rear second floor window row aligned with front"
+    },
+    {
+      "op": "carve_interior",
+      "box": [2, 2, 2, 8, 5, 6],
+      "block": "air",
+      "notes": "clear interior space for rooms and stairs area"
+    },
+    {
+      "op": "staircase",
+      "start": [2, 2, 2],
+      "direction": "up",
+      "height": 3,
+      "material": "oak_stairs",
+      "notes": "simple interior staircase from ground floor to second floor along left interior wall"
+    },
+    {
+      "op": "roof_step",
+      "layer": 0,
+      "box": [0, 7, 0, 10, 7, 8],
+      "block": "brick_block",
+      "notes": "roof base eaves course y=7 (one block above top floor)"
+    },
+    {
+      "op": "roof_step",
+      "layer": 1,
+      "box": [1, 8, 1, 9, 8, 7],
+      "block": "brick_block",
+      "notes": "second roof layer forming stepped gable"
+    },
+    {
+      "op": "roof_ridge",
+      "box": [4, 9, 3, 6, 9, 5],
+      "block": "brick_slab",
+      "notes": "central ridge cap at y=9 (peak). Note: ymax originally 8 changed to accommodate roof to y=9 below"
+    },
+    {
+      "op": "roof_fill_gables",
+      "boxes": [
+        [1, 8, 1, 9, 8, 7],
+        [2, 8, 2, 8, 8, 6]
+      ],
+      "block": "brick_block",
+      "notes": "fill stepped gable profile symmetrically on both short sides"
+    },
+    {
+      "op": "eave_slab",
+      "box": [0, 6, 0, 10, 6, 8],
+      "block": "quartz_slab",
+      "notes": "thin slab course under roof eaves at y=6"
+    },
+    {
+      "op": "trim_top",
+      "box": [1, 6, 1, 9, 6, 7],
+      "block": "oak_planks",
+      "notes": "thin wooden trim under eaves around building"
+    },
+    {
+      "op": "window_frames",
+      "positions": [
+        [2, 2, 1],
+        [8, 2, 1],
+        [2, 5, 1],
+        [8, 5, 1],
+        [2, 2, 7],
+        [8, 2, 7],
+        [2, 5, 7],
+        [8, 5, 7]
+      ],
+      "block": "sandstone_slab",
+      "notes": "small vertical separators/frames at window ends"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "all_ops_inside_bbox": false,
+    "operation_count_ok": true,
+    "contains_required_elements": true,
+    "material_coherence_ok": true,
+    "structural_faithfulness_ok": false,
+    "notes": "Adjusted plan to add slabs and roof above original ymax. Some roof operations extend to y=9 which is outside original bbox ymax=8. Need bbox expansion to y=9 or lower roof by one. Material roles separated. Operation count  twenty-something (<260). Windows, entrance, floor, walls, roof present. Recommend increasing ymax to 9 to enclose roof ridge."
+  }
+}

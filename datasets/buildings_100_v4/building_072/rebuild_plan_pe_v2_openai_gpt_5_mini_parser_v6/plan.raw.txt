@@ -1,0 +1,470 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 14,
+    "ymin": 0,
+    "ymax": 7,
+    "zmin": 0,
+    "zmax": 14
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "wood",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 14,
+          "z2": 14,
+          "label": "main"
+        }
+      ],
+      "symmetry": "four_way_centered_with_corner_entrance"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single open pavilion interior (hollowed)",
+        "perimeter_profile": "stepped tiers (3 horizontal bands)"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 7,
+        "y1": 1,
+        "z1": 14,
+        "x2": 7,
+        "y2": 2,
+        "z2": 14
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 7,
+        "y1": 2,
+        "z1": 0,
+        "x2": 7,
+        "y2": 2,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 13,
+          "z2": 13,
+          "block": "wood"
+        },
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 14,
+          "z2": 14,
+          "block": "slab_stone"
+        },
+        {
+          "y": 6,
+          "x1": 6,
+          "z1": 6,
+          "x2": 8,
+          "z2": 8,
+          "block": "slab_stone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 14,
+      "block": "wood",
+      "purpose": "floor_plinth"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 14,
+      "y2": 1,
+      "z2": 14,
+      "block": "stonebrick",
+      "purpose": "foundation_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 13,
+      "y2": 2,
+      "z2": 13,
+      "block": "brick",
+      "purpose": "middle_wall_band"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 2,
+      "x2": 12,
+      "y2": 3,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "upper_wood_band"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 4,
+      "z1": 3,
+      "x2": 11,
+      "y2": 4,
+      "z2": 11,
+      "block": "quartz",
+      "purpose": "upper_white_capping_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 6,
+      "x2": 14,
+      "y2": 4,
+      "z2": 8,
+      "block": "quartz",
+      "purpose": "outer_low_decorative_border_e_w"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 14,
+      "block": "quartz",
+      "purpose": "outer_low_decorative_border_n_s"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 13,
+      "y2": 4,
+      "z2": 13,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "carve",
+      "x1": 7,
+      "y1": 1,
+      "z1": 14,
+      "x2": 7,
+      "y2": 2,
+      "z2": 14,
+      "purpose": "south_entrance_opening"
+    },
+    {
+      "op": "set",
+      "x": 7,
+      "y": 1,
+      "z": 14,
+      "block": "wood",
+      "purpose": "entrance_step"
+    },
+    {
+      "op": "set",
+      "x": 7,
+      "y": 2,
+      "z": 14,
+      "block": "air",
+      "purpose": "entrance_clear"
+    },
+    {
+      "op": "set",
+      "x": 7,
+      "y": 2,
+      "z": 0,
+      "block": "glass",
+      "purpose": "north_small_window"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 14,
+      "y2": 5,
+      "z2": 14,
+      "block": "slab_stone",
+      "purpose": "roof_edge_full"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 13,
+      "y2": 5,
+      "z2": 13,
+      "block": "wood",
+      "purpose": "roof_surface"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 5,
+      "z1": 6,
+      "x2": 8,
+      "y2": 5,
+      "z2": 8,
+      "block": "slab_stone",
+      "purpose": "central_roof_platform_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 6,
+      "z1": 6,
+      "x2": 8,
+      "y2": 6,
+      "z2": 8,
+      "block": "slab_stone",
+      "purpose": "central_roof_platform_upper"
+    },
+    {
+      "op": "fill",
+      "x1": 7,
+      "y
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 14,
+  "ymin": 0,
+  "ymax": 7,
+  "zmin": 0,
+  "zmax": 14,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "minecraft:stonebrick",
+      "from": [0, 0, 0],
+      "to": [14, 0, 14],
+      "desc": "stone foundation floor layer (ground level floor base)"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:stonebrick",
+      "from": [1, 1, 1],
+      "to": [13, 1, 13],
+      "desc": "lower foundation trim band (1-block high ring inset 1 from bbox)"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:brick_block",
+      "from": [1, 2, 1],
+      "to": [13, 3, 13],
+      "desc": "middle brick wall band (2 layers tall from y=2..3)"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:oak_planks",
+      "from": [1, 4, 1],
+      "to": [13, 4, 13],
+      "desc": "decorative wooden slat band (single layer at y=4)"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:quartz_block",
+      "from": [1, 5, 1],
+      "to": [13, 5, 13],
+      "desc": "upper white capped band (single layer at y=5)"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:stone_slab",
+      "from": [0, 6, 0],
+      "to": [14, 6, 14],
+      "desc": "roof edging using stone slabs at y=6 (flat roof edge)"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:nether_bricks",
+      "from": [2, 6, 2],
+      "to": [12, 6, 12],
+      "desc": "dark flat roof surface inset inside slab edging"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glowstone",
+      "pos": [2, 7, 2],
+      "desc": "roof corner light NE (small raised lantern posts)"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glowstone",
+      "pos": [12, 7, 2],
+      "desc": "roof corner light NW"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glowstone",
+      "pos": [2, 7, 12],
+      "desc": "roof corner light SE"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glowstone",
+      "pos": [12, 7, 12],
+      "desc": "roof corner light SW"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:quartz_pillar",
+      "from": [1, 6, 1],
+      "to": [1, 7, 1],
+      "desc": "northwest corner taller pillar cap (extends above roof by 1)"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:quartz_pillar",
+      "from": [13, 6, 1],
+      "to": [13, 7, 1],
+      "desc": "northeast corner pillar cap"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:quartz_pillar",
+      "from": [1, 6, 13],
+      "to": [1, 7, 13],
+      "desc": "southwest corner pillar cap"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:quartz_pillar",
+      "from": [13, 6, 13],
+      "to": [13, 7, 13],
+      "desc": "southeast corner pillar cap"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:quartz_block",
+      "from": [0, 1, 5],
+      "to": [0, 1, 9],
+      "desc": "outer low white decorative border west side (single block high with gap allowance) "
+    },
+    {
+      "op": "box",
+      "block": "minecraft:quartz_block",
+      "from": [14, 1, 5],
+      "to": [14, 1, 9],
+      "desc": "outer low white decorative border east side"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:quartz_block",
+      "from": [5, 1, 0],
+      "to": [9, 1, 0],
+      "desc": "outer low white decorative border north side"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:quartz_block",
+      "from": [5, 1, 14],
+      "to": [9, 1, 14],
+      "desc": "outer low white decorative border south side"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:air",
+      "from": [7, 1, 0],
+      "to": [7, 3, 0],
+      "desc": "entrance opening centered on north side (2 blocks high opening through outer border and wall)"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:air",
+      "from": [7, 1, 1],
+      "to": [7, 3, 1],
+      "desc": "entrance opening through building wall into interior (2-block high)"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:air",
+      "from": [5, 2, 7],
+      "to": [9, 2, 7],
+      "desc": "break in low outer border (north-south axis) to match decorative gaps"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:glass_pane",
+      "from": [4, 3, 7],
+      "to": [4, 4, 7],
+      "desc": "small side window pane on west face (single pane high)"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:glass_pane",
+      "from": [10, 3, 7],
+      "to": [10, 4, 7],
+      "desc": "small side window pane on east face"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:stonebrick",
+      "from": [3, 1, 3],
+      "to": [11, 1, 11],
+      "desc": "interior floor raised band one block inset (stonebrick flooring inside)"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:air",
+      "from": [3, 2, 3],
+      "to": [11, 4, 11],
+      "desc": "clear interior volume (room) 2 blocks high interior clearance"
+    },
+    {
+      "op": "box",
+      "block": "minecraft:quartz_block",
+      "from": [6, 4, 6],
+      "to": [8, 6, 8],
+      "desc": "raised central tower/lantern base rising from roof center (3 high from y=4..6 relative to roof inset) "
+    },
+    {
+      "op": "set",
+      "block": "minecraft:stone_slab",
+      "pos": [6, 7, 6],
+      "desc": "central top slab platform 1"
+    },
+    {

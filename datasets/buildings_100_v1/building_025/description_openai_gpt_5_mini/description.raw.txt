@@ -1,0 +1,78 @@
+{
+  "summary": "Small single-story rectangular building with a raised stone-slab parapet roof, layered exterior walls of stone variants, wood planks and white trim, continuous mid-height windows on all visible sides, and an outer low white border platform surrounding the structure.",
+  "building_type": "small_house_or_outpost",
+  "shape": {
+    "overall_form": "simple rectangular box with a recessed flat roof and an external low border platform",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along long axis (appears symmetric on visible sides)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 19,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "roof_border / upper coping",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick_mossy_or_cobble_mix",
+      "role": "lower wall course (rough stone)",
+      "confidence": 0.6
+    },
+    {
+      "name": "stonebrick_polished_or_chiseled_variant",
+      "role": "mid wall course (smooth light stone)",
+      "confidence": 0.6
+    },
+    {
+      "name": "wood",
+      "role": "horizontal accent bands and roof interior planks",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows (continuous horizontal row)",
+      "confidence": 0.99
+    },
+    {
+      "name": "slab_stone",
+      "role": "thin trim under windows / footing",
+      "confidence": 0.5
+    },
+    {
+      "name": "slab_wood",
+      "role": "possible thin wooden ledge under windows",
+      "confidence": 0.4
+    },
+    {
+      "name": "air",
+      "role": "interior (unknown detail)",
+      "confidence": 0.5
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows (row of glass panes centered on wall height)",
+    "flat recessed roof with stone slab border",
+    "lower rough stone base course",
+    "smooth light stone middle course",
+    "wooden horizontal banding (top and bottom of wall)",
+    "outer white low border platform (one block high surrounding building)"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular floor of wood planks inset from a surrounding white slab/blocks border by 2 blocks on each side.",
+    "Walls are layered: bottom wooden plank strip, then rough stone/cobblestone course about 2 blocks high, then a continuous window row (1 block tall) with stonebrick blocks beneath window openings, then a smooth light stone band (1 block tall), then a top wooden strip (2 blocks tall) capped by a one-block-high stone slab/parapet.",
+    "Place glass panes in a continuous horizontal line around middle of walls with regular vertical spacing created by stonebrick or full blocks under panes as shown.",
+    "Roof interior is flat wood planks at top of walls; cap perimeter with stonebrick slabs/stairs to create a thin raised parapet."
+  ],
+  "uncertainties": [
+    "Exact stone variants: lower rough course looks like cobblestone in places and stonebrick in others; uncertain whether mossy/cobble or polished stonebricks are used.",
+    "Precise block types for white border (could be quartz blocks or white concrete) — identified only as white solid blocks/slabs.",
+    "Exact floor plan internal layout and presence/location of entrances are not visible; door location is not clearly shown in provided views.",
+    "Some thin horizontal trim pieces under windows may be wooden slabs or stone slabs; uncertain which."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "summary": "A single-story rectangular L-shaped fortified building with two tall corner towers and a stepped dark roof. The walls are layered horizontally with smooth stone/stonebrick and cobblestone trim; battlement-style stone slab coping and evenly spaced low cobblestone boundary posts surround the footprint. Two square towers rise above the footprint with overhanging multi-layered flat canopies topped with glow blocks.",
+  "building_type": "fortified hall / small fortress",
+  "shape": {
+    "overall_form": "L-shaped main hall with two detached/attached square towers at opposite corners; low courtyard area inside L",
+    "footprint_hint": "l_shape",
+    "symmetry": "approximate bilateral symmetry along the long axis of the main hall but L-shape breaks perfect symmetry",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 20,
+    "depth": 30,
+    "height": 12
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "primary wall / tower shaft",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "foundation / trim / low boundary posts",
+      "confidence": 0.9
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof field / dark roofing",
+      "confidence": 0.85
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof coping / canopy edges",
+      "confidence": 0.8
+    },
+    {
+      "name": "glass",
+      "role": "tower windows",
+      "confidence": 0.8
+    },
+    {
+      "name": "glowstone",
+      "role": "tower canopy light",
+      "confidence": 0.7
+    }
+  ],
+  "elements": [
+    "windows",
+    "entrance",
+    "roof",
+    "towers",
+    "cobblestone boundary posts",
+    "stone slab coping",
+    "layered wall bands (smooth / cobble)"
+  ],
+  "rebuild_hints": [
+    "Main outer wall: horizontal bands — lower band of cobblestone trim, a middle band of stonebrick with inset cobblestone strips, then an upper stonebrick band beneath the roof coping.",
+    "Roof: long dark (nether_brick) slab/solid rows forming a stepped profile along the length; edge highlighted with stone_slab coping and regular 1-block raised crenels where roof steps down.",
+    "Corner towers: square 3x3 (?) or 4x4 shafts rising ~10 blocks above ground with small glass windows spaced vertically; top has 3 stacked overhanging canopy layers: bottom dark layer, middle stone_slab edge, top stone_slab fringe with a central glowstone.",
+    "Boundary: place single-block-thick cobblestone posts spaced one block apart on a one-block perimeter offset around the building footprint.",
+    "Entrances/steps: openings at the inner corner of the L with stone slab steps and small glowstone marker near entrance (uncertain exact location)."
+  ],
+  "uncertainties": [
+    "Exact block IDs: I used normalized names (nether_brick) for dark roof; may be dark_nether_bricks or nether_brick_slab variants in original.",
+    "Precise interior layout and whether towers connect internally to the hall are not visible.",
+    "Exact footprint grid counts: width/depth estimates are approximate from top-down images; spacing of cobblestone boundary posts measured visually and may be off by a few blocks.",
+    "Tower base footprint (3x3 vs 4x4) and exact canopy overhang distances are uncertain."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_099",
+  "created_at": "2026-02-28T15:29:34.887077+00:00"
+}

@@ -1,0 +1,68 @@
+{
+  "summary": "Small single-story rectangular building with a raised foundation and recessed central roof courtyard. Walls are three vertical courses: lower stonebrick blocks, middle cobblestone band, topped by a dark red brick (netherbrick) trim and a light stone slab coping. Regular row of narrow horizontal windows on the longer sides. Surrounded by a one-block-high cobblestone perimeter ledge and set into a shallow dug-out dirt area.",
+  "building_type": "utility/small hall",
+  "shape": {
+    "overall_form": "rectangular box with an open central roof area (courtyard) and a surrounding low lip",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along long axis (appears symmetric on both long façades)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 12,
+    "depth": 16,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "lower wall course / coping (stonebrick and stone slabs)",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "middle wall band and outer ledge/foundation",
+      "confidence": 0.95
+    },
+    {
+      "name": "netherbrick",
+      "role": "dark red upper trim band under coping",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone_slab",
+      "role": "top edge/coping around roof",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "dirt",
+      "role": "surrounding ground/fill in the excavation",
+      "confidence": 0.95
+    }
+  ],
+  "elements": [
+    "row of 5 narrow horizontal windows on each long side (glazed panes framed by stonebrick)",
+    "single-story enclosed volume with central open roof courtyard",
+    "cobblestone perimeter ledge one block high around base",
+    "netherbrick trim band under stone slab coping",
+    "stone slab coping around top edge"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular stonebrick lower wall (approx interior 10x14 blocks) raised one block above surrounding ground, then add a one-block-wide cobblestone ledge around outside at ground level.",
+    "Make walls three courses: bottom course stonebrick (with stonebrick stairs/blocks for window sills), middle a full band of cobblestone, top a band of netherbrick, then surround roof edge with stone slabs; leave center roof area open and fill floor of courtyard with netherbrick.",
+    "Place 5 evenly spaced glass panes along each long side between stonebrick courses with a continuous sill of stonebrick stairs or blocks.",
+    "Excavate surrounding ground to create a shallow moat-like depression and place dirt fill and a one-block-high dirt border around the site to match the pictures."
+  ],
+  "uncertainties": [
+    "Exact internal floor plan, interior height and any interior partitions are not visible.",
+    "Precise block-by-block counts for width/depth are estimated from images; actual footprint may differ by a few blocks.",
+    "Window framing detail may use stairs or full blocks; images suggest stonebrick stairs for sills but not certain.",
+    "Top coping may be stone slabs or smooth stone slabs (stone_slab used as normalized id).",
+    "The dark red trim is assumed to be netherbrick based on color but could be a different dark red block texture."
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "building": "building_061",
+  "source_plan": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini/plan.json",
+  "description_path": "description_openai_gpt_5_mini/description.json",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 13,
+    "accepted_operations_count": 13,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "tower_wall / vertical dark banding"
+      },
+      "trim": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "tower_wall / vertical dark banding"
+      },
+      "roof": {
+        "block": "wood",
+        "score": 0.95,
+        "source_role": "stair-step roof and tower caps (oak planks / wooden slabs)"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.95,
+        "source_role": "long thin windows across each floor (glass panes)"
+      },
+      "floor": {
+        "block": "glass",
+        "score": 0.95,
+        "source_role": "long thin windows across each floor (glass panes)"
+      },
+      "light": {
+        "block": "slab_stone",
+        "score": 0.7,
+        "source_role": "light grey trim around tower caps and roof edges"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [],
+      "coherence_repairs": [
+        {
+          "role": "light",
+          "from": "slab_stone",
+          "to": "slab_stone"
+        },
+        {
+          "role": "trim",
+          "from": "stonebrick",
+          "to": "stonebrick"
+        }
+      ]
+    },
+    "budget_source": "root.material_budget",
+    "budget_present_in_input": true,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 88,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 0,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 0.9717391304347827,
+    "role_infer_reasons": {
+      "explicit_role": 88,
+      "unknown": 2,
+      "carve_entrance": 2
+    },
+    "self_repair_report": {
+      "added_operations": 0,
+      "added_tags": [],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 1,
+    "budget_violations": [
+      {
+        "role": "wall",
+        "target_blocks": 7166,
+        "actual_blocks": 17582,
+        "relative_error": 1.453531
+      },
+      {
+        "role": "roof",
+        "target_blocks": 0,
+        "actual_blocks": 2036,
+        "relative_error": 1.0
+      },
+      {
+        "role": "glass",
+        "target_blocks": 0,
+        "actual_blocks": 136,
+        "relative_error": 1.0
+      },
+      {
+        "role": "light",
+        "target_blocks": 0,
+        "actual_blocks": 4,
+        "relative_error": 1.0
+      }
+    ],
+    "schema_violations": [],
+    "strict_blocking_issues": [
+      "material_budget_violation"
+    ],
+    "valid_strict": false
+  },
+  "self_refine_no_gt": {
+    "enabled": true,
+    "accepted_iterations": 1,
+    "total_added_ops": 36,
+    "final_score": 0.5903872684271652,
+    "final_components": {
+      "material": 0.5930256731396637,
+      "dim": 0.9814814814814815,
+      "roof": 0.9326599326599326,
+      "window": 0.0,
+      "entrance": 0.0
+    },
+    "history": [
+      {
+        "iter": 0,
+        "accepted": true,
+        "score": 0.5793676532767145,
+        "components": {
+          "material": 0.523061019944052,
+          "dim": 0.9814814814814815,
+          "roof": 1.0,
+          "window": 0.0,
+          "entrance": 0.0
+        },
+        "added_ops": 0
+      },
+      {
+        "iter": 1,
+        "accepted": true,
+        "gain": 0.01101961515045069,
+        "score": 0.5903872684271652,
+        "components": {
+          "material": 0.5930256731396637,
+          "dim": 0.9814814814814815,
+          "roof": 0.9326599326599326,
+          "window": 0.0,
+          "entrance": 0.0
+        },
+        "added_ops": 36,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 4
+        }
+      },
+      {
+        "iter": 2,
+        "accepted": false,
+        "gain": 0.0,
+        "score": 0.5903872684271652,
+        "components": {
+          "material": 0.5930256731396637,
+          "dim": 0.9814814814814815,
+          "roof": 0.9326599326599326,
+          "window": 0.0,
+          "entrance": 0.0
+        },
+        "added_ops": 36,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 4
+        }
+      }
+    ],
+    "profile": {
+      "max_iterations": 2,
+      "min_score_gain": 0.01,
+      "max_added_ops_per_iter": 64,
+      "strict_schema": true,
+      "enforce_role_fixed": true,
+      "require_material_budget": true,
+      "material_budget_tolerance": 0.35,
+      "role_fix_min_confidence": 0.78,
+      "prefer_description_palette": true
+    }
+  },
+  "created_at": "2026-03-01T11:25:15.488686+00:00"
+}

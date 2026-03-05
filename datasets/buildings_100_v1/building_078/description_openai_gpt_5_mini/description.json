@@ -1,0 +1,77 @@
+{
+  "summary": "Two-story rectangular small building with brick walls, horizontal decorative bands, corner stone columns, a flat dark roof inset, and a raised white slab foundation/edge. Each floor has a row of evenly spaced windows and a wooden trim band between floors.",
+  "building_type": "residential_small|mockup",
+  "shape": {
+    "overall_form": "simple rectangular box with stepped perimeter foundation and flat recessed roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric on front/back and left/right with repeated window module",
+    "floors_estimate": 2,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 9,
+    "height": 7
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "wall",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner/column or coping",
+      "confidence": 0.6
+    },
+    {
+      "name": "quartz_slab",
+      "role": "foundation edge / horizontal band",
+      "confidence": 0.85
+    },
+    {
+      "name": "wood_planks",
+      "role": "horizontal trim between floors / balcony ledge",
+      "confidence": 0.8
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof top dark layer",
+      "confidence": 0.7
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof coping (light grey slab)",
+      "confidence": 0.6
+    }
+  ],
+  "elements": [
+    "rows of small rectangular windows on each floor (5 visible on front face)",
+    "vertical corner columns (stone-like) spanning both floors",
+    "wooden trim band between floors and at base of each window row",
+    "white raised slab foundation / border around building",
+    "flat recessed dark roof (nether-brick fill) with light slab coping"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular footprint approx 11x9 blocks. Raise a 1-block-high surrounding foundation border of quartz slab (white) inset from edge as shown.",
+    "Construct two full-height stories of brick walls, each story about 3 blocks tall; place a continuous wooden plank strip (1 block high) horizontally between stories and another at the base of the lower windows.",
+    "Place stone-like corner blocks (stonebrick or smooth stone) vertically at building corners spanning both floors to frame the brick walls.",
+    "Install evenly spaced single-block-high window openings (glass) across the front and sides: five modules across the front per floor as seen.",
+    "Top the structure with a recessed dark roofing fill (nether-brick) surrounded by a 1-block-high light-colored slab coping (stone slab or quartz slab)."
+  ],
+  "uncertainties": [
+    "Exact block types: some light blocks may be quartz or smooth stone variants; I labeled likely choices but exact material (quartz_slab vs stone_slab vs smooth_sandstone) is uncertain.",
+    "Dimensions are approximate: width (11) and depth (9) inferred from visible window/count pattern and aerial view; actual could differ by ±2 blocks.",
+    "Interior layout and presence/location of an entrance are not visible in provided views; entrance location is unknown.",
+    "The vertical corner blocks appear stone-like (stonebrick) but could be another grey textured block; confidence moderate."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_078",
+  "created_at": "2026-02-28T14:17:22.420660+00:00"
+}

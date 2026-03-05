@@ -1,0 +1,69 @@
+{
+  "summary": "Small single-story rectangular building with a raised parapet and flat roof. Walls are two-tone: a lower pale yellow textured band with narrow horizontal windows, topped by a smooth light band and a short brick course under a stone slab coping. Surrounded by a low white slab border on a dirt foundation trench.",
+  "building_type": "industrial/utility shed (estimate)",
+  "shape": {
+    "overall_form": "simple rectangular box with flat recessed roof and raised parapet",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along long axis (appears similar on both long sides)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 17,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "parapet band / upper wall course",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "roof coping / slab border around roof",
+      "confidence": 0.8
+    },
+    {
+      "name": "sandstone",
+      "role": "lower wall main material",
+      "confidence": 0.85
+    },
+    {
+      "name": "quartz",
+      "role": "mid wall smooth band and external low border/ledge",
+      "confidence": 0.75
+    },
+    {
+      "name": "glass",
+      "role": "horizontal windows",
+      "confidence": 0.95
+    },
+    {
+      "name": "dirt",
+      "role": "surrounding ground / trench fill",
+      "confidence": 0.9
+    }
+  ],
+  "elements": [
+    "horizontal strip windows (multiple small panes in a row on long sides)",
+    "single-story solid wall with corner vertical quoins",
+    "brick band below roof parapet",
+    "stone slab coping around roof",
+    "flat recessed roof filled with brick (tile) pattern",
+    "white slab border surrounding building at ground level"
+  ],
+  "rebuild_hints": [
+    "Footprint: recreate a centered rectangle (approx 11x17 blocks) with 1-block thick walls.",
+    "Walls: build lower 2-3 block high band in sandstone, add 1-block high smooth/quartz band above, then 1-block high brick course under a 1-block stone slab coping.",
+    "Windows: place a continuous row of 1x1 glass blocks set at the center of the sandstone band with 1-block spacing between corner quoins.",
+    "Roof: inset the roof area by 1 block from coping, fill with brick (or red tile) and border with stone slabs.",
+    "Perimeter: add a 1-block-high white slab border around the base separated by 1 block of exposed dirt/terraced trench."
+  ],
+  "uncertainties": [
+    "Exact block types for sandstone vs chiseled/smooth variants: identified generically as sandstone with moderate confidence.",
+    "Quartz vs other smooth white block for mid band and perimeter border: labeled 'quartz' but could be smooth white stone (confidence ~0.75).",
+    "Dimensions are estimated from images; actual block counts may differ by a few blocks.",
+    "Interior layout and presence of doors or openings not visible in provided views."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "summary": "A symmetrical three-storey rectangular apartment-like building with a central raised corridor/tower running along the long axis and small corner projections. Constructed from alternating horizontal bands (light yellow banding and darker stone-looking bands), small regular windows, a brick-tile roof ridge and chimney, and a low decorative perimeter of white blocks enclosing a dirt courtyard.",
+  "building_type": "residential/apartment block",
+  "shape": {
+    "overall_form": "rectangular main mass with central raised spine/tower and small corner projections",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long central axis",
+    "floors_estimate": 3,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 21,
+    "depth": 13,
+    "height": 12
+  },
+  "materials": [
+    {
+      "name": "sandstone",
+      "role": "primary_wall_band (light band)",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "secondary_wall_band / base corners",
+      "confidence": 0.7
+    },
+    {
+      "name": "brick",
+      "role": "roof ridge / chimney",
+      "confidence": 0.95
+    },
+    {
+      "name": "quartz",
+      "role": "decorative white trim / perimeter posts",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.95
+    },
+    {
+      "name": "stone_slab",
+      "role": "horizontal banding (gray slabs) and roof edging",
+      "confidence": 0.6
+    }
+  ],
+  "elements": [
+    "regular small horizontal windows (repeating on each floor)",
+    "central raised corridor/tower running along roof ridge with chimney",
+    "three floors with horizontal banding between floors",
+    "corner vertical pilasters/posts in white material",
+    "enclosing low white block perimeter and dirt courtyard"
+  ],
+  "rebuild_hints": [
+    "Create a rectangular 3-floor volume with repeating horizontal bands: light band for wall, thin darker stone band between floors and at base.",
+    "Place small 1x1 or 2x1 windows in a regular grid across each band, aligned horizontally.",
+    "Add a central raised spine/tower along the long axis: a raised walkway/roof ridge with brick tiles and a chimney stack near center-back.",
+    "Add white vertical corner/posts (quartz or similar) at the building corners and at mid-courtyard entrances; surround site with a single-layer white block perimeter on a dirt ground.",
+    "Roof uses brick slabs/blocks forming a low gabled ridge with small stepped crenellations near top."
+  ],
+  "uncertainties": [
+    "Exact block types: light wall appears to be sandstone but could be sand or another light textured block.",
+    "Exact dimensions: width/depth/height are estimated from pixel views; actual block counts may differ by several blocks.",
+    "Internal layout and door positions are not visible; entrance location and floor access are assumed along the central spine but uncertain.",
+    "Roof slope detail (true gable angle) and slab vs full block usage is partially obscured; described as gable based on visible ridge."
+  ]
+}

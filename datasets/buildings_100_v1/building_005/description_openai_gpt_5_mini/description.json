@@ -1,0 +1,76 @@
+{
+  "summary": "Single-story rectangular pavilion with a raised stonebrick plinth, oak log corner posts, horizontal oak plank walls with a continuous row of glass windows, and a stepped dark-red (nether brick) hipped/gabled hybrid roof capped by stone slab accents. Exterior sits inside a shallow cutout surrounded by a low stonebrick border.",
+  "building_type": "small house / pavilion",
+  "shape": {
+    "overall_form": "rectangular single-volume building with a centrally peaked multi-step roof and a continuous eave around the perimeter",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric across the long axis (roof steps mirrored left/right); front/back likely symmetric",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 13,
+    "depth": 13,
+    "height": 7
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "plinth / border / eave trim",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof main",
+      "confidence": 0.95
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof accent / stepped caps",
+      "confidence": 0.9
+    },
+    {
+      "name": "oak_planks",
+      "role": "wall infill",
+      "confidence": 0.9
+    },
+    {
+      "name": "oak_log",
+      "role": "corner posts / vertical supports",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.95
+    },
+    {
+      "name": "dirt",
+      "role": "surrounding ground (excavated area)",
+      "confidence": 0.8
+    }
+  ],
+  "elements": [
+    "continuous stonebrick border/plinth around base",
+    "oak log vertical corner posts",
+    "oak plank walls with one horizontal row of windows on each visible long side",
+    "nether brick stepped roof with stone slab caps placed as decorative steps",
+    "single entrance (uncertain exact location) recessed behind plinth on one short side"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular stonebrick plinth ~1 block high and 1 block thick around the perimeter, leaving a flat interior for the wooden walls.",
+    "Place oak log columns at each corner (vertical) and fill walls between with oak planks, inserting a continuous row of glass panes one block below the stonebrick eave.",
+    "Build a multi-step sloped roof from nether brick stairs/blocks centered over the rectangle, stepping inward on each tier and topping some outer steps with stone slabs as decorative caps.",
+    "Keep total building height low (single story) and maintain symmetry along the long axis; add the low stone slab/eave around roof perimeter as shown."
+  ],
+  "uncertainties": [
+    "Exact internal layout, door location, and whether there is an interior floor material are not visible.",
+    "Dimensions estimated from block count in images; actual footprint may differ by a few blocks (±1-2).",
+    "Roof uses nether-brick textured blocks and appears to use stair shapes; exact use of stairs vs full blocks is inferred but not certain.",
+    "Stone slab pieces on roof could be stone_slab or smooth_stone_slab variant; material normalized as stone_slab."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_005",
+  "created_at": "2026-02-28T13:58:14.851122+00:00"
+}

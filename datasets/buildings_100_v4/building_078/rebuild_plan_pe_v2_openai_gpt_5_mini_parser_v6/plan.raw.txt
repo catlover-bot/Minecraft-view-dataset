@@ -1,0 +1,477 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 10,
+    "zmin": 0,
+    "zmax": 24
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "quartz_block",
+    "glass": "glass_pane",
+    "light": "glowstone",
+    "floor": "stonebrick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 24,
+          "label": "main"
+        }
+      ],
+      "symmetry": "approximate_z_axis_centered (long axis along Z, bilateral with minor asymmetry)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single hall with potential alcoves; exterior-only reconstruction",
+        "perimeter_profile": "rectangular with stepped corner terraces"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 6,
+        "y1": 1,
+        "z1": 0,
+        "x2": 7,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 2,
+        "z1": 24,
+        "x2": 5,
+        "y2": 3,
+        "z2": 24
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 2,
+        "z1": 24,
+        "x2": 9,
+        "y2": 3,
+        "z2": 24
+      },
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 5,
+        "y1": 7,
+        "z1": 12,
+        "x2": 6,
+        "y2": 8,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 7,
+        "y1": 6,
+        "z1": 14,
+        "x2": 7,
+        "y2": 7,
+        "z2": 14
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 24,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 1,
+          "z1": 1,
+          "x2": 11,
+          "z2": 23,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 2,
+          "z1": 3,
+          "x2": 10,
+          "z2": 21,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 3,
+          "z1": 6,
+          "x2": 9,
+          "z2": 18,
+          "block": "nether_brick"
+        },
+        {
+          "y": 9,
+          "x1": 4,
+          "z1": 9,
+          "x2": 8,
+          "z2": 15,
+          "block": "nether_brick"
+        },
+        {
+          "y": 9,
+          "x1": 5,
+          "z1": 11,
+          "x2": 7,
+          "z2": 13,
+          "block": "nether_brick"
+        },
+        {
+          "y": 10,
+          "x1": 5,
+          "z1": 12,
+          "x2": 7,
+          "z2": 12,
+          "block": "glowstone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "foundation_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 24,
+      "block": "brick",
+      "purpose": "outer_wall_main_bands"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 1,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "lower_stone_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 12,
+      "y2": 2,
+      "z2": 24,
+      "block": "oak_planks",
+      "purpose": "thin_wood_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 12,
+      "y2": 3,
+      "z2": 24,
+      "block": "brick",
+      "purpose": "upper_brick_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 24,
+      "block": "quartz_block",
+      "purpose": "top_coping_quartz"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 24,
+      "block": "quartz_block",
+      "purpose": "west_quartz_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 24,
+      "block": "quartz_block",
+      "purpose": "east_quartz_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 1,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "south_quartz_trim_front"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 24,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 12,
+  "ymin": 0,
+  "ymax": 10,
+  "zmin": 0,
+  "zmax": 24,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [0, 0, 0],
+      "to": [12, 0, 24]
+    },
+    {
+      "op": "replace",
+      "block": "air",
+      "from": [0, 1, 0],
+      "to": [12, 10, 24]
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [0, 1, 0],
+      "to": [12, 1, 24],
+      "comment": "foundation/ground-level strip continuous"
+    },
+    {
+      "op": "fill",
+      "block": "brick",
+      "from": [1, 2, 1],
+      "to": [11, 2, 23],
+      "comment": "first horizontal wall band (brick)"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [1, 3, 1],
+      "to": [11, 3, 23],
+      "comment": "second thin wood band"
+    },
+    {
+      "op": "fill",
+      "block": "brick",
+      "from": [1, 4, 1],
+      "to": [11, 4, 23],
+      "comment": "third brick band"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 2, 0],
+      "to": [0, 5, 24],
+      "comment": "west quartz corner pillar"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [12, 2, 0],
+      "to": [12, 5, 24],
+      "comment": "east quartz corner pillar"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 2, 0],
+      "to": [12, 5, 0],
+      "comment": "north quartz edge trim"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 2, 24],
+      "to": [12, 5, 24],
+      "comment": "south quartz edge trim"
+    },
+    {
+      "op": "fill",
+      "block": "brick",
+      "from": [1, 5, 1],
+      "to": [11, 5, 23],
+      "comment": "top brick band below coping"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_slab",
+      "from": [0, 6, 0],
+      "to": [12, 6, 24],
+      "comment": "one-block-high quartz coping around top of wall"
+    },
+    {
+      "op": "hollow_box",
+      "block": "air",
+      "from": [1, 2, 1],
+      "to": [11, 5, 23],
+      "comment": "clear interior space"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick",
+      "from": [2, 7, 2],
+      "to": [10, 7, 22],
+      "comment": "roof base layer (lower roof course)"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick",
+      "from": [3, 8, 3],
+      "to": [9, 8, 21],
+      "comment": "roof middle layer"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick",
+      "from": [4, 9, 4],
+      "to": [8, 9, 20],
+      "comment": "roof upper taper course"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick",
+      "from": [5, 10, 10],
+      "to": [7, 10, 14],
+      "comment": "small flat roof top platform"
+    },
+    {
+      "op": "set",
+      "block": "glowstone",
+      "pos": [6, 10, 12],
+      "comment": "light on roof top"
+    },
+    {
+      "op": "line",
+      "block": "glass_pane",
+      "from": [3, 8, 6],
+      "to": [9, 8, 6],
+      "comment": "row of small glass panes embedded in roof slope (south-facing)"
+    },
+    {
+      "op": "line",
+      "block": "glass_pane",
+      "from": [3, 8, 20],
+      "to": [9, 8, 20],
+      "comment": "row of small glass panes embedded in roof slope (north-facing)"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [6, 2, 0],
+      "to": [6, 4, 0],
+      "comment": "central north entrance frame (quartz)"
+    },
+    {
+      "op": "set",
+      "block": "air",
+      "pos": [6, 2, 0],
+      "comment": "entrance opening bottom (one block opening)"
+    },
+    {
+      "op": "set",
+      "block": "air",
+      "pos": [6, 3, 0],
+      "comment": "entrance opening upper"
+    },
+    {
+      "op": "line",
+      "block": "oak_stairs",
+      "from": [5, 1, 0],
+      "to": [7, 1, 0],
+      "comment": "entrance stair detail"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 1, 0],
+      "to": [12, 1, 24],
+      "comment": "dotted white boundary adjusted to continuous base line at ground (keeps coherence)"
+    },
+    {
+      "op": "set",
+      "block": "air",
+      "pos": [1, 2, 1],
+      "comment": "ensure interior is empty corner"
+    },
+    {
+      "op": "set",
+      "block": "air",
+      "pos": [11, 2, 23],
+      "comment": "ensure interior is empty corner"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick_stairs",
+      "from": [0, 1, 12],
+      "to": [0, 1, 12],
+      "comment": "small foundation/step detail at west center"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [12, 1, 12],
+      "to": [12, 1, 12],
+      "comment": "small accent block at east center"
+    }
+  ],
+  "self_check": {
+    "bbox_integrity": "valid - all operation coordinates are inside the declared bbox [0..12,0..10,0..24].",
+    "operation_count": 28,
+    "contains_floor_walls_roof_windows_entrance": "valid - plan includes foundation/floor (stonebrick), banded walls (brick/oak/quartz), nether_brick roof with glass_pane windows, and a clear entrance opening at north center.",
+    "material_coherence": "valid - roles separated: stonebrick foundation, brick wall bands, oak planks band, quartz trim/coping, nether_brick roof, glass_pane windows, glowstone light; no collapsing of

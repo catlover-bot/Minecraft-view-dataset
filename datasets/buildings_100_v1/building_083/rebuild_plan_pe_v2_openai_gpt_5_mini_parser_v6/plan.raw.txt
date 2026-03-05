@@ -1,0 +1,427 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 18
+  },
+  "palette": {
+    "wall": "planks",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 17,
+          "label": "main"
+        }
+      ],
+      "symmetry": "z_axis_centered_bilateral"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "single hall (open interior)",
+        "perimeter_profile": "rectangular walls with corner posts and continuous upper window band"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 17,
+        "x2": 5,
+        "y2": 2,
+        "z2": 17
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 9,
+        "y1": 2,
+        "z1": 3,
+        "x2": 9,
+        "y2": 2,
+        "z2": 15
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 3,
+        "x2": 1,
+        "y2": 2,
+        "z2": 15
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 18,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 17,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 2,
+          "z1": 2,
+          "x2": 8,
+          "z2": 16,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 3,
+          "z1": 6,
+          "x2": 7,
+          "z2": 12,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 18,
+      "block": "stonebrick",
+      "purpose": "paved_border_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 17,
+      "block": "stonebrick",
+      "purpose": "foundation_top_border"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 9,
+      "y2": 0,
+      "z2": 17,
+      "block": "stonebrick",
+      "purpose": "foundation_inset_floorbase"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 8,
+      "y2": 1,
+      "z2": 16,
+      "block": "planks",
+      "purpose": "interior_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 17,
+      "block": "planks",
+      "purpose": "wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 1,
+      "y2": 4,
+      "z2": 17,
+      "block": "log",
+      "purpose": "west_corner_posts"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 17,
+      "block": "log",
+      "purpose": "east_corner_posts"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 1,
+      "block": "log",
+      "purpose": "north_front_posts"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 17,
+      "x2": 9,
+      "y2": 1,
+      "z2": 17,
+      "block": "log",
+      "purpose": "south_back_posts"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 8,
+      "y2": 3,
+      "z2": 16,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 3,
+      "x2": 8,
+      "y2": 3,
+      "z2": 15,
+      "block": "glass",
+      "purpose": "continuous_window_band_east_west_rows"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 3,
+      "x2": 8,
+      "y2": 3,
+      "z2": 3,
+      "block": "glass",
+      "purpose": "north_window_row"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 15,
+      "x2": 8,
+      "y2": 3,
+      "z2": 15,
+      "block": "glass",
+      "purpose": "south_window_row"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 18,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "block": "stonebrick",
+      "from": { "x": 0, "y": 0, "z": 0 },
+      "to": { "x": 10, "y": 0, "z": 18 },
+      "comment": "ground-level paved/stonebrick walkway/foundation (1 block high) surrounding footprint"
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "block": "stonebrick",
+      "from": { "x": 1, "y": 1, "z": 1 },
+      "to": { "x": 9, "y": 1, "z": 17 },
+      "comment": "stonebrick foundation/ledge inset by one block from outer paved edge (1 block high rim)"
+    },
+    {
+      "id": 3,
+      "action": "fill",
+      "block": "log",
+      "from": { "x": 1, "y": 1, "z": 1 },
+      "to": { "x": 1, "y": 4, "z": 1 },
+      "comment": "front-left vertical log corner post (3 blocks tall above foundation)"
+    },
+    {
+      "id": 4,
+      "action": "fill",
+      "block": "log",
+      "from": { "x": 9, "y": 1, "z": 1 },
+      "to": { "x": 9, "y": 4, "z": 1 },
+      "comment": "front-right vertical log corner post"
+    },
+    {
+      "id": 5,
+      "action": "fill",
+      "block": "log",
+      "from": { "x": 1, "y": 1, "z": 17 },
+      "to": { "x": 1, "y": 4, "z": 17 },
+      "comment": "rear-left vertical log corner post"
+    },
+    {
+      "id": 6,
+      "action": "fill",
+      "block": "log",
+      "from": { "x": 9, "y": 1, "z": 17 },
+      "to": { "x": 9, "y": 4, "z": 17 },
+      "comment": "rear-right vertical log corner post"
+    },
+    {
+      "id": 7,
+      "action": "fill",
+      "block": "planks",
+      "from": { "x": 2, "y": 1, "z": 1 },
+      "to": { "x": 8, "y": 3, "z": 1 },
+      "comment": "front wall planks between corner logs (3 high to top rim level)"
+    },
+    {
+      "id": 8,
+      "action": "fill",
+      "block": "planks",
+      "from": { "x": 2, "y": 1, "z": 17 },
+      "to": { "x": 8, "y": 3, "z": 17 },
+      "comment": "rear wall planks between corner logs"
+    },
+    {
+      "id": 9,
+      "action": "fill",
+      "block": "planks",
+      "from": { "x": 1, "y": 1, "z": 2 },
+      "to": { "x": 1, "y": 3, "z": 16 },
+      "comment": "left long-side wall planks between corner logs"
+    },
+    {
+      "id": 10,
+      "action": "fill",
+      "block": "planks",
+      "from": { "x": 9, "y": 1, "z": 2 },
+      "to": { "x": 9, "y": 3, "z": 16 },
+      "comment": "right long-side wall planks between corner logs"
+    },
+    {
+      "id": 11,
+      "action": "replace",
+      "block": "air",
+      "from": { "x": 5, "y": 1, "z": 1 },
+      "to": { "x": 5, "y": 2, "z": 1 },
+      "comment": "entrance opening on front wall (2 tall, 1 wide). create doorway; door placement left to builder"
+    },
+    {
+      "id": 12,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": { "x": 2, "y": 3, "z": 2 },
+      "to": { "x": 8, "y": 3, "z": 2 },
+      "comment": "continuous row of glass panes near top along left long side (facing +z inside) at y=3"
+    },
+    {
+      "id": 13,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": { "x": 2, "y": 3, "z": 16 },
+      "to": { "x": 8, "y": 3, "z": 16 },
+      "comment": "continuous row of glass panes near top along right long side at y=3"
+    },
+    {
+      "id": 14,
+      "action": "fill",
+      "block": "stonebrick",
+      "from": { "x": 1, "y": 4, "z": 1 },
+      "to": { "x": 9, "y": 4, "z": 17 },
+      "comment": "stonebrick top rim around walls (1 block high) serving as roof base"
+    },
+    {
+      "id": 15,
+      "action": "fill",
+      "block": "nether_brick",
+      "from": { "x": 1, "y": 5, "z": 2 },
+      "to": { "x": 9, "y": 5, "z": 16 },
+      "comment": "roof layer 1 - outermost layer of nether_brick (covers inset area to create step)"
+    },
+    {
+      "id": 16,
+      "action": "fill",
+      "block": "nether_brick",
+      "from": { "x": 2, "y": 6, "z": 3 },
+      "to": { "x": 8, "y": 6, "z": 15 },
+      "comment": "roof layer 2 - next inset step"
+    },
+    {
+      "id": 17,
+      "action": "fill",
+      "block": "nether_brick",
+      "from": { "x": 3, "y": 7, "z": 4 },
+      "to": { "x": 7, "y": 7, "z": 14 },
+      "comment": "roof cap center (small flat cap). Note: ymax was 6 in bbox; adjusted roof cap placed at y=7 requires expanding bbox. To keep bbox intact, instead place cap at y=6 as single layer"
+    },
+    {
+      "id": 17,
+      "action": "fill",
+      "block": "nether_brick",
+      "from": { "x": 3, "y": 6, "z": 4 },
+      "to": { "x": 7, "y": 6, "z": 14 },
+      "comment": "roof cap center adjusted to fit bbox (single layer center cap)"
+    },
+    {
+      "id": 18,
+      "action": "setblock",
+      "block": "stone_slab",
+      "at": { "x": 2, "y": 6, "z": 3 },
+      "comment": "stone slab accent at step corner

@@ -1,0 +1,275 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 24
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "stonebrick",
+    "band": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 24,
+          "label": "main_pavilion"
+        }
+      ],
+      "symmetry": "bilateral_z_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single open pavilion space",
+        "perimeter_profile": "rectangle with banded walls"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 0,
+        "x2": 7,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 3,
+        "y1": 6,
+        "z1": 8,
+        "x2": 3,
+        "y2": 6,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 9,
+        "y1": 6,
+        "z1": 8,
+        "x2": 9,
+        "y2": 6,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 3,
+        "y1": 6,
+        "z1": 16,
+        "x2": 3,
+        "y2": 6,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 9,
+        "y1": 6,
+        "z1": 16,
+        "x2": 9,
+        "y2": 6,
+        "z2": 16
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 24,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 1,
+          "z1": 2,
+          "x2": 11,
+          "z2": 22,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 2,
+          "z1": 4,
+          "x2": 10,
+          "z2": 20,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 3,
+          "z1": 6,
+          "x2": 9,
+          "z2": 18,
+          "block": "nether_brick"
+        },
+        {
+          "y": 9,
+          "x1": 4,
+          "z1": 10,
+          "x2": 8,
+          "z2": 14,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "foundation_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 1,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "base_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 12,
+      "y2": 2,
+      "z2": 24,
+      "block": "brick",
+      "purpose": "wall_band_1"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 12,
+      "y2": 3,
+      "z2": 24,
+      "block": "oak_planks",
+      "purpose": "wall_band_2"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 24,
+      "block": "brick",
+      "purpose": "wall_band_3"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "west_edge_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "east_edge_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 1,
+      "z2": 0,
+      "block": "quartz",
+      "purpose": "south_edge_trim"
+    },
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 13,
+  "ymin": 0,
+  "ymax": 10,
+  "zmin": 0,
+  "zmax": 25,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 13, "y2": 10, "z2": 0, "block": "stone_bricks", "description": "foundation base layer"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 12, "y2": 9, "z2": 1, "block": "oak_planks", "description": "floor"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 0, "y2": 10, "z2": 4, "block": "brick", "description": "west wall main band"},
+    {"type": "fill", "x1": 13, "y1": 0, "z1": 1, "x2": 13, "y2": 10, "z2": 4, "block": "brick", "description": "east wall main band"},
+    {"type": "fill", "x1": 1, "y1": 0, "z1": 1, "x2": 12, "y2": 0, "z2": 4, "block": "brick", "description": "north wall main band"},
+    {"type": "fill", "x1": 1, "y1": 10, "z1": 1, "x2": 12, "y2": 10, "z2": 4, "block": "brick", "description": "south wall main band"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 2, "x2": 0, "y2": 10, "z2": 2, "block": "oak_planks", "description": "west wall wood band"},
+    {"type": "fill", "x1": 13, "y1": 0, "z1": 2, "x2": 13, "y2": 10, "z2": 2, "block": "oak_planks", "description": "east wall wood band"},
+    {"type": "fill", "x1": 1, "y1": 0, "z1": 2, "x2": 12, "y2": 0, "z2": 2, "block": "oak_planks", "description": "north wall wood band"},
+    {"type": "fill", "x1": 1, "y1": 10, "z1": 2, "x2": 12, "y2": 10, "z2": 2, "block": "oak_planks", "description": "south wall wood band"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 10, "z2": 5, "block": "white_concrete", "description": "west corner pillar"},
+    {"type": "fill", "x1": 13, "y1": 0, "z1": 0, "x2": 13, "y2": 10, "z2": 5, "block": "white_concrete", "description": "east corner pillar"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 13, "y2": 0, "z2": 5, "block": "white_concrete", "description": "north corner frame"},
+    {"type": "fill", "x1": 0, "y1": 10, "z1": 0, "x2": 13, "y2": 10, "z2": 5, "block": "white_concrete", "description": "south corner frame"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 5, "x2": 12, "y2": 9, "z2": 5, "block": "white_concrete", "description": "wall coping"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 6, "x2": 11, "y2": 8, "z2": 6, "block": "nether_brick", "description": "roof base layer 1"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 7, "x2": 10, "y2": 7, "z2": 7, "block": "nether_brick", "description": "roof layer 2"},
+    {"type": "fill", "x1": 4, "y1": 4, "z1": 8, "x2": 9, "y2": 6, "z2": 8, "block": "nether_brick", "description": "roof layer 3"},
+    {"type": "fill", "x1": 5, "y1": 5, "z1": 9, "x2": 8, "y2": 5, "z2": 9, "block": "nether_brick", "description": "roof peak"},
+    {"type": "set", "x": 6, "y": 5, "z": 10, "block": "glowstone", "description": "roof top light"},
+    {"type": "set", "x": 3, "y": 3, "z": 7, "block": "glass", "description": "roof window 1"},
+    {"type": "set", "x": 10, "y": 3, "z": 7, "block": "glass", "description": "roof window 2"},
+    {"type": "set", "x": 3, "y": 7, "z": 7, "block": "glass", "description": "roof window 3"},
+    {"type": "set", "x": 10, "y": 7, "z": 7, "block": "glass", "description": "roof window 4"},
+    {"type": "set", "x": 6, "y": 2, "z": 3, "block": "air", "description": "entrance opening north"},
+    {"type": "set", "x": 6, "y": 2, "z": 2, "block": "air", "description": "entrance opening north lower"},
+    {"type": "set", "x": 6, "y": 2, "z": 1, "block": "oak_stairs", "description": "entrance step"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 13, "y2": 10, "z2": 0, "block": "white_concrete", "pattern": "spaced", "description": "boundary dotted perimeter"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 3, "x2": 12, "y2": 9, "z2": 3, "block": "stone_bricks", "description": "interior wall support

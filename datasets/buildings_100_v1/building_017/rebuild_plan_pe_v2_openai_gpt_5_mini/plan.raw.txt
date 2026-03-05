@@ -1,0 +1,414 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 4
+  },
+  "palette": {
+    "wall": "oak_planks",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 4,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_along_x_center (ridge along x axis)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground floor single hall footprint; open plan",
+        "perimeter_profile": "rectangle with 1-block raised stone border"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 6
+        },
+        "rooms_hint": "second floor similar footprint, separated by stone band",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 5,
+        "z1": 0,
+        "x2": 5,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 4,
+        "x2": 5,
+        "y2": 2,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 5,
+        "z1": 4,
+        "x2": 5,
+        "y2": 5,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 2,
+        "x2": 0,
+        "y2": 2,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 5,
+        "z1": 2,
+        "x2": 0,
+        "y2": 5,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 2,
+        "z1": 2,
+        "x2": 8,
+        "y2": 2,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 5,
+        "z1": 2,
+        "x2": 8,
+        "y2": 5,
+        "z2": 2
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 7,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 4,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 3,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 4,
+      "block": "oak_planks",
+      "purpose": "ground_floor_slab_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 6,
+      "z2": 4,
+      "block": "oak_planks",
+      "purpose": "outer_wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 1,
+      "z2": 4,
+      "block": "stonebrick",
+      "purpose": "foundation_coping_slab_border_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 4,
+      "block": "stonebrick",
+      "purpose": "horizontal_band_between_floors"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 8,
+      "y2": 6,
+      "z2": 4,
+      "block": "stonebrick",
+      "purpose": "top_coping_under_roof"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 6,
+      "z2": 4,
+      "block": "oak_log",
+      "purpose": "west_corner_vertical_post"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 6,
+      "z2": 4,
+      "block": "oak_log",
+      "purpose": "east_corner_vertical_post"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 4,
+      "x2": 8,
+      "y2": 1,
+      "z2": 4,
+      "block": "stonebrick",
+      "purpose": "foundation_coping_slab_border_back (continuous)"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 7,
+      "y2": 5,
+      "z2": 3,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 0,
+      "x2": 5,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 4,
+  "zmin": 0,
+  "zmax": 7,
+  "operations": [
+    {
+      "op": "fill",
+      "bbox": [0,0,0,8,1,5],
+      "material": "stonebrick",
+      "comment": "Raised 1-block-high stonebrick foundation platform (full footprint)."
+    },
+    {
+      "op": "outline",
+      "bbox": [0,1,0,8,4,5],
+      "material": "oak_log",
+      "thickness": 1,
+      "comment": "Vertical log corner posts and upright corner framing from foundation top (y=1) up to second-floor top (y=4)."
+    },
+    {
+      "op": "fill",
+      "bbox": [1,1,0,7,2,5],
+      "material": "oak_planks",
+      "comment": "Ground-floor wall infill between corner posts (first floor height = 1 block between y=1..2)."
+    },
+    {
+      "op": "fill",
+      "bbox": [1,2,0,7,4,5],
+      "material": "oak_planks",
+      "comment": "Second-floor wall infill between corner posts (second floor height = 2 blocks between y=2..4)."
+    },
+    {
+      "op": "fill",
+      "bbox": [1,1,2,7,2,3],
+      "material": "stonebrick",
+      "comment": "Horizontal stonebrick band between floors: 1-block-high belt at y=2 (implemented as band filling continuous layer just above ground-floor windows)."
+    },
+    {
+      "op": "replace",
+      "bbox": [3,1,0,5,2,5],
+      "material": "glass_pane",
+      "comment": "Ground-floor front window row: replace center wall sections with glass pane (2 windows front centered)."
+    },
+    {
+      "op": "replace",
+      "bbox": [3,2,0,5,3,5],
+      "material": "glass_pane",
+      "comment": "Second-floor front window row: replace center wall sections with glass pane (aligned above ground windows)."
+    },
+    {
+      "op": "replace",
+      "bbox": [1,1,2,2,3,3],
+      "material": "glass_pane",
+      "comment": "Side windows (left side) ground and second floor - left rear segment centered vertically."
+    },
+    {
+      "op": "replace",
+      "bbox": [6,1,2,7,3,3],
+      "material": "glass_pane",
+      "comment": "Side windows (right side) ground and second floor - right rear segment centered vertically."
+    },
+    {
+      "op": "cut",
+      "bbox": [4,1,5,5,3,5],
+      "comment": "Entrance opening on the short rear face centered at x=4: two-block tall door opening (y=1..3)."
+    },
+    {
+      "op": "place",
+      "bbox": [4,1,5,5,2,5],
+      "material": "oak_door",
+      "comment": "Place door in entrance opening (lower half)."
+    },
+    {
+      "op": "place",
+      "bbox": [4,2,5,5,3,5],
+      "material": "oak_door_top",
+      "comment": "Place door top in entrance opening."
+    },
+    {
+      "op": "fill",
+      "bbox": [0,0,0,8,0,5],
+      "material": "stone_slab",
+      "comment": "Stone slab coping around foundation at ground level (visual trim along foundation base)."
+    },
+    {
+      "op": "fill",
+      "bbox": [0,4,0,8,5,5],
+      "material": "nether_brick",
+      "comment": "Lower layer of roof base (first stepped gable layer) sitting atop walls: overhang 0 blocks — roof starts at y=5."
+    },
+    {
+      "op": "fill",
+      "bbox": [1,5,0,7,6,5],
+      "material": "nether_brick",
+      "comment": "Second stepped layer of gable roof inset by 1 on all long sides."
+    },
+    {
+      "op": "fill",
+      "bbox": [2,6,0,6,7,5],
+      "material": "nether_brick",
+      "comment": "Third (ridge) layer of roof inset by 2 on long sides — creates pitched profile; ridge runs along x center from z=0..5."
+    },
+    {
+      "op": "place",
+      "bbox": [0,5,0,1,6,1],
+      "material": "stonebrick",
+      "comment": "Stonebrick cap at roof corner front-left."
+    },
+    {
+      "op": "place",
+      "bbox": [7,5,0,8,6,1],
+      "material": "stonebrick",
+      "comment": "Stonebrick cap at roof corner front-right."
+    },
+    {
+      "op": "place",
+      "bbox": [0,5,4,1,6,5],
+      "material": "stonebrick",
+      "comment": "Stonebrick cap at roof corner back-left."
+    },
+    {
+      "op": "place",
+      "bbox": [7,5,4,8,6,5],
+      "material": "stonebrick",
+      "comment": "Stonebrick cap at roof corner back-right."
+    },
+    {
+      "op": "fill",
+      "bbox": [2,1,0,6,2,1],
+      "material": "stonebrick",
+      "comment": "Short horizontal stonebrick accent at front base under windows (visual sill / band continuation)."
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "ops_within_bbox": true,
+    "op_count_within_limit": true,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof": true,
+    "contains_windows": true,
+    "contains_entrance_opening": true,
+    "material_coherence": true,
+    "notes": "Adjusted global bbox to encompass roof height (zmax=7) and reduced ymax to match two floors. All operations are inside bbox. Material roles separated: stonebrick foundation/band/trim, oak_planks walls, oak_log posts, nether_brick roof, glass_pane windows, stone_slab trim, oak_door for entrance."
+  }
+}

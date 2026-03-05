@@ -1,0 +1,67 @@
+{
+  "summary": "Small two-storey rectangular building with continuous horizontal window bands on both floors, light-colored corner and band trim, sandstone-like middle wall courses, and a stepped brick gable roof. A low white slab border surrounds the ground perimeter on a shallow foundation trench.",
+  "building_type": "residential_or_small_public",
+  "shape": {
+    "overall_form": "simple rectangular box with a centered stepped gable roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long center axis (front/back mirror)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 21,
+    "height": 9
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "sandstone",
+      "role": "main_wall_course",
+      "confidence": 0.90
+    },
+    {
+      "name": "quartz",
+      "role": "corner_and_horizontal_trim",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof_edge_caps",
+      "confidence": 0.60
+    },
+    {
+      "name": "air",
+      "role": "window_openings/interior_space",
+      "confidence": 0.99
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows (narrow strip windows) on each floor on long sides",
+    "stepped brick gable roof with small stone slab cap at peak and step corners",
+    "white slab border/low wall around building base (foundation edging)",
+    "horizontal white trim band between floors and at top corners"
+  ],
+  "rebuild_hints": [
+    "Footprint is a rectangle with long sides containing two horizontal rows of narrow windows each spanning most of the length; count approximately 9–11 window panes per long side.",
+    "Walls: use sandstone-like blocks for main mid sections, framed by full-height quartz (white) corner columns and a continuous quartz band between floors and at top for a boxy trim.",
+    "Roof: construct a centered gable made of brick blocks stepped upward in 1-block terraces toward the ridge; place stone/slab caps at the short-end ridge steps.",
+    "Perimeter: place a 1-block-high continuous white slab/edge around the base, set flush with ground and extending one block outward.",
+    "Height: each floor has ~3 blocks of wall height (windows centered in those courses); allow 2–3 blocks of stepped roof height above the top trim."
+  ],
+  "uncertainties": [
+    "Exact block types: sandstone and quartz are inferred visually; they may be sandstone/sandstone_smooth and quartz_block variants.",
+    "Dimensions: width/depth/height are estimated from images and top views; actual block counts may differ by ±2–3 blocks.",
+    "Interior layout and presence of doors or internal floors/stairs are not visible and thus unknown.",
+    "Foundation depth and whether the white perimeter is full blocks or slabs is uncertain (appears as slabs but could be blocks)."
+  ]
+}

@@ -1,0 +1,274 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 27,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 27
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "quartz",
+    "base": "quartz",
+    "tower": "stonebrick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 27,
+          "label": "outer_perimeter"
+        }
+      ],
+      "symmetry": "fourfold_with_asymmetry"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 5
+        },
+        "rooms_hint": "ground courtyard with base course",
+        "perimeter_profile": "rectangle_with_towers"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 6,
+          "ymax": 11
+        },
+        "rooms_hint": "second storey with windows",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 12,
+          "ymax": 17
+        },
+        "rooms_hint": "third storey with windows",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 7,
+        "z1": 0,
+        "x2": 6,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 13,
+        "y1": 7,
+        "z1": 0,
+        "x2": 13,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 20,
+        "y1": 7,
+        "z1": 0,
+        "x2": 20,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 13,
+        "z1": 0,
+        "x2": 6,
+        "y2": 14,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 13,
+        "y1": 13,
+        "z1": 0,
+        "x2": 13,
+        "y2": 14,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 20,
+        "y1": 13,
+        "z1": 0,
+        "x2": 20,
+        "y2": 14,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 13,
+        "y1": 1,
+        "z1": 0,
+        "x2": 14,
+        "y2": 4,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 17,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 17,
+          "x1": 8,
+          "z1": 2,
+          "x2": 19,
+          "z2": 13,
+          "block": "brick"
+        },
+        {
+          "y": 18,
+          "x1": 10,
+          "z1": 4,
+          "x2": 17,
+          "z2": 11,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 27,
+      "y2": 0,
+      "z2": 27,
+      "block": "quartz",
+      "purpose": "ground_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 27,
+      "y2": 5,
+      "z2": 27,
+      "block": "sandstone",
+      "purpose": "outer_wall_base"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 25,
+      "y2": 5,
+      "z2": 25,
+      "purpose": "courtyard_interior_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 26,
+      "y2": 1,
+      "z2": 26,
+      "block": "quartz",
+      "purpose": "base_course_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 27,
+      "y2": 11,
+      "z2": 27,
+      "block": "sandstone",
+      "purpose": "outer_wall_second_storey"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 6,
+      "z1": 2,
+      "x2": 25,
+      "y2": 11,
+      "z2": 25,
+      "purpose": "courtyard_interior_second"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 26,
+      "y2": 6,
+      "z2": 26,
+      "block": "quartz",
+      "purpose": "floor
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 27,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 27,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 27, "y2": 0, "z2": 27, "block": "sandstone", "description": "ground floor base"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 26, "y2": 1, "z2": 26, "block": "quartz", "description": "white base course interior"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 0, "y2": 3, "z2": 27, "block": "sandstone", "description": "west outer wall level 1-3"},
+    {"type": "fill", "x1": 27, "y1": 1, "z1": 0, "x2": 27, "y2": 3, "z2": 27, "block": "sandstone", "description": "east outer wall level 1-3"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 27, "y2": 3, "z2": 0, "block": "sandstone", "description": "north outer wall level 1-3"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 27, "x2": 27, "y2": 3, "z2": 27, "block": "sandstone", "description": "south outer wall level 1-3"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 1, "x2": 1, "y2": 2, "z2": 26, "block": "quartz", "description": "white banding level 2 west"},
+    {"type": "fill", "x1": 26, "y1": 2, "z1": 1, "x2": 26, "y2": 2, "z2": 26, "block": "quartz", "description": "white banding level 2 east"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 1, "x2": 26, "y2": 2, "z2": 1, "block": "quartz", "description": "white banding level 2 north"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 26, "x2": 26, "y2": 2, "z2": 26, "block": "quartz", "description": "white banding level 2 south"},
+    {"type": "setblock", "x": 0, "y": 1, "z": 13, "block": "air", "description": "entrance opening north"},
+    {"type": "setblock", "x": 0, "y": 2, "z": 13, "block": "air", "description": "entrance opening north upper"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 2, "x2": 2, "y2": 3, "z2": 2, "block": "glass", "description": "window NW corner level 1-3"},
+    {"type": "fill", "x1": 25, "y1": 1, "z1": 2, "x2": 25, "y2": 3, "z2": 2, "block": "glass", "description": "window NE corner level 1-3"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 25, "x2": 2, "y2": 3, "z2": 25, "block": "glass", "description": "window SW corner level 1-3"},
+    {"type": "fill", "x1": 25, "y1": 1, "z1": 25, "x2": 25, "y2": 3, "z2": 25, "block": "glass", "description": "window SE corner level 1-3"},
+    {"type": "fill", "x1": 0, "y1": 4, "z1": 0, "x2": 4, "y2": 14, "z2": 4, "block": "stonebrick", "description": "NW corner tower"},
+    {"type": "fill", "x1": 23, "y1": 4, "z1": 0, "x2": 27, "y2": 14, "z2": 4, "block": "stonebrick", "description": "NE corner tower"},
+    {"type": "fill", "x1": 0, "y1": 4, "z1": 23, "x2": 4, "y2": 14, "z2": 27, "block": "stonebrick", "description": "SW corner tower"},
+    {"type": "fill", "x1": 23, "y1": 4, "z1": 23, "x2": 27, "y2": 14, "z2": 27, "block": "stonebrick", "description": "SE corner tower"},
+    {"type": "fill", "x1": 1, "y1": 14, "z1": 1, "x2": 3, "y2": 16, "z2": 3, "block": "slab_stone", "description": "NW tower cap"},
+    {"type": "fill", "x1": 24, "y1": 14, "z1": 1, "x2": 26, "y2": 16, "z2": 3, "block": "slab_stone", "description": "NE tower cap"},
+    {"type": "fill", "x1": 1, "y1": 14, "z1": 24, "x2": 3, "y2": 16, "z2": 26, "block": "slab_stone", "description": "SW tower cap"},
+    {"type": "fill", "x1": 24, "y1": 14, "z1": 24, "x2": 26, "y2": 16, "z2": 26, "block": "slab_stone", "description": "SE tower cap"},
+    {"type": "fill", "x1": 10, "y1": 1, "z1": 5, "x2": 17, "y2": 10, "z2": 22, "block": "brick", "description": "semicircular roof base layer 1"},
+    {"type": "fill", "x1": 11, "y1": 5, "z1": 6, "x2": 16, "y2": 9, "z2": 21, "block": "brick", "description": "semicircular roof layer 2"},
+    {"type": "fill", "x1

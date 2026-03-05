@@ -1,0 +1,271 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 16,
+    "ymin": 0,
+    "ymax": 16,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "oak_planks",
+    "roof": "nether_brick",
+    "trim": "dark_oak_log",
+    "stone": "stone_slab",
+    "foundation": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 32,
+          "label": "main_hall"
+        }
+      ],
+      "symmetry": "x_axis_bilateral"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 5
+        },
+        "rooms_hint": "ground_level_hall",
+        "perimeter_profile": "rectangle_with_foundation"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 6,
+          "ymax": 10
+        },
+        "rooms_hint": "mid_level_hall",
+        "perimeter_profile": "stepped_inward"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 11,
+          "ymax": 14
+        },
+        "rooms_hint": "upper_level_hall",
+        "perimeter_profile": "stepped_inward"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 7,
+        "y1": 1,
+        "z1": 0,
+        "x2": 9,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 14,
+        "y1": 2,
+        "z1": 0,
+        "x2": 14,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 32,
+        "x2": 2,
+        "y2": 3,
+        "z2": 32
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 14,
+        "y1": 2,
+        "z1": 32,
+        "x2": 14,
+        "y2": 3,
+        "z2": 32
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 15,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 15,
+          "x1": 6,
+          "z1": 0,
+          "x2": 10,
+          "z2": 32,
+          "block": "nether_brick"
+        },
+        {
+          "y": 16,
+          "x1": 7,
+          "z1": 2,
+          "x2": 9,
+          "z2": 30,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 32,
+      "block": "oak_planks",
+      "purpose": "ground_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 5,
+      "z2": 32,
+      "block": "oak_planks",
+      "purpose": "ground_level_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 15,
+      "y2": 5,
+      "z2": 31,
+      "purpose": "ground_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 16,
+      "y2": 5,
+      "z2": 32,
+      "block": "stone_slab",
+      "purpose": "floor_band_1"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 15,
+      "y2": 10,
+      "z2": 31,
+      "block": "oak_planks",
+      "purpose": "mid_level_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 6,
+      "z1": 2,
+      "x2": 14,
+      "y2": 10,
+      "z2": 30,
+      "purpose": "mid_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 10,
+      "z1": 1,
+      "x2": 15,
+      "y2": 10,
+      "z2": 31,
+      "block": "stone_slab",
+      "purpose": "floor_band_2"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 11,
+      "z1": 2,
+      "x2": 14,
+      "y2": 14,
+      "z2": 30,
+      "block": "oak_planks",
+      "purpose": "upper_level_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 11,
+      "
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 16,
+  "ymin": 0,
+  "ymax": 32,
+  "zmin": 0,
+  "zmax": 16,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 16, "y2": 32, "z2": 0, "block": "stone_slab", "description": "foundation base layer"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 15, "y2": 31, "z2": 1, "block": "wood_planks", "description": "floor level 1"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 5, "x2": 14, "y2": 30, "z2": 5, "block": "wood_planks", "description": "floor level 2"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 9, "x2": 13, "y2": 29, "z2": 9, "block": "wood_planks", "description": "floor level 3"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 2, "x2": 15, "y2": 31, "z2": 4, "block": "wood_planks", "description": "walls level 1"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 6, "x2": 14, "y2": 30, "z2": 8, "block": "wood_planks", "description": "walls level 2"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 10, "x2": 13, "y2": 29, "z2": 12, "block": "wood_planks", "description": "walls level 3"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 0, "y2": 32, "z2": 4, "block": "log_dark", "description": "left perimeter trim"},
+    {"type": "fill", "x1": 16, "y1": 0, "z1": 1, "x2": 16, "y2": 32, "z2": 4, "block": "log_dark", "description": "right perimeter trim"},
+    {"type": "fill", "x1": 1, "y1": 0, "z1": 1, "x2": 15, "y2": 0, "z2": 4, "block": "log_dark", "description": "front perimeter trim"},
+    {"type": "fill", "x1": 1, "y1": 32, "z1": 1, "x2": 15, "y2": 32, "z2": 4, "block": "log_dark", "description": "rear perimeter trim"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 5, "x2": 16, "y2": 32, "z2": 5, "block": "stone_slab", "description": "ledge between floors 1-2"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 9, "x2": 15, "y2": 31, "z2": 9, "block": "stone_slab", "description": "ledge between floors 2-3"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 13, "x2": 16, "y2": 32, "z2": 13, "block": "stone_slab", "description": "ledge at roof base"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 32, "z2": 0, "block": "stonebrick", "description": "left foundation edge"},
+    {"type": "fill", "x1": 16, "y1": 0, "z1": 0, "x2": 16, "y2": 32, "z2": 0, "block": "stonebrick", "description": "right foundation edge"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 16, "y2": 0, "z2": 0, "block": "stonebrick", "description": "front foundation edge"},
+    {"type": "fill", "x1": 0, "y1": 32, "z1": 0, "x2": 16, "y2": 32, "z2": 0, "block": "stonebrick", "description": "rear foundation edge"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 14, "x2": 16, "y2": 32, "z2": 16, "block": "nether_brick", "description": "central roof ridge"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 14, "x2": 0, "y2": 32, "z2": 15, "block": "log_dark", "description": "left roof edge"},
+    {"type": "fill", "x1": 16, "y1": 0, "z1": 14, "x2": 16, "y2": 32, "z2": 15, "block": "log_dark", "description": "right roof edge"},
+    {"type": "setblock", "x": 8, "y": 16, "z": 16, "block": "glowstone", "description": "roof center lamp"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 13, "x2": 0, "y2": 32, "z2": 13, "block": "log_dark", "description": "left tower pillar base"},
+    {"type": "fill", "x1": 16, "y1": 0, "z1": 13, "x2": 16, "y2": 32, "z2": 13, "block": "log_dark", "description": "right tower pillar base"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 14, "x2": 1, "y2": 8, "z2": 15, "block": "log_dark", "description": "front-left tower"},
+    {"type": "fill", "x1": 15, "y1": 0, "z1": 14, "x2": 16, "y2": 8, "z2": 15, "block": "log_dark", "description": "front-right tower"},
+    {"type

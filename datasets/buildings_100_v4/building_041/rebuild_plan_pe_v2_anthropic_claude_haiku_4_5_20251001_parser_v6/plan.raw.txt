@@ -1,0 +1,271 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 27,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 23
+  },
+  "palette": {
+    "wall": "wood",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "accent": "redstone_block"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 23,
+          "label": "main_body"
+        }
+      ],
+      "symmetry": "four_way_approximate"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 6
+        },
+        "rooms_hint": "single warehouse hall",
+        "perimeter_profile": "rectangle_with_chamfered_corners"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 13,
+        "y1": 1,
+        "z1": 0,
+        "x2": 14,
+        "y2": 4,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 7,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 23,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 23,
+          "block": "stonebrick"
+        },
+        {
+          "y": 9,
+          "x1": 1,
+          "z1": 1,
+          "x2": 26,
+          "z2": 22,
+          "block": "redstone_block"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 27,
+      "y2": 0,
+      "z2": 23,
+      "block": "wood",
+      "purpose": "ground_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 27,
+      "y2": 6,
+      "z2": 23,
+      "block": "wood",
+      "purpose": "outer_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 25,
+      "y2": 6,
+      "z2": 21,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 27,
+      "y2": 2,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "belt_course_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 27,
+      "y2": 4,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "belt_course_middle"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 27,
+      "y2": 6,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "belt_course_upper"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 6,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "corner_pilaster_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 27,
+      "y1": 1,
+      "z1": 0,
+      "x2": 27,
+      "y2": 6,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "corner_pilaster_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 23,
+      "x2": 27,
+      "y2": 6,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "corner_pilaster_sw_se"
+    },
+    {
+      "op": "carve",
+      "x1": 13,
+      "y1": 1,
+      "z1": 0,
+      "x2": 14,
+      "y2": 4,
+      "z2": 0,
+      "purpose": "entrance_door"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 27,
+      "y2": 7,
+      "z2": 23,
+      "block": "nether_brick",
+      "purpose": "roof_surface"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 27,
+      "y2": 8,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "parapet_wall"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 8,
+      "z1": 1,
+      "x2": 26,
+      "y2": 8,
+      "z2": 22,
+      "purpose": "parapet_hollow"
+    },
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 27,
+  "ymin": 0,
+  "ymax": 9,
+  "zmin": 0,
+  "zmax": 23,
+  "operations": [
+    {"type": "fill", "x1": 2, "y1": 0, "z1": 2, "x2": 25, "y2": 0, "z2": 21, "block": "stone_bricks", "desc": "ground level foundation"},
+    {"type": "fill", "x1": 3, "y1": 1, "z1": 3, "x2": 24, "y2": 1, "z2": 20, "block": "oak_planks", "desc": "floor layer"},
+    {"type": "fill", "x1": 3, "y1": 2, "z1": 3, "x2": 24, "y2": 7, "z2": 20, "block": "oak_planks", "desc": "primary wall fill"},
+    {"type": "fill", "x1": 3, "y1": 2, "z1": 3, "x2": 24, "y2": 2, "z2": 20, "block": "stone_bricks", "desc": "first belt course"},
+    {"type": "fill", "x1": 3, "y1": 4, "z1": 3, "x2": 24, "y2": 4, "z2": 20, "block": "stone_bricks", "desc": "second belt course"},
+    {"type": "fill", "x1": 3, "y1": 6, "z1": 3, "x2": 24, "y2": 6, "z2": 20, "block": "stone_bricks", "desc": "third belt course"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 3, "x2": 3, "y2": 6, "z2": 3, "block": "stone_bricks", "desc": "corner pilaster NW"},
+    {"type": "fill", "x1": 24, "y1": 3, "z1": 3, "x2": 24, "y2": 6, "z2": 3, "block": "stone_bricks", "desc": "corner pilaster NE"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 20, "x2": 3, "y2": 6, "z2": 20, "block": "stone_bricks", "desc": "corner pilaster SW"},
+    {"type": "fill", "x1": 24, "y1": 3, "z1": 20, "x2": 24, "y2": 6, "z2": 20, "block": "stone_bricks", "desc": "corner pilaster SE"},
+    {"type": "fill", "x1": 3, "y1": 2, "z1": 10, "x2": 24, "y2": 2, "z2": 10, "block": "stone_bricks", "desc": "entrance belt course"},
+    {"type": "setblock", "x": 13, "y": 2, "z": 10, "block": "air", "desc": "entrance opening main"},
+    {"type": "setblock", "x": 12, "y": 2, "z": 10, "block": "air", "desc": "entrance opening left"},
+    {"type": "setblock", "x": 14, "y": 2, "z": 10, "block": "air", "desc": "entrance opening right"},
+    {"type": "fill", "x1": 5, "y1": 3, "z1": 3, "x2": 7, "y2": 5, "z2": 3, "block": "glass", "desc": "window NW side"},
+    {"type": "fill", "x1": 20, "y1": 3, "z1": 3, "x2": 22, "y2": 5, "z2": 3, "block": "glass", "desc": "window NE side"},
+    {"type": "fill", "x1": 5, "y1": 3, "z1": 20, "x2": 7, "y2": 5, "z2": 20, "block": "glass", "desc": "window SW side"},
+    {"type": "fill", "x1": 20, "y1": 3, "z1": 20, "x2": 22, "y2": 5, "z2": 20, "block": "glass", "desc": "window SE side"},
+    {"type": "fill", "x1": 3, "y1": 8, "z1": 3, "x2": 24, "y2": 8, "z2": 20, "block": "nether_bricks", "desc": "roof fill"},
+    {"type": "fill", "x1": 2, "y1": 8, "z1": 2, "x2": 25, "y2": 8, "z2": 21, "block": "stone_bricks", "desc": "parapet base"},
+    {"type": "fill", "x1": 2, "y1": 8, "z1": 2, "x2": 25, "y2": 8, "z2": 2, "block": "redstone_block", "desc": "dark red trim north"},
+    {"type": "fill", "x1": 2, "y1": 8, "z1": 21, "x2": 25, "y2": 8, "z2": 21, "block": "redstone_block", "desc": "dark red trim south"},
+    {"type": "fill", "x1": 2, "y1": 8, "z1": 2, "x2": 2, "y2": 8, "z2": 21, "block": "redstone_block", "desc": "dark red trim west"},
+    {"type": "fill", "x1": 25, "y1": 8, "z1": 2, "x2": 25, "y2": 8, "z2": 21, "block": "redstone_block", "desc": "dark red trim east"},
+    {"type": "setblock", "x": 2, "y": 9, "z": 2, "block": "glowstone", "desc": "corner lamp NW"},
+    {"type": "setblock", "x": 25, "y": 9, "z": 2, "block": "glowstone", "desc": "corner lamp NE"},
+    {"type": "setblock", "x": 2, "y": 9, "z": 21, "block": "glowstone", "desc": "corner lamp SW"},
+    {"type": "setblock", "x": 25, "y": 9, "z": 21, "block": "glowstone", "desc": "corner lamp SE"},
+    {"type": "fill", "x1": 1, "y1": 0, "z1": 1, "x2":

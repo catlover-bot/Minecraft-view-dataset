@@ -1,0 +1,463 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "brick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 32,
+          "label": "outer_courtyard"
+        }
+      ],
+      "symmetry": "bilateral_along_z_centerline"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "open courtyard with two long wing blocks and central raised platform/tower",
+        "perimeter_profile": "rectangular courtyard with low parapet"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 10,
+        "y1": 1,
+        "z1": 32,
+        "x2": 11,
+        "y2": 3,
+        "z2": 32
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 2,
+        "z1": 12,
+        "x2": 20,
+        "y2": 3,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 12,
+        "x2": 0,
+        "y2": 3,
+        "z2": 13
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 32,
+          "block": "brick"
+        },
+        {
+          "y": 6,
+          "x1": 6,
+          "z1": 12,
+          "x2": 14,
+          "z2": 20,
+          "block": "brick"
+        },
+        {
+          "y": 7,
+          "x1": 8,
+          "z1": 14,
+          "x2": 12,
+          "z2": 18,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 32,
+      "block": "brick",
+      "purpose": "courtyard_paving_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 2,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "perimeter_low_course_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 2,
+      "z2": 31,
+      "block": "sandstone",
+      "purpose": "inner_wall_middle_band (visual banding)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 19,
+      "y2": 3,
+      "z2": 31,
+      "block": "wood",
+      "purpose": "upper_wooden_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 20,
+      "y2": 3,
+      "z2": 32,
+      "block": "quartz_block",
+      "purpose": "parapet_quartz_coping"
+    },
+    {
+      "op": "carve",
+      "x1": 6,
+      "y1": 1,
+      "z1": 0,
+      "x2": 14,
+      "y2": 4,
+      "z2": 32,
+      "purpose": "clear_central_walkway_volume (T-shaped path corridor)"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 1,
+      "z2": 12,
+      "block": "brick",
+      "purpose": "south_north_stem_of_T_paving"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 1,
+      "z1": 12,
+      "x2": 14,
+      "y2": 1,
+      "z2": 14,
+      "block": "brick",
+      "purpose": "crossbar_of_T_paving"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 2,
+      "z1": 12,
+      "x2": 12,
+      "y2": 2,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "raised_platform_base"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 3,
+      "z1": 13,
+      "x2": 11,
+      "y2": 3,
+      "z2": 15,
+      "block": "stonebrick",
+      "purpose": "central_tower_body_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 4,
+      "z1": 13,
+      "x2": 11,
+      "y2": 6,
+      "z2": 15,
+      "block": "stonebrick",
+      "purpose": "central_tower_body"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 6,
+      "z1": 12,
+      "x2": 12,
+      "y2": 6,
+      "z2": 16,
+      "block": "brick",
+      "purpose": "tower_flat_roof_brick"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 6,
+      "z1": 12,
+      "x2": 12,
+      "y2": 7,
+      "z2": 16,
+      "block": "quartz_block",
+      "purpose": "tower_roof_quartz_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 6,
+      "x2": 6,
+      "y2": 3,
+      "z2": 26,
+      "block": "stonebrick",
+      "purpose": "west_w
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 21,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 33,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [0, 0, 0],
+      "to": [20, 0, 32],
+      "comment": "ground/foundation layer (stonebrick) 1-high across footprint"
+    },
+    {
+      "op": "replace_area",
+      "block": "stonebrick",
+      "from": [0, 1, 0],
+      "to": [20, 1, 32],
+      "comment": "raise 2nd course of stonebrick base around perimeter and under wings/platform"
+    },
+    {
+      "op": "fill",
+      "block": "brick",
+      "from": [8, 1, 0],
+      "to": [12, 1, 32],
+      "comment": "central T-shaped walkway vertical stem (will be widened and extended in next ops) - base brick paving"
+    },
+    {
+      "op": "fill",
+      "block": "brick",
+      "from": [0, 1, 14],
+      "to": [20, 1, 18],
+      "comment": "central T-shaped walkway horizontal cross bar (brick paving)"
+    },
+    {
+      "op": "clear",
+      "from": [9, 1, 15],
+      "to": [11, 3, 17],
+      "comment": "entrance opening through crossbar area (creates a recessed entrance corridor) - ensures an entrance opening exists"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [1, 2, 1],
+      "to": [4, 2, 31],
+      "comment": "left wing solid middle base (stonebrick) at wall height 3 (y=0 ground + layers)"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [16, 2, 1],
+      "to": [19, 2, 31],
+      "comment": "right wing solid middle base (stonebrick)"
+    },
+    {
+      "op": "fill",
+      "block": "wood",
+      "from": [1, 3, 1],
+      "to": [4, 3, 31],
+      "comment": "left wing decorative lower band (wood) above stonebrick base"
+    },
+    {
+      "op": "fill",
+      "block": "wood",
+      "from": [16, 3, 1],
+      "to": [19, 3, 31],
+      "comment": "right wing decorative lower band (wood)"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [1, 4, 1],
+      "to": [4, 4, 31],
+      "comment": "left wing middle light band (sandstone)"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [16, 4, 1],
+      "to": [19, 4, 31],
+      "comment": "right wing middle light band (sandstone)"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 5, 0],
+      "to": [20, 6, 32],
+      "comment": "quartz parapet band and low outer boundary (2-high parapet/trim across top edges). Extends slightly beyond wings to act as edging."
+    },
+    {
+      "op": "hollow_rect",
+      "block": "air",
+      "from": [2, 2, 2],
+      "to": [18, 5, 30],
+      "thickness": 1,
+      "comment": "create internal courtyard open space by hollowing interior while preserving boundary walls"
+    },
+    {
+      "op": "fill",
+      "block": "brick",
+      "from": [8, 2, 13],
+      "to": [12, 2, 19],
+      "comment": "raised central platform footprint (4x6) brick paved at y=2"
+    },
+    {
+      "op": "raise",
+      "block": "stonebrick",
+      "from": [9, 3, 15],
+      "to": [11, 5, 17],
+      "comment": "central raised tower/pillar (3-high above platform) stonebrick for solidity"
+    },
+    {
+      "op": "fill",
+      "block": "brick",
+      "from": [8, 5, 14],
+      "to": [12, 5, 18],
+      "comment": "flat multi-layered roof cap on tower: brick center layer at roof level y=5"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [7, 5, 13],
+      "to": [13, 5, 19],
+      "comment": "quartz edging around tower roof at same level to provide white trim"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 7, 0],
+      "to": [20, 7, 32],
+      "comment": "thin quartz cap along top of parapet at y=7 to finish roofline"
+    },
+    {
+      "op": "place",
+      "block": "quartz_pillar",
+      "from": [1, 6, 1],
+      "to": [1, 7, 1],
+      "comment": "left-front corner vertical pillar extension (quartz) - extends above parapet"
+    },
+    {
+      "op": "place",
+      "block": "quartz_pillar",
+      "from": [19, 6, 1],
+      "to": [19, 7, 1],
+      "comment": "right-front corner pillar"
+    },
+    {
+      "op": "place",
+      "block": "quartz_pillar",
+      "from": [1, 6, 31],
+      "to": [1, 7, 31],
+      "comment": "left-back corner pillar"
+    },
+    {
+      "op": "place",
+      "block": "quartz_pillar",
+      "from": [19, 6, 31],
+      "to": [19, 7, 31],
+      "comment": "right-back corner pillar"
+    },
+    {
+      "op": "place",
+      "block": "glass_pane",
+      "from": [3, 3, 6],
+      "to": [3, 4, 6],
+      "comment": "small window left wing (glass pane) - narrow vertical slit"
+    },
+    {
+      "op": "place",
+      "block": "glass_pane",
+      "from": [17, 3, 6],
+      "to": [17, 4, 6],
+      "comment": "small window right wing"
+    },
+    {
+      "op": "place",
+      "block": "glowstone",
+      "from": [2, 7, 2],
+      "to": [2, 7, 2],
+      "comment": "glowstone light marker on parapet"
+    },
+    {
+      "op": "place",
+      "block": "glowstone",
+      "from": [18, 7, 2],
+      "to": [18, 7, 2],
+      "comment": "glowstone on parapet"
+    },
+    {
+      "op": "place",
+      "block": "glowstone",
+      "from": [10, 6, 16],
+      "to": [10, 6, 16],
+      "comment": "glowstone on top of central tower below roof cap"
+    },
+    {
+      "op": "fill",
+      "block

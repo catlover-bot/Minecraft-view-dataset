@@ -1,0 +1,462 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "sea_lantern",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 32,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_along_z_center (front-back)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single elongated hall with hollow interior and tower cores",
+        "perimeter_profile": "rectangular with corner towers"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 15,
+        "y1": 2,
+        "z1": 0,
+        "x2": 15,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 10,
+        "y1": 2,
+        "z1": 32,
+        "x2": 10,
+        "y2": 3,
+        "z2": 32
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 3,
+        "z1": 8,
+        "x2": 20,
+        "y2": 4,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 3,
+        "z1": 24,
+        "x2": 0,
+        "y2": 4,
+        "z2": 24
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 30,
+          "block": "wood"
+        },
+        {
+          "y": 6,
+          "x1": 3,
+          "z1": 3,
+          "x2": 17,
+          "z2": 29,
+          "block": "wood"
+        },
+        {
+          "y": 7,
+          "x1": 4,
+          "z1": 5,
+          "x2": 16,
+          "z2": 27,
+          "block": "wood"
+        },
+        {
+          "y": 8,
+          "x1": 6,
+          "z1": 8,
+          "x2": 14,
+          "z2": 24,
+          "block": "wood"
+        },
+        {
+          "y": 9,
+          "x1": 8,
+          "z1": 11,
+          "x2": 12,
+          "z2": 21,
+          "block": "wood"
+        },
+        {
+          "y": 10,
+          "x1": 9,
+          "z1": 14,
+          "x2": 11,
+          "z2": 19,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 32,
+      "block": "dirt",
+      "purpose": "ground_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 32,
+      "block": "slab_stone",
+      "purpose": "foundation_platform"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 1,
+      "z2": 31,
+      "block": "floor",
+      "purpose": "inner_ground_fill"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2": 31,
+      "block": "stonebrick",
+      "purpose": "main_hall_shell_outer"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 19,
+      "y2": 2,
+      "z2": 31,
+      "block": "brick",
+      "purpose": "lower_decorative_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 19,
+      "y2": 3,
+      "z2": 31,
+      "block": "quartz_block",
+      "purpose": "white_trim_band"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 18,
+      "y2": 4,
+      "z2": 30,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 3,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "entrance_platform"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 3,
+      "z2": 0,
+      "purpose": "door_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "front_perimeter
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 32,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 20, 0, 32],
+      "block": "dirt",
+      "desc": "ground fill (1-block high) within foundation footprint"
+    },
+    {
+      "op": "outline",
+      "box": [1, 1, 1, 19, 1, 31],
+      "block": "stonebrick",
+      "desc": "foundation perimeter (stonebrick trim) 1-block high base band"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 19, 1, 31],
+      "block": "brick",
+      "desc": "lower decorative band (single layer) inside stonebrick outline"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 18, 2, 30],
+      "block": "stonebrick",
+      "desc": "main wall base layer (stonebrick) at y=2"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 2, 18, 3, 30],
+      "block": "quartz_block",
+      "desc": "white horizontal trim mid-layer at y=3"
+    },
+    {
+      "op": "fill",
+      "box": [2, 4, 2, 18, 7, 30],
+      "block": "stonebrick",
+      "desc": "upper wall mass from y=4 to y=7"
+    },
+    {
+      "op": "fill",
+      "box": [5, 2, 1, 15, 2, 1],
+      "block": "stonebrick",
+      "desc": "front entrance platform edge (stonebrick trim) along short side center"
+    },
+    {
+      "op": "clear",
+      "box": [10, 2, 0, 10, 4, 0],
+      "block": "air",
+      "desc": "entrance opening (2 high) centered on front short side at z=0"
+    },
+    {
+      "op": "stairs",
+      "box": [8, 1, 0, 12, 1, 0],
+      "block": "wooden_stairs",
+      "desc": "three-step entrance stairs leading up to platform"
+    },
+    {
+      "op": "fill",
+      "box": [2, 4, 2, 4, 11, 4],
+      "block": "stonebrick",
+      "desc": "left-front tower (3x3 footprint) from y=4 to y=11"
+    },
+    {
+      "op": "fill",
+      "box": [14, 4, 2, 16, 11, 4],
+      "block": "stonebrick",
+      "desc": "right-front tower (3x3 footprint) from y=4 to y=11"
+    },
+    {
+      "op": "fill",
+      "box": [8, 4, 27, 10, 11, 29],
+      "block": "stonebrick",
+      "desc": "rear-center tower (3x3 footprint) from y=4 to y=11"
+    },
+    {
+      "op": "fill",
+      "box": [2, 11, 2, 4, 11, 4],
+      "block": "stone_slab",
+      "desc": "left-front tower slab cap"
+    },
+    {
+      "op": "fill",
+      "box": [14, 11, 2, 16, 11, 4],
+      "block": "stone_slab",
+      "desc": "right-front tower slab cap"
+    },
+    {
+      "op": "fill",
+      "box": [8, 11, 27, 10, 11, 29],
+      "block": "stone_slab",
+      "desc": "rear-center tower slab cap"
+    },
+    {
+      "op": "set",
+      "box": [3, 6, 3, 3, 6, 3],
+      "block": "glass",
+      "desc": "left-front tower small window (single block)"
+    },
+    {
+      "op": "set",
+      "box": [15, 6, 3, 15, 6, 3],
+      "block": "glass",
+      "desc": "right-front tower small window"
+    },
+    {
+      "op": "set",
+      "box": [9, 6, 28, 9, 6, 28],
+      "block": "glass",
+      "desc": "rear tower small window"
+    },
+    {
+      "op": "fill",
+      "box": [5, 5, 5, 15, 6, 27],
+      "block": "air",
+      "desc": "main interior space (clear area) between towers and walls"
+    },
+    {
+      "op": "fill",
+      "box": [5, 2, 5, 15, 2, 27],
+      "block": "wood",
+      "desc": "interior floor planks at y=2"
+    },
+    {
+      "op": "outline",
+      "box": [4, 2, 4, 16, 2, 28],
+      "block": "wooden_slab",
+      "desc": "raised entrance platform edging (wooden slab) one block border"
+    },
+    {
+      "op": "fill",
+      "box": [6, 8, 6, 14, 8, 26],
+      "block": "wooden_slab",
+      "desc": "roof first stepped layer (slab) around interior, y=8"
+    },
+    {
+      "op": "fill",
+      "box": [7, 9, 7, 13, 9, 25],
+      "block": "wooden_slab",
+      "desc": "roof second stepped layer (slab) y=9"
+    },
+    {
+      "op": "fill",
+      "box": [8, 10, 8, 12, 10, 24],
+      "block": "wooden_stairs",
+      "desc": "roof third layer using stairs to form curved appearance y=10"
+    },
+    {
+      "op": "fill",
+      "box": [9, 11, 9, 11, 11, 23],
+      "block": "wood",
+      "desc": "roof ridge center block at y=11"
+    },
+    {
+      "op": "fill",
+      "box": [4, 7, 4, 16, 7, 28],
+      "block": "quartz_block",
+      "desc": "vertical corner pilasters/trim at mid-wall height (single layer) for visual white accents"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 6, 2, 7, 10],
+      "block": "stonebrick",
+      "desc": "short left wall extension aligning with left tower"
+    },
+    {
+      "op": "fill",
+      "box": [18, 2, 6, 18, 7, 10],
+      "block": "stonebrick",
+      "desc": "short right wall extension aligning with right tower"
+    },
+    {
+      "op": "set",
+      "box": [6, 4, 6, 6, 4, 6],
+      "block": "glass",
+      "desc": "main hall side window left"
+    },
+    {
+      "op": "set",
+      "box": [14, 4, 6, 14, 4, 6],
+      "block": "glass",
+      "desc": "main hall side window right"
+    },
+    {
+      "op": "set

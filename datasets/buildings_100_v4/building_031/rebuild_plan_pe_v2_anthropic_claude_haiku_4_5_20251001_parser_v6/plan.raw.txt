@@ -1,0 +1,276 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 12
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "white_band": "quartz_block",
+    "base": "stone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 12,
+          "label": "main_body"
+        }
+      ],
+      "symmetry": "bilateral_x_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 2
+        },
+        "rooms_hint": "raised base platform with perimeter footing",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 3,
+          "ymax": 8
+        },
+        "rooms_hint": "main hall with stepped terraces",
+        "perimeter_profile": "rectangle_stepped"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 9,
+          "ymax": 14
+        },
+        "rooms_hint": "upper level with tower integration",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 6,
+        "z1": 0,
+        "x2": 4,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 6,
+        "z1": 0,
+        "x2": 16,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 4,
+        "y1": 6,
+        "z1": 12,
+        "x2": 4,
+        "y2": 7,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 16,
+        "y1": 6,
+        "z1": 12,
+        "x2": 16,
+        "y2": 7,
+        "z2": 12
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 9,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 9,
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 12,
+          "block": "wood"
+        },
+        {
+          "y": 10,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 11,
+          "block": "wood"
+        },
+        {
+          "y": 11,
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 10,
+          "block": "wood"
+        },
+        {
+          "y": 12,
+          "x1": 3,
+          "z1": 3,
+          "x2": 17,
+          "z2": 9,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 12,
+      "block": "stone",
+      "purpose": "base_platform"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 2,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "raised_base_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 2,
+      "z2": 11,
+      "purpose": "base_interior"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "block": "quartz_block",
+      "purpose": "corner_block_nw"
+    },
+    {
+      "op": "set",
+      "x": 20,
+      "y": 1,
+      "z": 0,
+      "block": "quartz_block",
+      "purpose": "corner_block_ne"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 1,
+      "z": 12,
+      "block": "quartz_block",
+      "purpose": "corner_block_sw"
+    },
+    {
+      "op": "set",
+      "x": 20,
+      "y": 1,
+      "z": 12,
+      "block": "quartz_block",
+      "purpose": "corner_block_se"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 20,
+      "y2": 8,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "main_body_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 3,
+      "z1": 2,
+      "x2": 18,
+      "y2": 8,
+      "z2": 10,
+      "purpose": "main_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 20,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 20, "y2": 18, "z2": 0, "block": "stone_bricks", "description": "foundation base layer"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 19, "y2": 17, "z2": 1, "block": "oak_planks", "description": "ground floor"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 2, "x2": 18, "y2": 16, "z2": 7, "block": "air", "description": "interior hollow space"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 2, "x2": 18, "y2": 16, "z2": 2, "block": "oak_planks", "description": "second floor"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 5, "x2": 18, "y2": 16, "z2": 5, "block": "oak_planks", "description": "third floor"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 2, "x2": 5, "y2": 5, "z2": 14, "block": "stone_bricks", "description": "corner tower NW"},
+    {"type": "fill", "x1": 15, "y1": 2, "z1": 2, "x2": 18, "y2": 5, "z2": 14, "block": "stone_bricks", "description": "corner tower NE"},
+    {"type": "fill", "x1": 2, "y1": 13, "z1": 2, "x2": 5, "y2": 16, "z2": 14, "block": "stone_bricks", "description": "corner tower SW"},
+    {"type": "fill", "x1": 15, "y1": 13, "z1": 2, "x2": 18, "y2": 16, "z2": 14, "block": "stone_bricks", "description": "corner tower SE"},
+    {"type": "fill", "x1": 6, "y1": 2, "z1": 2, "x2": 14, "y2": 16, "z2": 8, "block": "stone_bricks", "description": "main central walls"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 14, "x2": 5, "y2": 5, "z2": 15, "block": "stone_slabs", "description": "NW tower cap"},
+    {"type": "fill", "x1": 15, "y1": 2, "z1": 14, "x2": 18, "y2": 5, "z2": 15, "block": "stone_slabs", "description": "NE tower cap"},
+    {"type": "fill", "x1": 2, "y1": 13, "z1": 14, "x2": 5, "y2": 16, "z2": 15, "block": "stone_slabs", "description": "SW tower cap"},
+    {"type": "fill", "x1": 15, "y1": 13, "z1": 14, "x2": 18, "y2": 16, "z2": 15, "block": "stone_slabs", "description": "SE tower cap"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 14, "x2": 4, "y2": 4, "z2": 15, "block": "oak_planks", "description": "NW tower roof center"},
+    {"type": "fill", "x1": 16, "y1": 3, "z1": 14, "x2": 17, "y2": 4, "z2": 15, "block": "oak_planks", "description": "NE tower roof center"},
+    {"type": "fill", "x1": 3, "y1": 14, "z1": 14, "x2": 4, "y2": 15, "z2": 15, "block": "oak_planks", "description": "SW tower roof center"},
+    {"type": "fill", "x1": 16, "y1": 14, "z1": 14, "x2": 17, "y2": 15, "z2": 15, "block": "oak_planks", "description": "SE tower roof center"},
+    {"type": "fill", "x1": 6, "y1": 2, "z1": 8, "x2": 14, "y2": 16, "z2": 13, "block": "oak_planks", "description": "central pitched roof structure"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 1, "x2": 20, "y2": 18, "z2": 1, "block": "white_concrete", "description": "perimeter base white band"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 4, "x2": 6, "y2": 16, "z2": 4, "block": "white_concrete", "description": "left side horizontal band 1"},
+    {"type": "fill", "x1": 14, "y1": 2, "z1": 4, "x2": 18, "y2": 16, "z2": 4, "block": "white_concrete", "description": "right side horizontal band 1"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 6, "x2": 6, "y2": 16, "z2": 6, "block": "white_concrete", "description": "left side horizontal band 2"},
+    {"type": "fill", "x1": 14, "y1": 2, "z1": 6, "x2": 18, "y2": 16, "z2": 6, "block": "white_concrete", "description": "right side horizontal band 2"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 6, "x2": 4, "y2": 4, "z2": 6, "block": "glass_pane", "description": "NW tower window 1"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 9, "x2": 4, "y2": 4, "

@@ -1,0 +1,436 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 7,
+    "zmin": 0,
+    "zmax": 16
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "foundation": "cobblestone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 15,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single room / storage",
+        "perimeter_profile": "rectangle with 1-block raised foundation"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 4,
+        "y1": 1,
+        "z1": 0,
+        "x2": 4,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 3,
+        "x2": 0,
+        "y2": 2,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 2,
+        "z1": 3,
+        "x2": 8,
+        "y2": 2,
+        "z2": 13
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 4,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 16,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 15,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 3,
+          "x2": 6,
+          "z2": 13,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 2,
+          "x2": 2,
+          "z2": 2,
+          "block": "stone_slab"
+        },
+        {
+          "y": 6,
+          "x1": 6,
+          "z1": 2,
+          "x2": 6,
+          "z2": 2,
+          "block": "stone_slab"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 14,
+          "x2": 2,
+          "z2": 14,
+          "block": "stone_slab"
+        },
+        {
+          "y": 6,
+          "x1": 6,
+          "z1": 14,
+          "x2": 6,
+          "z2": 14,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 16,
+      "block": "cobblestone",
+      "purpose": "perimeter_walk_and_foundation_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 1,
+      "z2": 15,
+      "block": "wood",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 3,
+      "z2": 15,
+      "block": "stonebrick",
+      "purpose": "outer_shell_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 6,
+      "y2": 2,
+      "z2": 14,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 1,
+      "z1": 0,
+      "x2": 4,
+      "y2": 2,
+      "z2": 0,
+      "purpose": "door_opening_north"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 3,
+      "x2": 0,
+      "y2": 2,
+      "z2": 13,
+      "block": "glass",
+      "purpose": "window_band_west"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 3,
+      "x2": 8,
+      "y2": 2,
+      "z2": 13,
+      "block": "glass",
+      "purpose": "window_band_east"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 1,
+      "x2": 2,
+      "y2": 2,
+      "z2": 1,
+      "block": "stonebrick",
+      "purpose": "window_pillar_repeat_west_interior_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 1,
+      "z1": 1,
+      "x2": 6,
+      "y2": 2,
+      "z2": 1,
+      "block": "stonebrick",
+      "purpose": "window_pillar_repeat_east_interior_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 0,
+      "x2": 7,
+      "y2": 4,
+      "z2": 16,
+      "block": "nether_brick",
+      "purpose": "roof_layer_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 16,
+      "block": "nether_brick",
+      "purpose": "roof_overhang_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 7,
+  "zmin": 0,
+  "zmax": 16,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "block": "cobblestone",
+      "from": [0, 0, 0],
+      "to": [8, 0, 16],
+      "comment": "raised cobblestone foundation / 1-block-high perimeter base (ground level)"
+    },
+    {
+      "id": 2,
+      "action": "hollow_rectangle",
+      "block": "air",
+      "from": [1, 1, 1],
+      "to": [7, 3, 15],
+      "comment": "clear interior volume (interior floor area 7x15), leaving walls around; ensures interior is empty"
+    },
+    {
+      "id": 3,
+      "action": "fill",
+      "block": "stonebrick",
+      "from": [1, 1, 1],
+      "to": [7, 1, 15],
+      "comment": "interior floor layer of stonebrick (1 block thick) sitting on foundation"
+    },
+    {
+      "id": 4,
+      "action": "walls",
+      "block": "stonebrick",
+      "from": [1, 2, 1],
+      "to": [7, 4, 15],
+      "thickness": 1,
+      "comment": "main walls 3 blocks high (y=2..4) using stonebrick"
+    },
+    {
+      "id": 5,
+      "action": "carve_windows_long_sides",
+      "block_replace_with": "glass",
+      "positions": [
+        {"from": [2, 3, 1], "to": [2, 3, 1]},
+        {"from": [4, 3, 1], "to": [4, 3, 1]},
+        {"from": [6, 3, 1], "to": [6, 3, 1]},
+        {"from": [2, 3, 15], "to": [2, 3, 15]},
+        {"from": [4, 3, 15], "to": [4, 3, 15]},
+        {"from": [6, 3, 15], "to": [6, 3, 15]}
+      ],
+      "comment": "horizontal window band represented as single-pane glass blocks spaced along long walls (centered vertically on wall)"
+    },
+    {
+      "id": 6,
+      "action": "window_spacers",
+      "block": "stonebrick",
+      "positions": [
+        [3, 3, 1],
+        [5, 3, 1],
+        [3, 3, 15],
+        [5, 3, 15]
+      ],
+      "comment": "stonebrick separators between glass panes to create banded window effect"
+    },
+    {
+      "id": 7,
+      "action": "door_opening",
+      "block": "air",
+      "from": [4, 2, 0],
+      "to": [4, 3, 0],
+      "comment": "entrance opening centered on short face (south side at z=0), 1 wide x 2 high"
+    },
+    {
+      "id": 8,
+      "action": "place_block",
+      "block": "wooden_door",
+      "at": [4, 2, 0],
+      "rotation": "south",
+      "comment": "place door in opening (door faces outward)"
+    },
+    {
+      "id": 9,
+      "action": "perimeter_walk",
+      "block": "cobblestone",
+      "from": [0, 1, 0],
+      "to": [8, 1, 16],
+      "comment": "one-block-wide cobblestone perimeter walk around base (height 1 above ground foundation)"
+    },
+    {
+      "id": 10,
+      "action": "roof_layer_1",
+      "block": "nether_brick_stairs",
+      "from": [0, 5, 0],
+      "to": [8, 5, 16],
+      "facing": "north_south",
+      "comment": "first roof stair layer sitting atop walls (overhang allowed 1 block over foundation)"
+    },
+    {
+      "id": 11,
+      "action": "roof_layer_2",
+      "block": "nether_brick_stairs",
+      "from": [1, 6, 1],
+      "to": [7, 6, 15],
+      "facing": "north_south",
+      "comment": "second roof stair layer inset by 1 to create stepped profile"
+    },
+    {
+      "id": 12,
+      "action": "roof_ridge_fill",
+      "block": "nether_brick",
+      "from": [3, 7, 8],
+      "to": [5, 7, 8],
+      "comment": "central short ridge at roof peak (two blocks long centered along long axis)"
+    },
+    {
+      "id": 13,
+      "action": "roof_corner_accents",
+      "block": "stone_slab",
+      "positions": [
+        [0, 6, 0],
+        [8, 6, 0],
+        [0, 6, 16],
+        [8, 6, 16]
+      ],
+      "comment": "light stone slab accents at roof corners/steps"
+    },
+    {
+      "id": 14,
+      "action": "trim",
+      "block": "stone_slab",
+      "from": [1, 5, 1],
+      "to": [7, 5, 15],
+      "comment": "stone slab trim along roof edge inset to align with stair layers"
+    },
+    {
+      "id": 15,
+      "action": "short_wall_windows",
+      "block_replace_with": "glass",
+      "positions": [
+        {"from": [4, 3, 0], "to": [4, 3, 0]}
+      ],
+      "comment": "single centered small window on entrance short wall above door (optional pane)"
+    },
+    {
+      "id": 16,
+      "action": "final_clearance",
+      "block": "air",
+      "from": [1, 2, 0],
+      "to": [7, 4, 0],
+      "comment": "ensure doorway area is clear through to ground (removes any accidental blocks in front short face)"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "operations_within_bbox": true,
+    "operation_count": 16,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof": true,
+    "contains_windows": true,
+    "contains_entrance": true,
+    "material_coherence": true,
+    "notes": "Bounding box preserved from draft. All operation coordinates are inside bbox [0..8] x [0..7] x [0..16]. Operations kept under 260. Materials assigned distinctly: cobblestone foundation/perimeter, stonebrick walls/floor/separators, glass windows, nether_brick stairs/blocks for roof, stone_slab accents, wooden door. Roof stepped with two stair layers and a small ridge; footprint and interior floor match estimated 7x15. Entrance is a centered 1x2 opening on short face. Window band approximated by spaced panes on long sides."
+  }
+}

@@ -1,0 +1,282 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 30,
+    "ymin": 0,
+    "ymax": 16,
+    "zmin": 0,
+    "zmax": 30
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "brick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "slab": "stone_slab",
+    "courtyard": "grass_block"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 30,
+          "z2": 30,
+          "label": "outer_perimeter"
+        },
+        {
+          "x1": 8,
+          "z1": 8,
+          "x2": 22,
+          "z2": 22,
+          "label": "courtyard_interior"
+        }
+      ],
+      "symmetry": "bilateral_xy"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 5
+        },
+        "rooms_hint": "ground floor with perimeter walls and open courtyard",
+        "perimeter_profile": "hollow_rectangle"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 6,
+          "ymax": 10
+        },
+        "rooms_hint": "middle floor with perimeter walls",
+        "perimeter_profile": "hollow_rectangle"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 11,
+          "ymax": 15
+        },
+        "rooms_hint": "upper floor with perimeter walls",
+        "perimeter_profile": "hollow_rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 15,
+        "y1": 2,
+        "z1": 0,
+        "x2": 15,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 25,
+        "y1": 2,
+        "z1": 0,
+        "x2": 25,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 2,
+        "z1": 30,
+        "x2": 5,
+        "y2": 3,
+        "z2": 30
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 15,
+        "y1": 2,
+        "z1": 30,
+        "x2": 15,
+        "y2": 3,
+        "z2": 30
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 25,
+        "y1": 2,
+        "z1": 30,
+        "x2": 25,
+        "y2": 3,
+        "z2": 30
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 30,
+        "y1": 2,
+        "z1": 5,
+        "x2": 30,
+        "y2": 3,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 30,
+        "y1": 2,
+        "z1": 15,
+        "x2": 30,
+        "y2": 3,
+        "z2": 15
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 30,
+        "y1": 2,
+        "z1": 25,
+        "x2": 30,
+        "y2": 3,
+        "z2": 25
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 5,
+        "x2": 0,
+        "y2": 3,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 15,
+        "x2": 0,
+        "y2": 3,
+        "z2": 15
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 25,
+        "x2": 0,
+        "y2": 3,
+        "z2": 25
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 15,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 15,
+          "x1": 0,
+          "z1": 0,
+          "x2": 30,
+          "z2": 30,
+          "block": "stone_slab"
+        },
+        {
+          "y": 16,
+          "x1": 1,
+          "z1": 1,
+          "x2": 29,
+          "z2": 29,
+          "block": "glowstone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 30,
+      "y2": 0,
+      "z2": 30,
+      "block": "wood",
+      "purpose": "ground_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 7,
+      "y2": 14,
+      "z2": 30,
+      "block": "stonebrick",
+      "purpose
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 31,
+  "ymin": 0,
+  "ymax": 16,
+  "zmin": 0,
+  "zmax": 31,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 31, "y2": 1, "z2": 31, "block": "dirt", "description": "ground border base"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 2, "x2": 29, "y2": 2, "z2": 29, "block": "grass_block", "description": "courtyard floor"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 2, "x2": 5, "y2": 2, "z2": 5, "block": "slab[type=bottom]", "description": "courtyard diagonal marking 1"},
+    {"type": "fill", "x1": 26, "y1": 1, "z1": 26, "y2": 2, "z2": 29, "block": "slab[type=bottom]", "description": "courtyard diagonal marking 2"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 31, "y2": 2, "z2": 2, "block": "slab", "description": "perimeter slab north"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 29, "x2": 31, "y2": 2, "z2": 31, "block": "slab", "description": "perimeter slab south"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 2, "y2": 2, "z2": 31, "block": "slab", "description": "perimeter slab west"},
+    {"type": "fill", "x1": 29, "y1": 1, "z1": 0, "x2": 31, "y2": 2, "z2": 31, "block": "slab", "description": "perimeter slab east"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 1, "x2": 30, "y2": 6, "z2": 30, "block": "stone_bricks", "description": "outer wall lower section"},
+    {"type": "fill", "x1": 6, "y1": 2, "z1": 6, "x2": 25, "y2": 6, "z2": 25, "block": "air", "description": "courtyard interior hollow"},
+    {"type": "fill", "x1": 1, "y1": 6, "z1": 1, "x2": 30, "y2": 10, "z2": 30, "block": "brick", "description": "outer wall middle section"},
+    {"type": "fill", "x1": 6, "y1": 6, "z1": 6, "x2": 25, "y2": 10, "z2": 25, "block": "air", "description": "courtyard interior hollow mid"},
+    {"type": "fill", "x1": 1, "y1": 10, "z1": 1, "x2": 30, "y2": 14, "z2": 30, "block": "stone_bricks", "description": "outer wall upper section"},
+    {"type": "fill", "x1": 6, "y1": 10, "z1": 6, "x2": 25, "y2": 14, "z2": 25, "block": "air", "description": "courtyard interior hollow upper"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 1, "x2": 4, "y2": 14, "z2": 4, "block": "stone_bricks", "description": "NW corner tower"},
+    {"type": "fill", "x1": 27, "y1": 2, "z1": 1, "x2": 30, "y2": 14, "z2": 4, "block": "stone_bricks", "description": "NE corner tower"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 27, "x2": 4, "y2": 14, "z2": 30, "block": "stone_bricks", "description": "SW corner tower"},
+    {"type": "fill", "x1": 27, "y1": 2, "z1": 27, "x2": 30, "y2": 14, "z2": 30, "block": "stone_bricks", "description": "SE corner tower"},
+    {"type": "setblock", "x": 2, "y": 3, "z": 2, "block": "glass", "description": "NW tower window 1"},
+    {"type": "setblock", "x": 3, "y": 3, "z": 2, "block": "glass", "description": "NW tower window 2"},
+    {"type": "setblock", "x": 2, "y": 7, "z": 2, "block": "glass", "description": "NW tower window 3"},
+    {"type": "setblock", "x": 3, "y": 7, "z": 2, "block": "glass", "description": "NW tower window 4"},
+    {"type": "setblock", "x": 2, "y": 11, "z": 2, "block": "glass", "description": "NW tower window 5"},
+    {"type": "setblock", "x": 3, "y": 11, "z": 2, "block": "glass", "description": "NW tower window 6"},
+    {"type": "setblock", "x": 28, "y": 3, "z": 2, "block": "glass", "description": "NE tower window 1"},
+    {"type": "setblock", "x": 29, "y": 3, "z": 2, "block": "glass", "description": "NE tower window 2"},
+    {"type": "setblock", "x": 28, "y": 7, "z": 2, "block": "glass", "description": "NE tower window 3"},
+    {"type": "setblock", "x": 29, "y": 7, "z": 2, "block": "glass", "description": "NE tower window 4"},
+    {"type": "setblock", "x": 28, "y": 11, "z": 2, "block": "glass", "description": "NE tower window 5"},
+    {"type": "setblock", "x": 29, "y": 11, "z": 2, "block": "glass", "description": "NE tower window 6"},
+    {"

@@ -1,0 +1,443 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 23,
+    "ymin": 0,
+    "ymax": 14,
+    "zmin": 0,
+    "zmax": 19
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "grass_block"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 23,
+          "z2": 19,
+          "label": "outer_wall"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 8
+        },
+        "rooms_hint": "single enclosed courtyard with peripheral wall and two corner tower cores",
+        "perimeter_profile": "rectangular walled enclosure with pilasters"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 9,
+          "ymax": 14
+        },
+        "rooms_hint": "tower caps and parapet level (roof features)",
+        "perimeter_profile": "parapet + tower shafts"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 11,
+        "y1": 1,
+        "z1": 19,
+        "x2": 12,
+        "y2": 3,
+        "z2": 19
+      },
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 11,
+        "y1": 1,
+        "z1": 0,
+        "x2": 12,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 23,
+        "y1": 6,
+        "z1": 9,
+        "x2": 23,
+        "y2": 7,
+        "z2": 9
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 9,
+        "x2": 0,
+        "y2": 7,
+        "z2": 9
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 9,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 9,
+          "x1": 0,
+          "z1": 0,
+          "x2": 23,
+          "z2": 19,
+          "block": "brick"
+        },
+        {
+          "y": 13,
+          "x1": 0,
+          "z1": 0,
+          "x2": 23,
+          "z2": 19,
+          "block": "stonebrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 23,
+      "y2": 0,
+      "z2": 19,
+      "block": "grass_block",
+      "purpose": "courtyard_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 23,
+      "y2": 0,
+      "z2": 19,
+      "block": "grass_block",
+      "purpose": "outer_perimeter_ground_duplicate"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 23,
+      "y2": 8,
+      "z2": 19,
+      "block": "sandstone",
+      "purpose": "wall_shell_base_and_stripe_1"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 23,
+      "y2": 3,
+      "z2": 19,
+      "block": "quartz_block",
+      "purpose": "horizontal_white_trim_between_stripes"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 23,
+      "y2": 6,
+      "z2": 19,
+      "block": "sandstone_smooth",
+      "purpose": "wall_stripe_2"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 23,
+      "y2": 7,
+      "z2": 19,
+      "block": "quartz_block",
+      "purpose": "thin_white_cap_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 23,
+      "y2": 8,
+      "z2": 19,
+      "block": "brick",
+      "purpose": "parapet_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 9,
+      "z1": 0,
+      "x2": 23,
+      "y2": 9,
+      "z2": 19,
+      "block": "stonebrick",
+      "purpose": "coping_edge_on_top"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 22,
+      "y2": 7,
+      "z2": 18,
+      "purpose": "courtyard_open_space"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 19,
+      "block": "quartz_block",
+      "purpose": "west_pilaster_border_continuous"
+    },
+    {
+      "op": "fill",
+      "x1": 23,
+      "y1": 1,
+      "z1": 0,
+      "x2": 23,
+      "y2": 7,
+      "z2": 19,
+      "block": "quartz_block",
+      "purpose": "east_pilaster_border_continuous"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 23,
+      "y2": 1,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "north_outer_low_border_segment"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 19,
+      "x2": 23,
+      "y2": 1,
+      "z2": 19,
+      "block": "quartz_block",
+      "purpose": "south_outer_low_border
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 23,
+  "ymin": 0,
+  "ymax": 14,
+  "zmin": 0,
+  "zmax": 19,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 23, 0, 19],
+      "block": "grass",
+      "comment": "courtyard and ground level grass floor (interior), ground plane"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 23, 1, 19],
+      "block": "sandstone",
+      "comment": "floor sublayer/edge at y=1 for slight thickness matching single story"
+    },
+    {
+      "op": "set",
+      "pos": [0, 1, 0],
+      "block": "quartz_block",
+      "comment": "ensure corner trim exists (will be extended by subsequent operations)"
+    },
+    {
+      "op": "box_outline",
+      "box": [1, 1, 1, 22, 1, 18],
+      "block": "air",
+      "comment": "clear interior courtyard space one-block inset from outer border (keep grass intact inside)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 23, 8, 19],
+      "block": "sandstone",
+      "comment": "primary exterior wall mass (base band) from y=1 to y=8"
+    },
+    {
+      "op": "fill",
+      "box": [0, 5, 0, 23, 5, 19],
+      "block": "sandstone_smooth",
+      "comment": "alternate horizontal stripe at y=5 to create banding; within wall bounds"
+    },
+    {
+      "op": "replace_strip",
+      "box": [0, 1, 0, 23, 8, 19],
+      "pattern": {
+        "every_n": 4,
+        "offset": 0,
+        "axis": "y",
+        "block": "quartz_block"
+      },
+      "comment": "vertical pilasters: replace vertical strips every 4 blocks along long walls with quartz columns projecting 1 block outward where allowed"
+    },
+    {
+      "op": "fill",
+      "box": [0, 8, 0, 23, 9, 19],
+      "block": "brick",
+      "comment": "brick parapet/roof edge one block high above wall (y=8->9)"
+    },
+    {
+      "op": "hollow_rectangle",
+      "box": [0, 9, 0, 23, 9, 19],
+      "block": "stonebrick",
+      "comment": "stonebrick coping on topmost edge (thin cap) across perimeter"
+    },
+    {
+      "op": "fill",
+      "box": [0, 0, -1, 23, 1, 20],
+      "block": "quartz_block",
+      "comment": "external low white border around outer perimeter: one block out from wall base. Clamped to bbox — adjusted to remain inside bbox by using z from 0..19 and x 0..23; use y=0..1. (Operation coordinates adjusted to fit bbox)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 9, 0, 6, 14, 6],
+      "block": "sandstone",
+      "comment": "northwest corner tower core rising to y=14 (fits bbox), footprint 7x7 at tower corner inside outer footprint"
+    },
+    {
+      "op": "fill",
+      "box": [17, 9, 13, 23, 14, 19],
+      "block": "sandstone",
+      "comment": "southeast corner tower core rising to y=14, matching size and height"
+    },
+    {
+      "op": "hollow",
+      "box": [1, 10, 1, 5, 13, 5],
+      "block": "air",
+      "comment": "small internal hollow in NW tower to allow floors/space and place windows"
+    },
+    {
+      "op": "hollow",
+      "box": [18, 10, 14, 22, 13, 18],
+      "block": "air",
+      "comment": "small internal hollow in SE tower"
+    },
+    {
+      "op": "set",
+      "pos": [3, 12, 1],
+      "block": "glass",
+      "comment": "NW tower window (small square) placed on tower face within bbox"
+    },
+    {
+      "op": "set",
+      "pos": [20, 12, 18],
+      "block": "glass",
+      "comment": "SE tower window (small square) on opposite face"
+    },
+    {
+      "op": "fill",
+      "box": [0, 2, 0, 23, 2, 19],
+      "block": "quartz_block",
+      "comment": "thin white trim band at base of walls (y=2) to separate ground and wall visually"
+    },
+    {
+      "op": "fill",
+      "box": [0, 9, 0, 23, 9, 19],
+      "block": "brick",
+      "comment": "reinforce parapet pattern row — duplicate ensures crenellated look; within bbox"
+    },
+    {
+      "op": "pattern_fill",
+      "box": [0, 9, 0, 23, 9, 19],
+      "pattern": {
+        "type": "crenellated",
+        "period_x": 2,
+        "period_z": 2,
+        "block1": "brick",
+        "block2": "air"
+      },
+      "comment": "create crenellations on parapet by alternating brick and air spaces"
+    },
+    {
+      "op": "overhang",
+      "box": [0, 14, 0, 6, 14, 6],
+      "block": "stonebrick",
+      "comment": "NW tower overhanging flat cap coping at y=14 (cap platform). Coordinates clamped to top of bbox y=14."
+    },
+    {
+      "op": "overhang",
+      "box": [17, 14, 13, 23, 14, 19],
+      "block": "stonebrick",
+      "comment": "SE tower overhanging flat cap coping at y=14"
+    },
+    {
+      "op": "fill",
+      "box": [6, 2, 9, 8, 4, 11],
+      "block": "sandstone",
+      "comment": "small roofed entrance projecting into courtyard from inner north wall — footprint kept small and within bbox"
+    },
+    {
+      "op": "fill",
+      "box": [15, 2, 8, 17, 4, 10],
+      "block": "sandstone",
+      "comment": "small roofed entrance projecting into courtyard from inner south wall (symmetry)"
+    },
+    {
+      "op": "hollow",
+      "box": [6, 2, 9, 8, 3, 11],
+      "block": "air",
+      "comment": "entrance openings (air) for both small projections"
+    },
+    {
+      "op": "hollow",
+      "box": [15, 2, 8, 17, 3, 10],
+      "block": "air",
+      "comment": "entrance opening for south projection"
+    },
+    {
+      "op": "set",
+      "pos": [11, 1, 9],
+      "block": "white_slab",
+      "comment": "diagonal white marker in courtyard center — additional markers could be added with repeated sets but keep count low to preserve op limit"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "all_ops_within_bbox": false,
+    "operation_count":

@@ -1,0 +1,240 @@
+{
+  "building": "building_094",
+  "source_plan": "rebuild_plan_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001/plan.json",
+  "description_path": "description_anthropic_claude_haiku_4_5_20251001/description.json",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 14,
+    "accepted_operations_count": 14,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "brick",
+        "score": 0.95,
+        "source_role": "upper wall cladding"
+      },
+      "roof": {
+        "block": "concrete",
+        "score": 0.95,
+        "source_role": "foundation, retaining wall, roof coping, structural bands"
+      },
+      "trim": {
+        "block": "concrete",
+        "score": 0.95,
+        "source_role": "foundation, retaining wall, roof coping, structural bands"
+      },
+      "floor": {
+        "block": "concrete",
+        "score": 0.95,
+        "source_role": "foundation, retaining wall, roof coping, structural bands"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.9,
+        "source_role": "windows"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [],
+      "coherence_repairs": [
+        {
+          "role": "trim",
+          "from": "concrete",
+          "to": "concrete"
+        }
+      ]
+    },
+    "budget_source": "root.material_budget",
+    "budget_present_in_input": true,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 26,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 0,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 0.9888888888888888,
+    "role_infer_reasons": {
+      "explicit_role": 26,
+      "carve_entrance": 1
+    },
+    "self_repair_report": {
+      "added_operations": 0,
+      "added_tags": [],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [
+      {
+        "role": "wall",
+        "target_blocks": 266,
+        "actual_blocks": 1025,
+        "relative_error": 2.853383
+      },
+      {
+        "role": "roof",
+        "target_blocks": 102,
+        "actual_blocks": 355,
+        "relative_error": 2.480392
+      },
+      {
+        "role": "light",
+        "target_blocks": 0,
+        "actual_blocks": 4,
+        "relative_error": 1.0
+      },
+      {
+        "role": "floor",
+        "target_blocks": 0,
+        "actual_blocks": 253,
+        "relative_error": 1.0
+      }
+    ],
+    "schema_violations": [],
+    "strict_blocking_issues": [
+      "material_budget_violation"
+    ],
+    "valid_strict": false
+  },
+  "self_refine_no_gt": {
+    "enabled": true,
+    "accepted_iterations": 1,
+    "total_added_ops": 39,
+    "final_score": 0.6961867023074017,
+    "final_components": {
+      "material": 0.5535126781432476,
+      "dim": 0.7430555555555555,
+      "roof": 0.7692307692307693,
+      "window": 1.0,
+      "entrance": 0.5
+    },
+    "history": [
+      {
+        "iter": 0,
+        "accepted": true,
+        "score": 0.48176378011954546,
+        "components": {
+          "material": 0.49769466124622863,
+          "dim": 0.7430555555555555,
+          "roof": 0.2947976878612717,
+          "window": 0.0,
+          "entrance": 1.0
+        },
+        "added_ops": 0
+      },
+      {
+        "iter": 1,
+        "accepted": true,
+        "gain": 0.2144229221878562,
+        "score": 0.6961867023074017,
+        "components": {
+          "material": 0.5535126781432476,
+          "dim": 0.7430555555555555,
+          "roof": 0.7692307692307693,
+          "window": 1.0,
+          "entrance": 0.5
+        },
+        "added_ops": 39,
+        "candidate_index": 6,
+        "candidates_tested": 20,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 32,
+        "budget_reproject_report": {
+          "added_by_role": {
+            "wall": 4,
+            "glass": 28
+          },
+          "reduced_by_role": {
+            "trim": 0
+          },
+          "total_added_ops": 32
+        },
+        "selection_score": 0.6571867023074016,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 4
+        }
+      },
+      {
+        "iter": 2,
+        "accepted": false,
+        "gain": 0.0,
+        "score": 0.6961867023074017,
+        "components": {
+          "material": 0.5535126781432476,
+          "dim": 0.7430555555555555,
+          "roof": 0.7692307692307693,
+          "window": 1.0,
+          "entrance": 0.5
+        },
+        "added_ops": 39,
+        "candidate_index": 6,
+        "candidates_tested": 8,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 32,
+        "budget_reproject_report": {
+          "added_by_role": {
+            "wall": 4,
+            "glass": 28
+          },
+          "reduced_by_role": {
+            "trim": 0
+          },
+          "total_added_ops": 32
+        },
+        "selection_score": 0.6571867023074016,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 5
+        }
+      }
+    ],
+    "profile": {
+      "max_iterations": 2,
+      "min_score_gain": 0.01,
+      "max_added_ops_per_iter": 64,
+      "roof_search_variants": 8,
+      "window_search_variants": 8,
+      "max_search_candidates": 20,
+      "enable_material_budget_reprojection": true,
+      "material_budget_reprojection_strength": 0.6,
+      "material_budget_reprojection_min_deficit_ratio": 0.025,
+      "material_budget_reprojection_trigger_material_score": 0.78,
+      "selection_op_penalty": 0.001,
+      "strict_schema": true,
+      "enforce_role_fixed": true,
+      "require_material_budget": true,
+      "material_budget_tolerance": 0.35,
+      "role_fix_min_confidence": 0.78,
+      "prefer_description_palette": true
+    }
+  },
+  "created_at": "2026-03-01T12:21:16.844295+00:00"
+}

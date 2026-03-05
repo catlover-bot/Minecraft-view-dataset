@@ -1,0 +1,363 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 16
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "wood",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 16,
+          "label": "outer_shell"
+        },
+        {
+          "x1": 3,
+          "z1": 3,
+          "x2": 17,
+          "z2": 13,
+          "label": "courtyard_opening"
+        }
+      ],
+      "symmetry": "bilateral_along_x_center (long axis)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor perimeter corridor; open courtyard",
+        "perimeter_profile": "rectangular ring, wall_thickness_1"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "upper floor/perimeter rooms with balconies to courtyard",
+        "perimeter_profile": "rectangular ring with inward-facing ledges"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 9,
+          "ymax": 11
+        },
+        "rooms_hint": "attic/roof base and tower shafts",
+        "perimeter_profile": "stepped gable roof rising on long sides"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 15,
+        "y1": 2,
+        "z1": 0,
+        "x2": 15,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "courtyard",
+        "x1": 6,
+        "y1": 6,
+        "z1": 3,
+        "x2": 6,
+        "y2": 7,
+        "z2": 3
+      },
+      {
+        "kind": "window",
+        "face": "courtyard",
+        "x1": 14,
+        "y1": 6,
+        "z1": 13,
+        "x2": 14,
+        "y2": 7,
+        "z2": 13
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 9,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 9,
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 16,
+          "block": "wood"
+        },
+        {
+          "y": 10,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 15,
+          "block": "wood"
+        },
+        {
+          "y": 11,
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 14,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {"op": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 20, "y2": 0, "z2": 16, "block": "wood", "purpose": "ground_floor_slab"},
+    {"op": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 20, "y2": 11, "z2": 16, "block": "brick", "purpose": "outer_shell_solid_initial"},
+    {"op": "carve", "x1": 3, "y1": 1, "z1": 3, "x2": 17, "y2": 10, "z2": 13, "purpose": "courtyard_and_interior_space"},
+    {"op": "carve", "x1": 1, "y1": 1, "z1": 1, "x2": 19, "y2": 10, "z2": 15, "purpose": "thin_out_wall_inner_to_thickness_1"},
+    {"op": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 20, "y2": 1, "z2": 16, "block": "stonebrick", "purpose": "base_low_band (white/stone border simplified)"},
+    {"op": "fill", "x1": 0, "y1": 2, "z1": 0, "x2": 20, "y2": 2, "z2": 16, "block": "brick", "purpose": "light_band_1"},
+    {"op": "fill", "x1": 0, "y1": 3, "z1": 0, "x2": 20, "y2": 3, "z2": 16, "block": "stonebrick", "purpose": "dark_band_1"},
+    {"op": "fill", "x1": 0, "y1": 4, "z1": 0, "x2": 20, "y2": 4, "z2": 16, "block": "brick", "purpose": "light_band_2"},
+    {"op": "fill", "x1": 0, "y1": 5, "z1": 0, "x2": 20, "y2": 5, "z2": 16, "block": "stonebrick", "purpose": "dark_band_2"},
+    {"op": "fill", "x1": 0, "y1": 6, "z1": 0, "x2": 20, "y2": 6, "z2": 16, "block": "brick", "purpose": "light_band_3"},
+    {"op": "fill", "x1": 0, "y1": 7, "z1": 0, "x2": 20, "y2": 8, "z2": 16, "block": "stonebrick", "purpose": "upper_wall_bulk"},
+    {"op": "carve", "x1": 9, "y1": 1, "z1": 0, "x2": 11, "y2": 3, "z2": 0, "purpose": "main_entrance_door_opening"},
+    {"op": "carve",
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 16,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "box": [0, 0, 0, 20, 0, 16],
+      "block": "grass",
+      "note": "ground/terrain under courtyard and exterior base (ground level y=0)"
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "box": [1, 1, 1, 19, 1, 15],
+      "block": "stone_slab",
+      "note": "low white slab/step border around base (runs on three visible sides; implemented continuous around footprint)"
+    },
+    {
+      "id": 3,
+      "action": "fill",
+      "box": [1, 1, 1, 19, 2, 15],
+      "block": "smooth_stone",
+      "note": "foundation/floor layer (stone) one block above slab to create base floor"
+    },
+    {
+      "id": 4,
+      "action": "fill",
+      "box": [2, 1, 2, 18, 1, 14],
+      "block": "grass",
+      "note": "courtyard floor inset (grass with decorative pattern added later)"
+    },
+    {
+      "id": 5,
+      "action": "set",
+      "box": [6, 1, 6, 14, 1, 10],
+      "block": "white_concrete",
+      "note": "diagonal light patterning in courtyard floor center (simple block fill as pattern)"
+    },
+    {
+      "id": 6,
+      "action": "fill",
+      "box": [1, 2, 1, 19, 6, 15],
+      "block": "air",
+      "note": "hollow interior/courtyard space and interior upper rooms kept open"
+    },
+    {
+      "id": 7,
+      "action": "fill",
+      "box": [1, 2, 1, 19, 6, 2],
+      "block": "stonebrick",
+      "note": "west exterior wall lower dark band (first dark band)"
+    },
+    {
+      "id": 8,
+      "action": "fill",
+      "box": [1, 3, 2, 19, 3, 3],
+      "block": "quartz_block",
+      "note": "west exterior wall light band (single layer) above dark band"
+    },
+    {
+      "id": 9,
+      "action": "fill",
+      "box": [1, 4, 2, 19, 4, 3],
+      "block": "stonebrick",
+      "note": "west exterior wall dark band 2"
+    },
+    {
+      "id": 10,
+      "action": "fill",
+      "box": [1, 5, 2, 19, 5, 3],
+      "block": "quartz_block",
+      "note": "west exterior wall light band 2"
+    },
+    {
+      "id": 11,
+      "action": "fill",
+      "box": [1, 6, 2, 19, 6, 3],
+      "block": "stonebrick",
+      "note": "west exterior wall dark band 3 (top band at second-floor level)"
+    },
+    {
+      "id": 12,
+      "action": "fill",
+      "box": [1, 2, 14, 19, 6, 15],
+      "block": "stonebrick",
+      "note": "east exterior wall mirrored bands (dark band full height sections)"
+    },
+    {
+      "id": 13,
+      "action": "fill",
+      "box": [1, 3, 13, 19, 3, 14],
+      "block": "quartz_block",
+      "note": "east light band"
+    },
+    {
+      "id": 14,
+      "action": "fill",
+      "box": [1, 4, 13, 19, 4, 14],
+      "block": "stonebrick",
+      "note": "east dark band 2"
+    },
+    {
+      "id": 15,
+      "action": "fill",
+      "box": [1, 5, 13, 19, 5, 14],
+      "block": "quartz_block",
+      "note": "east light band 2"
+    },
+    {
+      "id": 16,
+      "action": "fill",
+      "box": [1, 6, 13, 19, 6, 14],
+      "block": "stonebrick",
+      "note": "east dark band 3"
+    },
+    {
+      "id": 17,
+      "action": "fill",
+      "box": [1, 2, 2, 2, 6, 14],
+      "block": "stonebrick",
+      "note": "north exterior wall dark bands on left short side"
+    },
+    {
+      "id": 18,
+      "action": "fill",
+      "box": [18, 2, 2, 19, 6, 14],
+      "block": "stonebrick",
+      "note": "south exterior wall dark bands on right short side (mirrored tower side handled separately)"
+    },
+    {
+      "id": 19,
+      "action": "fill",
+      "box": [1, 2, 2, 1, 6, 14],
+      "block": "quartz_block",
+      "note": "vertical white columns/supports: leftmost column on west side (1-block thick column style repeated)"
+    },
+    {
+      "id": 20,
+      "action": "fill",
+      "box": [4, 2, 2, 4, 6, 14],
+      "block": "quartz_block",
+      "note": "vertical white column at interval on west side"
+    },
+    {
+      "id": 21,
+      "action": "fill",
+      "box": [7, 2, 2, 7, 6, 14],
+      "block": "quartz_block",
+      "note": "vertical white column at interval on west side"
+    },
+    {
+      "id": 22,
+      "action": "fill",
+      "box": [10, 2, 2, 10, 6, 14],
+      "block": "quartz_block",
+      "note": "vertical white column at interval on west side"
+    },
+    {
+      "id": 23,
+      "action": "fill",
+      "box": [13, 2, 2, 13, 6, 14],
+      "block": "quartz_block",
+      "note": "vertical white column at interval on west side"
+    },
+    {
+      "id": 24,
+      "action": "fill",
+      "box": [16, 2, 2, 16, 6, 14],
+      "block": "quartz_block",
+      "note": "vertical white column near corner on west side"
+    },
+    {
+      "id": 25,
+      "action": "fill",
+      "box": [2, 2, 4, 18, 2, 12],
+      "block": "oak_planks",
+      "note": "second-floor balcony/ledge layer around courtyard (simple plank ring at y=2)"
+    },
+    {
+      "id": 26,
+      "action": "fill",
+      "box": [3, 3, 4, 17, 3, 12],
+      "block": "oak_planks",
+      "note": "inward facing stepped balcony layer (y=3) smaller ring"
+    },
+    {
+      "id": 27,
+      "action": "fill",
+      "box": [4, 4, 5, 16, 4,

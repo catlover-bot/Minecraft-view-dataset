@@ -1,0 +1,67 @@
+{
+  "summary": "Small single-story rectangular building with a stepped dark roof and low surrounding cobblestone border. Walls are mid-height stone bricks with a cobblestone top trim and multiple horizontal windows. Roof is made of dark nether-type blocks with light stone slabs as decorative caps at each roof step.",
+  "building_type": "small house / utility",
+  "shape": {
+    "overall_form": "compact rectangular box with a centered stepped roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "rough bilateral symmetry along long axis (front/back mirror)",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 13,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "lower wall (smooth blocks forming main wall courses)",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "top wall trim and exterior low border/walk",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof (dark stepped roof blocks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "slab_stone",
+      "role": "decorative slabs on roof steps (light grey slabs)",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "wood",
+      "role": "possible door/frame (uncertain: small wooden detail visible near an entrance)",
+      "confidence": 0.3
+    }
+  ],
+  "elements": [
+    "row of horizontal windows on each long side (3-4 panes wide)",
+    "single low entrance (uncertain exact position, likely on one short side)",
+    "stepped dark roof with slabs capped on each step",
+    "cobblestone border/walk surrounding building base"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular stonebrick wall core ~11x13 blocks footprint and ~4 blocks tall for interior ceiling.",
+    "Place a single-block-high cobblestone course around the top edge of the walls as a trim, then add cobblestone border one block out at ground level.",
+    "Install horizontal window groups centered on the long walls (three glass panes per group separated by stonebrick columns).",
+    "Build a centered stepped roof using nether brick (or nether brick slabs/stairs) rising three steps to a small flat top; cap each outward roof step with light grey stone slabs.",
+    "Leave interior floor and doorway placement flexible; door likely on a short side where a break in windows and a torch/wood detail appears."
+  ],
+  "uncertainties": [
+    "Exact footprint dimensions: counted from images but could be off by a block or two.",
+    "Material IDs: nether_brick assumed for dark roof and stone slabs assumed for light caps; could be different dark/dense blocks or slabs.",
+    "Door location and interior layout are not visible clearly; entrance side inferred from one image showing a wooden detail but not confirmed.",
+    "Some decorative details (stairs vs slabs on roof edges) are unclear from angles; stair orientation and slab placement may vary."
+  ]
+}

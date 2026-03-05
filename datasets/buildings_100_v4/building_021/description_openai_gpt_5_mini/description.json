@@ -1,0 +1,72 @@
+{
+  "summary": "A rectangular fortified structure made mostly of gray masonry with two taller corner towers and a raised central walkway/roof. The build sits on a cleared dirt pad with a low perimeter of stone blocks and patterned crenellations; the roof/walkway is surfaced in a dark red material and edged with lighter stone slabs and occasional glow blocks.",
+  "building_type": "fortified house / small fort",
+  "shape": {
+    "overall_form": "rectangular block with two taller square towers near the middle on the long sides and a small central raised entry projection at one short end",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral symmetry along the long axis",
+    "floors_estimate": 2,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 13,
+    "depth": 31,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "primary_wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "cobblestone",
+      "role": "foundation/trim/crenellation",
+      "confidence": 0.8
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof/walkway_surface",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof_edge/trim",
+      "confidence": 0.7
+    },
+    {
+      "name": "glowstone",
+      "role": "lighting",
+      "confidence": 0.8
+    },
+    {
+      "name": "iron_bars",
+      "role": "window/grill accents (uncertain)",
+      "confidence": 0.4
+    }
+  ],
+  "elements": [
+    "flat roof / central raised walkway surfaced in dark red (nether_brick)",
+    "two square towers rising above main roof with layered slab canopies and glowstone on top",
+    "front central protruding entrance bay with steps and decorative stone supports",
+    "low perimeter stone block decoration (posts and spaced blocks) surrounding main structure",
+    "small window/grill openings on tower shafts and scattered glowstone lamps on parapet"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular stonebrick shell roughly 13x31 blocks footprint and ~6 blocks tall for main walls",
+    "Add cobblestone base details and spaced low posts around perimeter, leaving a dirt pad outside",
+    "Place a central raised walkway/roof strip in nether_brick along the long axis, edged with stone_slab and glowstone at intervals",
+    "Construct two square towers on opposite sides of the long midline; make them taller (approximately +4 blocks) and cap with layered slabs to form an overhanging roof, with a glowstone on each cap",
+    "Add a small front projection (entrance) with layered stone detailing and short stairs; include small window openings or bars on towers"
+  ],
+  "uncertainties": [
+    "Exact block types: nether_brick assumed for dark red roof but could be another dark red block (confidence 0.9)",
+    "The small grill/window material on towers looks like iron bars but is unclear (confidence 0.4)",
+    "Interior layout and whether there are multiple internal floors are not visible; floors_estimate is based on external height and tower windows",
+    "Exact footprint dimensions are approximate based on visual count from images and may be off by several blocks"
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_021",
+  "created_at": "2026-02-28T15:09:12.384090+00:00"
+}

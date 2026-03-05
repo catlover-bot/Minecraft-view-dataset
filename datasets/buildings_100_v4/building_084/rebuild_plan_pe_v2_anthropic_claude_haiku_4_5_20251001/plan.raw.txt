@@ -1,0 +1,267 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 29,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 6
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "quartz",
+    "accent": "stonebrick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 29,
+          "z2": 6,
+          "label": "main_pavilion"
+        }
+      ],
+      "symmetry": "bilateral_x_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 1
+        },
+        "rooms_hint": "perimeter base and central platform",
+        "perimeter_profile": "rectangle_with_towers"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 14,
+        "y1": 6,
+        "z1": 3,
+        "x2": 15,
+        "y2": 6,
+        "z2": 3
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 2,
+          "z1": 1,
+          "x2": 27,
+          "z2": 5,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 14,
+          "z1": 3,
+          "x2": 15,
+          "z2": 3,
+          "block": "glowstone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 29,
+      "y2": 0,
+      "z2": 6,
+      "block": "quartz",
+      "purpose": "perimeter_base_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 28,
+      "y2": 1,
+      "z2": 5,
+      "block": "air",
+      "purpose": "clear_interior_base"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 1,
+      "x2": 27,
+      "y2": 4,
+      "z2": 5,
+      "block": "brick",
+      "purpose": "central_body_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 1,
+      "z1": 2,
+      "x2": 26,
+      "y2": 4,
+      "z2": 4,
+      "purpose": "central_body_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 1,
+      "x2": 27,
+      "y2": 1,
+      "z2": 5,
+      "block": "quartz",
+      "purpose": "horizontal_band_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 1,
+      "x2": 27,
+      "y2": 3,
+      "z2": 5,
+      "block": "quartz",
+      "purpose": "horizontal_band_middle"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 5,
+      "z1": 1,
+      "x2": 27,
+      "y2": 5,
+      "z2": 5,
+      "block": "nether_brick",
+      "purpose": "roof_dark_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 0,
+      "x2": 1,
+      "y2": 10,
+      "z2": 0,
+      "block": "brick",
+      "purpose": "tower_nw_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 10,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "tower_nw_corner"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 6,
+      "x2": 1,
+      "y2": 10,
+      "z2": 6,
+      "block": "brick",
+      "purpose": "tower_sw_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 6,
+      "x2": 0,
+      "y2": 10,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "tower_sw_corner"
+    },
+    {
+      "op": "fill",
+      "x1": 28,
+      "y1": 2,
+      "z1": 0,
+      "x2": 28,
+      "y2": 10,
+      "z2": 0,
+      "block": "brick",
+      "purpose": "tower_ne_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 29,
+      "y1": 2,
+      "z1": 0,
+      "x2": 29,
+      "y2": 10,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "tower_ne_corner"
+    },
+    {
+      "op": "fill",
+      "x1": 28,
+      "y1": 2,
+      "z1": 6,
+      "x2":
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 29,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 6,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 29, "y2": 0, "z2": 6, "block": "quartz_block", "description": "perimeter base front edge"},
+    {"type": "fill", "x1": 0, "y1": 6, "z1": 0, "x2": 29, "y2": 6, "z2": 6, "block": "quartz_block", "description": "perimeter base back edge"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 6, "z2": 6, "block": "quartz_block", "description": "perimeter base left edge"},
+    {"type": "fill", "x1": 29, "y1": 0, "z1": 0, "x2": 29, "y2": 6, "z2": 6, "block": "quartz_block", "description": "perimeter base right edge"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 1, "x2": 6, "y2": 4, "z2": 10, "block": "brick", "description": "tower NW main body"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 1, "x2": 3, "y2": 4, "z2": 10, "block": "stone_bricks", "description": "tower NW corner columns"},
+    {"type": "fill", "x1": 23, "y1": 2, "z1": 1, "x2": 27, "y2": 4, "z2": 10, "block": "brick", "description": "tower NE main body"},
+    {"type": "fill", "x1": 26, "y1": 2, "z1": 1, "x2": 27, "y2": 4, "z2": 10, "block": "stone_bricks", "description": "tower NE corner columns"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 1, "x2": 6, "y2": 4, "z2": 10, "block": "brick", "description": "tower SW main body"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 1, "x2": 3, "y2": 4, "z2": 10, "block": "stone_bricks", "description": "tower SW corner columns"},
+    {"type": "fill", "x1": 23, "y1": 2, "z1": 1, "x2": 27, "y2": 4, "z2": 10, "block": "brick", "description": "tower SE main body"},
+    {"type": "fill", "x1": 26, "y1": 2, "z1": 1, "x2": 27, "y2": 4, "z2": 10, "block": "stone_bricks", "description": "tower SE corner columns"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 10, "x2": 6, "y2": 4, "z2": 11, "block": "stone_slab", "description": "tower NW cap layer 1"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 11, "x2": 7, "y2": 5, "z2": 11, "block": "stone_slab", "description": "tower NW cap layer 2 overhang"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 11, "x2": 5, "y2": 3, "z2": 11, "block": "glowstone", "description": "tower NW cap glowstone center"},
+    {"type": "fill", "x1": 23, "y1": 2, "z1": 10, "x2": 27, "y2": 4, "z2": 11, "block": "stone_slab", "description": "tower NE cap layer 1"},
+    {"type": "fill", "x1": 22, "y1": 1, "z1": 11, "x2": 28, "y2": 5, "z2": 11, "block": "stone_slab", "description": "tower NE cap layer 2 overhang"},
+    {"type": "fill", "x1": 24, "y1": 3, "z1": 11, "x2": 26, "y2": 3, "z2": 11, "block": "glowstone", "description": "tower NE cap glowstone center"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 10, "x2": 6, "y2": 4, "z2": 11, "block": "stone_slab", "description": "tower SW cap layer 1"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 11, "x2": 7, "y2": 5, "z2": 11, "block": "stone_slab", "description": "tower SW cap layer 2 overhang"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 11, "x2": 5, "y2": 3, "z2": 11, "block": "glowstone", "description": "tower SW cap glowstone center"},
+    {"type": "fill", "x1": 23, "y1": 2, "z1": 10, "x2": 27, "y2": 4, "z2": 11, "block": "stone_slab", "description": "tower SE cap layer 1"},
+    {"type": "fill", "x1": 22, "y1": 1, "z1": 11, "x2": 28, "y2": 5, "z2": 11, "block": "stone_slab", "description": "tower SE cap layer 2 overhang"},
+    {"type": "fill", "x1": 24, "y1": 3, "z1": 11, "x2": 26, "y2": 3, "z2": 11, "block": "glowstone", "description": "tower SE cap glowstone center"},
+    {"type": "fill", "x1": 7, "y1": 2, "z1": 1, "x2": 22, "y2": 4, "z2": 2, "block": "quartz_block", "description":

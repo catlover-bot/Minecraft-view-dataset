@@ -1,0 +1,476 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 14
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "wood",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 14,
+          "label": "main"
+        }
+      ],
+      "symmetry": "z_axis_centered (bilateral along long axis front/back)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground floor open plan; unknown interior",
+        "perimeter_profile": "rectangle with raised border"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 7
+        },
+        "rooms_hint": "upper floor continuous windows band",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 4,
+        "y1": 1,
+        "z1": 0,
+        "x2": 4,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 2,
+        "z1": 0,
+        "x2": 7,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 5,
+        "z1": 0,
+        "x2": 7,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 2,
+        "z1": 14,
+        "x2": 7,
+        "y2": 2,
+        "z2": 14
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 5,
+        "z1": 14,
+        "x2": 7,
+        "y2": 5,
+        "z2": 14
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 8,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 3,
+          "x2": 8,
+          "z2": 11,
+          "block": "brick"
+        },
+        {
+          "y": 9,
+          "x1": 1,
+          "z1": 4,
+          "x2": 7,
+          "z2": 10,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 2,
+          "z1": 5,
+          "x2": 6,
+          "z2": 9,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1":  -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 9,
+      "y2": 0,
+      "z2": 15,
+      "block": "quartz",
+      "purpose": "raised_border_platform_full (extends 1 block beyond footprint)"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 14,
+      "purpose": "platform_inset_ground (clear interior platform surface)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 14,
+      "block": "wood",
+      "purpose": "ground_floor_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 14,
+      "block": "sandstone",
+      "purpose": "ground_floor_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 6,
+      "z2": 14,
+      "block": "sandstone",
+      "purpose": "upper_floor_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 14,
+      "block": "wood",
+      "purpose": "horizontal_wood_band_floor_separator"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 8,
+      "y2": 7,
+      "z2": 14,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_caps_and_trim (continuous cap row)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 7,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 14,
+      "x2": 0,
+      "y2": 7,
+      "z2": 14,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 14,
+      "x2": 8,
+      "y2": 7,
+      "z2": 14,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_se"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 0,
+      "x2": 7,
+      "y2": 2,
+      "z
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 14,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 14,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 0, 0],
+      "to": [14, 0, 14],
+      "desc": "raised white quartz border platform (1 block high) covering full expanded footprint base"
+    },
+    {
+      "op": " hollow_replace_cut",
+      "block": null,
+      "from": [1, 1, 1],
+      "to": [13, 7, 13],
+      "desc": "clear interior space by ensuring inside of shell is air (prepare cavity)"
+    },
+    {
+      "op": "fill",
+      "block": "stone_bricks",
+      "from": [1, 1, 1],
+      "to": [1, 7, 13],
+      "desc": "west corner pillar (full height)"
+    },
+    {
+      "op": "fill",
+      "block": "stone_bricks",
+      "from": [13, 1, 1],
+      "to": [13, 7, 13],
+      "desc": "east corner pillar (full height)"
+    },
+    {
+      "op": "fill",
+      "block": "stone_bricks",
+      "from": [1, 1, 13],
+      "to": [13, 7, 13],
+      "desc": "south-east corner pillar (column, overlaps adjusted) -- note: Pillars placed at each corner columns aligned"
+    },
+    {
+      "op": "fill",
+      "block": "stone_bricks",
+      "from": [1, 1, 1],
+      "to": [1, 7, 1],
+      "desc": "north-west corner pillar (explicit minimal pillar block to ensure corners present)"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [2, 1, 2],
+      "to": [12, 4, 12],
+      "desc": "ground and first-floor wall mass (three blocks high band for walls up to mid-level)"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [2, 5, 2],
+      "to": [12, 5, 12],
+      "desc": "wood plank horizontal band separating floors (one block tall)"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [2, 6, 2],
+      "to": [12, 7, 12],
+      "desc": "second-floor wall band above wooden separator"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [3, 2, 1],
+      "to": [11, 2, 1],
+      "desc": "front continuous windows, first floor (west-east long axis), 1-high continuous panes centered in floor band"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [3, 6, 1],
+      "to": [11, 6, 1],
+      "desc": "front continuous windows, second floor"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [3, 2, 13],
+      "to": [11, 2, 13],
+      "desc": "rear continuous windows, first floor"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [3, 6, 13],
+      "to": [11, 6, 13],
+      "desc": "rear continuous windows, second floor"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [1, 2, 3],
+      "to": [1, 2, 11],
+      "desc": "west continuous side windows, first floor"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [13, 2, 3],
+      "to": [13, 2, 11],
+      "desc": "east continuous side windows, first floor"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [1, 6, 3],
+      "to": [1, 6, 11],
+      "desc": "west continuous side windows, second floor"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [13, 6, 3],
+      "to": [13, 6, 11],
+      "desc": "east continuous side windows, second floor"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [2, 1, 2],
+      "to": [12, 1, 12],
+      "desc": "interior floor (ground level) using wood planks"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [2, 4, 2],
+      "to": [12, 4, 12],
+      "desc": "first-floor ceiling / second-floor floor layer at y=4"
+    },
+    {
+      "op": "set",
+      "block": "air",
+      "from": [7, 1, 13],
+      "to": [7, 2, 13],
+      "desc": "main entrance opening on front face (single door space centered along width)"
+    },
+    {
+      "op": "stairs",
+      "block": "oak_stairs",
+      "from": [7, 1, 12],
+      "to": [7, 1, 12],
+      "desc": "small step inside entrance"
+    },
+    {
+      "op": "fill",
+      "block": "brick_block",
+      "from": [2, 8, 2],
+      "to": [12, 8, 12],
+      "desc": "lowest layer of stepped brick roof (first roof row atop upper walls)"
+    },
+    {
+      "op": "fill",
+      "block": "brick_block",
+      "from": [3, 9, 3],
+      "to": [11, 9, 11],
+      "desc": "second roof layer stepped inward"
+    },
+    {
+      "op": "fill",
+      "block": "brick_block",
+      "from": [4, 10, 4],
+      "to": [10, 10, 10],
+      "desc": "third roof layer forming low ridge"
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [2, 8, 1],
+      "to": [12, 8, 1],
+      "desc": "front eave stone/stone slab trim"
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [2, 8, 13],
+      "to": [12, 8, 13],
+      "desc": "rear eave stone slab trim"
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [1, 8, 2],
+      "to": [1, 8, 12],
+      "desc": "west eave trim"
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [13, 8, 2],
+      "to": [13, 8, 12],
+      "desc": "east eave trim"
+    },
+    {
+      "op": "replace",
+      "block": "air",
+      "from": [

@@ -1,0 +1,71 @@
+{
+  "summary": "Small rectangular single-storey modern/blocky building with a raised flat brick roof inset, stone/white trim base, sandstone lower walls and a continuous band of horizontal windows on the long sides. The building sits centered on a rectangular dirt plot with a one-block-wide white border/ledge around it and an inner gray stone rim at roof level.",
+  "building_type": "single-story commercial/utility (uncertain)",
+  "shape": {
+    "overall_form": "simple elongated rectangular box with a recessed roof center and a surrounding low ledge",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along the long axis (mirrored left/right), likely along short axis as well",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 21,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof_field",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "roof_edge/trim (slab)",
+      "confidence": 0.8
+    },
+    {
+      "name": "sandstone",
+      "role": "lower_wall",
+      "confidence": 0.9
+    },
+    {
+      "name": "quartz (or white stone)",
+      "role": "upper_wall/ledge/foundation",
+      "confidence": 0.7
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "dirt",
+      "role": "ground_plot",
+      "confidence": 1.0
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows (4-5 panes long on each long side)",
+    "raised flat brick roof with inner recessed brick area",
+    "stone/white perimeter ledge one block high around building base",
+    "stone slab rim around top of walls under brick course",
+    "single-storey walls composed of two vertical material bands (lower sandstone, upper white blocks) with brick course above"
+  ],
+  "rebuild_hints": [
+    "Use an elongated rectangular footprint with proportions approx width 9 x depth 21 blocks (count from top-down images); central building sits inside a one-block white perimeter ledge.",
+    "Wall composition per long face: bottom 2 blocks high sandstone, 1 block high band of glass windows (1 block tall continuous windows separated by columns), 1 block high white/ quartz band, then 1 course of brick around top followed by a stone-slab rim. Total wall height ≈5 blocks.",
+    "Roof: fill inner rectangle with brick blocks flush with top of brick course; surround roof inner brick with stone-slab rim (one block wide) matching images.",
+    "Place glass panes/windows in a continuous horizontal row of single-block-high windows along the long faces; short ends have no windows (corners are white/quartz blocks)."
+  ],
+  "uncertainties": [
+    "Material labeled 'quartz (or white stone)' could be smooth quartz, diorite, or another white block; exact block ID uncertain.",
+    "Lower wall appears to be sandstone texture but could be chiseled/regular sandstone variant; exact sandstone variant uncertain.",
+    "Exact internal layout, door location, and presence of interior floors or furniture not visible from provided exterior views.",
+    "Dimension estimates are approximate from image perspective; actual block counts may differ by ±2–3 blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_094",
+  "created_at": "2026-02-28T14:21:08.077325+00:00"
+}

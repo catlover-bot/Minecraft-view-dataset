@@ -1,0 +1,73 @@
+{
+  "summary": "Single-story rectangular low building with a flat, slightly raised brick-tiled roof surrounded by a stone slab coping; sand-colored lower walls with a band of white blocks above and a brick band under the roof. Continuous horizontal windows on the longer sides and a raised white slab border (low parapet/ledge) around the base on a dirt foundation.",
+  "building_type": "small commercial or utility building (e.g., shop or storage)",
+  "shape": {
+    "overall_form": "simple rectangular prism with a flat roof and a shallow raised parapet",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis (mirrored long facades)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 19,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof_surface (brick tiles)",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "roof_coping / top border (smooth stone slab like)",
+      "confidence": 0.8
+    },
+    {
+      "name": "sandstone",
+      "role": "lower_wall",
+      "confidence": 0.9
+    },
+    {
+      "name": "quartz",
+      "role": "middle_wall_band and corner pillars and base border (white smooth)",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "slab_stone",
+      "role": "base parapet / ledge around building",
+      "confidence": 0.7
+    }
+  ],
+  "elements": [
+    "continuous horizontal window band (4-5 panes long per side)",
+    "single-storey walls with corner pillar blocks",
+    "flat brick roof with stone slab coping",
+    "raised white slab border around base (parapet/ledge)",
+    "dirt/gravel excavation surrounding building"
+  ],
+  "rebuild_hints": [
+    "Footprint: rectangular; interior not visible but roof area shows brick pattern inset within a 1-block-wide stone-slab coping and a 1-block-wide white slab border at ground level.",
+    "Wall composition from bottom up: sandstone lower course (~2 blocks tall), then a continuous horizontal row of glass windows (single-block high each), then a 1-block-high white smooth band, then a 1-block-high brick band beneath the roof coping.",
+    "Corners use the same white smooth blocks as the middle band, forming vertical corner pillars rising to the roof coping.",
+    "Roof is flat brick tiles filling center recessed by one block from coping; coping uses stone slabs/stonebrick top layer around perimeter.",
+    "Place a one-block-wide white slab/step border around the base sitting on the ground; surrounding ground is lowered dirt creating a trench around the building."
+  ],
+  "uncertainties": [
+    "Exact Minecraft block IDs for white smooth blocks: appear to be quartz blocks but could be smooth sandstone or white concrete; identified as quartz with moderate confidence.",
+    "Lower sand-colored blocks appear as sandstone variants (smooth or regular); exact variant uncertain.",
+    "Stone coping material identified as stonebrick/stone slab; could be smooth stone slab or stone brick slab — not fully certain.",
+    "Precise internal layout, door location, and any rear facades are not visible in provided images.",
+    "Exact footprint dimensions are estimated from visible brick roof tile count and may vary by +/-2 blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_034",
+  "created_at": "2026-02-28T14:05:20.098916+00:00"
+}

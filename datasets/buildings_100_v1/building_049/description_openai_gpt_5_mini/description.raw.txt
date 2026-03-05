@@ -1,0 +1,44 @@
+{
+  "summary": "A small two-story rectangular Minecraft house with a raised stone foundation, repeating horizontal banding of materials, narrow horizontal windows on both floors, a stepped gable-like wooden roof, and a low white border/planter surrounding the footprint.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "rectangular block with slightly tapered/stepped roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along long axis (mirrored front/back and left/right on seen facades)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 5,
+    "height": 7
+  },
+  "materials": [
+    {"name": "stonebrick", "role": "lower wall band / foundation", "confidence": 0.9},
+    {"name": "cobblestone", "role": "corner accents", "confidence": 0.8},
+    {"name": "wood", "role": "roof and horizontal trim (likely oak planks)", "confidence": 0.95},
+    {"name": "glass", "role": "windows", "confidence": 1.0},
+    {"name": "quartz", "role": "white border/planter and mid-band", "confidence": 0.85},
+    {"name": "slab_stone", "role": "stone slab trim on roof edges and band", "confidence": 0.6}
+  ],
+  "elements": [
+    "two stacked floors with continuous narrow windows on each floor (long horizontal rows)",
+    "horizontal material bands: stonebrick at bottom, white band mid, wood trim between bands",
+    "wooden stepped/gabled roof with slab/step accents at peak",
+    "cobblestone vertical corner blocks",
+    "white low border around building (1 block high) forming a recessed planter area"
+  ],
+  "rebuild_hints": [
+    "Footprint: an 11x5 block rectangular main volume (estimate), centered inside a 13x7 white border; adjust if needed from images.",
+    "Walls: repeat pattern vertically: bottom 2 rows stonebrick with windows inset, then narrow wood trim row, then 1-2 row white (quartz) band, then stonebrick row with windows, capped by wood trim and roof.",
+    "Corners: use cobblestone full blocks at vertical corners extending full height of visible stone bands.",
+    "Windows: narrow 1-block-high glass strips; place them in continuous rows along long sides with 1-block gaps between window groups as seen.",
+    "Roof: construct a symmetrical gable with oak planks using stairs/slabs to create stepped profile and small central peak detail; cap ends with stone slab accents."
+  ],
+  "uncertainties": [
+    "Exact footprint dimensions (width/depth) are estimated from pixel views and top-down images; could be off by ±1-2 blocks.",
+    "Material IDs: white blocks appear to be quartz but could be smooth stone or concrete; stone slab and exact slab material ambiguous.",
+    "Some small trim blocks (slabs/stairs) on roof and band edges are hard to distinguish precisely (stone vs. smooth stone vs. stonebrick slabs).",
+    "Internal floor heights and interior layout are not visible; number of internal floors assumed from exterior banding."
+  ]
+}

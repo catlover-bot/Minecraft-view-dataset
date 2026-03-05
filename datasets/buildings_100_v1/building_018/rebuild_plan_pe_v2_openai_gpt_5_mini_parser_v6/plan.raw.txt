@@ -1,0 +1,408 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 16,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 8
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 8,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single open commercial hall (undivided)",
+        "perimeter_profile": "rectangular with raised ledge/porch"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 8,
+        "y1": 1,
+        "z1": 0,
+        "x2": 8,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 2,
+        "x2": 0,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 16,
+        "y1": 2,
+        "z1": 2,
+        "x2": 16,
+        "y2": 2,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 15,
+          "z2": 7,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 8,
+      "block": "oak_planks",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 1,
+      "z2": 8,
+      "block": "quartz_block",
+      "purpose": "raised_white_border_ledge_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 16,
+      "y2": 3,
+      "z2": 8,
+      "block": "brick",
+      "purpose": "lower_brick_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 16,
+      "y2": 3,
+      "z2": 8,
+      "block": "brick",
+      "purpose": "brick_band_thickness"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 16,
+      "y2": 4,
+      "z2": 8,
+      "block": "quartz_block",
+      "purpose": "continuous_white_band_above_brick"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 16,
+      "y2": 5,
+      "z2": 8,
+      "block": "nether_brick",
+      "purpose": "dark_cornice_top (one-block high around perimeter)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 15,
+      "y2": 5,
+      "z2": 7,
+      "block": "nether_brick",
+      "purpose": "roof_inset_surface"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 1,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "front_ground_white_border_along_north (ledge facing north)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 8,
+      "x2": 16,
+      "y2": 1,
+      "z2": 8,
+      "block": "quartz_block",
+      "purpose": "rear_ground_white_border_along_south"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 1,
+      "z2": 8,
+      "block": "quartz_block",
+      "purpose": "west_ground_white_border"
+    },
+    {
+      "op": "fill",
+      "x1": 16,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 1,
+      "z2": 8,
+      "block": "quartz_block",
+      "purpose": "east_ground_white_border"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 5,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_west_north_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 16,
+      "y1": 2,
+      "z1": 0,
+      "x2": 16,
+      "y2": 5,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_east_north_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 8,
+      "x2": 0,
+      "y2": 5,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "corner_west_south_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 16,
+      "y1": 2,
+      "z1": 8,
+      "x2": 16,
+      "y2": 5,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "corner_east_south_pillar
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 16,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 8,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [0, 0, 0],
+      "to": [16, 6, 8]
+    },
+    {
+      "op": "fill",
+      "block": "smooth_quartz",
+      "from": [0, 0, 0],
+      "to": [16, 0, 8],
+      "comment": "ground-level white border/ledge (one-block-high border placed at y=0 as raised ledge base)"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [1, 1, 1],
+      "to": [15, 1, 7],
+      "comment": "wooden skirting/base layer (1 block high) inset 1 from outer border"
+    },
+    {
+      "op": "fill",
+      "block": "brick",
+      "from": [1, 2, 1],
+      "to": [15, 3, 7],
+      "comment": "primary brick wall lower band (2 blocks high from y=2..3)"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [3, 3, 1],
+      "to": [13, 3, 1],
+      "comment": "continuous horizontal windows on one long side (front). glass panes placed in row at y=3, z=1 between x=3..13"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [3, 3, 7],
+      "to": [13, 3, 7],
+      "comment": "continuous horizontal windows on opposite long side (back). glass panes at y=3, z=7"
+    },
+    {
+      "op": "fill",
+      "block": "smooth_quartz",
+      "from": [1, 4, 1],
+      "to": [15, 4, 7],
+      "comment": "continuous white band above brick at y=4 (one block high)"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick",
+      "from": [0, 5, 0],
+      "to": [16, 5, 8],
+      "comment": "dark cornice around top (one block high at y=5) including overhang; spans full bbox width for consistent coping"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [0, 1, 0],
+      "to": [0, 5, 0],
+      "comment": "stone corner pillar (front-left) full wall height"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [16, 1, 0],
+      "to": [16, 5, 0],
+      "comment": "stone corner pillar (front-right)"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [0, 1, 8],
+      "to": [0, 5, 8],
+      "comment": "stone corner pillar (back-left)"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [16, 1, 8],
+      "to": [16, 5, 8],
+      "comment": "stone corner pillar (back-right)"
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [8, 1, 1],
+      "to": [8, 3, 1],
+      "comment": "entrance recessed opening on front long side (2 blocks high, 1 block wide). ensures door space is open"
+    },
+    {
+      "op": "set",
+      "block": "oak_door",
+      "pos": [8, 1, 1],
+      "comment": "place door at entrance (bottom half). door occupies front opening"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick",
+      "from": [1, 6, 1],
+      "to": [15, 6, 7],
+      "comment": "roof interior (inset dark roof) recessed one block from cornice; placed at y=6 (roof surface)"
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [0, 6, 0],
+      "to": [16, 6, 8],
+      "comment": "stone slab coping surrounding roof edge (covers cornice top and provides visible coping). runs at same height as roof surface to form coping"
+    },
+    {
+      "op": "replace",
+      "block": "brick",
+      "from": [1, 2, 0],
+      "to": [15, 3, 0],
+      "comment": "front face lower brick continues to border edge (z=0) except where entrance is (entrance cleared above)"
+    },
+    {
+      "op": "replace",
+      "block": "brick",
+      "from": [1, 2, 8],
+      "to": [15, 3, 8],
+      "comment": "back face lower brick continues to border edge (z=8)"
+    },
+    {
+      "op": "fill",
+      "block": "smooth_quartz",
+      "from": [0, 1, 0],
+      "to": [16, 1, 8],
+      "comment": "ensure the raised white border/ledge wraps full perimeter at y=0..1; keeps continuity around base"
+    }
+  ],
+  "self_check": {
+    "bbox_within_operations": false,
+    "operation_count_ok": false,
+    "contains_required_elements": false,
+    "material_coherence": false,
+    "structural_faithfulness": false,
+    "notes": "I performed corrections to create a full executable plan but several validation flags are set to false because the draft bbox and operations required adjustments. All operation coordinates are within bbox [0..16] x [0..6] x [0..8]. Total operations: 19 (<=260). Plan includes floor/base, walls, roof, windows, and an entrance. Materials are used distinctly for roles. Roof is inset and coping provided. If bbox or dimensional expectations should be tightened (e.g., width/depth offsets by 1), update bbox and I will re-run validations."
+  }
+}

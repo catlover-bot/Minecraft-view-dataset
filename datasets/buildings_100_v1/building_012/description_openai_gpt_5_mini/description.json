@@ -1,0 +1,73 @@
+{
+  "summary": "A small rectangular single-story building with brick walls, a dark stepped gable roof, stone corner supports and a raised white stone border around the perimeter. Long narrow windows run along the long sides above a wooden base trim.",
+  "building_type": "small house / shed",
+  "shape": {
+    "overall_form": "low rectangular block with a centered pitched/stepped roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 7,
+    "depth": 15,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "quartz_block",
+      "role": "border/coping",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner/support",
+      "confidence": 0.6
+    },
+    {
+      "name": "wood_planks",
+      "role": "base trim/floor edge",
+      "confidence": 0.8
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    }
+  ],
+  "elements": [
+    "continuous row of 3 narrow windows on each long side (glass panes)",
+    "stone corner pillars/supports on the short sides",
+    "dark stepped gable roof with alternating slab/solid steps",
+    "raised white stone/quartz border platform surrounding the building",
+    "wooden base trim (one block high) between brick wall and ground"
+  ],
+  "rebuild_hints": [
+    "Footprint: rectangle approx 7 blocks wide (short side) by 15 blocks long (long side) based on visible roof and window counts; adjust if needed.",
+    "Walls: 3–4 blocks tall of brick with a 1-block-high wood plank trim at the base and 1-block-high quartz/coping above the brick before the roof.",
+    "Roof: central ridge of nether_brick stairs/blocks stepped down symmetrically to both long sides with stone (or quartz) slabs at each step edge.",
+    "Corners: place stacked stonebrick (or cobblestone) pillars at the four corners rising to meet the quartz coping.",
+    "Perimeter: one-block-wide raised quartz border on ground level surrounding the building; interior ground appears dirt/grass removed."
+  ],
+  "uncertainties": [
+    "Exact block types for corner pillars: appear like stonebrick but could be another grey stone variant; confidence moderate.",
+    "Base trim wood type uncertain (looks like oak planks) — labeled generically as wood_planks.",
+    "Roof uses dark red bricks (nether brick) and may use stairs/slabs; exact stair orientation and slab placement inferred from stepped profile.",
+    "Precise interior layout and door location are not visible in provided views.",
+    "Exact footprint dimensions estimated from roof and window counts; could be off by a few blocks in width/depth."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_012",
+  "created_at": "2026-02-28T13:59:50.292760+00:00"
+}

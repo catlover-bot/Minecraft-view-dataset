@@ -1,0 +1,464 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "oak_planks",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 11,
+          "z2": 9,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "single hall",
+        "perimeter_profile": "rectangular walls with continuous window band"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 6,
+        "y1": 1,
+        "z1": 9,
+        "x2": 7,
+        "y2": 3,
+        "z2": 9
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 11,
+        "y1": 3,
+        "z1": 3,
+        "x2": 11,
+        "y2": 3,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 3,
+        "z1": 3,
+        "x2": 1,
+        "y2": 3,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 11,
+          "z2": 9,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 2,
+          "x2": 10,
+          "z2": 8,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 3,
+          "z1": 3,
+          "x2": 9,
+          "z2": 7,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "foundation_platform_top"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 11,
+      "y2": 0,
+      "z2": 9,
+      "block": "stonebrick",
+      "purpose": "foundation_inset_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 1,
+      "z2": 9,
+      "block": "oak_planks",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 11,
+      "y2": 4,
+      "z2": 9,
+      "block": "oak_planks",
+      "purpose": "wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 1,
+      "y2": 4,
+      "z2": 9,
+      "block": "oak_log",
+      "purpose": "west_wall_corner_posts"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 2,
+      "z1": 1,
+      "x2": 11,
+      "y2": 4,
+      "z2": 9,
+      "block": "oak_log",
+      "purpose": "east_wall_corner_posts"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 11,
+      "y2": 2,
+      "z2": 1,
+      "block": "oak_log",
+      "purpose": "north_wall_corner_posts"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 9,
+      "x2": 11,
+      "y2": 2,
+      "z2": 9,
+      "block": "oak_log",
+      "purpose": "south_wall_corner_posts"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 3,
+      "z1": 1,
+      "x2": 10,
+      "y2": 3,
+      "z2": 1,
+      "purpose": "north_window_band"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 3,
+      "z1": 9,
+      "x2": 10,
+      "y2": 3,
+      "z2": 9,
+      "purpose": "south_window_band"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 3,
+      "z1": 2,
+      "x2": 1,
+      "y2": 3,
+      "z2": 8,
+      "purpose": "west_window_band"
+    },
+    {
+      "op": "carve",
+      "x1": 11,
+      "y1": 3,
+      "z1": 2,
+      "x2": 11,
+      "y2": 3,
+      "z2": 8,
+      "purpose": "east_window_band"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 1,
+      "x2": 10,
+      "y2": 3,
+      "z2": 1,
+      "block": "glass",
+      "purpose": "north_glass_band"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 9,
+      "x2": 10,
+      "y2": 3,
+      "z2": 9,
+      "block": "glass",
+      "purpose": "south_glass_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 2,
+      "x2": 1,
+      "y2": 3,
+      "z2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 12,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 10,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "block": "stone_bricks",
+      "from": [ -1, -1, -1 ],
+      "to": [ 13, 0, 11 ],
+      "note": "FOUNDATION PLATFORM: 1-block-high stonebrick platform surrounding building footprint. Expanded to create 13x11 outer footprint (walkway)."
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "block": "air",
+      "from": [ 0, 0, 0 ],
+      "to": [ 12, 0, 10 ],
+      "note": "Clear interior of foundation area (ensure platform edges are solid stonebrick at y=0)."
+    },
+    {
+      "id": 3,
+      "action": "fill",
+      "block": "oak_log",
+      "from": [ 1, 1, 1 ],
+      "to": [ 1, 4, 1 ],
+      "note": "NW vertical corner post"
+    },
+    {
+      "id": 4,
+      "action": "fill",
+      "block": "oak_log",
+      "from": [ 11, 1, 1 ],
+      "to": [ 11, 4, 1 ],
+      "note": "NE vertical corner post"
+    },
+    {
+      "id": 5,
+      "action": "fill",
+      "block": "oak_log",
+      "from": [ 1, 1, 9 ],
+      "to": [ 1, 4, 9 ],
+      "note": "SW vertical corner post"
+    },
+    {
+      "id": 6,
+      "action": "fill",
+      "block": "oak_log",
+      "from": [ 11, 1, 9 ],
+      "to": [ 11, 4, 9 ],
+      "note": "SE vertical corner post"
+    },
+    {
+      "id": 7,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [ 2, 1, 1 ],
+      "to": [ 10, 1, 9 ],
+      "note": "GROUND FLOOR: fill wall infill base layer (y=1) between corner logs; will be full interior floor layer later."
+    },
+    {
+      "id": 8,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [ 2, 2, 1 ],
+      "to": [ 10, 3, 1 ],
+      "note": "North wall planking (excluding windows)."
+    },
+    {
+      "id": 9,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [ 2, 2, 9 ],
+      "to": [ 10, 3, 9 ],
+      "note": "South wall planking (excluding windows)."
+    },
+    {
+      "id": 10,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [ 1, 2, 2 ],
+      "to": [ 1, 3, 8 ],
+      "note": "West wall planking (between logs) excluding window band."
+    },
+    {
+      "id": 11,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [ 11, 2, 2 ],
+      "to": [ 11, 3, 8 ],
+      "note": "East wall planking (between logs) excluding window band."
+    },
+    {
+      "id": 12,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [ 3, 3, 1 ],
+      "to": [ 9, 3, 1 ],
+      "note": "North continuous window band (single row at y=3)."
+    },
+    {
+      "id": 13,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [ 3, 3, 9 ],
+      "to": [ 9, 3, 9 ],
+      "note": "South continuous window band (single row at y=3)."
+    },
+    {
+      "id": 14,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [ 1, 3, 3 ],
+      "to": [ 1, 3, 7 ],
+      "note": "West window band between logs (single row)."
+    },
+    {
+      "id": 15,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [ 11, 3, 3 ],
+      "to": [ 11, 3, 7 ],
+      "note": "East window band between logs (single row)."
+    },
+    {
+      "id": 16,
+      "action": "fill",
+      "block": "stone_bricks",
+      "from": [ 0, 4, 0 ],
+      "to": [ 12, 4, 10 ],
+      "note": "STONEBRICK COPING: 1-block-thick coping around top of walls at y=4 (parapet)."
+    },
+    {
+      "id": 17,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [ 2, 1, 2 ],
+      "to": [ 10, 1, 8 ],
+      "note": "INTERIOR FLOOR: oak plank floor at y=1 occupying interior area (leaving wall thickness clear)."
+    },
+    {
+      "id": 18,
+      "action": "fill",
+      "block": "air",
+      "from": [ 6, 1, 0 ],
+      "to": [ 6, 2, 0 ],
+      "note": "ENTRANCE OPENING (front centered on north short side): clear 1-wide doorway through north wall at x=6,z=1; ensure opening extends to platform step."
+    },
+    {
+      "id": 19,
+      "action": "setblock",
+      "block": "oak_door",
+      "pos": [ 6, 1, 1 ],
+      "note": "Place door in entrance (bottom half)."
+    },
+    {
+      "id": 20,
+      "action": "setblock",
+      "block": "oak_door",
+      "pos": [ 6, 2, 1 ],
+      "note": "Place door top half."
+    },
+    {
+      "id": 21,
+      "action": "fill",
+      "block": "nether_brick_slab",
+      "from": [ 2, 5, 3 ],
+      "to": [ 10, 5, 7 ],
+      "note": "ROOF TIER 1: central top plateau (middle slab layer) starting at y=5."
+    },
+    {
+      "id": 22,
+      "action": "fill",
+      "block": "nether_brick_slab",
+      "from": [ 1, 6, 2 ],
+      "to": [ 11, 6, 8 ],
+      "note": "ROOF TIER 2: outer slab ring slightly raised forming stepped profile at y=6."
+    },
+    {
+      "id": 23,
+      "action": "fill",
+      "block": "nether_bricks",
+      "from": [ 0, 7, 1 ],
+      "to": [ 12, 7, 9 ],
+      "note": "ROOF RIDGE: topmost compact nether_brick ring forming a slight peak at y=7 (small ridge)."
+    },
+    {
+      "id": 24,
+      "action": "fill",
+      "block": "stone_slab",
+      "from": [

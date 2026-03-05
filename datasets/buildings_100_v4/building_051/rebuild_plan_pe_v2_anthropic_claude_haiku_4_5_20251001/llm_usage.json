@@ -1,0 +1,91 @@
+{
+  "building": "building_051",
+  "stage": "plan",
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "calls": [
+    {
+      "stage": "plan_draft",
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "endpoint": "/v1/messages",
+      "usage": {
+        "input_tokens": 5116,
+        "output_tokens": 1800,
+        "total_tokens": 6916,
+        "raw": {
+          "input_tokens": 5116,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 1800,
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        }
+      },
+      "cost": {
+        "input_tokens": 5116,
+        "output_tokens": 1800,
+        "total_tokens": 6916,
+        "input_price_per_mtok": 0.8,
+        "output_price_per_mtok": 4.0,
+        "input_cost_usd": 0.0040928,
+        "output_cost_usd": 0.0072,
+        "estimated_cost_usd": 0.011292799999999999,
+        "pricing_source": "heuristic_anthropic_haiku"
+      }
+    },
+    {
+      "stage": "plan_revise",
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "endpoint": "/v1/messages",
+      "usage": {
+        "input_tokens": 1210,
+        "output_tokens": 1800,
+        "total_tokens": 3010,
+        "raw": {
+          "input_tokens": 1210,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 1800,
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        }
+      },
+      "cost": {
+        "input_tokens": 1210,
+        "output_tokens": 1800,
+        "total_tokens": 3010,
+        "input_price_per_mtok": 0.8,
+        "output_price_per_mtok": 4.0,
+        "input_cost_usd": 0.000968,
+        "output_cost_usd": 0.0072,
+        "estimated_cost_usd": 0.008168,
+        "pricing_source": "heuristic_anthropic_haiku"
+      }
+    }
+  ],
+  "totals": {
+    "input_tokens": 6326,
+    "output_tokens": 3600,
+    "total_tokens": 9926,
+    "known_cost_calls": 2,
+    "estimated_cost_usd": 0.0194608
+  },
+  "prompt_profile": {
+    "name": "rebuild_plan_strong_v2",
+    "version": "2026-03-01",
+    "path": "/Users/hirotaka-m/Minecraft-view-dataset/prompts/rebuild_plan_strong_v2.json",
+    "critic_revise_enabled": true,
+    "few_shots_count": 2
+  },
+  "created_at": "2026-02-28T18:40:11.357952+00:00"
+}

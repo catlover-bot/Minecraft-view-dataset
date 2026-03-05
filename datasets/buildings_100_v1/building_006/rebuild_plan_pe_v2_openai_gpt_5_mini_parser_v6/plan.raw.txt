@@ -1,0 +1,482 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 24
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "pillar": "stonebrick",
+    "coping": "stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 24,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_x_and_z_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single hall / utility interior",
+        "perimeter_profile": "rectangular with central roof recess"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 24,
+        "x2": 5,
+        "y2": 2,
+        "z2": 24
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 2,
+        "z1": 4,
+        "x2": 10,
+        "y2": 3,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 2,
+        "z1": 8,
+        "x2": 10,
+        "y2": 3,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 2,
+        "z1": 12,
+        "x2": 10,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 2,
+        "z1": 16,
+        "x2": 10,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 2,
+        "z1": 20,
+        "x2": 10,
+        "y2": 3,
+        "z2": 20
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 4,
+        "x2": 0,
+        "y2": 3,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 8,
+        "x2": 0,
+        "y2": 3,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 12,
+        "x2": 0,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 16,
+        "x2": 0,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 20,
+        "x2": 0,
+        "y2": 3,
+        "z2": 20
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 4,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 24,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 3,
+          "z1": 6,
+          "x2": 7,
+          "z2": 18,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 2,
+          "z1": 5,
+          "x2": 8,
+          "z2": 19,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 24,
+      "block": "wood",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 24,
+      "block": "wood",
+      "purpose": "base_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 24,
+      "block": "brick",
+      "purpose": "brick_field_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 24,
+      "block": "brick",
+      "purpose": "brick_field_extra_row"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 10,
+      "y2": 4,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "white_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 10,
+      "y2": 5,
+      "z2": 24,
+      "block": "nether_brick",
+      "purpose": "dark_band_near_roof"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 24,
+      "block": "stone_slab",
+      "purpose": "top_coping_line"
+    },
+    {
+      "op": "fill",
+      "x1": 0
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 24,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "minecraft:air",
+      "from": [0, 0, 0],
+      "to": [10, 6, 24]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [ -1, 0, -1],
+      "to": [11, 0, 25],
+      "note": "ground-level exterior low ledge / planter surrounding building footprint (1 block wide). NOTE: coordinates adjusted to lie within bbox; clipped to bbox in execution."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_planks",
+      "from": [0, 1, 0],
+      "to": [10, 1, 24],
+      "note": "1-block high wooden base trim under brick"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": [0, 2, 0],
+      "to": [10, 4, 24],
+      "note": "brick field (3 blocks tall from y=2..4). Will be trimmed for windows and stone pillars."
+    },
+    {
+      "op": "replace",
+      "block": "minecraft:stone_bricks",
+      "from": [0, 2, 0],
+      "to": [0, 4, 0],
+      "note": "front-left corner pillar (full wall height)"
+    },
+    {
+      "op": "replace",
+      "block": "minecraft:stone_bricks",
+      "from": [10, 2, 0],
+      "to": [10, 4, 0],
+      "note": "front-right corner pillar"
+    },
+    {
+      "op": "replace",
+      "block": "minecraft:stone_bricks",
+      "from": [0, 2, 24],
+      "to": [0, 4, 24],
+      "note": "back-left corner pillar"
+    },
+    {
+      "op": "replace",
+      "block": "minecraft:stone_bricks",
+      "from": [10, 2, 24],
+      "to": [10, 4, 24],
+      "note": "back-right corner pillar"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [1, 5, 1],
+      "to": [9, 5, 23],
+      "note": "continuous white trim band (1 block tall) above brick band across walls"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:nether_brick",
+      "from": [1, 6, 1],
+      "to": [9, 6, 23],
+      "note": "dark horizontal band near roof (1 block tall)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_slab",
+      "from": [2, 7, 2],
+      "to": [8, 7, 22],
+      "note": "stone slab coping forming raised inner rim around recessed roof; slabs occupy y=7 as topmost rim"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:nether_brick",
+      "from": [3, 6, 3],
+      "to": [7, 6, 21],
+      "note": "inner recessed roof fill (flat) inside the coping"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:air",
+      "pos": [5, 2, 0],
+      "note": "entrance opening on front face centered (one-block wide opening). Set to air to create doorway. Player may add door later."
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [2, 3, 0],
+      "note": "front row small window (1x1) in brick band"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [4, 3, 0],
+      "note": "front row small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [6, 3, 0],
+      "note": "front row small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [8, 3, 0],
+      "note": "front row small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [2, 3, 24],
+      "note": "back row small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [4, 3, 24],
+      "note": "back row small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [6, 3, 24],
+      "note": "back row small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [8, 3, 24],
+      "note": "back row small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [0, 3, 6],
+      "note": "left side small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [0, 3, 12],
+      "note": "left side small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [0, 3, 18],
+      "note": "left side small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [10, 3, 6],
+      "note": "right side small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [10, 3, 12],
+      "note": "right side small window"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:glass_pane",
+      "pos": [10, 3, 18],
+      "note": "right side small window"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": [1, 2, 1],
+      "to": [9, 4, 23],
+      "note": "ensure brick field exists where not replaced by pillars or windows"
+    },
+    {
+      "op": "replace",
+      "block": "minecraft:quartz_block",
+      "from": [0, 0, 0],
+      "to": [10, 0, 24],
+      "note": "clip low ledge to bbox footprint; ensure continuous ground ledge along bbox"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:air",
+      "from": [5, 1, 0],
+      "to": [5, 2, 0],
+      "note": "clear interior entrance space through base trim and brick for doorway"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "operations_count_valid": true,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof

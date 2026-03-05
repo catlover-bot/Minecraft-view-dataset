@@ -1,0 +1,73 @@
+```json
+{
+  "summary": "A single-story rectangular bunker or fortified structure built partially underground with a concrete foundation and perimeter wall. The main structure features a lower level with sandstone walls and multiple window openings, a middle concrete band, and an upper level with brick cladding topped by a flat roof with concrete coping. The building is surrounded by a white concrete retaining wall and sits in an excavated pit.",
+  "building_type": "bunker|fortified_structure|underground_facility",
+  "shape": {
+    "overall_form": "rectangular box, partially submerged in ground",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral symmetry along length axis; asymmetrical window placement on visible faces",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 12,
+    "depth": 16,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "upper wall cladding",
+      "confidence": 0.95
+    },
+    {
+      "name": "sandstone",
+      "role": "lower wall",
+      "confidence": 0.85
+    },
+    {
+      "name": "concrete",
+      "role": "foundation, retaining wall, roof coping, structural bands",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "possible accent or trim",
+      "confidence": 0.4
+    }
+  ],
+  "elements": [
+    "multiple rectangular windows (4-6 visible per long side)",
+    "flat roof with concrete coping",
+    "concrete perimeter retaining wall",
+    "concrete foundation band separating sandstone and brick",
+    "excavated pit foundation",
+    "no visible entrance from exterior views"
+  ],
+  "rebuild_hints": [
+    "Excavate rectangular pit approximately 12×16 blocks, depth ~4 blocks below ground level",
+    "Build concrete foundation floor and outer retaining wall (white concrete blocks)",
+    "Construct lower walls from sandstone blocks",
+    "Add concrete band/trim at mid-height as structural division",
+    "Build upper walls from red brick blocks",
+    "Install rectangular window openings: approximately 2 blocks wide × 2 blocks tall, spaced evenly (roughly 3 blocks apart) on long sides",
+    "Cap roof with flat concrete blocks and concrete coping trim",
+    "Ensure bilateral symmetry along the length axis",
+    "Windows appear to be on lower sandstone section primarily, with some on brick section"
+  ],
+  "uncertainties": [
+    "Exact window count and precise spacing uncertain from angled views",
+    "Interior layout and floor plan completely unknown",
+    "Entrance location not visible in any exterior view",
+    "Exact material for lower walls could be sandstone or stone_brick variant",
+    "Roof interior structure (slabs, support) not visible",
+    "Depth dimension estimated from perspective; could range 14-18 blocks",
+    "Whether structure is fully underground or partially above-ground unclear from ground-level perspective"
+  ]
+}
+```

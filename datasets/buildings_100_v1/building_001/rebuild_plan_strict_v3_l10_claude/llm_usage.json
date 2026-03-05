@@ -1,0 +1,118 @@
+{
+  "building": "building_001",
+  "stage": "plan",
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "calls": [
+    {
+      "stage": "plan_draft",
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "endpoint": "/v1/messages",
+      "usage": {
+        "input_tokens": 2545,
+        "output_tokens": 1800,
+        "total_tokens": 4345,
+        "raw": {
+          "input_tokens": 2545,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 1800,
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        }
+      },
+      "cost": {
+        "input_tokens": 2545,
+        "output_tokens": 1800,
+        "total_tokens": 4345,
+        "input_price_per_mtok": 0.8,
+        "output_price_per_mtok": 4.0,
+        "input_cost_usd": 0.002036,
+        "output_cost_usd": 0.0072,
+        "estimated_cost_usd": 0.009236,
+        "pricing_source": "heuristic_anthropic_haiku"
+      },
+      "parse_report": {
+        "method": "operation_object_scan",
+        "candidate_count": 34,
+        "selected_candidate_score": 20,
+        "used_ops_array_repair": false,
+        "used_op_objects_repair": true
+      }
+    },
+    {
+      "stage": "plan_revise",
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "endpoint": "/v1/messages",
+      "usage": {
+        "input_tokens": 2001,
+        "output_tokens": 1800,
+        "total_tokens": 3801,
+        "raw": {
+          "input_tokens": 2001,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 1800,
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        }
+      },
+      "cost": {
+        "input_tokens": 2001,
+        "output_tokens": 1800,
+        "total_tokens": 3801,
+        "input_price_per_mtok": 0.8,
+        "output_price_per_mtok": 4.0,
+        "input_cost_usd": 0.0016008000000000003,
+        "output_cost_usd": 0.0072,
+        "estimated_cost_usd": 0.008800800000000001,
+        "pricing_source": "heuristic_anthropic_haiku"
+      },
+      "parse_report": {
+        "method": "operation_object_scan",
+        "candidate_count": 28,
+        "selected_candidate_score": 20,
+        "used_ops_array_repair": false,
+        "used_op_objects_repair": true
+      }
+    }
+  ],
+  "totals": {
+    "input_tokens": 4546,
+    "output_tokens": 3600,
+    "total_tokens": 8146,
+    "known_cost_calls": 2,
+    "estimated_cost_usd": 0.0180368
+  },
+  "prompt_profile": {
+    "name": "rebuild_plan_strict_material_v3",
+    "version": "2026-03-01",
+    "path": "/Users/hirotaka-m/Minecraft-view-dataset/prompts/rebuild_plan_strict_material_v3.json",
+    "critic_revise_enabled": true,
+    "few_shots_count": 1,
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "created_at": "2026-03-01T08:01:41.237714+00:00"
+}

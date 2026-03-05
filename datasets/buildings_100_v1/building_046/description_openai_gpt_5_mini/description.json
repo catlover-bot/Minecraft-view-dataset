@@ -1,0 +1,67 @@
+{
+  "summary": "A small two-story rectangular house with horizontal banded walls (light sandstone bands separated by smooth white blocks), narrow continuous rows of windows on both floors, a raised white slab border/porch around the base, and a stepped brick gable roof with a small central chimney. The building sits centered in a shallow rectangular dirt pit.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "compact rectangular volume with a raised border/porch and a gabled roof; walls are banded horizontally",
+    "footprint_hint": "rectangle",
+    "symmetry": "approximate bilateral symmetry along the long axis (front/back similar)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 17,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "sandstone",
+      "role": "wall_band",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "roof_brick_like",
+      "confidence": 0.7
+    },
+    {
+      "name": "quartz",
+      "role": "corner/trim and base slab",
+      "confidence": 0.8
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.95
+    },
+    {
+      "name": "dirt",
+      "role": "surrounding_ground",
+      "confidence": 0.95
+    }
+  ],
+  "elements": [
+    "continuous horizontal window rows on both floors (multiple adjacent glass panes)",
+    "stone/quartz corner/trim columns",
+    "white slab border/porch around base (one block wide, raised)",
+    "stepped brick gable roof with center chimney",
+    "no visible front door from shown angles (uncertain)"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular footprint ~9x17 blocks, two stories tall with a 2-block high band of smooth white blocks between floors and at corners.",
+    "Use sandstone (or sand-colored blocks) for two horizontal bands per side between white trim; place continuous 1x windows (multiple panes) aligned in a row on each band.",
+    "Place a one-block-wide raised white slab border around the entire base, 1 block higher than surrounding ground.",
+    "Construct a central pitched/stepped roof using brick blocks sloping along the long axis, with symmetrical stepped edges and a single small chimney in the center.",
+    "Surround building with a shallow recessed dirt area (seen like a trench) creating a frame around the plot."
+  ],
+  "uncertainties": [
+    "Exact block types: sandstone and quartz are inferred from color/texture; could be sandstone variants or smooth stone types.",
+    "Precise internal floor heights and presence/location of internal stairs/door are not visible.",
+    "Exact footprint dimensions (width/depth) are estimated from visual count; may be off by 1-3 blocks.",
+    "Roof block type identified as brick-like (stonebrick/brick); confidence lower for exact variant."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_046",
+  "created_at": "2026-02-28T14:08:24.526769+00:00"
+}

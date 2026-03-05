@@ -1,0 +1,68 @@
+{
+  "summary": "Small single-story rectangular Minecraft building sitting inside a shallow recessed foundation. Walls are mainly horizontal wooden planks with vertical log corner posts, a continuous band of stonebrick (and slab) near the top, a dark brick (netherbrick) trim band above that, and a flat raised roof with an inner recessed netherbrick floor. Windows are a row of glass panes on the visible long side. A low stonebrick border surrounds the building at ground level.",
+  "building_type": "small residential/commercial single-story",
+  "shape": {
+    "overall_form": "rectangular box with recessed inner roof area and a surrounding low stone border",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along both length and width (appears centered)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 13,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "wood",
+      "role": "wall (horizontal planks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "log",
+      "role": "corner posts/vertical supports",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows (glass panes)",
+      "confidence": 0.99
+    },
+    {
+      "name": "stonebrick",
+      "role": "base border, trim band and slabs",
+      "confidence": 0.95
+    },
+    {
+      "name": "netherbrick",
+      "role": "upper trim band and recessed roof floor",
+      "confidence": 0.9
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof edge (stone slabs)",
+      "confidence": 0.85
+    }
+  ],
+  "elements": [
+    "row_of_glass_pane_windows_along_long_side",
+    "vertical_log_corner_posts",
+    "stonebrick_low_border_platform",
+    "stonebrick_trim_band_below_netherbrick",
+    "netherbrick_upper_band_and_recessed_roof_infill",
+    "flat_slab_edge_roof"
+  ],
+  "rebuild_hints": [
+    "Create a rectangular wooden-walled box (approx 9x13) one story tall with vertical logs at corners and every ~4 blocks along the wall where visible.",
+    "Add a continuous stonebrick layer (and stone slabs as edge) around the top of the wooden walls, then a single horizontal row of netherbrick above that.",
+    "Leave the central roof area recessed and fill it with netherbrick; cap the outer roof rim with stone slabs to make a flat framed roof.",
+    "Surround the building with a one-block-high stonebrick border platform at ground level matching the pictures."
+  ],
+  "uncertainties": [
+    "Exact block counts for width/depth/height are estimated from perspective images; actual footprint may differ by a few blocks.",
+    "Door location(s) not visible in provided views; entrance orientation is unknown.",
+    "There may be additional detailing on hidden sides (back) not visible in the images.",
+    "The ground surface around the stone border appears coarse (dirt/gravel/path) but exact material is uncertain."
+  ]
+}

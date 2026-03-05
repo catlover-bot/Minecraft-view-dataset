@@ -1,0 +1,445 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 14,
+    "zmin": 0,
+    "zmax": 28
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "sea_lantern",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 28,
+          "label": "plot"
+        }
+      ],
+      "symmetry": "fourfold_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single raised platform interior with open hall",
+        "perimeter_profile": "low layered walls with alternating bands"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 10,
+        "y1": 1,
+        "z1": 0,
+        "x2": 10,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 10,
+        "y1": 1,
+        "z1": 28,
+        "x2": 10,
+        "y2": 2,
+        "z2": 28
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 6,
+        "z1": 2,
+        "x2": 5,
+        "y2": 7,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 15,
+        "y1": 6,
+        "z1": 2,
+        "x2": 15,
+        "y2": 7,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 6,
+        "z1": 26,
+        "x2": 5,
+        "y2": 7,
+        "z2": 26
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 15,
+        "y1": 6,
+        "z1": 26,
+        "x2": 15,
+        "y2": 7,
+        "z2": 26
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 6,
+        "z1": 9,
+        "x2": 20,
+        "y2": 7,
+        "z2": 9
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 19,
+        "x2": 0,
+        "y2": 7,
+        "z2": 19
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 8,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 6,
+          "z1": 6,
+          "x2": 14,
+          "z2": 22,
+          "block": "brick"
+        },
+        {
+          "y": 9,
+          "x1": 5,
+          "z1": 7,
+          "x2": 15,
+          "z2": 21,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 4,
+          "z1": 8,
+          "x2": 16,
+          "z2": 20,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 9,
+          "z1": 11,
+          "x2": 11,
+          "z2": 17,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 28,
+      "block": "dirt",
+      "purpose": "ground_packed_dirt_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 28,
+      "block": "quartz_block",
+      "purpose": "plot_border_one_block_high"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 19,
+      "y2": 0,
+      "z2": 27,
+      "purpose": "clear_interior_floor_area"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 1,
+      "z1": 3,
+      "x2": 17,
+      "y2": 1,
+      "z2": 25,
+      "block": "sandstone",
+      "purpose": "raised_platform_base_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 2,
+      "z1": 4,
+      "x2": 16,
+      "y2": 2,
+      "z2": 24,
+      "block": "sandstone",
+      "purpose": "raised_platform_top_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 3,
+      "z1": 4,
+      "x2": 16,
+      "y2": 3,
+      "z2": 24,
+      "block": "quartz_block",
+      "purpose": "platform_white_band"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 4,
+      "z1": 5,
+      "x2": 15,
+      "y2": 4,
+      "z2": 23,
+      "block": "sandstone",
+      "purpose": "platform_inner_surface"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 10,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_tower_west_north_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 20,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 10,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_tower_east_north_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 15,
+  "zmin": 0,
+  "zmax": 28,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 20, 0, 28],
+      "block": "minecraft:coarse_dirt",
+      "comment": "Packed-dirt ground floor layer (single layer across plot)."
+    },
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 20, 0, 28],
+      "block": "minecraft:quartz_block",
+      "mask": "border",
+      "comment": "Reserve border placement step (mask placeholder) - border will be placed explicitly next."
+    },
+    {
+      "op": "outline",
+      "box": [0, 1, 0, 20, 1, 28],
+      "block": "minecraft:quartz_block",
+      "comment": "One-block-high white quartz border around plot at y=1."
+    },
+    {
+      "op": "fill",
+      "box": [3, 1, 5, 17, 1, 23],
+      "block": "minecraft:sandstone",
+      "comment": "Interior floor platform single layer of sandstone covering interior footprint, inset from border (creates walkable raised band)."
+    },
+    {
+      "op": "replace",
+      "box": [3, 2, 5, 17, 2, 23],
+      "block": "minecraft:sandstone_slab",
+      "comment": "Raised interior platform step (slab) at y=2 to create slight elevation and allow interior ceiling height."
+    },
+    {
+      "op": "fill",
+      "box": [3, 2, 11, 17, 2, 17],
+      "block": "minecraft:air",
+      "comment": "Clear central interior volume (ensure open plan) - maintains open pavilion interior."
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 19, 4, 27],
+      "block": "minecraft:sandstone",
+      "comment": "Low surrounding walls: main sandstone band from y=1 to y=4 forming continuous low wall around interior inset."
+    },
+    {
+      "op": "fill",
+      "box": [1, 4, 1, 19, 5, 27],
+      "block": "minecraft:quartz_block",
+      "comment": "Upper white trim band atop the sandstone wall (contrasting layer)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 5, 1, 19, 6, 27],
+      "block": "minecraft:stonebrick",
+      "comment": "Stonebrick cap/trim above white band to separate walls from roof supports."
+    },
+    {
+      "op": "clear",
+      "box": [9, 1, 0, 11, 3, 0],
+      "block": "minecraft:air",
+      "comment": "Entrance opening centered on the north face: 2 blocks wide and 3 blocks tall opening through border and wall at north edge (z=0)."
+    },
+    {
+      "op": "clear",
+      "box": [9, 1, 28, 11, 3, 28],
+      "block": "minecraft:air",
+      "comment": "Optional south opening symmetric to north for bilateral symmetry (can serve as cross-entrance)."
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 2, 4, 11, 4],
+      "block": "minecraft:sandstone",
+      "comment": "Northwest corner tower shaft (sandstone) from ground to y=11 (tower height 10 blocks above wall)."
+    },
+    {
+      "op": "fill",
+      "box": [16, 1, 2, 18, 11, 4],
+      "block": "minecraft:sandstone",
+      "comment": "Northeast corner tower shaft."
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 24, 4, 11, 26],
+      "block": "minecraft:sandstone",
+      "comment": "Southwest corner tower shaft."
+    },
+    {
+      "op": "fill",
+      "box": [16, 1, 24, 18, 11, 26],
+      "block": "minecraft:sandstone",
+      "comment": "Southeast corner tower shaft."
+    },
+    {
+      "op": "outline",
+      "box": [2, 11, 2, 4, 12, 4],
+      "block": "minecraft:stonebrick_slab",
+      "comment": "Overhanging cap edge for northwest tower using stonebrick slabs to create slight roof overhang."
+    },
+    {
+      "op": "outline",
+      "box": [16, 11, 2, 18, 12, 4],
+      "block": "minecraft:stonebrick_slab",
+      "comment": "Northeast tower cap edge."
+    },
+    {
+      "op": "outline",
+      "box": [2, 11, 24, 4, 12, 26],
+      "block": "minecraft:stonebrick_slab",
+      "comment": "Southwest tower cap edge."
+    },
+    {
+      "op": "outline",
+      "box": [16, 11, 24, 18, 12, 26],
+      "block": "minecraft:stonebrick_slab",
+      "comment": "Southeast tower cap edge."
+    },
+    {
+      "op": "fill",
+      "box": [3, 6, 3, 3, 8, 3],
+      "block": "minecraft:glass_pane",
+      "comment": "Small vertical window inset on northwest tower face (recessed)."
+    },
+    {
+      "op": "fill",
+      "box": [17, 6, 3, 17, 8, 3],
+      "block": "minecraft:glass_pane",
+      "comment": "Small window on northeast tower face."
+    },
+    {
+      "op": "fill",
+      "box": [3, 6, 25, 3, 8, 25],
+      "block": "minecraft:glass_pane",
+      "comment": "Small window on southwest tower face."
+    },
+    {
+      "op": "fill",
+      "box": [17, 6, 25, 17, 8, 25],
+      "block": "minecraft:glass_pane",
+      "comment": "Small window on southeast tower face."
+    },
+    {
+      "op": "fill",
+      "box": [7, 12, 9, 13, 12, 19],
+      "block": "minecraft:brick_block",
+      "comment": "Central cruciform roof base ridge: central raised brick band for the cross shape at y=12."
+    },
+    {
+      "op": "fill",
+      "box": [5, 11, 9, 15, 11, 19],
+      "block": "minecraft:brick_block",
+      "comment": "First stepped layer of the cruciform brick roof at y=11 (extends out from central ridge)."
+    },
+    {
+      "op": "fill",
+      "box": [3, 10, 9, 17, 10, 19],
+      "block": "minecraft:brick_block",
+      "comment": "Second stepped layer of brick roof at y=10 to form slope."
+    },
+    {
+      "op": "fill",
+      "box": [7, 9, 5, 13, 9, 23],
+      "block": "minecraft:brick_block",
+      "comment": "Cross arms expanded in perpendicular direction to create cruciform profile at y=9."
+    },
+    {
+      "op": "outline",
+      "box": [4, 11

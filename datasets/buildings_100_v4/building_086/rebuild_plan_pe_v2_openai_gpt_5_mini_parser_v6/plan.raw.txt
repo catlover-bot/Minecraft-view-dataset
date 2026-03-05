@@ -1,0 +1,466 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 14
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood_planks",
+    "curb": "quartz_block"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 13,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor lobby + circulation",
+        "perimeter_profile": "rectangle with chamfered front-right corner"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "repeating apartments/offices",
+        "perimeter_profile": "rectangle with chamfer"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 9,
+          "ymax": 12
+        },
+        "rooms_hint": "repeating apartments/offices",
+        "perimeter_profile": "rectangle with chamfer"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 13,
+          "ymax": 16
+        },
+        "rooms_hint": "top floor",
+        "perimeter_profile": "rectangle with chamfer"
+      },
+      {
+        "floor_index": 4,
+        "y_range": {
+          "ymin": 17,
+          "ymax": 17
+        },
+        "rooms_hint": "roof base/attic",
+        "perimeter_profile": "roof base"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 10,
+        "y1": 1,
+        "z1": 1,
+        "x2": 11,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 5,
+        "z1": 1,
+        "x2": 18,
+        "y2": 5,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 9,
+        "z1": 1,
+        "x2": 18,
+        "y2": 9,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 13,
+        "z1": 1,
+        "x2": 18,
+        "y2": 13,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 5,
+        "z1": 13,
+        "x2": 18,
+        "y2": 5,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 9,
+        "z1": 13,
+        "x2": 18,
+        "y2": 9,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 13,
+        "z1": 13,
+        "x2": 18,
+        "y2": 13,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 19,
+        "y1": 6,
+        "z1": 4,
+        "x2": 19,
+        "y2": 8,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 6,
+        "z1": 10,
+        "x2": 1,
+        "y2": 8,
+        "z2": 10
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 17,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 17,
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 14,
+          "block": "brick"
+        },
+        {
+          "y": 18,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 13,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 14,
+      "block": "wood_planks",
+      "purpose": "ground_flatten_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 14,
+      "block": "dirt",
+      "purpose": "ground_dirt_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 14,
+      "block": "air",
+      "purpose": "clear_ground_surface"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 16,
+      "z2": 13,
+      "block": "sandstone",
+      "purpose": "main_shell_full_height"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 18,
+      "y2": 15,
+      "z2": 12,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 1,
+      "z2": 13,
+      "block": "quartz_block",
+      "purpose": "white_curb_border_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 21,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 15,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 21, 1, 15],
+      "block": "dirt",
+      "comment": "flattened ground layer"
+    },
+    {
+      "op": "outline",
+      "box": [0, 1, 0, 21, 2, 15],
+      "block": "quartz_block",
+      "comment": "one-block white curb/curbstone around footprint"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 20, 11, 14],
+      "block": "sandstone",
+      "comment": "main exterior wall volume (4 floors: each ~2 blocks high + floor slabs accounted separately)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 20, 3, 14],
+      "block": "oak_planks",
+      "comment": "first (ground) floor horizontal accent band under windows"
+    },
+    {
+      "op": "fill",
+      "box": [1, 5, 1, 20, 6, 14],
+      "block": "oak_planks",
+      "comment": "second floor horizontal accent band"
+    },
+    {
+      "op": "fill",
+      "box": [1, 8, 1, 20, 9, 14],
+      "block": "oak_planks",
+      "comment": "third floor horizontal accent band"
+    },
+    {
+      "op": "fill",
+      "box": [1, 11, 1, 20, 12, 14],
+      "block": "oak_planks",
+      "comment": "fourth floor accent band (under roof)"
+    },
+    {
+      "op": "outline",
+      "box": [1, 2, 1, 20, 12, 14],
+      "block": "stone_bricks",
+      "thickness": 1,
+      "comment": "stonebrick vertical corner trims and vertical bands between floors (framing)"
+    },
+    {
+      "op": "replace",
+      "box": [2, 3, 1, 19, 5, 14],
+      "from_block": "sandstone",
+      "to_block": "glass",
+      "pattern": "striped",
+      "comment": "continuous narrow horizontal windows on ground/first floor (band)"
+    },
+    {
+      "op": "replace",
+      "box": [2, 6, 1, 19, 8, 14],
+      "from_block": "sandstone",
+      "to_block": "glass",
+      "pattern": "striped",
+      "comment": "continuous narrow horizontal windows on second floor"
+    },
+    {
+      "op": "replace",
+      "box": [2, 9, 1, 19, 11, 14],
+      "from_block": "sandstone",
+      "to_block": "glass",
+      "pattern": "striped",
+      "comment": "continuous narrow horizontal windows on third floor"
+    },
+    {
+      "op": "replace",
+      "box": [2, 12, 1, 19, 12, 14],
+      "from_block": "sandstone",
+      "to_block": "glass",
+      "pattern": "striped",
+      "comment": "narrow clerestory band under roof (fourth floor windows)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 20, 2, 14],
+      "block": "spruce_slab",
+      "comment": "ground floor interior slab (floor separation)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 5, 1, 20, 5, 14],
+      "block": "spruce_slab",
+      "comment": "first floor slab"
+    },
+    {
+      "op": "fill",
+      "box": [1, 8, 1, 20, 8, 14],
+      "block": "spruce_slab",
+      "comment": "second floor slab"
+    },
+    {
+      "op": "fill",
+      "box": [1, 11, 1, 20, 11, 14],
+      "block": "spruce_slab",
+      "comment": "third floor slab"
+    },
+    {
+      "op": "hollow_box",
+      "box": [0, 2, 0, 21, 15, 15],
+      "block": "air",
+      "comment": "ensure interior cleared for walkable space (keeps curb intact)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 12, 0, 2, 16, 2],
+      "block": "stone_bricks",
+      "comment": "northwest corner tower base (3x3 footprint) - stone edges"
+    },
+    {
+      "op": "fill",
+      "box": [19, 12, 12, 21, 16, 14],
+      "block": "stone_bricks",
+      "comment": "southeast corner tower base (3x3 footprint) - stone edges"
+    },
+    {
+      "op": "fill",
+      "box": [0, 16, 0, 2, 18, 2],
+      "block": "sandstone",
+      "comment": "northwest tower upper face"
+    },
+    {
+      "op": "fill",
+      "box": [19, 16, 12, 21, 18, 14],
+      "block": "sandstone",
+      "comment": "southeast tower upper face"
+    },
+    {
+      "op": "replace",
+      "box": [0, 13, 0, 2, 15, 2],
+      "from_block": "sandstone",
+      "to_block": "glass",
+      "pattern": "checker",
+      "comment": "tower small square windows spaced vertically NW"
+    },
+    {
+      "op": "replace",
+      "box": [19, 13, 12, 21, 15, 14],
+      "from_block": "sandstone",
+      "to_block": "glass",
+      "pattern": "checker",
+      "comment": "tower small square windows spaced vertically SE"
+    },
+    {
+      "op": "fill",
+      "box": [0, 18, 0, 2, 19, 2],
+      "block": "spruce_slab",
+      "comment": "NW tower overhanging platform cap (slab overhang)"
+    },
+    {
+      "op": "fill",
+      "box": [19, 18, 12, 21, 19, 14],
+      "block": "spruce_slab",
+      "comment": "SE tower overhanging platform cap"
+    },
+    {
+      "op": "fill",
+      "box": [1, 13, 1, 20, 15, 14],
+      "block": "brick_stairs",
+      "comment": "stepped gabled roof central ridge layer 1 (red tile stairs) - lower step"
+    },
+    {
+      "op": "fill",
+      "box": [2, 14, 2, 19, 15, 13],
+      "block": "brick_stairs",
+      "comment": "stepped gabled roof layer 2"
+    },
+    {
+      "op": "fill",
+      "box": [3, 15, 3, 18, 15, 12],
+      "block": "brick_stairs",
+      "comment": "stepped gabled roof layer 3 (ridge)"
+    },
+    {
+      "op": "outline",
+      "box": [1, 15, 1, 20, 15, 14],
+      "block

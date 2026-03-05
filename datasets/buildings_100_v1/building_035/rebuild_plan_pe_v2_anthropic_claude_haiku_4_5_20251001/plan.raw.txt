@@ -1,0 +1,290 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 6
+  },
+  "palette": {
+    "wall": "oak_wood",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_wood",
+    "log": "oak_log",
+    "slab": "stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 6,
+          "label": "main_house"
+        }
+      ],
+      "symmetry": "bilateral_x_and_z"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor with windows",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 7
+        },
+        "rooms_hint": "second floor with windows",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 2,
+        "z1": 0,
+        "x2": 8,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 5,
+        "z1": 0,
+        "x2": 2,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 5,
+        "z1": 0,
+        "x2": 5,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 5,
+        "z1": 0,
+        "x2": 8,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 5,
+        "y1": 1,
+        "z1": 0,
+        "x2": 5,
+        "y2": 3,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 7,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 5,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 6,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "foundation_platform"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 6,
+      "block": "oak_wood",
+      "purpose": "outer_shell_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 7,
+      "z2": 5,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 10,
+      "y2": 4,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "mid_floor_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 6,
+      "block": "oak_log",
+      "purpose": "corner_post_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 6,
+      "block": "oak_log",
+      "purpose": "corner_post_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 6,
+      "x2": 0,
+      "y2": 7,
+      "z2": 6,
+      "block": "oak_log",
+      "purpose": "corner_post_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 1,
+      "z1": 6,
+      "x2": 10,
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 7,
+  "operations": [
+    {"type": "fill", "material": "stonebrick", "x1": 0, "y1": 0, "z1": 0, "x2": 10, "y2": 8, "z2": 0, "description": "foundation platform"},
+    {"type": "fill", "material": "stone_slab", "x1": 0, "y1": 0, "z1": 1, "x2": 10, "y2": 8, "z2": 1, "description": "stone slab perimeter border"},
+    {"type": "fill", "material": "oak_planks", "x1": 1, "y1": 1, "z1": 1, "x2": 9, "y2": 7, "z2": 3, "description": "first floor walls (horizontal planks)"},
+    {"type": "fill", "material": "stonebrick", "x1": 1, "y1": 1, "z1": 4, "x2": 9, "y2": 7, "z2": 4, "description": "mid-level trim band between floors"},
+    {"type": "fill", "material": "oak_planks", "x1": 1, "y1": 1, "z1": 5, "x2": 9, "y2": 7, "z2": 6, "description": "second floor walls (horizontal planks)"},
+    {"type": "fill", "material": "nether_brick", "x1": 2, "y1": 2, "z1": 7, "x2": 8, "y2": 6, "z2": 7, "description": "flat dark roof"},
+    {"type": "fill", "material": "stone_slab", "x1": 1, "y1": 1, "z1": 7, "x2": 9, "y2": 7, "z2": 7, "description": "stone slab roof rim"},
+    {"type": "set", "material": "oak_log", "x": 1, "y": 1, "z": 1, "description": "corner post SW bottom"},
+    {"type": "set", "material": "oak_log", "x": 1, "y": 1, "z": 5, "description": "corner post SW top"},
+    {"type": "set", "material": "oak_log", "x": 9, "y": 1, "z": 1, "description": "corner post SE bottom"},
+    {"type": "set", "material": "oak_log", "x": 9, "y": 1, "z": 5, "description": "corner post SE top"},
+    {"type": "set", "material": "oak_log", "x": 1, "y": 7, "z": 1, "description": "corner post NW bottom"},
+    {"type": "set", "material": "oak_log", "x": 1, "y": 7, "z": 5, "description": "corner post NW top"},
+    {"type": "set", "material": "oak_log", "x": 9, "y": 7, "z": 1, "description": "corner post NE bottom"},
+    {"type": "set", "material": "oak_log", "x": 9, "y": 7, "z": 5, "description": "corner post NE top"},
+    {"type": "set", "material": "air", "x": 5, "y": 1, "z": 2, "description": "entrance opening south wall"},
+    {"type": "set", "material": "air", "x": 5, "y": 1, "z": 3, "description": "entrance opening south wall"},
+    {"type": "set", "material": "glass_pane", "x": 3, "y": 1, "z": 2, "description": "window south floor 1"},
+    {"type": "set", "material": "glass_pane", "x": 7, "y": 1, "z": 2, "description": "window south floor 1"},
+    {"type": "set", "material": "glass_pane", "x": 3, "y": 1, "z": 5, "description": "window south floor 2"},
+    {"type": "set", "material": "glass_pane", "x": 7, "y": 1, "z": 5, "description": "window south floor 2"},
+    {"type": "set", "material": "glass_pane", "x": 3, "y": 7, "z": 2, "description": "window north floor 1"},
+    {"type": "set", "material": "glass_pane", "x": 7, "y": 7, "z": 2, "description": "window north floor 1"},
+    {"type": "set", "material": "glass_pane", "x": 3, "y": 7, "z": 5, "description": "window north floor 2"},
+    {"type": "set", "material": "glass_pane", "x": 7, "y": 7, "z": 5, "description": "window north floor 2"},
+    {"type": "set", "material": "glass_pane", "x": 1, "y": 3, "z": 2, "description": "window west floor 1"},
+    {"type": "set", "material": "glass_pane", "x": 1, "y": 5, "z": 2, "description": "window west floor 1"},
+    {"type": "set", "material": "glass_pane", "x": 1, "y": 3, "z": 5, "description": "window west floor 2"},
+    {"type": "set", "material": "glass_pane", "x": 1, "y": 5, "z": 5, "description": "window west floor 2"},
+    {"type": "set", "material": "glass_pane", "x": 9, "y": 3, "z": 2, "description": "window east floor 1"},
+    {"type": "set", "material": "glass_pane", "x": 9, "y": 5, "z": 2, "description": "window east floor 1"},
+    {"type": "set", "material": "glass_pane", "x": 9, "y": 3, "z": 5, "description": "window east floor 2"},
+    {"type": "set", "material": "glass_pane", "x": 9, "y": 5, "z": 5, "description": "window east floor 2"}
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "all_coords_in_bbox": true,
+    "operation_count": 31,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,

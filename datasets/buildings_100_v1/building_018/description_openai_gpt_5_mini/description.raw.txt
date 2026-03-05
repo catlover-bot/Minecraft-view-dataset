@@ -1,0 +1,70 @@
+{
+  "summary": "Small single-storey rectangular brick building with a raised frame/porch around it. Exterior shows a lower brick wall band, a white smooth band above, a dark narrow cornice, and a flat dark roof inset. Windows run as a horizontal series along the long sides. Stone corner pillars and a low white outer border/ledge surround the building on ground level.",
+  "building_type": "small commercial or utility building (uncertain)",
+  "shape": {
+    "overall_form": "simple rectangular box with an inner hollow/roof inset",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along long axis (appears symmetric front-to-back and side-to-side in plan)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 17,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "primary wall (lower band)",
+      "confidence": 0.95
+    },
+    {
+      "name": "quartz (or smooth white)",
+      "role": "upper wall band and outer border/ledge",
+      "confidence": 0.9
+    },
+    {
+      "name": "nether_brick",
+      "role": "dark cornice and roof interior",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner vertical pillars / supports",
+      "confidence": 0.7
+    },
+    {
+      "name": "wood_planks",
+      "role": "narrow base strip between ground and brick (likely oak planks)",
+      "confidence": 0.6
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows (series of glass panes set in a row)",
+    "entrance: small recessed opening visible on one long side (uncertain internal door type)",
+    "flat roof with raised outer coping made of stone-like slabs",
+    "stone corner pillars",
+    "raised white border/ledge around building at ground level",
+    "wooden planks skirting at base of brick"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular foundation ~9x17 blocks (count visually from top-down images); place a one-block-wide white border around the perimeter raised one block from surrounding ground.",
+    "Raise walls: start with a wooden plank base (1 block high), then 2–3 blocks of brick for the lower façade with regularly spaced glass pane windows centered on the long sides, add a continuous white (quartz/smooth) band one block high above the brick, then a one-block-high dark nether_brick cornice around the top.",
+    "Corners: place stonebrick/stone-like pillar blocks at each external corner spanning full wall height.",
+    "Roof: inset flat dark roof (nether_brick) recessed one block from the cornice; surround the roof edge with stone slab coping (slab_stone).",
+    "Windows: use glass panes placed in a continuous row at the same vertical level across the long sides; leave a small recessed entrance opening on one long side aligned with the white border/ledge."
+  ],
+  "uncertainties": [
+    "Exact block counts for width/depth are estimated from images; actual counts may differ by ±1–2 blocks.",
+    "Material identification for white smooth blocks assumed quartz/smooth stone; could be other white block (e.g., smooth sandstone).",
+    "Middle dark material identified as nether_brick for both cornice and roof interior; roof interior texture might be a different dark block.",
+    "Wood type for narrow base strip is estimated (looks like oak planks) but could be a different wood variant.",
+    "Interior layout, door type, and any interior partitions are not visible and therefore unknown."
+  ]
+}

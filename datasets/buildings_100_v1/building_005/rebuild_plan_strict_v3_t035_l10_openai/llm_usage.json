@@ -1,0 +1,116 @@
+{
+  "building": "building_005",
+  "stage": "plan",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "calls": [
+    {
+      "stage": "plan_draft",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "endpoint": "/v1/responses",
+      "usage": {
+        "input_tokens": 2410,
+        "output_tokens": 1800,
+        "total_tokens": 4210,
+        "raw": {
+          "input_tokens": 2410,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 1800,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 4210
+        }
+      },
+      "cost": {
+        "input_tokens": 2410,
+        "output_tokens": 1800,
+        "total_tokens": 4210,
+        "input_price_per_mtok": 0.25,
+        "output_price_per_mtok": 2.0,
+        "input_cost_usd": 0.0006025,
+        "output_cost_usd": 0.0036,
+        "estimated_cost_usd": 0.0042025,
+        "pricing_source": "default_openai_gpt5mini"
+      },
+      "parse_report": {
+        "method": "operation_object_scan",
+        "candidate_count": 32,
+        "selected_candidate_score": 20,
+        "used_ops_array_repair": false,
+        "used_op_objects_repair": true
+      }
+    },
+    {
+      "stage": "plan_revise",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "endpoint": "/v1/responses",
+      "usage": {
+        "input_tokens": 2094,
+        "output_tokens": 1800,
+        "total_tokens": 3894,
+        "raw": {
+          "input_tokens": 2094,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 1800,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 3894
+        }
+      },
+      "cost": {
+        "input_tokens": 2094,
+        "output_tokens": 1800,
+        "total_tokens": 3894,
+        "input_price_per_mtok": 0.25,
+        "output_price_per_mtok": 2.0,
+        "input_cost_usd": 0.0005235,
+        "output_cost_usd": 0.0036,
+        "estimated_cost_usd": 0.0041234999999999996,
+        "pricing_source": "default_openai_gpt5mini"
+      },
+      "parse_report": {
+        "method": "operation_object_scan",
+        "candidate_count": 21,
+        "selected_candidate_score": 20,
+        "used_ops_array_repair": false,
+        "used_op_objects_repair": true
+      }
+    }
+  ],
+  "totals": {
+    "input_tokens": 4504,
+    "output_tokens": 3600,
+    "total_tokens": 8104,
+    "known_cost_calls": 2,
+    "estimated_cost_usd": 0.008326
+  },
+  "prompt_profile": {
+    "name": "rebuild_plan_strict_material_v3_t035",
+    "version": "2026-03-01",
+    "path": "/Users/hirotaka-m/Minecraft-view-dataset/prompts/rebuild_plan_strict_material_v3_t035.json",
+    "critic_revise_enabled": true,
+    "few_shots_count": 1,
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "created_at": "2026-03-01T09:14:23.983959+00:00"
+}

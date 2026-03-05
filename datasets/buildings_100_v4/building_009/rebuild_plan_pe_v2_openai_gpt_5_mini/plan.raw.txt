@@ -1,0 +1,446 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 12
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "polished_andesite",
+    "glass": "glass_pane",
+    "light": "glowstone",
+    "floor": "stone",
+    "plinth": "cobblestone",
+    "slab": "stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 10,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 6
+        },
+        "rooms_hint": "single lofty hall on raised platform",
+        "perimeter_profile": "stepped/base + crenellated parapet"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 2,
+        "x2": 10,
+        "y2": 3,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 18,
+        "y1": 4,
+        "z1": 4,
+        "x2": 18,
+        "y2": 6,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 18,
+        "y1": 4,
+        "z1": 8,
+        "x2": 18,
+        "y2": 6,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 2,
+        "y1": 4,
+        "z1": 4,
+        "x2": 2,
+        "y2": 6,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 2,
+        "y1": 4,
+        "z1": 8,
+        "x2": 2,
+        "y2": 6,
+        "z2": 8
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 7,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 11,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 10,
+          "block": "nether_brick"
+        },
+        {
+          "y": 9,
+          "x1": 3,
+          "z1": 3,
+          "x2": 17,
+          "z2": 9,
+          "block": "nether_brick"
+        },
+        {
+          "y": 10,
+          "x1": 4,
+          "z1": 4,
+          "x2": 16,
+          "z2": 8,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 12,
+      "block": "cobblestone",
+      "purpose": "ground_plinth_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 1,
+      "z2": 11,
+      "block": "cobblestone",
+      "purpose": "plinth_step_1"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 18,
+      "y2": 2,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "plinth_step_2_stonebrick_facing"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 0,
+      "z1": 2,
+      "x2": 18,
+      "y2": 2,
+      "z2": 10,
+      "block": "cobblestone",
+      "purpose": "plinth_full_volume"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 2,
+      "x2": 18,
+      "y2": 6,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "main_wall_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 3,
+      "z1": 3,
+      "x2": 17,
+      "y2": 6,
+      "z2": 9,
+      "purpose": "interior_hall_space"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 2,
+      "x2": 10,
+      "y2": 1,
+      "z2": 2,
+      "block": "polished_andesite",
+      "purpose": "entrance_threshold"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 1,
+      "z1": 2,
+      "x2": 10,
+      "y2": 3,
+      "z2": 2,
+      "purpose": "main_entrance_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 4,
+      "x2": 2,
+      "y2": 6,
+      "z2": 4,
+      "block": "glass_pane",
+      "purpose": "west_tower_window_low"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 8,
+      "x2": 2,
+      "y2": 6,
+      "z2": 8,
+      "block": "glass_pane",
+      "purpose": "west_tower_window_high"
+    },
+    {
+      "op": "fill",
+      "x1": 18,
+      "y1": 3,
+      "z1": 4,
+      "x2": 18,
+      "y2": 6,
+      "z2": 4,
+      "block": "glass_pane",
+      "purpose": "east_tower_window_low"
+    },
+    {
+      "op": "fill",
+      "x1": 18,
+      "y1": 3,
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 21,
+  "ymin": 0,
+  "ymax": 13,
+  "zmin": 0,
+  "zmax": 13,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 21, 2, 13],
+      "block": "cobblestone",
+      "desc": "2-block-high cobblestone plinth (extends 1 block beyond main walls)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 20, 8, 12],
+      "block": "stonebrick",
+      "desc": "Main stonebrick walls (hollow interior)"
+    },
+    {
+      "op": "hollow",
+      "box": [2, 3, 2, 19, 7, 11],
+      "desc": "Clear interior space for main hall"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 20, 3, 12],
+      "block": "stonebrick",
+      "desc": "Inner lower course floor support and visible course"
+    },
+    {
+      "op": "replace_edges",
+      "coords": [[1,2,1],[20,2,12]],
+      "block": "cobblestone",
+      "desc": "Cobblestone facing around plinth edge for visual continuity"
+    },
+    {
+      "op": "fill",
+      "box": [1, 3, 1, 20, 3, 12],
+      "block": "stone_slab",
+      "desc": "1-layer stone_slab floor atop plinth supporting interior floor"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 2, 19, 3, 11],
+      "block": "oak_planks",
+      "desc": "Main interior wooden floor (1 layer) — distinguishes floor material from walls"
+    },
+    {
+      "op": "set_blocks",
+      "coords": [[10,3,1],[10,5,1]],
+      "block": "air",
+      "desc": "Entrance opening central on front wall (2 wide x 3 high); clear space through wall and plinth"
+    },
+    {
+      "op": "place",
+      "coords": [10,3,1],
+      "block": "spruce_door",
+      "desc": "Double door at entrance (bottom half); player can place matching top half in game"
+    },
+    {
+      "op": "fill",
+      "box": [1, 6, 1, 20, 8, 12],
+      "block": "stonebrick",
+      "desc": "Upper wall courses to full wall height (total wall height 6 above plinth)"
+    },
+    {
+      "op": "column",
+      "coords": [[1,3,1],[1,8,1],[20,3,1],[20,8,1],[1,3,12],[1,8,12],[20,3,12],[20,8,12]],
+      "block": "stonebrick",
+      "desc": "Vertical corner buttresses and corner decorative columns (1x1 stacks) at corners"
+    },
+    {
+      "op": "add_band",
+      "axis": "x",
+      "coords": [1,5,1,20,5,12],
+      "block": "cobblestone",
+      "desc": "Cobblestone decorative band mid-wall to match layered look"
+    },
+    {
+      "op": "place_windows",
+      "positions": [[4,5,1],[7,5,1],[13,5,1],[16,5,1]],
+      "block": "glass_pane",
+      "desc": "Small slit windows in long front wall (inset by 0 from outer face)"
+    },
+    {
+      "op": "place_windows",
+      "positions": [[4,5,12],[7,5,12],[13,5,12],[16,5,12]],
+      "block": "glass_pane",
+      "desc": "Symmetric windows on rear wall"
+    },
+    {
+      "op": "build_tower",
+      "base_box": [2, 3, 4, 4, 11, 6],
+      "walls": "stonebrick",
+      "inner_hollow": true,
+      "desc": "Left long-side tower (2x3 footprint) attached to main wall, rises above main roof"
+    },
+    {
+      "op": "build_tower",
+      "base_box": [17, 3, 7, 19, 11, 9],
+      "walls": "stonebrick",
+      "inner_hollow": true,
+      "desc": "Right long-side tower (2x3 footprint), symmetric placement"
+    },
+    {
+      "op": "tower_windows",
+      "positions": [[3,6,5],[3,8,5]],
+      "block": "glass_pane",
+      "desc": "Vertical inset tower windows left"
+    },
+    {
+      "op": "tower_windows",
+      "positions": [[18,6,8],[18,8,8]],
+      "block": "glass_pane",
+      "desc": "Vertical inset tower windows right"
+    },
+    {
+      "op": "cap_tower",
+      "box": [2,11,4,4,12,6],
+      "block": "stone_slab",
+      "desc": "Multi-layer slab cap on left tower"
+    },
+    {
+      "op": "cap_tower",
+      "box": [17,11,7,19,12,9],
+      "block": "stone_slab",
+      "desc": "Multi-layer slab cap on right tower"
+    },
+    {
+      "op": "roof_ridge",
+      "coords": [1,9,1,20,12,12],
+      "profile": "gable_centered",
+      "materials": {
+        "main": "nether_brick",
+        "stair": "nether_brick_stairs",
+        "slab": "nether_brick_slab",
+        "trim": "stone_slab"
+      },
+      "desc": "Curved/stepped nether_brick gabled roof over main volume (symmetrical ridge). Roof peak at y=12"
+    },
+    {
+      "op": "roof_overhang",
+      "box": [0,9,0,21,10,13],
+      "block": "nether_brick_slab",
+      "desc": "One-block overhanging slab trim around roof edges"
+    },
+    {
+      "op": "roof_trim",
+      "box": [0,11,0,21,12,13],
+      "block": "stone_slab",
+      "desc": "Light-colored stone slab trim at roof corners and as overhanging caps"
+    },
+    {
+      "op": "chimney_decor",
+      "box": [5,9,2,6,11,3],
+      "block": "cobblestone",
+      "desc": "Small decorative chimney/stack near roof edge (visual detail)"
+    },
+    {
+      "op": "interior_decor",
+      "details": [
+        {"coords": [3,4,3], "block": "stonebrick_stairs", "facing": "north"},
+        {"coords": [18,4,10], "block": "stonebrick_stairs", "facing": "south"}
+      ],
+      "desc": "Simple interior buttress/stair decoration for structural feel"
+    },
+    {
+      "op": "trim_replace",
+      "coords": [[1,9,1],[20,9,1],[1,9,12],[20,9,12]],
+      "block": "polished_andesite",
+      "desc": "Place light-colored polished_andesite at visible corner trim (if unavailable, smooth_stone acceptable)"
+    }
+  ],
+  "self_check": {
+    "bbox_contains_operations": true,
+    "operation_count": 24,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,

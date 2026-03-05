@@ -1,0 +1,459 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 32,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 24
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 32,
+          "z2": 24,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_front_back_with_centered_dome"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground plinth + shallow interior",
+        "perimeter_profile": "continuous foundation ledge with banding"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 10
+        },
+        "rooms_hint": "main hall between towers (double-height central area)",
+        "perimeter_profile": "banded facade with tower shafts"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 15,
+        "y1": 1,
+        "z1": 0,
+        "x2": 16,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 6,
+        "z1": 0,
+        "x2": 4,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 28,
+        "y1": 6,
+        "z1": 0,
+        "x2": 29,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 32,
+        "y1": 6,
+        "z1": 6,
+        "x2": 32,
+        "y2": 6,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 15,
+        "y1": 6,
+        "z1": 24,
+        "x2": 16,
+        "y2": 6,
+        "z2": 24
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 18,
+        "x2": 0,
+        "y2": 6,
+        "z2": 19
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 11,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 11,
+          "x1": 8,
+          "z1": 6,
+          "x2": 24,
+          "z2": 18,
+          "block": "wood"
+        },
+        {
+          "y": 12,
+          "x1": 9,
+          "z1": 7,
+          "x2": 23,
+          "z2": 17,
+          "block": "wood"
+        },
+        {
+          "y": 13,
+          "x1": 10,
+          "z1": 8,
+          "x2": 22,
+          "z2": 16,
+          "block": "wood"
+        },
+        {
+          "y": 14,
+          "x1": 11,
+          "z1": 9,
+          "x2": 21,
+          "z2": 15,
+          "block": "wood"
+        },
+        {
+          "y": 15,
+          "x1": 12,
+          "z1": 10,
+          "x2": 20,
+          "z2": 14,
+          "block": "wood"
+        },
+        {
+          "y": 16,
+          "x1": 13,
+          "z1": 11,
+          "x2": 19,
+          "z2": 13,
+          "block": "wood"
+        },
+        {
+          "y": 17,
+          "x1": 14,
+          "z1": 12,
+          "x2": 18,
+          "z2": 12,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 32,
+      "y2": 0,
+      "z2": 24,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 32,
+      "y2": 1,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "foundation_ledge"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 32,
+      "y2": 4,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "lower_band_stone"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 5,
+      "z1": 2,
+      "x2": 30,
+      "y2": 5,
+      "z2": 22,
+      "block": "wood",
+      "purpose": "mid_wood_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 31,
+      "y2": 6,
+      "z2": 23,
+      "block": "quartz",
+      "purpose": "thin_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 7,
+      "z1": 2,
+      "x2": 30,
+      "y2": 7,
+      "z2": 22,
+      "block": "stonebrick",
+      "purpose": "upper_stone_band"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 2,
+      "z1": 3,
+      "x2": 29,
+      "y2": 9,
+      "z2": 21,
+      "purpose": "interior_hall_space"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 4,
+      "y2": 10,
+      "z2": 4,
+      "block": "stonebrick",
+      "purpose": "tower_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 28,
+      "y1": 2,
+      "z1": 0
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 33,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 25,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 33, 1, 25],
+      "block": "quartz_block",
+      "comment": "ground foundation/ledge (1 block high) around entire footprint"
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 2, 31, 2, 23],
+      "block": "oak_planks",
+      "comment": "main ground floor layer (1 block high) inset from foundation to create ledge"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 31, 6, 23],
+      "block": "stone_bricks",
+      "comment": "lower wall band of main mass (stone band)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 6, 2, 31, 8, 23],
+      "block": "quartz_block",
+      "comment": "white trim band between bands"
+    },
+    {
+      "op": "fill",
+      "box": [2, 8, 2, 31, 11, 23],
+      "block": "oak_planks",
+      "comment": "upper wooden band of facade"
+    },
+    {
+      "op": "fill",
+      "box": [2, 11, 2, 31, 13, 23],
+      "block": "quartz_block",
+      "comment": "upper trim band below roof level"
+    },
+    {
+      "op": "fill",
+      "box": [2, 13, 2, 31, 14, 23],
+      "block": "oak_planks",
+      "comment": "parapet/short upper wall to meet dome base"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 33, 2, 25],
+      "block": "quartz_slab",
+      "comment": "foundation ledge slab offset around outside (overhang effect). Uses same white material but slab form."
+    },
+    {
+      "op": "place_wall_opening",
+      "box": [15, 1, 0, 17, 10, 0],
+      "block": "air",
+      "comment": "main entrance opening (2 wide x 9 high) centered on front face; ensured inside bbox"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 5, 14, 5],
+      "block": "stone_bricks",
+      "comment": "northwest corner tower shaft (4x4 footprint) from y=2 to y=14"
+    },
+    {
+      "op": "fill",
+      "box": [28, 2, 2, 31, 14, 5],
+      "block": "stone_bricks",
+      "comment": "northeast corner tower shaft"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 20, 5, 14, 23],
+      "block": "stone_bricks",
+      "comment": "southwest corner tower shaft"
+    },
+    {
+      "op": "fill",
+      "box": [28, 2, 20, 31, 14, 23],
+      "block": "stone_bricks",
+      "comment": "southeast corner tower shaft"
+    },
+    {
+      "op": "hollow_fill",
+      "box": [3, 5, 3, 4, 9, 4],
+      "block": "glass_pane",
+      "comment": "vertical small windows in NW tower (pattern block-level windows); positions inside tower footprint"
+    },
+    {
+      "op": "hollow_fill",
+      "box": [29, 5, 3, 30, 9, 4],
+      "block": "glass_pane",
+      "comment": "vertical small windows in NE tower"
+    },
+    {
+      "op": "hollow_fill",
+      "box": [3, 5, 21, 4, 9, 22],
+      "block": "glass_pane",
+      "comment": "vertical small windows in SW tower"
+    },
+    {
+      "op": "hollow_fill",
+      "box": [29, 5, 21, 30, 9, 22],
+      "block": "glass_pane",
+      "comment": "vertical small windows in SE tower"
+    },
+    {
+      "op": "replace",
+      "box": [2, 5, 8, 31, 6, 10],
+      "block": "glass_pane",
+      "comment": "horizontal band of small windows across front midsection (glass panes replace block row). Ensures regular spacing."
+    },
+    {
+      "op": "replace",
+      "box": [2, 5, 15, 31, 6, 16],
+      "block": "glass_pane",
+      "comment": "horizontal band of small windows across rear midsection"
+    },
+    {
+      "op": "fill",
+      "box": [0, 14, 0, 33, 15, 25],
+      "block": "stone_slab",
+      "comment": "continuous roof edge slab ring (stone slab) at dome base height"
+    },
+    {
+      "op": "fill",
+      "box": [8, 14, 6, 25, 18, 19],
+      "block": "oak_planks",
+      "comment": "stepped dome - top layer (center mass). This is the dome cap occupying up to y=18"
+    },
+    {
+      "op": "fill",
+      "box": [9, 13, 7, 24, 14, 18],
+      "block": "oak_planks",
+      "comment": "stepped dome ring below cap"
+    },
+    {
+      "op": "fill",
+      "box": [10, 12, 8, 23, 13, 17],
+      "block": "oak_planks",
+      "comment": "stepped dome ring lower"
+    },
+    {
+      "op": "fill",
+      "box": [11, 11, 9, 22, 12, 16],
+      "block": "oak_planks",
+      "comment": "lowest dome ring meeting parapet; ensures dome touches inner faces of towers"
+    },
+    {
+      "op": "fill",
+      "box": [0, 14, 0, 3, 16, 3],
+      "block": "stone_slab",
+      "comment": "overhanging slab cap NW tower (2 high slabs to create cap thickness). Uses slab form to overhang footprint"
+    },
+    {
+      "op": "fill",
+      "box": [30, 14, 0, 33, 16, 3],
+      "block": "stone_slab",
+      "comment": "overhanging slab cap NE tower"
+    },
+    {
+      "op": "fill",
+      "box": [0, 14, 22, 3, 16, 25],
+      "block": "stone_slab",
+      "comment": "overhanging slab cap SW tower"
+    },
+    {
+      "op": "fill",
+      "box": [30, 14, 22, 33, 16, 25],
+      "block": "stone_slab",
+      "comment": "overhanging slab cap SE tower"
+    },
+    {
+      "op": "setblock",
+      "pos": [1, 16, 1],
+      "block": "sea_lantern",
+      "comment": "light source centered on NW tower cap"
+    },
+    {
+      "op": "setblock",
+      "pos": [32, 16, 1],

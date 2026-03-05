@@ -1,0 +1,494 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 12
+  },
+  "palette": {
+    "wall": "wood",
+    "roof": "netherbrick",
+    "trim": "netherbrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 12,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_x_and_z_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single open hall with recessed roof well",
+        "perimeter_profile": "rectangle with corner posts"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 4,
+        "y1": 1,
+        "z1": 12,
+        "x2": 4,
+        "y2": 2,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 2,
+        "z1": 3,
+        "x2": 8,
+        "y2": 2,
+        "z2": 9
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 12,
+          "block": "slab_stone"
+        },
+        {
+          "y": 4,
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 11,
+          "block": "netherbrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "walls_shell"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "block": "log",
+      "purpose": "corner_post_nw"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 1,
+      "z": 0,
+      "block": "log",
+      "purpose": "corner_post_ne"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 1,
+      "z": 12,
+      "block": "log",
+      "purpose": "corner_post_sw"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 1,
+      "z": 12,
+      "block": "log",
+      "purpose": "corner_post_se"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "block": "log",
+      "purpose": "corner_post_nw_high"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 2,
+      "z": 0,
+      "block": "log",
+      "purpose": "corner_post_ne_high"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 12,
+      "block": "log",
+      "purpose": "corner_post_sw_high"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 2,
+      "z": 12,
+      "block": "log",
+      "purpose": "corner_post_se_high"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 7,
+      "y2": 2,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "front_window_row_left"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 12,
+      "x2": 7,
+      "y2": 2,
+      "z2": 12,
+      "block": "glass",
+      "purpose": "back_window_row"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 3,
+      "x2": 8,
+      "y2": 2,
+      "z2": 9,
+      "block": "glass",
+      "purpose": "side_window_row"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "stoneband_top_of_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 12,
+      "block": "netherbrick",
+      "purpose": "upper_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": -1,
+      "x2": 8,
+      "y2": 0,
+      "z2": 13,
+      "block": "stonebrick",
+      "purpose": "ground_border_platform"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 3,
+      "z2": 11,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 1,
+      "z1": 12,
+      "x2": 4,
+      "y2": 2,
+      "z2": 12,
+      "purpose": "door_opening_south"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 7,
+      "y2": 4,
+      "z2": 11,
+      "block": "netherbrick",
+      "purpose": "recessed_roof_floor"
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 5,
+  "zmin": 0,
+  "zmax": 12,
+  "operations": [
+    {
+      "op": "fill",
+      "from": [0, 0, 0],
+      "to": [8, 0, 12],
+      "block": "stonebrick",
+      "desc": "stonebrick low border platform (ground-level one-block-high base)"
+    },
+    {
+      "op": "fill",
+      "from": [1, 1, 1],
+      "to": [7, 1, 11],
+      "block": "stripped_oak_planks",
+      "desc": "interior floor layer (wood) at y=1"
+    },
+    {
+      "op": "fill",
+      "from": [1, 1, 1],
+      "to": [7, 4, 11],
+      "block": "oak_planks",
+      "desc": "wooden wall infill; will be subtracted for windows/door and replaced by logs at posts"
+    },
+    {
+      "op": "set",
+      "pos": [0, 1, 0],
+      "block": "oak_log",
+      "desc": "corner log posts"
+    },
+    {
+      "op": "set",
+      "pos": [0, 1, 12],
+      "block": "oak_log",
+      "desc": "corner log posts"
+    },
+    {
+      "op": "set",
+      "pos": [8, 1, 0],
+      "block": "oak_log",
+      "desc": "corner log posts"
+    },
+    {
+      "op": "set",
+      "pos": [8, 1, 12],
+      "block": "oak_log",
+      "desc": "corner log posts"
+    },
+    {
+      "op": "set",
+      "pos": [0, 2, 0],
+      "block": "oak_log",
+      "desc": "corner log posts (vertical)"
+    },
+    {
+      "op": "set",
+      "pos": [0, 3, 0],
+      "block": "oak_log",
+      "desc": "corner log posts (vertical)"
+    },
+    {
+      "op": "set",
+      "pos": [0, 4, 0],
+      "block": "oak_log",
+      "desc": "corner log posts (top)"
+    },
+    {
+      "op": "set",
+      "pos": [0, 2, 12],
+      "block": "oak_log",
+      "desc": "corner log posts (vertical)"
+    },
+    {
+      "op": "set",
+      "pos": [0, 3, 12],
+      "block": "oak_log",
+      "desc": "corner log posts (vertical)"
+    },
+    {
+      "op": "set",
+      "pos": [0, 4, 12],
+      "block": "oak_log",
+      "desc": "corner log posts (top)"
+    },
+    {
+      "op": "set",
+      "pos": [8, 2, 0],
+      "block": "oak_log",
+      "desc": "corner log posts (vertical)"
+    },
+    {
+      "op": "set",
+      "pos": [8, 3, 0],
+      "block": "oak_log",
+      "desc": "corner log posts (vertical)"
+    },
+    {
+      "op": "set",
+      "pos": [8, 4, 0],
+      "block": "oak_log",
+      "desc": "corner log posts (top)"
+    },
+    {
+      "op": "set",
+      "pos": [8, 2, 12],
+      "block": "oak_log",
+      "desc": "corner log posts (vertical)"
+    },
+    {
+      "op": "set",
+      "pos": [8, 3, 12],
+      "block": "oak_log",
+      "desc": "corner log posts (vertical)"
+    },
+    {
+      "op": "set",
+      "pos": [8, 4, 12],
+      "block": "oak_log",
+      "desc": "corner log posts (top)"
+    },
+    {
+      "op": "replace",
+      "from": [1, 1, 1],
+      "to": [7, 4, 11],
+      "target": "oak_planks",
+      "block": "oak_planks",
+      "desc": "ensure walls are oak planks (keeps posts intact)"
+    },
+    {
+      "op": "fill",
+      "from": [1, 4, 1],
+      "to": [7, 4, 11],
+      "block": "stonebrick",
+      "desc": "stonebrick continuous band on top of walls at y=4"
+    },
+    {
+      "op": "fill",
+      "from": [1, 5, 1],
+      "to": [7, 5, 11],
+      "block": "nether_bricks",
+      "desc": "netherbrick upper trim band at y=5"
+    },
+    {
+      "op": "outline",
+      "from": [0, 5, 0],
+      "to": [8, 5, 12],
+      "block": "stone_slab",
+      "desc": "stone slab rim on roof edge (outermost rim y=5)"
+    },
+    {
+      "op": "fill",
+      "from": [2, 5, 2],
+      "to": [6, 5, 10],
+      "block": "nether_bricks",
+      "desc": "recessed inner roof floor (netherbrick) at y=5"
+    },
+    {
+      "op": "set",
+      "pos": [4, 1, 11],
+      "block": "air",
+      "desc": "entrance opening (single door opening) centered on long front side at z=11"
+    },
+    {
+      "op": "set",
+      "pos": [4, 2, 11],
+      "block": "air",
+      "desc": "double-height entrance space for door"
+    },
+    {
+      "op": "set",
+      "pos": [4, 1, 0],
+      "block": "air",
+      "desc": "rear small opening (secondary access) - kept open to allow symmetry (can be filled later)"
+    },
+    {
+      "op": "fill",
+      "from": [2, 2, 11],
+      "to": [6, 2, 11],
+      "block": "glass_pane",
+      "desc": "row of windows on long visible side at y=2 centered between posts"
+    },
+    {
+      "op": "fill",
+      "from": [2, 3, 11],
+      "to": [6, 3, 11],
+      "block": "glass_pane",
+      "desc": "second row of windows at y=3 for taller glazing"
+    },
+    {
+      "op": "fill",
+      "from": [1, 2, 1],
+      "to": [1, 3, 11],
+      "block": "oak_log",
+      "desc": "vertical log posts every ~4 blocks along walls (left side post)"
+    },
+    {
+      "op": "fill",
+      "from": [7, 2, 1],
+      "to": [7, 3, 11],
+      "block": "oak_log",
+      "desc": "vertical log posts every ~4 blocks along walls (right side post)"
+    },
+    {
+      "op": "fill",
+      "from": [1, 1, 0],
+      "to": [7, 1, 0],
+      "block": "stonebrick",
+      "desc": "front-facing stonebrick border continuation at z=0 (ground front trim)"
+    },
+    {
+      "op": "set",
+      "pos": [4, 1, 11],
+      "block": "spruce_door",
+      "desc": "place door in entrance opening (bottom

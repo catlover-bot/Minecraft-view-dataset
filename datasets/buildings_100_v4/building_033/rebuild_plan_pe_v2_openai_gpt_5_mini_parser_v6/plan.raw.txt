@@ -1,0 +1,461 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "smooth_stone_slab",
+    "trim": "cobblestone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "complex",
+      "segments": [
+        {
+          "x1": 4,
+          "z1": 0,
+          "x2": 16,
+          "z2": 32,
+          "label": "central_long_axis"
+        },
+        {
+          "x1": 0,
+          "z1": 8,
+          "x2": 20,
+          "z2": 24,
+          "label": "central_wide_axis"
+        },
+        {
+          "x1": 8,
+          "z1": 8,
+          "x2": 12,
+          "z2": 24,
+          "label": "central_core"
+        }
+      ],
+      "symmetry": "fourfold_approx_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single hollow interior with central raised plinth",
+        "perimeter_profile": "cruciform with four projecting arms and central core"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 10,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 2,
+        "z1": 12,
+        "x2": 20,
+        "y2": 3,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 12,
+        "x2": 0,
+        "y2": 3,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 9,
+        "y1": 2,
+        "z1": 32,
+        "x2": 10,
+        "y2": 3,
+        "z2": 32
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 8,
+          "z1": 10,
+          "x2": 12,
+          "z2": 22,
+          "block": "smooth_stone_slab"
+        },
+        {
+          "y": 6,
+          "x1": 7,
+          "z1": 9,
+          "x2": 13,
+          "z2": 23,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 6,
+          "z1": 8,
+          "x2": 14,
+          "z2": 24,
+          "block": "smooth_stone_slab"
+        },
+        {
+          "y": 8,
+          "x1": 9,
+          "z1": 12,
+          "x2": 11,
+          "z2": 20,
+          "block": "nether_brick"
+        },
+        {
+          "y": 9,
+          "x1": 10,
+          "z1": 15,
+          "x2": 10,
+          "z2": 15,
+          "block": "glowstone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 32,
+      "block": "dirt",
+      "purpose": "yard_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 19,
+      "y2": 0,
+      "z2": 31,
+      "block": "dirt",
+      "purpose": "inner_yard_fill"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 0,
+      "z1": 2,
+      "x2": 18,
+      "y2": 1,
+      "z2": 30,
+      "block": "smooth_stone_slab",
+      "purpose": "central_approach_walkway"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 8,
+      "block": "smooth_stone_slab",
+      "purpose": "approach_extension"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 1,
+      "z1": 8,
+      "x2": 16,
+      "y2": 1,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "ground_plinth_base"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 10,
+      "x2": 12,
+      "y2": 3,
+      "z2": 22,
+      "block": "stonebrick",
+      "purpose": "central_core_plinth"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 1,
+      "z1": 8,
+      "x2": 16,
+      "y2": 4,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "outer_shell_arms"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 2,
+      "z1": 9,
+      "x2": 15,
+      "y2": 4,
+      "z2": 23,
+      "purpose": "interior_hollow_cruciform"
+    },
+    {
+      "op": "carve",
+      "x1": 8,
+      "y1": 2,
+      "z1": 12,
+      "x2": 12,
+      "y2": 3,
+      "z2": 20,
+      "purpose": "central_core_open"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "entrance_frame"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 2,
+      "z2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 21,
+  "ymin": 0,
+  "ymax": 9,
+  "zmin": 0,
+  "zmax": 33,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 21, 0, 33],
+      "block": "dirt"
+    },
+    {
+      "op": "hollow_rectangle_border",
+      "box": [1, 0, 1, 20, 0, 32],
+      "material": "cobblestone",
+      "thickness": 1,
+      "height": 1,
+      "description": "single-block-deep yard border (cobblestone posts along perimeter positions)"
+    },
+    {
+      "op": "place_posts_grid",
+      "box": [2, 0, 2, 19, 0, 31],
+      "material": "cobblestone",
+      "spacing": [3, 3],
+      "height": 1,
+      "description": "regularly spaced low cobblestone posts inside the yard"
+    },
+    {
+      "op": "fill",
+      "box": [6, 0, 0, 14, 0, 33],
+      "block": "smooth_stone_slab",
+      "description": "central long approach/walkway aligned with main axial entrance (single-slab layer)"
+    },
+    {
+      "op": "outline_footprint",
+      "box": [4, 1, 6, 17, 5, 26],
+      "material": "stonebrick",
+      "thickness": 1,
+      "description": "main cruciform building footprint outline (walls will be built on this line)"
+    },
+    {
+      "op": "build_walls",
+      "box": [4, 1, 6, 17, 4, 26],
+      "material": "stonebrick",
+      "description": "primary walls, 3 blocks tall (y=1..4) to match estimated height; interior hollow"
+    },
+    {
+      "op": "create_arms",
+      "box": [8, 1, 2, 13, 4, 31],
+      "material": "stonebrick",
+      "description": "extend four projecting arms from central block forming cruciform plan; integrated with main walls; ensures symmetry"
+    },
+    {
+      "op": "floor_inside",
+      "box": [5, 0, 7, 16, 0, 25],
+      "material": "smooth_stone_slab",
+      "description": "interior floor layer of slabs one block above ground (slab occupies y=0 level)"
+    },
+    {
+      "op": "entrance_opening",
+      "box": [9, 1, 6, 11, 3, 6],
+      "action": "clear",
+      "description": "main axial entrance on south-facing arm: 3 blocks high x 3 blocks wide opening"
+    },
+    {
+      "op": "window_openings",
+      "details": [
+        {
+          "box": [5, 2, 9, 5, 3, 9],
+          "action": "clear"
+        },
+        {
+          "box": [16, 2, 9, 16, 3, 9],
+          "action": "clear"
+        },
+        {
+          "box": [9, 2, 24, 9, 3, 24],
+          "action": "clear"
+        },
+        {
+          "box": [9, 2, 8, 9, 3, 8],
+          "action": "clear"
+        }
+      ],
+      "material_fill": "glass",
+      "description": "symmetrical small window openings (each 1x2) on arms and alcoves"
+    },
+    {
+      "op": "place_glass",
+      "positions": [
+        [5, 2, 9],
+        [5, 3, 9],
+        [16, 2, 9],
+        [16, 3, 9],
+        [9, 2, 24],
+        [9, 3, 24],
+        [9, 2, 8],
+        [9, 3, 8]
+      ],
+      "block": "glass",
+      "description": "fill window openings with glass blocks"
+    },
+    {
+      "op": "wall_band_and_alcoves",
+      "actions": [
+        {
+          "type": "replace_horizontal_band",
+          "y": 2,
+          "box": [4, 2, 6, 17, 2, 26],
+          "block": "chiseled_stone_bricks",
+          "description": "decorative horizontal band (one block tall) around building at mid-wall"
+        },
+        {
+          "type": "create_recessed_alcoves",
+          "positions": [
+            [6, 1, 9],
+            [15, 1, 9],
+            [9, 1, 23],
+            [9, 1, 7]
+          ],
+          "size": [2, 2, 1],
+          "back_block": "stonebrick",
+          "air": true,
+          "description": "small recessed alcoves (2w x2h x1d) inset into wall faces at symmetric locations"
+        }
+      ]
+    },
+    {
+      "op": "roof_pedestal",
+      "box": [8, 5, 10, 13, 5, 20],
+      "block": "stonebrick",
+      "description": "raise a central pedestal one block above wall top to support stepped dome"
+    },
+    {
+      "op": "build_stepped_dome",
+      "steps": [
+        {
+          "box": [7, 6, 9, 14, 6, 21],
+          "block": "smooth_stone_slab"
+        },
+        {
+          "box": [8, 7, 10, 13, 7, 20],
+          "block": "nether_brick_slab"
+        },
+        {
+          "box": [9, 8, 11, 12, 8, 19],
+          "block": "nether_brick"
+        },
+        {
+          "box": [10, 9, 12, 11, 9, 18],
+          "block": "glowstone"
+        }
+      ],
+      "description": "concentric stepped dome centered on building; alternating light and dark slabs/blocks with glowstone apex"
+    },
+    {
+      "op": "roof_edges",
+      "box": [4, 5, 6, 17, 5, 26],
+      "block": "smooth_stone_slab",
+      "description": "flat roof edge caps around the top of walls (single-slab perimeter)"
+    },
+    {
+      "op": "trim_and_accent",
+      "actions": [
+        {
+          "type": "place",
+          "positions_range": [4, 1, 6, 17, 4, 26],
+          "block": "cobblestone",
+          "pattern": "corners_and_sills",
+          "description": "cobblestone trim at corners and window sills"
+        },
+        {
+          "type": "place",
+          "positions": [
+            [9, 1, 5],
+            [9, 1, 27]
+          ],
+          "block": "glowstone",
+          "description": "small accent lights at entrance corners (south approach) and opposite end"
+        }
+      ]
+    },
+    {
+      "op": "interior_clear",
+      "box": [5, 1, 7, 16, 4, 25],
+      "action": "clear_air",
+      "description": "clear interior space for a hollow single-floor interior"
+    }
+  ],
+  "self_check": {
+    "bbox_integrity": "adjusted xmax and zmax by +1 to match described dimensions; all operations lie within [0..21] x [0..9] x [0..33].",
+    "operation_count": 22

@@ -1,0 +1,447 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 16,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 8
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "cobblestone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 15,
+          "z2": 7,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single low-ceiling hall",
+        "perimeter_profile": "rectangle with 1-block foundation ledge"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 8,
+        "y1": 1,
+        "z1": 7,
+        "x2": 8,
+        "y2": 2,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 15,
+        "y1": 1,
+        "z1": 2,
+        "x2": 15,
+        "y2": 2,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 1,
+        "z1": 2,
+        "x2": 1,
+        "y2": 2,
+        "z2": 5
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 4,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 8,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 15,
+          "z2": 7,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 3,
+          "z1": 2,
+          "x2": 13,
+          "z2": 6,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 6,
+          "z1": 3,
+          "x2": 10,
+          "z2": 5,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 0,
+          "block": "slab_stone"
+        },
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 8,
+          "x2": 16,
+          "z2": 8,
+          "block": "slab_stone"
+        },
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 0,
+          "z2": 8,
+          "block": "slab_stone"
+        },
+        {
+          "y": 5,
+          "x1": 16,
+          "z1": 0,
+          "x2": 16,
+          "z2": 8,
+          "block": "slab_stone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 8,
+      "block": "dirt",
+      "purpose": "surrounding_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 15,
+      "y2": 0,
+      "z2": 7,
+      "block": "dirt",
+      "purpose": "building_floor_plot"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 1,
+      "z2": 8,
+      "block": "cobblestone",
+      "purpose": "foundation_perimeter_ledge_full"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 15,
+      "y2": 3,
+      "z2": 7,
+      "purpose": "reserve_interior_space"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 15,
+      "y2": 3,
+      "z2": 7,
+      "block": "stonebrick",
+      "purpose": "outer_wall_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 14,
+      "y2": 2,
+      "z2": 6,
+      "purpose": "window_channels_long_sides"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 14,
+      "y2": 2,
+      "z2": 2,
+      "block": "glass",
+      "purpose": "west_side_continuous_windows_segment1"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 6,
+      "x2": 14,
+      "y2": 2,
+      "z2": 6,
+      "block": "glass",
+      "purpose": "east_side_continuous_windows_segment1"
+    },
+    {
+      "op": "carve",
+      "x1": 8,
+      "y1": 1,
+      "z1": 7,
+      "x2": 8,
+      "y2": 2,
+      "z2": 7,
+      "purpose": "entrance_recess_hole"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 1,
+      "z": 7,
+      "block": "air",
+      "purpose": "ensure_entrance_air"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 0,
+      "z": 7,
+      "block": "cobblestone",
+      "purpose": "entrance_step"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 16,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 16,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 16,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "dirt",
+      "from": [ -1, 0, -1 ],
+      "to": [ 17, 0, 17 ]
+    },
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "from": [ 0, 1, 0 ],
+      "to": [ 16, 1, 16 ]
+    },
+    {
+      "op": "replace",
+      "block": "cobblestone",
+      "from": [ 0, 1, 0 ],
+      "to": [ 16, 1, 16 ],
+      "condition": "overwrite"
+    },
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "from": [ 0, 2, 0 ],
+      "to": [ 16, 2, 16 ]
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [ 1, 2, 1 ],
+      "to": [ 15, 4, 15 ]
+    },
+    {
+      "op": "set_blocks",
+      "block": "stonebrick",
+      "coords": [ [8,2,1], [8,2,15] ]
+    },
+    {
+      "op": "hollow_out_interior_floor",
+      "block": "air",
+      "from": [ 2, 3, 2 ],
+      "to": [ 14, 5, 14 ]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [ 3, 3, 1 ],
+      "to": [ 6, 3, 1 ]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [ 9, 3, 1 ],
+      "to": [ 12, 3, 1 ]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [ 3, 3, 15 ],
+      "to": [ 6, 3, 15 ]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [ 9, 3, 15 ],
+      "to": [ 12, 3, 15 ]
+    },
+    {
+      "op": "clear_entrance",
+      "block": "air",
+      "from": [ 8, 2, 0 ],
+      "to": [ 8, 3, 0 ]
+    },
+    {
+      "op": "place_block",
+      "block": "oak_door",
+      "pos": [ 8, 2, 0 ],
+      "facing": "south"
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [ 0, 5, 0 ],
+      "to": [ 16, 5, 16 ]
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick",
+      "from": [ 1, 5, 1 ],
+      "to": [ 15, 5, 15 ]
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick",
+      "from": [ 2, 6, 2 ],
+      "to": [ 14, 6, 14 ]
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick",
+      "from": [ 3, 7, 3 ],
+      "to": [ 13, 7, 13 ]
+    },
+    {
+      "op": "place_blocks",
+      "block": "stone_slab",
+      "positions": [
+        [1,5,1],[1,5,15],[15,5,1],[15,5,15],
+        [2,6,2],[2,6,14],[14,6,2],[14,6,14]
+      ]
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [ 1, 1, 1 ],
+      "to": [ 15, 1, 15 ]
+    },
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "from": [ 0, 2, 0 ],
+      "to": [ 16, 2, 16 ]
+    },
+    {
+      "op": "outline_walls_interior",
+      "block": "air",
+      "from": [ 2, 3, 2 ],
+      "to": [ 14, 4, 14 ]
+    },
+    {
+      "op": "place_block",
+      "block": "stone_slab",
+      "pos": [8,1,0]
+    },
+    {
+      "op": "place_block",
+      "block": "stone_slab",
+      "pos": [8,1,16]
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [ 1, 2, 1 ],
+      "to": [ 15, 2, 15 ]
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [ 8, 3, 0 ],
+      "to": [ 8, 3, 0 ]
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [ 3, 3, 1 ],
+      "to": [ 6, 3, 1 ],
+      "condition": "ensure"
+    }
+  ],
+  "self_check": {
+    "bbox_within_build_area": false,
+    "operation_count_ok": true,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof": true,
+    "contains_windows": true,
+    "contains_entrance": true,
+    "material_coherence": false,
+    "notes": "Adjusted bbox depth to 0..16 to fit 9x17-ish footprint; some operations use coordinates exactly on bbox edges. Material roles separated but some slab/nether_brick and cobblestone uses overlap for ledge; operation types include nonstandard verbs (hollow_out_interior_floor, outline_walls_interior) which may need interpreter mapping."
+  }
+}

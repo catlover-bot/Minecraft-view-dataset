@@ -1,0 +1,463 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 24
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 24,
+          "label": "outer_ring"
+        },
+        {
+          "x1": 6,
+          "z1": 6,
+          "x2": 18,
+          "z2": 18,
+          "label": "courtyard_hole"
+        }
+      ],
+      "symmetry": "four_fold_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 0
+        },
+        "rooms_hint": "ground slab + exterior base ledge",
+        "perimeter_profile": "solid border with courtyard hole"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "lower residential band (first floor)",
+        "perimeter_profile": "banded walls with windows"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "upper residential band (second floor)",
+        "perimeter_profile": "banded walls with windows and coping"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 9,
+          "ymax": 12
+        },
+        "rooms_hint": "roof / stepped roof central feature",
+        "perimeter_profile": "open courtyard to center with stepped brick elements"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 11,
+        "y1": 1,
+        "z1": 0,
+        "x2": 12,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 11,
+        "y1": 1,
+        "z1": 24,
+        "x2": 12,
+        "y2": 3,
+        "z2": 24
+      },
+      {
+        "kind": "door",
+        "face": "west",
+        "x1": 0,
+        "y1": 1,
+        "z1": 11,
+        "x2": 0,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "door",
+        "face": "east",
+        "x1": 24,
+        "y1": 1,
+        "z1": 11,
+        "x2": 24,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 2,
+        "z1": 0,
+        "x2": 8,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 15,
+        "y1": 2,
+        "z1": 0,
+        "x2": 15,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 18,
+        "y1": 2,
+        "z1": 0,
+        "x2": 18,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 21,
+        "y1": 2,
+        "z1": 0,
+        "x2": 21,
+        "y2": 3,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 9,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 9,
+          "x1": 6,
+          "z1": 6,
+          "x2": 18,
+          "z2": 18,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 8,
+          "z1": 8,
+          "x2": 16,
+          "z2": 16,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 10,
+          "z1": 10,
+          "x2": 14,
+          "z2": 14,
+          "block": "brick"
+        },
+        {
+          "y": 12,
+          "x1": 11,
+          "z1": 11,
+          "x2": 13,
+          "z2": 13,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1":  -1,
+      "y1": 0,
+      "z1":  -1,
+      "x2": 25,
+      "y2": 0,
+      "z2": 25,
+      "block": "dirt",
+      "purpose": "ground_pad"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 24,
+      "block": "oak_planks",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 8,
+      "z2": 24,
+      "block": "sandstone",
+      "purpose": "outer_shell_solid"
+    },
+    {
+      "op": "carve",
+      "x1": 6,
+      "y1": 1,
+      "z1": 6,
+      "x2": 18,
+      "y2": 8,
+      "z2": 18,
+      "purpose": "courtyard_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 1,
+      "z
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 24,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "minecraft:grass_block",
+      "from": [ -1, 0, -1 ],
+      "to": [ 25, 0, 25 ],
+      "comment": "ground pad larger than building footprint (1-block border)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [ 0, 1, 0 ],
+      "to": [ 24, 1, 24 ],
+      "comment": "low white perimeter border/ledge around base (single block high)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": [ 1, 1, 1 ],
+      "to": [ 23, 1, 23 ],
+      "comment": "ground-floor floor layer (interior courtyard will replace center later)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": [ 1, 2, 1 ],
+      "to": [ 23, 2, 23 ],
+      "comment": "second floor subfloor (continuity for building thickness)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:air",
+      "from": [ 6, 1, 6 ],
+      "to": [ 18, 6, 18 ],
+      "comment": "create open central courtyard (clears interior space up through mid roof level)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:grass_block",
+      "from": [ 7, 1, 7 ],
+      "to": [ 17, 1, 17 ],
+      "comment": "courtyard ground (grass) inside the cleared area"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [ 1, 2, 1 ],
+      "to": [ 1, 11, 23 ],
+      "comment": "left facade vertical white pillar framing (corner and vertical supports)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [ 23, 2, 1 ],
+      "to": [ 23, 11, 23 ],
+      "comment": "right facade vertical white pillar framing"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [ 1, 2, 1 ],
+      "to": [ 23, 11, 1 ],
+      "comment": "front facade vertical white pillar framing (horizontal run at front base) - will be partially overlapped by walls"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [ 1, 2, 23 ],
+      "to": [ 23, 11, 23 ],
+      "comment": "back facade vertical white pillar framing"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:wooden_planks",
+      "from": [ 2, 4, 2 ],
+      "to": [ 22, 4, 22 ],
+      "comment": "horizontal wooden band (first band) wrapping around exterior, 1-block high"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:wooden_planks",
+      "from": [ 2, 8, 2 ],
+      "to": [ 22, 8, 22 ],
+      "comment": "horizontal wooden band (second band) wrapping around exterior for visual separation between floors"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": [ 2, 2, 2 ],
+      "to": [ 22, 11, 22 ],
+      "comment": "main exterior walls (infill). We'll carve windows and courtyard openings next. Keeps walls 1 thick."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:air",
+      "from": [ 6, 2, 0 ],
+      "to": [ 18, 6, 0 ],
+      "comment": "entrance opening on front face (centered, 13 blocks wide? Actually 13 wide to allow central opening) - clears through front wall to exterior"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:air",
+      "at": [ 12, 2, 0 ],
+      "comment": "ensure central lower entrance opening (doorway area clear)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [ 3, 5, 2 ],
+      "to": [ 21, 5, 2 ],
+      "comment": "row of windows on first floor front face (single-block high panes). will place repeats on other facades"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [ 3, 9, 2 ],
+      "to": [ 21, 9, 2 ],
+      "comment": "row of windows on second floor front face"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [ 3, 5, 22 ],
+      "to": [ 21, 5, 22 ],
+      "comment": "back face windows first floor"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [ 3, 9, 22 ],
+      "to": [ 21, 9, 22 ],
+      "comment": "back face windows second floor"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [ 2, 5, 3 ],
+      "to": [ 2, 5, 21 ],
+      "comment": "left face windows first floor"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [ 2, 9, 3 ],
+      "to": [ 2, 9, 21 ],
+      "comment": "left face windows second floor"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [ 22, 5, 3 ],
+      "to": [ 22, 5, 21 ],
+      "comment": "right face windows first floor"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [ 22, 9, 3 ],
+      "to": [ 22, 9, 21 ],
+      "comment": "right face windows second floor"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:quartz_block",
+      "at": [ 12, 2, 0 ],
+      "comment": "place a single quartz step block as entrance threshold (visual). This will be replaced by door or left open per player."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [ 1, 1, 1 ],
+      "to": [ 1, 1, 1 ],
+      "comment": "corner accent (front-left) at base - preserves stonebrick accents; duplicates will be added at other corners via setblock"
+    },
+    {
+      "op": "setblock",
+      "block": "minecraft:stone_bricks",
+      "at": [ 23, 1, 1 ],
+      "comment": "corner accent (front-right)"
+    },
+    {
+      "op": "set

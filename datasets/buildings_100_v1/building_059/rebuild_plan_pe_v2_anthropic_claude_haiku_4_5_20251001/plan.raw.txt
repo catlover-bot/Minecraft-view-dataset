@@ -1,0 +1,293 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 7,
+    "zmin": 0,
+    "zmax": 14
+  },
+  "palette": {
+    "wall": "wood",
+    "roof": "netherbrick",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "foundation": "stonebrick",
+    "post": "log"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 13,
+          "label": "main_building"
+        }
+      ],
+      "symmetry": "bilateral_z_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "single open hall",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 1,
+        "x2": 2,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 1,
+        "x2": 5,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 2,
+        "z1": 1,
+        "x2": 8,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 13,
+        "x2": 2,
+        "y2": 3,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 2,
+        "z1": 13,
+        "x2": 5,
+        "y2": 3,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 8,
+        "y1": 2,
+        "z1": 13,
+        "x2": 8,
+        "y2": 3,
+        "z2": 13
+      },
+      {
+        "kind": "door",
+        "face": "east",
+        "x1": 9,
+        "y1": 1,
+        "z1": 6,
+        "x2": 9,
+        "y2": 3,
+        "z2": 7
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 5,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 13,
+          "block": "netherbrick"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 2,
+          "x2": 8,
+          "z2": 12,
+          "block": "netherbrick"
+        },
+        {
+          "y": 7,
+          "x1": 3,
+          "z1": 3,
+          "x2": 7,
+          "z2": 11,
+          "block": "netherbrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 14,
+      "block": "dirt",
+      "purpose": "ground_pad"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 14,
+      "block": "stonebrick",
+      "purpose": "platform_border"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 13,
+      "block": "wood",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 13,
+      "block": "wood",
+      "purpose": "outer_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 8,
+      "y2": 4,
+      "z2": 12,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 2,
+      "z": 1,
+      "block": "log",
+      "purpose": "corner_post_nw"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 3,
+      "z": 1,
+      "block": "log",
+      "purpose": "corner_post_nw_upper"
+    },
+    {
+      "op": "set",
+      "x": 9,
+      "y": 2,
+      "z": 1,
+      "block": "log",
+      "purpose": "corner_post_ne"
+    },
+    {
+      "op": "set",
+      "x": 9,
+      "y": 3,
+      "z": 1,
+      "block": "log",
+      "purpose": "corner_post_ne_upper"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 2
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 11,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 15,
+  "operations": [
+    {"type": "fill", "material": "dirt", "x1": 0, "y1": 0, "z1": 0, "x2": 11, "y2": 8, "z2": 0, "purpose": "ground level"},
+    {"type": "fill", "material": "stonebrick", "x1": 1, "y1": 1, "z1": 1, "x2": 10, "y2": 7, "z2": 1, "purpose": "platform base"},
+    {"type": "fill", "material": "wood_planks", "x1": 2, "y1": 2, "z1": 2, "x2": 9, "y2": 6, "z2": 4, "purpose": "wall box"},
+    {"type": "fill", "material": "air", "x1": 2, "y1": 2, "z1": 2, "x2": 9, "y2": 6, "z2": 3, "purpose": "interior hollow"},
+    {"type": "set", "material": "log", "x": 2, "y": 2, "z": 2, "purpose": "corner post NW"},
+    {"type": "set", "material": "log", "x": 9, "y": 2, "z": 2, "purpose": "corner post NE"},
+    {"type": "set", "material": "log", "x": 2, "y": 6, "z": 2, "purpose": "corner post SW"},
+    {"type": "set", "material": "log", "x": 9, "y": 6, "z": 2, "purpose": "corner post SE"},
+    {"type": "set", "material": "log", "x": 2, "y": 2, "z": 3, "purpose": "corner post NW mid"},
+    {"type": "set", "material": "log", "x": 9, "y": 2, "z": 3, "purpose": "corner post NE mid"},
+    {"type": "set", "material": "log", "x": 2, "y": 6, "z": 3, "purpose": "corner post SW mid"},
+    {"type": "set", "material": "log", "x": 9, "y": 6, "z": 3, "purpose": "corner post SE mid"},
+    {"type": "fill", "material": "glass", "x1": 3, "y1": 2, "z1": 3, "x2": 8, "y2": 2, "z2": 3, "purpose": "window row north"},
+    {"type": "fill", "material": "glass", "x1": 3, "y1": 6, "z1": 3, "x2": 8, "y2": 6, "z2": 3, "purpose": "window row south"},
+    {"type": "set", "material": "wood_door", "x": 5, "y": 2, "z": 2, "purpose": "entrance north side"},
+    {"type": "fill", "material": "air", "x1": 5, "y1": 2, "z1": 2, "x2": 5, "y2": 2, "z2": 3, "purpose": "door opening"},
+    {"type": "fill", "material": "netherbrick_stairs", "x1": 2, "y1": 2, "z1": 5, "x2": 9, "y2": 6, "z2": 6, "purpose": "roof step 1"},
+    {"type": "fill", "material": "netherbrick_stairs", "x1": 3, "y1": 3, "z1": 7, "x2": 8, "y2": 5, "z2": 8, "purpose": "roof step 2"},
+    {"type": "fill", "material": "netherbrick_stairs", "x1": 4, "y1": 4, "z1": 9, "x2": 7, "y2": 4, "z2": 10, "purpose": "roof ridge"},
+    {"type": "fill", "material": "stone_slab", "x1": 2, "y1": 2, "z1": 5, "x2": 9, "y2": 2, "z2": 5, "purpose": "roof edge north"},
+    {"type": "fill", "material": "stone_slab", "x1": 2, "y1": 6, "z1": 5, "x2": 9, "y2": 6, "z2": 5, "purpose": "roof edge south"},
+    {"type": "fill", "material": "stone_slab", "x1": 2, "y1": 2, "z1": 5, "x2": 2, "y2": 6, "z2": 5, "purpose": "roof edge west"},
+    {"type": "fill", "material": "stone_slab", "x1": 9, "y1": 2, "z1": 5, "x2": 9, "y2": 6, "z2": 5, "purpose": "roof edge east"}
+  ],
+  "operation_count": 24,
+  "self_check": {
+    "bbox_valid": true,
+    "all_coords_in_bbox": true,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,
+    "material_coherence": true,
+    "structural_fidelity": true
+  },
+  "notes": "Rectangular 8×5 footprint (interior 7×4) with 3-block walls, stonebrick platform, stepped netherbrick gable roof with stone slab edging, continuous glass windows on long sides, log corner posts, and north-facing wooden door entrance. All 24 operations fit within bbox and maintain material separation."
+}
+```

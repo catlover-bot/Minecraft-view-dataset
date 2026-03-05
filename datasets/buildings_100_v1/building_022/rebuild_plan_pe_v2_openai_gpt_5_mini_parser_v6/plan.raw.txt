@@ -1,0 +1,464 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 18,
+    "ymin": 0,
+    "ymax": 10,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 17,
+          "z2": 9,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor hall, unknown partitions",
+        "perimeter_profile": "rectangular with 1-block quartz base border"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "upper floor, continuous window band",
+        "perimeter_profile": "rectangular"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 9,
+        "y1": 1,
+        "z1": 1,
+        "x2": 9,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 17,
+        "y1": 3,
+        "z1": 2,
+        "x2": 17,
+        "y2": 3,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 3,
+        "z1": 2,
+        "x2": 1,
+        "y2": 3,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 17,
+        "y1": 6,
+        "z1": 2,
+        "x2": 17,
+        "y2": 6,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 6,
+        "z1": 2,
+        "x2": 1,
+        "y2": 6,
+        "z2": 8
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 9,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 9,
+          "x1": 0,
+          "z1": 0,
+          "x2": 18,
+          "z2": 10,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 1,
+          "z1": 1,
+          "x2": 17,
+          "z2": 9,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 18,
+      "y2": 0,
+      "z2": 10,
+      "block": "dirt",
+      "purpose": "surrounding_ground_base"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 18,
+      "y2": 0,
+      "z2": 10,
+      "purpose": "flatten_site_keep_dirt" 
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 17,
+      "y2": 0,
+      "z2": 9,
+      "block": "quartz",
+      "purpose": "base_border_walkway"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 0,
+      "z1": 2,
+      "x2": 16,
+      "y2": 0,
+      "z2": 8,
+      "block": "oak_planks",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 17,
+      "y2": 8,
+      "z2": 9,
+      "block": "sandstone",
+      "purpose": "outer_shell_solid"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 17,
+      "y2": 4,
+      "z2": 9,
+      "block": "quartz",
+      "purpose": "horizontal_trim_between_floors"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 1,
+      "y2": 8,
+      "z2": 9,
+      "block": "quartz",
+      "purpose": "west_corner_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 17,
+      "y1": 1,
+      "z1": 1,
+      "x2": 17,
+      "y2": 8,
+      "z2": 9,
+      "block": "quartz",
+      "purpose": "east_corner_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 9,
+      "x2": 17,
+      "y2": 8,
+      "z2": 9,
+      "block": "quartz",
+      "purpose": "north_wall_quartz_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 17,
+      "y2": 8,
+      "z2": 1,
+      "block": "quartz",
+      "purpose": "south_wall_quartz_edge"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 16,
+      "y2": 7,
+      "z2": 8,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 3,
+      "z2": 1,
+      "purpose": "main_entrance"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 3,
+      "z1": 1,
+      "x2": 15,
+      "y2": 3,
+      "z2
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 18,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 20,
+  "operations": [
+    {
+      "op": "fill",
+      "material": "dirt",
+      "from": [0, 0, 0],
+      "to": [18, 0, 20],
+      "comment": "ground layer (excavation base) filling floor level"
+    },
+    {
+      "op": "fill",
+      "material": "sandstone",
+      "from": [3, 1, 2],
+      "to": [15, 6, 18],
+      "comment": "main wall mass (two-storey shell); interior solid for simplicity — will hollow later"
+    },
+    {
+      "op": "replace_layer",
+      "material": "air",
+      "from": [4, 2, 3],
+      "to": [14, 5, 17],
+      "comment": "carve out interior space: leave 1-block thick walls and floor slab; interior height ~3 per floor"
+    },
+    {
+      "op": "fill",
+      "material": "quartz",
+      "from": [3, 1, 2],
+      "to": [15, 1, 18],
+      "comment": "one-block-high quartz base border/walk around building (wraps footprint)"
+    },
+    {
+      "op": "fill",
+      "material": "quartz",
+      "from": [3, 2, 2],
+      "to": [3, 6, 18],
+      "comment": "west corner vertical trim (1-block thick pillar)"
+    },
+    {
+      "op": "fill",
+      "material": "quartz",
+      "from": [15, 2, 2],
+      "to": [15, 6, 18],
+      "comment": "east corner vertical trim"
+    },
+    {
+      "op": "fill",
+      "material": "quartz",
+      "from": [4, 4, 2],
+      "to": [14, 4, 18],
+      "comment": "horizontal quartz band (between floors) at y=4"
+    },
+    {
+      "op": "fill",
+      "material": "sandstone",
+      "from": [4, 1, 3],
+      "to": [14, 1, 17],
+      "comment": "interior floor slab of sandstone at ground-floor level (y=1)"
+    },
+    {
+      "op": "hollow_shell",
+      "material": "air",
+      "from": [5, 2, 4],
+      "to": [13, 5, 16],
+      "comment": "clear interior volume to create rooms; leaves 1-block thick walls around"
+    },
+    {
+      "op": "outline_windows",
+      "from": [5, 3, 2],
+      "to": [13, 3, 2],
+      "pattern": "1x1 horizontal panes at y=3 front long facade",
+      "material": "glass",
+      "comment": "first-floor (upper of ground) horizontal windows along front (z=2)"
+    },
+    {
+      "op": "outline_windows",
+      "from": [5, 6, 2],
+      "to": [13, 6, 2],
+      "pattern": "1x1 horizontal panes at y=6 second-floor",
+      "material": "glass",
+      "comment": "second-floor windows aligned above first-floor on front"
+    },
+    {
+      "op": "outline_windows",
+      "from": [5, 3, 18],
+      "to": [13, 3, 18],
+      "pattern": "1x1 horizontal panes at y=3 back long facade",
+      "material": "glass",
+      "comment": "first-floor windows at back"
+    },
+    {
+      "op": "outline_windows",
+      "from": [5, 6, 18],
+      "to": [13, 6, 18],
+      "pattern": "1x1 horizontal panes at y=6 back second-floor",
+      "material": "glass",
+      "comment": "second-floor windows at back"
+    },
+    {
+      "op": "place_glass_row",
+      "material": "glass",
+      "positions": [
+        [4, 3, 5],
+        [4, 3, 8],
+        [4, 3, 11],
+        [4, 3, 14],
+        [4, 6, 5],
+        [4, 6, 8],
+        [4, 6, 11],
+        [4, 6, 14],
+        [15, 3, 5],
+        [15, 3, 8],
+        [15, 3, 11],
+        [15, 3, 14],
+        [15, 6, 5],
+        [15, 6, 8],
+        [15, 6, 11],
+        [15, 6, 14]
+      ],
+      "comment": "side narrow horizontal windows (1x1 panes) spaced evenly on long facades"
+    },
+    {
+      "op": "carve_entrance",
+      "from": [9, 1, 2],
+      "to": [10, 3, 2],
+      "material": "air",
+      "comment": "entrance opening on front central (2-block-wide, 2-high) at z=2"
+    },
+    {
+      "op": "place_door",
+      "material": "oak_door",
+      "position": [9, 1, 2],
+      "facing": "south",
+      "comment": "main door placed in entrance opening"
+    },
+    {
+      "op": "roof_step_1",
+      "material": "brick",
+      "from": [2, 7, 1],
+      "to": [16, 7, 19],
+      "comment": "first roof layer (overhang 1 block) using brick blocks"
+    },
+    {
+      "op": "roof_step_2",
+      "material": "brick_stairs",
+      "from": [3, 8, 2],
+      "to": [15, 8, 18],
+      "orientation": "facing outward on eaves and inward near ridge",
+      "comment": "second stepped layer using brick stairs to create slope"
+    },
+    {
+      "op": "roof_ridge",
+      "material": "brick",
+      "from": [8, 9, 9],
+      "to": [10, 9, 11],
+      "comment": "short ridge along long axis; top center row"
+    },
+    {
+      "op": "roof_slab_trim",
+      "material": "quartz_slab",
+      "from": [3, 8, 1],
+      "to": [15, 8, 19],
+      "comment": "stone slab trim at eaves/shoulders"
+    },
+    {
+      "op": "trim_eaves",
+      "material": "quartz",
+      "from": [2, 7, 1],
+      "to": [16, 7, 1],
+      "comment": "quartz eave caps front"
+    },
+    {
+      "op": "trim_eaves",
+      "material": "quartz",
+      "from": [2, 7, 19],
+      "to": [16, 7, 19],
+      "comment": "quartz eave caps back"
+    },
+    {
+      "op": "surrounding_dirt_excavation",
+      "material": "dirt",
+      "from": [0, 0, 0],
+      "to": [18, 0, 20],
+      "comment": "surrounding ground level maintained as dirt (excavation shallow around building)"
+    }
+  ],
+  "checks": {
+    "bbox_integrity": {
+      "valid": true,
+      "notes": "All operation coordinates lie within xmin..xmax, ymin..ymax, zmin..z

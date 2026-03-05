@@ -1,0 +1,469 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 14,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 6
+  },
+  "palette": {
+    "wall": "oak_planks",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass_pane",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 13,
+          "z2": 5,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single hall (open)",
+        "perimeter_profile": "rectangular with 1-block outer stone border"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 7,
+        "y1": 1,
+        "z1": 1,
+        "x2": 7,
+        "y2": 2,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 2,
+        "x2": 1,
+        "y2": 2,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 13,
+        "y1": 2,
+        "z1": 2,
+        "x2": 13,
+        "y2": 2,
+        "z2": 4
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 4,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 14,
+          "z2": 6,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 13,
+          "z2": 5,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 3,
+          "z1": 2,
+          "x2": 11,
+          "z2": 4,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 13,
+      "y2": 0,
+      "z2": 5,
+      "block": "oak_planks",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "foundational_border_full_extent"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 13,
+      "y2": 3,
+      "z2": 5,
+      "block": "oak_planks",
+      "purpose": "wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 1,
+      "y2": 3,
+      "z2": 1,
+      "block": "oak_log",
+      "purpose": "corner_post_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 13,
+      "y1": 1,
+      "z1": 1,
+      "x2": 13,
+      "y2": 3,
+      "z2": 1,
+      "block": "oak_log",
+      "purpose": "corner_post_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 5,
+      "x2": 1,
+      "y2": 3,
+      "z2": 5,
+      "block": "oak_log",
+      "purpose": "corner_post_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 13,
+      "y1": 1,
+      "z1": 5,
+      "x2": 13,
+      "y2": 3,
+      "z2": 5,
+      "block": "oak_log",
+      "purpose": "corner_post_se"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 12,
+      "y2": 2,
+      "z2": 4,
+      "purpose": "window_row_west_east_gaps",
+      "note": "clear center panes area; west/east faces will be filled at edges"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 2,
+      "x2": 1,
+      "y2": 2,
+      "z2": 4,
+      "block": "glass_pane",
+      "purpose": "window_west_row"
+    },
+    {
+      "op": "fill",
+      "x1": 13,
+      "y1": 2,
+      "z1": 2,
+      "x2": 13,
+      "y2": 2,
+      "z2": 4,
+      "block": "glass_pane",
+      "purpose": "window_east_row"
+    },
+    {
+      "op": "carve",
+      "x1": 7,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 2,
+      "z2": 1,
+      "purpose": "entrance_cutout"
+    },
+    {
+      "op": "fill",
+      "x1": 7,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 2,
+      "z2": 1,
+      "block": "oak_door",
+      "purpose": "main_door"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 14,
+      "y2": 1,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "stone_border_top_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 14,
+      "y2": 2,
+      "z2": 6,
+      "block": "stone_slab",
+      "purpose": "stone_slab_coping_between_wall_and
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 14,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 6,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "stone_bricks",
+      "from": [0, 0, 0],
+      "to": [14, 0, 6],
+      "comment": "continuous stonebrick foundation/border (1-high ledge occupying ground level across footprint)"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [1, 1, 1],
+      "to": [13, 3, 5],
+      "comment": "outer wooden wall shell (planks) volume; walls are hollowed by subsequent clearings leaving floor and empty interior"
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [2, 1, 2],
+      "to": [12, 2, 4],
+      "comment": "clear interior space (1-block inset from walls) leaving internal floor at y=1 if desired"
+    },
+    {
+      "op": "set",
+      "block": "oak_logs",
+      "pos": [1, 1, 1],
+      "comment": "northwest vertical log corner post base (will be extended)"
+    },
+    {
+      "op": "set",
+      "block": "oak_logs",
+      "pos": [13, 1, 1],
+      "comment": "northeast corner post base"
+    },
+    {
+      "op": "set",
+      "block": "oak_logs",
+      "pos": [1, 1, 5],
+      "comment": "southwest corner post base"
+    },
+    {
+      "op": "set",
+      "block": "oak_logs",
+      "pos": [13, 1, 5],
+      "comment": "southeast corner post base"
+    },
+    {
+      "op": "fill",
+      "block": "oak_logs",
+      "from": [1, 2, 1],
+      "to": [1, 3, 1],
+      "comment": "extend NW corner post up to wall top"
+    },
+    {
+      "op": "fill",
+      "block": "oak_logs",
+      "from": [13, 2, 1],
+      "to": [13, 3, 1],
+      "comment": "extend NE corner post"
+    },
+    {
+      "op": "fill",
+      "block": "oak_logs",
+      "from": [1, 2, 5],
+      "to": [1, 3, 5],
+      "comment": "extend SW corner post"
+    },
+    {
+      "op": "fill",
+      "block": "oak_logs",
+      "from": [13, 2, 5],
+      "to": [13, 3, 5],
+      "comment": "extend SE corner post"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [2, 1, 1],
+      "to": [12, 3, 1],
+      "comment": "north wall plank fill between corner posts"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [2, 1, 5],
+      "to": [12, 3, 5],
+      "comment": "south wall plank fill"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [1, 1, 2],
+      "to": [1, 3, 4],
+      "comment": "west wall plank fill"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [13, 1, 2],
+      "to": [13, 3, 4],
+      "comment": "east wall plank fill"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [4, 2, 1],
+      "to": [6, 2, 1],
+      "comment": "north windows (3 panes) centered on long wall at mid-height"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [8, 2, 1],
+      "to": [10, 2, 1],
+      "comment": "north windows continued (mirror spacing) total 6 panes across wall with small frames"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [4, 2, 5],
+      "to": [6, 2, 5],
+      "comment": "south windows"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [8, 2, 5],
+      "to": [10, 2, 5],
+      "comment": "south windows continued"
+    },
+    {
+      "op": "set",
+      "block": "air",
+      "pos": [7, 1, 0],
+      "comment": "entrance opening external gap at front center (on x=7, z=0). This carving ensures an opening exists in the stone border; door can be placed later"
+    },
+    {
+      "op": "set",
+      "block": "air",
+      "pos": [7, 1, 1],
+      "comment": "entrance interior space at wall position"
+    },
+    {
+      "op": "set",
+      "block": "oak_planks",
+      "pos": [7, 1, 3],
+      "comment": "interior floor center block (optional) ensure there is a defined floor surface at y=1"
+    },
+    {
+      "op": "fill",
+      "block": "stone_brick_slab",
+      "from": [1, 4, 0],
+      "to": [13, 4, 6],
+      "comment": "stone slab coping band atop walls (y=4) covering perimeter between roof and walls"
+    },
+    {
+      "op": "fill",
+      "block": "nether_bricks",
+      "from": [3, 5, 2],
+      "to": [11, 5, 4],
+      "comment": "first stepped roof layer (lower step) centered on footprint leaving 2-block overhang inward"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick_slab",
+      "from": [4, 6, 3],
+      "to": [10, 6, 3],
+      "comment": "upper small ridge/step using slabs to create a short ridge (roof peak)"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick_slab",
+      "from": [3, 5, 2],
+      "to": [11, 5, 2],
+      "comment": "front roof step slab accent row (east-west alignment) to shape stepped profile"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick_slab",
+      "from": [3, 5, 4],
+      "to": [11, 5, 4],
+      "comment": "back roof step slab accent row"
+    },
+    {
+      "op": "set",
+      "block": "stone_brick_slab",
+      "pos": [3, 5, 2],
+      "comment": "stone slab accent on roof step (front-left) to provide alternating stone accents"
+    },
+    {
+      "op": "set",
+      "block": "stone_brick_slab",
+      "pos": [11, 5, 4],
+      "comment": "stone slab accent on roof step (back-right) to balance accent placement"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "all

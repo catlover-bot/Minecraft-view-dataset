@@ -1,0 +1,453 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 16,
+    "zmin": 0,
+    "zmax": 20
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "slab_wood",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 20,
+          "label": "main"
+        }
+      ],
+      "symmetry": "four_quadrant_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 0
+        },
+        "rooms_hint": "ground slab base",
+        "perimeter_profile": "continuous base slab"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 6
+        },
+        "rooms_hint": "main hall (double-height appearance externally as two visible stories)",
+        "perimeter_profile": "rectangular with corner towers"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 7,
+          "ymax": 13
+        },
+        "rooms_hint": "tower shaft (towers continue up), roof base",
+        "perimeter_profile": "towers extend above main hall"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 14,
+          "ymax": 16
+        },
+        "rooms_hint": "roof cap / tower caps",
+        "perimeter_profile": "stepped roof and tower caps"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 3,
+        "z1": 0,
+        "x2": 4,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 7,
+        "y1": 3,
+        "z1": 0,
+        "x2": 8,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 12,
+        "y1": 3,
+        "z1": 0,
+        "x2": 13,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 3,
+        "z1": 0,
+        "x2": 17,
+        "y2": 4,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 13,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 13,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 19,
+          "block": "slab_stone"
+        },
+        {
+          "y": 14,
+          "x1": 3,
+          "z1": 3,
+          "x2": 17,
+          "z2": 17,
+          "block": "slab_wood"
+        },
+        {
+          "y": 15,
+          "x1": 6,
+          "z1": 6,
+          "x2": 14,
+          "z2": 14,
+          "block": "slab_stone"
+        },
+        {
+          "y": 16,
+          "x1": 9,
+          "z1": 9,
+          "x2": 11,
+          "z2": 11,
+          "block": "slab_wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 20,
+      "block": "wood",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 6,
+      "z2": 20,
+      "block": "brick",
+      "purpose": "main_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 6,
+      "z2": 19,
+      "purpose": "main_interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 20,
+      "y2": 2,
+      "z2": 20,
+      "block": "slab_stone",
+      "purpose": "horizontal_light_band_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 20,
+      "block": "slab_stone",
+      "purpose": "horizontal_light_band_mid"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 20,
+      "y2": 5,
+      "z2": 20,
+      "block": "slab_stone",
+      "purpose": "horizontal_light_band_upper"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 20,
+      "y2": 13,
+      "z2": 20,
+      "block": "brick",
+      "purpose": "upper_wall_continuation_for_tower_bases"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 20,
+      "block": "white_concrete",
+      "purpose": "perimeter_base_slab_row"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 0,
+      "block": "white_concrete",
+      "purpose": "north_base_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 16,
+  "zmin": 0,
+  "zmax": 20,
+  "operations": [
+    {
+      "op": "fill",
+      "from": [0, 0, 0],
+      "to": [20, 0, 20],
+      "block": "white_slab",
+      "desc": "perimeter base layer (continuous white slab ring at ground level). Fill entire ground plane with white_slab so base is continuous; interior will be hollowed."
+    },
+    {
+      "op": "fill",
+      "from": [1, 1, 1],
+      "to": [19, 1, 19],
+      "block": "oak_planks",
+      "desc": "main floor layer (interior floor, 1 block above base)."
+    },
+    {
+      "op": "fill",
+      "from": [1, 2, 1],
+      "to": [19, 6, 19],
+      "block": "air",
+      "desc": "clear interior volume for main hall (2..6 to allow 5-block tall interior). Ensures interior empty space."
+    },
+    {
+      "op": "walls",
+      "from": [1, 2, 1],
+      "to": [19, 6, 19],
+      "block": "brick",
+      "thickness": 1,
+      "desc": "external walls of brick from y=2 to y=6 (4 blocks tall) leaving space for banding and windows. Implemented as perimeter shell replacing edges with brick."
+    },
+    {
+      "op": "fill",
+      "from": [1, 4, 3],
+      "to": [19, 4, 3],
+      "block": "smooth_stone_slab",
+      "desc": "horizontal light slab band wrapping facades: front band on z=3 (one-block-thick line)."
+    },
+    {
+      "op": "fill",
+      "from": [1, 4, 17],
+      "to": [19, 4, 17],
+      "block": "smooth_stone_slab",
+      "desc": "horizontal light slab band wrapping facades: back band on z=17."
+    },
+    {
+      "op": "fill",
+      "from": [3, 4, 1],
+      "to": [3, 4, 19],
+      "block": "smooth_stone_slab",
+      "desc": "left band at x=3."
+    },
+    {
+      "op": "fill",
+      "from": [17, 4, 1],
+      "to": [17, 4, 19],
+      "block": "smooth_stone_slab",
+      "desc": "right band at x=17."
+    },
+    {
+      "op": "windows",
+      "pattern": "grid",
+      "positions": [
+        [4, 3, 2],
+        [7, 3, 2],
+        [10, 3, 2],
+        [13, 3, 2],
+        [16, 3, 2],
+        [4, 3, 18],
+        [7, 3, 18],
+        [10, 3, 18],
+        [13, 3, 18],
+        [16, 3, 18],
+        [2, 3, 4],
+        [2, 3, 7],
+        [2, 3, 10],
+        [2, 3, 13],
+        [2, 3, 16],
+        [18, 3, 4],
+        [18, 3, 7],
+        [18, 3, 10],
+        [18, 3, 13],
+        [18, 3, 16]
+      ],
+      "block": "glass",
+      "desc": "rows of small 1x1 windows placed between banding on each facade."
+    },
+    {
+      "op": "entrance",
+      "from": [9, 2, 1],
+      "to": [11, 4, 1],
+      "block": "air",
+      "desc": "main entrance opening centered on front face (2 wide, 2 high opening at z=1)."
+    },
+    {
+      "op": "fill",
+      "from": [1, 6, 1],
+      "to": [19, 6, 19],
+      "block": "stonebrick",
+      "desc": "capping course atop walls to transition to roof steps (stonebrick band at y=6)."
+    },
+    {
+      "op": "tower",
+      "from": [1, 2, 1],
+      "to": [3, 15, 3],
+      "wall_block": "brick",
+      "pillar_block": "stonebrick",
+      "fill_interior": false,
+      "desc": "northwest corner tower: 3x3 footprint, hollow interior, stonebrick vertical corner pillars (at x=1,3 and z=1,3), brick faces filling edges."
+    },
+    {
+      "op": "tower",
+      "from": [17, 2, 1],
+      "to": [19, 15, 3],
+      "wall_block": "brick",
+      "pillar_block": "stonebrick",
+      "fill_interior": false,
+      "desc": "northeast corner tower."
+    },
+    {
+      "op": "tower",
+      "from": [1, 2, 17],
+      "to": [3, 15, 19],
+      "wall_block": "brick",
+      "pillar_block": "stonebrick",
+      "fill_interior": false,
+      "desc": "southwest corner tower."
+    },
+    {
+      "op": "tower",
+      "from": [17, 2, 17],
+      "to": [19, 15, 19],
+      "wall_block": "brick",
+      "pillar_block": "stonebrick",
+      "fill_interior": false,
+      "desc": "southeast corner tower."
+    },
+    {
+      "op": "fill",
+      "from": [0, 15, 0],
+      "to": [20, 15, 20],
+      "block": "air",
+      "desc": "clear top cap plane to ensure roof steps sit correctly within bbox and tower caps can be placed."
+    },
+    {
+      "op": "roof_step_1",
+      "from": [3, 7, 3],
+      "to": [17, 7, 17],
+      "block": "nether_brick_slab",
+      "desc": "outer dark slab ring of stepped roof at y=7."
+    },
+    {
+      "op": "roof_step_2",
+      "from": [5, 8, 5],
+      "to": [15, 8, 15],
+      "block": "smooth_stone_slab",
+      "desc": "inner light slab ring at y=8."
+    },
+    {
+      "op": "roof_step_3",
+      "from": [7, 9, 7],
+      "to": [13, 9, 13],
+      "block": "nether_brick_slab",
+      "desc": "inner dark slab ring at y=9."
+    },
+    {
+      "op": "roof_top",
+      "from": [9, 10, 9],
+      "to": [11, 10, 11],
+      "block": "smooth_stone_slab",
+      "desc": "small flat top at peak y=10."
+    },
+    {
+      "op": "tower_caps",
+      "positions": [
+        {"from": [1, 14, 1], "to": [3, 14, 3]},
+        {"from": [17, 14, 1], "to": [19, 14, 3]},
+        {"from": [1, 14, 17], "to": [3, 14, 19]},
+        {"from": [17, 14, 17], "to

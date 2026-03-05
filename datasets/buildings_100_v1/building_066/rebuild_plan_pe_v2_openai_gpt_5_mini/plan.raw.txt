@@ -1,0 +1,462 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 8
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "netherbrick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 8,
+          "label": "main"
+        }
+      ],
+      "symmetry": "x_axis_centered (left-right)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground floor: single hall footprint, open interior",
+        "perimeter_profile": "rectangle with quartz platform base"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 7
+        },
+        "rooms_hint": "upper floor: similar open plan",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 5,
+        "y1": 1,
+        "z1": 0,
+        "x2": 5,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 2,
+        "z1": 0,
+        "x2": 1,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 2,
+        "z1": 0,
+        "x2": 3,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 7,
+        "y1": 2,
+        "z1": 0,
+        "x2": 7,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 2,
+        "z1": 0,
+        "x2": 9,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 5,
+        "z1": 0,
+        "x2": 1,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 5,
+        "z1": 0,
+        "x2": 3,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 7,
+        "y1": 5,
+        "z1": 0,
+        "x2": 7,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 5,
+        "z1": 0,
+        "x2": 9,
+        "y2": 6,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 8,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 8,
+          "block": "netherbrick"
+        },
+        {
+          "y": 7,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 7,
+          "block": "netherbrick"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 2,
+          "x2": 8,
+          "z2": 6,
+          "block": "netherbrick"
+        },
+        {
+          "y": 5,
+          "x1": 3,
+          "z1": 3,
+          "x2": 7,
+          "z2": 5,
+          "block": "netherbrick"
+        },
+        {
+          "y": 4,
+          "x1": 4,
+          "z1": 4,
+          "x2": 6,
+          "z2": 4,
+          "block": "netherbrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 8,
+      "block": "wood",
+      "purpose": "floor_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 8,
+      "block": "brick",
+      "purpose": "outer_shell_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 8,
+      "block": "quartz",
+      "purpose": "quartz_platform_top_redundant_floor_mark"
+    },
+    {
+      "op": "fill",
+      "x1":  -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 11,
+      "y2": 0,
+      "z2": 9,
+      "block": "quartz",
+      "purpose": "raised_quartz_platform_border"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 6,
+      "z2": 7,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_west"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_east"
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 8,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 10, 0, 8],
+      "block": "quartz_block",
+      "count": 99,
+      "note": "raised white platform/base border (1 block high) around footprint; platform fills footprint at ground level"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 9, 1, 7],
+      "block": "oak_planks",
+      "count": 56,
+      "note": "ground floor wooden sub-floor (1 block thick) inset from border (footprint interior floor)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 9, 4, 7],
+      "block": "brick_block",
+      "count": 224,
+      "note": "first-floor brick walls (solid), will be carved out for windows/entrance"
+    },
+    {
+      "op": "fill",
+      "box": [1, 4, 1, 9, 4, 7],
+      "block": "quartz_block",
+      "count": 56,
+      "note": "continuous white band between floors (1 block tall) wrapping building"
+    },
+    {
+      "op": "fill",
+      "box": [1, 5, 1, 9, 7, 7],
+      "block": "brick_block",
+      "count": 168,
+      "note": "second-floor brick walls (solid)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 10, 8, 8],
+      "block": "air",
+      "count": 0,
+      "note": "ensure clearing inside bbox before detailed placement (no external effect) -- placeholder to indicate clearing step"
+    },
+    {
+      "op": "replace",
+      "box": [1, 2, 4, 1, 3, 4],
+      "block": "glass",
+      "count": 2,
+      "note": "front-left small vertical window (1x2) on first floor"
+    },
+    {
+      "op": "replace",
+      "box": [2, 2, 4, 2, 3, 4],
+      "block": "glass",
+      "count": 2,
+      "note": "front second window on first floor"
+    },
+    {
+      "op": "replace",
+      "box": [3, 2, 4, 3, 3, 4],
+      "block": "glass",
+      "count": 2,
+      "note": "front third window on first floor"
+    },
+    {
+      "op": "replace",
+      "box": [5, 2, 4, 5, 3, 4],
+      "block": "glass",
+      "count": 2,
+      "note": "front fourth window on first floor (skip center for entrance)"
+    },
+    {
+      "op": "replace",
+      "box": [7, 2, 4, 7, 3, 4],
+      "block": "glass",
+      "count": 2,
+      "note": "front fifth window on first floor"
+    },
+    {
+      "op": "replace",
+      "box": [4, 1, 4, 4, 2, 4],
+      "block": "air",
+      "count": 0,
+      "note": "entrance opening (1 wide x 1 high) at center front on ground floor; left as 1-high opening to match visible small door; can be expanded later"
+    },
+    {
+      "op": "replace",
+      "box": [1, 6, 4, 1, 7, 4],
+      "block": "glass",
+      "count": 2,
+      "note": "front-left small vertical window on second floor"
+    },
+    {
+      "op": "replace",
+      "box": [2, 6, 4, 2, 7, 4],
+      "block": "glass",
+      "count": 2,
+      "note": "front second window on second floor"
+    },
+    {
+      "op": "replace",
+      "box": [3, 6, 4, 3, 7, 4],
+      "block": "glass",
+      "count": 2,
+      "note": "front third window on second floor"
+    },
+    {
+      "op": "replace",
+      "box": [5, 6, 4, 5, 7, 4],
+      "block": "glass",
+      "count": 2,
+      "note": "front fourth window on second floor"
+    },
+    {
+      "op": "replace",
+      "box": [7, 6, 4, 7, 7, 4],
+      "block": "glass",
+      "count": 2,
+      "note": "front fifth window on second floor"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 0, 7, 8],
+      "block": "stone_bricks",
+      "count": 56,
+      "note": "left corner stone pillar along full height (1 wide)"
+    },
+    {
+      "op": "fill",
+      "box": [10, 1, 0, 10, 7, 8],
+      "block": "stone_bricks",
+      "count": 56,
+      "note": "right corner stone pillar along full height (1 wide)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 10, 1, 0],
+      "block": "stone_slab",
+      "count": 11,
+      "note": "stone slab trim along front edge of base platform (thin sill)"
+    },
+    {
+      "op": "replace",
+      "box": [4, 2, 4, 4, 3, 4],
+      "block": "oak_door",
+      "count": 1,
+      "note": "install door in entrance opening (replaces air at same coords)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 8, 1, 9, 8, 7],
+      "block": "nether_bricks",
+      "count": 56,
+      "note": "first layer of roof (overhang 1 block beyond walls where bbox permits) - level 8 is top of bbox so roof layer placed within bbox"
+    },
+    {
+      "op": "fill",
+      "box": [2, 8, 2, 8, 8, 6],
+      "block": "nether_bricks",
+      "count": 42,
+      "note": "second inset roof layer at same top Y (stepped inward) within bbox limits"
+    },
+    {
+      "op": "fill",
+      "box": [3, 8, 3, 7, 8, 5],
+      "block": "nether_bricks",
+      "count": 20,
+      "note": "third roof slab layer (centered) - creates stepped pyramidal profile within limited height"
+    },
+    {
+      "op": "fill",
+      "box": [1, 7, 1, 9, 7, 7],
+      "block": "quartz_block",
+      "count": 56,
+      "note": "white trim/overhang directly under roof eaves (1 block band) to visually separate roof and walls"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "all_ops_within_bbox": true,
+    "operation_count_ok": true,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof

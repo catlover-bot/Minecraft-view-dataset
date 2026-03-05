@@ -1,0 +1,144 @@
+{
+  "building": "building_036",
+  "source_plan": "rebuild_plan_pe_v2_openai_gpt_5_mini/plan.json",
+  "description_path": "description_openai_gpt_5_mini/description.json",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 22,
+    "accepted_operations_count": 22,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "brick",
+        "score": 0.95,
+        "source_role": "primary_wall_cladding"
+      },
+      "trim": {
+        "block": "glass",
+        "score": 0.9,
+        "source_role": "small windows / horizontal window bands"
+      },
+      "floor": {
+        "block": "stonebrick",
+        "score": 0.85,
+        "source_role": "tower_corner_trim / vertical accents / walkway floor"
+      },
+      "roof": {
+        "block": "slab_stone",
+        "score": 0.9,
+        "source_role": "roof edging and broad horizontal coping"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.9,
+        "source_role": "small windows / horizontal window bands"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "light"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "brick",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "slab_stone",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "glass",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.85,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": []
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 22,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 1,
+    "role_fixed_skipped_low_conf_count": 8,
+    "role_infer_confidence_mean": 0.6399999999999998,
+    "role_infer_reasons": {
+      "ground_flat_layer": 2,
+      "block_family": 9,
+      "unknown": 3,
+      "window_or_glass": 1,
+      "thin_outer_detail": 1,
+      "top_layer": 6
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "repair_profile": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "prefer_description_palette": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "created_at": "2026-03-01T09:43:25.300469+00:00"
+}

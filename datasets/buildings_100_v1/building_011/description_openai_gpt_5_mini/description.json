@@ -1,0 +1,70 @@
+{
+  "summary": "Single-story rectangular small building with a stepped dark-red (nether) slab roof, wooden plank walls with vertical log corner posts, a continuous band of windows high on the walls, and a raised stonebrick coping and foundation platform surrounding the structure.",
+  "building_type": "house/small hall",
+  "shape": {
+    "overall_form": "simple rectangular plan with centered pitched/stepped roof; building sits on a raised stone platform with a narrow walkway around it.",
+    "footprint_hint": "rectangle",
+    "symmetry": "symmetrical along the long central axis (bilateral symmetry), appears symmetrical on both short ends",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 9,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "foundation/edge coping",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof (stepped slabs/stairs)",
+      "confidence": 0.9
+    },
+    {
+      "name": "oak_planks",
+      "role": "wall infill",
+      "confidence": 0.9
+    },
+    {
+      "name": "oak_log",
+      "role": "vertical corner posts",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    },
+    {
+      "name": "slab_stone",
+      "role": "stone slab accents on roof corners and coping",
+      "confidence": 0.75
+    }
+  ],
+  "elements": [
+    "continuous horizontal strip windows (glass panes) on long sides",
+    "raised stonebrick platform / foundation around building",
+    "stepped nether-brick roof with horizontal plateaus and stone slab corner blocks",
+    "vertical log posts at corners",
+    "wood plank walls between logs"
+  ],
+  "rebuild_hints": [
+    "Lay an 11x9 rectangular wooden box (oak planks) one block high above a 1-block high stonebrick foundation inset so foundation forms a 13x11 walkway (stonebrick border).",
+    "Place vertical oak logs at each corner running full wall height; fill walls with oak planks and a continuous row of 1x1 windows (glass) one block below the top of the wall on long sides.",
+    "Top walls with a 1-block-thick stonebrick coping; build a centered stepped roof using nether brick slabs/stairs in 3–4 descending tiers with stone slabs at the four corner upper steps as shown."
+  ],
+  "uncertainties": [
+    "Exact block counts: width/depth/height are estimated from pixels; actual footprint might differ by ±1–2 blocks.",
+    "Roof block types: appears to use nether_brick slabs or stairs; could be nether_brick blocks with slabs — identification uncertain.",
+    "Foundation detail: the outer stone layer could be full stonebrick blocks or stonebrick slabs — slight uncertainty.",
+    "Door location and orientation not visible clearly in all views; entrance placement assumed on one short side (uncertain)."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_011",
+  "created_at": "2026-02-28T13:59:37.176412+00:00"
+}

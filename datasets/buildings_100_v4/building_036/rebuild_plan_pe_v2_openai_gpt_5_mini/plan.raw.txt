@@ -1,0 +1,454 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 16,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "slab_wood",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 32,
+          "label": "main_mass"
+        }
+      ],
+      "symmetry": "z_axis_centered_bilateral_along_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor with entrance corridor and peripheral service spaces",
+        "perimeter_profile": "rectangle with corner towers"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "middle floor(s) with balcony walkways and continuous window bands",
+        "perimeter_profile": "rectangle with towers"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 10,
+          "ymax": 14
+        },
+        "rooms_hint": "upper floor and roof-walkway connections",
+        "perimeter_profile": "rectangle with tower tops and roof walkway"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 15,
+          "ymax": 18
+        },
+        "rooms_hint": "tower vertical caps and parapet/roof slab area",
+        "perimeter_profile": "tower caps"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 7,
+        "y1": 1,
+        "z1": 0,
+        "x2": 9,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 6,
+        "z1": 0,
+        "x2": 14,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 6,
+        "z1": 32,
+        "x2": 14,
+        "y2": 7,
+        "z2": 32
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 16,
+        "y1": 6,
+        "z1": 8,
+        "x2": 16,
+        "y2": 7,
+        "z2": 24
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 8,
+        "x2": 0,
+        "y2": 7,
+        "z2": 24
+      },
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 7,
+        "y1": 1,
+        "z1": 32,
+        "x2": 9,
+        "y2": 3,
+        "z2": 32
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 15,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 15,
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 32,
+          "block": "stonebrick"
+        },
+        {
+          "y": 16,
+          "x1": 2,
+          "z1": 2,
+          "x2": 14,
+          "z2": 30,
+          "block": "slab_wood"
+        },
+        {
+          "y": 17,
+          "x1": 4,
+          "z1": 6,
+          "x2": 12,
+          "z2": 26,
+          "block": "slab_wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 32,
+      "block": "wood",
+      "purpose": "ground_pad_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "perimeter_white_slab_base_replace_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 15,
+      "y2": 14,
+      "z2": 31,
+      "block": "brick",
+      "purpose": "central_block_and_tower_inset_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 14,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "west_trim_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 16,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 14,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "east_trim_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 15,
+      "y2": 2,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "lower_band_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 0,
+      "x2": 15,
+      "y2": 6,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "middle_band_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 9,
+      "z1": 0,
+      "x2": 15,
+      "y2": 10,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "upper_band_trim"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 2,
+      "z1": 1,
+      "x2": 13,
+      "y2": 13,
+      "z2": 31,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 16,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 32,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [0, 0, 0],
+      "to": [16, 0, 32],
+      "comment": "ground slab base layer (foundation/floor) across entire footprint"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [1, 1, 1],
+      "to": [15, 1, 31],
+      "comment": "raised white perimeter band (one-block-high footing) inset from edges leaving 1 block border"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": [3, 1, 4],
+      "to": [13, 4, 28],
+      "comment": "central lower block main wall mass (3 floors estimated: 3-high wall bands here). Walls start at y=1 above the perimeter band"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [2, 1, 3],
+      "to": [3, 12, 5],
+      "comment": "northwest tower - south-east-facing footprint edge column: stonebrick corner trim (left column of tower). Tower footprint 2x2 internal -> 4x4 external including corner trims"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [13, 1, 3],
+      "to": [14, 12, 5],
+      "comment": "northeast tower - corner trim column"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [2, 1, 25],
+      "to": [3, 12, 27],
+      "comment": "southwest tower - corner trim column"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [13, 1, 25],
+      "to": [14, 12, 27],
+      "comment": "southeast tower - corner trim column"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": [3, 1, 3],
+      "to": [13, 12, 5],
+      "comment": "north side wall band between NW and NE towers (brick infill). Keeps within bbox"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": [3, 1, 27],
+      "to": [13, 12, 29],
+      "comment": "south side wall band between SW and SE towers (brick infill)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": [1, 1, 5],
+      "to": [3, 12, 25],
+      "comment": "west side wall band between NW and SW towers (brick infill)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": [13, 1, 5],
+      "to": [15, 12, 25],
+      "comment": "east side wall band between NE and SE towers (brick infill)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [3, 5, 6],
+      "to": [13, 6, 26],
+      "comment": "lighter horizontal band (beige/white) across central block as decorative mid-band (one block tall)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [4, 7, 6],
+      "to": [12, 7, 26],
+      "comment": "continuous narrow glass band (one-high) on central block at y=7; uses panes for narrow windows"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:air",
+      "pos": [8, 1, 0],
+      "comment": "entrance opening through perimeter at center front (z=0 is outside) -- ensure opening present"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_stairs",
+      "from": [7, 1, 0],
+      "to": [9, 1, 0],
+      "comment": "entrance steps/short projection on front center (white stairs) -- placed inside bbox"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:air",
+      "from": [7, 2, 1],
+      "to": [9, 4, 1],
+      "comment": "entrance doorway opening into central block (2x3 opening) at front center"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:air",
+      "from": [4, 3, 4],
+      "to": [12, 3, 28],
+      "comment": "interior main floor cavity (clear headroom) - opens central interior space; leaves walls intact"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_slab",
+      "from": [3, 12, 3],
+      "to": [13, 12, 29],
+      "comment": "flat roof slab on central block (stone slab coping) at y=12"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:nether_brick_slab",
+      "from": [2, 12, 2],
+      "to": [3, 12, 5],
+      "comment": "tower NW dark slab roof center area; will be expanded to cover tower tops"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:nether_brick_slab",
+      "from": [13, 12, 2],
+      "to": [14, 12, 5],
+      "comment": "tower NE dark slab roof center area"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:nether_brick_slab",
+      "from": [2, 12, 25],
+      "to": [3, 12, 27],
+      "comment": "tower SW dark slab roof center area"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:nether_brick_slab",
+      "from": [13, 12, 25],
+      "to": [14, 12, 27],
+      "comment": "tower SE dark slab roof center area"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_slab",
+      "from": [1, 12, 1],
+      "to": [15, 12, 31],
+      "comment": "stone slab roof edging around entire top at y=12 extending one block beyond central roof to create coping/overhang"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glowstone",
+      "pos": [3, 13, 4],
+      "comment": "light source centered on NW tower roof"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glowstone",
+      "pos": [14, 13, 4],
+      "comment": "light source centered on NE tower roof"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glowstone",
+      "pos": [3, 13, 26],
+      "comment": "light source centered on SW

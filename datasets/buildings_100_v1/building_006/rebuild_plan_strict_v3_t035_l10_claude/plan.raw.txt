@@ -1,0 +1,407 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v3_strict",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 7,
+    "ymin": 0,
+    "ymax": 4,
+    "zmin": 0,
+    "zmax": 11
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "wood",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "concrete"
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "brick",
+      "target_blocks": 180
+    },
+    "roof": {
+      "role": "roof",
+      "block": "wood",
+      "target_blocks": 96
+    },
+    "trim": {
+      "role": "trim",
+      "block": "stonebrick",
+      "target_blocks": 140
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 12
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 2
+    },
+    "floor": {
+      "role": "floor",
+      "block": "concrete",
+      "target_blocks": 96
+    }
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "corner": "nw",
+          "x": 0,
+          "z": 0
+        },
+        {
+          "corner": "ne",
+          "x": 7,
+          "z": 0
+        },
+        {
+          "corner": "se",
+          "x": 7,
+          "z": 11
+        },
+        {
+          "corner": "sw",
+          "x": 0,
+          "z": 11
+        }
+      ]
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 0
+        },
+        "perimeter_profile": "concrete foundation platform"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 2,
+        "y1": 4,
+        "z1": 4,
+        "x2": 5,
+        "y2": 4,
+        "z2": 7,
+        "purpose": "roof window opening"
+      },
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 3,
+        "y1": 1,
+        "z1": 0,
+        "x2": 4,
+        "y2": 3,
+        "z2": 0,
+        "purpose": "entrance"
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 4,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "material": "wood",
+          "y": 4,
+          "description": "roof capping perimeter"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 7,
+      "y2": 0,
+      "z2": 11,
+      "block": "concrete",
+      "purpose": "foundation platform"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 7,
+      "y2": 1,
+      "z2": 11,
+      "block": "stonebrick",
+      "purpose": "lower trim layer"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 7,
+      "y2": 3,
+      "z2": 11,
+      "block": "brick",
+      "purpose": "primary wall core"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 7,
+      "y2": 4,
+      "z2": 11,
+      "block": "stonebrick",
+      "purpose": "upper trim and roof base"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 1,
+      "y2": 4,
+      "z2": 11,
+      "block": "wood",
+      "purpose": "roof capping west edge"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 6,
+      "y1": 4,
+      "z1": 0,
+      "x2": 7,
+      "y2": 4,
+      "z2": 11,
+      "block": "wood",
+      "purpose": "roof capping east edge"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 1,
+      "y1": 4,
+      "z1": 0,
+      "x2": 6,
+      "y2": 4,
+      "z2": 1,
+      "block": "wood",
+      "purpose": "roof capping south edge"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 1,
+      "y1": 4,
+      "z1": 10,
+      "x2": 6,
+      "y2": 4,
+      "z2": 11,
+      "block": "wood",
+      "purpose": "roof capping north edge"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 1,
+      "z1": 0,
+      "x2": 4,
+      "y2": 3,
+      "z2": 0,
+      "purpose": "entrance door opening"
+    },
+    {
+      "op": "fill",
+      "role": "glass",
+      "x1": 2,
+      "y1": 4,
+      "z1": 4,
+      "x2": 5,
+      "y2": 4,
+      "z2": 7,
+      "block": "glass",
+      "purpose": "roof window frame"
+    },
+    {
+      "op": "set",
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 7,
+  "ymin": 0,
+  "ymax": 4,
+  "zmin": 0,
+  "zmax": 11,
+  "palette": {
+    "floor": "concrete",
+    "wall": "brick",
+    "trim": "stonebrick",
+    "roof": "wood",
+    "windows": "glass"
+  },
+  "material_budget": {
+    "floor": {
+      "role": "floor",
+      "target_blocks": 96
+    },
+    "wall": {
+      "role": "wall",
+      "target_blocks": 144
+    },
+    "trim": {
+      "role": "trim",
+      "target_blocks": 144
+    },
+    "roof": {
+      "role": "roof",
+      "target_blocks": 80
+    },
+    "windows": {
+      "role": "windows",
+      "target_blocks": 12
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 7,
+      "y2": 0,
+      "z2": 11,
+      "block": "concrete",
+      "purpose": "foundation platform"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 7,
+      "y2": 1,
+      "z2": 11,
+      "block": "stonebrick",
+      "purpose": "lower trim layer"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 7,
+      "y2": 3,
+      "z2": 11,
+      "block": "brick",
+      "purpose": "primary wall core"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 7,
+      "y2": 4,
+      "z2": 11,
+      "block": "stonebrick",
+      "purpose": "upper trim and roof base"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 1,
+      "y2": 4,
+      "z2": 11,
+      "block": "wood",
+      "purpose": "roof capping west edge"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 6,
+      "y1": 4,
+      "z1": 0,
+      "x2": 7,
+      "y2": 4,
+      "z2": 11,
+      "block": "wood",
+      "purpose": "roof capping east edge"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 1,
+      "y1": 4,
+      "z1": 0,
+      "x2": 6,
+      "y2": 4,
+      "z2": 1,
+      "block": "wood",
+      "purpose": "roof capping south edge"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 1,
+      "y1": 4,
+      "z1": 10,
+      "x2": 6,
+      "y2": 4,
+      "z2": 11,
+      "block": "wood",
+      "purpose": "roof capping north edge"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 2,
+      "y1": 4,
+      "z1": 4,
+      "x2": 5,
+      "y2": 4,
+      "z2": 7,
+      "block": "glass",
+      "purpose": "roof window frame"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 1,
+      "z1": 0,
+      "x2": 4,
+      "y2": 3,
+      "z2": 0,
+      "purpose": "entrance door opening"
+    }
+  ]
+}
+```

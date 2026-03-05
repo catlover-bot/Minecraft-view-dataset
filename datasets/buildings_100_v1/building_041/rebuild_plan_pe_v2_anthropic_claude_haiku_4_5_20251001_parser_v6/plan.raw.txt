@@ -1,0 +1,289 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 5,
+    "zmin": 0,
+    "zmax": 12
+  },
+  "palette": {
+    "wall": "oak_wood",
+    "roof": "stone_slab",
+    "trim": "nether_brick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "foundation": "stonebrick",
+    "post": "oak_log"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 12,
+          "label": "main_box"
+        }
+      ],
+      "symmetry": "bilateral_x_and_z"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single open hall with corner posts",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 3,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 6,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 2,
+        "z1": 0,
+        "x2": 10,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 12,
+        "x2": 3,
+        "y2": 2,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 2,
+        "z1": 12,
+        "x2": 6,
+        "y2": 2,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 9,
+        "y1": 2,
+        "z1": 12,
+        "x2": 10,
+        "y2": 2,
+        "z2": 12
+      },
+      {
+        "kind": "door",
+        "face": "east",
+        "x1": 12,
+        "y1": 1,
+        "z1": 5,
+        "x2": 12,
+        "y2": 3,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 4,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 12,
+          "block": "stone_slab"
+        },
+        {
+          "y": 5,
+          "x1": 2,
+          "z1": 2,
+          "x2": 10,
+          "z2": 10,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "floor_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 3,
+      "z2": 12,
+      "block": "oak_wood",
+      "purpose": "outer_wall_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 3,
+      "z2": 11,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 3,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "foundation_perimeter_west"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 3,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "foundation_perimeter_east"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 3,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "foundation_perimeter_north"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 12,
+      "x2": 12,
+      "y2": 3,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "foundation_perimeter_south"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "block": "oak_log",
+      "purpose": "corner_post_nw"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "block": "oak_log",
+      "purpose": "corner_post_n
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 12,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 12,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 12, "y2": 1, "z2": 12, "block": "stonebrick", "label": "foundation_platform"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 11, "y2": 4, "z2": 11, "block": "oak_planks", "label": "wall_fill"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 1, "y2": 4, "z2": 1, "block": "oak_log", "label": "corner_post_nw"},
+    {"type": "fill", "x1": 11, "y1": 1, "z1": 1, "x2": 11, "y2": 4, "z2": 1, "block": "oak_log", "label": "corner_post_ne"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 11, "x2": 1, "y2": 4, "z2": 11, "block": "oak_log", "label": "corner_post_sw"},
+    {"type": "fill", "x1": 11, "y1": 1, "z1": 11, "x2": 11, "y2": 4, "z2": 11, "block": "oak_log", "label": "corner_post_se"},
+    {"type": "setblock", "x": 6, "y": 1, "z": 1, "block": "oak_door", "label": "entrance_door_north"},
+    {"type": "setblock", "x": 3, "y": 2, "z": 1, "block": "glass_pane", "label": "window_n1"},
+    {"type": "setblock", "x": 4, "y": 2, "z": 1, "block": "glass_pane", "label": "window_n2"},
+    {"type": "setblock", "x": 5, "y": 2, "z": 1, "block": "glass_pane", "label": "window_n3"},
+    {"type": "setblock", "x": 7, "y": 2, "z": 1, "block": "glass_pane", "label": "window_n4"},
+    {"type": "setblock", "x": 8, "y": 2, "z": 1, "block": "glass_pane", "label": "window_n5"},
+    {"type": "setblock", "x": 9, "y": 2, "z": 1, "block": "glass_pane", "label": "window_n6"},
+    {"type": "setblock", "x": 3, "y": 2, "z": 11, "block": "glass_pane", "label": "window_s1"},
+    {"type": "setblock", "x": 4, "y": 2, "z": 11, "block": "glass_pane", "label": "window_s2"},
+    {"type": "setblock", "x": 5, "y": 2, "z": 11, "block": "glass_pane", "label": "window_s3"},
+    {"type": "setblock", "x": 7, "y": 2, "z": 11, "block": "glass_pane", "label": "window_s4"},
+    {"type": "setblock", "x": 8, "y": 2, "z": 11, "block": "glass_pane", "label": "window_s5"},
+    {"type": "setblock", "x": 9, "y": 2, "z": 11, "block": "glass_pane", "label": "window_s6"},
+    {"type": "fill", "x1": 1, "y1": 4, "z1": 1, "x2": 11, "y2": 4, "z2": 11, "block": "stone_slab", "label": "trim_stone_band"},
+    {"type": "fill", "x1": 2, "y1": 5, "z1": 2, "x2": 10, "y2": 5, "z2": 10, "block": "nether_brick", "label": "roof_recessed_center"},
+    {"type": "fill", "x1": 1, "y1": 5, "z1": 1, "x2": 11, "y2": 5, "z2": 11, "block": "stone_slab", "label": "roof_cap_slab"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 0, "y2": 4, "z2": 12, "block": "oak_planks", "label": "wall_west_outer"},
+    {"type": "fill", "x1": 12, "y1": 1, "z1": 0, "x2": 12, "y2": 4, "z2": 12, "block": "oak_planks", "label": "wall_east_outer"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 12, "y2": 4, "z2": 0, "block": "oak_planks", "label": "wall_north_outer"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 12, "x2": 12, "y2": 4, "z2": 12, "block": "oak_planks", "label": "wall_south_outer"}
+  ],
+  "operation_count": 24,
+  "self_check": {
+    "bbox_valid": true,
+    "all_coords_in_bbox": true,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,
+    "material_coherence": true,
+    "structural_fidelity": true,
+    "notes": "Rectangular 11x11 interior footprint with 1-block stonebrick foundation platform. Oak plank walls with log corner posts. Continuous window bands on north and south long sides (6 panes each). Oak door entrance on north wall. Stone slab trim band at y=4, recessed nether brick roof center at y=5, stone slab cap. All operations within bbox (0-12, 0-6, 0-12). 24 operations total."
+  }
+}
+```

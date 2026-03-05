@@ -1,0 +1,494 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 23,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 13
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 23,
+          "z2": 13,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_x_centered_on_middle_tower"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 5
+        },
+        "rooms_hint": "ground-level service and entrance corridor",
+        "perimeter_profile": "raised base with thick plinth"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 6,
+          "ymax": 10
+        },
+        "rooms_hint": "middle living band",
+        "perimeter_profile": "banded exterior"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 11,
+          "ymax": 15
+        },
+        "rooms_hint": "upper residential/defensive level",
+        "perimeter_profile": "banded exterior"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 16,
+          "ymax": 16
+        },
+        "rooms_hint": "roof platform",
+        "perimeter_profile": "flat wood platform with parapet"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 11,
+        "y1": 1,
+        "z1": 13,
+        "x2": 12,
+        "y2": 3,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 7,
+        "z1": 0,
+        "x2": 3,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 11,
+        "y1": 7,
+        "z1": 0,
+        "x2": 11,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 19,
+        "y1": 7,
+        "z1": 0,
+        "x2": 19,
+        "y2": 8,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 16,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 16,
+          "x1": 1,
+          "z1": 1,
+          "x2": 22,
+          "z2": 12,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 23,
+      "y2": 0,
+      "z2": 13,
+      "block": "white_concrete",
+      "purpose": "raised_base_platform"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 23,
+      "y2": 1,
+      "z2": 13,
+      "block": "white_concrete",
+      "purpose": "base_plinth_top"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 23,
+      "y2": 5,
+      "z2": 13,
+      "block": "stonebrick",
+      "purpose": "lower_shell_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 22,
+      "y2": 5,
+      "z2": 12,
+      "block": "air",
+      "purpose": "interior_cavity_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 23,
+      "y2": 7,
+      "z2": 13,
+      "block": "white_concrete",
+      "purpose": "white_band_mid"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 23,
+      "y2": 9,
+      "z2": 13,
+      "block": "wood",
+      "purpose": "wood_band_mid"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 10,
+      "z1": 0,
+      "x2": 23,
+      "y2": 10,
+      "z2": 13,
+      "block": "stonebrick",
+      "purpose": "stone_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 22,
+      "y2": 10,
+      "z2": 12,
+      "block": "air",
+      "purpose": "interior_cavity_mid_upper"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 11,
+      "z1": 0,
+      "x2": 23,
+      "y2": 12,
+      "z2": 13,
+      "block": "white_concrete",
+      "purpose": "upper_white_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 13,
+      "z1": 0,
+      "x2": 23,
+      "y2": 14,
+      "z2": 13,
+      "block": "wood",
+      "purpose": "upper_wood_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 15,
+      "z1": 0,
+      "x2": 23,
+      "y2": 15,
+      "z2": 13,
+      "block": "stonebrick",
+      "purpose": "upper_stone_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 11,
+      "z1": 1,
+      "x2": 22,
+      "y2": 15,
+      "z2": 12,
+      "block": "air",
+      "purpose": "interior_cavity_upper"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 6,
+      "z1": 0,
+      "x2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 23,
+  "ymin": 0,
+  "ymax": 17,
+  "zmin": 0,
+  "zmax": 13,
+  "operations": [
+    {
+      "op": "fill",
+      "args": {
+        "from": [0, 0, 0],
+        "to": [23, 0, 13],
+        "block": "white_concrete"
+      },
+      "desc": "Raised white base platform (1 block high) covering entire footprint as perimeter base"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [1, 1, 1],
+        "to": [22, 3, 12],
+        "block": "oak_planks"
+      },
+      "desc": "Main floor (2-block-high wood plank band for interior/floor level and first wood band). Keeps 1-block inset from white base edges."
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [1, 4, 1],
+        "to": [22, 4, 12],
+        "block": "stone_bricks"
+      },
+      "desc": "Narrow stonebrick horizontal trim course above first wood band (1 block high)"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [1, 5, 1],
+        "to": [22, 6, 12],
+        "block": "white_concrete"
+      },
+      "desc": "Second white smooth band (2 blocks high)"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [1, 7, 1],
+        "to": [22, 7, 12],
+        "block": "oak_planks"
+      },
+      "desc": "Second wood band (1 block high)"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [1, 8, 1],
+        "to": [22, 9, 12],
+        "block": "stone_bricks"
+      },
+      "desc": "Upper stonebrick trim band (2 blocks high)"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [1, 10, 1],
+        "to": [22, 10, 12],
+        "block": "white_concrete"
+      },
+      "desc": "Uppermost white band (1 block high) forming parapet base"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [1, 11, 1],
+        "to": [22, 11, 12],
+        "block": "air"
+      },
+      "desc": "Interior vertical space / rooms for upper floor level (clears area to allow interior height and windows)"
+    },
+    {
+      "op": "hollow_fill",
+      "args": {
+        "from": [0, 11, 0],
+        "to": [23, 11, 13],
+        "block": "oak_slab",
+        "hollow": "edge"
+      },
+      "desc": "Flat wood-planked rooftop platform (slab layer) with stone slab edging to be placed after placing slabs as edge trim"
+    },
+    {
+      "op": "outline",
+      "args": {
+        "from": [0, 11, 0],
+        "to": [23, 11, 13],
+        "block": "stone_slab"
+      },
+      "desc": "Stone-slab edging around rooftop"
+    },
+    {
+      "op": "replace",
+      "args": {
+        "from": [2, 1, 6],
+        "to": [3, 3, 7],
+        "block": "air"
+      },
+      "desc": "Entrance opening cut into front face (2 wide x 3 high) centered on long face approximate left-of-center to align with central tower spacing"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [1, 1, 5],
+        "to": [22, 1, 5],
+        "block": "cobblestone"
+      },
+      "desc": "Foundation detail strip under front edge (single line of cobblestone for texture)"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [2, 1, 2],
+        "to": [7, 11, 5],
+        "block": "stone_bricks"
+      },
+      "desc": "Left tower solid core (5 x 10 footprint x 10 high above base). Towers sit flush against long face. Tower extends from y=1 to y=11"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [9, 1, 2],
+        "to": [14, 11, 5],
+        "block": "stone_bricks"
+      },
+      "desc": "Center tower solid core (5 x 10 footprint x 10 high). Center tower aligned centrally on long face"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [16, 1, 2],
+        "to": [21, 11, 5],
+        "block": "stone_bricks"
+      },
+      "desc": "Right tower solid core (5 x 10 footprint x 10 high)"
+    },
+    {
+      "op": "hollow_fill",
+      "args": {
+        "from": [2, 3, 3],
+        "to": [7, 9, 4],
+        "block": "air",
+        "hollow": "all"
+      },
+      "desc": "Interior vertical hollows in left tower for rooms and stair space"
+    },
+    {
+      "op": "hollow_fill",
+      "args": {
+        "from": [9, 3, 3],
+        "to": [14, 9, 4],
+        "block": "air",
+        "hollow": "all"
+      },
+      "desc": "Center tower interior hollow"
+    },
+    {
+      "op": "hollow_fill",
+      "args": {
+        "from": [16, 3, 3],
+        "to": [21, 9, 4],
+        "block": "air",
+        "hollow": "all"
+      },
+      "desc": "Right tower interior hollow"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [3, 4, 3],
+        "to": [6, 4, 3],
+        "block": "glass"
+      },
+      "desc": "Left tower vertical narrow window band (single glass pane)"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [10, 4, 3],
+        "to": [13, 4, 3],
+        "block": "glass"
+      },
+      "desc": "Center tower narrow window band"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [17, 4, 3],
+        "to": [20, 4, 3],
+        "block": "glass"
+      },
+      "desc": "Right tower narrow window band"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [2, 11, 2],
+        "to": [7, 11, 5],
+        "block": "stone_slab"
+      },
+      "desc": "Left tower cap slab layer (overhang edges one block)"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [9, 11, 2],
+        "to": [14, 11, 5],
+        "block": "stone_slab"
+      },
+      "desc": "Center tower cap slab layer"
+    },
+    {
+      "op": "fill",
+      "args": {
+        "from": [16, 11, 2],
+        "to": [21,

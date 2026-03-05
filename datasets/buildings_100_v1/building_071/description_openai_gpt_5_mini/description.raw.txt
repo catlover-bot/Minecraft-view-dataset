@@ -1,0 +1,75 @@
+{
+  "summary": "Small single-storey rectangular building with a raised stonebrick rim foundation, wooden plank walls with vertical log corner posts, a continuous band of glass windows on the longer sides, and a flat stepped roof composed of a dark brick inner layer (netherbrick) surrounded by stone slab edging.",
+  "building_type": "small_house_or_shed",
+  "shape": {
+    "overall_form": "simple rectangular box on a raised rectangular stone border; inner roof area depressed (flat roof with raised rim)",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis (mirrored front/back and left/right approximately)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 7,
+    "depth": 13,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "foundation/low wall and rim",
+      "confidence": 0.9
+    },
+    {
+      "name": "netherbrick",
+      "role": "upper decorative band of wall / inner roof top",
+      "confidence": 0.85
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof edge/trim (stone slabs)",
+      "confidence": 0.95
+    },
+    {
+      "name": "wood",
+      "role": "main wall planks (vertical plank texture)",
+      "confidence": 0.9
+    },
+    {
+      "name": "log",
+      "role": "vertical corner posts",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "air",
+      "role": "open top cavity above interior (roof appears recessed)",
+      "confidence": 0.6
+    }
+  ],
+  "elements": [
+    "continuous horizontal window row (three to four panes long) on visible long side",
+    "stonebrick raised border/foundation one block high around building footprint",
+    "vertical log corner posts at each corner",
+    "wood plank walls between logs",
+    "dark brick (netherbrick) decorative band above a stonebrick course",
+    "stone slab coping around roof perimeter",
+    "recessed flat dark-brick inner roof surface"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular foundation platform of stonebrick 1 block high forming a border; inner footprint is inset by one block from that border.",
+    "Walls: place vertical logs at each corner (extend full wall height). Fill between logs with horizontal wood planks about 2-3 blocks high.",
+    "Above the wood wall add one course of stonebrick (trim) and then a single horizontal band of dark netherbrick around the top of the walls.",
+    "Cap the top with stone slabs forming a perimeter coping; fill the inner roof area with netherbrick blocks recessed one block below the slab rim.",
+    "Install a continuous row of glass panes centered on the long wall faces (three or four panes long as visible)."
+  ],
+  "uncertainties": [
+    "Exact block counts: width/depth/height are estimated from perspective images; actual counts may differ by ±1-2 blocks.",
+    "Material identification: the dark band and inner roof resemble netherbrick but could be another dark brick material; labeled as netherbrick with moderate confidence.",
+    "Foundation: the stone border around the building appears to be single-block-high stonebrick; depth of the trench/ground around it is visible but not fully measured.",
+    "Interior details are unknown (no interior view); assumption of recessed open roof cavity (air) is based on top-down view showing darker inner fill but no skylight details."
+  ]
+}

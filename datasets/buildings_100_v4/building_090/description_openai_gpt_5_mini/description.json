@@ -1,0 +1,79 @@
+{
+  "summary": "A single multi-layered rectangular/splayed building with stepped horizontal banding and a steep dark-colored hipped/gable roof. Exterior walls are layered with alternating horizontal courses: a dark base course, a brick-like band, a wood-like band, a white thick trim course repeated up the facade, and vertical white corner/column elements. A small raised square roof feature (cupola) sits near the center. A low white block perimeter (decorative fence/low wall) surrounds the structure on a dirt ground plane.",
+  "building_type": "residential or small public pavilion (uncertain)",
+  "shape": {
+    "overall_form": "rectangular main volume with one recessed corner/side creating an L-like indentation; stepped horizontal terraces on sides",
+    "footprint_hint": "l_shape",
+    "symmetry": "approximately symmetrical along long axis but with an offset recess on one side; not perfectly symmetrical",
+    "floors_estimate": 2,
+    "roof_type": "hip"
+  },
+  "dimensions_estimate": {
+    "width": 17,
+    "depth": 27,
+    "height": 12
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "wall band",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "base course / foundation",
+      "confidence": 0.6
+    },
+    {
+      "name": "wood",
+      "role": "intermediate horizontal band",
+      "confidence": 0.7
+    },
+    {
+      "name": "quartz",
+      "role": "white trim / horizontal ledges / vertical columns",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof/cupola trim and stepped edging",
+      "confidence": 0.5
+    },
+    {
+      "name": "air",
+      "role": "interior (unknown openings)",
+      "confidence": 0.4
+    }
+  ],
+  "elements": [
+    "banded horizontal courses on exterior walls",
+    "stepped terraces/ledges on long sides",
+    "vertical white corner/column elements",
+    "low white perimeter blocks surrounding building",
+    "dark sloped roof with central square cupola",
+    "base stone course"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular footprint ~17x27 blocks; include an inward recess on one long side to match L-like plan visible from top views.",
+    "Build alternating horizontal layers: bottom stone course (1-2 blocks high), brick band (1 block), wood band (1 block), thick white trim (2 blocks) repeated upward in stepped terraces.",
+    "Add vertical white columns at regular intervals along long sides extending above lower trims; these align with terrace breaks.",
+    "Create stepped terraces by offsetting each successive horizontal band inward by 1 block on the long faces, producing the stair-like profile.",
+    "Construct a steep dark roof (nether_brick) sloping to all sides (hip-style) with a small raised square cupola near center edged in light slabs/stone.",
+    "Place a single-block-high ring of white blocks around the building footprint on the ground as a low decorative border; set the ground plane to dirt/gravel."
+  ],
+  "uncertainties": [
+    "Exact internal layout, door and window placements are not visible from provided exterior shots.",
+    "Material IDs: white trim appears like quartz but could be wool or concrete; wood band could be planks or stripped logs; stone base may be stonebrick or cobblestone—identified with medium confidence.",
+    "Precise dimensions: width/depth/height are estimated from pixel views and may vary by ±3 blocks.",
+    "Roof form: appears hip-like with asymmetry due to the L-shaped footprint; could alternatively be a multi-gable combination."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_090",
+  "created_at": "2026-02-28T15:26:55.861874+00:00"
+}

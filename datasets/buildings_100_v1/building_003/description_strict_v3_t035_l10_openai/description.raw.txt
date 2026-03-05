@@ -1,0 +1,68 @@
+{
+  "summary": "Single-story rectangular building with stone lower walls, cobblestone foundation border, a stepped dark red (netherbrick) hipped/gabled roof with light stone slab accents, a continuous row of glass windows on long sides, and a shallow moat-like recessed dirt area surrounding the cobblestone border.",
+  "building_type": "small house / single hall",
+  "shape": {
+    "overall_form": "simple rectangular prism for walls with a centered raised stepped roof running along the long axis",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the roof ridge (longitudinal axis)",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 19,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "wall (smooth stone brick-looking blocks)",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "foundation / perimeter low wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "netherbrick",
+      "role": "roof (dark red stepped blocks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof edge/accent slabs (light grey slabs)",
+      "confidence": 0.85
+    },
+    {
+      "name": "dirt",
+      "role": "surrounding ground / excavated moat fill",
+      "confidence": 0.9
+    }
+  ],
+  "elements": [
+    "continuous horizontal strip windows (3-4 panes per side section)",
+    "single-story stone brick walls",
+    "stepped netherbrick roof with slab accents on corners/steps",
+    "cobblestone perimeter ledge one block high",
+    "recessed dirt trench around building (appears excavated)"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular stonebrick box approx 11x19 blocks footprint and ~4 blocks tall for walls.",
+    "Place a one-block-high cobblestone border sitting flush around the outside base (perimeter ledge extends one block out).",
+    "Cut a continuous 1x3 (height x width) band of windows centered on each long wall separated by 1-block stonebrick pillars; use glass panes.",
+    "Construct a centered dark red stepped roof: several layers of netherbrick stairs/blocks stepping up to a narrow ridge along the long axis, with light stone slabs placed at the outer steps/corners.",
+    "Surround the cobblestone border with a shallow recessed dirt area ~2-3 blocks wide forming a moat-like trench."
+  ],
+  "uncertainties": [
+    "Material identification: 'netherbrick' for the roof and 'stonebrick' for walls are high-confidence visually but could be other dark/red/grey variants.",
+    "Exact interior layout and presence/location of entrances are not visible; no obvious door shown in provided views.",
+    "Precise footprint size and proportions (width/depth) are estimated from pixel views and top-down images; may differ by a few blocks.",
+    "Roof construction details (use of stairs vs full blocks) inferred from stepped appearance; exact block orientation and stair types uncertain."
+  ]
+}

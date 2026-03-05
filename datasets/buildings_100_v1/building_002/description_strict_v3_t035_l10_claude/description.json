@@ -1,0 +1,78 @@
+{
+  "summary": "A compact rectangular bunker-style structure with a stepped pyramid brick roof, concrete foundation platform, and a single row of three windows on the main wall. The building sits in a recessed dirt foundation with a white concrete perimeter border.",
+  "building_type": "bunker",
+  "shape": {
+    "overall_form": "rectangular box with stepped pyramid roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral symmetry along length axis; stepped roof is symmetrical",
+    "floors_estimate": 1,
+    "roof_type": "pyramid"
+  },
+  "dimensions_estimate": {
+    "width": 10,
+    "depth": 12,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "wall_corners",
+      "confidence": 0.85
+    },
+    {
+      "name": "concrete",
+      "role": "foundation_platform",
+      "confidence": 0.9
+    },
+    {
+      "name": "sandstone",
+      "role": "main_wall",
+      "confidence": 0.8
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood",
+      "role": "window_frames",
+      "confidence": 0.7
+    }
+  ],
+  "elements": [
+    "three horizontal windows",
+    "stepped pyramid roof",
+    "concrete foundation platform",
+    "white concrete border",
+    "recessed dirt foundation",
+    "corner reinforcement blocks"
+  ],
+  "rebuild_hints": [
+    "Create rectangular footprint approximately 10×12 blocks",
+    "Build concrete platform foundation with white concrete border",
+    "Construct main walls from sandstone with stonebrick corner reinforcements",
+    "Place three evenly-spaced windows (appears to be 1 block tall, 2 blocks wide each) on front face",
+    "Build stepped pyramid roof: start with full brick layer, then step inward by 1 block per layer, creating 4-5 stepped levels",
+    "Ensure roof is centered and symmetrical",
+    "Add concrete band between main wall and roof",
+    "Recessed foundation should be 1-2 blocks below ground level"
+  ],
+  "uncertainties": [
+    "Exact window dimensions and spacing (estimated from visual perspective)",
+    "Interior layout and floor details not visible",
+    "Precise height of each roof step",
+    "Whether windows have panes or are solid glass blocks",
+    "Exact concrete vs. stone material composition of foundation band",
+    "Depth of recessed foundation pit"
+  ],
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "building": "building_002",
+  "created_at": "2026-03-01T09:17:45.408119+00:00"
+}

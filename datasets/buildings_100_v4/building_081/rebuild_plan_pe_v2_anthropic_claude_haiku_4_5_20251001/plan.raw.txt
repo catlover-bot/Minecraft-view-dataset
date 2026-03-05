@@ -1,0 +1,273 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 16,
+    "ymin": 0,
+    "ymax": 22,
+    "zmin": 0,
+    "zmax": 24
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "polished_andesite",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "cobblestone",
+    "slab": "stone_slab",
+    "tower_wall": "stonebrick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 24,
+          "label": "main_hall"
+        }
+      ],
+      "symmetry": "bilateral_x_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 6
+        },
+        "rooms_hint": "ground floor with footing and main hall",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 7,
+          "ymax": 13
+        },
+        "rooms_hint": "second floor main hall",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 14,
+          "ymax": 20
+        },
+        "rooms_hint": "third floor main hall",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 8,
+        "z1": 0,
+        "x2": 3,
+        "y2": 9,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 8,
+        "z1": 0,
+        "x2": 8,
+        "y2": 9,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 13,
+        "y1": 8,
+        "z1": 0,
+        "x2": 13,
+        "y2": 9,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 14,
+        "z1": 0,
+        "x2": 3,
+        "y2": 15,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 14,
+        "z1": 0,
+        "x2": 8,
+        "y2": 15,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 13,
+        "y1": 14,
+        "z1": 0,
+        "x2": 13,
+        "y2": 15,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 7,
+        "y1": 1,
+        "z1": 0,
+        "x2": 9,
+        "y2": 5,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 21,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 21,
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 24,
+          "block": "nether_brick"
+        },
+        {
+          "y": 22,
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 24,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 24,
+      "block": "cobblestone",
+      "purpose": "foundation_footing"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 20,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "main_hall_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 1,
+      "x2": 14,
+      "y2": 20,
+      "z2": 23,
+      "purpose": "main_hall_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 3,
+      "y2": 19,
+      "z2": 3,
+      "block": "stonebrick",
+      "purpose": "corner_tower_nw"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "z2": 2,
+      "x2": 2,
+      "y2": 18,
+      "purpose": "tower_nw_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 13,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 19,
+      "z2": 3,
+      "block": "stonebrick",
+      "purpose": "corner_tower_ne"
+    },
+    {
+      "op": "carve",
+      "x1": 14,
+      "y1": 2,
+      "z1": 1,
+      "x2": 15,
+      "y2": 18,
+      "z2": 2,
+      "
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 16,
+  "ymin": 0,
+  "ymax": 22,
+  "zmin": 0,
+  "zmax": 24,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 16, "y2": 0, "z2": 24, "block": "cobblestone", "note": "foundation footing base"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 16, "y2": 1, "z2": 24, "block": "stonebrick", "note": "floor level 1"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 1, "x2": 15, "y2": 2, "z2": 23, "block": "stonebrick", "note": "floor level 2"},
+    {"type": "fill", "x1": 1, "y1": 3, "z1": 1, "x2": 15, "y2": 3, "z2": 23, "block": "stonebrick", "note": "floor level 3"},
+    {"type": "fill", "x1": 0, "y1": 2, "z1": 0, "x2": 0, "y2": 18, "z2": 24, "block": "stonebrick", "note": "west wall main"},
+    {"type": "fill", "x1": 16, "y1": 2, "z1": 0, "x2": 16, "y2": 18, "z2": 24, "block": "stonebrick", "note": "east wall main"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 0, "x2": 15, "y2": 2, "z2": 0, "block": "stonebrick", "note": "north wall main"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 24, "x2": 15, "y2": 2, "z2": 24, "block": "stonebrick", "note": "south wall main"},
+    {"type": "fill", "x1": 0, "y1": 2, "z1": 0, "x2": 3, "y2": 18, "z2": 3, "block": "stonebrick", "note": "NW corner tower"},
+    {"type": "fill", "x1": 13, "y1": 2, "z1": 0, "x2": 16, "y2": 18, "z2": 3, "block": "stonebrick", "note": "NE corner tower"},
+    {"type": "fill", "x1": 0, "y1": 2, "z1": 21, "x2": 3, "y2": 18, "z2": 24, "block": "stonebrick", "note": "SW corner tower"},
+    {"type": "fill", "x1": 13, "y1": 2, "z1": 21, "x2": 16, "y2": 18, "z2": 24, "block": "stonebrick", "note": "SE corner tower"},
+    {"type": "fill", "x1": 6, "y1": 2, "z1": 0, "x2": 10, "y2": 18, "z2": 3, "block": "stonebrick", "note": "north mid tower"},
+    {"type": "fill", "x1": 6, "y1": 2, "z1": 21, "x2": 10, "y2": 18, "z2": 24, "block": "stonebrick", "note": "south mid tower"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 1, "x2": 15, "y2": 18, "z2": 23, "block": "air", "note": "hollow interior"},
+    {"type": "setblock", "x": 8, "y": 2, "z": 12, "block": "oak_door", "note": "entrance door"},
+    {"type": "fill", "x1": 2, "y1": 5, "z1": 2, "x2": 2, "y2": 5, "z2": 22, "block": "glass", "note": "west wall windows row 1"},
+    {"type": "fill", "x1": 14, "y1": 5, "z1": 2, "x2": 14, "y2": 5, "z2": 22, "block": "glass", "note": "east wall windows row 1"},
+    {"type": "fill", "x1": 2, "y1": 10, "z1": 2, "x2": 2, "y2": 10, "z2": 22, "block": "glass", "note": "west wall windows row 2"},
+    {"type": "fill", "x1": 14, "y1": 10, "z1": 2, "x2": 14, "y2": 10, "z2": 22, "block": "glass", "note": "east wall windows row 2"},
+    {"type": "fill", "x1": 2, "y1": 15, "z1": 2, "x2": 2, "y2": 15, "z2": 22, "block": "glass", "note": "west wall windows row 3"},
+    {"type": "fill", "x1": 14, "y1": 15, "z1": 2, "x2": 14, "y2": 15, "z2": 22, "block": "glass", "note": "east wall windows row 3"},
+    {"type": "fill", "x1": 1, "y1": 6, "z1": 1, "x2": 1, "y2": 6, "z2": 1, "block": "glass", "note": "NW tower slit window 1"},
+    {"type": "fill", "x1": 1, "y1": 11, "z1": 1, "x2": 1, "y2": 11, "z2": 1, "block": "glass", "note": "NW tower slit window 2"},
+    {"type": "fill", "x1": 15, "y1": 6, "z1": 1, "x2": 15, "y2": 6, "z2": 1, "block": "glass", "note": "NE tower slit window 1"},
+    {"type": "fill", "x1": 15, "y1": 11, "z1": 1, "x2": 15, "y2": 11, "z2": 1, "block": "glass", "note": "NE tower slit window 2"},
+    {"type": "fill", "x1": 1, "y1": 6, "

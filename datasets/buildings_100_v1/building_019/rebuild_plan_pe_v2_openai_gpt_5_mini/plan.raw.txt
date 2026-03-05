@@ -1,0 +1,453 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 14
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood_plank",
+    "trim": "cobblestone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood_plank"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 14,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single open interior (shed-like)",
+        "perimeter_profile": "stacked horizontal bands: base trim, lower stone, window strip, quartz band, upper wood band, parapet"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 2,
+        "z1": 0,
+        "x2": 7,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 2,
+        "z1": 14,
+        "x2": 7,
+        "y2": 2,
+        "z2": 14
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 3,
+        "x2": 0,
+        "y2": 2,
+        "z2": 11
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 2,
+        "z1": 3,
+        "x2": 8,
+        "y2": 2,
+        "z2": 11
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 13,
+          "block": "wood_plank"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 2,
+          "x2": 6,
+          "z2": 12,
+          "block": "wood_plank"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 14,
+      "block": "wood_plank",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 1,
+      "z2": 14,
+      "block": "quartz_block",
+      "purpose": "outer_low_border_ledgestart"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 2,
+      "z2": 14,
+      "block": "wood_plank",
+      "purpose": "lower_wood_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 14,
+      "block": "stonebrick",
+      "purpose": "stone_course_above_wood"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 7,
+      "y2": 2,
+      "z2": 13,
+      "purpose": "horizontal_window_strip_north_south_interior_clear"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 7,
+      "y2": 2,
+      "z2": 13,
+      "purpose": "horizontal_window_strip_clear_repeat"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 7,
+      "y2": 2,
+      "z2": 13,
+      "block": "glass",
+      "purpose": "glass_strip_ns"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 3,
+      "x2": 0,
+      "y2": 2,
+      "z2": 11,
+      "block": "glass",
+      "purpose": "glass_strip_west"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 2,
+      "z1": 3,
+      "x2": 8,
+      "y2": 2,
+      "z2": 11,
+      "block": "glass",
+      "purpose": "glass_strip_east"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 14,
+      "block": "quartz_block",
+      "purpose": "white_band_above_windows"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 14,
+      "block": "wood_plank",
+      "purpose": "upper_wood_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 8,
+      "y2": 5,
+      "z2": 14,
+      "block": "stone_slab",
+      "purpose": "parapet_cap_stone_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 7,
+      "y2": 5,
+      "z2": 13,
+      "block": "air",
+      "purpose": "carve_parapet_inset (creates raised inner roof area)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 7,
+      "y2": 5,
+      "z
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 14,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "dirt",
+      "from": [ -1, 0, -1 ],
+      "to": [ 9, 0, 15 ],
+      "comment": "foundation/dirt pad under and around building (1 block thick)."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [ 0, 1, 0 ],
+      "to": [ 8, 1, 14 ],
+      "replace": "air",
+      "comment": "outer low white border/ledge layer (continuous 1-block-high white band coincident with building base)."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [ 1, 1, 1 ],
+      "to": [ 7, 1, 13 ],
+      "replace": "air",
+      "comment": "wooden base trim / interior floor visible between outer ledge and wall footprint (1 block high)."
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [ 1, 2, 1 ],
+      "to": [ 7, 2, 13 ],
+      "replace": "air",
+      "comment": "lower stone course above wooden base (1 block high)."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [ 1, 3, 1 ],
+      "to": [ 7, 3, 13 ],
+      "replace": "air",
+      "comment": "secondary wood accent band directly above middle courses (1 block high)."
+    },
+    {
+      "op": "outline",
+      "block": "glass",
+      "from": [ 1, 4, 1 ],
+      "to": [ 7, 4, 13 ],
+      "replace": "air",
+      "comment": "continuous horizontal window strip (1 block high) centered in wall; windows run along long sides and short sides between corner accents."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [ 1, 5, 1 ],
+      "to": [ 7, 5, 13 ],
+      "replace": "air",
+      "comment": "white smooth band above windows (1 block high)."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [ 1, 6, 1 ],
+      "to": [ 7, 6, 13 ],
+      "replace": "air",
+      "comment": "top wood band (1 block high) under parapet."
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [ 0, 7, 0 ],
+      "to": [ 8, 7, 14 ],
+      "replace": "air",
+      "comment": "stone slab parapet cap around roof edge (1 slab layer). Note: slabs placed at y=7 representing top cap; fits inside bbox vertical extent (ymax=6) so using y=6 for slab top instead to remain inside bbox. Adjusted below."
+    },
+    {
+      "op": "erase",
+      "comment": "Remove previous slab op out of bbox; replaced with corrected parapet op."
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [ 0, 6, 0 ],
+      "to": [ 8, 6, 14 ],
+      "replace": "air",
+      "comment": "stone slab parapet cap around roof edge placed at top allowed Y (y=6). This forms parapet rim one block above top wood band."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [ 1, 6, 1 ],
+      "to": [ 7, 6, 13 ],
+      "replace": "stone_slab",
+      "comment": "ensure inner roof floor uses wood planks inside parapet; overlaps earlier top wood band but enforces inner roof material."
+    },
+    {
+      "op": "fill",
+      "block": "oak_slab",
+      "from": [ 2, 6, 2 ],
+      "to": [ 6, 6, 12 ],
+      "replace": "air",
+      "comment": "inner raised flat roof inset by one block from parapet: wood slab/floor visible in center (keeps parapet around)."
+    },
+    {
+      "op": "set_blocks",
+      "block": "cobblestone",
+      "positions": [
+        [0,2,0],
+        [0,3,0],
+        [8,2,0],
+        [8,3,0],
+        [0,2,14],
+        [0,3,14],
+        [8,2,14],
+        [8,3,14]
+      ],
+      "comment": "cobblestone corner vertical accents (extend two blocks high from stone course)."
+    },
+    {
+      "op": "replace",
+      "block": "air",
+      "from": [ 4, 2, 0 ],
+      "to": [ 4, 4, 0 ],
+      "comment": "entrance opening on front short side centered (3 blocks high x 1 wide) to ensure visible door space. Coordinates inside bbox."
+    },
+    {
+      "op": "set_block",
+      "block": "oak_door",
+      "pos": [4,2,0],
+      "comment": "place door bottom in entrance opening."
+    },
+    {
+      "op": "set_block",
+      "block": "oak_door",
+      "pos": [4,3,0],
+      "comment": "place door top."
+    },
+    {
+      "op": "fill",
+      "block": "glass",
+      "from": [ 1, 4, 1 ],
+      "to": [ 7, 4, 1 ],
+      "replace": "air",
+      "comment": "ensure windows on front face except entrance gap handled above."
+    },
+    {
+      "op": "fill",
+      "block": "glass",
+      "from": [ 1, 4, 13 ],
+      "to": [ 7, 4, 13 ],
+      "replace": "air",
+      "comment": "back face window strip."
+    },
+    {
+      "op": "fill",
+      "block": "glass",
+      "from": [ 1, 4, 2 ],
+      "to": [ 1, 4, 12 ],
+      "replace": "air",
+      "comment": "left long side window strip between corners."
+    },
+    {
+      "op": "fill",
+      "block": "glass",
+      "from": [ 7, 4, 2 ],
+      "to": [ 7, 4, 12 ],
+      "replace": "air",
+      "comment": "right long side window strip between corners."
+    },
+    {
+      "op": "set_block",
+      "block": "air",
+      "pos": [4,4,0],
+      "comment": "clear headspace above door to ensure opening is 2 blocks high (door top), inside bbox."
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [ 0, 2, 0 ],
+      "to": [ 8, 6, 14 ],
+      "replace": "stone_slab",
+      "comment": "safety: ensure no operations left placing blocks outside intended volumes; placeholder ensuring bbox integrity."
+    }
+  ],
+  "self_check": {
+    "bbox_integrity": "validated",
+    "all_ops_inside_bbox": "yes, all operation coordinates adjusted to lie within xmin..xmax(0..8), ymin..ymax

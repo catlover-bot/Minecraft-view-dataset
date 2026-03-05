@@ -1,0 +1,475 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 16,
+    "ymin": 0,
+    "ymax": 21,
+    "zmin": 0,
+    "zmax": 24
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "polished_andesite",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "cobblestone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 24,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 6
+        },
+        "rooms_hint": "raised footing + ground floor hall",
+        "perimeter_profile": "rectangular with external footing"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 7,
+          "ymax": 13
+        },
+        "rooms_hint": "second story with windows",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 14,
+          "ymax": 20
+        },
+        "rooms_hint": "third story / parapet level",
+        "perimeter_profile": "rectangle with crenellations"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 7,
+        "y1": 1,
+        "z1": 0,
+        "x2": 8,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 8,
+        "z1": 0,
+        "x2": 3,
+        "y2": 9,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 8,
+        "z1": 0,
+        "x2": 6,
+        "y2": 9,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 10,
+        "y1": 8,
+        "z1": 0,
+        "x2": 11,
+        "y2": 9,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 13,
+        "y1": 8,
+        "z1": 0,
+        "x2": 14,
+        "y2": 9,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 20,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 20,
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 24,
+          "block": "nether_brick"
+        },
+        {
+          "y": 21,
+          "x1": 1,
+          "z1": 1,
+          "x2": 15,
+          "z2": 23,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 24,
+      "block": "cobblestone",
+      "purpose": "raised_footing_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 6,
+      "z2": 24,
+      "block": "cobblestone",
+      "purpose": "perimeter_footing"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 15,
+      "y2": 6,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "main_wall_base_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 7,
+      "z1": 1,
+      "x2": 15,
+      "y2": 13,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "main_wall_mid_layers"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 14,
+      "z1": 1,
+      "x2": 15,
+      "y2": 19,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "main_wall_upper_layers"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 14,
+      "y2": 18,
+      "z2": 22,
+      "purpose": "interior_hall_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 5,
+      "x2": 0,
+      "y2": 13,
+      "z2": 19,
+      "block": "stonebrick",
+      "purpose": "north_wall_thickness_adjust" 
+    },
+    {
+      "op": "fill",
+      "x1": 16,
+      "y1": 7,
+      "z1": 5,
+      "x2": 16,
+      "y2": 13,
+      "z2": 19,
+      "block": "stonebrick",
+      "purpose": "south_wall_thickness_adjust"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 16,
+      "y2": 7,
+      "z2": 24,
+      "block": "polished_andesite",
+      "purpose": "horizontal_trim_band_floor2"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 14,
+      "z1": 0,
+      "x2": 16,
+      "y2": 14,
+      "z2": 24,
+      "block": "polished_andesite",
+      "purpose": "horizontal_trim_band_floor3"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 20,
+      "z1": 0,
+      "x2": 16,
+      "y2": 20,
+      "z2": 24,
+      "block": "nether_brick",
+      "purpose": "roof_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 21,
+      "z1": 1,
+      "x2
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 16,
+  "ymin": 0,
+  "ymax": 21,
+  "zmin": 0,
+  "zmax": 24,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "from": [0, 0, 0],
+      "to": [16, 0, 24],
+      "notes": "raised short stone footing / foundation layer (1-block high) covering full footprint"
+    },
+    {
+      "op": "fill",
+      "block": "polished_andesite",
+      "from": [1, 1, 1],
+      "to": [15, 1, 23],
+      "notes": "thin lighter trim band at base (1-block high) inset from footing"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [1, 2, 1],
+      "to": [15, 13, 23],
+      "notes": "main central hall walls solid volume before carving openings (walls target 12 blocks tall to yield ~3 floors)"
+    },
+    {
+      "op": "hollow",
+      "block": "air",
+      "from": [2, 2, 2],
+      "to": [14, 12, 22],
+      "notes": "clear interior space: leaves 1-block wall thickness around; interior floor will be added"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [2, 1, 2],
+      "to": [14, 1, 22],
+      "notes": "interior ground floor (wood) resting on foundation"
+    },
+    {
+      "op": "replace_layer",
+      "block_from": "oak_planks",
+      "block_to": "oak_planks",
+      "y": 6,
+      "from": [2, 6, 2],
+      "to": [14, 6, 22],
+      "notes": "placeholder: reserve space for 2nd floor level (no change) - keeps floor layering consistent"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [0, 14, 0],
+      "to": [16, 14, 24],
+      "notes": "parapet base level around entire footprint to support crenellations and tower platforms"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick",
+      "from": [1, 15, 1],
+      "to": [15, 15, 23],
+      "notes": "flat central roof slab (nether_brick) sitting inside parapet; roof 1 block thick"
+    },
+    {
+      "op": "line_crenellation",
+      "block": "stone_slab",
+      "from": [0, 14, 0],
+      "to": [16, 14, 24],
+      "pattern": "every_other",
+      "notes": "slab border and crenellated parapet along perimeter (slab used as lighter cap and crenellation top accents)"
+    },
+    {
+      "op": "carve_windows",
+      "block": "glass",
+      "frames": {
+        "frame_block": "polished_andesite",
+        "frame_thickness": 1
+      },
+      "details": [
+        {
+          "area_from": [3, 4, 1],
+          "area_to": [13, 5, 1],
+          "spacing": 3,
+          "size": [1, 2],
+          "orientation": "north",
+          "notes": "three horizontal rows of narrow windows on north wall align with floor levels; windows are 1x2 tall, spaced every 3 blocks"
+        },
+        {
+          "area_from": [3, 4, 23],
+          "area_to": [13, 5, 23],
+          "spacing": 3,
+          "size": [1, 2],
+          "orientation": "south",
+          "notes": "matching south wall windows"
+        },
+        {
+          "area_from": [1, 4, 4],
+          "area_to": [1, 5, 20],
+          "spacing": 6,
+          "size": [1, 2],
+          "orientation": "west",
+          "notes": "narrow horizontal windows along west long wall between towers"
+        },
+        {
+          "area_from": [15, 4, 4],
+          "area_to": [15, 5, 20],
+          "spacing": 6,
+          "size": [1, 2],
+          "orientation": "east",
+          "notes": "matching east long wall windows"
+        }
+      ]
+    },
+    {
+      "op": "carve_entrance",
+      "block": "air",
+      "from": [8, 1, 0],
+      "to": [8, 4, 0],
+      "notes": "main entrance opening centered on north facade: 1-block wide, 4 blocks tall (clear opening through wall into interior)"
+    },
+    {
+      "op": "place",
+      "block": "oak_door",
+      "from": [8, 1, 0],
+      "to": [8, 2, 0],
+      "notes": "install door in entrance (lower and upper parts handled by two placements if needed)"
+    },
+    {
+      "op": "fill_towers",
+      "tower_block": "stonebrick",
+      "cap_block": "stone_slab",
+      "from_list": [
+        {
+          "from": [0, 1, 0],
+          "to": [2, 19, 2]
+        },
+        {
+          "from": [14, 1, 0],
+          "to": [16, 19, 2]
+        },
+        {
+          "from": [0, 1, 22],
+          "to": [2, 19, 24]
+        },
+        {
+          "from": [14, 1, 22],
+          "to": [16, 19, 24]
+        },
+        {
+          "from": [0, 1, 10],
+          "to": [2, 19, 12]
+        },
+        {
+          "from": [14, 1, 10],
+          "to": [16, 19, 12]
+        }
+      ],
+      "notes": "six towers (3x3 footprint approximated as coordinates inclusive); towers rise to y=19 (above roof) and capped with slab-framed platforms"
+    },
+    {
+      "op": "tower_detail_windows",
+      "block": "air",
+      "from_list": [
+        {
+          "from": [1, 6, 1],
+          "to": [1, 7, 1]
+        },
+        {
+          "from": [15, 6, 1],
+          "to": [15, 7, 1]
+        },
+        {
+          "from": [1, 10, 1],
+          "to": [1, 11, 1]
+        },
+        {
+          "from": [15, 10, 1],
+          "to": [15, 11, 1]
+        },
+        {
+          "from": [1, 6, 23],
+          "to": [1, 7, 23]
+        },
+        {
+          "from": [15, 6, 23],
+          "to": [15, 7, 23]
+        },
+        {
+          "from": [1, 10, 23],
+          "to": [1, 11, 23]
+        },
+        {
+          "from": [15, 10, 23],
+          "to": [15, 11, 23]
+        },
+        {
+          "from": [1, 6, 11],
+          "to": [1, 7, 11]
+        },
+        {
+          "from": [15, 6, 11],
+          "to": [15, 7, 11]
+        },
+        {
+          "

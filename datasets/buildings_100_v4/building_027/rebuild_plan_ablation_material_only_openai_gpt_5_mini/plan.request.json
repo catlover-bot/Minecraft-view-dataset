@@ -1,0 +1,170 @@
+{
+  "building": "building_027",
+  "source_plan": "rebuild_plan_pe_v2_openai_gpt_5_mini/plan.json",
+  "description_path": "description_openai_gpt_5_mini/description.json",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 17,
+    "accepted_operations_count": 17,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": false,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "primary wall and tower blocks (includes carved/regular variants visible)"
+      },
+      "floor": {
+        "block": "cobblestone",
+        "score": 0.8,
+        "source_role": "foundation/edge decorative blocks and lower parapet"
+      },
+      "roof": {
+        "block": "nether_brick",
+        "score": 0.7,
+        "source_role": "flat roof/top surface (dark maroon roofing)"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.9,
+        "source_role": "small windows in towers and walls"
+      },
+      "light": {
+        "block": "glowstone",
+        "score": 0.9,
+        "source_role": "lighting on parapets and tower tops"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "trim"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "nether_brick",
+          "score": 0.7,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "glass",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "light",
+          "from": "<missing>",
+          "to": "glowstone",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "cobblestone",
+          "score": 0.8,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": []
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 55,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 2,
+    "role_fixed_skipped_low_conf_count": 1,
+    "role_infer_confidence_mean": 0.5894117647058824,
+    "role_infer_reasons": {
+      "thin_outer_detail": 1,
+      "block_family": 2,
+      "purpose_hint": 9,
+      "unknown": 5
+    },
+    "self_repair_report": {
+      "added_operations": 43,
+      "added_tags": [
+        "roof",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "repair_profile": {
+    "strict_schema": false,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "prefer_description_palette": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "created_at": "2026-03-01T13:19:26.936576+00:00"
+}

@@ -1,0 +1,453 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 15,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 23
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "cobblestone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 15,
+          "z2": 23,
+          "label": "outer_wall"
+        }
+      ],
+      "symmetry": "both_axes_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 7
+        },
+        "rooms_hint": "ground plinth and hall",
+        "perimeter_profile": "solid rectangle with towers"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 8,
+          "ymax": 14
+        },
+        "rooms_hint": "upper hall and tower access",
+        "perimeter_profile": "solid rectangle with crenellations"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 15,
+          "ymax": 18
+        },
+        "rooms_hint": "tower caps and roof cap layers",
+        "perimeter_profile": "tower caps and recessed roof"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 7,
+        "y1": 1,
+        "z1": 23,
+        "x2": 8,
+        "y2": 4,
+        "z2": 23
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 3,
+        "z1": 0,
+        "x2": 3,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 12,
+        "y1": 3,
+        "z1": 0,
+        "x2": 12,
+        "y2": 5,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 15,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 15,
+          "x1": 2,
+          "z1": 3,
+          "x2": 13,
+          "z2": 20,
+          "block": "nether_brick"
+        },
+        {
+          "y": 15,
+          "x1": 0,
+          "z1": 0,
+          "x2": 15,
+          "z2": 23,
+          "block": "stonebrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 15,
+      "y2": 0,
+      "z2": 23,
+      "block": "cobblestone",
+      "purpose": "ground_plinth_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 15,
+      "y2": 7,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "outer_wall_shell_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 14,
+      "y2": 7,
+      "z2": 22,
+      "block": "stonebrick",
+      "purpose": "solid_wall_buffer (will be carved to form interior)"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 13,
+      "y2": 6,
+      "z2": 21,
+      "purpose": "interior_hall_space"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 15,
+      "y2": 8,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "mid_wall_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 9,
+      "z1": 0,
+      "x2": 15,
+      "y2": 14,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "outer_wall_shell_upper"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 9,
+      "z1": 2,
+      "x2": 13,
+      "y2": 13,
+      "z2": 21,
+      "purpose": "upper_interior_space"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 14,
+      "z1": 0,
+      "x2": 15,
+      "y2": 14,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "parapet_base_line"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 15,
+      "z1": 0,
+      "x2": 15,
+      "y2": 15,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "outer_roof_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 15,
+      "z1": 3,
+      "x2": 13,
+      "y2": 15,
+      "z2": 20,
+      "block": "nether_brick",
+      "purpose": "recessed_central_roof"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 15,
+      "y2": 1,
+      "z2": 23,
+      "block": "cobblestone",
+      "purpose": "base_decor_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 15,
+      "y2": 2,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "base_transition"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 15,
+      "y2": 8,
+      "z2": 23,
+      "block": "quartz_block",
+      "purpose": "decorative_top_trim"
+    },
+    {
+      "op": "carve",
+      "x1": 7,
+      "y
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 15,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 23,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 15, 0, 23],
+      "block": "stonebrick",
+      "desc": "ground/floor layer (stonebrick slab-level floor foundation)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 15, 2, 23],
+      "block": "oak_planks",
+      "desc": "primary interior floor (2-block-thick wooden floor to indicate levels)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 15, 3, 23],
+      "block": "cobblestone",
+      "desc": "stone plinth/base trim wrapping the building (3 high base layer)"
+    },
+    {
+      "op": "replace",
+      "box": [0, 3, 0, 15, 17, 23],
+      "block": "stonebrick",
+      "desc": "outer walls and tower shafts (stonebrick) - full wall body"
+    },
+    {
+      "op": "hollow",
+      "box": [1, 3, 1, 14, 16, 22],
+      "desc": "carve interior central hall and circulation space leaving walls/towers intact"
+    },
+    {
+      "op": "fill",
+      "box": [0, 17, 0, 15, 17, 23],
+      "block": "stonebrick",
+      "desc": "wall parapet layer / top wall cap"
+    },
+    {
+      "op": "fill",
+      "box": [0, 18, 0, 15, 18, 23],
+      "block": "nether_brick",
+      "desc": "recessed central roof field (nether_brick flat roof) covering entire top; trimmed later"
+    },
+    {
+      "op": "set",
+      "pos": [7, 18, 11],
+      "block": "air",
+      "desc": "ensure roof center has no block if needed for internal light / access (optional small courtyard opening)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 15, 0, 15, 15, 23],
+      "block": "cobblestone",
+      "desc": "decorative band around wall at mid-height (on top of base, below parapet)"
+    },
+    {
+      "op": "line",
+      "start": [0, 3, 0],
+      "end": [15, 3, 0],
+      "block": "cobblestone",
+      "desc": "front base decorative protrusions (front short side)"
+    },
+    {
+      "op": "line",
+      "start": [0, 3, 23],
+      "end": [15, 3, 23],
+      "block": "cobblestone",
+      "desc": "rear base decorative protrusions (rear short side)"
+    },
+    {
+      "op": "line",
+      "start": [0, 3, 0],
+      "end": [0, 3, 23],
+      "block": "cobblestone",
+      "desc": "left base decorative protrusions (left long side)"
+    },
+    {
+      "op": "line",
+      "start": [15, 3, 0],
+      "end": [15, 3, 23],
+      "block": "cobblestone",
+      "desc": "right base decorative protrusions (right long side)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 3, 0, 2, 17, 2],
+      "block": "stonebrick",
+      "desc": "northwest corner tower shaft (2x2 footprint) from base to top"
+    },
+    {
+      "op": "fill",
+      "box": [13, 3, 0, 15, 17, 2],
+      "block": "stonebrick",
+      "desc": "northeast corner tower shaft"
+    },
+    {
+      "op": "fill",
+      "box": [0, 3, 21, 2, 17, 23],
+      "block": "stonebrick",
+      "desc": "southwest corner tower shaft"
+    },
+    {
+      "op": "fill",
+      "box": [13, 3, 21, 15, 17, 23],
+      "block": "stonebrick",
+      "desc": "southeast corner tower shaft"
+    },
+    {
+      "op": "fill",
+      "box": [6, 3, 0, 8, 17, 2],
+      "block": "stonebrick",
+      "desc": "north side central tower (centered on long side) 2x2"
+    },
+    {
+      "op": "fill",
+      "box": [6, 3, 21, 8, 17, 23],
+      "block": "stonebrick",
+      "desc": "south side central tower 2x2"
+    },
+    {
+      "op": "fill",
+      "box": [0, 10, 6, 2, 14, 8],
+      "block": "stonebrick",
+      "desc": "small inner side tower set-back (west inner along long side) - 2x2 inset to create variation"
+    },
+    {
+      "op": "fill",
+      "box": [13, 10, 15, 15, 14, 17],
+      "block": "stonebrick",
+      "desc": "small inner side tower set-back (east inner along long side)"
+    },
+    {
+      "op": "fill",
+      "box": [ -1, 3, 9, 16, 4, 14],
+      "block": "air",
+      "desc": "clear an entrance opening on front face centered: 1 wide x 3 high; clipped to bbox by adjusting below if needed"
+    },
+    {
+      "op": "set",
+      "pos": [7, 3, 0],
+      "block": "air",
+      "desc": "main entrance opening centered on the north short side (1x3 opening)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 0, 0, 8, 2, 0],
+      "block": "stonebrick_stairs",
+      "desc": "entrance steps leading up to main doorway"
+    },
+    {
+      "op": "replace",
+      "box": [2, 6, 1, 13, 12, 22],
+      "block": "air",
+      "desc": "clear interior second-floor space (ensure two floors possible and circulation)"
+    },
+    {
+      "op": "line",
+      "start": [1, 6, 2],
+      "end": [14, 6, 2],
+      "block": "glass_pane",
+      "desc": "row of small windows along north wall at mid-level (glass panes vertical pairs will be placed)"
+    },
+    {
+      "op": "line",
+      "start": [1, 6, 21],
+      "end": [14, 6, 21],
+      "block": "glass_pane",
+      "desc": "row of small windows along south wall at mid-level"
+    },
+    {
+      "op": "line",
+      "start": [0, 6, 3],
+      "end": [0, 12, 19],
+      "block": "glass_pane",
+      "desc": "vertical windows on left towers (placed every 3 blocks high as panes)"
+    },
+    {
+      "op": "line",
+      "start": [15, 6, 3],
+      "end": [15, 12, 19],
+      "block": "glass_p

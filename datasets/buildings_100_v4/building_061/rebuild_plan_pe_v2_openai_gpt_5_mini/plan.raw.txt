@@ -1,0 +1,438 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 17,
+    "zmin": 0,
+    "zmax": 30
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "slab_stone",
+    "glass": "glass",
+    "light": "sea_lantern",
+    "floor": "wood",
+    "balustrade": "quartz_block"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "u_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 6,
+          "label": "front_bar"
+        },
+        {
+          "x1": 0,
+          "z1": 6,
+          "x2": 6,
+          "z2": 30,
+          "label": "left_wing"
+        },
+        {
+          "x1": 14,
+          "z1": 6,
+          "x2": 20,
+          "z2": 30,
+          "label": "right_wing"
+        },
+        {
+          "x1": 6,
+          "z1": 24,
+          "x2": 14,
+          "z2": 30,
+          "label": "rear_bar"
+        }
+      ],
+      "symmetry": "x_axis_centered (approx)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground floor public halls, recessed courtyard",
+        "perimeter_profile": "u_shape with courtyard"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 7
+        },
+        "rooms_hint": "upper rooms with continuous windows",
+        "perimeter_profile": "u_shape"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 8,
+          "ymax": 11
+        },
+        "rooms_hint": "top floor under roof",
+        "perimeter_profile": "u_shape"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 12,
+          "ymax": 15
+        },
+        "rooms_hint": "tower caps and attic roof zones",
+        "perimeter_profile": "towers + stepped roofs"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 2,
+        "z1": 0,
+        "x2": 4,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 2,
+        "z1": 0,
+        "x2": 19,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 5,
+        "z1": 8,
+        "x2": 20,
+        "y2": 7,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 5,
+        "z1": 8,
+        "x2": 0,
+        "y2": 7,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 8,
+        "y1": 12,
+        "z1": 6,
+        "x2": 12,
+        "y2": 12,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 12,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 12,
+          "x1": 6,
+          "z1": 6,
+          "x2": 14,
+          "z2": 24,
+          "block": "wood"
+        },
+        {
+          "y": 13,
+          "x1": 7,
+          "z1": 7,
+          "x2": 13,
+          "z2": 23,
+          "block": "wood"
+        },
+        {
+          "y": 14,
+          "x1": 8,
+          "z1": 8,
+          "x2": 12,
+          "z2": 22,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 30,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 11,
+      "z2": 30,
+      "block": "stonebrick",
+      "purpose": "outer_shell_fullheight_including_towers"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 11,
+      "z2": 29,
+      "purpose": "main_interior_hollow"
+    },
+    {
+      "op": "carve",
+      "x1": 6,
+      "y1": 1,
+      "z1": 6,
+      "x2": 14,
+      "y2": 11,
+      "z2": 24,
+      "purpose": "courtyard_recess"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 30,
+      "block": "slab_stone",
+      "purpose": "horizontal_band_level_1_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 20,
+      "y2": 8,
+      "z2": 30,
+      "block": "slab_stone",
+      "purpose": "horizontal_band_level_2_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 11,
+      "z2": 30,
+      "block": "slab_stone",
+      "purpose": "west_trim_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 20,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 20,
+  "zmin": 0,
+  "zmax": 30,
+  "operations": [
+    {
+      "op": "fill",
+      "bbox": [0, 0, 0, 20, 1, 30],
+      "block": "stonebrick",
+      "comment": "ground/foundation floor base layer (solid base for building footprint)."
+    },
+    {
+      "op": "hollow_rectangle",
+      "bbox": [1, 1, 1, 19, 17, 29],
+      "block_wall": "stonebrick",
+      "wall_thickness": 1,
+      "comment": "Create U-shaped exterior walls by hollowing interior; thickness 1 to leave perimeter walls. This bbox stays inside global bbox."
+    },
+    {
+      "op": "fill",
+      "bbox": [7, 1, 1, 13, 1, 12],
+      "block": "quartz_block",
+      "comment": "Raised courtyard low balustrade/fence front portion (1-block high decorative ring) — uses quartz to represent white fence/floor trim."
+    },
+    {
+      "op": "fill",
+      "bbox": [2, 1, 13, 18, 1, 28],
+      "block": "grass_path",
+      "comment": "courtyard ground texture placeholder inside rear recessed courtyard area."
+    },
+    {
+      "op": "fill",
+      "bbox": [1, 2, 1, 19, 5, 29],
+      "block": "stonebrick",
+      "comment": "Main walls first floor (levels y=2..5)."
+    },
+    {
+      "op": "fill",
+      "bbox": [1, 6, 1, 19, 9, 29],
+      "block": "stonebrick",
+      "comment": "Main walls second floor (levels y=6..9)."
+    },
+    {
+      "op": "fill",
+      "bbox": [1, 10, 1, 19, 13, 29],
+      "block": "stonebrick",
+      "comment": "Main walls third floor (levels y=10..13)."
+    },
+    {
+      "op": "replace_strip",
+      "bbox": [1, 5, 1, 19, 5, 29],
+      "from_block": "stonebrick",
+      "to_block": "stone_slab",
+      "comment": "Horizontal lighter trim band between first and second floors (slab acting as trim)."
+    },
+    {
+      "op": "replace_strip",
+      "bbox": [1, 9, 1, 19, 9, 29],
+      "from_block": "stonebrick",
+      "to_block": "stone_slab",
+      "comment": "Horizontal lighter trim band between second and third floors."
+    },
+    {
+      "op": "window_rows",
+      "bbox": [2, 3, 2, 18, 12, 28],
+      "floors": [
+        {"y": 3, "height": 1},
+        {"y": 7, "height": 1},
+        {"y": 11, "height": 1}
+      ],
+      "window_block": "glass_pane",
+      "pattern": "continuous_horizontal",
+      "margins": {"x": 2, "z": 2},
+      "comment": "Thin long glass-pane windows on each floor across the long faces; ensures openings do not exceed wall thickness."
+    },
+    {
+      "op": "entrance_opening",
+      "bbox": [9, 2, 0, 11, 6, 1],
+      "block": "air",
+      "comment": "Front centered entrance opening at front face z=0, 2-block tall door opening with small porch area."
+    },
+    {
+      "op": "porch",
+      "bbox": [8, 1, 0, 12, 2, 2],
+      "block": "quartz_block",
+      "comment": "Small raised porch platform aligned with entrance; two quartz pillars will flank doorway."
+    },
+    {
+      "op": "place_columns",
+      "positions": [[9,1,1],[11,1,1]],
+      "height": 3,
+      "block": "quartz_block",
+      "comment": "Two white pillars supporting porch/entrance (align with porch)."
+    },
+    {
+      "op": "create_tower",
+      "bbox": [1, 1, 1, 4, 14, 4],
+      "wall_block": "stonebrick",
+      "cap_block": "oak_slab",
+      "cap_trim": "stone_slab",
+      "light_block": "sea_lantern",
+      "comment": "Front-left corner tower (square 3x3 footprint inside bbox), height up to y=14 with 1-block wooden cap edged by stone slabs and sea lantern on top."
+    },
+    {
+      "op": "create_tower",
+      "bbox": [16, 1, 1, 19, 14, 4],
+      "wall_block": "stonebrick",
+      "cap_block": "oak_slab",
+      "cap_trim": "stone_slab",
+      "light_block": "sea_lantern",
+      "comment": "Front-right corner tower."
+    },
+    {
+      "op": "create_tower",
+      "bbox": [9, 1, 25, 12, 14, 28],
+      "wall_block": "stonebrick",
+      "cap_block": "oak_slab",
+      "cap_trim": "stone_slab",
+      "light_block": "sea_lantern",
+      "comment": "Rear-center corner tower (positioned toward rear center as third tower)."
+    },
+    {
+      "op": "tower_overhang",
+      "bbox": [0, 14, 0, 20, 15, 30],
+      "block": "oak_planks",
+      "comment": "Ensure wooden flat caps over towers overhang by 1 block where appropriate (clipped to global bbox)."
+    },
+    {
+      "op": "stair_step_roof",
+      "levels": [
+        {"bbox": [3, 14, 5, 17, 14, 24], "block": "oak_stairs"},
+        {"bbox": [4, 15, 6, 16, 15, 23], "block": "oak_stairs"},
+        {"bbox": [5, 16, 7, 15, 16, 22], "block": "oak_stairs"}
+      ],
+      "comment": "Stepped wooden roof segments above central main mass; each level is inside global bbox and smaller than below to form stair-step profile."
+    },
+    {
+      "op": "roof_edge_trim",
+      "bbox": [2, 14, 4, 18, 16, 26],
+      "block": "stone_slab",
+      "comment": "Light grey trim slabs around roof edges for visual banding."
+    },
+    {
+      "op": "courtyard_balustrade",
+      "bbox": [7, 2, 12, 13, 2, 18],
+      "block": "quartz_slab",
+      "comment": "Low white balustrade around recessed courtyard at one-block height."
+    },
+    {
+      "op": "add_windows_tower",
+      "towers": [
+        {"bbox": [1, 4, 1, 4, 10, 4]},
+        {"bbox": [16, 4, 1, 19, 10, 4]},
+        {"bbox": [9, 4, 25, 12, 10, 28]}
+      ],
+      "window_block": "glass_pane",
+      "pattern": "vertical_slit",
+      "comment": "Small vertical slit windows on towers for architectural fidelity."
+    },
+    {
+      "op": "interior_floors",
+      "levels": [
+        {"y": 5, "bbox": [2,5,2,18,

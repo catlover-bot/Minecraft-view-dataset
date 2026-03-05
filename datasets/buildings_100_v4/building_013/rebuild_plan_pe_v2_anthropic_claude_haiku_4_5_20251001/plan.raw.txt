@@ -1,0 +1,277 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 14,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "sea_lantern",
+    "floor": "wood",
+    "accent": "quartz_block",
+    "tower": "stonebrick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 32,
+          "label": "main_hall"
+        }
+      ],
+      "symmetry": "bilateral_z_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 8
+        },
+        "rooms_hint": "main hall with central courtyard void",
+        "perimeter_profile": "rectangle_with_interior_void"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "tower_north",
+        "x1": 2,
+        "y1": 3,
+        "z1": 2,
+        "x2": 2,
+        "y2": 5,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "tower_north",
+        "x1": 18,
+        "y1": 3,
+        "z1": 2,
+        "x2": 18,
+        "y2": 5,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "tower_south",
+        "x1": 10,
+        "y1": 3,
+        "z1": 30,
+        "x2": 10,
+        "y2": 5,
+        "z2": 30
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 8,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 32,
+          "block": "wood"
+        },
+        {
+          "y": 9,
+          "x1": 1,
+          "z1": 2,
+          "x2": 19,
+          "z2": 30,
+          "block": "wood"
+        },
+        {
+          "y": 10,
+          "x1": 2,
+          "z1": 4,
+          "x2": 18,
+          "z2": 28,
+          "block": "wood"
+        },
+        {
+          "y": 11,
+          "x1": 3,
+          "z1": 6,
+          "x2": 17,
+          "z2": 26,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 32,
+      "block": "wood",
+      "purpose": "floor_main"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 7,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "outer_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 18,
+      "y2": 7,
+      "z2": 30,
+      "purpose": "central_courtyard_void"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 18,
+      "y2": 2,
+      "z2": 30,
+      "block": "quartz_block",
+      "purpose": "horizontal_light_band_1"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 4,
+      "z1": 2,
+      "x2": 18,
+      "y2": 4,
+      "z2": 30,
+      "block": "quartz_block",
+      "purpose": "horizontal_light_band_2"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 6,
+      "z1": 2,
+      "x2": 18,
+      "y2": 6,
+      "z2": 30,
+      "block": "quartz_block",
+      "purpose": "horizontal_light_band_3"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 20,
+      "y2": 8,
+      "z2": 32,
+      "block": "wood",
+      "purpose": "roof_base_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 9,
+      "z1": 2,
+      "x2": 19,
+      "y2": 9,
+      "z2": 30,
+      "block": "wood",
+      "purpose": "roof_step_2"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 10,
+      "z1": 4,
+      "x2": 18,
+      "y2": 10,
+      "z2": 28,
+      "block": "wood",
+      "purpose": "roof_step_3"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 11,
+      "z1": 6,
+      "
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 21,
+  "ymin": 0,
+  "ymax": 14,
+  "zmin": 0,
+  "zmax": 33,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 21, "y2": 1, "z2": 33, "block": "oak_planks", "description": "floor layer"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 20, "y2": 1, "z2": 32, "block": "air", "description": "central courtyard void"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 1, "y2": 8, "z2": 33, "block": "stone_bricks", "description": "west perimeter wall"},
+    {"type": "fill", "x1": 20, "y1": 1, "z1": 0, "x2": 21, "y2": 8, "z2": 33, "block": "stone_bricks", "description": "east perimeter wall"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 21, "y2": 8, "z2": 1, "block": "stone_bricks", "description": "south perimeter wall"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 32, "x2": 21, "y2": 8, "z2": 33, "block": "stone_bricks", "description": "north perimeter wall"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 1, "x2": 20, "y2": 3, "z2": 32, "block": "white_concrete", "description": "horizontal light band on walls"},
+    {"type": "fill", "x1": 1, "y1": 4, "z1": 1, "x2": 20, "y2": 5, "z2": 32, "block": "stone_bricks", "description": "horizontal dark band on walls"},
+    {"type": "fill", "x1": 1, "y1": 6, "z1": 1, "x2": 20, "y2": 7, "z2": 32, "block": "white_concrete", "description": "horizontal light band on walls"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 2, "x2": 5, "y2": 12, "z2": 5, "block": "stone_bricks", "description": "southwest tower walls"},
+    {"type": "fill", "x1": 16, "y1": 1, "z1": 2, "x2": 19, "y2": 12, "z2": 5, "block": "stone_bricks", "description": "southeast tower walls"},
+    {"type": "fill", "x1": 8, "y1": 1, "z1": 30, "x2": 13, "y2": 12, "z2": 33, "block": "stone_bricks", "description": "north central tower walls"},
+    {"type": "fill", "x1": 2, "y1": 12, "z1": 2, "x2": 5, "y2": 13, "z2": 5, "block": "stone_slab", "description": "southwest tower cap"},
+    {"type": "fill", "x1": 16, "y1": 12, "z1": 2, "x2": 19, "y2": 13, "z2": 5, "block": "stone_slab", "description": "southeast tower cap"},
+    {"type": "fill", "x1": 8, "y1": 12, "z1": 30, "x2": 13, "y2": 13, "z2": 33, "block": "stone_slab", "description": "north central tower cap"},
+    {"type": "fill", "x1": 3, "y1": 13, "z1": 3, "x2": 4, "y2": 13, "z2": 4, "block": "sea_lantern", "description": "southwest tower light"},
+    {"type": "fill", "x1": 17, "y1": 13, "z1": 3, "x2": 18, "y2": 13, "z2": 4, "block": "sea_lantern", "description": "southeast tower light"},
+    {"type": "fill", "x1": 10, "y1": 13, "z1": 31, "x2": 11, "y2": 13, "z2": 32, "block": "sea_lantern", "description": "north tower light"},
+    {"type": "fill", "x1": 3, "y1": 4, "z1": 3, "x2": 4, "y2": 10, "z2": 4, "block": "glass", "description": "southwest tower windows"},
+    {"type": "fill", "x1": 17, "y1": 4, "z1": 3, "x2": 18, "y2": 10, "z2": 4, "block": "glass", "description": "southeast tower windows"},
+    {"type": "fill", "x1": 10, "y1": 4, "z1": 31, "x2": 11, "y2": 10, "z2": 32, "block": "glass", "description": "north tower windows"},
+    {"type": "fill", "x1": 9, "y1": 1, "z1": 0, "x2": 12, "y2": 1, "z2": 1, "block": "air", "description": "entrance opening south side"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 21, "y2": 0, "z2": 33, "block": "white_concrete", "description": "perimeter outline markers"},
+    {"type": "fill", "x1": 1, "y1": 8, "z1": 1, "x2": 20, "y2": 11, "z2": 32, "block": "oak_planks", "description": "gable roof stepped profile left side"},
+    {"type": "fill", "x1": 1, "y1": 8, "z1": 1, "x2": 20, "y2": 11, "z2": 32, "block": "oak_planks", "description": "gable roof stepped profile right side"}
+  ],
+  "operation_count": 24,
+  "self_check": {
+    "bbox_valid": true,
+    "all_coords_in_bbox": true,
+    "operation_count_valid": true,
+    "

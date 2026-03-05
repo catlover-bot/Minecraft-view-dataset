@@ -1,0 +1,71 @@
+{
+  "summary": "Small single-story rectangular building with stone brick lower walls, cobblestone foundation border, a stepped dark-red (nether brick) hipped/stepped roof with stone slab accents, and a continuous row of glass windows on the long sides. Surrounded by a shallow cobblestone perimeter ledge and flush with a dirt/tilled ground area.",
+  "building_type": "small house / outbuilding",
+  "shape": {
+    "overall_form": "rectangular footprint with recessed short ends and a central raised stepped roof; building sits on a single-level foundation ledge",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along long axis (approximate)",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 17,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "upper wall (stone brick blocks)",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "foundation/ledge",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof (dark red stepped blocks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof edge accents (light gray slabs)",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows (pane or block)",
+      "confidence": 0.95
+    },
+    {
+      "name": "dirt",
+      "role": "surrounding ground/plot",
+      "confidence": 0.9
+    }
+  ],
+  "elements": [
+    "continuous horizontal band of windows on long sides (four to five panes per side)",
+    "main entrance not clearly visible (uncertain) - possible recessed centre on one long side",
+    "stepped nether_brick roof with stone slab corner/step accents",
+    "cobblestone perimeter ledge one block high around building"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular stonebrick box ~9x17 blocks footprint, 3 blocks tall for the wall.",
+    "Place a 1-block-high cobblestone border/ledge around the base extending one block outward.",
+    "Add a continuous row of glass windows set into the middle of long walls (evenly spaced 4–5 windows).",
+    "Build a stepped nether_brick roof rising two to three layers with each layer inset by one block; cap corners/steps with stone slabs.",
+    "Keep interior height low (single floor); no visible second-story windows or internal openings from images."
+  ],
+  "uncertainties": [
+    "Exact internal layout and presence/location of the main door are not visible in provided views.",
+    "Precise footprint dimensions (width/depth) are estimated from pixel perspective; could be off by a few blocks.",
+    "Roof uses nether-brick blocks and slab accents — slab orientation and whether stairs are used is uncertain.",
+    "Window pane vs block glass type not certain; counted windows per side estimated from images."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_027",
+  "created_at": "2026-02-28T14:03:34.861000+00:00"
+}

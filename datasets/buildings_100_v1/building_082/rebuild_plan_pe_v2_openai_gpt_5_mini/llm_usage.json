@@ -1,0 +1,89 @@
+{
+  "building": "building_082",
+  "stage": "plan",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "calls": [
+    {
+      "stage": "plan_draft",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "endpoint": "/v1/responses",
+      "usage": {
+        "input_tokens": 4287,
+        "output_tokens": 1800,
+        "total_tokens": 6087,
+        "raw": {
+          "input_tokens": 4287,
+          "input_tokens_details": {
+            "cached_tokens": 2816
+          },
+          "output_tokens": 1800,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 6087
+        }
+      },
+      "cost": {
+        "input_tokens": 4287,
+        "output_tokens": 1800,
+        "total_tokens": 6087,
+        "input_price_per_mtok": 0.25,
+        "output_price_per_mtok": 2.0,
+        "input_cost_usd": 0.00107175,
+        "output_cost_usd": 0.0036,
+        "estimated_cost_usd": 0.00467175,
+        "pricing_source": "default_openai_gpt5mini"
+      }
+    },
+    {
+      "stage": "plan_revise",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "endpoint": "/v1/responses",
+      "usage": {
+        "input_tokens": 955,
+        "output_tokens": 1593,
+        "total_tokens": 2548,
+        "raw": {
+          "input_tokens": 955,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 1593,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2548
+        }
+      },
+      "cost": {
+        "input_tokens": 955,
+        "output_tokens": 1593,
+        "total_tokens": 2548,
+        "input_price_per_mtok": 0.25,
+        "output_price_per_mtok": 2.0,
+        "input_cost_usd": 0.00023875,
+        "output_cost_usd": 0.003186,
+        "estimated_cost_usd": 0.00342475,
+        "pricing_source": "default_openai_gpt5mini"
+      }
+    }
+  ],
+  "totals": {
+    "input_tokens": 5242,
+    "output_tokens": 3393,
+    "total_tokens": 8635,
+    "known_cost_calls": 2,
+    "estimated_cost_usd": 0.0080965
+  },
+  "prompt_profile": {
+    "name": "rebuild_plan_strong_v2",
+    "version": "2026-03-01",
+    "path": "/Users/hirotaka-m/Minecraft-view-dataset/prompts/rebuild_plan_strong_v2.json",
+    "critic_revise_enabled": true,
+    "few_shots_count": 2
+  },
+  "created_at": "2026-02-28T19:00:19.959678+00:00"
+}

@@ -1,0 +1,79 @@
+{
+  "summary": "A rectangular single-story structure with a large central dome roof and four tall corner towers. Exterior walls are layered horizontal bands with brick-like and light-colored striping; each corner has a vertical stonebrick pillar leading up to square tower caps with overhanging slab trim. A low white block border runs around the base. The dome is dark red/brown and sits centered within the rectangle, leaving a ringed walkway or flat parapet between dome and outer walls.",
+  "building_type": "temple/monument (uncertain)",
+  "shape": {
+    "overall_form": "rectangular base with central hemispherical dome and four corner towers",
+    "footprint_hint": "rectangle",
+    "symmetry": "approximate fourfold symmetry around center (towers at corners, dome centered)",
+    "floors_estimate": 1,
+    "roof_type": "dome"
+  },
+  "dimensions_estimate": {
+    "width": 25,
+    "depth": 25,
+    "height": 14
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "primary_wall_band",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "tower_corners / vertical pillars",
+      "confidence": 0.9
+    },
+    {
+      "name": "nether_brick",
+      "role": "dome_roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "quartz",
+      "role": "light horizontal bands / parapet / base border (could be smooth_quartz)",
+      "confidence": 0.8
+    },
+    {
+      "name": "sandstone",
+      "role": "thin middle horizontal stripe (could be smooth or regular sandstone)",
+      "confidence": 0.6
+    },
+    {
+      "name": "glass",
+      "role": "small windows in towers",
+      "confidence": 0.9
+    },
+    {
+      "name": "slab_stone",
+      "role": "tower cap trim and base border slabs",
+      "confidence": 0.8
+    }
+  ],
+  "elements": [
+    "central dome roof",
+    "four tall corner towers with overhanging slab caps",
+    "striped horizontal exterior wall bands",
+    "small square windows in towers",
+    "raised white base border (slab blocks)",
+    "parapet walkway between wall and dome (low wall)"
+  ],
+  "rebuild_hints": [
+    "Construct a rectangular outer shell ~25x25 blocks, with four corner square towers extending upward ~10-12 blocks above wall line.",
+    "Use vertical stonebrick pillars on each tower edge, fill tower faces with brick and inset small glass panes in a repeating pattern.",
+    "Create layered horizontal wall bands: alternating brick, light-colored (quartz) stripe, and a thin sandstone-colored stripe; repeat 2-3 times.",
+    "Place a low white slab/band around the base one block out from wall to form the border seen in images.",
+    "Build a large hemispherical dome of dark nether_brick centered inside the rectangle; leave a ring (parapet) of flat wall between dome and outer wall.",
+    "Top each tower with an overhanging slab_stone cap (two-layered slabs) and a small glow block at center of cap for lighting."
+  ],
+  "uncertainties": [
+    "Exact block types for the light-colored horizontal bands: appear to be quartz or white concrete; confidence favors quartz but could be another white block.",
+    "Middle thin stripe appears sandy (sandstone or terracotta); uncertain which variant is used.",
+    "Precise internal layout and interior height are not visible from exterior images.",
+    "Exact widths, offsets and precise dome curvature/height are estimated from aerials; exact voxel counts may differ."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_012",
+  "created_at": "2026-02-28T15:06:24.079174+00:00"
+}

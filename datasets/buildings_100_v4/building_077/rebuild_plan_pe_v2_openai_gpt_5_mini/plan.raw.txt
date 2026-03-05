@@ -1,0 +1,434 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 19,
+    "ymin": 0,
+    "ymax": 17,
+    "zmin": 0,
+    "zmax": 35
+  },
+  "palette": {
+    "wall": "wood",
+    "roof": "slab_stone",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 19,
+          "z2": 35,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 5
+        },
+        "rooms_hint": "ground floor with perimeter walkway and internal corridor",
+        "perimeter_profile": "rectangular with tower cutouts"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 6,
+          "ymax": 10
+        },
+        "rooms_hint": "second floor repeating window rows",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 11,
+          "ymax": 14
+        },
+        "rooms_hint": "third floor parapet / walkway",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 15,
+          "ymax": 16
+        },
+        "rooms_hint": "roof caps on towers and short roof surface",
+        "perimeter_profile": "flat terraces"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 10,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 7,
+        "z1": 0,
+        "x2": 3,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 7,
+        "z1": 0,
+        "x2": 6,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 12,
+        "y1": 7,
+        "z1": 0,
+        "x2": 12,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 15,
+        "y1": 7,
+        "z1": 0,
+        "x2": 15,
+        "y2": 8,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 15,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 15,
+          "x1": 0,
+          "z1": 0,
+          "x2": 19,
+          "z2": 35,
+          "block": "slab_stone"
+        },
+        {
+          "y": 15,
+          "x1": 7,
+          "z1": 14,
+          "x2": 11,
+          "z2": 20,
+          "block": "stonebrick"
+        },
+        {
+          "y": 16,
+          "x1": 2,
+          "z1": 2,
+          "x2": 6,
+          "z2": 6,
+          "block": "slab_stone"
+        },
+        {
+          "y": 16,
+          "x1": 13,
+          "z1": 2,
+          "x2": 17,
+          "z2": 6,
+          "block": "slab_stone"
+        },
+        {
+          "y": 16,
+          "x1": 2,
+          "z1": 29,
+          "x2": 6,
+          "z2": 33,
+          "block": "slab_stone"
+        },
+        {
+          "y": 16,
+          "x1": 13,
+          "z1": 29,
+          "x2": 17,
+          "z2": 33,
+          "block": "slab_stone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 19,
+      "y2": 0,
+      "z2": 35,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 19,
+      "y2": 14,
+      "z2": 35,
+      "block": "wood",
+      "purpose": "outer_shell_mainblock"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 17,
+      "y2": 14,
+      "z2": 33,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 2,
+      "y2": 16,
+      "z2": 2,
+      "block": "wood",
+      "purpose": "tower_nw_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 17,
+      "y1": 1,
+      "z1": 0,
+      "x2": 19,
+      "y2": 16,
+      "z2": 2,
+      "block": "wood",
+      "purpose": "tower_ne_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 33,
+      "x2": 2,
+      "y2": 16,
+      "z2": 35,
+      "block": "wood",
+      "purpose": "tower_sw_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 17,
+      "y1": 1,
+      "z1": 33,
+      "x2": 19,
+      "y2": 16,
+      "z2": 35,
+      "block": "wood",
+      "purpose": "tower_se_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 11,
+      "z1": 2,
+      "x2": 17,
+      "y2": 11,
+      "z2": 33,
+      "block": "stonebrick",
+      "purpose": "stoneband_level_3"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 7
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 19,
+  "ymin": 0,
+  "ymax": 17,
+  "zmin": 0,
+  "zmax": 35,
+  "operations": [
+    {
+      "action": "fill",
+      "block": "stone_slab",
+      "from": { "x": 0, "y": 0, "z": 0 },
+      "to": { "x": 19, "y": 0, "z": 35 },
+      "comment": "ground perimeter pads / base layer: single-layer stone slabs across full footprint for a shallow foundation"
+    },
+    {
+      "action": "fill",
+      "block": "oak_planks",
+      "from": { "x": 2, "y": 1, "z": 2 },
+      "to": { "x": 17, "y": 1, "z": 33 },
+      "comment": "main floor (floor layer 1) inset from slab edge by 2 blocks"
+    },
+    {
+      "action": "fill",
+      "block": "oak_planks",
+      "from": { "x": 2, "y": 5, "z": 2 },
+      "to": { "x": 17, "y": 5, "z": 33 },
+      "comment": "second floor slab (platform) - continuous floor layer at mid level for three-storey internal floors"
+    },
+    {
+      "action": "fill",
+      "block": "oak_planks",
+      "from": { "x": 2, "y": 9, "z": 2 },
+      "to": { "x": 17, "y": 9, "z": 33 },
+      "comment": "third floor slab (top internal floor)"
+    },
+    {
+      "action": "outline",
+      "block": "oak_log",
+      "from": { "x": 2, "y": 1, "z": 2 },
+      "to": { "x": 17, "y": 16, "z": 33 },
+      "thickness": 1,
+      "comment": "wood log frame posts along edges of central block (vertical supports up to roof). This will be refined by cutting windows and openings."
+    },
+    {
+      "action": "fill",
+      "block": "oak_planks",
+      "from": { "x": 3, "y": 1, "z": 3 },
+      "to": { "x": 16, "y": 16, "z": 32 },
+      "comment": "solidify plank infill inside log frame for walls; windows will be carved out next"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 5, "y": 2, "z": 4 },
+      "to": { "x": 5, "y": 2, "z": 4 },
+      "comment": "sample single window block; repeated steps follow for full window rows"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 8, "y": 2, "z": 4 },
+      "to": { "x": 8, "y": 2, "z": 4 },
+      "comment": "sample window"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 11, "y": 2, "z": 4 },
+      "to": { "x": 11, "y": 2, "z": 4 },
+      "comment": "sample window"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 14, "y": 2, "z": 4 },
+      "to": { "x": 14, "y": 2, "z": 4 },
+      "comment": "sample window"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 5, "y": 6, "z": 4 },
+      "to": { "x": 5, "y": 6, "z": 4 },
+      "comment": "second row windows"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 8, "y": 6, "z": 4 },
+      "to": { "x": 8, "y": 6, "z": 4 },
+      "comment": "second row"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 11, "y": 6, "z": 4 },
+      "to": { "x": 11, "y": 6, "z": 4 },
+      "comment": "second row"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 14, "y": 6, "z": 4 },
+      "to": { "x": 14, "y": 6, "z": 4 },
+      "comment": "second row"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 5, "y": 10, "z": 4 },
+      "to": { "x": 5, "y": 10, "z": 4 },
+      "comment": "third row windows"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 8, "y": 10, "z": 4 },
+      "to": { "x": 8, "y": 10, "z": 4 },
+      "comment": "third row"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 11, "y": 10, "z": 4 },
+      "to": { "x": 11, "y": 10, "z": 4 },
+      "comment": "third row"
+    },
+    {
+      "action": "replace",
+      "block": "glass",
+      "from": { "x": 14, "y": 10, "z": 4 },
+      "to": { "x": 14, "y": 10, "z": 4 },
+      "comment": "third row"
+    },
+    {
+      "action": "fill",
+      "block": "stonebrick",
+      "from": { "x": 3, "y": 4, "z": 3 },
+      "to": { "x": 16, "y": 4, "z": 32 },
+      "comment": "horizontal decorative stonebrick band around central block at between floor 1 and 2"
+    },
+    {
+      "action": "fill",
+      "block": "stone_slab",
+      "from": { "x": 3, "y": 8, "z": 3 },
+      "to": { "x": 16, "y": 8, "z": 32 },
+      "comment": "stone slab band between floor 2 and 3"
+    },
+    {
+      "action": "fill",
+      "block": "oak_log",
+      "from": { "x": 2, "y": 1, "z": 2 },
+      "to": { "x": 2, "y": 14, "z": 2 },
+      "comment": "northwest corner tower vertical log column (will be expanded to tower volume)"
+    },
+    {
+      "action": "fill",
+      "block": "oak_log",
+      "from": { "x": 17, "y": 1, "z": 2 },
+      "to": { "x": 17, "y": 14, "z

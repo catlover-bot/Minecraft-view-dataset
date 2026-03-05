@@ -1,0 +1,467 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 7,
+    "zmin": 0,
+    "zmax": 4
+  },
+  "palette": {
+    "wall": "oak_planks",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass_pane",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 4,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_x_and_z_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 3
+        },
+        "rooms_hint": "single ground floor open plan",
+        "perimeter_profile": "rectangle with corner posts"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 6
+        },
+        "rooms_hint": "upper bedrooms / continuous window band",
+        "perimeter_profile": "rectangle with corner posts"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 4,
+        "y1": 1,
+        "z1": 0,
+        "x2": 4,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 2,
+        "z1": 0,
+        "x2": 3,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 7,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 5,
+        "z1": 0,
+        "x2": 3,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 5,
+        "z1": 0,
+        "x2": 7,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 2,
+        "z1": 4,
+        "x2": 3,
+        "y2": 2,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 4,
+        "x2": 7,
+        "y2": 2,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 5,
+        "z1": 4,
+        "x2": 3,
+        "y2": 5,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 5,
+        "z1": 4,
+        "x2": 7,
+        "y2": 5,
+        "z2": 4
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 7,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 4,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 4,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 4,
+      "block": "stonebrick",
+      "purpose": "foundation_platform_top"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 9,
+      "y2": 0,
+      "z2": 5,
+      "block": "stone_slab",
+      "purpose": "walkway_slab_border"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 6,
+      "z2": 4,
+      "block": "oak_planks",
+      "purpose": "outer_shell_planks"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 6,
+      "z2": 0,
+      "block": "spruce_log",
+      "purpose": "corner_log_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 6,
+      "z2": 0,
+      "block": "spruce_log",
+      "purpose": "corner_log_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 4,
+      "x2": 0,
+      "y2": 6,
+      "z2": 4,
+      "block": "spruce_log",
+      "purpose": "corner_log_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 4,
+      "x2": 8,
+      "y2": 6,
+      "z2": 4,
+      "block": "spruce_log",
+      "purpose": "corner_log_se"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 4,
+      "block": "stonebrick",
+      "purpose": "mid_level_trim"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 6,
+      "z2": 3,
+      "purpose": "interior_hollow"
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 7,
+  "zmin": 0,
+  "zmax": 4,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "minecraft:stonebrick",
+      "from": [0, 0, 0],
+      "to": [8, 0, 4],
+      "comment": "one-block-high foundation/platform (full stonebrick base)"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:stone_slab",
+      "from": [0, 1, 0],
+      "to": [8, 1, 0],
+      "comment": "stone slab rim front edge of foundation (north side)"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:stone_slab",
+      "from": [0, 1, 4],
+      "to": [8, 1, 4],
+      "comment": "stone slab rim back edge of foundation (south side)"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:stone_slab",
+      "from": [0, 1, 1],
+      "to": [0, 1, 3],
+      "comment": "stone slab rim west edge of foundation"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:stone_slab",
+      "from": [8, 1, 1],
+      "to": [8, 1, 3],
+      "comment": "stone slab rim east edge of foundation"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_log",
+      "from": [0, 1, 0],
+      "to": [0, 6, 0],
+      "comment": "west-north corner vertical log spanning both floors"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_log",
+      "from": [8, 1, 0],
+      "to": [8, 6, 0],
+      "comment": "east-north corner vertical log"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_log",
+      "from": [0, 1, 4],
+      "to": [0, 6, 4],
+      "comment": "west-south corner vertical log"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_log",
+      "from": [8, 1, 4],
+      "to": [8, 6, 4],
+      "comment": "east-south corner vertical log"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_planks",
+      "from": [1, 1, 1],
+      "to": [7, 3, 3],
+      "comment": "first floor exterior/interior wall fill (wood planks) between logs; leaves interior filled to simplify build"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stonebrick",
+      "from": [1, 3, 1],
+      "to": [7, 3, 3],
+      "comment": "mid-level stonebrick band (1-block high) between floors across front/back and sides"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_planks",
+      "from": [1, 4, 1],
+      "to": [7, 6, 3],
+      "comment": "second floor exterior/interior wall fill (wood planks)"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "from": [3, 2, 0],
+      "to": [5, 2, 0],
+      "comment": "front wall first floor window row (3 panes centered)"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "from": [3, 5, 0],
+      "to": [5, 5, 0],
+      "comment": "front wall second floor window row (3 panes centered)"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "from": [3, 2, 4],
+      "to": [5, 2, 4],
+      "comment": "back wall first floor window row"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "from": [3, 5, 4],
+      "to": [5, 5, 4],
+      "comment": "back wall second floor window row"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "from": [0, 2, 2],
+      "to": [0, 2, 2],
+      "comment": "west side first floor single centered pane"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "from": [0, 5, 2],
+      "to": [0, 5, 2],
+      "comment": "west side second floor single centered pane"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "from": [8, 2, 2],
+      "to": [8, 2, 2],
+      "comment": "east side first floor single centered pane"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "from": [8, 5, 2],
+      "to": [8, 5, 2],
+      "comment": "east side second floor single centered pane"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:air",
+      "from": [4, 1, 0],
+      "to": [4, 2, 0],
+      "comment": "entrance opening (2-block-high door space) centered on front wall"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:oak_door",
+      "from": [4, 1, 0],
+      "to": [4, 1, 0],
+      "comment": "place bottom half of door (door top will auto-place in game engines that do so)"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:air",
+      "from": [4, 3, 0],
+      "to": [4, 3, 0],
+      "comment": "clear above door to ensure access; keeps mid-band intact at y=3 around it"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:nether_brick",
+      "from": [1, 7, 1],
+      "to": [7, 7, 3],
+      "comment": "flat dark roof center (1 block high) inset within slab rim"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:stone_slab",
+      "from": [0, 7, 0],
+      "to": [8, 7, 4],
+      "comment": "stone slab rim around roof (covers full top perimeter); overlap allowed with roof center so center replaced below slabs"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_slab",
+      "from": [1, 1, 1],
+      "to": [7, 1, 3],
+      "comment": "interior floor surface on foundation (wooden floor layer) at y=1 within foundation; optional, matches description"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "all_ops_within_bbox": true,
+    "op_count_ok": true,
+    "contains_floor": true,
+    "contains_walls": true,
+    "

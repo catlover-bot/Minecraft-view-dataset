@@ -1,0 +1,353 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 5,
+    "zmin": 0,
+    "zmax": 14
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "stone_slab",
+    "trim": "oak_planks",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks",
+    "border": "quartz_block",
+    "accent": "cobblestone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 14,
+          "label": "main_body"
+        }
+      ],
+      "symmetry": "bilateral_x_and_z"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single open interior space",
+        "perimeter_profile": "rectangle with layered exterior bands"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 6,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 14,
+        "x2": 6,
+        "y2": 2,
+        "z2": 14
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 2,
+        "z1": 3,
+        "x2": 8,
+        "y2": 2,
+        "z2": 11
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 3,
+        "x2": 0,
+        "y2": 2,
+        "z2": 11
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 4,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 13,
+          "block": "oak_planks"
+        },
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 14,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 14,
+      "block": "dirt",
+      "purpose": "foundation"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 1,
+      "z2": 14,
+      "block": "oak_planks",
+      "purpose": "lower_wood_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 8,
+      "y2": 2,
+      "z2": 14,
+      "block": "stonebrick",
+      "purpose": "stone_course_with_windows"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 0,
+      "x2": 6,
+      "y2": 2,
+      "z2": 0,
+      "purpose": "window_north"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 14,
+      "x2": 6,
+      "y2": 2,
+      "z2": 14,
+      "purpose": "window_south"
+    },
+    {
+      "op": "carve",
+      "x1": 8,
+      "y1": 2,
+      "z1": 3,
+      "x2": 8,
+      "y2": 2,
+      "z2": 11,
+      "purpose": "window_east"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 2,
+      "z1": 3,
+      "x2": 0,
+      "y2": 2,
+      "z2": 11,
+      "purpose": "window_west"
+    },
+    {
+      "op": "set",
+      "x": 2,
+      "y": 2,
+      "z": 0,
+      "block": "glass",
+      "purpose": "window_north_1"
+    },
+    {
+      "op": "set",
+      "x": 3,
+      "y": 2,
+      "z": 0,
+      "block": "glass",
+      "purpose": "window_north_2"
+    },
+    {
+      "op": "set",
+      "x": 4,
+      "y": 2,
+      "z": 0,
+      "block": "glass",
+      "purpose": "window_north_3"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 2,
+      "z": 0,
+      "block": "glass",
+      "purpose": "window_north_4"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 2,
+      "z": 0,
+      "block": "glass",
+      "purpose": "window_north_5"
+    },
+    {
+      "op": "set",
+      "x": 2,
+      "y": 2,
+      "z": 14,
+      "block": "glass",
+      "purpose": "window_south_1"
+    },
+    {
+      "op": "set",
+      "x": 3,
+      "y
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 9,
+  "ymin": 0,
+  "ymax": 15,
+  "zmin": 0,
+  "zmax": 6,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 9, "y2": 15, "z2": 0, "block": "dirt"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 8, "y2": 14, "z2": 1, "block": "oak_planks"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 9, "y2": 15, "z2": 1, "block": "quartz_block"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 2, "x2": 8, "y2": 14, "z2": 3, "block": "stone_bricks"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 3, "x2": 7, "y2": 13, "z2": 3, "block": "glass"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 4, "x2": 8, "y2": 14, "z2": 4, "block": "quartz_block"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 5, "x2": 8, "y2": 14, "z2": 5, "block": "oak_planks"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 6, "x2": 9, "y2": 15, "z2": 6, "block": "stone_slab"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 2, "x2": 7, "y2": 1, "z2": 2, "block": "air"},
+    {"type": "fill", "x1": 2, "y1": 14, "z1": 2, "x2": 7, "y2": 14, "z2": 2, "block": "air"},
+    {"type": "fill", "x1": 1, "y1": 2, "z1": 2, "x2": 1, "y2": 13, "z2": 2, "block": "air"},
+    {"type": "fill", "x1": 8, "y1": 2, "z1": 2, "x2": 8, "y2": 13, "z2": 2, "block": "air"},
+    {"type": "setblock", "x": 4, "y": 0, "z": 2, "block": "oak_door[half=lower,facing=south]"},
+    {"type": "setblock", "x": 4, "y": 0, "z": 3, "block": "oak_door[half=upper,facing=south]"}
+  ],
+  "summary": "Small rectangular single-story modern structure with a raised flat roof and layered exterior bands: lower wooden planks and stone, a middle glass window strip, a white smooth band, and an upper wood band capped by stone slabs. Surrounded by a low white border/ledge set on a dirt foundation.",
+  "building_type": "residential_small",
+  "shape": {
+    "overall_form": "simple rectangular box with flat raised roof and stone slab parapet",
+    "footprint_hint": "rectangle 9×15 blocks",
+    "symmetry": "bilaterally symmetric along long axis with mirrored windows and bands on all four sides",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 15,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "oak_planks",
+      "role": "accent band / floor trim",
+      "confidence": 0.95
+    },
+    {
+      "name": "stone_bricks",
+      "role": "lower wall course",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "quartz_block",
+      "role": "outer low border/ledge and white band",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof cap / parapet top",
+      "confidence": 0.9
+    },
+    {
+      "name": "dirt",
+      "role": "foundation base",
+      "confidence": 0.95
+    },
+    {
+      "name": "oak_door",
+      "role": "entrance opening",
+      "confidence": 0.8
+    }
+  ],
+  "elements": [
+    "continuous horizontal window strip (6 blocks wide, 1 block high)",
+    "raised flat roof with stone slab parapet",
+    "outer low white border/ledge around building footprint (quartz blocks)",
+    "layered wall bands: bottom wood, stone/stonebrick middle, white band, top wood band",
+    "entrance door on south side (center)"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular footprint 9×15 blocks on dirt base.",
+    "Place a one-block-high quartz border around entire perimeter at z=1.",
+    "Add a two-block-high stone_bricks course (z=2–3) for main walls.",
+    "Insert a row of glass windows (1 block high at z=3) centered in walls, leaving 2-block margins on short sides.",
+    "Place a single quartz block band (z=4) above windows.",
+    "Add a one-block-high oak_planks band (z=5).",
+    "Cap with stone_slab parapet (z=6).",
+    "Create entrance door on south side (center, z=2–3)."
+  ],
+  "uncertainties": [
+    "Exact block types: quartz_block and stone_slab inferred from color/shape.",
+    "Interior layout and ceiling height unknown; only exterior shell modeled.",
+    "Door placement assumed on south side; may be on alternate side."
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "all_coords_in_bbox": true,
+    "operation_count": 14,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,
+    "material_coherence": true,
+    "structural_fidelity": true
+  },
+  "provider": "openai",
+  "model": "gpt-

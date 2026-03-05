@@ -1,0 +1,71 @@
+{
+  "summary": "Small rectangular single-storey building with brick walls, a stepped dark nether-brick gable roof, white trim belt and a raised white border around a shallow surrounding trench; windows run along the long sides and stone corner pillars accent corners.",
+  "building_type": "house/small hall",
+  "shape": {
+    "overall_form": "rectangular footprint with raised perimeter trim and recessed ground level (shallow trench) surrounding it",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 17,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "main wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "quartz",
+      "role": "trim/perimeter border",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner pillars / accents",
+      "confidence": 0.6
+    },
+    {
+      "name": "planks",
+      "role": "base skirting above ground (wood strip)",
+      "confidence": 0.7
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    }
+  ],
+  "elements": [
+    "long rows of windows on both long sides (three or four panes each segment)",
+    "stepped dark roof with projecting stone slab caps at each step",
+    "quartz (white) continuous belt/lintel under roofline",
+    "stone-like corner pillars",
+    "raised white border/low wall around building creating a recessed trench"
+  ],
+  "rebuild_hints": [
+    "Footprint is rectangular; use a white (quartz) 1-block-wide border set outward from the brick wall and a 1-block-deep trench around the border.",
+    "Walls: brick main body with a single row of plank skirting at the base and stone pillars at each corner that rise to meet the white belt under the roof.",
+    "Windows: continuous repeating window sections along long sides just above the plank skirting and below the white belt; replicate spacing seen (approximately 4 window segments per long side).",
+    "Roof: build a symmetrical stepped gable using nether_brick stairs/blocks in ascending layers toward centerline; place stone (or slab_stone) caps at the ends of each step and a central ridge.",
+    "Height: keep overall building low (single storey) — walls roughly 3 blocks tall above the plank skirting, belt layer, then 2–3 stepped roof layers."
+  ],
+  "uncertainties": [
+    "Exact block types for white trim and corner accents: white appears to be quartz but could be another white block; corner blocks look like stonebrick or cobblestone variants.",
+    "Precise internal layout and whether there is an entrance on a side not shown (no visible door in provided views).",
+    "Exact counts for windows and interior floor height; estimates based only on exterior visible blocks and may be off by 1–2 blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_042",
+  "created_at": "2026-02-28T14:07:25.750891+00:00"
+}

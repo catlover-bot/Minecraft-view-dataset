@@ -1,0 +1,70 @@
+{
+  "summary": "A small rectangular single-story building with a raised cobblestone foundation, stone-brick (or similar smooth stone) walls pierced by a row of horizontal windows, and a dark red stepped hip-like roof made from dark nether-stairs/blocks with light stone corner accents. A one-block-wide cobblestone perimeter walk surrounds the base. Top-down views show a symmetric rectangular footprint with a centered ridge along the long axis.",
+  "building_type": "small house / storage shed",
+  "shape": {
+    "overall_form": "simple rectangular block with a stepped curved (rounded) roof and raised foundation",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long (length) axis",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 17,
+    "height": 7
+  },
+  "materials": [
+    {
+      "name": "cobblestone",
+      "role": "foundation, perimeter",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "lower wall (smooth stone brick)",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof (dark red stepped blocks/stairs)",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof corner accents / cap blocks",
+      "confidence": 0.6
+    },
+    {
+      "name": "wood",
+      "role": "possible door/frame (uncertain)",
+      "confidence": 0.3
+    }
+  ],
+  "elements": [
+    "continuous horizontal window band (long side) with multiple glass panes separated by full blocks",
+    "single-story interior (not visible) implied by low wall height",
+    "stepped/domed roof built from dark nether-brick stairs/blocks with lighter stone accent blocks at step ends",
+    "cobblestone one-block-wide raised walkway around building"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular foundation surrounded by a 1-block-high cobblestone border (perimeter walk).",
+    "Raise the main walls ~3 blocks high using stonebrick; insert a row of 5-6 horizontal windows (glass panes) centered on each long face separated by stonebrick blocks.",
+    "Place a dark nether-brick stepped roof: a central ridge along the length, with symmetrical stepped decreases on each side and light stone slab/blocks at each step end.",
+    "Keep overall proportions: estimated interior footprint ~7x15 with cobblestone adding 1 block border; total height ~7 blocks from ground to roof ridge."
+  ],
+  "uncertainties": [
+    "Exact block types: stonebrick vs regular stone or smooth stone is inferred from texture; confidence not absolute.",
+    "Roof material is identified as nether_brick (dark red) but could be another dark red block variant; the presence of stairs vs full blocks for roof is likely but not certain.",
+    "Door location and exact count of windows on short walls are not clearly visible; interior layout and floor finish are unknown.",
+    "Measured dimensions are approximate: width, depth, and height rounded to nearest whole blocks from images."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_051",
+  "created_at": "2026-02-28T14:09:46.008882+00:00"
+}

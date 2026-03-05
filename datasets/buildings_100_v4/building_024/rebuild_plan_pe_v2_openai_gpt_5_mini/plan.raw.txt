@@ -1,0 +1,433 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 16,
+    "ymin": 0,
+    "ymax": 17,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "slab_wood",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "white": "quartz_block",
+    "border": "quartz_slab",
+    "ground": "coarse_dirt",
+    "tower_cap": "slab_stone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 15,
+          "z2": 9,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor hall, unknown interior",
+        "perimeter_profile": "rectangular with continuous ledge at y=4"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "second floor, balcony band at y=9",
+        "perimeter_profile": "rectangular with continuous ledge at y=9"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 10,
+          "ymax": 13
+        },
+        "rooms_hint": "third floor, top ledge at y=13",
+        "perimeter_profile": "rectangular with stepped roof base at y=14"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 8,
+        "y1": 1,
+        "z1": 9,
+        "x2": 8,
+        "y2": 3,
+        "z2": 9
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 2,
+        "z1": 1,
+        "x2": 3,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 2,
+        "z1": 1,
+        "x2": 6,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 2,
+        "z1": 1,
+        "x2": 9,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 12,
+        "y1": 2,
+        "z1": 1,
+        "x2": 12,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 6,
+        "z1": 1,
+        "x2": 3,
+        "y2": 7,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 6,
+        "z1": 1,
+        "x2": 6,
+        "y2": 7,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 6,
+        "z1": 1,
+        "x2": 9,
+        "y2": 7,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 12,
+        "y1": 6,
+        "z1": 1,
+        "x2": 12,
+        "y2": 7,
+        "z2": 1
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 14,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 14,
+          "x1": 1,
+          "z1": 1,
+          "x2": 15,
+          "z2": 9,
+          "block": "slab_stone"
+        },
+        {
+          "y": 15,
+          "x1": 2,
+          "z1": 2,
+          "x2": 14,
+          "z2": 8,
+          "block": "slab_wood"
+        },
+        {
+          "y": 16,
+          "x1": 3,
+          "z1": 3,
+          "x2": 13,
+          "z2": 7,
+          "block": "slab_wood"
+        },
+        {
+          "y": 17,
+          "x1": 6,
+          "z1": 4,
+          "x2": 10,
+          "z2": 6,
+          "block": "slab_wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 10,
+      "block": "ground",
+      "purpose": "surrounding_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 1,
+      "z2": 10,
+      "block": "border",
+      "purpose": "plot_border_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 15,
+      "y2": 1,
+      "z2": 9,
+      "block": "floor",
+      "purpose": "main_floor_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 15,
+      "y2": 13,
+      "z2": 9,
+      "block": "wall",
+      "purpose": "main_shell_fullheight"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 14,
+      "y2": 12,
+      "z2": 8,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 15,
+      "y2": 4,
+      "z2": 9,
+      "block": "white",
+      "purpose": "first_floor_ledge"
+    },
+    {
+      "op": "fill",
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 16,
+  "ymin": 0,
+  "ymax": 17,
+  "zmin": 0,
+  "zmax": 18,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 15, 10, 11],
+      "block": "brick",
+      "comment": "Main 3-floor brick volume: footprint 15x11 (x:1-15 => width 15), y:1-10 height 10 (ground at 1). Provides three internal floor layers at z 1-10 (floors at heights)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 15, 15, 1],
+      "block": "white_concrete",
+      "comment": "Ground-level white border around building base (single-thickness) overlapping footprint; placed at z=1 for visible ledge/border."
+    },
+    {
+      "op": "replace",
+      "box": [3, 3, 2, 13, 13, 2],
+      "block": "oak_planks",
+      "comment": "First internal floor (floor slab) at z=2 spanning interior excluding 1-block margins for walls."
+    },
+    {
+      "op": "replace",
+      "box": [3, 3, 5, 13, 13, 5],
+      "block": "oak_planks",
+      "comment": "Second floor slab at z=5 (separating floors)."
+    },
+    {
+      "op": "replace",
+      "box": [3, 3, 8, 13, 13, 8],
+      "block": "oak_planks",
+      "comment": "Third floor slab at z=8 (top internal floor)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 11, 15, 11, 11],
+      "block": "slab_wood",
+      "comment": "First roof layer (dark slabs) surrounding top of main block at z=11 as base of stepped roof."
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 12, 14, 10, 12],
+      "block": "slab_wood",
+      "comment": "Second roof tier of dark slabs, inset by 1 from edges at z=12."
+    },
+    {
+      "op": "fill",
+      "box": [4, 4, 13, 12, 8, 13],
+      "block": "slab_wood",
+      "comment": "Third roof tier (smaller) at z=13 to create stepped profile."
+    },
+    {
+      "op": "fill",
+      "box": [6, 6, 14, 10, 6, 14],
+      "block": "slab_wood",
+      "comment": "Top central dark slab strip at z=14 (roof peak)."
+    },
+    {
+      "op": "outline",
+      "box": [1, 1, 11, 15, 11, 14],
+      "block": "slab_stone",
+      "comment": "Light slab edging around roof tiers: outline placed at z=11-14 edges for contrast."
+    },
+    {
+      "op": "replace",
+      "box": [1, 1, 1, 1, 11, 14],
+      "block": "stonebrick",
+      "comment": "West corner tower (x=1) vertical tower column full height to z=14; towers framed with stonebrick."
+    },
+    {
+      "op": "replace",
+      "box": [15, 1, 1, 15, 11, 14],
+      "block": "stonebrick",
+      "comment": "East corner tower (x=15) vertical tower column full height."
+    },
+    {
+      "op": "replace",
+      "box": [1, 11, 1, 1, 15, 14],
+      "block": "stonebrick",
+      "comment": "North-west corner tower extension along y to form square tower footprint."
+    },
+    {
+      "op": "replace",
+      "box": [15, 11, 1, 15, 15, 14],
+      "block": "stonebrick",
+      "comment": "North-east corner tower extension."
+    },
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 16, 16, 0],
+      "block": "coarse_dirt",
+      "comment": "Ground fill outside border at z=0 (plot ground)."
+    },
+    {
+      "op": "hollow",
+      "box": [2, 2, 2, 14, 14, 10],
+      "block": "air",
+      "comment": "Hollow interior space inside main brick volume to allow interior and windows; preserves walls 1-block thick."
+    },
+    {
+      "op": "set",
+      "box": [8, 1, 2, 8, 1, 4],
+      "block": "air",
+      "comment": "Entrance opening centered on front (x=8, y=1) 1 wide x 3 high (z=2-4)."
+    },
+    {
+      "op": "fill",
+      "box": [8, 1, 1, 8, 1, 1],
+      "block": "white_concrete",
+      "comment": "Vertical white column detail at front center at ground level."
+    },
+    {
+      "op": "fill",
+      "box": [1, 4, 4, 15, 4, 4],
+      "block": "white_concrete",
+      "comment": "Continuous balcony/ledge band (middle band) projecting one block at y=4 around building front; placed at z=4."
+    },
+    {
+      "op": "fill",
+      "box": [1, 8, 6, 15, 8, 6],
+      "block": "white_concrete",
+      "comment": "Upper balcony/ledge band at z=6 (second floor ledge) projecting 1 block at y=8."
+    },
+    {
+      "op": "fill",
+      "box": [1, 12, 9, 15, 12, 9],
+      "block": "white_concrete",
+      "comment": "Top balcony/ledge band at z=9 (third floor ledge) projecting 1 block at y=12."
+    },
+    {
+      "op": "windows_row",
+      "box": [3, 2, 3, 13, 2, 3],
+      "block": "glass",
+      "pattern": "every_other",
+      "comment": "Row of small rectangular windows on ground floor front (between y=2), spaced regularly."
+    },
+    {
+      "op": "windows_row",
+      "box": [3, 6, 6, 13, 6, 6],
+      "block": "glass",
+      "pattern": "every_other",
+      "comment": "Row of windows on second floor front at z=6 (y=6)."
+    },
+    {
+      "op": "windows_row",
+      "box": [3, 10, 9, 13, 10, 9],
+      "block": "glass",
+      "pattern": "every_other",
+      "comment": "Row of windows on third floor front at z=9 (y=10)."
+    },
+    {
+      "op": "cap_towers",
+      "positions": [[1,1,15],[15,1,15],[1,15,15],[15,15,15]],
+      "block": "slab_stone",
+      "comment": "Overhanging slab caps on each tower at top z=15 to create roofed tower caps."
+    },
+    {
+      "op": "trim",
+      "box": [1, 1, 1, 15, 15, 15],

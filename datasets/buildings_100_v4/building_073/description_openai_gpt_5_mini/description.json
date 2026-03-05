@@ -1,0 +1,85 @@
+{
+  "summary": "A rectangular two-story (with attic) courtyard building with thick corner towers. Exterior walls show alternating horizontal bands of dark and light blocks, a stepped gable roof along the long sides, white vertical support columns at intervals, and an open central courtyard with stepped balcony layers facing inward. Two tall stone towers rise above two opposite corners with overhanging flat caps. A low white slab/step border runs around the base on three visible sides.",
+  "building_type": "residential/compound with courtyard",
+  "shape": {
+    "overall_form": "hollow rectangular box surrounding an interior courtyard, with two tall corner towers",
+    "footprint_hint": "rectangle",
+    "symmetry": "mostly bilaterally symmetric along the long axis (mirrored long sides, towers offset)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 21,
+    "depth": 17,
+    "height": 12
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "tower core / dark horizontal band",
+      "confidence": 0.9
+    },
+    {
+      "name": "brick",
+      "role": "light horizontal band / trim (possibly smooth stone or quartz)",
+      "confidence": 0.6
+    },
+    {
+      "name": "wood",
+      "role": "roof (oak or similar planks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "small windows in towers and occasional wall panes",
+      "confidence": 0.8
+    },
+    {
+      "name": "slab_stone",
+      "role": "tower cap edging and roof edging",
+      "confidence": 0.7
+    },
+    {
+      "name": "slab_wood",
+      "role": "roof step/edge (possible wooden slabs on roof edges)",
+      "confidence": 0.4
+    },
+    {
+      "name": "fence",
+      "role": "not visually identified prominently; candidate for small railings (low confidence)",
+      "confidence": 0.2
+    },
+    {
+      "name": "air",
+      "role": "courtyard interior and window openings",
+      "confidence": 1.0
+    }
+  ],
+  "elements": [
+    "open central courtyard with layered inward-facing balconies/ledges",
+    "stepped gable roofs along both long sides",
+    "two tall corner towers with flat overhanging caps",
+    "alternating horizontal dark/light wall bands",
+    "vertical white columns/supports on exterior",
+    "white low slab/step border around base"
+  ],
+  "rebuild_hints": [
+    "Start with a hollow rectangular shell with consistent wall thickness (visible single-block walls) leaving a central courtyard open.",
+    "Stack alternating horizontal bands: dark band (stonebrick-like) then light band (smooth/brick/quartz-like) repeating ~3 times along wall height.",
+    "Add vertical white columns (2-block wide) at regular intervals on exterior long sides and a continuous low white slab/step border around the base.",
+    "Construct stepped gable roof along long sides using wooden planks with single-block stepping at ends; roof slopes up to central ridge but leaves interior courtyard open.",
+    "Build two tall square towers at opposite corners using the dark stonebrick; add small glass window holes in vertical repetition and top with an overhanging stone slab cap and wooden top.",
+    "Inside courtyard, create layered inward-facing ledges/balconies that step down toward the grass floor and place diagonal light patterning on the courtyard floor (seen as white diagonal lines)."
+  ],
+  "uncertainties": [
+    "Exact block types for the light horizontal bands: appear light grey/stone-like (could be smooth stone, quartz, or stone brick variant).",
+    "Base material of low white border: likely quartz or white slab but could be carved stone/white concrete.",
+    "Precise internal floor heights and whether there are full interior floors or open mezzanines (only exterior and courtyard visible).",
+    "Dimensions are estimated from pixel views; exact block counts for width/depth/height may differ by several blocks.",
+    "Some small decorative blocks on tower caps (center light) might be sea lanterns or glowstone; identity uncertain."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_073",
+  "created_at": "2026-02-28T15:22:28.504142+00:00"
+}

@@ -1,0 +1,73 @@
+{
+  "summary": "Multi-tiered, symmetrical three-story rectangular building with two tall corner towers and a central elevated walkway/landing. Exterior walls use horizontal wooden planks with repeating stonebrick (or similar) belt courses between floors, small glass pane windows in rows, and stone details at corners and rooflines. A low stone crenelation/fence outlines a ground-level perimeter. Two tall narrow vertical wooden towers rise above the roof with capped square platforms. Roof areas are flat with a raised central square platform and darker flat roof tops on tower caps.",
+  "building_type": "residential/apartment-like multi-storey block with watchtowers",
+  "shape": {
+    "overall_form": "rectangular block split into two parallel wings connected by a central corridor/walkway; towers at approximate mid/front positions",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along central axis (left-right)",
+    "floors_estimate": 3,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 19,
+    "depth": 11,
+    "height": 22
+  },
+  "materials": [
+    {
+      "name": "wood",
+      "role": "primary wall cladding (planks/log columns)",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "horizontal belt courses, corner/step details, roof edging",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows (glass panes)",
+      "confidence": 0.95
+    },
+    {
+      "name": "slab_stone",
+      "role": "flat roof edging and walkway edging (stone slabs)",
+      "confidence": 0.85
+    },
+    {
+      "name": "fence",
+      "role": "ground-level low perimeter (could be stone brick blocks or cobble walls) - small posts",
+      "confidence": 0.6
+    },
+    {
+      "name": "brick",
+      "role": "darker roof top of tower caps (possibly nether brick/dark block)",
+      "confidence": 0.5
+    }
+  ],
+  "elements": [
+    "rows of small glass windows (repeating horizontal bands on each floor)",
+    "two tall vertical towers (wood core) with capped square observation platforms",
+    "central raised walkway/corridor connecting wings to a central square platform",
+    "stone slab/stonebrick horizontal banding between floors",
+    "ground-level short perimeter of stone blocks/fence",
+    "flat roofs with raised caps"
+  ],
+  "rebuild_hints": [
+    "Construct a rectangular footprint with two identical stepped wings separated by a central corridor; maintain left-right symmetry.",
+    "Use vertical wooden columns at corners and a wooden plank wall infill; add a continuous stonebrick slab band between each floor and along roofline.",
+    "Place repeating 1x1 glass pane windows in two or three rows per wing, evenly spaced horizontally on each floor.",
+    "Add two tall narrow wooden towers rising above the roof; top each with a 5x5 capped platform using darker roof blocks and stone slab edging with a central glow (glowstone or lamp).",
+    "Create a central elevated walkway leading to a raised square platform above the corridor; surround ground perimeter with single-height stone posts/blocks."
+  ],
+  "uncertainties": [
+    "Exact block types for darker roof tops on tower caps — appear dark red/brown (could be nether_brick or dark wood); identified as 'brick' with moderate uncertainty.",
+    "Perimeter low posts might be stonebrick stairs, cobblestone walls or individual stone blocks; labeled as 'fence' with medium uncertainty.",
+    "Precise internal layout and exact floor heights are not visible; floors_estimate = 3 based on external banding but internal ceiling thickness unknown.",
+    "Exact footprint dimensions (width/depth) are estimated from visible block counts and may be off by a few blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_017",
+  "created_at": "2026-02-28T15:07:49.478616+00:00"
+}

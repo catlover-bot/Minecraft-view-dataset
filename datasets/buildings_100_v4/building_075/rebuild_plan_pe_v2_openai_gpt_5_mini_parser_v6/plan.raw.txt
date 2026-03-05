@@ -1,0 +1,509 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 34
+  },
+  "palette": {
+    "wall": "stone",
+    "roof": "nether_brick",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "coarse_dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "complex",
+      "segments": [
+        {
+          "x1": 6,
+          "z1": 0,
+          "x2": 18,
+          "z2": 34,
+          "label": "central_long_arm"
+        },
+        {
+          "x1": 0,
+          "z1": 10,
+          "x2": 24,
+          "z2": 24,
+          "label": "central_cross"
+        },
+        {
+          "x1": 10,
+          "z1": 6,
+          "x2": 14,
+          "z2": 28,
+          "label": "central_mass"
+        }
+      ],
+      "symmetry": "approx_bilateral_along_z_axis (front/back)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground hall with entrance recess and projecting arms",
+        "perimeter_profile": "cruciform with central mass and four projecting arms"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "upper level mirroring ground with windows",
+        "perimeter_profile": "cruciform"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 11,
+        "y1": 1,
+        "z1": 0,
+        "x2": 12,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 7,
+        "y1": 2,
+        "z1": 1,
+        "x2": 7,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 10,
+        "y1": 2,
+        "z1": 1,
+        "x2": 10,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 13,
+        "y1": 2,
+        "z1": 1,
+        "x2": 13,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 2,
+        "z1": 1,
+        "x2": 16,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 7,
+        "y1": 6,
+        "z1": 34,
+        "x2": 7,
+        "y2": 7,
+        "z2": 34
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 10,
+        "y1": 6,
+        "z1": 34,
+        "x2": 10,
+        "y2": 7,
+        "z2": 34
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 24,
+        "y1": 2,
+        "z1": 12,
+        "x2": 24,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 12,
+        "x2": 0,
+        "y2": 3,
+        "z2": 12
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 10,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 10,
+          "x1": 4,
+          "z1": 2,
+          "x2": 20,
+          "z2": 32,
+          "block": "nether_brick"
+        },
+        {
+          "y": 11,
+          "x1": 5,
+          "z1": 4,
+          "x2": 19,
+          "z2": 30,
+          "block": "nether_brick"
+        },
+        {
+          "y": 12,
+          "x1": 7,
+          "z1": 8,
+          "x2": 17,
+          "z2": 26,
+          "block": "nether_brick"
+        },
+        {
+          "y": 10,
+          "x1": 4,
+          "z1": 2,
+          "x2": 20,
+          "z2": 32,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 34,
+      "block": "coarse_dirt",
+      "purpose": "yard_and_floor_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 34,
+      "block": "coarse_dirt",
+      "purpose": "interior_ground_surface"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 4,
+      "z2": 34,
+      "block": "stone",
+      "purpose": "ground_floor_walls_outer_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 1,
+      "z1": 6,
+      "x2": 18,
+      "y2": 4,
+      "z2": 28,
+      "block": "stonebrick",
+      "purpose": "central_mass_corner_trim"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 23,
+      "y2": 8,
+      "z2": 33,
+      "purpose": "hollow_interior_main"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 23,
+      "y2": 5,
+      "z2": 33,
+      "block": "coarse_dirt",
+      "purpose": "second_floor_leveling (simple single layer floor)"
+    },
+    {
+      "op": "fill",
+      "x1
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 34,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "coarse_dirt",
+      "xmin": 0,
+      "xmax": 24,
+      "ymin": 0,
+      "ymax": 0,
+      "zmin": 0,
+      "zmax": 34,
+      "note": "ground plane (courtyard and surrounding ground) inside overall bbox"
+    },
+    {
+      "op": "replace_layers",
+      "block": "coarse_dirt",
+      "xmin": 0,
+      "xmax": 24,
+      "ymin": 0,
+      "ymax": 0,
+      "zmin": 0,
+      "zmax": 34,
+      "note": "explicit single-layer ground; kept for clarity"
+    },
+    {
+      "op": "outline",
+      "block": "cobblestone",
+      "xmin": 1,
+      "xmax": 23,
+      "ymin": 1,
+      "ymax": 1,
+      "zmin": 1,
+      "zmax": 33,
+      "pattern": "single-layer perimeter posts every 3 blocks with gaps",
+      "note": "low perimeter fence (one-block high) inset by 1 from bbox to leave margin"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "xmin": 6,
+      "xmax": 18,
+      "ymin": 1,
+      "ymax": 1,
+      "zmin": 9,
+      "zmax": 25,
+      "note": "footprint base outline for central mass (foundation sill layer)"
+    },
+    {
+      "op": "fill",
+      "block": "stone",
+      "xmin": 6,
+      "xmax": 18,
+      "ymin": 2,
+      "ymax": 5,
+      "zmin": 9,
+      "zmax": 25,
+      "note": "ground-floor walls (4 blocks tall from y=2..5)"
+    },
+    {
+      "op": "fill",
+      "block": "stone",
+      "xmin": 8,
+      "xmax": 16,
+      "ymin": 6,
+      "ymax": 9,
+      "zmin": 11,
+      "zmax": 23,
+      "note": "second-floor internal fill for solidity; outer walls remain as below"
+    },
+    {
+      "op": "hollow_box",
+      "block": "stone",
+      "xmin": 6,
+      "xmax": 18,
+      "ymin": 6,
+      "ymax": 9,
+      "zmin": 9,
+      "zmax": 25,
+      "note": "second-floor exterior walls (4 blocks tall from y=6..9) leaving interior hollow"
+    },
+    {
+      "op": "replace",
+      "block": "stonebrick",
+      "xmin": 6,
+      "xmax": 6,
+      "ymin": 2,
+      "ymax": 9,
+      "zmin": 9,
+      "zmax": 25,
+      "note": "west corner decorative vertical band"
+    },
+    {
+      "op": "replace",
+      "block": "stonebrick",
+      "xmin": 18,
+      "xmax": 18,
+      "ymin": 2,
+      "ymax": 9,
+      "zmin": 9,
+      "zmax": 25,
+      "note": "east corner decorative vertical band"
+    },
+    {
+      "op": "replace",
+      "block": "stonebrick",
+      "xmin": 6,
+      "xmax": 18,
+      "ymin": 2,
+      "ymax": 9,
+      "zmin": 9,
+      "zmax": 9,
+      "note": "north projecting arm front band"
+    },
+    {
+      "op": "replace",
+      "block": "stonebrick",
+      "xmin": 6,
+      "xmax": 18,
+      "ymin": 2,
+      "ymax": 9,
+      "zmin": 25,
+      "zmax": 25,
+      "note": "south projecting arm rear band"
+    },
+    {
+      "op": "carve_entrance",
+      "block": "air",
+      "xmin": 10,
+      "xmax": 14,
+      "ymin": 2,
+      "ymax": 4,
+      "zmin": 9,
+      "zmax": 9,
+      "note": "main entrance opening centered on north face (2-block-high opening)"
+    },
+    {
+      "op": "place",
+      "block": "glowstone",
+      "xmin": 12,
+      "xmax": 12,
+      "ymin": 4,
+      "ymax": 4,
+      "zmin": 9,
+      "zmax": 9,
+      "note": "light above entrance"
+    },
+    {
+      "op": "windows_row",
+      "block": "glass",
+      "xmin": 7,
+      "xmax": 17,
+      "ymin": 3,
+      "ymax": 3,
+      "zmin": 9,
+      "zmax": 9,
+      "spacing": 2,
+      "note": "ground-floor small windows (1x1) on north face, spaced every 2 blocks, avoid entrance"
+    },
+    {
+      "op": "windows_row",
+      "block": "glass",
+      "xmin": 7,
+      "xmax": 17,
+      "ymin": 7,
+      "ymax": 7,
+      "zmin": 9,
+      "zmax": 9,
+      "spacing": 2,
+      "note": "second-floor small windows on north face"
+    },
+    {
+      "op": "windows_row",
+      "block": "glass",
+      "xmin": 7,
+      "xmax": 17,
+      "ymin": 3,
+      "ymax": 3,
+      "zmin": 25,
+      "zmax": 25,
+      "spacing": 2,
+      "note": "ground-floor small windows on south face"
+    },
+    {
+      "op": "windows_row",
+      "block": "glass",
+      "xmin": 7,
+      "xmax": 17,
+      "ymin": 7,
+      "ymax": 7,
+      "zmin": 25,
+      "zmax": 25,
+      "spacing": 2,
+      "note": "second-floor small windows on south face"
+    },
+    {
+      "op": "windows_side",
+      "block": "glass",
+      "xmin": 6,
+      "xmax": 6,
+      "ymin": 3,
+      "ymax": 7,
+      "zmin": 11,
+      "zmax": 23,
+      "spacing": 4,
+      "note": "west arm small vertical windows"
+    },
+    {
+      "op": "windows_side",
+      "block": "glass",
+      "xmin": 18,
+      "xmax": 18,
+      "ymin": 3,
+      "ymax": 7,
+      "zmin": 11,
+      "zmax": 23,
+      "spacing": 4,
+      "note": "east arm small vertical windows"
+    },
+    {
+      "op": "place_floor",
+      "block": "oak_planks",
+      "xmin": 7,
+      "xmax": 17,
+      "ymin": 5,
+      "ymax": 5,
+      "zmin": 10,
+      "zmax": 24,
+      "note": "first-floor internal floor (between ground and second floor), y=5"
+    },
+    {
+      "op": "place_ceiling",
+      "block": "stone_slab",
+      "xmin": 6,

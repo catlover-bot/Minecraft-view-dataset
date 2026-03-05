@@ -1,0 +1,272 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt",
+    "base": "stonebrick",
+    "plank": "wood",
+    "slab": "stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "u_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 3,
+          "label": "south_wing"
+        },
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 3,
+          "z2": 10,
+          "label": "west_wing"
+        },
+        {
+          "x1": 17,
+          "z1": 0,
+          "x2": 20,
+          "z2": 10,
+          "label": "east_wing"
+        }
+      ],
+      "symmetry": "bilateral_x_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 5
+        },
+        "rooms_hint": "warehouse shell with open courtyard",
+        "perimeter_profile": "u_shape"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 10,
+        "x2": 11,
+        "y2": 3,
+        "z2": 10
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 5,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 3,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 3,
+          "z2": 10,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 17,
+          "z1": 0,
+          "x2": 20,
+          "z2": 10,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 2,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 1,
+          "z1": 1,
+          "x2": 2,
+          "z2": 9,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 18,
+          "z1": 1,
+          "x2": 19,
+          "z2": 9,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 2,
+          "z1": 1,
+          "x2": 18,
+          "z2": 2,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 2,
+          "z1": 2,
+          "x2": 2,
+          "z2": 8,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 18,
+          "z1": 2,
+          "x2": 18,
+          "z2": 8,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 3,
+      "block": "dirt",
+      "purpose": "floor_south_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 3,
+      "y2": 0,
+      "z2": 10,
+      "block": "dirt",
+      "purpose": "floor_west_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 17,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 10,
+      "block": "dirt",
+      "purpose": "floor_east_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 0,
+      "z1": 4,
+      "x2": 16,
+      "y2": 0,
+      "z2": 9,
+      "block": "dirt",
+      "purpose": "courtyard_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 3,
+      "block": "stonebrick",
+      "purpose": "base_south_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 3,
+      "y2": 1,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "base_west_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 17,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "base_east_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 10,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 20, "y2": 0, "z2": 10, "material": "stonebrick", "label": "left_wall_base"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 20, "y2": 1, "z2": 10, "material": "stonebrick", "label": "left_wall_base_layer2"},
+    {"type": "fill", "x1": 0, "y1": 2, "z1": 0, "x2": 20, "y2": 2, "z2": 10, "material": "brick", "label": "left_wall_mid_band"},
+    {"type": "fill", "x1": 0, "y1": 3, "z1": 0, "x2": 20, "y2": 3, "z2": 10, "material": "brick", "label": "left_wall_mid_band_layer2"},
+    {"type": "fill", "x1": 0, "y1": 4, "z1": 0, "x2": 20, "y2": 4, "z2": 10, "material": "oak_planks", "label": "left_wall_wood_stripe"},
+    {"type": "fill", "x1": 0, "y1": 5, "z1": 0, "x2": 20, "y2": 5, "z2": 10, "material": "brick", "label": "left_wall_upper_band"},
+    {"type": "fill", "x1": 0, "y1": 6, "z1": 0, "x2": 20, "y2": 6, "z2": 10, "material": "brick", "label": "left_wall_upper_band_layer2"},
+    {"type": "fill", "x1": 0, "y1": 7, "z1": 0, "x2": 20, "y2": 7, "z2": 10, "material": "quartz_block", "label": "left_wall_quartz_trim"},
+    {"type": "fill", "x1": 0, "y1": 8, "z1": 0, "x2": 20, "y2": 8, "z2": 10, "material": "nether_brick", "label": "right_wall_base"},
+    {"type": "fill", "x1": 0, "y1": 8, "z1": 0, "x2": 20, "y2": 8, "z2": 10, "material": "nether_brick", "label": "right_wall_base_layer2"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 8, "z2": 10, "material": "stonebrick", "label": "front_wall_base"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 0, "y2": 8, "z2": 10, "material": "brick", "label": "front_wall_mid"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 4, "x2": 0, "y2": 8, "z2": 10, "material": "oak_planks", "label": "front_wall_wood"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 5, "x2": 0, "y2": 8, "z2": 10, "material": "brick", "label": "front_wall_upper"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 7, "x2": 0, "y2": 8, "z2": 10, "material": "quartz_block", "label": "front_wall_quartz_trim"},
+    {"type": "fill", "x1": 20, "y1": 0, "z1": 0, "x2": 20, "y2": 8, "z2": 10, "material": "stonebrick", "label": "back_wall_base"},
+    {"type": "fill", "x1": 20, "y1": 0, "z1": 1, "x2": 20, "y2": 8, "z2": 10, "material": "brick", "label": "back_wall_mid"},
+    {"type": "fill", "x1": 20, "y1": 0, "z1": 4, "x2": 20, "y2": 8, "z2": 10, "material": "oak_planks", "label": "back_wall_wood"},
+    {"type": "fill", "x1": 20, "y1": 0, "z1": 5, "x2": 20, "y2": 8, "z2": 10, "material": "brick", "label": "back_wall_upper"},
+    {"type": "fill", "x1": 20, "y1": 0, "z1": 7, "x2": 20, "y2": 8, "z2": 10, "material": "quartz_block", "label": "back_wall_quartz_trim"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 8, "x2": 20, "y2": 0, "z2": 10, "material": "nether_brick", "label": "roof_gable_front"},
+    {"type": "fill", "x1": 0, "y1": 8, "z1": 8, "x2": 20, "y2": 8, "z2": 10, "material": "nether_brick", "label": "roof_gable_back"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 20, "y2": 0, "z2": 0, "material": "quartz_slab", "label": "floor_perimeter_front"},
+    {"type": "fill", "x1": 0, "y1": 8, "z1": 0, "x2": 20, "y2": 8, "z2": 0, "material": "quartz_slab", "label": "floor_perimeter_back"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 8, "z2": 0, "material": "quartz_slab", "label": "floor_perimeter_left"},

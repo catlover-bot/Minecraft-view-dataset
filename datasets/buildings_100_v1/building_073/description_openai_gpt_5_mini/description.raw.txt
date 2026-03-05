@@ -1,0 +1,69 @@
+{
+  "summary": "Two-story rectangular Minecraft building with horizontally banded walls: lower and upper stonebrick/cobblestone layers separated by wooden plank and white slab bands, long narrow windows on both floors, a stepped wooden gable roof along the long axis, and a low white slab border/raised foundation around the base.",
+  "building_type": "residential-like small house",
+  "shape": {
+    "overall_form": "simple elongated rectangle with slightly inset short ends and a centered ridge roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis (mirrored left-right); front/back appear similar",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 17,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "wood",
+      "role": "roof and horizontal trim (planks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "middle wall band / decorative block",
+      "confidence": 0.7
+    },
+    {
+      "name": "cobblestone",
+      "role": "corner vertical accents / lower wall texture",
+      "confidence": 0.8
+    },
+    {
+      "name": "slab_stone",
+      "role": "white slab border / floor foundation (likely quartz or smooth stone slab)",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    },
+    {
+      "name": "slab_wood",
+      "role": "roof stepping (possible wooden slab layers)",
+      "confidence": 0.5
+    }
+  ],
+  "elements": [
+    "two floors with continuous horizontal window strips on each floor",
+    "stepped gable roof along the long axis made of wood planks with stone slab accents at the ridge ends",
+    "white slab low perimeter foundation/border around the building",
+    "narrow rectangular window openings (multiple panes) centered in each wall band",
+    "cobblestone vertical corner blocks"
+  ],
+  "rebuild_hints": [
+    "Base: place a white slab (quartz/smooth slab) perimeter 1 block high around the building footprint before wall construction.",
+    "Walls: build two stacked bands per story: lower cobblestone/stonebrick band with windows, then a horizontal wooden plank band, then a white slab band, repeat for second floor.",
+    "Windows: continuous 1-high rows of glass panes (several windows separated by single stonebrick posts) across long sides at each story level.",
+    "Roof: construct a gradual stepped wooden gable roof along the long axis using wood planks; add stone slab/stonebrick accents at the short-end steps and a small central cap at ridge.",
+    "Corners: use cobblestone blocks at vertical corners to create textured corner posts."
+  ],
+  "uncertainties": [
+    "Exact block types for the white slab/foundation: looks like quartz slab but could be smooth stone slab; labeled slab_stone as likely.",
+    "Distinction between stonebrick and another gray masonry for the mid-wall band: appears like stonebrick but could be another variant.",
+    "Precise interior height and floor thickness not visible; floors_estimate assumes single block-per-floor wall height as visible windows.",
+    "Exact footprint dimensions (width/depth) are estimated from pixel views and top-down images; may vary by ±1-2 blocks.",
+    "Whether there is an entrance on the unseen side or integrated into one of the long faces is unknown (no door visible)."
+  ]
+}

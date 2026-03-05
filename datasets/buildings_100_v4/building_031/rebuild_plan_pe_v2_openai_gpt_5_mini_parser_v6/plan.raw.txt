@@ -1,0 +1,447 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 17,
+    "zmin": 0,
+    "zmax": 12
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "slab_stone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 12,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "raised base + ground floor hall",
+        "perimeter_profile": "rectangular raised base"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 9
+        },
+        "rooms_hint": "main volume with terraces / intermediate floors",
+        "perimeter_profile": "stepped terraces on long sides"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 10,
+          "ymax": 14
+        },
+        "rooms_hint": "upper floor and tower caps",
+        "perimeter_profile": "central raised block with pitched roof above"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 6,
+        "z1": 0,
+        "x2": 4,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 6,
+        "z1": 0,
+        "x2": 16,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 4,
+        "x2": 0,
+        "y2": 7,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 6,
+        "z1": 8,
+        "x2": 20,
+        "y2": 7,
+        "z2": 8
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 15,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 15,
+          "x1": 3,
+          "z1": 2,
+          "x2": 17,
+          "z2": 10,
+          "block": "wood"
+        },
+        {
+          "y": 16,
+          "x1": 4,
+          "z1": 3,
+          "x2": 16,
+          "z2": 9,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "raised_floor_surface"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 3,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "raised_base_block"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 20,
+      "y2": 3,
+      "z2": 12,
+      "block": "slab_stone",
+      "purpose": "base_white_repeat_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 19,
+      "y2": 14,
+      "z2": 11,
+      "block": "stonebrick",
+      "purpose": "main_volume_solid_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 5,
+      "z1": 2,
+      "x2": 18,
+      "y2": 13,
+      "z2": 10,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2": 11,
+      "block": "slab_stone",
+      "purpose": "terrace_band_level_0"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 6,
+      "z1": 2,
+      "x2": 18,
+      "y2": 6,
+      "z2": 10,
+      "block": "slab_stone",
+      "purpose": "terrace_band_level_1"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 8,
+      "z1": 3,
+      "x2": 17,
+      "y2": 8,
+      "z2": 9,
+      "block": "slab_stone",
+      "purpose": "terrace_band_level_2"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 10,
+      "z1": 4,
+      "x2": 16,
+      "y2": 10,
+      "z2": 8,
+      "block": "slab_stone",
+      "purpose": "terrace_band_level_3"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 12,
+      "z1": 5,
+      "x2": 15,
+      "y2": 12,
+      "z2": 7,
+      "block": "slab_stone",
+      "purpose": "terrace_band_level_4"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 13,
+      "z1": 6,
+      "x2": 14,
+      "y2": 13,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "central_stepped_block_top"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 14,
+      "z1": 2,
+      "x
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 17,
+  "zmin": 0,
+  "zmax": 18,
+  "operations": [
+    {
+      "id": 1,
+      "op": "fill",
+      "box": [0, 0, 0, 20, 0, 12],
+      "block": "stonebrick",
+      "comment": "ground-level stone base layer (foundation slab) across footprint; inside bbox"
+    },
+    {
+      "id": 2,
+      "op": "fill",
+      "box": [0, 1, 0, 20, 1, 12],
+      "block": "stonebrick",
+      "comment": "raised stone base second layer to create raised platform"
+    },
+    {
+      "id": 3,
+      "op": "replace",
+      "box": [0, 0, 0, 20, 1, 12],
+      "block": "stonebrick",
+      "target": "air",
+      "comment": "ensure base occupies interior; keeps consistency"
+    },
+    {
+      "id": 4,
+      "op": "fill",
+      "box": [1, 2, 1, 19, 2, 11],
+      "block": "oak_planks",
+      "comment": "interior floor layer (raised one block above base)"
+    },
+    {
+      "id": 5,
+      "op": "fill",
+      "box": [0, 0, 0, 20, 2, 12],
+      "block": "smooth_quartz_block",
+      "comment": "decorative white perimeter band at base (repeated white blocks) - only where visible as trim; placed over base layers"
+    },
+    {
+      "id": 6,
+      "op": "hollow_fill",
+      "box": [1, 3, 1, 19, 11, 11],
+      "wall_block": "stonebrick",
+      "floor_block": "air",
+      "comment": "main rectangular hollow volume (walls only) for central body between y=3..11; leaves interior air"
+    },
+    {
+      "id": 7,
+      "op": "fill",
+      "box": [2, 3, 2, 18, 3, 10],
+      "block": "oak_planks",
+      "comment": "second interior floor at y=3 (ground interior floor), ensures layered floors"
+    },
+    {
+      "id": 8,
+      "op": "fill",
+      "box": [2, 6, 2, 18, 6, 10],
+      "block": "oak_planks",
+      "comment": "second story floor at y=6"
+    },
+    {
+      "id": 9,
+      "op": "fill",
+      "box": [2, 9, 2, 18, 9, 10],
+      "block": "oak_planks",
+      "comment": "third story floor at y=9"
+    },
+    {
+      "id": 10,
+      "op": "fill",
+      "box": [0, 3, 0, 20, 11, 12],
+      "block": "stonebrick",
+      "comment": "solid exterior shell for main body before carving windows and terraces; will be trimmed"
+    },
+    {
+      "id": 11,
+      "op": "carve_terraces",
+      "box": [1, 4, 1, 19, 11, 11],
+      "profile": [
+        {"y_offset": 0, "inset": 0},
+        {"y_offset": 1, "inset": 1},
+        {"y_offset": 2, "inset": 2},
+        {"y_offset": 3, "inset": 3},
+        {"y_offset": 4, "inset": 4}
+      ],
+      "band_block": "smooth_quartz_block",
+      "body_block": "stonebrick",
+      "comment": "create stepped terraces on long sides (5 steps) with alternating white bands; keeps within box"
+    },
+    {
+      "id": 12,
+      "op": "replace",
+      "box": [1, 4, 1, 19, 8, 11],
+      "block": "stone_slab_stone",
+      "target": "stonebrick",
+      "comment": "horizontal stone slab banding at terrace edges where applicable"
+    },
+    {
+      "id": 13,
+      "op": "fill",
+      "box": [1, 8, 1, 19, 8, 11],
+      "block": "smooth_quartz_block",
+      "comment": "white banding layer at terrace mid-height"
+    },
+    {
+      "id": 14,
+      "op": "fill",
+      "box": [0, 12, 0, 20, 12, 12],
+      "block": "stone_slab_stone",
+      "comment": "perimeter roof edging at top of main walls to serve as roof base"
+    },
+    {
+      "id": 15,
+      "op": "fill",
+      "box": [4, 12, 1, 16, 16, 11],
+      "block": "oak_stairs",
+      "comment": "gabled wooden roof slopes (one side) using stairs approximated as blocks; placed across center ridge inside bbox"
+    },
+    {
+      "id": 16,
+      "op": "fill",
+      "box": [4, 12, 1, 16, 16, 11],
+      "block": "oak_stairs",
+      "mirror": "x",
+      "comment": "mirror roof on opposite side to create gable; operation kept inside bbox"
+    },
+    {
+      "id": 17,
+      "op": "fill",
+      "box": [10, 16, 1, 10, 16, 11],
+      "block": "oak_planks",
+      "comment": "roof ridge centerline (solid wood) at topmost y=16"
+    },
+    {
+      "id": 18,
+      "op": "tower",
+      "box": [0, 3, 0, 4, 16, 4],
+      "wall_block": "stonebrick",
+      "cap_slab": "stone_slab_stone",
+      "cap_center": "oak_planks",
+      "light": "sea_lantern",
+      "comment": "northwest corner tower: square tower 4x4 from x=0..4,z=0..4, reaches y=16, overhanging cap with light"
+    },
+    {
+      "id": 19,
+      "op": "tower",
+      "box": [16, 3, 0, 20, 16, 4],
+      "wall_block": "stonebrick",
+      "cap_slab": "stone_slab_stone",
+      "cap_center": "oak_planks",
+      "light": "sea_lantern",
+      "comment": "northeast corner tower at x=16..20,z=0..4"
+    },
+    {
+      "id": 20,
+      "op": "tower",
+      "box": [0, 3, 8, 4, 16, 12],
+      "wall_block": "stonebrick",
+      "cap_slab": "stone_slab_stone",
+      "cap_center": "oak_planks",
+      "light": "sea_lantern",
+      "comment": "southwest corner tower at x=0..4,z=8..12"
+    },
+    {
+      "id": 21,
+      "op": "tower",
+      "box": [16, 3, 8, 20, 16, 12],
+      "wall_block": "stonebrick",
+      "cap_slab": "stone_slab_stone",
+      "cap_center": "oak_planks",
+      "light": "sea_lantern",
+      "comment": "southeast corner tower at x=16..20,z=8..12"
+    },
+    {

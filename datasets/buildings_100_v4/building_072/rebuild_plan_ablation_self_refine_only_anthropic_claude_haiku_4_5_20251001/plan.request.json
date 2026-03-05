@@ -1,0 +1,187 @@
+{
+  "building": "building_072",
+  "source_plan": "rebuild_plan_pe_v2_anthropic_claude_haiku_4_5_20251001/plan.json",
+  "description_path": "description_anthropic_claude_haiku_4_5_20251001/description.json",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 35,
+    "accepted_operations_count": 35,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": false,
+    "enforce_role_fixed": false,
+    "require_material_budget": false,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": false,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "brick",
+        "score": 0.95,
+        "source_role": "primary_wall"
+      },
+      "trim": {
+        "block": "concrete",
+        "score": 0.9,
+        "source_role": "pillar_columns"
+      },
+      "roof": {
+        "block": "blackstone",
+        "score": 0.8,
+        "source_role": "roof_material"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [],
+      "coherence_repairs": []
+    },
+    "budget_source": "root.material_budget",
+    "budget_present_in_input": true,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 38,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 0,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 1.0,
+    "role_infer_reasons": {
+      "explicit_role": 38
+    },
+    "self_repair_report": {
+      "added_operations": 0,
+      "added_tags": [],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [
+      {
+        "role": "wall",
+        "target_blocks": 1358,
+        "actual_blocks": 3092,
+        "relative_error": 1.276878
+      },
+      {
+        "role": "roof",
+        "target_blocks": 743,
+        "actual_blocks": 1032,
+        "relative_error": 0.388964
+      }
+    ],
+    "schema_violations": [],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "self_refine_no_gt": {
+    "enabled": true,
+    "accepted_iterations": 2,
+    "total_added_ops": 2,
+    "final_score": 0.9114988055298294,
+    "final_components": {
+      "material": 0.928844566282249,
+      "dim": 0.6888888888888888,
+      "roof": 0.993127147766323,
+      "window": 1.0,
+      "entrance": 1.0
+    },
+    "history": [
+      {
+        "iter": 0,
+        "accepted": true,
+        "score": 0.559661752504946,
+        "components": {
+          "material": 0.4910970706490523,
+          "dim": 0.6888888888888888,
+          "roof": 0.0,
+          "window": 1.0,
+          "entrance": 1.0
+        },
+        "added_ops": 0
+      },
+      {
+        "iter": 1,
+        "accepted": true,
+        "gain": 0.23667249531670487,
+        "score": 0.7963342478216509,
+        "components": {
+          "material": 0.59980297283031,
+          "dim": 0.6888888888888888,
+          "roof": 0.993127147766323,
+          "window": 1.0,
+          "entrance": 1.0
+        },
+        "added_ops": 2,
+        "candidate_index": 1,
+        "candidates_tested": 8,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 0,
+        "budget_reproject_report": {},
+        "selection_score": 0.7943342478216509,
+        "validation_report": {
+          "strict_blocking_issues": [],
+          "budget_violations_count": 1
+        }
+      },
+      {
+        "iter": 2,
+        "accepted": true,
+        "gain": 0.11516455770817857,
+        "score": 0.9114988055298294,
+        "components": {
+          "material": 0.928844566282249,
+          "dim": 0.6888888888888888,
+          "roof": 0.993127147766323,
+          "window": 1.0,
+          "entrance": 1.0
+        },
+        "added_ops": 1,
+        "candidate_index": 0,
+        "candidates_tested": 1,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 0,
+        "budget_reproject_report": {},
+        "selection_score": 0.9104988055298294,
+        "validation_report": {
+          "strict_blocking_issues": [],
+          "budget_violations_count": 2
+        }
+      }
+    ],
+    "profile": {
+      "max_iterations": 2,
+      "min_score_gain": 0.01,
+      "max_added_ops_per_iter": 64,
+      "roof_search_variants": 8,
+      "window_search_variants": 8,
+      "max_search_candidates": 20,
+      "enable_material_budget_reprojection": false,
+      "material_budget_reprojection_strength": 0.6,
+      "material_budget_reprojection_min_deficit_ratio": 0.025,
+      "material_budget_reprojection_trigger_material_score": 0.78,
+      "selection_op_penalty": 0.001,
+      "strict_schema": false,
+      "enforce_role_fixed": false,
+      "require_material_budget": false,
+      "material_budget_tolerance": 0.35,
+      "role_fix_min_confidence": 0.78,
+      "prefer_description_palette": false
+    }
+  },
+  "created_at": "2026-03-01T14:12:18.893003+00:00"
+}

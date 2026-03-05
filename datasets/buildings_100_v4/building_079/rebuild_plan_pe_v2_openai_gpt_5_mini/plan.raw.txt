@@ -1,0 +1,457 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 19,
+    "zmin": 0,
+    "zmax": 34
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "slab_stone",
+    "trim": "wood",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "grass"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 34,
+          "label": "outer_ring"
+        },
+        {
+          "x1": 6,
+          "z1": 8,
+          "x2": 18,
+          "z2": 26,
+          "label": "courtyard_hole"
+        }
+      ],
+      "symmetry": "four_fold_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground perimeter walkway, open courtyard floor",
+        "perimeter_profile": "thick_wall_with_base_trim"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 11
+        },
+        "rooms_hint": "upper battlements / walkway",
+        "perimeter_profile": "continuous_wall_with_slit_windows"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 11,
+        "y1": 1,
+        "z1": 0,
+        "x2": 13,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 6,
+        "z1": 0,
+        "x2": 4,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 20,
+        "y1": 6,
+        "z1": 0,
+        "x2": 21,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 24,
+        "y1": 6,
+        "z1": 6,
+        "x2": 24,
+        "y2": 7,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 3,
+        "y1": 6,
+        "z1": 34,
+        "x2": 4,
+        "y2": 7,
+        "z2": 34
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 6,
+        "x2": 0,
+        "y2": 7,
+        "z2": 7
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 12,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 12,
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 34,
+          "block": "slab_stone"
+        },
+        {
+          "y": 16,
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 34,
+          "block": "slab_stone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 34,
+      "block": "grass",
+      "purpose": "ground_floor_courtyard_and_perimeter_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 11,
+      "z2": 34,
+      "block": "stonebrick",
+      "purpose": "outer_shell_solid_walls_and_towers"
+    },
+    {
+      "op": "carve",
+      "x1": 6,
+      "y1": 1,
+      "z1": 8,
+      "x2": 18,
+      "y2": 11,
+      "z2": 26,
+      "purpose": "open_central_courtyard_hole"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 1,
+      "z2": 34,
+      "block": "wood",
+      "purpose": "horizontal_trim_lower (1-block band)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 24,
+      "y2": 5,
+      "z2": 34,
+      "block": "wood",
+      "purpose": "horizontal_trim_mid (belt course)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 10,
+      "z1": 0,
+      "x2": 24,
+      "y2": 10,
+      "z2": 34,
+      "block": "wood",
+      "purpose": "horizontal_trim_upper (belt course)"
+    },
+    {
+      "op": "carve",
+      "x1": 11,
+      "y1": 1,
+      "z1": 0,
+      "x2": 13,
+      "y2": 3,
+      "z2": 0,
+      "purpose": "main_entrance_opening_north"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 1,
+      "z2": 0,
+      "block": "air",
+      "purpose": "door_clearance_marker"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 6,
+      "z1": 0,
+      "x2": 4,
+      "y2": 7,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "north_slit_window_left"
+    },
+    {
+      "op": "fill",
+      "x1": 20,
+      "y1": 6,
+      "z1": 0,
+      "x2": 21,
+      "y2": 7,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "north_slit_window_right"
+    },
+    {
+      "op": "fill",
+      "x1": 24,
+      "y1": 6,
+      "z1": 6,
+      "x2": 24,
+      "y2": 7,
+      "z2": 7,
+      "block": "glass",
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 20,
+  "zmin": 0,
+  "zmax": 34,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 24, 0, 34],
+      "block": "grass",
+      "description": "Ground layer (courtyard floor base)."
+    },
+    {
+      "op": "hollow_box",
+      "box": [1, 1, 1, 23, 12, 33],
+      "wall_block": "stonebrick",
+      "trim_block": "wood",
+      "band_block": "stonebrick",
+      "description": "Exterior walls: hollow shell surrounding central courtyard. Outer wall thickness 1 block, height 11 (y=1..11). Main wall material stonebrick with wooden horizontal trim bands placed later."
+    },
+    {
+      "op": "fill_layer",
+      "y": 2,
+      "x1": 1,
+      "z1": 1,
+      "x2": 23,
+      "z2": 33,
+      "block": "stonebrick",
+      "description": "Lower stone band (continuous) at y=2 for visual base."
+    },
+    {
+      "op": "fill_layer",
+      "y": 6,
+      "x1": 1,
+      "z1": 1,
+      "x2": 23,
+      "z2": 33,
+      "block": "wood",
+      "description": "Horizontal wooden trim band at mid-height (y=6)."
+    },
+    {
+      "op": "fill_layer",
+      "y": 10,
+      "x1": 1,
+      "z1": 1,
+      "x2": 23,
+      "z2": 33,
+      "block": "stone_slab",
+      "description": "Upper light-colored trim band under roof (slab layer at y=10)."
+    },
+    {
+      "op": "clear",
+      "box": [2, 1, 2, 22, 11, 32],
+      "description": "Clear internal courtyard/open space to sky (air). Ensures interior is hollow and inside the outer shell."
+    },
+    {
+      "op": "fill",
+      "box": [6, 1, 13, 18, 1, 21],
+      "block": "stone_slab",
+      "description": "Central raised platform in courtyard: 13x9 slabs raised 1 block above grass (y=1)."
+    },
+    {
+      "op": "place_grid",
+      "origin": [3, 1, 3],
+      "dx": 3,
+      "dz": 3,
+      "nx": 6,
+      "nz": 10,
+      "block": "white_concrete",
+      "description": "Regular grid of short white posts/ decorative blocks on courtyard grass (one-block posts at y=1)."
+    },
+    {
+      "op": "build_tower",
+      "box": [0, 0, 0, 3, 16, 3],
+      "block": "brick",
+      "cap_layers": [
+        {"block": "stone_slab", "inset": 0},
+        {"block": "wood", "inset": 1}
+      ],
+      "description": "Northwest corner tower: 4x4 footprint (x=0..3, z=0..3), full height to y=15 with overhanging flat cap at y=16."
+    },
+    {
+      "op": "build_tower",
+      "box": [21, 0, 0, 24, 16, 3],
+      "block": "brick",
+      "cap_layers": [
+        {"block": "stone_slab", "inset": 0},
+        {"block": "wood", "inset": 1}
+      ],
+      "description": "Northeast corner tower: mirrored footprint (x=21..24, z=0..3)."
+    },
+    {
+      "op": "build_tower",
+      "box": [0, 0, 31, 3, 16, 34],
+      "block": "brick",
+      "cap_layers": [
+        {"block": "stone_slab", "inset": 0},
+        {"block": "wood", "inset": 1}
+      ],
+      "description": "Southwest corner tower (x=0..3, z=31..34)."
+    },
+    {
+      "op": "build_tower",
+      "box": [21, 0, 31, 24, 16, 34],
+      "block": "brick",
+      "cap_layers": [
+        {"block": "stone_slab", "inset": 0},
+        {"block": "wood", "inset": 1}
+      ],
+      "description": "Southeast corner tower (x=21..24, z=31..34)."
+    },
+    {
+      "op": "carve_windows",
+      "wall": "north",
+      "y_start": 4,
+      "y_end": 6,
+      "x_start": 4,
+      "x_end": 20,
+      "z": 1,
+      "spacing": 3,
+      "block": "glass",
+      "description": "Regular small slit windows on north exterior wall at y=4..5."
+    },
+    {
+      "op": "carve_windows",
+      "wall": "south",
+      "y_start": 4,
+      "y_end": 6,
+      "x_start": 4,
+      "x_end": 20,
+      "z": 33,
+      "spacing": 3,
+      "block": "glass",
+      "description": "Regular small slit windows on south exterior wall at y=4..5."
+    },
+    {
+      "op": "carve_windows",
+      "wall": "west",
+      "y_start": 4,
+      "y_end": 6,
+      "z_start": 4,
+      "z_end": 28,
+      "x": 1,
+      "spacing": 3,
+      "block": "glass",
+      "description": "Regular small slit windows on west exterior wall at y=4..5."
+    },
+    {
+      "op": "carve_windows",
+      "wall": "east",
+      "y_start": 4,
+      "y_end": 6,
+      "z_start": 4,
+      "z_end": 28,
+      "x": 23,
+      "spacing": 3,
+      "block": "glass",
+      "description": "Regular small slit windows on east exterior wall at y=4..5."
+    },
+    {
+      "op": "entrance_opening",
+      "box": [11, 1, 0, 13, 5, 1],
+      "description": "Primary entrance on north face: 2-block wide opening from ground to y=5 (provides access to courtyard)."
+    },
+    {
+      "op": "inner_walkway",
+      "box": [2, 1, 2, 22, 1, 32],
+      "block": "stonebrick",
+      "description": "Perimeter low inner ledge/walkway one block wide at courtyard edge (y=1)."
+    },
+    {
+      "op": "place_coping",
+      "box": [1, 1, 1, 23, 1, 33],
+      "block": "quartz_block",
+      "mask_replace": "stonebrick",
+      "description": "Low white coping along inner edge; replaces topmost outer-edge stonebrick at ground level for visual contrast."
+    },
+    {
+      "op": "roof_fill",
+      "y": 16,
+      "x1": 0,
+      "z1": 0,
+      "x2": 24,
+      "z2": 34,
+      "block": "stone_slab",
+      "description": "Flat roof slab covering entire outer footprint and connecting tower caps at y=16 (outer rim)."
+    },
+    {
+      "op": "

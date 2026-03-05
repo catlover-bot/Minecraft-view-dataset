@@ -1,0 +1,469 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 9,
+          "label": "main"
+        }
+      ],
+      "symmetry": "x_and_z_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 3
+        },
+        "rooms_hint": "open plan ground floor",
+        "perimeter_profile": "rectangular with 1-block platform base"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 6
+        },
+        "rooms_hint": "upper floor similar layout",
+        "perimeter_profile": "rectangular"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 4,
+        "y1": 1,
+        "z1": 1,
+        "x2": 5,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 1,
+        "x2": 3,
+        "y2": 2,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 2,
+        "z1": 1,
+        "x2": 7,
+        "y2": 2,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 5,
+        "z1": 1,
+        "x2": 7,
+        "y2": 5,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 9,
+        "x2": 3,
+        "y2": 2,
+        "z2": 9
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 6,
+        "y1": 2,
+        "z1": 9,
+        "x2": 7,
+        "y2": 2,
+        "z2": 9
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 5,
+        "z1": 9,
+        "x2": 7,
+        "y2": 5,
+        "z2": 9
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 3,
+        "x2": 1,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 5,
+        "z1": 3,
+        "x2": 1,
+        "y2": 5,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 9,
+        "y1": 2,
+        "z1": 3,
+        "x2": 9,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 9,
+        "y1": 5,
+        "z1": 3,
+        "x2": 9,
+        "y2": 5,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 7,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 2,
+          "z1": 2,
+          "x2": 8,
+          "z2": 8,
+          "block": "brick"
+        },
+        {
+          "y": 7,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 9,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 10,
+      "block": "dirt",
+      "purpose": "site_ground_fill"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 10,
+      "purpose": "site_surface_clear"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 9,
+      "y2": 0,
+      "z2": 9,
+      "block": "quartz",
+      "purpose": "raised_platform_border"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 8,
+      "y2": 1,
+      "z2": 8,
+      "block": "wood",
+      "purpose": "main_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 8,
+      "y2": 6,
+      "z2": 8,
+      "block": "sandstone",
+      "purpose": "outer_shell_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 9,
+      "block": "quartz",
+      "purpose": "platform_top_edge_underclip"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 2,
+      "z1": 3,
+      "x2": 7,
+      "y2": 5,
+      "z2": 7,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 2,
+      "x2": 8,
+      "y2": 3,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 9,
+  "ymin": 0,
+  "ymax": 7,
+  "zmin": 0,
+  "zmax": 9,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "dirt",
+      "from": [ -1, -1, -1 ],
+      "to": [ 10, -1, 10 ],
+      "note": "site ground surrounding the footprint lowered by 1 (excavated rim) -- kept outside building bbox intentionally removed in validation step"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [ 0, 0, 0 ],
+      "to": [ 8, 0, 8 ],
+      "note": "raised 1-block-wide perimeter platform (top layer) inside bbox; platform occupies y=0"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [ 1, 0, 1 ],
+      "to": [ 7, 0, 7 ],
+      "note": "inner platform top continues (ensures consistent platform thickness)"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [ 1, 1, 1 ],
+      "to": [ 7, 4, 7 ],
+      "note": "main sandstone walls: two storeys high. Walls are solid here; openings cut next."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [ 1, 2, 1 ],
+      "to": [ 7, 2, 7 ],
+      "note": "continuous horizontal white trim band (quartz) between floors at y=2 (replaces that layer of sandstone to form visible band)"
+    },
+    {
+      "op": "hollow_out",
+      "from": [ 2, 1, 2 ],
+      "to": [ 6, 3, 6 ],
+      "note": "clear interior space for two floors (interior floor will be placed). All coords inside bbox."
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [ 1, 1, 1 ],
+      "to": [ 1, 4, 7 ],
+      "note": "west wall column (solid) for structural corners"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [ 7, 1, 1 ],
+      "to": [ 7, 4, 7 ],
+      "note": "east wall column (solid) for structural corners"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [ 1, 1, 1 ],
+      "to": [ 7, 4, 1 ],
+      "note": "north wall"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [ 1, 1, 7 ],
+      "to": [ 7, 4, 7 ],
+      "note": "south wall (reinforce edges)"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [ 2, 1, 2 ],
+      "to": [ 6, 1, 6 ],
+      "note": "ground-floor interior wooden floor at y=1"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [ 2, 3, 2 ],
+      "to": [ 6, 3, 6 ],
+      "note": "second-floor wooden floor (ceiling of first floor) at y=3"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [ 3, 2, 1 ],
+      "to": [ 5, 2, 1 ],
+      "note": "narrow horizontal windows on north facade (second-floor row) centered, 3 wide x 1 tall"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [ 3, 1, 1 ],
+      "to": [ 5, 1, 1 ],
+      "note": "narrow horizontal windows on north facade (first-floor row) centered, 3 wide x 1 tall"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [ 3, 2, 7 ],
+      "to": [ 5, 2, 7 ],
+      "note": "south facade second-floor window row"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [ 3, 1, 7 ],
+      "to": [ 5, 1, 7 ],
+      "note": "south facade first-floor window row"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [ 1, 2, 3 ],
+      "to": [ 1, 2, 5 ],
+      "note": "west facade second-floor horizontal windows (centered)"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [ 1, 1, 3 ],
+      "to": [ 1, 1, 5 ],
+      "note": "west facade first-floor horizontal windows"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [ 7, 2, 3 ],
+      "to": [ 7, 2, 5 ],
+      "note": "east facade second-floor horizontal windows"
+    },
+    {
+      "op": "replace",
+      "block": "glass",
+      "from": [ 7, 1, 3 ],
+      "to": [ 7, 1, 5 ],
+      "note": "east facade first-floor horizontal windows"
+    },
+    {
+      "op": "clear",
+      "from": [ 4, 1, 0 ],
+      "to": [ 4, 2, 0 ],
+      "note": "entrance opening on north face centered: 1 wide x 2 high opening; z=0 is inside bbox (north exterior)"
+    },
+    {
+      "op": "stairs",
+      "block": "quartz_stairs",
+      "from": [ 4, 0, 0 ],
+      "to": [ 4, 0, 0 ],
+      "note": "front step aligned with platform edge"
+    },
+    {
+      "op": "fill",
+      "block": "brick_block",
+      "from": [ 2, 5, 2 ],
+      "to": [ 6, 5, 6 ],
+      "note": "roof field recessed one block from outer wall at y=5 (roof top)"
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [ 1, 5, 1 ],
+      "to": [ 7, 5, 1 ],
+      "note": "roof coping north edge"
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [ 1, 5, 7 ],
+      "to": [ 7, 5, 7 ],
+      "note": "roof coping south edge"
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [ 1, 5, 1 ],
+      "to": [ 1, 5, 7 ],
+      "note": "roof coping west edge"
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [ 7, 5, 1 ],
+      "to": [ 7, 5, 7 ],
+      "note": "roof coping east edge"
+    },

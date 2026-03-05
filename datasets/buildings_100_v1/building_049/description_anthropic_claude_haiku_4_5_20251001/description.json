@@ -1,0 +1,68 @@
+{
+  "summary": "A compact two-story residential structure with a stepped pyramidal roof. The building features stonebrick walls with alternating wood plank trim bands, glass windows on both floors, and sits on a concrete foundation platform. The roof is constructed from wood planks in a tiered gable configuration.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "rectangular box with stepped pyramidal roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral symmetry on all visible sides",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 8,
+    "depth": 8,
+    "height": 10
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "wood",
+      "role": "roof_and_trim_bands",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.85
+    },
+    {
+      "name": "concrete",
+      "role": "foundation_platform",
+      "confidence": 0.8
+    }
+  ],
+  "elements": [
+    "windows (4 per floor, arranged in 2x2 grid)",
+    "stepped pyramidal roof with wood planks",
+    "horizontal wood trim bands between floors",
+    "concrete foundation platform",
+    "no visible entrance door"
+  ],
+  "rebuild_hints": [
+    "Build 8x8 base foundation with concrete blocks",
+    "Construct first floor walls with stonebrick, 4 blocks high",
+    "Add horizontal wood plank trim band at mid-height",
+    "Place 4 glass windows (2x2 arrangement) on first floor",
+    "Build second floor walls with stonebrick, 4 blocks high",
+    "Add second horizontal wood plank trim band",
+    "Place 4 glass windows (2x2 arrangement) on second floor",
+    "Create stepped pyramidal roof: 8x8 base, then 6x6, then 4x4, then 2x2 using wood planks",
+    "Ensure all roof steps are centered and symmetrical",
+    "Add concrete platform foundation extending 1-2 blocks beyond building footprint"
+  ],
+  "uncertainties": [
+    "Exact window frame material (appears to be concrete or stone but not fully clear)",
+    "Interior layout and room configuration not visible",
+    "Presence of doors or entrance points not visible from exterior views",
+    "Exact height measurement uncertain; estimate based on visible block proportions",
+    "Roof material texture suggests wood planks but could be alternative wood variant"
+  ],
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "building": "building_049",
+  "created_at": "2026-03-01T04:56:28.311816+00:00"
+}

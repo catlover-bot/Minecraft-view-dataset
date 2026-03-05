@@ -1,0 +1,448 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 12
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "netherbrick",
+    "trim": "cobblestone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 12,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_x_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor: single hall, possible small entry alcove",
+        "perimeter_profile": "rectangle with recessed entrance on north short side"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "upper floor: single open area",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 4,
+        "y1": 1,
+        "z1": 0,
+        "x2": 4,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 3,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 2,
+        "z1": 0,
+        "x2": 7,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 6,
+        "z1": 0,
+        "x2": 3,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 6,
+        "z1": 0,
+        "x2": 5,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 6,
+        "z1": 0,
+        "x2": 7,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 12,
+        "x2": 3,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 4,
+        "y1": 2,
+        "z1": 12,
+        "x2": 5,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 6,
+        "y1": 2,
+        "z1": 12,
+        "x2": 7,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 6,
+        "z1": 12,
+        "x2": 3,
+        "y2": 7,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 4,
+        "y1": 6,
+        "z1": 12,
+        "x2": 5,
+        "y2": 7,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 6,
+        "y1": 6,
+        "z1": 12,
+        "x2": 7,
+        "y2": 7,
+        "z2": 12
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 8,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 11,
+          "block": "netherbrick"
+        },
+        {
+          "y": 9,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 12,
+          "block": "slab_stone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": -1,
+      "z1": 0,
+      "x2": 8,
+      "y2": -1,
+      "z2": 12,
+      "block": "cobblestone",
+      "purpose": "shallow_dug_plot_fill"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "ground_floor_and_walls_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 8,
+      "y2": 8,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "second_floor_walls_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 12,
+      "block": "cobblestone",
+      "purpose": "decorative_belt_between_floors"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 12,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "minecraft:cobblestone",
+      "from": [0, 0, 0],
+      "to": [8, 0, 12],
+      "desc": "Cobblestone foundation/perimeter 1 block high (ground level layer)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:dirt",
+      "from": [0, -1, 0],
+      "to": [8, -1, 12],
+      "desc": "Surrounding shallow dug plot of dirt below foundation (1 block deep)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [1, 1, 1],
+      "to": [7, 6, 11],
+      "desc": "Primary stonebrick walls for two stories (walls full volume before carving openings)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:cobblestone",
+      "from": [1, 4, 1],
+      "to": [7, 4, 11],
+      "desc": "Decorative horizontal cobblestone band between floors (single course at y=4)."
+    },
+    {
+      "op": "replace",
+      "block": "minecraft:air",
+      "from": [1, 1, 1],
+      "to": [7, 1, 11],
+      "desc": "Create interior ground-floor empty space (leave floor layer to be placed separately)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_planks",
+      "from": [1, 1, 1],
+      "to": [7, 1, 11],
+      "desc": "Interior ground-floor wooden floor (1 block thick) at y=1."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_planks",
+      "from": [1, 5, 1],
+      "to": [7, 5, 11],
+      "desc": "Second-floor wooden floor (typical mid-level floor) at y=5."
+    },
+    {
+      "op": "setblock_rows",
+      "pattern": [
+        {"block": "minecraft:stone_brick_stairs", "facing": "north"},
+        {"block": "minecraft:stone_brick_stairs", "facing": "south"}
+      ],
+      "positions": [
+        [2, 4, 1],
+        [6, 4, 1]
+      ],
+      "desc": "Stonebrick stairs used as window sills under upper windows (short faces)."
+    },
+    {
+      "op": "carve",
+      "shape": "rectangle",
+      "from": [3, 2, 0],
+      "to": [5, 3, 0],
+      "desc": "Ground-floor centered recessed entrance opening on short side (north face)."
+    },
+    {
+      "op": "place",
+      "block": "minecraft:air",
+      "from": [4, 2, 0],
+      "to": [4, 3, 0],
+      "desc": "Door gap space (2 high) centered at entrance for door placement by player."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glowstone",
+      "from": [5, 2, 0],
+      "to": [5, 2, 0],
+      "desc": "Glowstone light adjacent to entrance (right side)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [2, 3, 0],
+      "to": [4, 3, 0],
+      "desc": "Ground-floor windows (short north face) 3 across centered at y=3 (one-block-high panes)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [2, 6, 0],
+      "to": [4, 6, 0],
+      "desc": "Upper-floor windows (short north face) aligned above ground floor at y=6."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [2, 3, 12],
+      "to": [4, 3, 12],
+      "desc": "Ground-floor windows on opposite short (south) face."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [2, 6, 12],
+      "to": [4, 6, 12],
+      "desc": "Upper-floor windows on opposite short (south) face."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [1, 3, 4],
+      "to": [1, 3, 8],
+      "desc": "Ground-floor windows on one long side (west) - row of 3 centered along length at y=3."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [1, 6, 4],
+      "to": [1, 6, 8],
+      "desc": "Upper-floor windows on west long side aligned above at y=6."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [7, 3, 4],
+      "to": [7, 3, 8],
+      "desc": "Ground-floor windows on opposite long side (east) centered at y=3."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [7, 6, 4],
+      "to": [7, 6, 8],
+      "desc": "Upper-floor windows on east long side aligned above at y=6."
+    },
+    {
+      "op": "outline",
+      "block": "minecraft:stone_slab",
+      "from": [0, 7, 0],
+      "to": [8, 7, 12],
+      "desc": "Stone slab coping / roof border 1-block wide at y=7 (surrounding roof)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:nether_bricks",
+      "from": [1, 6, 1],
+      "to": [7, 6, 11],
+      "desc": "Flat dark roof interior inset (netherbrick) filling roof center at y=6 (one-block thickness)."
+    },
+    {
+      "op": "air_cut",
+      "from": [0, 1, 0],
+      "to": [8, 7, 12],
+      "desc": "Clear outer air around structure to ensure openings and recessed entrance are unobstructed (not overwriting placed foundation or roof)."
+    }
+  ],
+  "self_check": {
+    "bbox_contains_operations": true,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance_opening": true,
+    "material_coherence": true,
+    "notes": "Bounding box adjusted: ymax reduced to 8 to match height estimate (y runs 0-8 inclusive covers ground to roof slab at y=7). All operation coordinates fall within bbox. Operation count is 20 (<260). Materials segregated by role: cobblestone foundation, stone_bricks walls, nether_bricks roof interior, stone_slab coping, glass_pane windows, oak_planks floors, glowstone entrance light. Roof inset implemented at y=6 with

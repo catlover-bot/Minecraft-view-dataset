@@ -1,0 +1,274 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 11,
+    "zmin": 0,
+    "zmax": 36
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "grass_block",
+    "accent": "quartz_block",
+    "band_light": "andesite",
+    "tower": "stonebrick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 36,
+          "label": "main_pavilion"
+        }
+      ],
+      "symmetry": "bilateral_z_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 5
+        },
+        "rooms_hint": "open courtyard with perimeter walkway",
+        "perimeter_profile": "rectangle_with_inner_void"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 6,
+        "z1": 0,
+        "x2": 12,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 8,
+        "y1": 6,
+        "z1": 36,
+        "x2": 12,
+        "y2": 8,
+        "z2": 36
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 34,
+          "block": "wood"
+        },
+        {
+          "y": 6,
+          "x1": 4,
+          "z1": 4,
+          "x2": 16,
+          "z2": 32,
+          "block": "wood"
+        },
+        {
+          "y": 7,
+          "x1": 6,
+          "z1": 6,
+          "x2": 14,
+          "z2": 30,
+          "block": "wood"
+        },
+        {
+          "y": 8,
+          "x1": 8,
+          "z1": 8,
+          "x2": 12,
+          "z2": 28,
+          "block": "wood"
+        },
+        {
+          "y": 9,
+          "x1": 9,
+          "z1": 10,
+          "x2": 11,
+          "z2": 26,
+          "block": "glass"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 36,
+      "block": "dirt",
+      "purpose": "foundation_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 36,
+      "block": "quartz_block",
+      "purpose": "perimeter_border"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 19,
+      "y2": 2,
+      "z2": 35,
+      "block": "stonebrick",
+      "purpose": "lower_band_dark"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 19,
+      "y2": 3,
+      "z2": 35,
+      "block": "andesite",
+      "purpose": "middle_band_light"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2": 35,
+      "block": "stonebrick",
+      "purpose": "upper_band_dark"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 36,
+      "block": "quartz_block",
+      "purpose": "corner_accent_west"
+    },
+    {
+      "op": "fill",
+      "x1": 20,
+      "y1": 2,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 36,
+      "block": "quartz_block",
+      "purpose": "corner_accent_east"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "corner_accent_north"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 36,
+      "x2": 20,
+      "y2": 4,
+      "z2": 36,
+      "block": "quartz_block",
+      "purpose": "corner_accent_south"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 5,
+      "z1": 2,
+      "x2": 5,
+      "y2": 11,
+      "z2": 5,
+      "block": "stonebrick",
+      "purpose": "tower_northwest"
+    },
+    {
+      "op": "fill",
+      "x1": 15,
+      "y1":
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 11,
+  "zmin": 0,
+  "zmax": 36,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 20, "y2": 0, "z2": 36, "block": "dirt"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 0, "x2": 20, "y2": 1, "z2": 36, "block": "stonebrick"},
+    {"type": "fill", "x1": 0, "y1": 2, "z1": 0, "x2": 20, "y2": 2, "z2": 36, "block": "stone"},
+    {"type": "fill", "x1": 0, "y1": 3, "z1": 0, "x2": 20, "y2": 3, "z2": 36, "block": "stonebrick"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 19, "y2": 1, "z2": 35, "block": "grass_block"},
+    {"type": "fill", "x1": 0, "y1": 4, "z1": 0, "x2": 20, "y2": 4, "z2": 36, "block": "quartz_block"},
+    {"type": "fill", "x1": 0, "y1": 5, "z1": 0, "x2": 3, "y2": 10, "z2": 3, "block": "stonebrick"},
+    {"type": "fill", "x1": 17, "y1": 5, "z1": 0, "x2": 20, "y2": 10, "z2": 3, "block": "stonebrick"},
+    {"type": "fill", "x1": 17, "y1": 5, "z1": 33, "x2": 20, "y2": 10, "z2": 36, "block": "stonebrick"},
+    {"type": "fill", "x1": 0, "y1": 5, "z1": 0, "x2": 2, "y2": 9, "z2": 2, "block": "glass"},
+    {"type": "fill", "x1": 18, "y1": 5, "z1": 1, "x2": 20, "y2": 9, "z2": 3, "block": "glass"},
+    {"type": "fill", "x1": 18, "y1": 5, "z1": 33, "x2": 20, "y2": 9, "z2": 35, "block": "glass"},
+    {"type": "fill", "x1": 0, "y1": 11, "z1": 8, "x2": 20, "y2": 11, "z2": 28, "block": "oak_stairs"},
+    {"type": "fill", "x1": 1, "y1": 11, "z1": 9, "x2": 19, "y2": 11, "z2": 27, "block": "oak_stairs"},
+    {"type": "fill", "x1": 2, "y1": 11, "z1": 10, "x2": 18, "y2": 11, "z2": 26, "block": "oak_stairs"},
+    {"type": "fill", "x1": 3, "y1": 11, "z1": 11, "x2": 17, "y2": 11, "z2": 25, "block": "oak_stairs"},
+    {"type": "fill", "x1": 4, "y1": 11, "z1": 12, "x2": 16, "y2": 11, "z2": 24, "block": "oak_stairs"},
+    {"type": "fill", "x1": 5, "y1": 11, "z1": 13, "x2": 15, "y2": 11, "z2": 23, "block": "oak_stairs"},
+    {"type": "fill", "x1": 6, "y1": 11, "z1": 14, "x2": 14, "y2": 11, "z2": 22, "block": "oak_stairs"},
+    {"type": "fill", "x1": 7, "y1": 11, "z1": 15, "x2": 13, "y2": 11, "z2": 21, "block": "oak_stairs"},
+    {"type": "fill", "x1": 8, "y1": 11, "z1": 16, "x2": 12, "y2": 11, "z2": 20, "block": "oak_stairs"},
+    {"type": "fill", "x1": 9, "y1": 11, "z1": 17, "x2": 11, "y2": 11, "z2": 19, "block": "oak_stairs"},
+    {"type": "fill", "x1": 8, "y1": 11, "z1": 18, "x2": 12, "y2": 11, "z2": 18, "block": "glass"},
+    {"type": "fill", "x1": 2, "y1": 4, "z1": 2, "x2": 18, "y2": 4, "z2": 34, "block": "oak_planks"},
+    {"type": "fill", "x1": 4, "y1": 4, "z1": 4, "x2": 16, "y2": 4, "z2": 32, "block": "quartz_block"},
+    {"type": "fill", "x1": 6, "y1": 4, "z1": 8, "x2": 14, "y2": 4, "z2": 28, "block": "quartz_block"},
+    {"type": "fill", "x1": 10, "y1": 4, "z1": 10, "x2": 10, "y2": 4, "z2": 26, "block": "quartz_block"},
+    {"type": "fill", "x1": 0, "y1": 10, "z1": 0, "x2": 3, "y2": 10, "z2": 3, "block": "stone_slab"},
+    {"type": "fill", "x1": 17, "y1": 10, "z1": 0, "x2": 20, "y2": 10, "z2": 3, "block": "stone_slab"},
+    {"type": "fill", "x1": 17, "y1": 10, "z1": 33, "x2": 20, "y2": 10, "z2": 36, "block": "stone_slab"},

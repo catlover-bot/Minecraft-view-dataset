@@ -1,0 +1,428 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 27,
+    "ymin": 0,
+    "ymax": 14,
+    "zmin": 0,
+    "zmax": 23
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "sea_lantern",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "l_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 23,
+          "label": "outer_rect"
+        },
+        {
+          "x1": 4,
+          "z1": 4,
+          "x2": 22,
+          "z2": 18,
+          "label": "inner_courtyard_cutout"
+        }
+      ],
+      "symmetry": "approx_bilateral_x_centered_between_towers"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground level hall surrounding courtyard",
+        "perimeter_profile": "outer ring with inner courtyard"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "upper gallery / tower shafts",
+        "perimeter_profile": "ring with tower bases"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 13,
+        "y1": 1,
+        "z1": 0,
+        "x2": 14,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 27,
+        "y1": 6,
+        "z1": 6,
+        "x2": 27,
+        "y2": 7,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 17,
+        "x2": 0,
+        "y2": 7,
+        "z2": 17
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 10,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 10,
+          "x1": 4,
+          "z1": 4,
+          "x2": 22,
+          "z2": 18,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 5,
+          "z1": 5,
+          "x2": 21,
+          "z2": 17,
+          "block": "brick"
+        },
+        {
+          "y": 12,
+          "x1": 7,
+          "z1": 7,
+          "x2": 19,
+          "z2": 15,
+          "block": "brick"
+        },
+        {
+          "y": 13,
+          "x1": 10,
+          "z1": 9,
+          "x2": 17,
+          "z2": 13,
+          "block": "brick"
+        },
+        {
+          "y": 13,
+          "x1": 4,
+          "z1": 4,
+          "x2": 22,
+          "z2": 4,
+          "block": "quartz_block"
+        },
+        {
+          "y": 13,
+          "x1": 4,
+          "z1": 18,
+          "x2": 22,
+          "z2": 18,
+          "block": "quartz_block"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 27,
+      "y2": 0,
+      "z2": 23,
+      "block": "dirt",
+      "purpose": "plot_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 27,
+      "y2": 9,
+      "z2": 23,
+      "block": "sandstone",
+      "purpose": "outer_shell_solid_block"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 1,
+      "z1": 4,
+      "x2": 22,
+      "y2": 8,
+      "z2": 18,
+      "purpose": "inner_courtyard_hollow"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 26,
+      "y2": 4,
+      "z2": 22,
+      "purpose": "interior_space_clearance_ground",
+      "notes": "create hollow interior rooms but keep outer shell thickness"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 9,
+      "z2": 23,
+      "block": "quartz_block",
+      "purpose": "west_trim_pilaster"
+    },
+    {
+      "op": "fill",
+      "x1": 27,
+      "y1": 1,
+      "z1": 0,
+      "x2": 27,
+      "y2": 9,
+      "z2": 23,
+      "block": "quartz_block",
+      "purpose": "east_trim_pilaster"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 27,
+      "y2": 1,
+      "z2": 23,
+      "block": "quartz_block",
+      "purpose": "base_horizontal_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 27,
+      "y2": 4,
+      "z2": 23,
+      "block": "quartz_block",
+      "purpose": "mid_horizontal_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 27,
+      "y2": 8,
+      "z2": 23,
+      "block": "quartz_block",
+      "purpose": "upper_horizontal_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 2,
+      "y2": 9,
+      "z2": 21,
+      "block": "quartz_block",
+      "purpose": "north_south_pilasters_even"
+    },
+    {
+      "op": "fill",
+      "x1": 25,
+      "y1": 1,
+      "z1": 2,
+      "x2": 25,
+      "y2": 9,
+      "z2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 27,
+  "ymin": 0,
+  "ymax": 14,
+  "zmin": 0,
+  "zmax": 23,
+  "operations": [
+    {
+      "id": 1,
+      "type": "fill",
+      "block": "minecraft:dirt",
+      "from": { "x": 0, "y": 0, "z": 0 },
+      "to": { "x": 27, "y": 0, "z": 23 },
+      "comment": "ground plot (dirt floor/plot)"
+    },
+    {
+      "id": 2,
+      "type": "outline_rect",
+      "block": "minecraft:sandstone",
+      "from": { "x": 2, "y": 1, "z": 2 },
+      "to": { "x": 25, "y": 1, "z": 21 },
+      "thickness": 1,
+      "comment": "outer wall base outline at floor level"
+    },
+    {
+      "id": 3,
+      "type": "hollow_box",
+      "block": "minecraft:sandstone",
+      "from": { "x": 2, "y": 1, "z": 2 },
+      "to": { "x": 25, "y": 6, "z": 21 },
+      "comment": "main exterior walls (sandstone) ground to first-floor height"
+    },
+    {
+      "id": 4,
+      "type": "hollow_box",
+      "block": "minecraft:sandstone",
+      "from": { "x": 5, "y": 1, "z": 5 },
+      "to": { "x": 22, "y": 6, "z": 18 },
+      "invert": true,
+      "comment": "inner courtyard carved out (creates L-shape footprint when combined with outer walls)"
+    },
+    {
+      "id": 5,
+      "type": "fill",
+      "block": "minecraft:quartz_block",
+      "from": { "x": 2, "y": 3, "z": 2 },
+      "to": { "x": 25, "y": 3, "z": 21 },
+      "comment": "horizontal quartz band at y=3"
+    },
+    {
+      "id": 6,
+      "type": "fill",
+      "block": "minecraft:quartz_block",
+      "from": { "x": 2, "y": 5, "z": 2 },
+      "to": { "x": 25, "y": 5, "z": 21 },
+      "comment": "horizontal quartz band at y=5"
+    },
+    {
+      "id": 7,
+      "type": "columns",
+      "block": "minecraft:quartz_block",
+      "positions": [
+        { "x": 2, "z": 2 },
+        { "x": 2, "z": 21 },
+        { "x": 25, "z": 2 },
+        { "x": 25, "z": 21 },
+        { "x": 13, "z": 2 },
+        { "x": 13, "z": 21 }
+      ],
+      "from_y": 1,
+      "to_y": 6,
+      "comment": "vertical pilasters at corners and midpoints"
+    },
+    {
+      "id": 8,
+      "type": "fill",
+      "block": "minecraft:sandstone",
+      "from": { "x": 3, "y": 1, "z": 3 },
+      "to": { "x": 24, "y": 1, "z": 20 },
+      "comment": "interior ground floor layer (sandstone slabs not used to keep simple)"
+    },
+    {
+      "id": 9,
+      "type": "doorway",
+      "block": "minecraft:air",
+      "from": { "x": 13, "y": 1, "z": 2 },
+      "to": { "x": 15, "y": 3, "z": 2 },
+      "comment": "central recessed entrance on long exterior face; 3-high opening between x=13..15 at z=2"
+    },
+    {
+      "id": 10,
+      "type": "fill",
+      "block": "minecraft:oak_planks",
+      "from": { "x": 3, "y": 6, "z": 3 },
+      "to": { "x": 24, "y": 6, "z": 20 },
+      "comment": "first floor/ceiling layer (planks) at y=6 to enable second level"
+    },
+    {
+      "id": 11,
+      "type": "hollow_box",
+      "block": "minecraft:sandstone",
+      "from": { "x": 4, "y": 7, "z": 4 },
+      "to": { "x": 24, "y": 11, "z": 20 },
+      "comment": "second floor outer walls (reduced footprint to allow parapet and roof)"
+    },
+    {
+      "id": 12,
+      "type": "fill",
+      "block": "minecraft:quartz_block",
+      "from": { "x": 4, "y": 9, "z": 4 },
+      "to": { "x": 24, "y": 9, "z": 20 },
+      "comment": "quartz band on second floor"
+    },
+    {
+      "id": 13,
+      "type": "place_blocks_pattern",
+      "pattern": [
+        { "dx": 0, "dz": 0 },
+        { "dx": 0, "dz": 2 }
+      ],
+      "block": "minecraft:white_wall",
+      "positions": [
+        { "x": 2, "y": 0, "z": 2 },
+        { "x": 5, "y": 0, "z": 2 }
+      ],
+      "comment": "bollards — note: use fence alternative if white_wall not available; kept sparse"
+    },
+    {
+      "id": 14,
+      "type": "place_repeated",
+      "block": "minecraft:white_wool",
+      "positions": [
+        { "x": 2, "y": 1, "z": 4 },
+        { "x": 2, "y": 1, "z": 7 },
+        { "x": 2, "y": 1, "z": 10 },
+        { "x": 2, "y": 1, "z": 13 },
+        { "x": 2, "y": 1, "z": 16 },
+        { "x": 2, "y": 1, "z": 19 },
+        { "x": 25, "y": 1, "z": 4 },
+        { "x": 25, "y": 1, "z": 7 },
+        { "x": 25, "y": 1, "z": 10 },
+        { "x": 25, "y": 1, "z": 13 },
+        { "x": 25, "y": 1, "z": 16 },
+        { "x": 25, "y": 1, "z": 19 }
+      ],
+      "comment": "spaced bollards around base (every 3 blocks) using white_wool as placeholder for fence/quartz_posts"
+    },
+    {
+      "id": 15,
+      "type": "tower",
+      "block": "minecraft:sandstone",
+      "from": { "x": 3, "y": 6, "z": 3 },
+      "to": { "x": 7, "y": 13, "z": 7 },
+      "wall_thickness": 1,
+      "fill_interior": false,
+      "comment": "southwest tower shaft"
+    },
+    {
+      "id":

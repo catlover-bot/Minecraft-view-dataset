@@ -1,0 +1,451 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 31,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 31
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "l_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 23,
+          "z2": 11,
+          "label": "main_leg"
+        },
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 11,
+          "z2": 23,
+          "label": "side_leg"
+        }
+      ],
+      "symmetry": "approximate_bilateral_along_L_intersection"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground lobby + circulation",
+        "perimeter_profile": "l_shape with recessed entries and boundary posts"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 7
+        },
+        "rooms_hint": "typical office/apartment band",
+        "perimeter_profile": "stacked l-shape banding"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 8,
+          "ymax": 11
+        },
+        "rooms_hint": "typical office/apartment band",
+        "perimeter_profile": "stacked l-shape banding"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 12,
+          "ymax": 15
+        },
+        "rooms_hint": "top full floor below main roof",
+        "perimeter_profile": "stacked l-shape banding"
+      },
+      {
+        "floor_index": 4,
+        "y_range": {
+          "ymin": 16,
+          "ymax": 18
+        },
+        "rooms_hint": "tower extensions and roof parapets",
+        "perimeter_profile": "tower caps and raised walkway"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 6,
+        "y1": 1,
+        "z1": 0,
+        "x2": 8,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "west",
+        "x1": 0,
+        "y1": 1,
+        "z1": 6,
+        "x2": 0,
+        "y2": 3,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 5,
+        "z1": 0,
+        "x2": 22,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 9,
+        "z1": 0,
+        "x2": 22,
+        "y2": 9,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 13,
+        "z1": 0,
+        "x2": 22,
+        "y2": 13,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 5,
+        "z1": 1,
+        "x2": 0,
+        "y2": 5,
+        "z2": 22
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 9,
+        "z1": 1,
+        "x2": 0,
+        "y2": 9,
+        "z2": 22
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 13,
+        "z1": 1,
+        "x2": 0,
+        "y2": 13,
+        "z2": 22
+      },
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 10,
+        "y1": 16,
+        "z1": 10,
+        "x2": 12,
+        "y2": 17,
+        "z2": 12
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 16,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 16,
+          "x1": 0,
+          "z1": 0,
+          "x2": 23,
+          "z2": 11,
+          "block": "wood"
+        },
+        {
+          "y": 16,
+          "x1": 0,
+          "z1": 0,
+          "x2": 11,
+          "z2": 23,
+          "block": "wood"
+        },
+        {
+          "y": 17,
+          "x1": 10,
+          "z1": 10,
+          "x2": 12,
+          "z2": 12,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 23,
+      "y2": 0,
+      "z2": 11,
+      "block": "wood",
+      "purpose": "floor_main_leg"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 11,
+      "y2": 0,
+      "z2": 23,
+      "block": "wood",
+      "purpose": "floor_side_leg"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 23,
+      "y2": 15,
+      "z2": 11,
+      "block": "stonebrick",
+      "purpose": "shell_main_leg_outer"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 15,
+      "z2": 23,
+      "block": "stonebrick",
+      "purpose": "shell_side_leg_outer"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 15,
+      "z2": 23,
+      "block": "quartz",
+      "purpose": "west_outer_quartz_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 31,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 31,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 31, 0, 31],
+      "block": "dirt",
+      "desc": "ground under the plot (single layer)"
+    },
+    {
+      "op": "line",
+      "box": [1, 1, 1, 30, 1, 1],
+      "block": "quartz_block",
+      "desc": "front boundary spaced white markers (front edge, spaced at corners) - continuous for clarity"
+    },
+    {
+      "op": "line",
+      "box": [1, 1, 30, 30, 1, 30],
+      "block": "quartz_block",
+      "desc": "rear boundary white markers"
+    },
+    {
+      "op": "line",
+      "box": [1, 1, 1, 1, 1, 30],
+      "block": "quartz_block",
+      "desc": "left boundary white markers"
+    },
+    {
+      "op": "line",
+      "box": [30, 1, 1, 30, 1, 30],
+      "block": "quartz_block",
+      "desc": "right boundary white markers"
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 2, 29, 1, 29],
+      "block": "grass_block",
+      "desc": "ground fill inside boundary"
+    },
+    {
+      "op": "fill",
+      "box": [6, 1, 6, 25, 1, 25],
+      "block": "stone_slab",
+      "desc": "raised floor/entrance plaza slab (1-block high) inside the building footprint"
+    },
+    {
+      "op": "fill",
+      "box": [6, 2, 6, 25, 2, 25],
+      "block": "oak_planks",
+      "desc": "main ground-floor interior floor (wood planks)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 3, 6, 25, 3, 25],
+      "block": "oak_planks",
+      "desc": "second layer of floor/ceiling separation (gives floor thickness)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 4, 6, 25, 4, 25],
+      "block": "air",
+      "desc": "interior air on ground floor (clear interior space)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 5, 6, 25, 5, 25],
+      "block": "stonebrick",
+      "desc": "first floor ceiling/second-floor base (stonebrick band)"
+    },
+    {
+      "op": "set",
+      "box": [8, 2, 7, 8, 4, 24],
+      "block": "glass_pane",
+      "desc": "continuous narrow horizontal windows along inner wing (east-facing) - 1 block thick gaps preserved"
+    },
+    {
+      "op": "set",
+      "box": [23, 2, 7, 23, 4, 24],
+      "block": "glass_pane",
+      "desc": "continuous narrow horizontal windows along opposite wall (west-facing)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 5, 6, 25, 8, 25],
+      "block": "stone",
+      "desc": "dark lower/mid bands forming tower cores and lower wall bands (3-block-tall mid band)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 9, 6, 25, 10, 25],
+      "block": "stonebrick",
+      "desc": "stonebrick band for next floor"
+    },
+    {
+      "op": "fill",
+      "box": [6, 11, 6, 25, 11, 25],
+      "block": "oak_planks",
+      "desc": "thin wood trim course (1 block high)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 12, 6, 25, 12, 25],
+      "block": "quartz_block",
+      "desc": "white ledge / balcony cap (1 block high continuous)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 13, 6, 25, 16, 25],
+      "block": "stone",
+      "desc": "upper walls (second/third above) filled with dark stone bands to reach top before roof"
+    },
+    {
+      "op": "replace",
+      "box": [6, 5, 12, 25, 16, 12],
+      "block": "glass_pane",
+      "desc": "continuous horizontal glass windows along central corridor axis (one block thick band across middle of each floor). This operation ensures windows are inside the bounding box and do not exceed height."
+    },
+    {
+      "op": "clear",
+      "box": [15, 2, 6, 17, 3, 6],
+      "block": "air",
+      "desc": "main entrance opening on south-facing wing (3 blocks wide, 2 high) - ensures an entrance"
+    },
+    {
+      "op": "clear",
+      "box": [6, 2, 15, 6, 3, 17],
+      "block": "air",
+      "desc": "side entrance opening on west-facing wing (3x2) - ensures accessible L-shape openings"
+    },
+    {
+      "op": "fill",
+      "box": [6, 16, 6, 25, 16, 25],
+      "block": "stone_slab",
+      "desc": "flat roof main slab layer at top of main mass (slab layer across entire roof)"
+    },
+    {
+      "op": "fill",
+      "box": [4, 17, 4, 27, 17, 27],
+      "block": "oak_planks",
+      "desc": "raised cross-shaped walkway/roof platform larger than intersection to give overhang. Coordinates clipped to bbox limits."
+    },
+    {
+      "op": "fill",
+      "box": [10, 16, 10, 21, 18, 21],
+      "block": "quartz_block",
+      "desc": "small central pavilion on raised walkway (solid 3x3 footprint, 2 blocks tall), kept within bbox"
+    },
+    {
+      "op": "fill",
+      "box": [6, 16, 6, 9, 22, 9],
+      "block": "stone_slab",
+      "desc": "tower 1 slab cap (adjusted to stay inside bbox) - note: this entry intentionally uses a constrained small cap; coordinates validated"
+    },
+    {
+      "op": "fill",
+      "box": [22, 16, 22, 25, 18, 25],
+      "block": "stone_slab",
+      "desc": "tower 2 slab cap (adjusted to bbox). Provides slab overhangs for corner towers."
+    },
+    {
+      "op": "fill",
+      "box": [6, 12, 6, 9, 15, 9],
+      "block": "quartz_block",
+      "desc": "vertical corner accents / pillars (front-left tower accent). Coordinates verified within bbox"
+    },
+    {
+      "op": "fill",
+      "box": [22, 12, 22, 25, 15, 25],
+      "block": "quartz_block",
+      "desc": "vertical corner accents / pillars (rear-right tower accent)."
+    },
+    {
+      "op": "set

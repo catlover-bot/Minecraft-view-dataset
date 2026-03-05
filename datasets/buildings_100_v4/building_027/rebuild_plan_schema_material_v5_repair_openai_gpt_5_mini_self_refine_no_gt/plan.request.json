@@ -1,0 +1,191 @@
+{
+  "building": "building_027",
+  "source_plan": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini/plan.json",
+  "description_path": "description_openai_gpt_5_mini/description.json",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 17,
+    "accepted_operations_count": 17,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "primary wall and tower blocks (includes carved/regular variants visible)"
+      },
+      "floor": {
+        "block": "cobblestone",
+        "score": 0.8,
+        "source_role": "foundation/edge decorative blocks and lower parapet"
+      },
+      "roof": {
+        "block": "nether_brick",
+        "score": 0.7,
+        "source_role": "flat roof/top surface (dark maroon roofing)"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.9,
+        "source_role": "small windows in towers and walls"
+      },
+      "light": {
+        "block": "glowstone",
+        "score": 0.9,
+        "source_role": "lighting on parapets and tower tops"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [],
+      "coherence_repairs": []
+    },
+    "budget_source": "root.material_budget",
+    "budget_present_in_input": true,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 55,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 1,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 0.7058823529411765,
+    "role_infer_reasons": {
+      "explicit_role": 12,
+      "unknown": 5
+    },
+    "self_repair_report": {
+      "added_operations": 43,
+      "added_tags": [
+        "roof",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [
+      {
+        "role": "roof",
+        "target_blocks": 0,
+        "actual_blocks": 884,
+        "relative_error": 1.0
+      },
+      {
+        "role": "glass",
+        "target_blocks": 0,
+        "actual_blocks": 76,
+        "relative_error": 1.0
+      },
+      {
+        "role": "light",
+        "target_blocks": 0,
+        "actual_blocks": 4,
+        "relative_error": 1.0
+      }
+    ],
+    "schema_violations": [],
+    "strict_blocking_issues": [
+      "material_budget_violation"
+    ],
+    "valid_strict": false
+  },
+  "self_refine_no_gt": {
+    "enabled": true,
+    "accepted_iterations": 0,
+    "total_added_ops": 0,
+    "final_score": 0.7816234852922607,
+    "final_components": {
+      "material": 0.8141623389302686,
+      "dim": 0.9833333333333334,
+      "roof": 1.0,
+      "window": 0.0,
+      "entrance": 1.0
+    },
+    "history": [
+      {
+        "iter": 0,
+        "accepted": true,
+        "score": 0.7816234852922607,
+        "components": {
+          "material": 0.8141623389302686,
+          "dim": 0.9833333333333334,
+          "roof": 1.0,
+          "window": 0.0,
+          "entrance": 1.0
+        },
+        "added_ops": 0
+      },
+      {
+        "iter": 1,
+        "accepted": false,
+        "gain": 0.0033309850725482537,
+        "score": 0.7849544703648089,
+        "components": {
+          "material": 0.8236794391375496,
+          "dim": 0.9833333333333334,
+          "roof": 1.0,
+          "window": 0.0,
+          "entrance": 1.0
+        },
+        "added_ops": 40,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 4
+        }
+      }
+    ],
+    "profile": {
+      "max_iterations": 2,
+      "min_score_gain": 0.01,
+      "max_added_ops_per_iter": 64,
+      "strict_schema": true,
+      "enforce_role_fixed": true,
+      "require_material_budget": true,
+      "material_budget_tolerance": 0.35,
+      "role_fix_min_confidence": 0.78,
+      "prefer_description_palette": true
+    }
+  },
+  "created_at": "2026-03-01T11:25:10.902711+00:00"
+}

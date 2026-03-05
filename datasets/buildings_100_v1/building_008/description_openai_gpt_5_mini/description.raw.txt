@@ -1,0 +1,74 @@
+{
+  "summary": "Two-story rectangular house with a stepped red brick gable roof, sandstone and wood banded walls, corner stonebrick pillars, continuous horizontal windows on both floors, and a raised white stone (quartz-like) border platform around the base. The building sits centered in a shallow dug plot.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "rectangular block with a central pitched/stepped roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis (front/back mirror)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 15,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "sandstone",
+      "role": "wall_primary",
+      "confidence": 0.85
+    },
+    {
+      "name": "wood",
+      "role": "horizontal_trim/floor_separator (planks)",
+      "confidence": 0.8
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner_pillars",
+      "confidence": 0.75
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "quartz",
+      "role": "base_border/ledge",
+      "confidence": 0.7
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof/step detail (possible stone slabs)",
+      "confidence": 0.4
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows on both floors (three or more panes long)",
+    "main raised border platform (white blocks) around base",
+    "stepped gable roof made of brick with stone/quartz edge blocks",
+    "corner vertical stonebrick pillars spanning two floors",
+    "wood plank horizontal band separating floors"
+  ],
+  "rebuild_hints": [
+    "Footprint: rectangular inner core roughly 9x15 blocks (visible roof occupies central narrower area; uncertainty exists — measure when rebuilding).",
+    "Walls: use sandstone (or similar pale block) for main wall faces with continuous 1xN window rows centered on each floor; place a wooden plank band between the two floors.",
+    "Corners: stack stonebrick pillars at each corner rising full height to meet the roof edge.",
+    "Base: create a 1-block-high white border (quartz or smooth white block) flush around the building footprint, slightly expanding past wall edges.",
+    "Roof: construct a symmetrical stepped gable in brick centered on the long axis with white/stone edge blocks at the eaves; step the brick up in layers to a low ridge.",
+    "Height layering: allow ~3 blocks interior height per floor (windows centered in that band) and 2–3 layers of roof bricks."
+  ],
+  "uncertainties": [
+    "Exact interior layout and door/entrance placement are not visible from provided views.",
+    "Precise footprint dimensions (width/depth) are estimated from roof and visible wall proportions; could be off by a few blocks.",
+    "The white border material appears quartz-like but could be another smooth white block (confidence 0.7).",
+    "Some roof edge blocks may be stone slabs or smooth stone; small details of roof trim uncertain."
+  ]
+}

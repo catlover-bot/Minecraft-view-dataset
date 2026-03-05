@@ -1,0 +1,77 @@
+{
+  "summary": "Small rectangular single-story modern structure with a raised rim roof and layered exterior bands: lower wooden planks and stone, a middle glass window strip, a white smooth band, and an upper wood band capped by stone slabs. Surrounded by a low white border/ledge set on a dirt foundation.",
+  "building_type": "residential_small|shed_like",
+  "shape": {
+    "overall_form": "simple rectangular box with flat raised central roof area and a shallow parapet",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along long axis (mirrored windows and bands), appears symmetric on all four sides except possible entrance not visible",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 15,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "wood_plank",
+      "role": "accent band / floor / trim",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "lower wall course / decorative",
+      "confidence": 0.85
+    },
+    {
+      "name": "cobblestone",
+      "role": "corner/vertical accent",
+      "confidence": 0.7
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "quartz",
+      "role": "outer low border/ledge",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof cap / parapet top",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood_slab_or_plank_floor",
+      "role": "roof inner floor (visible center)",
+      "confidence": 0.8
+    }
+  ],
+  "elements": [
+    "continuous horizontal window strip (several 1x1 windows in a row)",
+    "raised flat roof with stone slab parapet",
+    "outer low white border/ledge around building footprint",
+    "layered wall bands: bottom wood, stone/stonebrick middle, white band, top wood band",
+    "small cobblestone corner blocks/vertical accents"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular footprint ~9x15 blocks. Place a one-block-high wooden base trim around bottom of exterior walls.",
+    "Add a one- to two-block-high stone/stonebrick course above the wooden base; insert a row of glass windows (1 block high) centered in the wall.",
+    "Above windows place a single smooth white block band (likely quartz) one block high, then a one-block-high wood plank band, capped by stone slabs as a parapet.",
+    "Create an inner raised flat roof inset by one block from the parapet; fill inner roof with wood planks to match photos.",
+    "Surround footprint with a 1-block-high white ledge border offset one block from walls (quartz slabs/blocks)."
+  ],
+  "uncertainties": [
+    "Exact block types: 'quartz' and 'stone_slab' inferred from color/shape but could be smooth stone, and wood species uncertain.",
+    "Precise footprint dimensions: estimated from visible window count and proportions; exact width/depth may differ by ±2 blocks.",
+    "Entrance location and any doors are not visible in provided views; there may be an entry on an unseen side.",
+    "Interior layout and height: only exterior shell visible so interior floor plan, ceiling height, and any partitions are unknown."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_019",
+  "created_at": "2026-02-28T14:01:35.855693+00:00"
+}

@@ -1,0 +1,547 @@
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 18,
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "",
+      "role": "floor",
+      "role_confidence": 0.88,
+      "role_reason": "ground_flat_layer"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "block": "dirt",
+      "purpose": "ensure surrounding trench ground exists; outside-of-footprint dirt already filled",
+      "role": "floor",
+      "role_confidence": 0.55,
+      "role_reason": "fallback_infer"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 2,
+      "z2": 17,
+      "block": "brick",
+      "purpose": "lower wall layer (2 high when combined with next operation) — first sandstone layer at y=1..2",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 2,
+      "z2": 17,
+      "block": "brick",
+      "purpose": "second sandstone/textured lower wall layer (ensures distinct lower two-layer look). Coordinates inclusive.",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 9,
+      "y2": 3,
+      "z2": 17,
+      "block": "brick",
+      "purpose": "middle smooth band (quartz) at wall midline y=3",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 17,
+      "block": "brick",
+      "purpose": "upper brick course at y=4",
+      "role": "wall",
+      "role_confidence": 0.62,
+      "role_reason": "block_family"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 3,
+      "z": 1,
+      "block": "air",
+      "purpose": "entrance opening on one short side (front center). Creates a 2-high doorway starting at y=1->2; air above ensures clear opening through middle band",
+      "role": "wall",
+      "role_confidence": 0.35,
+      "role_reason": "fallback_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 1,
+      "z1": 1,
+      "x2": 5,
+      "y2": 2,
+      "z2": 1,
+      "block": "air",
+      "purpose": "clear interior door space at ground level (doorway width 1 at front center)",
+      "role": "wall",
+      "role_confidence": 0.35,
+      "role_reason": "fallback_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 17,
+      "block": "brick",
+      "purpose": "interior floor (single layer quartz) at y=1 inside walls",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 5,
+      "z1": 2,
+      "x2": 8,
+      "y2": 5,
+      "z2": 16,
+      "block": "brick",
+      "purpose": "recessed flat roof field (brick) at y=5, inset by one block from coping",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 9,
+      "y2": 5,
+      "z2": 17,
+      "block": "brick",
+      "purpose": "stone slab coping around roof perimeter at y=5 (covers entire top ring). Overlaps roof field edges to form coping",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": 0,
+      "x2": 5,
+      "y2": 3,
+      "z2": 0,
+      "block": "air",
+      "purpose": "self_repair_entrance"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 17,
+      "block": "quartz",
+      "purpose": "ground-level white perimeter ledge/step (1 block wide) placed on top of ground inside footprint; ledge sits at y=1",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 1,
+      "z": 1,
+      "block": "slab_stone",
+      "purpose": "threshold step (stone slab) placed at entrance on top of ground (optional single slab)",
+      "role": "trim",
+      "role_confidence": 0.7,
+      "role_reason": "set_block_family"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 1,
+      "x2": 3,
+      "y2": 3,
+      "z2": 1,
+      "block": "glass",
+      "purpose": "window band on short front side, left segment",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 3,
+      "z1": 1,
+      "x2": 6,
+      "y2": 3,
+      "z2": 1,
+      "block": "glass",
+      "purpose": "window band center area (kept clear where doorway crosses)",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 7,
+      "y1": 3,
+      "z1": 1,
+      "x2": 8,
+      "y2": 3,
+      "z2": 1,
+      "block": "glass",
+      "purpose": "window band on short front side, right segment",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 2,
+      "x2": 1,
+      "y2": 3,
+      "z2": 16,
+      "block": "glass",
+      "purpose": "continuous window band along left long side",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 3,
+      "z1": 2,
+      "x2": 9,
+      "y2": 3,
+      "z2": 16,
+      "block": "glass",
+      "purpose": "continuous window band along right long side",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 17,
+      "x2": 9,
+      "y2": 3,
+      "z2": 17,
+      "block": "glass",
+      "purpose": "continuous window band on rear short side",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 10,
+      "y": 2,
+      "z": 0,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 18,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 10,
+      "y": 2,
+      "z": 18,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "operations_count_valid": true,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof": true,
+    "contains_windows": true,
+    "contains_entrance": true,
+    "material_coherence": true,
+    "all_operations_within_bbox": true,
+    "notes": "Bounding box preserved from draft. Operations count 20 (<=260). Floor, multilayer walls, recessed roof with coping, continuous window band, and an entrance opening are included. Materials kept distinct for roles: sandstone (lower), quartz (middle and interior floor), brick (upper course and roof field), stone slabs for coping and threshold, glass panes for windows, dirt for surrounding ground. All operation coordinates lie within xmin..xmax, ymin..ymax, zmin..zmax.",
+    "operation_count": 24,
+    "operation_count_ok": true,
+    "bbox_consistency": "ok",
+    "role_fixed_consistency": "repaired_6",
+    "material_budget_consistency": "ok",
+    "required_roles_present": true,
+    "issues": []
+  },
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 18
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "floor": "dirt",
+    "light": "glowstone"
+  },
+  "notes": [],
+  "plan_version": "v1",
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 19,
+    "accepted_operations_count": 19,
+    "repaired_operations_count": 19,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "brick",
+      "target_blocks": 921,
+      "actual_blocks": 921,
+      "within_tolerance": true
+    },
+    "roof": {
+      "role": "roof",
+      "block": "brick",
+      "target_blocks": 258,
+      "actual_blocks": 258,
+      "within_tolerance": true
+    },
+    "trim": {
+      "role": "trim",
+      "block": "quartz",
+      "target_blocks": 154,
+      "actual_blocks": 154,
+      "within_tolerance": true
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 46,
+      "actual_blocks": 46,
+      "within_tolerance": true
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 4,
+      "actual_blocks": 4,
+      "within_tolerance": true
+    },
+    "floor": {
+      "role": "floor",
+      "block": "dirt",
+      "target_blocks": 210,
+      "actual_blocks": 210,
+      "within_tolerance": true
+    }
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "brick",
+        "score": 0.9,
+        "source_role": "upper wall course / roof field"
+      },
+      "roof": {
+        "block": "brick",
+        "score": 0.9,
+        "source_role": "upper wall course / roof field"
+      },
+      "trim": {
+        "block": "quartz",
+        "score": 0.7,
+        "source_role": "middle wall band and corner pillars and low perimeter ledge"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.95,
+        "source_role": "windows (glass panes)"
+      },
+      "floor": {
+        "block": "dirt",
+        "score": 0.9,
+        "source_role": "ground / excavated trench"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "light"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "brick",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "brick",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "quartz",
+          "score": 0.7,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "glass",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "dirt",
+          "score": 0.9,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": [
+        {
+          "role": "roof",
+          "from": "brick",
+          "to": "brick"
+        }
+      ]
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 23,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 6,
+    "role_fixed_skipped_low_conf_count": 3,
+    "role_infer_confidence_mean": 0.7605263157894739,
+    "role_infer_reasons": {
+      "ground_flat_layer": 1,
+      "purpose_hint": 13,
+      "block_family": 1,
+      "unknown": 2,
+      "set_block_family": 1,
+      "fallback_infer": 1
+    },
+    "self_repair_report": {
+      "added_operations": 5,
+      "added_tags": [
+        "entrance",
+        "light",
+        "light",
+        "light",
+        "light"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 1
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "building": "building_052",
+  "created_at": "2026-03-01T15:29:02.637497+00:00",
+  "provider": "openai",
+  "model": "gpt-5-mini"
+}

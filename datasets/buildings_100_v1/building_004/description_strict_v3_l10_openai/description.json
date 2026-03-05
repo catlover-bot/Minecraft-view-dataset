@@ -1,0 +1,67 @@
+{
+  "summary": "Small single-story rectangular building with a stepped brick gable roof, pale corner trim and low sandstone-type walls, set inside a raised smooth-white slab border on dirt ground. Long narrow windows run along the mid-height of the longer walls; roof has a small centered chimney/vent detail made from the same brick and topped with a slab.",
+  "building_type": "residential_small_or_outbuilding",
+  "shape": {
+    "overall_form": "compact rectangular block with a centered stepped gable roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along the roof ridge (long axis)",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 13,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "sandstone",
+      "role": "wall_lower",
+      "confidence": 0.9
+    },
+    {
+      "name": "quartz",
+      "role": "corner_pillars_and_border",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof_edge_caps_and_chimney_cap",
+      "confidence": 0.8
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows (three panes long per visible side)",
+    "stepped brick gable roof with stacked tiers",
+    "small centered chimney/vent on roof",
+    "corner vertical trim blocks (smooth pale material)",
+    "raised smooth-white slab perimeter border around building footprint"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular sandstone block ~3 blocks tall for main walls, leave a horizontal band of 1-block-high windows (3 wide) centered on each long side separated by corner quartz pillars.",
+    "Place quartz (or smooth white) blocks as a 1-block-thick border around the building one block out from wall base; use same material for vertical corner trims rising one block above the wall top.",
+    "Construct a symmetrical stepped brick gable roof: start with a rectangular brick slab covering the wall top then step inward with one-block inset tiers on both long sides, add stone slabs as edge cap details and a small 1x1 brick chimney on the ridge topped with a slab.",
+    "Windows are glass panes set flush in a continuous row (three panes long on the long sides); no visible main door from provided views (uncertain position).",
+    "Ground around the courtyard is dirt; building sits raised slightly within the white slab border."
+  ],
+  "uncertainties": [
+    "Exact block types: sandstone and quartz are inferred from color/texture; could be sandstone variants or smooth sandstone/quartz variants.",
+    "Dimensions are estimated from visible block counts in images; actual footprint may vary by ±1-2 blocks.",
+    "Door location is not visible in the provided views; entrance placement is uncertain.",
+    "Interior layout and any floor material are not visible."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_004",
+  "created_at": "2026-03-01T07:50:21.788916+00:00"
+}

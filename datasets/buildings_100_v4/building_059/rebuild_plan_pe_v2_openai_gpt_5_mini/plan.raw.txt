@@ -1,0 +1,458 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 16,
+    "ymin": 0,
+    "ymax": 15,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "wood_planks",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 32,
+          "label": "main"
+        }
+      ],
+      "symmetry": "z_axis_centered (mirror along long axis at x=8)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor hall and entrance porch; service rooms along sides",
+        "perimeter_profile": "rectangle with foundation ledge"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "second tier rooms with slab band and windows",
+        "perimeter_profile": "stepped (inset from ground floor by 1 block)"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 10,
+          "ymax": 13
+        },
+        "rooms_hint": "third/top tier narrower with terrace",
+        "perimeter_profile": "stepped (inset another 1 block)"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 7,
+        "y1": 1,
+        "z1": 0,
+        "x2": 8,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 3,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 13,
+        "y1": 2,
+        "z1": 0,
+        "x2": 14,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 32,
+        "x2": 3,
+        "y2": 3,
+        "z2": 32
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 13,
+        "y1": 2,
+        "z1": 32,
+        "x2": 14,
+        "y2": 3,
+        "z2": 32
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 14,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 14,
+          "x1": 4,
+          "z1": 0,
+          "x2": 12,
+          "z2": 32,
+          "block": "nether_brick"
+        },
+        {
+          "y": 14,
+          "x1": 3,
+          "z1": 1,
+          "x2": 13,
+          "z2": 31,
+          "block": "nether_brick"
+        },
+        {
+          "y": 15,
+          "x1": 5,
+          "z1": 8,
+          "x2": 11,
+          "z2": 24,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 32,
+      "block": "wood_planks",
+      "purpose": "ground_floor_slab_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 4,
+      "z2": 32,
+      "block": "wood_planks",
+      "purpose": "ground_floor_walls_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 1,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "foundation_perimeter_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 16,
+      "y2": 4,
+      "z2": 32,
+      "block": "stone_slab",
+      "purpose": "first_floor_slab_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 15,
+      "y2": 9,
+      "z2": 31,
+      "block": "wood_planks",
+      "purpose": "second_tier_shell (inset 1)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 9,
+      "z1": 1,
+      "x2": 15,
+      "y2": 9,
+      "z2": 31,
+      "block": "stone_slab",
+      "purpose": "second_floor_slab_band"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 10,
+      "z1": 2,
+      "x2": 14,
+      "y2": 13,
+      "z2": 30,
+      "block": "wood_planks",
+      "purpose": "third_tier_shell (inset 2)"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 14,
+      "z1": 0,
+      "x2": 8,
+      "y2": 14,
+      "z2": 32,
+      "block": "nether_brick",
+      "purpose": "roof_ridge_line_center (single-block spine)"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 14,
+      "z1": 0,
+      "x2": 12,
+      "y2": 14,
+      "z2": 32,
+      "block": "nether_brick",
+      "purpose": "roof_base_long (flat slab replacement)"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 14,
+      "z1": 1,
+      "x2": 13,
+      "y2": 14,
+      "z2": 31,
+      "block": "nether_brick",
+      "purpose": "roof_layer_secondary"
+    },
+    {
+      "op": "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 16,
+  "ymin": 0,
+  "ymax": 16,
+  "zmin": 0,
+  "zmax": 32,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 16, 0, 32],
+      "block": "stonebrick",
+      "note": "foundation ground layer"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 15, 1, 31],
+      "block": "oak_planks",
+      "note": "main ground floor subfloor (1 block inset from foundation)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 15, 4, 31],
+      "block": "oak_planks",
+      "note": "ground-to-first-floor wall volume (first tier)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 5, 1, 15, 5, 31],
+      "block": "stone_slab",
+      "note": "first horizontal band / ledge"
+    },
+    {
+      "op": "fill",
+      "box": [2, 6, 2, 14, 8, 30],
+      "block": "oak_planks",
+      "note": "second tier wall (stepped inset)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 9, 2, 14, 9, 30],
+      "block": "stone_slab",
+      "note": "second horizontal band / ledge"
+    },
+    {
+      "op": "fill",
+      "box": [3, 10, 3, 13, 12, 29],
+      "block": "oak_planks",
+      "note": "third tier wall (topmost stepped inset)"
+    },
+    {
+      "op": "fill",
+      "box": [3, 13, 3, 13, 13, 29],
+      "block": "stone_slab",
+      "note": "top coping slab band"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 15, 15, 1, 17],
+      "block": "oak_planks",
+      "note": "interior floor at ground level (hall center) covering middle corridor"
+    },
+    {
+      "op": "replace",
+      "box": [4, 2, 1, 12, 4, 1],
+      "block": "glass",
+      "note": "front facade windows row (ground-floor, small windows)"
+    },
+    {
+      "op": "replace",
+      "box": [4, 6, 1, 12, 8, 1],
+      "block": "glass",
+      "note": "front facade windows row (second tier)"
+    },
+    {
+      "op": "replace",
+      "box": [4, 10, 1, 12, 12, 1],
+      "block": "glass",
+      "note": "front facade windows row (third tier)"
+    },
+    {
+      "op": "replace",
+      "box": [1, 2, 16, 1, 4, 24],
+      "block": "glass",
+      "note": "left-side small vertical windows cluster"
+    },
+    {
+      "op": "replace",
+      "box": [15, 2, 16, 15, 4, 24],
+      "block": "glass",
+      "note": "right-side small vertical windows cluster"
+    },
+    {
+      "op": "replace",
+      "box": [8, 1, 0, 8, 2, 0],
+      "block": "air",
+      "note": "front entrance opening centered on long side (2 high)"
+    },
+    {
+      "op": "fill",
+      "box": [7, 0, 0, 9, 0, 0],
+      "block": "stone_slab",
+      "note": "entrance stone slab step"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 0, 4, 4],
+      "block": "log_dark",
+      "note": "front-left tall tower pillar (3 high above band) occupying foundation corner"
+    },
+    {
+      "op": "fill",
+      "box": [16, 1, 0, 16, 4, 4],
+      "block": "log_dark",
+      "note": "front-right tall tower pillar"
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 28, 0, 3, 32],
+      "block": "log_dark",
+      "note": "rear-left short tower pillar"
+    },
+    {
+      "op": "fill",
+      "box": [16, 1, 28, 16, 3, 32],
+      "block": "log_dark",
+      "note": "rear-right short tower pillar"
+    },
+    {
+      "op": "fill",
+      "box": [0, 5, 0, 0, 7, 4],
+      "block": "oak_planks",
+      "note": "front-left tower wall infill between logs (vertical windows to be cut)"
+    },
+    {
+      "op": "fill",
+      "box": [16, 5, 0, 16, 7, 4],
+      "block": "oak_planks",
+      "note": "front-right tower wall infill"
+    },
+    {
+      "op": "fill",
+      "box": [0, 5, 28, 0, 6, 32],
+      "block": "oak_planks",
+      "note": "rear-left short tower wall infill"
+    },
+    {
+      "op": "fill",
+      "box": [16, 5, 28, 16, 6, 32],
+      "block": "oak_planks",
+      "note": "rear-right short tower wall infill"
+    },
+    {
+      "op": "replace",
+      "box": [0, 3, 2, 0, 3, 2],
+      "block": "glass",
+      "note": "vertical tower windows front-left"
+    },
+    {
+      "op": "replace",
+      "box": [16, 3, 2, 16, 3, 2],
+      "block": "glass",
+      "note": "vertical tower windows front-right"
+    },
+    {
+      "op": "fill",
+      "box": [0, 8, 0, 16, 8, 32],
+      "block": "air",
+      "note": "clear interior volume above tiers to allow roof placement and interior space"
+    },
+    {
+      "op": "fill",
+      "box": [7, 13, 3, 9, 13, 29],
+      "block": "nether_brick",
+      "note": "central roof ridge flat slab atop top band (ridge center)"
+    },
+    {
+      "op": "fill",
+      "box": [6, 12, 3, 10, 12, 29],
+      "block": "nether_brick_stairs",
+      "note": "roof slopes flanking central ridge (stair placement facing downwards)"
+    },
+    {
+      "op": "fill",
+      "box": [5, 11, 3, 11, 11, 29],
+      "block": "nether_brick_stairs",
+      "note": "secondary roof slope layer"
+    },
+    {
+      "op": "fill",
+      "box": [4, 10, 3, 12, 10, 29],
+      "block": "nether_brick",
+      "note": "roof base layer bridging to top tier"
+    },
+    {
+      "op": "fill",
+      "box": [0, 14,

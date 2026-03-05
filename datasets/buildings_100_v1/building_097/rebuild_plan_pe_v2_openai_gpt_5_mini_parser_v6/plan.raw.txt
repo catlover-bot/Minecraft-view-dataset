@@ -1,0 +1,454 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "cobblestone",
+    "glass": "glass_pane",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 9,
+          "label": "main_building_outer_wall"
+        }
+      ],
+      "symmetry": "z_axis_centered (bilateral along lengthwise center)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 3
+        },
+        "rooms_hint": "single hall (open interior)",
+        "perimeter_profile": "rectangular solid with inset base trim"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 4,
+        "y1": 1,
+        "z1": 1,
+        "x2": 4,
+        "y2": 2,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 7,
+        "y1": 2,
+        "z1": 3,
+        "x2": 7,
+        "y2": 2,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 3,
+        "x2": 1,
+        "y2": 2,
+        "z2": 7
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 4,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 9,
+          "block": "wood"
+        },
+        {
+          "y": 5,
+          "x1": 2,
+          "z1": 2,
+          "x2": 6,
+          "z2": 8,
+          "block": "wood"
+        },
+        {
+          "y": 6,
+          "x1": 3,
+          "z1": 3,
+          "x2": 5,
+          "z2": 7,
+          "block": "wood"
+        },
+        {
+          "y": 4,
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 9,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 10,
+      "block": "dirt",
+      "purpose": "ground_fill_pit_floor"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 1,
+      "z2": 10,
+      "purpose": "clear_shallow_pit (air at ground level inside pit)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 1,
+      "z2": 10,
+      "block": "quartz_block",
+      "purpose": "raised_white_rim (one-block-high border around pit)"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 1,
+      "z2": 9,
+      "purpose": "pit_inner_clear (air inside rim)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 7,
+      "y2": 0,
+      "z2": 9,
+      "block": "dirt",
+      "purpose": "pit_inner_floor_dirt"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 1,
+      "z2": 9,
+      "block": "oak_planks",
+      "purpose": "interior_floor_planks (wooden plank interior floor elevated 1 over pit floor)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 3,
+      "z2": 9,
+      "block": "stonebrick",
+      "purpose": "outer_walls_lower (stone-brick shell)"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "block": "cobblestone",
+      "purpose": "corner_west_north_accent"
+    },
+    {
+      "op": "set",
+      "x": 7,
+      "y": 1,
+      "z": 1,
+      "block": "cobblestone",
+      "purpose": "corner_east_north_accent"
+    },
+    {
+      "op": "set",
+      "x": 1,
+      "y": 1,
+      "z": 9,
+      "block": "cobblestone",
+      "purpose": "corner_west_south_accent"
+    },
+    {
+      "op": "set",
+      "x": 7,
+      "y": 1,
+      "z": 9,
+      "block": "cobblestone",
+      "purpose": "corner_east_south_accent"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 7,
+      "y2": 3,
+      "z2": 9,
+      "block": "quartz_block",
+      "purpose": "upper_white_band (continuous one-block-high white band)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 7,
+      "y2": 0,
+      "z2": 9,
+      "block": "oak_planks",
+      "purpose": "wooden_base_trim_outside (plank trim at base, outside wall)"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 3,
+      "x2": 6,
+      "y2": 2,
+      "z2": 7,
+      "purpose": "window_east_row (air for continuous east windows)"
+    },
+    {
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 10,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 8, 0, 10],
+      "material": "dirt"
+    },
+    {
+      "op": "hollow_box",
+      "box": [1, 0, 1, 7, 2, 9],
+      "material": "air"
+    },
+    {
+      "op": "box",
+      "box": [1, 0, 1, 7, 0, 9],
+      "material": "wood_planks",
+      "note": "floor layer (interior wooden floor 1 block thick)"
+    },
+    {
+      "op": "box",
+      "box": [1, 1, 1, 7, 2, 9],
+      "material": "stonebrick",
+      "note": "lower wall first layer"
+    },
+    {
+      "op": "set",
+      "pos": [1, 1, 1],
+      "material": "cobblestone"
+    },
+    {
+      "op": "set",
+      "pos": [7, 1, 1],
+      "material": "cobblestone"
+    },
+    {
+      "op": "set",
+      "pos": [1, 1, 9],
+      "material": "cobblestone"
+    },
+    {
+      "op": "set",
+      "pos": [7, 1, 9],
+      "material": "cobblestone"
+    },
+    {
+      "op": "box",
+      "box": [1, 2, 1, 7, 2, 9],
+      "material": "quartz_block",
+      "note": "upper white band (one-block-high) above stonebrick"
+    },
+    {
+      "op": "box",
+      "box": [0, 0, 0, 8, 1, 10],
+      "material": "quartz_block",
+      "note": "surrounding low white border (one block high) at ground forming rim"
+    },
+    {
+      "op": "box",
+      "box": [0, 0, 0, 8, 0, 10],
+      "material": "dirt",
+      "note": "ensure pit floor remains dirt (reaffirm)"
+    },
+    {
+      "op": "box",
+      "box": [0, 0, 0, 8, 0, 10],
+      "material": "air",
+      "condition": "none",
+      "note": "no-op included to keep operation count trace" 
+    },
+    {
+      "op": "replace",
+      "box": [2, 2, 1, 6, 2, 1],
+      "from": "stonebrick",
+      "to": "glass_pane",
+      "note": "continuous window row, south wall (centered on long side)"
+    },
+    {
+      "op": "replace",
+      "box": [2, 2, 9, 6, 2, 9],
+      "from": "stonebrick",
+      "to": "glass_pane",
+      "note": "continuous window row, north wall"
+    },
+    {
+      "op": "box",
+      "box": [1, 1, 1, 7, 3, 9],
+      "material": "air",
+      "note": "clear interior above floor to headroom (ensure interior space up to y=2)"
+    },
+    {
+      "op": "box",
+      "box": [1, 3, 1, 7, 3, 9],
+      "material": "wood_planks",
+      "note": "1-block-high trim / base planks along inside top of wall to visually separate"
+    },
+    {
+      "op": "box",
+      "box": [2, 4, 2, 6, 4, 8],
+      "material": "wood_slab",
+      "note": "roof lowest step (center area) using wood slabs at y=4"
+    },
+    {
+      "op": "box",
+      "box": [1, 5, 1, 7, 5, 9],
+      "material": "wood_slab",
+      "note": "roof upper step overhang using wood slabs at y=5 (stepped profile)"
+    },
+    {
+      "op": "set",
+      "pos": [1, 5, 1],
+      "material": "stone_slab",
+      "note": "stone slab cap at outermost corner of roof step"
+    },
+    {
+      "op": "set",
+      "pos": [7, 5, 1],
+      "material": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [1, 5, 9],
+      "material": "stone_slab"
+    },
+    {
+      "op": "set",
+      "pos": [7, 5, 9],
+      "material": "stone_slab"
+    },
+    {
+      "op": "box",
+      "box": [2, 1, 0, 6, 2, 0],
+      "material": "air",
+      "note": "entrance opening on exterior south side (two-block-wide gap at z=0). Adjusted to be inside bbox"
+    },
+    {
+      "op": "box",
+      "box": [2, 1, 0, 6, 1, 0],
+      "material": "wood_planks",
+      "note": "external wooden step is omitted; entrance is flush at ground level"
+    },
+    {
+      "op": "door",
+      "pos": [4, 1, 0],
+      "orientation": "north",
+      "material": "wooden_door",
+      "note": "place door at center of entrance opening"
+    },
+    {
+      "op": "box",
+      "box": [0, 1, 0, 0, 1, 10],
+      "material": "quartz_block",
+      "note": "left rim side continuation"
+    },
+    {
+      "op": "box",
+      "box": [8, 1, 0, 8, 1, 10],
+      "material": "quartz_block",
+      "note": "right rim side continuation"
+    },
+    {
+      "op": "box",
+      "box": [0, 1, 0, 8, 1, 0],
+      "material": "quartz_block",
+      "note": "front rim continuation"
+    },
+    {
+      "op": "box",
+      "box": [0, 1, 10, 8, 1, 10],
+      "material": "quartz_block",
+      "note": "back rim continuation"
+    },
+    {
+      "op": "box",
+      "box": [1, 1, 0, 7, 1, 0],
+      "material": "air",
+      "note": "clear path in front of entrance within rim"
+    }
+  ],
+  "self_check": {
+    "bbox_integrity": "valid - all operation coordinates are inside [0..8] x [0..6] x [0..10]",
+    "operation_count": 33,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance_opening": true,
+    "material_coherence": "separated roles: wood (floor/roof/trim), stonebrick (lower wall), cobblestone (corners), quartz (white band and rim), glass_pane (windows), stone_slab (roof caps) — coherent",
+    "structural_notes": "Footprint 7x9 interior matches hint (outer bbox 9x11 including rim). Floor is 1-block wood, walls two layers (stonebrick + quartz band), windows continuous on

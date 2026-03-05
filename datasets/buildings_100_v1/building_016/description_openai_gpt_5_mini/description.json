@@ -1,0 +1,69 @@
+{
+  "summary": "Small single-storey rectangular building with a raised flat roof and a surrounding low ledge. Exterior walls use a lower band of light sandstone-like blocks, a middle row of windows, a top band of smooth white blocks, a thin brick trim, and stone slab coping around the roof. A white low border/planter surrounds the structure on ground level. Visible interior is empty or recessed below roof line.",
+  "building_type": "small commercial or utility building",
+  "shape": {
+    "overall_form": "simple rectangular box with a recessed flat roof and perimeter low ledge",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical on long axis (appears similar on both longer facades)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 13,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "sandstone",
+      "role": "lower_wall_band",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "quartz",
+      "role": "upper_wall_band and border",
+      "confidence": 0.8
+    },
+    {
+      "name": "brick",
+      "role": "trim band below roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof coping / top edge",
+      "confidence": 0.9
+    },
+    {
+      "name": "terracotta or red_concrete",
+      "role": "flat roof infill",
+      "confidence": 0.5
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows (row of 4-5 on each longer side)",
+    "flat recessed roof with stone slab coping",
+    "brick trim band under roof",
+    "white low border/planter around base"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular single-storey box about 9x13 blocks footprint and ~5 blocks tall to top of coping.",
+    "Use sandstone (or similar light textured block) for the lower two or three block rows, place a horizontal row of glass windows centered above it (4 windows on visible facades).",
+    "Above windows place a smooth white block row (quartz) one block tall, then a 1-block-tall brick band, and cap with stone slabs around the roof edge.",
+    "Make the roof interior filled with red-tinted flat blocks (brick pattern visible) recessed one block below the coping. Surround building at ground level with a one-block-high white border/ledge separated by a one-block gap from the wall."
+  ],
+  "uncertainties": [
+    "Exact block IDs: sandstone appears likely but could be smooth_sandstone; quartz is inferred for white smooth band but could be another white block.",
+    "Roof infill material is red/brick textured in top view; could be brick or red terracotta/concrete—uncertain.",
+    "Precise footprint dimensions: estimated from visible window count and top views; corners and small offsets may differ by 1-2 blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_016",
+  "created_at": "2026-02-28T14:00:48.728044+00:00"
+}

@@ -1,0 +1,281 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": -2,
+    "xmax": 10,
+    "ymin": -1,
+    "ymax": 10,
+    "zmin": -2,
+    "zmax": 22
+  },
+  "palette": {
+    "wall": "sandstone",
+    "trim": "quartz",
+    "roof": "brick",
+    "coping": "stone_slab",
+    "glass": "glass",
+    "floor": "oak_wood",
+    "platform": "quartz",
+    "moat": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 20,
+          "label": "main_building"
+        }
+      ],
+      "symmetry": "z_axis_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor with slit windows",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "upper floor with slit windows",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 6,
+        "z1": 0,
+        "x2": 2,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 6,
+        "z1": 0,
+        "x2": 5,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 20,
+        "x2": 2,
+        "y2": 2,
+        "z2": 20
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 2,
+        "z1": 20,
+        "x2": 5,
+        "y2": 2,
+        "z2": 20
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 6,
+        "z1": 20,
+        "x2": 2,
+        "y2": 6,
+        "z2": 20
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 6,
+        "z1": 20,
+        "x2": 5,
+        "y2": 6,
+        "z2": 20
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 9,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 9,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 20,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 1,
+          "z1": 2,
+          "x2": 7,
+          "z2": 18,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": -2,
+      "y1": -1,
+      "z1": -2,
+      "x2": 10,
+      "y2": -1,
+      "z2": 22,
+      "block": "dirt",
+      "purpose": "moat_ground"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 9,
+      "y2": 0,
+      "z2": 21,
+      "block": "quartz",
+      "purpose": "raised_platform"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 1,
+      "z2": 20,
+      "block": "oak_wood",
+      "purpose": "floor_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 8,
+      "y2": 5,
+      "z2": 20,
+      "block": "oak_wood",
+      "purpose": "floor_upper"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 20,
+      "block": "quartz",
+      "purpose": "west_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 2,
+      "z1": 0,
+      "x2": 8,
+      "y2": 7,
+      "z2": 20,
+      "block": "quartz",
+      "purpose": "east_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 0,
+      "x2": 7,
+      "y2": 3,
+      "z2": 20,
+      "block": "sandstone",
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": -2,
+  "xmax": 11,
+  "ymin": -1,
+  "ymax": 22,
+  "zmin": -2,
+  "zmax": 12,
+  "operations": [
+    {"type": "fill", "material": "dirt", "x1": -2, "y1": -1, "z1": -2, "x2": 11, "y2": 22, "z2": -1, "purpose": "moat ground level"},
+    {"type": "fill", "material": "quartz", "x1": -1, "y1": 0, "z1": 0, "x2": 10, "y2": 21, "z2": 0, "purpose": "raised platform base"},
+    {"type": "fill", "material": "sandstone", "x1": 1, "y1": 2, "z1": 1, "x2": 8, "y2": 19, "z2": 3, "purpose": "main wall band floor 1"},
+    {"type": "fill", "material": "quartz", "x1": 0, "y1": 1, "z1": 1, "x2": 9, "y2": 20, "z2": 1, "purpose": "white stripe band lower"},
+    {"type": "fill", "material": "sandstone", "x1": 1, "y1": 2, "z1": 4, "x2": 8, "y2": 19, "z2": 6, "purpose": "main wall band floor 2"},
+    {"type": "fill", "material": "quartz", "x1": 0, "y1": 1, "z1": 4, "x2": 9, "y2": 20, "z2": 4, "purpose": "white stripe band upper"},
+    {"type": "fill", "material": "brick", "x1": 1, "y1": 2, "z1": 7, "x2": 8, "y2": 19, "z2": 9, "purpose": "roof base"},
+    {"type": "fill", "material": "brick", "x1": 2, "y1": 3, "z1": 10, "x2": 7, "y2": 18, "z2": 10, "purpose": "roof gable step 1"},
+    {"type": "fill", "material": "brick", "x1": 3, "y1": 4, "z1": 11, "x2": 6, "y2": 17, "z2": 11, "purpose": "roof gable step 2"},
+    {"type": "fill", "material": "stone_slab", "x1": 0, "y1": 1, "z1": 9, "x2": 9, "y2": 20, "z2": 9, "purpose": "eaves coping"},
+    {"type": "setblock", "material": "glass_pane", "x": 2, "y": 4, "z": 2, "purpose": "window floor 1 side A"},
+    {"type": "setblock", "material": "glass_pane", "x": 2, "y": 8, "z": 2, "purpose": "window floor 1 side A"},
+    {"type": "setblock", "material": "glass_pane", "x": 2, "y": 12, "z": 2, "purpose": "window floor 1 side A"},
+    {"type": "setblock", "material": "glass_pane", "x": 2, "y": 16, "z": 2, "purpose": "window floor 1 side A"},
+    {"type": "setblock", "material": "glass_pane", "x": 7, "y": 4, "z": 2, "purpose": "window floor 1 side B"},
+    {"type": "setblock", "material": "glass_pane", "x": 7, "y": 8, "z": 2, "purpose": "window floor 1 side B"},
+    {"type": "setblock", "material": "glass_pane", "x": 7, "y": 12, "z": 2, "purpose": "window floor 1 side B"},
+    {"type": "setblock", "material": "glass_pane", "x": 7, "y": 16, "z": 2, "purpose": "window floor 1 side B"},
+    {"type": "setblock", "material": "glass_pane", "x": 2, "y": 4, "z": 5, "purpose": "window floor 2 side A"},
+    {"type": "setblock", "material": "glass_pane", "x": 2, "y": 8, "z": 5, "purpose": "window floor 2 side A"},
+    {"type": "setblock", "material": "glass_pane", "x": 2, "y": 12, "z": 5, "purpose": "window floor 2 side A"},
+    {"type": "setblock", "material": "glass_pane", "x": 2, "y": 16, "z": 5, "purpose": "window floor 2 side A"},
+    {"type": "setblock", "material": "glass_pane", "x": 7, "y": 4, "z": 5, "purpose": "window floor 2 side B"},
+    {"type": "setblock", "material": "glass_pane", "x": 7, "y": 8, "z": 5, "purpose": "window floor 2 side B"},
+    {"type": "setblock", "material": "glass_pane", "x": 7, "y": 12, "z": 5, "purpose": "window floor 2 side B"},
+    {"type": "setblock", "material": "glass_pane", "x": 7, "y": 16, "z": 5, "purpose": "window floor 2 side B"},
+    {"type": "setblock", "material": "air", "x": 4, "y": 1, "z": 1, "purpose": "entrance opening"},
+    {"type": "setblock", "material": "air", "x": 4, "y": 1, "z": 2, "purpose": "entrance opening upper"},
+    {"type": "fill", "material": "sandstone", "x1": 0, "y1": 1, "z1": 2, "x2": 0, "y2": 20, "z2": 3, "purpose": "left wall column"},
+    {"type": "fill", "material": "sandstone", "x1": 9, "y1": 1, "z1": 2, "x2": 9, "y2": 20, "z2": 3, "purpose": "right wall column"},
+    {"type": "fill", "material": "sandstone", "x1": 0, "y1": 1, "z1": 5, "x2": 0, "y2": 20, "z2": 6, "purpose": "left wall column floor 2"},
+    {"type": "fill", "material": "sandstone", "x1": 9, "y1":

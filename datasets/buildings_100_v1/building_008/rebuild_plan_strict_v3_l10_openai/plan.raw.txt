@@ -1,0 +1,525 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v3_strict",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 6
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "wood",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "quartz"
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "sandstone",
+      "target_blocks": 300
+    },
+    "roof": {
+      "role": "roof",
+      "block": "brick",
+      "target_blocks": 150
+    },
+    "trim": {
+      "role": "trim",
+      "block": "wood",
+      "target_blocks": 44
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 36
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 6
+    },
+    "floor": {
+      "role": "floor",
+      "block": "quartz",
+      "target_blocks": 77
+    }
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle|l_shape|u_shape|complex",
+      "segments": [
+        {
+          "type": "rectangle",
+          "xmin": 0,
+          "xmax": 10,
+          "zmin": 0,
+          "zmax": 6
+        }
+      ]
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "perimeter_profile": "first_floor: sandstone walls with corner stonebrick pillars and continuous glass window bands (y=1..2), quartz border platform at y=0"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 3,
+          "ymax": 6
+        },
+        "perimeter_profile": "second_floor: sandstone walls with wooden horizontal trim at y=5 and glass window bands at y=4..5; corner pillars continuous"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 0,
+        "x2": 6,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 1,
+        "z1": 0,
+        "x2": 4,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 7,
+        "y1": 1,
+        "z1": 0,
+        "x2": 9,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 4,
+        "z1": 6,
+        "x2": 9,
+        "y2": 5,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 1,
+        "z1": 2,
+        "x2": 10,
+        "y2": 2,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 4,
+        "z1": 2,
+        "x2": 0,
+        "y2": 5,
+        "z2": 4
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 6,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 6,
+          "x1": 0,
+          "x2": 10,
+          "z1": 0,
+          "z2": 6,
+          "material": "brick",
+          "description": "stepped outer layer"
+        },
+        {
+          "y": 7,
+          "x1": 1,
+          "x2": 9,
+          "z1": 1,
+          "z2": 5,
+          "material": "brick",
+          "description": "inner stepped layer"
+        },
+        {
+          "y": 8,
+          "x1": 3,
+          "x2": 7,
+          "z1": 2,
+          "z2": 4,
+          "material": "brick",
+          "description": "ridge cap"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 6,
+      "block": "quartz",
+      "purpose": "quartz border platform and floor base"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 5,
+      "z2": 6,
+      "block": "sandstone",
+      "purpose": "main two-storey sandstone wall shell (will be carved for windows and door)"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 10,
+      "y2": 5,
+      "z2": 6,
+      "block": "wood",
+      "purpose": "horizontal wooden trim between floors/top of second floor"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 6,
+      "block": "wood",
+      "purpose": "horizontal wooden trim between first and second floor"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 6,
+      "block": "wood",
+      "purpose": "base trim atop quartz platform"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 6,
+      "block": "brick",
+      "purpose": "roof outer stepped layer"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 1,
+      "y1": 7,
+      "z1": 1,
+      "x2": 9,
+      "y2": 7,
+      "z2": 5,
+      "block": "brick",
+      "purpose": "roof inner stepped layer"
+    },
+    {
+      "op": "fill",
+      "role
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 6,
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 6,
+      "block": "quartz",
+      "purpose": "quartz border platform and base floor"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 5,
+      "z2": 6,
+      "block": "sandstone",
+      "purpose": "main two-storey sandstone wall shell (will be carved for windows and door)"
+    },
+    {
+      "op": "fill",
+      "role": "horizontal_trim",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 6,
+      "block": "wood",
+      "purpose": "horizontal wooden plank trim between floors"
+    },
+    {
+      "op": "fill",
+      "role": "horizontal_trim",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 6,
+      "block": "wood",
+      "purpose": "base wooden trim above quartz platform"
+    },
+    {
+      "op": "fill",
+      "role": "corner_pillar",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 5,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "north-west corner pillar"
+    },
+    {
+      "op": "fill",
+      "role": "corner_pillar",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 5,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "north-east corner pillar"
+    },
+    {
+      "op": "fill",
+      "role": "corner_pillar",
+      "x1": 0,
+      "y1": 1,
+      "z1": 6,
+      "x2": 0,
+      "y2": 5,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "south-west corner pillar"
+    },
+    {
+      "op": "fill",
+      "role": "corner_pillar",
+      "x1": 10,
+      "y1": 1,
+      "z1": 6,
+      "x2": 10,
+      "y2": 5,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "south-east corner pillar"
+    },
+    {
+      "op": "carve",
+      "kind": "door",
+      "face": "south",
+      "x1": 5,
+      "y1": 1,
+      "z1": 0,
+      "x2": 6,
+      "y2": 2,
+      "z2": 0
+    },
+    {
+      "op": "carve",
+      "kind": "window",
+      "face": "south",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 4,
+      "y2": 2,
+      "z2": 0
+    },
+    {
+      "op": "carve",
+      "kind": "window",
+      "face": "south",
+      "x1": 7,
+      "y1": 1,
+      "z1": 0,
+      "x2": 9,
+      "y2": 2,
+      "z2": 0
+    },
+    {
+      "op": "carve",
+      "kind": "window",
+      "face": "north",
+      "x1": 1,
+      "y1": 4,
+      "z1": 6,
+      "x2": 9,
+      "y2": 5,
+      "z2": 6
+    },
+    {
+      "op": "carve",
+      "kind": "window",
+      "face": "east",
+      "x1": 10,
+      "y1": 1,
+      "z1": 2,
+      "x2": 10,
+      "y2": 2,
+      "z2": 4
+    },
+    {
+      "op": "carve",
+      "kind": "window",
+      "face": "west",
+      "x1": 0,
+      "y1": 4,
+      "z1": 2,
+      "x2": 0,
+      "y2": 5,
+      "z2": 4
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 4,
+      "y2": 2,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "south left window band"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 7,
+      "y1": 1,
+      "z1": 0,
+      "x2": 9,
+      "y2": 2,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "south right window band"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 1,
+      "y1": 4,
+      "z1": 6,
+      "x2": 9,
+      "y2": 5,
+      "z2": 6,
+      "block": "glass",
+      "purpose": "north continuous window band on second floor"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 10,
+      "y1": 1,
+      "z1": 2,
+      "x2": 10,
+      "y2": 2,
+      "z2": 4,
+      "block": "glass",
+      "purpose": "east window band"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 0,
+      "y1": 4,
+      "z1": 2,
+      "x2": 0,
+      "y2": 5,
+      "z2": 4,
+      "block": "glass",
+      "purpose": "west window band"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 6,
+      "block": "brick",
+      "purpose": "roof outer stepped layer"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 1,
+      "y1": 7,
+      "z1": 1,
+      "x2": 9,
+      "y2": 7,
+      "z2": 5,
+      "block": "brick",
+      "purpose": "roof inner stepped layer"
+    },
+    {
+      "op":

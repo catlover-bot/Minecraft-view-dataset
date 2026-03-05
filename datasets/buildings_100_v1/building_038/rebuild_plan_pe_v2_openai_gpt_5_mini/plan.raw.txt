@@ -1,0 +1,450 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 14,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 6
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "corner": "stonebrick",
+    "roof_slab": "stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 13,
+          "z2": 5,
+          "label": "main"
+        }
+      ],
+      "symmetry": "z_axis_centered_along_x_mid"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "single hall / open pavilion",
+        "perimeter_profile": "rectangle with surrounding border"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 7,
+        "y1": 1,
+        "z1": 1,
+        "x2": 7,
+        "y2": 2,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 13,
+        "y1": 2,
+        "z1": 2,
+        "x2": 13,
+        "y2": 3,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 13,
+        "y1": 2,
+        "z1": 3,
+        "x2": 13,
+        "y2": 3,
+        "z2": 3
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 13,
+        "y1": 2,
+        "z1": 4,
+        "x2": 13,
+        "y2": 3,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 2,
+        "x2": 1,
+        "y2": 3,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 3,
+        "x2": 1,
+        "y2": 3,
+        "z2": 3
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 4,
+        "x2": 1,
+        "y2": 3,
+        "z2": 4
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 5,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 14,
+          "z2": 6,
+          "block": "brick"
+        },
+        {
+          "y": 6,
+          "x1": 1,
+          "z1": 1,
+          "x2": 13,
+          "z2": 5,
+          "block": "brick"
+        },
+        {
+          "y": 7,
+          "x1": 3,
+          "z1": 2,
+          "x2": 11,
+          "z2": 4,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 6,
+      "block": "quartz",
+      "purpose": "surrounding_ground_border"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 6,
+      "purpose": "clear_border_surface_dirt_moop"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 13,
+      "y2": 0,
+      "z2": 5,
+      "block": "wood",
+      "purpose": "raised_plank_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 13,
+      "y2": 4,
+      "z2": 5,
+      "block": "sandstone",
+      "purpose": "outer_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 13,
+      "y2": 1,
+      "z2": 5,
+      "block": "wood",
+      "purpose": "base_course_plank_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 13,
+      "y2": 4,
+      "z2": 5,
+      "block": "quartz",
+      "purpose": "white_trim_band_above_windows"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 2,
+      "x2": 1,
+      "y2": 3,
+      "z2": 4,
+      "block": "glass",
+      "purpose": "west_window_row"
+    },
+    {
+      "op": "fill",
+      "x1": 13,
+      "y1": 2,
+      "z1": 2,
+      "x2": 13,
+      "y2": 3,
+      "z2": 4,
+      "block": "glass",
+      "purpose": "east_window_row"
+    },
+    {
+      "op": "carve",
+      "x1": 7,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 2,
+      "z2": 1,
+      "purpose": "main_entrance_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 1,
+      "y2": 4,
+      "z2": 1,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 13,
+      "y1": 1,
+      "z1": 1,
+      "x2": 13,
+      "y2": 4,
+      "z2": 1,
+      "block": "stonebrick
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 14,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 6,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 14, 0, 6],
+      "block": "dirt",
+      "comment": "clear ground and create shallow cleared dirt moat appearance at ground level (outside quartz rim)."
+    },
+    {
+      "op": "replace",
+      "box": [0, 0, 0, 14, 0, 6],
+      "block": "dirt",
+      "target": "dirt",
+      "comment": "ensure ground is uniform dirt layer (visual moat surrounding)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 13, 1, 5],
+      "block": "quartz_block",
+      "comment": "1-block high surrounding white rim (quartz) at ground level forming border; inset by 1 from bbox edges."
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 2, 12, 1, 4],
+      "block": "oak_planks",
+      "comment": "1-block high plank base interior to quartz rim (wood base course)."
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 12, 4, 4],
+      "block": "sandstone",
+      "comment": "main sandstone walls 3 blocks high (y=2..4) over plank base."
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 2, 4, 4],
+      "block": "stone_bricks",
+      "comment": "stonebrick corner pillar (west-north) full wall height."
+    },
+    {
+      "op": "fill",
+      "box": [12, 2, 2, 12, 4, 4],
+      "block": "stone_bricks",
+      "comment": "stonebrick corner pillar (east-north) full wall height."
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 4, 2, 4, 4],
+      "block": "stone_bricks",
+      "comment": "stonebrick corner pillar (west-south) full wall height."
+    },
+    {
+      "op": "fill",
+      "box": [12, 2, 4, 12, 4, 4],
+      "block": "stone_bricks",
+      "comment": "stonebrick corner pillar (east-south) full wall height."
+    },
+    {
+      "op": "fill",
+      "box": [4, 3, 2, 6, 3, 2],
+      "block": "glass",
+      "comment": "row of windows on north long side: first window (1 high) at y=3."
+    },
+    {
+      "op": "fill",
+      "box": [7, 3, 2, 9, 3, 2],
+      "block": "glass",
+      "comment": "row of windows on north long side: second window middle section."
+    },
+    {
+      "op": "fill",
+      "box": [10, 3, 2, 10, 3, 2],
+      "block": "glass",
+      "comment": "row of windows on north long side: third window near east."
+    },
+    {
+      "op": "fill",
+      "box": [4, 3, 4, 6, 3, 4],
+      "block": "glass",
+      "comment": "row of windows on south long side: first window."
+    },
+    {
+      "op": "fill",
+      "box": [7, 3, 4, 9, 3, 4],
+      "block": "glass",
+      "comment": "row of windows on south long side: second window."
+    },
+    {
+      "op": "fill",
+      "box": [10, 3, 4, 10, 3, 4],
+      "block": "glass",
+      "comment": "row of windows on south long side: third window."
+    },
+    {
+      "op": "setblock",
+      "pos": [8, 2, 4],
+      "block": "air",
+      "comment": "entrance opening: door space on south long side centered at x=8, y=2..3"
+    },
+    {
+      "op": "setblock",
+      "pos": [8, 3, 4],
+      "block": "air",
+      "comment": "clear upper block of entrance opening."
+    },
+    {
+      "op": "fill",
+      "box": [2, 5, 2, 12, 5, 4],
+      "block": "oak_planks",
+      "comment": "ceiling/attic slab layer (interior roof underside) at y=5 to cap walls before roof."
+    },
+    {
+      "op": "fill",
+      "box": [2, 6, 1, 12, 6, 5],
+      "block": "brick_block",
+      "comment": "first outer brick roof layer projecting one block over walls to start stepped gable."
+    },
+    {
+      "op": "fill",
+      "box": [3, 7, 1, 11, 7, 5],
+      "block": "brick_block",
+      "comment": "second brick roof layer narrowing toward ridge."
+    },
+    {
+      "op": "fill",
+      "box": [4, 7, 2, 10, 7, 4],
+      "block": "brick_slab",
+      "comment": "top ridge layer using brick slabs to create a thinner cap (fits inside bbox y<=8)."
+    },
+    {
+      "op": "fill",
+      "box": [2, 6, 1, 2, 6, 5],
+      "block": "stone_slab",
+      "comment": "stone slab accent along west roof edge on first roof layer."
+    },
+    {
+      "op": "fill",
+      "box": [12, 6, 1, 12, 6, 5],
+      "block": "stone_slab",
+      "comment": "stone slab accent along east roof edge on first roof layer."
+    },
+    {
+      "op": "fill",
+      "box": [3, 7, 1, 3, 7, 5],
+      "block": "stone_slab",
+      "comment": "stone slab accent along west roof edge on second layer."
+    },
+    {
+      "op": "fill",
+      "box": [11, 7, 1, 11, 7, 5],
+      "block": "stone_slab",
+      "comment": "stone slab accent along east roof edge on second layer."
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 0, 12, 1, 0],
+      "block": "quartz_block",
+      "comment": "extend quartz rim at northern edge along ground to form continuous border (z=0)."
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 6, 12, 1, 6],
+      "block": "quartz_block",
+      "comment": "extend quartz rim at southern edge along ground to form continuous border (z=6)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 0, 1, 1, 6],
+      "block": "quartz_block",
+      "comment": "extend quartz rim at west edge along ground to form continuous border (x=1)."
+    },
+    {
+      "op": "fill",
+      "box": [13, 1, 0, 13, 1, 6

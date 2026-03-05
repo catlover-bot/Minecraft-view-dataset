@@ -1,0 +1,72 @@
+{
+  "summary": "Two-story rectangular residential building with a curved brick gable-like roof. Exterior walls are primarily a light sandstone banding with wooden plank trim between floors, stone brick corner pillars, and continuous rows of glass windows. A raised white stone (likely quartz) border/ledge surrounds the base. The roof is stepped with brick blocks and bordered by white stone slabs/corners.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "compact rectangular block with a stepped curved (barrel) roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "mirror symmetry along the longitudinal centerline (front-back symmetry visible in roof and window placement)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 7,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "sandstone",
+      "role": "wall",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood",
+      "role": "horizontal trim between floors (planks)",
+      "confidence": 0.85
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner pillars / vertical accents",
+      "confidence": 0.8
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "slab_stone",
+      "role": "white border/ledge (likely quartz slabs)",
+      "confidence": 0.7
+    },
+    {
+      "name": "fence",
+      "role": "none_visible_but_candidate_for_trim",
+      "confidence": 0.2
+    }
+  ],
+  "elements": [
+    "continuous horizontal rows of windows on both floors (three or four windows per side)",
+    "stonebrick vertical corner pillars",
+    "wooden plank band separating floors",
+    "white slab border/ledge around base",
+    "stepped brick roof with white slab edge tiles"
+  ],
+  "rebuild_hints": [
+    "Footprint approximately 11 x 7 blocks (visible top-down: inner building 9x5 with a 1-block white slab border around on shorter sides) — use rectangular layout with symmetry along length.",
+    "Make two full storeys of walls: each floor about 3 blocks tall for window belt and 1 block trim; place continuous 1xN window rows centered on each floor separated by a wooden plank strip.",
+    "Use stonebrick (or similar) 1-block vertical pillars at each external corner spanning full height; place white slabs (quartz) as a coping ledge around roof base and as a raised 1-block border around the building base.",
+    "Construct a stepped curved roof of brick blocks forming a low gable/barrel shape: layers stepping inward toward center along the long axis, with symmetrical steps and small cap at ridge.",
+    "Windows are glass panes flush with wall; maintain uniform spacing (about 2 blocks of glass separated by 1 block of wall between groups) to match the continuous ribbon-window look."
+  ],
+  "uncertainties": [
+    "Exact block counts for width/depth/height are estimated from images and top-down views; internal layout is unknown.",
+    "The white border material is assumed quartz slabs/blocks (normalized to slab_stone) but could be another white stone.",
+    "Some small decorative details (e.g., slabs vs full blocks on roof edges, inner floor heights, exact window pane count per side) are uncertain."
+  ]
+}

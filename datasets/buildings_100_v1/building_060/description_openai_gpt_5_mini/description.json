@@ -1,0 +1,80 @@
+{
+  "summary": "Single-story rectangular small building with brick walls, a layered dark-red (netherbrick) stepped gable-style roof, stone corner piers, a white trim belt around the top of the walls, ground-level windows on the long sides, and a raised white low border platform framing the footprint.",
+  "building_type": "residential/small utility",
+  "shape": {
+    "overall_form": "compact rectangular box with a symmetrical stepped roof centered along the long axis",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long central axis",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 15,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "netherbrick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "quartz",
+      "role": "top trim / low border platform",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner pillars / accent",
+      "confidence": 0.6
+    },
+    {
+      "name": "wood_plank",
+      "role": "base skirting (planks) near ground",
+      "confidence": 0.6
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof step caps (uncertain exact slab type)",
+      "confidence": 0.4
+    }
+  ],
+  "elements": [
+    "ground-level row windows on long sides (4 per side visible)",
+    "white continuous trim band around top of wall",
+    "stepped dark roof with slab/step caps on each tier",
+    "stone corner vertical blocks/pillars",
+    "raised white border platform surrounding building footprint"
+  ],
+  "rebuild_hints": [
+    "Footprint: rectangular approx 9x15 blocks (estimate from aerial; adjust if counting exactly).",
+    "Walls: 3–4 block tall brick wall with a single horizontal white trim (quartz) band one block above window tops.",
+    "Windows: continuous series of 1x1 glass panes set in a row with one block spacing between panes; located in middle of wall height.",
+    "Corner pillars: use stonebrick (or similar) full blocks at each corner spanning full wall height up to trim.",
+    "Base skirting: a single layer of wood planks around bottom exterior between brick and ground.",
+    "Roof: symmetrical stepped gable built from netherbrick stairs/blocks, with 3–4 stepped tiers; place light-colored slab caps at the ends of each tier to match visible highlights.",
+    "Surrounding border: one-block-high white (quartz) low wall platform inset one block from roofline edges creating a rim around building."
+  ],
+  "uncertainties": [
+    "Exact footprint block counts (width and depth) are estimated from aerial views; recommend counting if exact reconstruction required.",
+    "Material IDs: white trim and border appear to be quartz but could be another white block (e.g., smooth quartz or diorite); confidence high but not certain.",
+    "The stone corner blocks appear like stonebrick or andesite; exact variant uncertain.",
+    "Roof uses netherbrick stairs/blocks but exact use of slabs vs stairs for step caps is inferred from profile and not fully certain.",
+    "Number of windows per side is estimated from visible side views (4 visible) — far/hidden sides not fully shown but likely match symmetry."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_060",
+  "created_at": "2026-02-28T14:12:16.906359+00:00"
+}

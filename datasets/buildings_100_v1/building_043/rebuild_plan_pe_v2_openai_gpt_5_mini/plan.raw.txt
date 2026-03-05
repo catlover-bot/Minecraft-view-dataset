@@ -1,0 +1,413 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 16
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 16,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_along_z_center (ridge along long axis)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single hall interior (open)",
+        "perimeter_profile": "rectangle with raised border platform"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 4,
+        "y1": 1,
+        "z1": 16,
+        "x2": 4,
+        "y2": 2,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 6,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 2,
+        "z1": 16,
+        "x2": 7,
+        "y2": 2,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 5,
+        "x2": 0,
+        "y2": 2,
+        "z2": 11
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 2,
+        "z1": 5,
+        "x2": 8,
+        "y2": 2,
+        "z2": 11
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 4,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 16,
+          "block": "wood"
+        },
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 0,
+          "x2": 7,
+          "z2": 16,
+          "block": "wood"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 0,
+          "x2": 6,
+          "z2": 16,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 16,
+      "block": "wood",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 16,
+      "block": "quartz_block",
+      "purpose": "raised_border_platform_base"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 7,
+      "y2": 0,
+      "z2": 15,
+      "purpose": "platform_inner_inset_to_create_raised_border"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 3,
+      "z2": 15,
+      "block": "stonebrick",
+      "purpose": "lower_wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 3,
+      "z2": 16,
+      "block": "cobblestone",
+      "purpose": "west_corner_column"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 16,
+      "block": "cobblestone",
+      "purpose": "east_corner_column"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 7,
+      "y2": 3,
+      "z2": 15,
+      "block": "quartz_block",
+      "purpose": "white_trim_band_under_eaves"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 7,
+      "y2": 2,
+      "z2": 15,
+      "purpose": "continuous_window_row_space"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 1,
+      "x2": 6,
+      "y2": 2,
+      "z2": 15,
+      "block": "glass",
+      "purpose": "continuous_glass_windows_centered"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 1,
+      "z1": 16,
+      "x2": 4,
+      "y2": 2,
+      "z2": 16,
+      "purpose": "door_opening_south_center"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 16,
+      "block": "wood",
+      "purpose": "roof_layer_0_base_eaves"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 0,
+      "x2": 7,
+      "y2": 5,
+      "z2": 16,
+      "block": "wood",
+      "purpose": "roof_layer_1_step"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 6,
+      "z1": 0,
+      "x2": 6,
+      "y2": 6,
+      "z2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 16,
+  "operations": [
+    {
+      "op": "set_block_region",
+      "bbox": [0, 0, 0, 8, 0, 16],
+      "block": "quartz_block",
+      "description": "One-block-high raised white border platform surrounding footprint (floor base layer)."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [1, 0, 1, 7, 0, 15],
+      "block": "oak_planks",
+      "description": "Internal floor (wood planks) inset from the white border by 1 block."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [1, 1, 1, 7, 2, 15],
+      "block": "stone_bricks",
+      "description": "Lower wall band: 2-block-high stonebrick course above floor (y=1..2)."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [1, 1, 1, 1, 2, 1],
+      "block": "cobblestone",
+      "description": "Cobblestone corner (NW) replacing stonebrick for texture."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [7, 1, 1, 7, 2, 1],
+      "block": "cobblestone",
+      "description": "Cobblestone corner (NE)."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [1, 1, 15, 1, 2, 15],
+      "block": "cobblestone",
+      "description": "Cobblestone corner (SW)."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [7, 1, 15, 7, 2, 15],
+      "block": "cobblestone",
+      "description": "Cobblestone corner (SE)."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [1, 3, 1, 7, 3, 15],
+      "block": "quartz_block",
+      "description": "White trim band (1 block high) above the stonebrick course at y=3."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [1, 1, 3, 7, 2, 13],
+      "block": "glass_pane",
+      "description": "Continuous horizontal band of windows centered in the wall: glass panes inset between z=3..13 (one block interior offset) at y=2 (implemented here spanning same y as stone band top to appear centered)."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [1, 1, 1, 7, 4, 1],
+      "block": "stone_bricks",
+      "description": "Front wall (north face) solid where no windows or entrance; stonebrick continues up to support eaves. Will be modified to create entrance opening below."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [1, 1, 15, 7, 4, 15],
+      "block": "stone_bricks",
+      "description": "Back wall (south face) solid stonebrick up to eaves."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [1, 1, 2, 1, 4, 14],
+      "block": "stone_bricks",
+      "description": "West wall (x=1) solid stonebrick up to eaves."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [7, 1, 2, 7, 4, 14],
+      "block": "stone_bricks",
+      "description": "East wall (x=7) solid stonebrick up to eaves."
+    },
+    {
+      "op": "set_block",
+      "pos": [4, 1, 1],
+      "block": "oak_door",
+      "description": "Entrance door (single door) centered on north wall at floor level creating an opening. Door occupies y=1..2 at x=4,z=1."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [2, 4, 1, 6, 4, 15],
+      "block": "oak_planks",
+      "description": "Under-eave top trim: wood plank course forming the top of walls (eave base) at y=4."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [2, 5, 2, 6, 5, 14],
+      "block": "oak_planks",
+      "description": "Roof step layer 1 (y=5): wood planks inset by 1 from each side to begin stepped gable profile."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [3, 6, 3, 5, 6, 13],
+      "block": "oak_planks",
+      "description": "Roof step layer 2 (ridge) at y=6: central ridge of wood planks narrower by another inset."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [2, 5, 2, 6, 5, 14],
+      "block": "stone_slab",
+      "description": "Stone slab accents on outermost blocks of roof step 1 edges. (Placed overlapping step1 edges to simulate accents.)"
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [2, 4, 1, 6, 5, 1],
+      "block": "oak_planks",
+      "description": "North-facing eave overhang: plank blocks along north edge between x=2..6 at y=4..5 to form visible overhang."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [2, 4, 15, 6, 5, 15],
+      "block": "oak_planks",
+      "description": "South-facing eave overhang along back edge."
+    },
+    {
+      "op": "set_block_region",
+      "bbox": [1, 0, 0, 7, 0, 16],
+      "block": "air",
+      "description": "Clearance: ensure the outer border top face (z row at edges) is exposed as platform edge by clearing any overlapping blocks above border where needed."
+    }
+  ],
+  "self_check": {
+    "bbox_integrity": "valid - all operation coordinates lie within xmin..xmax (0..8), ymin..ymax (0..6), zmin..zmax (0..16).",
+    "operation_count": "18 (<= 260)",
+    "contains_floor": "yes - oak_planks floor placed at y=0 inside border.",
+    "contains_walls": "yes - stone_bricks and cobblestone corners placed from y=1 up to eaves y=4.",
+    "contains_roof": "yes - stepped oak_planks roof layers at y=5 and y=6 with slab accents.",
+    "contains_windows": "yes - continuous glass_pane band placed across interior wall area at y=2.",
+    "contains_entrance": "yes - oak_door placed centered at north wall creating an opening.",
+    "material_coherence": "satisfied - distinct materials assigned: quartz for border/trim, oak_planks for floor/roof/trim, stone_bricks for walls, cobblestone for corners, glass_pane for windows, stone_slab for roof accents. Oak_planks used in both floor and roof is acceptable for small build consistency.",
+    "structural_faithfulness": "improved - footprint matches provided dimensions (width 9 counted as x

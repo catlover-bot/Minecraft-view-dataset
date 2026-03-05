@@ -1,0 +1,74 @@
+{
+  "summary": "Small rectangular single-storey building with brick walls, a stepped dark-red (nether-brick) hipped/stepped roof, stone-corner pillars and a white stone trim/band near roofline. Windows run along the long walls above a wooden baseboard; the whole sits inside a low white stone border on flattened dirt.",
+  "building_type": "small house / pavilion",
+  "shape": {
+    "overall_form": "rectangular box with a centered stepped/hipped roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long center axis (roof steps mirrored)",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 13,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "wall (primary)",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof (stepped dark red slabs/stairs)",
+      "confidence": 0.95
+    },
+    {
+      "name": "quartz",
+      "role": "trim / top band and outer low border",
+      "confidence": 0.85
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner pillars (chiseled/regular stone brick)",
+      "confidence": 0.6
+    },
+    {
+      "name": "wood",
+      "role": "baseboard / lower strip under windows (planks)",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "slab_stone",
+      "role": "accent slabs on roof corners",
+      "confidence": 0.6
+    }
+  ],
+  "elements": [
+    "continuous row windows on both long sides (3-4 panes each side)",
+    "brick walls with wooden lower strip",
+    "white horizontal trim band under roof all around",
+    "stepped dark-red roof made of horizontal slab/stair layers",
+    "stone-like corner pillars",
+    "outer low white stone border surrounding building on ground"
+  ],
+  "rebuild_hints": [
+    "Footprint is rectangular; walls are 1 block thick brick with a 1-block-high wooden planks strip at the bottom and a quartz (white) band 1 block high near top.",
+    "Place glass windows in a continuous row centered on the long walls between wood base and quartz band (windows appear 1 block high and repeated).",
+    "Corners use stacked stonebrick (pillar) blocks rising to the quartz band height.",
+    "Roof is built from nether_brick stairs/slabs in several nested horizontal steps forming a low hipped/stepped roof; add light-colored slabs at the four corner step ends.",
+    "Surround the building with a 1-block-high quartz border set on the ground; building sits in a shallow dirt plaza."
+  ],
+  "uncertainties": [
+    "Exact block types for white trim and border are assumed quartz (could be another white stone like smooth stone); confidence 0.85.",
+    "Corner pillar material looks like stonebrick but could be polished/different stone variant; confidence 0.6.",
+    "Roof detail uses nether_brick stairs/slabs but exact orientation (stairs vs full blocks) is inferred from stepped appearance; confidence 0.9.",
+    "Width/depth/height integers are estimated from visible block counts in images and may be off by ±1-2 blocks."
+  ]
+}

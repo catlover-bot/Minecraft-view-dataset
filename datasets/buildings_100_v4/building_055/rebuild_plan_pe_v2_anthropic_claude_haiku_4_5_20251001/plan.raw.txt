@@ -1,0 +1,265 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 26,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 26
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "quartz_block",
+    "glass": "sea_lantern",
+    "light": "glowstone",
+    "floor": "stone_slab",
+    "fence": "quartz_block",
+    "tower": "stonebrick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 26,
+          "z2": 26,
+          "label": "pyramid_base"
+        }
+      ],
+      "symmetry": "approximate_bilateral_x"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 18
+        },
+        "rooms_hint": "stepped pyramid monument with central plateau",
+        "perimeter_profile": "rectangle_with_terraces"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "entrance",
+        "face": "south",
+        "x1": 12,
+        "y1": 1,
+        "z1": 0,
+        "x2": 14,
+        "y2": 3,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 16,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 16,
+          "x1": 8,
+          "z1": 8,
+          "x2": 18,
+          "z2": 18,
+          "block": "stone_slab"
+        },
+        {
+          "y": 17,
+          "x1": 2,
+          "z1": 2,
+          "x2": 5,
+          "z2": 5,
+          "block": "wood"
+        },
+        {
+          "y": 17,
+          "x1": 21,
+          "z1": 2,
+          "x2": 24,
+          "z2": 5,
+          "block": "wood"
+        },
+        {
+          "y": 17,
+          "x1": 21,
+          "z1": 21,
+          "x2": 24,
+          "z2": 24,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 26,
+      "y2": 0,
+      "z2": 26,
+      "block": "stone_slab",
+      "purpose": "base_ground_level"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 25,
+      "y2": 1,
+      "z2": 25,
+      "block": "quartz_block",
+      "purpose": "white_band_terrace_1"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 24,
+      "y2": 2,
+      "z2": 24,
+      "block": "stone_slab",
+      "purpose": "terrace_2_tread"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 3,
+      "z1": 3,
+      "x2": 23,
+      "y2": 3,
+      "z2": 23,
+      "block": "quartz_block",
+      "purpose": "white_band_terrace_2"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 4,
+      "z1": 4,
+      "x2": 22,
+      "y2": 4,
+      "z2": 22,
+      "block": "stone_slab",
+      "purpose": "terrace_3_tread"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 5,
+      "z1": 5,
+      "x2": 21,
+      "y2": 5,
+      "z2": 21,
+      "block": "quartz_block",
+      "purpose": "white_band_terrace_3"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 6,
+      "z1": 6,
+      "x2": 20,
+      "y2": 6,
+      "z2": 20,
+      "block": "stone_slab",
+      "purpose": "terrace_4_tread"
+    },
+    {
+      "op": "fill",
+      "x1": 7,
+      "y1": 7,
+      "z1": 7,
+      "x2": 19,
+      "y2": 7,
+      "z2": 19,
+      "block": "quartz_block",
+      "purpose": "white_band_terrace_4"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 8,
+      "z1": 8,
+      "x2": 18,
+      "y2": 16,
+      "z2": 18,
+      "block": "stone_slab",
+      "purpose": "central_plateau"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 5,
+      "y2": 17,
+      "z2": 5,
+      "block": "stonebrick",
+      "purpose": "tower_corner_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 21,
+      "y1": 2,
+      "z1": 2,
+      "x2": 24,
+      "y2": 17,
+      "z2": 5,
+      "block": "stonebrick",
+      "purpose": "tower_corner_se"
+    },
+    {
+      "op": "fill",
+      "x1": 21,
+      "y1": 2,
+      "z1": 21,
+      "x2": 24,
+      "y
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 26,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 26,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 26, "y2": 0, "z2": 26, "block": "stone_slab", "description": "base floor layer"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 25, "y2": 1, "z2": 25, "block": "quartz_block", "description": "white perimeter border base"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 2, "x2": 24, "y2": 1, "z2": 24, "block": "stone_slab", "description": "terrace 1 tread"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 2, "x2": 24, "y2": 2, "z2": 24, "block": "quartz_block", "description": "white band between terrace 1 and 2"},
+    {"type": "fill", "x1": 3, "y1": 2, "z1": 3, "x2": 23, "y2": 2, "z2": 23, "block": "stone_slab", "description": "terrace 2 tread"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 3, "x2": 23, "y2": 3, "z2": 23, "block": "quartz_block", "description": "white band between terrace 2 and 3"},
+    {"type": "fill", "x1": 4, "y1": 3, "z1": 4, "x2": 22, "y2": 3, "z2": 22, "block": "stone_slab", "description": "terrace 3 tread"},
+    {"type": "fill", "x1": 4, "y1": 4, "z1": 4, "x2": 22, "y2": 4, "z2": 22, "block": "quartz_block", "description": "white band between terrace 3 and 4"},
+    {"type": "fill", "x1": 5, "y1": 4, "z1": 5, "x2": 21, "y2": 4, "z2": 21, "block": "stone_slab", "description": "terrace 4 tread"},
+    {"type": "fill", "x1": 5, "y1": 5, "z1": 5, "x2": 21, "y2": 5, "z2": 21, "block": "quartz_block", "description": "white band between terrace 4 and 5"},
+    {"type": "fill", "x1": 6, "y1": 5, "z1": 6, "x2": 20, "y2": 5, "z2": 20, "block": "stone_slab", "description": "terrace 5 tread"},
+    {"type": "fill", "x1": 6, "y1": 6, "z1": 6, "x2": 20, "y2": 6, "z2": 20, "block": "quartz_block", "description": "white band between terrace 5 and 6"},
+    {"type": "fill", "x1": 7, "y1": 6, "z1": 7, "x2": 19, "y2": 6, "z2": 19, "block": "stone_slab", "description": "terrace 6 tread"},
+    {"type": "fill", "x1": 7, "y1": 7, "z1": 7, "x2": 19, "y2": 7, "z2": 19, "block": "quartz_block", "description": "white band between terrace 6 and 7"},
+    {"type": "fill", "x1": 8, "y1": 7, "z1": 8, "x2": 18, "y2": 7, "z2": 18, "block": "stone_slab", "description": "terrace 7 tread / central plateau"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 4, "y2": 16, "z2": 4, "block": "stone_brick", "description": "tower 1 (corner NW) walls"},
+    {"type": "fill", "x1": 1, "y1": 16, "z1": 1, "x2": 4, "y2": 17, "z2": 4, "block": "oak_planks", "description": "tower 1 roof platform"},
+    {"type": "set", "x": 2, "y": 17, "z": 2, "block": "sea_lantern", "description": "tower 1 roof light"},
+    {"type": "fill", "x1": 22, "y1": 1, "z1": 1, "x2": 25, "y2": 16, "z2": 4, "block": "stone_brick", "description": "tower 2 (corner NE) walls"},
+    {"type": "fill", "x1": 22, "y1": 16, "z1": 1, "x2": 25, "y2": 17, "z2": 4, "block": "oak_planks", "description": "tower 2 roof platform"},
+    {"type": "set", "x": 23, "y": 17, "z": 2, "block": "sea_lantern", "description": "tower 2 roof light"},
+    {"type": "fill", "x1": 22, "y1": 1, "z1": 22, "x2": 25, "y2": 16, "z2": 25, "block": "stone_brick", "description": "tower 3 (corner SE) walls"},
+    {"type": "fill", "x1": 22, "y1": 16, "z1": 22, "x2": 25, "y2": 17, "z2": 25, "block": "oak_planks", "description": "tower 3 roof platform"},
+    {"type": "set", "x": 23, "y": 17, "z": 23, "block": "sea_lantern", "description": "tower 3 roof light"},
+    {"type": "fill", "x1": 12, "y1": 1, "z1": 0, "x2": 14, "y2": 3, "z2": 0, "block": "air", "description": "entrance opening (front)"},
+    {"type": "set", "x": 13, "y":

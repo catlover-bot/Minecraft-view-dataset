@@ -1,0 +1,72 @@
+{
+  "summary": "Two-story rectangular residential-style building with a stepped brick gable roof, continuous horizontal window bands on both floors, corner stone pillars, and a raised white trim base around the footprint. Exterior walls use a lighter block (sandstone or similar) with a wood plank band between floors and a white horizontal band above and below the windows.",
+  "building_type": "house",
+  "shape": {
+    "overall_form": "simple rectangular block with a symmetric pitched/stepped gable along the long axis",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long centerline (front/back faces mirror)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 19,
+    "height": 9
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "sandstone",
+      "role": "wall",
+      "confidence": 0.85
+    },
+    {
+      "name": "wood",
+      "role": "horizontal band/floor separation (planks)",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner pillars / accents",
+      "confidence": 0.6
+    },
+    {
+      "name": "quartz",
+      "role": "white trim/base and upper lintel",
+      "confidence": 0.7
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    }
+  ],
+  "elements": [
+    "continuous horizontal window bands (three or four glass panes repeated) on both floors",
+    "entrance unclear/not visible in shown views",
+    "stepped brick gable roof with central small chimney or cap",
+    "corner vertical stone/stonebrick pillars",
+    "white slab or block trim base surrounding footprint"
+  ],
+  "rebuild_hints": [
+    "Footprint is rectangular; build a two-block-tall sandstone wall band for each floor with a one-block-high wood plank strip between floors.",
+    "Place a continuous row of glass windows on each floor across the long face with a repeating 1x1 pane gap pattern (windows appear 4 to 5 panes long per face).",
+    "Cap wall with a one-block-high white band (quartz or similar) and create a centrally peaked stepped brick gable roof along the long axis, stepping down one block per step toward eaves.",
+    "Add darker stone corner pillars rising full height where the white bands meet corners.",
+    "Surround base with a one-block-high white trim (slab or full blocks) raised slightly above surrounding ground."
+  ],
+  "uncertainties": [
+    "Exact block types for light-colored walls: appear to be sandstone but could be smooth sandstone or another light block (confidence 0.85).",
+    "White trim material likely quartz or white slab but could be diorite or smooth stone (confidence ~0.7).",
+    "Exact internal floor heights and presence/location of doors/entrances are not visible in provided images.",
+    "Dimension estimates (width/depth/height) are approximate based on visible block counts from images; actual counts may differ by a few blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_086",
+  "created_at": "2026-02-28T14:19:16.593250+00:00"
+}

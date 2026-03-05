@@ -1,0 +1,447 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 16
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 16,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_along_z_center (front/back mirror)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single open hall (unknown partitions)",
+        "perimeter_profile": "rectangular with parapet"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 1,
+        "z1": 4,
+        "x2": 8,
+        "y2": 1,
+        "z2": 11
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 1,
+        "z1": 4,
+        "x2": 0,
+        "y2": 1,
+        "z2": 11
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 4,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 16,
+          "block": "brick"
+        },
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 15,
+          "block": "brick"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 2,
+          "x2": 6,
+          "z2": 14,
+          "block": "brick"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 2,
+          "x2": 6,
+          "z2": 14,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 16,
+      "block": "oak_planks",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 16,
+      "block": "sandstone",
+      "purpose": "walls_lower_course"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 3,
+      "z2": 15,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 16,
+      "block": "quartz_block",
+      "purpose": "parapet_and_sill_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": -1,
+      "x2": 8,
+      "y2": 0,
+      "z2": -1,
+      "block": "dirt",
+      "purpose": "dug_out_border_ground_front",
+      "note": "adjusted to lie inside bbox; will be clamped by bbox constraints"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 17,
+      "x2": 8,
+      "y2": 0,
+      "z2": 17,
+      "block": "dirt",
+      "purpose": "dug_out_border_ground_back",
+      "note": "outside bbox; included to express intended border but must be ignored if executor enforces bbox"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 1,
+      "z1": 4,
+      "x2": 0,
+      "y2": 1,
+      "z2": 11,
+      "purpose": "west_window_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      *,
+      "y1": 1,
+      "z1": 4,
+      "x2": 0,
+      "y2": 1,
+      "z2": 7,
+      "block": "glass",
+      "purpose": "west_window_panes_part1"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 8,
+      "x2": 0,
+      "y2": 1,
+      "z2": 11,
+      "block": "glass",
+      "purpose": "west_window_panes_part2"
+    },
+    {
+      "op": "carve",
+      "x1": 8,
+      "y1": 1,
+      "z1": 4,
+      "x2": 8,
+      "y2": 1,
+      "z2": 11,
+      "purpose": "east_window_band"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 4,
+      "x2": 8,
+      "y2": 1,
+      "z2": 7,
+      "block": "glass",
+      "purpose": "east_window_panes_part1"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 8,
+      "x2": 8,
+      "y2": 1,
+      "z2": 11,
+      "block": "glass",
+      "purpose": "east_window_panes_part2"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 16,
+      "block": "brick",
+      "purpose": "roof_layer_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 7,
+      "y2": 5,
+      "z2": 15,
+      "block": "brick",
+      "purpose": "roof_layer_mid"
+    },
+    {
+      "op": "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 16,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "block": "dirt",
+      "from": [ -1, -1, -1 ],
+      "to": [ 9, -1, 17 ],
+      "note": "surrounding dug-out dirt base one block below ground plane for context"
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "block": "quartz_block",
+      "from": [ 0, 0, 0 ],
+      "to": [ 8, 0, 16 ],
+      "note": "one-block-high white border/ledge around building footprint (ground level). This occupies same plane as floor border; ensured inside bbox"
+    },
+    {
+      "id": 3,
+      "action": "fill",
+      "block": "sandstone",
+      "from": [ 1, 1, 1 ],
+      "to": [ 7, 1, 15 ],
+      "note": "interior floor layer (sandstone floor) at y=1 to give a definite floor inside building"
+    },
+    {
+      "id": 4,
+      "action": "fill",
+      "block": "sandstone",
+      "from": [ 1, 2, 1 ],
+      "to": [ 7, 2, 15 ],
+      "note": "lower course of wall (y=2) continuous sandstone"
+    },
+    {
+      "id": 5,
+      "action": "fill",
+      "block": "sandstone",
+      "from": [ 1, 3, 1 ],
+      "to": [ 7, 3, 15 ],
+      "note": "middle course of wall (y=3)"
+    },
+    {
+      "id": 6,
+      "action": "fill",
+      "block": "sandstone",
+      "from": [ 1, 4, 1 ],
+      "to": [ 7, 4, 15 ],
+      "note": "upper course of wall (y=4) just below parapet line"
+    },
+    {
+      "id": 7,
+      "action": "fill",
+      "block": "quartz_block",
+      "from": [ 0, 5, 0 ],
+      "to": [ 8, 5, 16 ],
+      "note": "parapet/trim band wrapping the building at y=5 (one-block-high top sill and corner pillars), aligns with bbox"
+    },
+    {
+      "id": 8,
+      "action": "clear",
+      "block": "air",
+      "from": [ 4, 2, 0 ],
+      "to": [ 4, 4, 0 ],
+      "note": "entrance opening centered on short side (front) at z=0, 3 blocks high (y=2..4), one block wide"
+    },
+    {
+      "id": 9,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [ 2, 3, 1 ],
+      "to": [ 5, 3, 1 ],
+      "note": "continuous horizontal window band on long side (front interior side) at y=3, 4 panes long"
+    },
+    {
+      "id": 10,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [ 2, 3, 15 ],
+      "to": [ 5, 3, 15 ],
+      "note": "continuous horizontal window band on opposite long side (back) at y=3, 4 panes long"
+    },
+    {
+      "id": 11,
+      "action": "fill",
+      "block": "quartz_block",
+      "from": [ 1, 3, 1 ],
+      "to": [ 1, 3, 15 ],
+      "note": "vertical sill/trim accent at left interior wall centerline — thin decorative strip to emphasize trim (keeps roles distinct)"
+    },
+    {
+      "id": 12,
+      "action": "fill",
+      "block": "quartz_block",
+      "from": [ 7, 3, 1 ],
+      "to": [ 7, 3, 15 ],
+      "note": "vertical sill/trim accent at right interior wall centerline"
+    },
+    {
+      "id": 13,
+      "action": "replace",
+      "block": "air",
+      "from": [ 2, 2, 0 ],
+      "to": [ 5, 2, 0 ],
+      "note": "clear any blocks in front of entrance interior area to ensure walk-through"
+    },
+    {
+      "id": 14,
+      "action": "fill",
+      "block": "brick_block",
+      "from": [ 2, 5, 2 ],
+      "to": [ 6, 5, 14 ],
+      "note": "first (top) roof layer: flat central ridge area one-block-thick of brick, inset from parapet by one block"
+    },
+    {
+      "id": 15,
+      "action": "fill",
+      "block": "brick_block",
+      "from": [ 3, 6, 3 ],
+      "to": [ 5, 6, 13 ],
+      "note": "second roof step inset one block on all long sides — brick layer at y=6 (roof peak area). This stays inside bbox (ymax was 6; allowed to place at y=6)"
+    },
+    {
+      "id": 16,
+      "action": "fill",
+      "block": "stone_slab",
+      "from": [ 3, 6, 3 ],
+      "to": [ 3, 6, 3 ],
+      "note": "stone slab capstone at one corner of roof central step"
+    },
+    {
+      "id": 17,
+      "action": "fill",
+      "block": "stone_slab",
+      "from": [ 5, 6, 3 ],
+      "to": [ 5, 6, 3 ],
+      "note": "stone slab capstone at other long-side corner of roof central step"
+    },
+    {
+      "id": 18,
+      "action": "fill",
+      "block": "stone_slab",
+      "from": [ 3, 6, 13 ],
+      "to": [ 3, 6, 13 ],
+      "note": "stone slab capstone at back corner"
+    },
+    {
+      "id": 19,
+      "action": "fill",
+      "block": "stone_slab",
+      "from": [ 5, 6, 13 ],
+      "to": [ 5, 6, 13 ],
+      "note": "stone slab capstone at back other corner"
+    },
+    {
+      "id": 20,
+      "action": "air_fill",
+      "block": "air",
+      "from": [ 1, 1, 1 ],
+      "to": [ 7, 4, 15 ],
+      "note": "ensure interior is hollow (clears any remaining blocks inside walls)"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "operations_within_bbox": false,
+    "operation_count": 20,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,
+    "material_coherence_ok": true,
+    "notes": [
+      "All primary operations were constrained to bbox [0..8] x [0..6] x [0..16] except a preparatory dirt surround which uses coordinates outside the bbox to create a dug-out context (operation id 1). That dirt-fill intentionally extends one block beyond bbox to represent dug-out ground; if strict enforcement is required, remove or clip operation id 1 to bbox.",
+      "Roof top step

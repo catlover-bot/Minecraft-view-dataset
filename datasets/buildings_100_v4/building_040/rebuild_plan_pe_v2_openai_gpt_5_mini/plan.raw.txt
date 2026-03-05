@@ -1,0 +1,405 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 21,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 29
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 21,
+          "z2": 29,
+          "label": "main"
+        }
+      ],
+      "symmetry": "x_axis_centered_longitudinal (left-right mirror); front-back approximate with entrance projection on north side"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground base / service ring; outer walkway",
+        "perimeter_profile": "continuous base band with low fence around"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 7
+        },
+        "rooms_hint": "lower spectator tier",
+        "perimeter_profile": "outer ring with window band"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 8,
+          "ymax": 11
+        },
+        "rooms_hint": "upper spectator tier / parapet",
+        "perimeter_profile": "outer ring with window band and parapet"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 21,
+        "y1": 5,
+        "z1": 2,
+        "x2": 21,
+        "y2": 6,
+        "z2": 26
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 5,
+        "z1": 2,
+        "x2": 0,
+        "y2": 6,
+        "z2": 26
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 11,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 11,
+          "x1": 0,
+          "z1": 0,
+          "x2": 21,
+          "z2": 29,
+          "block": "brick"
+        },
+        {
+          "y": 12,
+          "x1": 1,
+          "z1": 2,
+          "x2": 20,
+          "z2": 27,
+          "block": "brick"
+        },
+        {
+          "y": 12,
+          "x1": 2,
+          "z1": 4,
+          "x2": 19,
+          "z2": 25,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 21,
+      "y2": 0,
+      "z2": 29,
+      "block": "dirt",
+      "purpose": "ground_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 21,
+      "y2": 11,
+      "z2": 29,
+      "block": "sandstone",
+      "purpose": "solid_outer_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 19,
+      "y2": 10,
+      "z2": 27,
+      "purpose": "open_central_field_and_interior_space (hollow arena)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 20,
+      "y2": 1,
+      "z2": 28,
+      "block": "dirt",
+      "purpose": "field_floor_ring (dirt floor around interior edges)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 21,
+      "y2": 3,
+      "z2": 29,
+      "block": "quartz_block",
+      "purpose": "horizontal_trim_band_1"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 21,
+      "y2": 7,
+      "z2": 29,
+      "block": "quartz_block",
+      "purpose": "horizontal_trim_band_2"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 11,
+      "z1": 0,
+      "x2": 21,
+      "y2": 11,
+      "z2": 29,
+      "block": "quartz_block",
+      "purpose": "parapet_trim_top"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 0,
+      "y2": 10,
+      "z2": 29,
+      "block": "quartz_block",
+      "purpose": "west_corner_pillar_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 21,
+      "y1": 4,
+      "z1": 0,
+      "x2": 21,
+      "y2": 10,
+      "z2": 29,
+      "block": "quartz_block",
+      "purpose": "east_corner_pillar_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 21,
+      "y2": 4,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "entrance_projection_base (north face small porch base)"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 3,
+      "z2": 0,
+      "block": "air",
+      "purpose": "door_opening_carve_north"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 3,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 1,
+      "block": "brick",
+      "purpose": "entrance_porch_roof"
+    },
+    {
+      "op": "fill",
+      "x1
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 21,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 29,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "dirt",
+      "from": { "x": -1, "y": -1, "z": -1 },
+      "to": { "x": 22, "y": -1, "z": 30 },
+      "note": "ground/gravel base surrounding building footprint (one layer)."
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": { "x": 0, "y": 0, "z": 0 },
+      "to": { "x": 21, "y": 11, "z": 29 },
+      "note": "build outer hollow shell volume as main wall mass (will hollow out interior and carve tiers/trim)."
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": { "x": 1, "y": 1, "z": 1 },
+      "to": { "x": 20, "y": 10, "z": 28 },
+      "note": "hollow interior to create open central arena/field and inner circulation space."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": { "x": 0, "y": 2, "z": 0 },
+      "to": { "x": 21, "y": 2, "z": 29 },
+      "note": "continuous horizontal trim band (first, between ground and first tier)."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": { "x": 0, "y": 6, "z": 0 },
+      "to": { "x": 21, "y": 6, "z": 29 },
+      "note": "continuous horizontal trim band (between tier 1 and tier 2)."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": { "x": 0, "y": 10, "z": 0 },
+      "to": { "x": 21, "y": 10, "z": 29 },
+      "note": "continuous horizontal trim band under roofline (top trim)."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": { "x": 0, "y": 2, "z": 0 },
+      "to": { "x": 0, "y": 10, "z": 0 },
+      "note": "north-west vertical corner pillar (left-front corner)."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": { "x": 21, "y": 2, "z": 0 },
+      "to": { "x": 21, "y": 10, "z": 0 },
+      "note": "north-east vertical corner pillar (right-front corner)."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": { "x": 0, "y": 2, "z": 29 },
+      "to": { "x": 0, "y": 10, "z": 29 },
+      "note": "south-west vertical corner pillar (left-back corner)."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": { "x": 21, "y": 2, "z": 29 },
+      "to": { "x": 21, "y": 10, "z": 29 },
+      "note": "south-east vertical corner pillar (right-back corner)."
+    },
+    {
+      "op": "set",
+      "block": "glass",
+      "from": { "x": 2, "y": 3, "z": 0 },
+      "to": { "x": 19, "y": 3, "z": 0 },
+      "note": "row of small windows on front tier (1x1 holes filled with glass), spaced every 2 blocks: operations set contiguous span for efficiency; exact spacing achieved by alternating glass/air in final pass."
+    },
+    {
+      "op": "replace_rows",
+      "pattern": { "step": 2 },
+      "block": "glass",
+      "rows": [
+        { "y": 4, "from": { "x": 2, "z": 0 }, "to": { "x": 19, "z": 0 } },
+        { "y": 7, "from": { "x": 2, "z": 0 }, "to": { "x": 19, "z": 0 } },
+        { "y": 8, "from": { "x": 2, "z": 0 }, "to": { "x": 19, "z": 0 } }
+      ],
+      "note": "additional narrow window rows on the front face across tiers; implemented as row operations spaced by pattern to produce narrow windows every 2 blocks horizontally."
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": { "x": 9, "y": 1, "z": 0 },
+      "to": { "x": 12, "y": 4, "z": 0 },
+      "note": "entrance opening on front long side centered (3 blocks wide, 4 high) creating a porch recess."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": { "x": 8, "y": 4, "z": -1 },
+      "to": { "x": 13, "y": 4, "z": -1 },
+      "note": "small porch roof cap framed in quartz immediately outside entrance (1-block overhang)."
+    },
+    {
+      "op": "roof_segment",
+      "type": "stepped_gable",
+      "material": "brick",
+      "from": { "x": 0, "y": 11, "z": 0 },
+      "to": { "x": 21, "y": 11, "z": 29 },
+      "note": "build stepped brick gable roof along long sides; internal algorithm will place stairs/blocks inward creating a wrapped stepped profile leaving central open court; kept within bbox by capping at ymax."
+    },
+    {
+      "op": "fill",
+      "block": "sandstone_slab",
+      "from": { "x": 1, "y": 1, "z": 1 },
+      "to": { "x": 20, "y": 1, "z": 28 },
+      "note": "ground-level arena floor layer (sandstone slabs) representing seating tiers' first floor edge; field interior remains air/grass if further pass adds grass."
+    },
+    {
+      "op": "set",
+      "block": "grass_block",
+      "from": { "x": 3, "y": 0, "z": 3 },
+      "to": { "x": 18, "y": 0, "z": 26 },
+      "note": "central grassy field on ground layer within arena interior footprint."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_stairs",
+      "from": { "x": 0, "y": 11, "z": 0 },
+      "to": { "x": 0, "y": 11, "z": 29 },
+      "note": "top trim edge detail and small vertical cap stairs on corners; constrained inside bbox."
+    },
+    {
+      "op": "outline_fence",
+      "material": "quartz_block",

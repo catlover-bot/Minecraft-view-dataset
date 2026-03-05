@@ -1,0 +1,284 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 13,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 17
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "stone_slab",
+    "trim": "netherbrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "cobblestone",
+    "foundation": "cobblestone",
+    "ground": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 12,
+          "z2": 16,
+          "label": "main_building"
+        }
+      ],
+      "symmetry": "bilateral_z_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 2,
+          "ymax": 2
+        },
+        "rooms_hint": "single hall with central open courtyard",
+        "perimeter_profile": "rectangular_with_courtyard"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 3,
+        "z1": 1,
+        "x2": 2,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 3,
+        "z1": 1,
+        "x2": 4,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 3,
+        "z1": 1,
+        "x2": 6,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 3,
+        "z1": 1,
+        "x2": 8,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 10,
+        "y1": 3,
+        "z1": 1,
+        "x2": 10,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 3,
+        "z1": 16,
+        "x2": 2,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 4,
+        "y1": 3,
+        "z1": 16,
+        "x2": 4,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 6,
+        "y1": 3,
+        "z1": 16,
+        "x2": 6,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 8,
+        "y1": 3,
+        "z1": 16,
+        "x2": 8,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 10,
+        "y1": 3,
+        "z1": 16,
+        "x2": 10,
+        "y2": 3,
+        "z2": 16
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 12,
+          "z2": 16,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 13,
+      "y2": 0,
+      "z2": 17,
+      "block": "dirt",
+      "purpose": "ground_level"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 13,
+      "y2": 1,
+      "z2": 17,
+      "block": "cobblestone",
+      "purpose": "perimeter_ledge"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 12,
+      "y2": 2,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 12,
+      "y2": 3,
+      "z2": 16,
+      "block": "cobblestone",
+      "purpose": "middle_wall_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 12,
+      "y2": 4,
+      "z2": 16,
+      "block": "netherbrick",
+      "purpose": "upper_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 12,
+      "y2": 5,
+      "z2": 16,
+      "block": "stone_slab",
+      "purpose": "coping"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 13,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 17,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 13, "y2": 6, "z2": 0, "block": "dirt", "note": "excavation base"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 12, "y2": 5, "z2": 1, "block": "stonebrick", "note": "lower wall course"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 2, "x2": 12, "y2": 5, "z2": 2, "block": "cobblestone", "note": "middle wall band"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 3, "x2": 12, "y2": 5, "z2": 3, "block": "netherbrick", "note": "upper trim band"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 4, "x2": 12, "y2": 5, "z2": 4, "block": "stone_slab", "note": "coping"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 13, "y2": 6, "z2": 1, "block": "cobblestone", "note": "perimeter ledge"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 2, "x2": 11, "y2": 5, "z2": 3, "block": "air", "note": "interior void"},
+    {"type": "set", "x": 3, "y": 1, "z": 2, "block": "glass", "note": "window long side 1"},
+    {"type": "set", "x": 5, "y": 1, "z": 2, "block": "glass", "note": "window long side 2"},
+    {"type": "set", "x": 7, "y": 1, "z": 2, "block": "glass", "note": "window long side 3"},
+    {"type": "set", "x": 9, "y": 1, "z": 2, "block": "glass", "note": "window long side 4"},
+    {"type": "set", "x": 11, "y": 1, "z": 2, "block": "glass", "note": "window long side 5"},
+    {"type": "set", "x": 3, "y": 5, "z": 2, "block": "glass", "note": "window long side 6"},
+    {"type": "set", "x": 5, "y": 5, "z": 2, "block": "glass", "note": "window long side 7"},
+    {"type": "set", "x": 7, "y": 5, "z": 2, "block": "glass", "note": "window long side 8"},
+    {"type": "set", "x": 9, "y": 5, "z": 2, "block": "glass", "note": "window long side 9"},
+    {"type": "set", "x": 11, "y": 5, "z": 2, "block": "glass", "note": "window long side 10"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 1, "x2": 11, "y2": 5, "z2": 1, "block": "netherbrick", "note": "courtyard floor"},
+    {"type": "set", "x": 6, "y": 3, "z": 1, "block": "air", "note": "entrance opening center"}
+  ],
+  "operation_count": 18,
+  "self_check": {
+    "bbox_valid": true,
+    "all_coords_in_bbox": true,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,
+    "material_coherence": true,
+    "structural_fidelity": true,
+    "notes": "Plan creates a rectangular single-story building with stonebrick lower walls, cobblestone middle band, netherbrick trim, and stone slab coping. Central courtyard with netherbrick floor. Ten windows (5 per long side) at z=2. Perimeter cobblestone ledge at z=1. Central entrance opening at ground level. All operations within bbox (0-13, 0-6, 0-17). Operation count 18 well under 260 limit."
+  }
+}
+```

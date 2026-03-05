@@ -1,0 +1,439 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 32,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "wood",
+    "roof": "slab_stone",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 32,
+          "z2": 32,
+          "label": "outer_boundary"
+        }
+      ],
+      "symmetry": "bilateral_x_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 0
+        },
+        "rooms_hint": "open courtyard ground",
+        "perimeter_profile": "low boundary curb"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "perimeter stepped walls (tiers), accessible walkway",
+        "perimeter_profile": "stepped layered walls"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 11
+        },
+        "rooms_hint": "towers and central raised platform (raised top at ~y8-9)",
+        "perimeter_profile": "towers and raised cruciform"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 15,
+        "y1": 1,
+        "z1": 0,
+        "x2": 17,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 15,
+        "y1": 3,
+        "z1": 32,
+        "x2": 17,
+        "y2": 5,
+        "z2": 32
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 32,
+        "y1": 3,
+        "z1": 15,
+        "x2": 32,
+        "y2": 6,
+        "z2": 17
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 3,
+        "z1": 15,
+        "x2": 0,
+        "y2": 6,
+        "z2": 17
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 11,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 9,
+          "x1": 12,
+          "z1": 12,
+          "x2": 20,
+          "z2": 20,
+          "block": "nether_brick"
+        },
+        {
+          "y": 11,
+          "x1": 0,
+          "z1": 0,
+          "x2": 32,
+          "z2": 32,
+          "block": "slab_stone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 32,
+      "y2": 0,
+      "z2": 32,
+      "block": "dirt",
+      "purpose": "courtyard_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 31,
+      "y2": 0,
+      "z2": 31,
+      "block": "dirt",
+      "purpose": "interior_dirt_padding"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 32,
+      "y2": 1,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "outer_curb_slab_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 32,
+      "y2": 4,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "outer_boundary_wall_core"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 30,
+      "y2": 4,
+      "z2": 30,
+      "purpose": "open_courtyard_space_between_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 6,
+      "x2": 30,
+      "y2": 2,
+      "z2": 26,
+      "block": "wood",
+      "purpose": "lower_wall_band_1_horizontal"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 6,
+      "x2": 30,
+      "y2": 3,
+      "z2": 26,
+      "block": "log",
+      "purpose": "lower_wall_vertical_supports_band1"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 4,
+      "z1": 6,
+      "x2": 30,
+      "y2": 4,
+      "z2": 26,
+      "block": "wood",
+      "purpose": "middle_wall_band_2_horizontal"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 5,
+      "z1": 6,
+      "x2": 30,
+      "y2": 5,
+      "z2": 26,
+      "block": "stonebrick",
+      "purpose": "stone_slab_ledge_band"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 3,
+      "z1": 2,
+      "x2": 26,
+      "y2": 3,
+      "z2": 30,
+      "block": "wood",
+      "purpose": "perp_wall_band_cross_1"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 5,
+      "z1": 6,
+      "x2": 26,
+      "y2": 5,
+      "z2": 26,
+      "block": "stonebrick",
+      "purpose": "wall_upper_ledge_continuous"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 6,
+      "z1": 12,
+      "x2": 20,
+      "y2": 8,
+      "z2": 20,
+      "block": "log",
+      "purpose": "central_cruciform_platform_core"
+    },
+    {
+      "op": "fill",
+      "x1":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 32,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 32,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 32, 0, 32],
+      "block": "dirt",
+      "notes": "courtyard ground level base (single layer of dirt/terracotta inferred as dirt)"
+    },
+    {
+      "op": "line",
+      "box": [10, 0, 10, 22, 0, 10],
+      "block": "stonebrick_slab",
+      "notes": "stone slab curb/inner edge for central cross platform north arm base (edge at ground around platform footprint)"
+    },
+    {
+      "op": "line",
+      "box": [10, 0, 22, 22, 0, 22],
+      "block": "stonebrick_slab",
+      "notes": "stone slab curb east/west arms (south arm will mirror)"
+    },
+    {
+      "op": "line",
+      "box": [10, 0, 10, 10, 0, 22],
+      "block": "stonebrick_slab",
+      "notes": "stone slab curb west arm"
+    },
+    {
+      "op": "line",
+      "box": [22, 0, 10, 22, 0, 22],
+      "block": "stonebrick_slab",
+      "notes": "stone slab curb east arm"
+    },
+    {
+      "op": "fill",
+      "box": [12, 1, 14, 20, 2, 18],
+      "block": "nether_bricks",
+      "notes": "central raised cruciform platform top (dark center block chosen as nether_bricks for high contrast). Top is 2-3 blocks above ground; chosen 2-block elevation (y=1..2) with a 1-block thick top at y=2."
+    },
+    {
+      "op": "fill",
+      "box": [12, 1, 12, 20, 2, 20],
+      "block": "stonebrick_slab",
+      "notes": "stonebrick slab edging around central platform top to create ledge; sits at same y-level as platform top (slab placed at y=2 as upper half-slab equivalent). Trim outlines arms."
+    },
+    {
+      "op": "fill",
+      "box": [15, 1, 10, 17, 2, 22],
+      "block": "nether_bricks",
+      "notes": "north-south arm of the cross top (overlapping center). Ensures cruciform shape extends N/S."
+    },
+    {
+      "op": "fill",
+      "box": [10, 1, 15, 22, 2, 17],
+      "block": "nether_bricks",
+      "notes": "east-west arm of the cross top."
+    },
+    {
+      "op": "fill",
+      "box": [15, 0, 15, 17, 0, 17],
+      "block": "stonebrick",
+      "notes": "stonebrick base under central platform (one-block thick) to give a ledged foundation at ground level"
+    },
+    {
+      "op": "fill",
+      "box": [4, 1, 4, 8, 9, 8],
+      "block": "log",
+      "notes": "southwest tower core vertical logs (tower footprint 4x4), logs from y=1..9 (tall tower)."
+    },
+    {
+      "op": "fill",
+      "box": [24, 1, 24, 28, 9, 28],
+      "block": "log",
+      "notes": "northeast tower core vertical logs (opposite corner tower)."
+    },
+    {
+      "op": "replace",
+      "box": [4, 5, 5, 7, 6, 7],
+      "block": "air",
+      "notes": "tower small window gaps: hollow internal sections for openings (ensure interior space and windows)."
+    },
+    {
+      "op": "replace",
+      "box": [24, 5, 25, 27, 6, 27],
+      "block": "air",
+      "notes": "tower small window gaps."
+    },
+    {
+      "op": "fill",
+      "box": [3, 0, 3, 9, 0, 9],
+      "block": "stonebrick_slab",
+      "notes": "tower southwest base slab ring around tower (decorative ledge)."
+    },
+    {
+      "op": "fill",
+      "box": [23, 0, 23, 29, 0, 29],
+      "block": "stonebrick_slab",
+      "notes": "tower northeast base slab ring around tower."
+    },
+    {
+      "op": "fill",
+      "box": [4, 9, 4, 8, 9, 8],
+      "block": "stone_slab",
+      "notes": "tower southwest roof outer slab layer (overhang), using stone_slab for overhang cap."
+    },
+    {
+      "op": "fill",
+      "box": [24, 9, 24, 28, 9, 28],
+      "block": "stone_slab",
+      "notes": "tower northeast roof outer slab layer (overhang)."
+    },
+    {
+      "op": "fill",
+      "box": [5, 10, 5, 7, 10, 7],
+      "block": "nether_bricks",
+      "notes": "tower southwest roof dark center blocks with glowstone accents on corners next operation."
+    },
+    {
+      "op": "fill",
+      "box": [25, 10, 25, 27, 10, 27],
+      "block": "nether_bricks",
+      "notes": "tower northeast roof dark center blocks."
+    },
+    {
+      "op": "set",
+      "box": [5, 11, 5, 5, 11, 5],
+      "block": "glowstone",
+      "notes": "glowstone lighting on SW tower roof corner"
+    },
+    {
+      "op": "set",
+      "box": [7, 11, 7, 7, 11, 7],
+      "block": "glowstone",
+      "notes": "glowstone lighting on SW tower roof corner"
+    },
+    {
+      "op": "set",
+      "box": [25, 11, 25, 25, 11, 25],
+      "block": "glowstone",
+      "notes": "glowstone on NE tower roof corner"
+    },
+    {
+      "op": "set",
+      "box": [27, 11, 27, 27, 11, 27],
+      "block": "glowstone",
+      "notes": "glowstone on NE tower roof corner"
+    },
+    {
+      "op": "fill",
+      "box": [6, 1, 12, 10, 6, 20],
+      "block": "wood_planks",
+      "notes": "west perimeter stepped wall section main body (horizontal bands). Will be trimmed with slabs and logs."
+    },
+    {
+      "op": "fill",
+      "box": [22, 1, 12, 26, 6, 20],
+      "block": "wood_planks",
+      "notes": "east perimeter stepped wall section main body."
+    },
+    {
+      "op": "fill",
+      "box": [12, 1, 6, 20, 6, 10],
+      "block": "wood_planks",
+      "notes": "north perimeter stepped wall section main body."
+    },
+    {
+      "op": "fill",
+      "box": [12, 1, 22, 20, 6, 26],
+      "block": "wood_planks",

@@ -1,0 +1,462 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 18,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "slab_stone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "pillar": "stonebrick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 17,
+          "z2": 9,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "single open pavilion interior",
+        "perimeter_profile": "rectangular raised on platform"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 17,
+        "y1": 2,
+        "z1": 2,
+        "x2": 17,
+        "y2": 2,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 2,
+        "x2": 1,
+        "y2": 2,
+        "z2": 8
+      },
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 8,
+        "y1": 1,
+        "z1": 1,
+        "x2": 9,
+        "y2": 2,
+        "z2": 1
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 18,
+          "z2": 10,
+          "block": "brick"
+        },
+        {
+          "y": 6,
+          "x1": 1,
+          "z1": 1,
+          "x2": 17,
+          "z2": 9,
+          "block": "brick"
+        },
+        {
+          "y": 7,
+          "x1": 3,
+          "z1": 2,
+          "x2": 15,
+          "z2": 8,
+          "block": "brick"
+        },
+        {
+          "y": 8,
+          "x1": 6,
+          "z1": 4,
+          "x2": 12,
+          "z2": 6,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 18,
+      "y2": 0,
+      "z2": 10,
+      "block": "slab_stone",
+      "purpose": "raised_border_platform_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 17,
+      "y2": 0,
+      "z2": 9,
+      "block": "wood",
+      "purpose": "interior_floor_planks"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 17,
+      "y2": 1,
+      "z2": 9,
+      "block": "wood",
+      "purpose": "external_wood_skirt_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 17,
+      "y2": 4,
+      "z2": 9,
+      "block": "sandstone",
+      "purpose": "sandstone_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 17,
+      "y2": 5,
+      "z2": 9,
+      "block": "slab_stone",
+      "purpose": "top_trim_band_continuous"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 16,
+      "y2": 4,
+      "z2": 8,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 2,
+      "x2": 1,
+      "y2": 2,
+      "z2": 8,
+      "block": "glass",
+      "purpose": "west_window_band"
+    },
+    {
+      "op": "fill",
+      "x1": 17,
+      "y1": 2,
+      "z1": 2,
+      "x2": 17,
+      "y2": 2,
+      "z2": 8,
+      "block": "glass",
+      "purpose": "east_window_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 2,
+      "x2": 1,
+      "y2": 3,
+      "z2": 8,
+      "block": "glass",
+      "purpose": "west_window_band_extra"
+    },
+    {
+      "op": "fill",
+      "x1": 17,
+      "y1": 3,
+      "z1": 2,
+      "x2": 17,
+      "y2": 3,
+      "z2": 8,
+      "block": "glass",
+      "purpose": "east_window_band_extra"
+    },
+    {
+      "op": "carve",
+      "x1": 8,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 2,
+      "z2": 1,
+      "purpose": "north_entrance_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 2,
+      "z2": 1,
+      "block": "wood",
+      "purpose": "door_placeholder (optional)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 1,
+      "y2": 4,
+      "z2": 1,
+      "block": "stonebrick",
+      "purpose": "west_north_corner_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 17,
+      "y1": 1,
+      "z1": 1,
+      "x2": 17,
+      "y2": 4,
+      "z2": 1,
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 18,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 10,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "block": "quartz_slab",
+      "from": [0, 0, 0],
+      "to": [18, 0, 10],
+      "notes": "Raised white border platform (1 block high slab layer) surrounding footprint; full platform within bbox."
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [1, 1, 1],
+      "to": [17, 1, 9],
+      "notes": "Wooden plank base/skirting, 1 block high inset from slab edge (leaves 1-block slab border around)."
+    },
+    {
+      "id": 3,
+      "action": "fill",
+      "block": "sandstone",
+      "from": [1, 2, 1],
+      "to": [17, 4, 9],
+      "notes": "Sandstone wall body, 3 blocks high (y=2..4)."
+    },
+    {
+      "id": 4,
+      "action": "fill",
+      "block": "stone_bricks",
+      "from": [1, 2, 1],
+      "to": [1, 4, 1],
+      "notes": "Corner pillar NW (overlaps wall corner to form full-height pillar)."
+    },
+    {
+      "id": 5,
+      "action": "fill",
+      "block": "stone_bricks",
+      "from": [17, 2, 1],
+      "to": [17, 4, 1],
+      "notes": "Corner pillar NE."
+    },
+    {
+      "id": 6,
+      "action": "fill",
+      "block": "stone_bricks",
+      "from": [1, 2, 9],
+      "to": [1, 4, 9],
+      "notes": "Corner pillar SW."
+    },
+    {
+      "id": 7,
+      "action": "fill",
+      "block": "stone_bricks",
+      "from": [17, 2, 9],
+      "to": [17, 4, 9],
+      "notes": "Corner pillar SE."
+    },
+    {
+      "id": 8,
+      "action": "replace",
+      "block": "glass_pane",
+      "from": [3, 3, 1],
+      "to": [15, 3, 1],
+      "filter": "sandstone",
+      "notes": "Continuous horizontal band of windows on north long side: replace sandstone blocks at y=3, z=1 between x=3..15 with glass panes leaving 2-block corner spacing and 2-block spacing to walls to create ~13-wide band with mullions at intervals."
+    },
+    {
+      "id": 9,
+      "action": "replace",
+      "block": "glass_pane",
+      "from": [3, 3, 9],
+      "to": [15, 3, 9],
+      "filter": "sandstone",
+      "notes": "Continuous horizontal band of windows on south long side."
+    },
+    {
+      "id": 10,
+      "action": "fill",
+      "block": "quartz_slab",
+      "from": [1, 5, 1],
+      "to": [17, 5, 9],
+      "notes": "White slab trim running around top of walls at y=5 (slab layer above sandstone walls)."
+    },
+    {
+      "id": 11,
+      "action": "clear",
+      "from": [9, 2, 1],
+      "to": [9, 2, 1],
+      "notes": "Entrance opening center on north long side at x=9,z=1,y=2 (1-block wide, 2-block high)."
+    },
+    {
+      "id": 12,
+      "action": "clear",
+      "from": [9, 3, 1],
+      "to": [9, 3, 1],
+      "notes": "Entrance upper block to make 2-block tall doorway."
+    },
+    {
+      "id": 13,
+      "action": "place",
+      "block": "oak_door",
+      "from": [9, 2, 1],
+      "to": [9, 3, 1],
+      "notes": "Place door in entrance opening (bottom at y=2)."
+    },
+    {
+      "id": 14,
+      "action": "fill",
+      "block": "sandstone_stairs",
+      "from": [2, 5, 2],
+      "to": [16, 5, 8],
+      "notes": "Lower roof step (brick equivalent footprint will be placed above slabs) - placeholder to form step volumes; kept inside slab trim to avoid exceeding bbox."
+    },
+    {
+      "id": 15,
+      "action": "fill",
+      "block": "brick_block",
+      "from": [2, 6, 2],
+      "to": [16, 6, 8],
+      "notes": "First brick roof layer (y=6) inset 1 from slab trim; actual stepped roof will continue above within bbox height."
+    },
+    {
+      "id": 16,
+      "action": "fill",
+      "block": "brick_block",
+      "from": [4, 7, 4],
+      "to": [14, 7, 6],
+      "notes": "Second brick roof layer (center short ridge) reduced footprint to create stepped profile; top within bbox y<=8 (max y is 8)."
+    },
+    {
+      "id": 17,
+      "action": "place",
+      "block": "stone_slab",
+      "from": [2, 6, 2],
+      "to": [2, 6, 2],
+      "notes": "Stone slab cap at outer NW roof corner."
+    },
+    {
+      "id": 18,
+      "action": "place",
+      "block": "stone_slab",
+      "from": [16, 6, 2],
+      "to": [16, 6, 2],
+      "notes": "Stone slab cap at outer NE roof corner."
+    },
+    {
+      "id": 19,
+      "action": "place",
+      "block": "stone_slab",
+      "from": [2, 6, 8],
+      "to": [2, 6, 8],
+      "notes": "Stone slab cap at outer SW roof corner."
+    },
+    {
+      "id": 20,
+      "action": "place",
+      "block": "stone_slab",
+      "from": [16, 6, 8],
+      "to": [16, 6, 8],
+      "notes": "Stone slab cap at outer SE roof corner."
+    },
+    {
+      "id": 21,
+      "action": "fill",
+      "block": "smooth_stone",
+      "from": [0, 0, 0],
+      "to": [18, 0, 10],
+      "notes": "Self-check floor fill under slabs to ensure a solid platform base (optional solid layer at y=0)."
+    },
+    {
+      "id": 22,
+      "action": "fill",
+      "block": "cut_sandstone",
+      "from": [2, 1, 2],
+      "to": [16, 1, 8],
+      "notes": "Interior floor (raised 1 block above slab border, y=1)."
+    },
+    {
+      "id": 23,
+      "action": "replace",
+      "block": "sandstone",
+      "from": [9, 2, 1],
+      "to": [9, 2, 1],
+      "filter": "air",
+      "notes": "Ensure entrance bottom replaced with air before

@@ -1,0 +1,188 @@
+{
+  "op": "fill",
+  "block": "oak_planks",
+  "from": [
+    1,
+    0,
+    1
+  ],
+  "to": [
+    26,
+    0,
+    22
+  ],
+  "note": "ground floor interior fill placeholder (floor base layer)",
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 26,
+      "y2": 0,
+      "z2": 22,
+      "block": "oak_planks",
+      "purpose": "ground floor interior fill placeholder (floor base layer)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 27,
+      "y2": 0,
+      "z2": 23,
+      "block": "stone_bricks",
+      "purpose": "ground surrounding low stonebrick walkway/border (single-layer border at y=0). Allows slab/full block ambiguity by using full blocks for structural stability."
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 25,
+      "y2": 6,
+      "z2": 21,
+      "block": "oak_planks",
+      "purpose": "primary wall infill; outer shell of oak planks, leaving room for belts and pilasters"
+    },
+    {
+      "op": "carve",
+      "x1": 11,
+      "y1": 1,
+      "z1": 2,
+      "x2": 15,
+      "y2": 3,
+      "z2": 2,
+      "block": "air",
+      "purpose": "entrance opening on front face (south side), 5 blocks wide, 3 high; aligned with pilasters at x=13"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 8,
+      "z1": 1,
+      "x2": 26,
+      "y2": 8,
+      "z2": 22,
+      "block": "nether_bricks",
+      "purpose": "flat-ish roof main fill at y=8"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 9,
+      "z1": 0,
+      "x2": 27,
+      "y2": 9,
+      "z2": 23,
+      "block": "stone_bricks",
+      "purpose": "raised 1-block-high stonebrick parapet around roof perimeter at y=9"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 27,
+      "y2": 8,
+      "z2": 23,
+      "block": "red_nether_bricks",
+      "purpose": "dark-red trim band immediately under parapet (choice: red_nether_bricks for coherence and contrast)"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 9,
+      "z1": 3,
+      "x2": 24,
+      "y2": 9,
+      "z2": 20,
+      "block": "stone_bricks",
+      "purpose": "inner raised parapet top surface to emphasize raised border and create lip"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 25,
+      "y2": 1,
+      "z2": 21,
+      "block": "spruce_planks",
+      "purpose": "interior floor finishing at y=1 distinct from exterior stone border and ground fill"
+    },
+    {
+      "op": "fill",
+      "x1": 13,
+      "y1": 1,
+      "z1": 2,
+      "x2": 13,
+      "y2": 2,
+      "z2": 2,
+      "block": "dark_oak_door",
+      "purpose": "central double door (place two door blocks stacked) - coordinates reference hinge center; planning expects builder to orient doors"
+    }
+  ],
+  "bbox": {
+    "xmin": 0,
+    "xmax": 27,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 23
+  },
+  "palette": {},
+  "notes": [
+    "schema_repair_from_raw_response"
+  ],
+  "plan_version": "v1",
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 17,
+    "accepted_operations_count": 10,
+    "repaired_operations_count": 10,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 7,
+    "dropped_examples": [
+      {
+        "index": 3,
+        "reason": "unsupported_op_kind",
+        "raw_kind": "belts"
+      },
+      {
+        "index": 4,
+        "reason": "unsupported_op_kind",
+        "raw_kind": "pilasters"
+      },
+      {
+        "index": 5,
+        "reason": "unsupported_op_kind",
+        "raw_kind": "chamfer_corners"
+      },
+      {
+        "index": 7,
+        "reason": "unsupported_op_kind",
+        "raw_kind": "window_openings"
+      },
+      {
+        "index": 8,
+        "reason": "unsupported_op_kind",
+        "raw_kind": "fill_windows"
+      }
+    ]
+  },
+  "building": "building_041",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "created_at": "2026-02-28T19:52:41.718099+00:00",
+  "schema_repair_at": "2026-03-01T05:14:40.874484+00:00",
+  "parse_report": {
+    "method": "ops_array:operations",
+    "candidate_count": 46,
+    "selected_candidate_score": 20,
+    "used_ops_array_repair": true,
+    "used_op_objects_repair": false
+  }
+}

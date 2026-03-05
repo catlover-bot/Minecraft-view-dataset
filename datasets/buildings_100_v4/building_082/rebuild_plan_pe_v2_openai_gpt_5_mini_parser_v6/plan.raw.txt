@@ -1,0 +1,494 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 20
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "sea_lantern",
+    "floor": "sandstone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 20,
+          "label": "main_plot"
+        }
+      ],
+      "symmetry": "bilateral_along_z_center (entrance centered on long axis)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single open pavilion hall (hollowed interior)",
+        "perimeter_profile": "rectangular stepped corners with projecting quartz buttresses"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 6,
+        "y1": 1,
+        "z1": 0,
+        "x2": 6,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 2,
+        "z1": 0,
+        "x2": 8,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 4,
+        "y1": 2,
+        "z1": 20,
+        "x2": 8,
+        "y2": 3,
+        "z2": 20
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 4,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 1,
+          "z1": 1,
+          "x2": 11,
+          "z2": 19,
+          "block": "brick"
+        },
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 20,
+          "block": "quartz"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 20,
+      "block": "sandstone",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 3,
+      "z2": 19,
+      "block": "sandstone",
+      "purpose": "main_wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 3,
+      "z2": 20,
+      "block": "quartz",
+      "purpose": "outer_quartz_trim_band"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 10,
+      "y2": 3,
+      "z2": 18,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 1,
+      "y2": 4,
+      "z2": 1,
+      "block": "quartz",
+      "purpose": "nw_corner_buttress_base"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 1,
+      "block": "quartz",
+      "purpose": "ne_corner_buttress_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 19,
+      "x2": 1,
+      "y2": 4,
+      "z2": 20,
+      "block": "quartz",
+      "purpose": "sw_corner_buttress_base"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 19,
+      "x2": 12,
+      "y2": 4,
+      "z2": 20,
+      "block": "quartz",
+      "purpose": "se_corner_buttress_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 11,
+      "y2": 4,
+      "z2": 19,
+      "block": "quartz",
+      "purpose": "quartz_coping_ring"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 4,
+      "z1": 2,
+      "x2": 10,
+      "y2": 4,
+      "z2": 18,
+      "block": "brick",
+      "purpose": "roof_tiling_inner"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 5,
+      "z1": 9,
+      "x2": 7,
+      "y2": 7,
+      "z2": 11,
+      "block": "sandstone",
+      "purpose": "tower_shaft"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 6,
+      "z1": 9,
+      "x2": 7,
+      "y2": 6,
+      "z2": 11,
+      "block": "glass",
+      "purpose": "tower_window_band"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 7,
+      "z1": 8,
+      "x2": 8,
+      "y2": 8,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "tower_cap"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 8,
+      "z": 10,
+      "block": "sea_lantern",
+      "purpose": "tower_light"
+    },
+    {
+      "op": "carve",
+      "x1": 6,
+      "y1": 1,
+      "z1": 0,
+      "x2": 6,
+      "y2": 2,
+      "z2": 0,
+      "purpose": "entrance_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 12,
+  "ymin": 0,
+  "ymax": 9,
+  "zmin": 0,
+  "zmax": 20,
+  "operations": [
+    {
+      "op": "set_fill",
+      "block": "sandstone",
+      "xmin": 1,
+      "xmax": 11,
+      "ymin": 0,
+      "ymax": 0,
+      "zmin": 1,
+      "zmax": 19,
+      "note": "ground floor slab (floor layer) inside perimeter; keep one-block inset from outer posts"
+    },
+    {
+      "op": "set_fill",
+      "block": "quartz_block",
+      "xmin": 0,
+      "xmax": 12,
+      "ymin": 0,
+      "ymax": 0,
+      "zmin": 0,
+      "zmax": 20,
+      "note": "perimeter low posts/ground edging one-block wide around plot"
+    },
+    {
+      "op": "set_fill",
+      "block": "sandstone",
+      "xmin": 1,
+      "xmax": 11,
+      "ymin": 1,
+      "ymax": 3,
+      "zmin": 1,
+      "zmax": 19,
+      "note": "primary wall middle band, 3 blocks tall (y=1..3)"
+    },
+    {
+      "op": "set_fill",
+      "block": "quartz_block",
+      "xmin": 0,
+      "xmax": 12,
+      "ymin": 1,
+      "ymax": 1,
+      "zmin": 0,
+      "zmax": 20,
+      "note": "quartz base trim layer overlapping perimeter posts (y=1) for coherent base"
+    },
+    {
+      "op": "set_fill",
+      "block": "quartz_block",
+      "xmin": 0,
+      "xmax": 12,
+      "ymin": 4,
+      "ymax": 4,
+      "zmin": 0,
+      "zmax": 20,
+      "note": "continuous quartz upper band/coping at top of walls (y=4)"
+    },
+    {
+      "op": "set_replace",
+      "block": "air",
+      "xmin": 6,
+      "xmax": 6,
+      "ymin": 1,
+      "ymax": 2,
+      "zmin": 0,
+      "zmax": 0,
+      "note": "entrance opening centered on short side (front) at long-axis center; 1-wide, 2-high"
+    },
+    {
+      "op": "set_replace",
+      "block": "air",
+      "xmin": 6,
+      "xmax": 6,
+      "ymin": 1,
+      "ymax": 2,
+      "zmin": 20,
+      "zmax": 20,
+      "note": "matching rear opening (symmetry)"
+    },
+    {
+      "op": "set_replace",
+      "block": "air",
+      "xmin": 0,
+      "xmax": 0,
+      "ymin": 1,
+      "ymax": 2,
+      "zmin": 10,
+      "zmax": 10,
+      "note": "side entrance symmetry notch (optional small opening in perimeter posts) kept clear"
+    },
+    {
+      "op": "set_replace",
+      "block": "glass",
+      "xmin": 3,
+      "xmax": 9,
+      "ymin": 2,
+      "ymax": 2,
+      "zmin": 1,
+      "zmax": 1,
+      "note": "front row of narrow windows (single-block tall) inset into wall at y=2"
+    },
+    {
+      "op": "set_replace",
+      "block": "glass",
+      "xmin": 3,
+      "xmax": 9,
+      "ymin": 2,
+      "ymax": 2,
+      "zmin": 19,
+      "zmax": 19,
+      "note": "rear row of narrow windows symmetric to front"
+    },
+    {
+      "op": "set_replace",
+      "block": "glass",
+      "xmin": 1,
+      "xmax": 1,
+      "ymin": 2,
+      "ymax": 2,
+      "zmin": 6,
+      "zmax": 14,
+      "note": "left side windows vertical line (single high) symmetric spacing"
+    },
+    {
+      "op": "set_replace",
+      "block": "glass",
+      "xmin": 11,
+      "xmax": 11,
+      "ymin": 2,
+      "ymax": 2,
+      "zmin": 6,
+      "zmax": 14,
+      "note": "right side windows vertical line"
+    },
+    {
+      "op": "set_fill",
+      "block": "quartz_block",
+      "xmin": 0,
+      "xmax": 0,
+      "ymin": 1,
+      "ymax": 3,
+      "zmin": 0,
+      "zmax": 20,
+      "note": "left-side quartz buttress (projecting posts) along x=0"
+    },
+    {
+      "op": "set_fill",
+      "block": "quartz_block",
+      "xmin": 12,
+      "xmax": 12,
+      "ymin": 1,
+      "ymax": 3,
+      "zmin": 0,
+      "zmax": 20,
+      "note": "right-side quartz buttress (projecting posts) along x=12"
+    },
+    {
+      "op": "set_fill",
+      "block": "quartz_block",
+      "xmin": 0,
+      "xmax": 12,
+      "ymin": 5,
+      "ymax": 5,
+      "zmin": 0,
+      "zmax": 20,
+      "note": "thin quartz coping above coping band to frame roof edge (y=5)"
+    },
+    {
+      "op": "set_fill",
+      "block": "brick_block",
+      "xmin": 1,
+      "xmax": 11,
+      "ymin": 5,
+      "ymax": 5,
+      "zmin": 1,
+      "zmax": 19,
+      "note": "flat brick roof tiles inset from quartz coping (one-block thickness)"
+    },
+    {
+      "op": "set_fill",
+      "block": "sandstone",
+      "xmin": 4,
+      "xmax": 8,
+      "ymin": 6,
+      "ymax": 6,
+      "zmin": 8,
+      "zmax": 12,
+      "note": "raised central tower base (small shaft) centered on roof, one block inset footprint 5x5-> here 5x5 reduced to 5x5 smaller: using 5x5 footprint inside roof"
+    },
+    {
+      "op": "set_fill",
+      "block": "glass",
+      "xmin": 5,
+      "xmax": 7,
+      "ymin": 7,
+      "ymax": 8,
+      "zmin": 9,
+      "zmax": 11,
+      "note": "tower window shaft (2 blocks tall) centered for light and visual transparency"
+    },
+    {
+      "op": "set_fill",
+      "block": "stonebrick",
+      "xmin": 4,
+      "xmax": 8,
+      "ymin": 9,
+      "ymax": 9,
+      "zmin": 8,
+      "zmax": 12,
+      "note": "stonebrick cap on tower (capping layer)"
+    },
+    {
+      "op": "set_fill",
+      "block": "sea_lantern",
+      "xmin": 6,
+      "xmax": 6,
+      "ymin": 10,
+      "ymax": 10,
+      "zmin": 10,
+      "zmax": 10,
+      "

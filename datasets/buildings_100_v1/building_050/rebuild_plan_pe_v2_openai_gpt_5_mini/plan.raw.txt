@@ -1,0 +1,462 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 5,
+    "zmin": 0,
+    "zmax": 22
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "brick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "coping": "stonebrick",
+    "baseboard": "oak_planks",
+    "slab": "stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 22,
+          "label": "main"
+        }
+      ],
+      "symmetry": "z_axis_centered_long_facades_mirror"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 0
+        },
+        "rooms_hint": "single open kiosk interior",
+        "perimeter_profile": "simple rectangle with exterior ledge"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "ground-to-parapet wall volume; roof recess at top",
+        "perimeter_profile": "solid walls with central recessed roof well"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 4,
+        "y1": 1,
+        "z1": 22,
+        "x2": 4,
+        "y2": 2,
+        "z2": 22
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 2,
+        "x2": 0,
+        "y2": 2,
+        "z2": 20
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 2,
+        "z1": 2,
+        "x2": 8,
+        "y2": 2,
+        "z2": 20
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 4,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 22,
+          "block": "coping"
+        },
+        {
+          "y": 3,
+          "x1": 2,
+          "z1": 4,
+          "x2": 6,
+          "z2": 18,
+          "block": "roof"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 22,
+      "block": "wood",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 22,
+      "block": "sandstone",
+      "purpose": "main_walls_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 22,
+      "block": "quartz_block",
+      "purpose": "light_colored_middle_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 22,
+      "block": "brick",
+      "purpose": "brick_parapet_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 8,
+      "y2": 5,
+      "z2": 22,
+      "block": "coping",
+      "purpose": "roof_coping_top_edge"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 5,
+      "z1": 4,
+      "x2": 6,
+      "y2": 4,
+      "z2": 18,
+      "purpose": "recess_roof_well_air"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 4,
+      "z1": 4,
+      "x2": 6,
+      "y2": 4,
+      "z2": 18,
+      "block": "roof",
+      "purpose": "recessed_roof_paving_brick"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 1,
+      "z2": 22,
+      "block": "oak_planks",
+      "purpose": "baseboard_plank_strip"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 9,
+      "y2": 0,
+      "z2": 23,
+      "block": "slab",
+      "purpose": "surrounding_slab_border"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 3,
+      "z2": 0,
+      "block": "coping",
+      "purpose": "corner_pillar_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 0,
+      "block": "coping",
+      "purpose": "corner_pillar_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 22,
+      "x2": 0,
+      "y2": 3,
+      "z2": 22,
+      "block": "coping",
+      "purpose": "corner_pillar_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 22,
+      "x2": 8,
+      "y2": 3,
+      "z2": 22,
+      "block": "coping",
+      "purpose": "corner_pillar_se"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 2,
+      "x2": 7,
+      "y2": 2,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 5,
+  "zmin": 0,
+  "zmax": 22,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 8, 0, 22],
+      "block": "stone_slab",
+      "comment": "ground slab/ledge surrounding building at ground level (one-block-high slab border)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 0, 1, 7, 0, 21],
+      "block": "oak_planks",
+      "comment": "interior wooden baseboard/ground-level planks (one layer inside the slab border)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 7, 3, 21],
+      "block": "sandstone",
+      "comment": "main lower wall volume up to 3 blocks high."
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 7, 2, 21],
+      "block": "glass_pane",
+      "comment": "continuous horizontal window band centered on wall height: second layer (y=2)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 3, 1, 7, 3, 21],
+      "block": "smooth_quartz",
+      "comment": "light-colored middle/upper band immediately above windows (single block high)."
+    },
+    {
+      "op": "fill",
+      "box": [0, 4, 0, 8, 4, 22],
+      "block": "brick",
+      "comment": "brick parapet/trim continuous band along the top (spans full footprint to create visible trim)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 4, 1, 7, 4, 21],
+      "block": "stone_bricks",
+      "comment": "stonebrick coping/roof edge atop the light band (surrounding recessed roof)."
+    },
+    {
+      "op": "fill",
+      "box": [2, 4, 4, 6, 4, 18],
+      "block": "brick",
+      "comment": "raised recessed central roof paved with brick (set one block inset from coping)."
+    },
+    {
+      "op": "set",
+      "pos": [0, 1, 0],
+      "block": "stone_bricks",
+      "comment": "short-end corner pillar (north-west) stonebrick accent spanning wall height visually; placed starting at y=1."
+    },
+    {
+      "op": "set",
+      "pos": [8, 1, 0],
+      "block": "stone_bricks",
+      "comment": "short-end corner pillar (north-east)."
+    },
+    {
+      "op": "set",
+      "pos": [0, 1, 22],
+      "block": "stone_bricks",
+      "comment": "short-end corner pillar (south-west)."
+    },
+    {
+      "op": "set",
+      "pos": [8, 1, 22],
+      "block": "stone_bricks",
+      "comment": "short-end corner pillar (south-east)."
+    },
+    {
+      "op": "set",
+      "pos": [0, 2, 0],
+      "block": "stone_bricks",
+      "comment": "extend corner pillar to full wall height (y=2)."
+    },
+    {
+      "op": "set",
+      "pos": [8, 2, 0],
+      "block": "stone_bricks",
+      "comment": "extend corner pillar to full wall height (y=2)."
+    },
+    {
+      "op": "set",
+      "pos": [0, 3, 0],
+      "block": "stone_bricks",
+      "comment": "extend corner pillar to full wall height (y=3)."
+    },
+    {
+      "op": "set",
+      "pos": [8, 3, 0],
+      "block": "stone_bricks",
+      "comment": "extend corner pillar to full wall height (y=3)."
+    },
+    {
+      "op": "set",
+      "pos": [0, 2, 22],
+      "block": "stone_bricks",
+      "comment": "extend corner pillar to full wall height (y=2)."
+    },
+    {
+      "op": "set",
+      "pos": [8, 2, 22],
+      "block": "stone_bricks",
+      "comment": "extend corner pillar to full wall height (y=2)."
+    },
+    {
+      "op": "set",
+      "pos": [0, 3, 22],
+      "block": "stone_bricks",
+      "comment": "extend corner pillar to full wall height (y=3)."
+    },
+    {
+      "op": "set",
+      "pos": [8, 3, 22],
+      "block": "stone_bricks",
+      "comment": "extend corner pillar to full wall height (y=3)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 0, 7, 3, 0],
+      "block": "sandstone",
+      "comment": "short north exterior wall face between corner pillars (z=0)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 22, 7, 3, 22],
+      "block": "sandstone",
+      "comment": "short south exterior wall face between corner pillars (z=22)."
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 1, 0, 3, 21],
+      "block": "sandstone",
+      "comment": "west exterior wall face between corner pillars (x=0)."
+    },
+    {
+      "op": "fill",
+      "box": [8, 1, 1, 8, 3, 21],
+      "block": "sandstone",
+      "comment": "east exterior wall face between corner pillars (x=8)."
+    },
+    {
+      "op": "set",
+      "pos": [4, 1, 0],
+      "block": "air",
+      "comment": "entrance opening on north short side centered (single-block wide opening at ground level)."
+    },
+    {
+      "op": "set",
+      "pos": [4, 2, 0],
+      "block": "air",
+      "comment": "clear above entrance to create 2-block-tall doorway."
+    },
+    {
+      "op": "set",
+      "pos": [4, 1, 22],
+      "block": "air",
+      "comment": "optional symmetrical rear opening (keeps bilateral symmetry)."
+    },
+    {
+      "op": "set",
+      "pos": [4, 2, 22],
+      "block": "air",
+      "comment": "clear above rear opening."
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 7, 1, 21],
+      "block": "smooth_stone",
+      "comment": "interior floor layer (single block thick) sitting on top of slab/ledge level to create clear floor separation."
+    },
+    {
+      "op": "set",
+      "pos": [2, 4, 3],
+      "block": "air",
+      "comment": "ensure roof coping clearance above recessed area edges."
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "operations_within_bbox": true,
+    "operation_count": 31,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,

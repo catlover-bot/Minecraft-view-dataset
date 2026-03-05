@@ -1,0 +1,517 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v3_strict",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 19
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "brick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "stonebrick",
+      "target_blocks": 520
+    },
+    "roof": {
+      "role": "roof",
+      "block": "wood",
+      "target_blocks": 360
+    },
+    "trim": {
+      "role": "trim",
+      "block": "brick",
+      "target_blocks": 48
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 64
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 6
+    },
+    "floor": {
+      "role": "floor",
+      "block": "wood",
+      "target_blocks": 220
+    }
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle|l_shape|u_shape|complex",
+      "segments": [
+        {
+          "type": "rect",
+          "xmin": 1,
+          "xmax": 9,
+          "zmin": 1,
+          "zmax": 18
+        }
+      ]
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "perimeter_profile": "stonebrick walls on cobblestone 1-block foundation, walls 4 blocks tall from floor (y=1..4), eaves at y=5"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 1,
+        "x2": 5,
+        "y2": 2,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 9,
+        "y1": 2,
+        "z1": 4,
+        "x2": 9,
+        "y2": 3,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 9,
+        "y1": 2,
+        "z1": 9,
+        "x2": 9,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 4,
+        "x2": 1,
+        "y2": 3,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 9,
+        "x2": 1,
+        "y2": 3,
+        "z2": 12
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 5,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "layer_y": 5,
+          "x1": 0,
+          "x2": 10,
+          "z1": 0,
+          "z2": 19,
+          "note": "eaves layer"
+        },
+        {
+          "layer_y": 6,
+          "x1": 0,
+          "x2": 10,
+          "z1": 1,
+          "z2": 18,
+          "note": "second stepped tier"
+        },
+        {
+          "layer_y": 7,
+          "x1": 1,
+          "x2": 9,
+          "z1": 3,
+          "z2": 16,
+          "note": "upper tier approaching ridge"
+        },
+        {
+          "layer_y": 8,
+          "x1": 2,
+          "x2": 8,
+          "z1": 6,
+          "z2": 13,
+          "note": "ridge center"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 9,
+      "y2": 0,
+      "z2": 18,
+      "block": "wood",
+      "purpose": "ground_floor_flooring"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 19,
+      "block": "brick",
+      "purpose": "cobblestone-like foundation border approximated with trim (visual foundation band)"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 18,
+      "block": "stonebrick",
+      "purpose": "outer_wall_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": 1,
+      "x2": 5,
+      "y2": 2,
+      "z2": 1,
+      "purpose": "entrance opening (door)"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 2,
+      "z1": 4,
+      "x2": 9,
+      "y2": 3,
+      "z2": 7,
+      "purpose": "east windows bank 1 carve"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 2,
+      "z1": 9,
+      "x2": 9,
+      "y2": 3,
+      "z2": 12,
+      "purpose": "east windows bank 2 carve"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 4,
+      "x2": 1,
+      "y2": 3,
+      "z2": 7,
+      "purpose": "west windows bank 1 carve"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 9,
+      "x2": 1,
+      "y2": 3,
+      "z2": 12,
+      "purpose": "west windows bank 2 carve"
+    },
+    {
+      "op": "set",
+      "role": "glass",
+      "x": 9,
+      "y": 2,
+      "z": 4,
+      "block": "glass",
+      "purpose": "place glass pane 1"
+    },
+    {
+      "op": "set",
+      "role": "glass",
+      "x": 9,
+      "y": 2,
+      "z": 5,
+      "block": "glass",
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 19,
+  "operations": [
+    {
+      "op": "fill",
+      "role": "foundation",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 19,
+      "block": "cobblestone",
+      "purpose": "one-block-high cobblestone perimeter foundation/border"
+    },
+    {
+      "op": "fill",
+      "role": "floor",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 9,
+      "y2": 0,
+      "z2": 18,
+      "block": "wood",
+      "purpose": "ground floor flooring inside foundation"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 18,
+      "block": "stonebrick",
+      "purpose": "outer stonebrick walls (3 blocks tall above foundation)"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": 1,
+      "x2": 5,
+      "y2": 2,
+      "z2": 1,
+      "purpose": "entrance opening on south short side (1x2)"
+    },
+    {
+      "op": "fill",
+      "role": "door",
+      "x1": 5,
+      "y1": 1,
+      "z1": 1,
+      "x2": 5,
+      "y2": 2,
+      "z2": 1,
+      "block": "oak_door",
+      "purpose": "place door at entrance"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 2,
+      "z1": 4,
+      "x2": 9,
+      "y2": 3,
+      "z2": 7,
+      "purpose": "east windows bank 1 carve"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 2,
+      "z1": 9,
+      "x2": 9,
+      "y2": 3,
+      "z2": 12,
+      "purpose": "east windows bank 2 carve"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 4,
+      "x2": 1,
+      "y2": 3,
+      "z2": 7,
+      "purpose": "west windows bank 1 carve"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 9,
+      "x2": 1,
+      "y2": 3,
+      "z2": 12,
+      "purpose": "west windows bank 2 carve"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 9,
+      "y1": 2,
+      "z1": 4,
+      "x2": 9,
+      "y2": 3,
+      "z2": 7,
+      "block": "glass",
+      "purpose": "place east windows bank 1"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 9,
+      "y1": 2,
+      "z1": 9,
+      "x2": 9,
+      "y2": 3,
+      "z2": 12,
+      "block": "glass",
+      "purpose": "place east windows bank 2"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 1,
+      "y1": 2,
+      "z1": 4,
+      "x2": 1,
+      "y2": 3,
+      "z2": 7,
+      "block": "glass",
+      "purpose": "place west windows bank 1"
+    },
+    {
+      "op": "fill",
+      "role": "windows",
+      "x1": 1,
+      "y1": 2,
+      "z1": 9,
+      "x2": 1,
+      "y2": 3,
+      "z2": 12,
+      "block": "glass",
+      "purpose": "place west windows bank 2"
+    },
+    {
+      "op": "fill",
+      "role": "wall",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 18,
+      "block": "stonebrick",
+      "purpose": "eave wall course / cap for roof base"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 2,
+      "y1": 5,
+      "z1": 2,
+      "x2": 8,
+      "y2": 5,
+      "z2": 17,
+      "block": "nether_brick",
+      "purpose": "first roof tier (inner stepped layer)"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 3,
+      "y1": 6,
+      "z1": 3,
+      "x2": 7,
+      "y2": 6,
+      "z2": 16,
+      "block": "nether_brick",
+      "purpose": "second roof tier"
+    },
+    {
+      "op": "fill",
+      "role": "roof",
+      "x1": 4,
+      "y1": 7,
+      "z1": 4,
+      "x2": 6,
+      "y2": 7,
+      "z2": 15,
+      "block": "nether_brick",
+      "purpose": "third roof tier / ridge"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 2,
+      "y1": 5,
+      "z1": 2,
+      "x2": 2,
+      "y2": 5,
+      "z2": 17,
+      "block": "stone_slab",
+      "purpose": "stone-slab accents along roof steps (east edge)"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 8,
+      "y1": 5,
+      "z1": 2,
+      "x2": 8,
+      "y2": 5,
+      "z2": 17,
+      "block": "stone_slab",
+      "purpose": "stone-slab accents along roof steps (west edge)"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 3,
+      "y1": 6,
+      "z1": 3,
+      "x2": 3,
+      "y2": 6,
+      "z2": 16,
+      "block": "stone_slab",
+      "purpose": "stone-slab accents second tier edge (east)"
+    },
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 7,
+      "y1": 6,
+      "z1": 3,
+      "x2": 7,
+      "y2

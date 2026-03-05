@@ -1,0 +1,661 @@
+{
+  "op": "fill",
+  "block": "minecraft:air",
+  "from": [
+    0,
+    0,
+    0
+  ],
+  "to": [
+    10,
+    6,
+    24
+  ],
+  "operations": [
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 11,
+      "y2": 0,
+      "z2": 25,
+      "block": "wood",
+      "role": "floor",
+      "role_confidence": 0.95,
+      "role_reason": "self_repair_floor",
+      "purpose": "self_repair_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 24,
+      "block": "air",
+      "purpose": "",
+      "role": "wall",
+      "role_confidence": 0.35,
+      "role_reason": "fallback_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "front-left corner pillar (full wall height)",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 9,
+      "y2": 5,
+      "z2": 23,
+      "block": "quartz_block",
+      "purpose": "continuous white trim band (1 block tall) above brick band across walls",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 2,
+      "z": 0,
+      "block": "air",
+      "purpose": "entrance opening on front face centered (one-block wide opening). Set to air to create doorway. Player may add door later.",
+      "role": "wall",
+      "role_confidence": 0.35,
+      "role_reason": "fallback_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 9,
+      "y2": 6,
+      "z2": 23,
+      "block": "nether_brick",
+      "purpose": "dark horizontal band near roof (1 block tall)",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 7,
+      "z1": 2,
+      "x2": 8,
+      "y2": 7,
+      "z2": 22,
+      "block": "slab_stone",
+      "purpose": "stone slab coping forming raised inner rim around recessed roof; slabs occupy y=7 as topmost rim",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 6,
+      "z1": 3,
+      "x2": 7,
+      "y2": 6,
+      "z2": 21,
+      "block": "nether_brick",
+      "purpose": "inner recessed roof fill (flat) inside the coping",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": -1,
+      "x2": 5,
+      "y2": 3,
+      "z2": -1,
+      "block": "air",
+      "purpose": "self_repair_entrance"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 11,
+      "y2": 0,
+      "z2": 25,
+      "block": "quartz_block",
+      "purpose": "ground-level exterior low ledge / planter surrounding building footprint (1 block wide). NOTE: coordinates adjusted to lie within bbox; clipped to bbox in execution.",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 24,
+      "block": "wood",
+      "purpose": "1-block high wooden base trim under brick",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 10,
+      "y2": 4,
+      "z2": 24,
+      "block": "glass",
+      "purpose": "brick field (3 blocks tall from y=2..4). Will be trimmed for windows and stone pillars.",
+      "role": "glass",
+      "role_confidence": 0.92,
+      "role_reason": "self_repair_window_material"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 2,
+      "z1": 0,
+      "x2": 10,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "front-right corner pillar",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 24,
+      "x2": 0,
+      "y2": 4,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "back-left corner pillar",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 2,
+      "z1": 24,
+      "x2": 10,
+      "y2": 4,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "back-right corner pillar",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 2,
+      "y": 3,
+      "z": 0,
+      "block": "glass",
+      "purpose": "front row small window (1x1) in brick band",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 4,
+      "y": 3,
+      "z": 0,
+      "block": "glass",
+      "purpose": "front row small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 3,
+      "z": 0,
+      "block": "glass",
+      "purpose": "front row small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 3,
+      "z": 0,
+      "block": "glass",
+      "purpose": "front row small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 2,
+      "y": 3,
+      "z": 24,
+      "block": "glass",
+      "purpose": "back row small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 4,
+      "y": 3,
+      "z": 24,
+      "block": "glass",
+      "purpose": "back row small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 3,
+      "z": 24,
+      "block": "glass",
+      "purpose": "back row small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 3,
+      "z": 24,
+      "block": "glass",
+      "purpose": "back row small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 3,
+      "z": 6,
+      "block": "glass",
+      "purpose": "left side small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 3,
+      "z": 12,
+      "block": "glass",
+      "purpose": "left side small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 3,
+      "z": 18,
+      "block": "glass",
+      "purpose": "left side small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 10,
+      "y": 3,
+      "z": 6,
+      "block": "glass",
+      "purpose": "right side small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 10,
+      "y": 3,
+      "z": 12,
+      "block": "glass",
+      "purpose": "right side small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 10,
+      "y": 3,
+      "z": 18,
+      "block": "glass",
+      "purpose": "right side small window",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 23,
+      "block": "glass",
+      "purpose": "ensure brick field exists where not replaced by pillars or windows",
+      "role": "glass",
+      "role_confidence": 0.92,
+      "role_reason": "self_repair_window_material"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 24,
+      "block": "quartz_block",
+      "purpose": "clip low ledge to bbox footprint; ensure continuous ground ledge along bbox",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 1,
+      "z1": 0,
+      "x2": 5,
+      "y2": 2,
+      "z2": 0,
+      "block": "air",
+      "purpose": "clear interior entrance space through base trim and brick for doorway",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 2,
+      "z": -1,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 11,
+      "y": 2,
+      "z": -1,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 2,
+      "z": 25,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 11,
+      "y": 2,
+      "z": 25,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    }
+  ],
+  "bbox": {
+    "xmin": -1,
+    "xmax": 11,
+    "ymin": 0,
+    "ymax": 7,
+    "zmin": -1,
+    "zmax": 25
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "brick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "notes": [
+    "schema_repair_from_raw_response"
+  ],
+  "plan_version": "v1",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 30,
+    "accepted_operations_count": 30,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "building": "building_006",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "created_at": "2026-03-01T13:02:00.152718+00:00",
+  "schema_repair_at": "2026-03-01T05:14:38.229814+00:00",
+  "parse_report": {
+    "method": "ops_array:operations",
+    "candidate_count": 30,
+    "selected_candidate_score": 20,
+    "used_ops_array_repair": true,
+    "used_op_objects_repair": false
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "stonebrick",
+      "target_blocks": 2136,
+      "actual_blocks": 2136,
+      "within_tolerance": true
+    },
+    "roof": {
+      "role": "roof",
+      "block": "wood",
+      "target_blocks": 449,
+      "actual_blocks": 449,
+      "within_tolerance": true
+    },
+    "trim": {
+      "role": "trim",
+      "block": "brick",
+      "target_blocks": 912,
+      "actual_blocks": 912,
+      "within_tolerance": true
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 1460,
+      "actual_blocks": 1460,
+      "within_tolerance": true
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 4,
+      "actual_blocks": 4,
+      "within_tolerance": true
+    },
+    "floor": {
+      "role": "floor",
+      "block": "wood",
+      "target_blocks": 351,
+      "actual_blocks": 351,
+      "within_tolerance": true
+    }
+  },
+  "self_check": {
+    "operation_count": 36,
+    "operation_count_ok": true,
+    "bbox_consistency": "ok",
+    "role_fixed_consistency": "repaired_2",
+    "material_budget_consistency": "ok",
+    "required_roles_present": true,
+    "issues": []
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": false,
+    "require_material_budget": false,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": false,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "brick",
+        "score": 0.95,
+        "source_role": "lower wall"
+      },
+      "trim": {
+        "block": "quartz",
+        "score": 0.9,
+        "source_role": "white trim band and exterior low ledge"
+      },
+      "roof": {
+        "block": "nether_brick",
+        "score": 0.9,
+        "source_role": "dark horizontal band near roof"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.95,
+        "source_role": "windows"
+      },
+      "floor": {
+        "block": "wood",
+        "score": 0.6,
+        "source_role": "narrow base trim under brick (planks)"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "wall",
+        "roof",
+        "trim",
+        "glass",
+        "light",
+        "floor"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [],
+      "coherence_repairs": []
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 35,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 2,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 0.8399999999999996,
+    "role_infer_reasons": {
+      "unknown": 2,
+      "purpose_hint": 28
+    },
+    "self_repair_report": {
+      "added_operations": 6,
+      "added_tags": [
+        "floor",
+        "entrance",
+        "light",
+        "light",
+        "light",
+        "light"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 2,
+      "entrance_fixes": 1
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "repair_source_plan_subdir": "rebuild_plan_pe_v2_openai_gpt_5_mini",
+  "repair_profile": {
+    "strict_schema": true,
+    "enforce_role_fixed": false,
+    "require_material_budget": false,
+    "prefer_description_palette": false,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  }
+}

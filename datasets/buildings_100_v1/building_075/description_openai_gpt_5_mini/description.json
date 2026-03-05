@@ -1,0 +1,69 @@
+{
+  "summary": "A small rectangular single-story building with stone-brick lower walls, a cobblestone perimeter foundation/walk, and a dark red stepped gable-like roof made of nether-brick (dark planks). The long sides have repeated glass windows set into stonebrick wall sections; stone slabs accent the roof ridge and gable ends. The structure sits recessed into flattened dirt around it.",
+  "building_type": "small house / workshop",
+  "shape": {
+    "overall_form": "long rectangular box with a raised stepped roof centered along the long axis",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral symmetry along the long central axis",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 7,
+    "depth": 17,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "cobblestone",
+      "role": "foundation / low wall",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof (dark red stepped blocks)",
+      "confidence": 0.9
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof accents / capstones",
+      "confidence": 0.8
+    },
+    {
+      "name": "air",
+      "role": "interior space",
+      "confidence": 0.9
+    }
+  ],
+  "elements": [
+    "rows of 3-4 glass windows along each long side set into stonebrick",
+    "cobblestone surround one block out from wall forming a low parapet/foundation",
+    "nether-brick stepped roof with stone slab caps at three stepped positions on each gable end",
+    "single-story interior (no visible second floor or windows above)"
+  ],
+  "rebuild_hints": [
+    "Base footprint is a centered rectangle with a one-block wide cobblestone ring offset from the stonebrick walls by one block.",
+    "Stonebrick walls are approximately 3 blocks tall above ground before the roof starts; place windows as 1x1 panes repeating along long sides separated by 1 stonebrick column.",
+    "Build a nether-brick slab/step roof: a flat central run of nether-brick blocks spanning the long axis with two stepped layers down each side; add stone slab blocks as decorative caps at the gable ends and along the short axis center.",
+    "Top-down view: roof occupies the interior rectangle; cobblestone ring is aligned around it leaving a one-block dirt trench outside."
+  ],
+  "uncertainties": [
+    "Exact block types: nether_brick identified from color but could be dark wood variant; confidence high but not certain.",
+    "Precise interior layout and presence/location of a door not visible in all views (one image hints at a wooden door on one short side).",
+    "Exact dimensions in blocks are estimated from pixel views; width/depth/height may be off by a few blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_075",
+  "created_at": "2026-02-28T14:16:36.624724+00:00"
+}

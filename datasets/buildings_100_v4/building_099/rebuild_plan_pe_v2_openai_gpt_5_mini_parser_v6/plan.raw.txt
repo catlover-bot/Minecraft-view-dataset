@@ -1,0 +1,515 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 19,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 29
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "cobblestone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "l_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 19,
+          "z2": 9,
+          "label": "main_hall_long"
+        },
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 9,
+          "z2": 29,
+          "label": "main_hall_short"
+        }
+      ],
+      "symmetry": "approx_bilateral_along_x_center"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single hall with low courtyard in L recess; towers shaft interior undefined",
+        "perimeter_profile": "l_shape_with_boundary_posts"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 4,
+        "y1": 1,
+        "z1": 9,
+        "x2": 6,
+        "y2": 3,
+        "z2": 9
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 12,
+        "x2": 0,
+        "y2": 3,
+        "z2": 12
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 19,
+        "y1": 2,
+        "z1": 5,
+        "x2": 19,
+        "y2": 3,
+        "z2": 5
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 0,
+          "x2": 19,
+          "z2": 29,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 1,
+          "z1": 1,
+          "x2": 18,
+          "z2": 28,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 2,
+          "z1": 2,
+          "x2": 17,
+          "z2": 27,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 3,
+          "z1": 3,
+          "x2": 16,
+          "z2": 26,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 19,
+      "y2": 0,
+      "z2": 29,
+      "block": "stone_slab",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 19,
+      "y2": 4,
+      "z2": 9,
+      "block": "stonebrick",
+      "purpose": "main_hall_long_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 9,
+      "y2": 4,
+      "z2": 29,
+      "block": "stonebrick",
+      "purpose": "main_hall_short_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 19,
+      "y2": 0,
+      "z2": 9,
+      "block": "cobblestone",
+      "purpose": "foundation_trim_long"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 9,
+      "y2": 0,
+      "z2": 29,
+      "block": "cobblestone",
+      "purpose": "foundation_trim_short"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 18,
+      "y2": 4,
+      "z2": 28,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 19,
+      "y2": 4,
+      "z2": 29,
+      "block": "stonebrick",
+      "purpose": "upper_wall_band_under_coping"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 19,
+      "y2": 5,
+      "z2": 29,
+      "block": "stone_slab",
+      "purpose": "roof_coping_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 19,
+      "y2": 8,
+      "z2": 29,
+      "block": "nether_brick",
+      "purpose": "roof_main_layers"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 18,
+      "y2": 7,
+      "z2": 28,
+      "block": "nether_brick",
+      "purpose": "roof_step_layer_2"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 7,
+      "z1": 2,
+      "x2": 17,
+      "y2": 8,
+      "z2": 27,
+      "block": "nether_brick",
+      "purpose": "roof_step_layer_3"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 19,
+      "y2": 1,
+      "z2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 19,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 29,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "minecraft:cobblestone",
+      "from": [0, 0, 0],
+      "to": [19, 0, 29],
+      "comment": "ground/foundation level full cobblestone slab base (single layer)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:air",
+      "from": [1, 1, 1],
+      "to": [18, 11, 28],
+      "comment": "clear internal volume before building walls (keeps inside empty)"
+    },
+    {
+      "op": "walls",
+      "material": "minecraft:stone_bricks",
+      "from": [1, 1, 1],
+      "to": [18, 7, 28],
+      "thickness": 1,
+      "pattern": [
+        {
+          "band": "lower",
+          "y1": 1,
+          "y2": 2,
+          "material": "minecraft:cobblestone"
+        },
+        {
+          "band": "middle",
+          "y1": 3,
+          "y2": 5,
+          "material": "minecraft:stone_bricks",
+          "insets": {
+            "material": "minecraft:cobblestone",
+            "every_n": 3,
+            "orientation": "horizontal"
+          }
+        },
+        {
+          "band": "upper",
+          "y1": 6,
+          "y2": 7,
+          "material": "minecraft:stone_bricks"
+        }
+      ],
+      "openings": [
+        {
+          "type": "entrance",
+          "position": [8, 1, 2],
+          "size": [3, 3],
+          "fill": "air",
+          "steps": {
+            "material": "minecraft:stone_slab",
+            "positions": [[8,0,3],[9,0,3],[10,0,3]]
+          },
+          "marker": {
+            "block": "minecraft:glowstone",
+            "pos": [9,1,3]
+          }
+        },
+        {
+          "type": "entrance_inner_L",
+          "position": [2, 1, 16],
+          "size": [3, 3],
+          "fill": "air",
+          "steps": {
+            "material": "minecraft:stone_slab",
+            "positions": [[2,0,15],[3,0,15],[4,0,15]]
+          },
+          "marker": {
+            "block": "minecraft:glowstone",
+            "pos": [3,1,15]
+          }
+        }
+      ],
+      "comment": "Main L-shaped outer walls built as continuous rectangle with internal L void later carved; openings placed at inner corner and main facade"
+    },
+    {
+      "op": "carve_l_shape_void",
+      "action": "air",
+      "from": [1,1,10],
+      "to": [9,7,28],
+      "comment": "Create the L-shaped courtyard void in the northeast portion of footprint"
+    },
+    {
+      "op": "place_windows",
+      "material": "minecraft:glass",
+      "positions": [
+        [3,4,3],
+        [6,4,3],
+        [12,4,3],
+        [15,4,3],
+        [3,4,12],
+        [6,4,12],
+        [12,4,12],
+        [15,4,12]
+      ],
+      "size": [1,2],
+      "comment": "Regularly spaced tower/hall windows (1x2 windows)"
+    },
+    {
+      "op": "towers_build",
+      "towers": [
+        {
+          "base_from": [1,1,1],
+          "base_to": [4,7,4],
+          "shaft_material": "minecraft:stone_bricks",
+          "core_fill": "air",
+          "height_top": 11,
+          "canopy": {
+            "layers": [
+              {
+                "material": "minecraft:nether_bricks",
+                "overhang": 1,
+                "y_offset": 8
+              },
+              {
+                "material": "minecraft:stone_slab",
+                "overhang": 2,
+                "y_offset": 9
+              },
+              {
+                "material": "minecraft:stone_slab",
+                "overhang": 3,
+                "y_offset": 10,
+                "center_light": {
+                  "block": "minecraft:glowstone",
+                  "pos": [2,11,2]
+                }
+              }
+            ]
+          },
+          "windows": [
+            {
+              "pos": [2,4,1],
+              "size": [1,2]
+            },
+            {
+              "pos": [4,6,2],
+              "size": [1,2]
+            }
+          ]
+        },
+        {
+          "base_from": [15,1,25],
+          "base_to": [18,7,28],
+          "shaft_material": "minecraft:stone_bricks",
+          "core_fill": "air",
+          "height_top": 11,
+          "canopy": {
+            "layers": [
+              {
+                "material": "minecraft:nether_bricks",
+                "overhang": 1,
+                "y_offset": 8
+              },
+              {
+                "material": "minecraft:stone_slab",
+                "overhang": 2,
+                "y_offset": 9
+              },
+              {
+                "material": "minecraft:stone_slab",
+                "overhang": 3,
+                "y_offset": 10,
+                "center_light": {
+                  "block": "minecraft:glowstone",
+                  "pos": [16,11,26]
+                }
+              }
+            ]
+          },
+          "windows": [
+            {
+              "pos": [16,4,28],
+              "size": [1,2]
+            },
+            {
+              "pos": [15,6,26],
+              "size": [1,2]
+            }
+          ]
+        }
+      ],
+      "comment": "Two corner towers 4x4 footprint, 11 blocks tall including canopy; overhangs constrained inside bbox"
+    },
+    {
+      "op": "roof_main",
+      "material": "minecraft:nether_bricks",
+      "from": [1,8,1],
+      "to": [18,8,28],
+      "style": "stepped",
+      "steps": [
+        {
+          "y": 8,
+          "from": [1,8,1],
+          "to": [18,8,28]
+        },
+        {
+          "y": 9,
+          "from": [2,9,2],
+          "to": [17,9,27]
+        },
+        {
+          "y": 10,
+          "from": [3,10,3],
+          "to": [16,10,26]
+        }
+      ],
+      "edge_coping": {
+        "material": "minecraft:stone_slab",
+        "positions": "outline of each step",
+        "crenels": {
+          "height": 1,
+          "every_n": 3,
+          "material": "minecraft:stone_slab"
+        }
+      },
+      "comment": "Stepped dark roof across main hall, constrained under ymax"
+    },
+    {
+      "op": "roof_tower_edges",
+      "material": "minecraft:stone_slab",
+      "positions": [
+        {
+          "from": [0,9,0],
+          "to": [5,9,5]
+        },
+        {
+          "from": [14,9,24],
+          "to": [19,9,29]
+        }
+      ],
+      "overlay": "stone_slab coping on tower canopies",
+      "comment": "Ensure canopy edges use slabs and don't exceed bbox"
+    },
+    {
+      "op": "boundary_posts",
+      "material": "minecraft:cobblestone",
+      "positions": [],
+      "pattern": {
+        "offset": 0,
+        "

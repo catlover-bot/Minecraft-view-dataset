@@ -1,0 +1,454 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 26,
+    "ymin": 0,
+    "ymax": 10,
+    "zmin": 0,
+    "zmax": 20
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "u_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 26,
+          "z2": 6,
+          "label": "front_connecting_bar"
+        },
+        {
+          "x1": 0,
+          "z1": 7,
+          "x2": 8,
+          "z2": 20,
+          "label": "left_wing"
+        },
+        {
+          "x1": 18,
+          "z1": 7,
+          "x2": 26,
+          "z2": 20,
+          "label": "right_wing"
+        },
+        {
+          "x1": 9,
+          "z1": 12,
+          "x2": 17,
+          "z2": 20,
+          "label": "rear_wall_recess"
+        }
+      ],
+      "symmetry": "bilateral_x_centered (approximate)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground floor apartments / courtyard access; higher ceiling implied",
+        "perimeter_profile": "u_shape with courtyard opening at front center"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 6
+        },
+        "rooms_hint": "typical apartment floors",
+        "perimeter_profile": "u_shape banded"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 7,
+          "ymax": 9
+        },
+        "rooms_hint": "top floor / parapet",
+        "perimeter_profile": "u_shape with parapet and roofline"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 12,
+        "y1": 1,
+        "z1": 0,
+        "x2": 13,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 5,
+        "z1": 0,
+        "x2": 2,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 5,
+        "z1": 0,
+        "x2": 5,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 5,
+        "z1": 0,
+        "x2": 9,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 5,
+        "z1": 0,
+        "x2": 16,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 20,
+        "y1": 5,
+        "z1": 0,
+        "x2": 20,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 26,
+        "y1": 5,
+        "z1": 9,
+        "x2": 26,
+        "y2": 6,
+        "z2": 9
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 5,
+        "z1": 9,
+        "x2": 0,
+        "y2": 6,
+        "z2": 9
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 12,
+        "y1": 5,
+        "z1": 20,
+        "x2": 12,
+        "y2": 6,
+        "z2": 20
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 10,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 10,
+          "x1": 0,
+          "z1": 0,
+          "x2": 26,
+          "z2": 20,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 0,
+          "z1": 0,
+          "x2": 26,
+          "z2": 20,
+          "block": "quartz"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 26,
+      "y2": 0,
+      "z2": 20,
+      "block": "dirt",
+      "purpose": "site_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 26,
+      "y2": 1,
+      "z2": 20,
+      "block": "stonebrick",
+      "purpose": "ground_base_course (stonebrick band)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 26,
+      "y2": 9,
+      "z2": 20,
+      "block": "sandstone",
+      "purpose": "main_wall_shell (bulk sandstone walls)"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 25,
+      "y2": 9,
+      "z2": 19,
+      "purpose": "interior_courtyards_and_rooms (hollow interior and courtyard voids)"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 2,
+      "z1": 7,
+      "x2": 17,
+      "y2": 9,
+      "z2": 19,
+      "purpose": "rear_recess_courtyard_open (create recessed rear wall forming courtyard)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 26,
+      "y2": 3,
+      "z2": 20,
+      "block": "quartz",
+      "purpose": "floor_band_between_ground_and_first (quartz ledge)"
+    },
+    {
+      "op
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 26,
+  "ymin": 0,
+  "ymax": 10,
+  "zmin": 0,
+  "zmax": 20,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 26, 0, 20],
+      "block": "dirt",
+      "comment": "ground/plot level fill"
+    },
+    {
+      "op": "outline",
+      "box": [0, 0, 0, 26, 0, 20],
+      "block": "white_concrete",
+      "comment": "low white perimeter edging (single layer) on ground"
+    },
+    {
+      "op": "fill",
+      "box": [3, 1, 2, 23, 1, 18],
+      "block": "stone_bricks",
+      "comment": "ground floor stonebrick base course around main footprint (1 high)"
+    },
+    {
+      "op": "fill",
+      "box": [3, 2, 2, 23, 3, 18],
+      "block": "sandstone",
+      "comment": "ground floor wall band (2 high)"
+    },
+    {
+      "op": "fill",
+      "box": [3, 4, 2, 23, 4, 18],
+      "block": "oak_planks",
+      "comment": "horizontal wooden accent band between floors (1 high at y=4) - consistent band across facade"
+    },
+    {
+      "op": "fill",
+      "box": [3, 5, 2, 23, 6, 18],
+      "block": "sandstone",
+      "comment": "second floor wall band (2 high)"
+    },
+    {
+      "op": "fill",
+      "box": [3, 7, 2, 23, 7, 18],
+      "block": "oak_planks",
+      "comment": "second horizontal wood band (top of second floor) at y=7 to mark between second and third"
+    },
+    {
+      "op": "fill",
+      "box": [3, 8, 2, 23, 9, 18],
+      "block": "sandstone",
+      "comment": "third floor wall band (2 high) reaching up to parapet level"
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 1, 24, 9, 19],
+      "block": "quartz_block",
+      "subtract": true,
+      "comment": "reserve quartz vertical buttresses and ledges by subtracting then placing individually to ensure clean edges (placeholder subtract to avoid overlap) - will be overwritten by specific quartz ops"
+    },
+    {
+      "op": "fill",
+      "box": [3, 8, 2, 23, 8, 18],
+      "block": "quartz_slab",
+      "comment": "quartz ledge/roof edge (one-block-thick parapet slab) across top of walls"
+    },
+    {
+      "op": "set",
+      "pos": [3, 8, 2],
+      "block": "quartz_block",
+      "comment": "left wing quartz vertical buttress base (projects up full height)"
+    },
+    {
+      "op": "set",
+      "pos": [3, 5, 2],
+      "block": "quartz_block",
+      "comment": "supporting quartz pillar continuation"
+    },
+    {
+      "op": "set",
+      "pos": [23, 8, 2],
+      "block": "quartz_block",
+      "comment": "right wing quartz vertical buttress base"
+    },
+    {
+      "op": "set",
+      "pos": [23, 5, 2],
+      "block": "quartz_block",
+      "comment": "supporting quartz pillar continuation right"
+    },
+    {
+      "op": "fill",
+      "box": [3, 1, 2, 3, 9, 2],
+      "block": "stone_bricks",
+      "comment": "left corner column continuous stonebrick (front edge)"
+    },
+    {
+      "op": "fill",
+      "box": [23, 1, 2, 23, 9, 2],
+      "block": "stone_bricks",
+      "comment": "right corner column continuous stonebrick (front edge)"
+    },
+    {
+      "op": "fill",
+      "box": [3, 1, 18, 3, 9, 18],
+      "block": "stone_bricks",
+      "comment": "left rear corner column"
+    },
+    {
+      "op": "fill",
+      "box": [23, 1, 18, 23, 9, 18],
+      "block": "stone_bricks",
+      "comment": "right rear corner column"
+    },
+    {
+      "op": "fill",
+      "box": [9, 1, 0, 17, 1, 0],
+      "block": "dirt",
+      "comment": "courtyard entrance path opening in the white perimeter (keeps ground dirt) - z=0 is front opening"
+    },
+    {
+      "op": "set",
+      "pos": [13, 1, 0],
+      "block": "air",
+      "comment": "entrance opening (single block) at ground center front; will be expanded to a 3-block wide opening below"
+    },
+    {
+      "op": "fill",
+      "box": [11, 1, 0, 15, 4, 1],
+      "block": "air",
+      "comment": "entrance opening: 3-wide, 4-high opening into courtyard (ensures clear access)"
+    },
+    {
+      "op": "fill",
+      "box": [3, 2, 3, 23, 7, 17],
+      "block": "air",
+      "comment": "clear internal courtyard space (recessed rear wall) - courtyard spans center rear; preserves walls surrounding it"
+    },
+    {
+      "op": "pattern",
+      "box": [4, 2, 2, 22, 6, 2],
+      "block": "glass_pane",
+      "pattern": "every 3",
+      "axis": "x",
+      "comment": "front facade windows on floors: narrow vertical glass_pane windows with rhythm (~one every 3 blocks). Applies for z=2 front row"
+    },
+    {
+      "op": "pattern",
+      "box": [4, 5, 2, 22, 7, 2],
+      "block": "glass_pane",
+      "pattern": "every 3",
+      "axis": "x",
+      "comment": "second-floor front windows aligned above first-floor windows"
+    },
+    {
+      "op": "pattern",
+      "box": [4, 8, 2, 22, 9, 2],
+      "block": "glass_pane",
+      "pattern": "every 3",
+      "axis": "x",
+      "comment": "third-floor front windows"
+    },
+    {
+      "op": "pattern",
+      "box": [4, 2, 18, 22, 6, 18],
+      "block": "glass_pane",
+      "pattern": "every 3",
+      "axis": "x",
+      "comment": "rear facade windows on ground and second floors facing courtyard (lower band)"
+    },
+    {
+      "op": "pattern",
+      "box": [4, 5, 18, 22, 9, 18],
+      "block": "glass_pane",
+      "pattern": "every 3",
+      "axis": "x",
+      "comment": "rear upper floor windows"
+    },
+    {
+      "op": "fill",
+      "box": [2, 9, 1, 24, 9, 19],
+      "block": "brick_block",
+      "comment": "flat brick roof/parapet across full footprint (one block thick

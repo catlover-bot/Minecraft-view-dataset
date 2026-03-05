@@ -1,0 +1,531 @@
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 22,
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 22,
+      "block": "slab_stone",
+      "purpose": "surrounding ground border (single-block white slab border at y=0) including corners",
+      "role": "floor",
+      "role_confidence": 0.88,
+      "role_reason": "ground_flat_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 3,
+      "z2": 21,
+      "block": "slab_stone",
+      "purpose": "lower wall solid fill (3 blocks high: y=1..3) forming inner wall plane",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 21,
+      "block": "slab_stone",
+      "purpose": "single smooth white band above wall at y=4 (continuous top band)",
+      "role": "wall",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 1,
+      "x2": 8,
+      "y2": 2,
+      "z2": 1,
+      "block": "air",
+      "purpose": "north continuous window strip (leave opening for glass panes at wall mid-height)"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 21,
+      "x2": 8,
+      "y2": 2,
+      "z2": 21,
+      "block": "air",
+      "purpose": "south continuous window strip opening"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 11,
+      "x2": 1,
+      "y2": 2,
+      "z2": 11,
+      "block": "oak_door",
+      "purpose": "place door at entrance (two-block tall door occupies y=1..2)",
+      "role": "wall",
+      "role_confidence": 0.35,
+      "role_reason": "fallback_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 11,
+      "x2": 9,
+      "y2": 2,
+      "z2": 11,
+      "block": "oak_door",
+      "purpose": "place door at east opening",
+      "role": "wall",
+      "role_confidence": 0.35,
+      "role_reason": "fallback_wall"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "block": "air",
+      "purpose": "ensure outside-of-bbox corner is empty (safety no-op inside bbox)",
+      "role": "wall",
+      "role_confidence": 0.35,
+      "role_reason": "fallback_wall"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 11,
+      "x2": 1,
+      "y2": 3,
+      "z2": 11,
+      "block": "air",
+      "purpose": "west entrance opening (single-block wide recessed entrance at center of long side)"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 1,
+      "z1": 11,
+      "x2": 9,
+      "y2": 3,
+      "z2": 11,
+      "block": "air",
+      "purpose": "east service opening -- small doorway mirrored for symmetry (optional service door)"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 5,
+      "z1": 2,
+      "x2": 8,
+      "y2": 5,
+      "z2": 20,
+      "block": "brick",
+      "purpose": "flat brick roof center (inset one block from white slab border) at y=5",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 9,
+      "y2": 5,
+      "z2": 21,
+      "block": "brick",
+      "purpose": "stone slab coping surrounding roof edge at same y=5 (creates 1-block wide coping around brick roof). Overlaps center roof edges.",
+      "role": "roof",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 21,
+      "block": "brick",
+      "purpose": "wood base trim at y=1 (overwrites lower layer bottom row to use planks as visible trim)",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 1,
+      "y2": 4,
+      "z2": 1,
+      "block": "brick",
+      "purpose": "north-west corner pillar full height (x=1,z=1)",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 1,
+      "block": "brick",
+      "purpose": "north-east corner pillar (x=9,z=1)",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 21,
+      "x2": 1,
+      "y2": 4,
+      "z2": 21,
+      "block": "brick",
+      "purpose": "south-west corner pillar (x=1,z=21)",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 21,
+      "x2": 9,
+      "y2": 4,
+      "z2": 21,
+      "block": "brick",
+      "purpose": "south-east corner pillar (x=9,z=21)",
+      "role": "trim",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 1,
+      "x2": 8,
+      "y2": 2,
+      "z2": 1,
+      "block": "glass",
+      "purpose": "place glass panes in north window strip",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 21,
+      "x2": 8,
+      "y2": 2,
+      "z2": 21,
+      "block": "glass",
+      "purpose": "place glass panes in south window strip",
+      "role": "glass",
+      "role_confidence": 0.9,
+      "role_reason": "purpose_hint"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 10,
+      "y": 2,
+      "z": 0,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 22,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 10,
+      "y": 2,
+      "z": 22,
+      "block": "glowstone",
+      "role": "light",
+      "role_confidence": 0.9,
+      "role_reason": "self_repair_light",
+      "purpose": "self_repair_light"
+    }
+  ],
+  "self_check": {
+    "bbox_within_limits": true,
+    "all_ops_inside_bbox": true,
+    "operation_count_ok": true,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof": true,
+    "contains_windows": true,
+    "contains_entrance": true,
+    "material_roles_coherent": true,
+    "notes": "Adjusted fill operations to be strictly inside the provided bbox (x:0..10, y:0..6, z:0..22). Added explicit floor border (quartz_slab at y=0), three-block wall height (y=1..3), white band at y=4, brick roof at y=5 inset by one block, and stone slab coping at roof edge. Windows are continuous single-layer glass at mid-wall y=2. Doors placed at center long sides for entrance/service; stonebrick corner pillars reach the white band. Materials kept distinct for wall/roof/trim/glass/floor. Total operations: 16 (<=260).",
+    "operation_count": 23,
+    "bbox_consistency": "ok",
+    "role_fixed_consistency": "repaired_8",
+    "material_budget_consistency": "ok",
+    "required_roles_present": true,
+    "issues": []
+  },
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 22
+  },
+  "palette": {
+    "wall": "slab_stone",
+    "roof": "brick",
+    "trim": "brick",
+    "glass": "glass",
+    "floor": "slab_stone",
+    "light": "glowstone"
+  },
+  "notes": [],
+  "plan_version": "v1",
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 19,
+    "accepted_operations_count": 19,
+    "repaired_operations_count": 19,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "slab_stone",
+      "target_blocks": 761,
+      "actual_blocks": 761,
+      "within_tolerance": true
+    },
+    "roof": {
+      "role": "roof",
+      "block": "brick",
+      "target_blocks": 322,
+      "actual_blocks": 322,
+      "within_tolerance": true
+    },
+    "trim": {
+      "role": "trim",
+      "block": "brick",
+      "target_blocks": 205,
+      "actual_blocks": 205,
+      "within_tolerance": true
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 14,
+      "actual_blocks": 14,
+      "within_tolerance": true
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 4,
+      "actual_blocks": 4,
+      "within_tolerance": true
+    },
+    "floor": {
+      "role": "floor",
+      "block": "slab_stone",
+      "target_blocks": 253,
+      "actual_blocks": 253,
+      "within_tolerance": true
+    }
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "roof": {
+        "block": "brick",
+        "score": 0.95,
+        "source_role": "roof_tiles/top band"
+      },
+      "trim": {
+        "block": "brick",
+        "score": 0.95,
+        "source_role": "roof_tiles/top band"
+      },
+      "wall": {
+        "block": "slab_stone",
+        "score": 0.85,
+        "source_role": "surrounding ground border/low wall"
+      },
+      "floor": {
+        "block": "slab_stone",
+        "score": 0.85,
+        "source_role": "surrounding ground border/low wall"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.99,
+        "source_role": "window panes along long sides"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "light"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "slab_stone",
+          "score": 0.85,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "brick",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "brick",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "glass",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.99,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "slab_stone",
+          "score": 0.85,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": [
+        {
+          "role": "floor",
+          "from": "slab_stone",
+          "to": "slab_stone"
+        },
+        {
+          "role": "trim",
+          "from": "brick",
+          "to": "brick"
+        }
+      ]
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 19,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 8,
+    "role_fixed_skipped_low_conf_count": 3,
+    "role_infer_confidence_mean": 0.7357894736842107,
+    "role_infer_reasons": {
+      "ground_flat_layer": 1,
+      "purpose_hint": 13,
+      "carve_entrance": 2,
+      "unknown": 3
+    },
+    "self_repair_report": {
+      "added_operations": 4,
+      "added_tags": [
+        "light",
+        "light",
+        "light",
+        "light"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "building": "building_080",
+  "created_at": "2026-03-01T15:29:03.873896+00:00",
+  "provider": "openai",
+  "model": "gpt-5-mini"
+}

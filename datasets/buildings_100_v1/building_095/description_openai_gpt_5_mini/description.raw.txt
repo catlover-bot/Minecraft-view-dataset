@@ -1,0 +1,76 @@
+{
+  "summary": "Small single-story rectangular house with a raised stone-brick border/foundation, oak-plank walls with vertical log corner posts, a dark red stepped (stair-based) hip/gable-ish roof capped by stone slabs, and a continuous band of windows on the upper wall. Surrounded by a one-block-high stonebrick rim and set in a dug-out dirt perimeter.",
+  "building_type": "residential_small_house",
+  "shape": {
+    "overall_form": "compact rectangular box with a centered stepped roof and a peripheral low stone border",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis (roof and window arrangement mirror), likely symmetric on both axes horizontally",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 19,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "foundation/raised rim and top band",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof (stairs/blocks)",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof caps / decorative corner slabs",
+      "confidence": 0.8
+    },
+    {
+      "name": "oak_plank",
+      "role": "walls (horizontal siding)",
+      "confidence": 0.9
+    },
+    {
+      "name": "log_oak",
+      "role": "vertical corner/support posts",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows (multiple contiguous panes)",
+      "confidence": 0.98
+    },
+    {
+      "name": "dirt",
+      "role": "surrounding excavated ground",
+      "confidence": 0.85
+    }
+  ],
+  "elements": [
+    "continuous row of windows on the upper half of the wall on visible sides",
+    "stonebrick perimeter low wall (1 block high, outer rim)",
+    "stepped dark roof built from stair blocks with stone slab accents",
+    "vertical log corner posts",
+    "wooden plank walls",
+    "ground moat/dug perimeter of dirt"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular oak-plank box approximately 11x19 blocks footprint, 3-4 blocks tall for the wall height.",
+    "Place vertical oak logs at each corner, flush with the outer face of the planks.",
+    "Add a continuous band of glass panes one block below the top of the walls on long sides (three or four panes visible per side).",
+    "Place a ring of stonebrick one block out from the house footprint at ground level to form the raised rim; make it one block high.",
+    "Add a top stonebrick band (two-block thick horizontal trim) around the top edge of walls before starting the roof.",
+    "Construct a stepped roof using nether brick stairs ascending toward the center ridge; cap some outer roof corners and the ridge with stone slabs placed on stair corners as accents."
+  ],
+  "uncertainties": [
+    "Exact internal floor layout and presence/location of an entrance are not visible; there may be a door on a non-visible side.",
+    "Precise block counts for width/depth/height are estimated from images and aerials; actual footprint may differ by a few blocks.",
+    "Roof uses stair blocks (nether brick) and slab accents; exact stair orientation and any under-layer (full blocks) are partially inferred.",
+    "The stone 'top band' might be stonebrick slabs or full blocks; I inferred stonebrick full blocks with slabs for accents.",
+    "Material names normalized (nether_brick, stone_slab, log_oak) may correspond to variant textures in the screenshots; confidence scores reflect that."
+  ]
+}

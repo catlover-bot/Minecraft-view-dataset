@@ -1,0 +1,73 @@
+{
+  "summary": "Two-storey rectangular Minecraft building with a stepped brick gable-like roof, sandstone mid walls with a wooden belt between floors, corner stone pillars, and a raised white stone (likely quartz) border/foundation. Rows of narrow windows on both floors; building sits within a recessed dirt plot.",
+  "building_type": "residential/house",
+  "shape": {
+    "overall_form": "rectangular box with a stepped centered roof ridge (symmetrical along length)",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral symmetry along the long axis (front/back identical; left/right mostly identical)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 17,
+    "height": 9
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "sandstone",
+      "role": "wall_mid",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood",
+      "role": "horizontal_belt/floor_trim",
+      "confidence": 0.85
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner_pillars",
+      "confidence": 0.7
+    },
+    {
+      "name": "quartz",
+      "role": "foundation_border/trim",
+      "confidence": 0.8
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    }
+  ],
+  "elements": [
+    "two full-length rows of narrow windows (ground and first floor) on the visible long sides",
+    "wooden horizontal belt between floors (planks)",
+    "corner vertical stone columns/pillars",
+    "stepped brick roof with stone slab/trim at edges",
+    "raised white stone foundation/border around building footprint",
+    "recessed ground area/dirt moat around the foundation"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular sandstone box roughly 11x17 blocks footprint and 5 blocks tall for two interior floors (visible external height ≈ 6–7 before roof).",
+    "Place a continuous wooden plank strip around mid-height between the two floors to match the belt detail.",
+    "Add narrow 1x1 high glass windows spaced evenly in a horizontal band on each floor; leave small vertical stonebrick corner pillars 2–3 blocks tall between bands.",
+    "Construct a stepped brick roof: slope up from both long sides toward center with brick stairs/blocks, add stone slab trim at the eaves and ridge.",
+    "Surround the base with a 1-block-high white border (quartz or similar) raised above ground; set the surrounding ground down one block to create the recessed plot."
+  ],
+  "uncertainties": [
+    "Exact block types for white trim assumed to be quartz based on color but could be wool/concrete; confidence 0.8.",
+    "Corner pillar material looks like stonebrick or andesite / polished variant; identification confidence 0.7.",
+    "Interior layout, door locations, and rear facades are not visible so internal floor heights and staircase placement are unknown.",
+    "Precise footprint dimensions estimated from pixel views; real block counts may differ by ±2 blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_020",
+  "created_at": "2026-02-28T14:01:51.522022+00:00"
+}

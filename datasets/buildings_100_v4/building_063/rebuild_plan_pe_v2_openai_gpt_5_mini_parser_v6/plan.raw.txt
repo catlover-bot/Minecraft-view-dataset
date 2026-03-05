@@ -1,0 +1,443 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 32,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt",
+    "perimeter": "cobblestone",
+    "band": "stonebrick" 
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "complex",
+      "segments": [
+        {
+          "x1": 8,
+          "z1": 8,
+          "x2": 24,
+          "z2": 24,
+          "label": "central_block"
+        },
+        {
+          "x1": 0,
+          "z1": 12,
+          "x2": 32,
+          "z2": 20,
+          "label": "east_west_arm"
+        },
+        {
+          "x1": 12,
+          "z1": 0,
+          "x2": 20,
+          "z2": 32,
+          "label": "north_south_arm"
+        },
+        {
+          "x1": 24,
+          "z1": 14,
+          "x2": 28,
+          "z2": 18,
+          "label": "small_annex_east"
+        }
+      ],
+      "symmetry": "approx_bilateral_along_x_center"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 6
+        },
+        "rooms_hint": "single-level thick-walled fortress rooms; open central hall under tower",
+        "perimeter_profile": "cruciform with annex; thick walls approx 2-3 blocks thick"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "east",
+        "x1": 32,
+        "y1": 1,
+        "z1": 15,
+        "x2": 32,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 15,
+        "y1": 7,
+        "z1": 15,
+        "x2": 17,
+        "y2": 8,
+        "z2": 17
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 7,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 8,
+          "z1": 8,
+          "x2": 24,
+          "z2": 24,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 0,
+          "z1": 12,
+          "x2": 32,
+          "z2": 20,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 12,
+          "z1": 0,
+          "x2": 20,
+          "z2": 32,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 14,
+          "z1": 14,
+          "x2": 18,
+          "z2": 18,
+          "block": "nether_brick"
+        },
+        {
+          "y": 9,
+          "x1": 15,
+          "z1": 15,
+          "x2": 17,
+          "z2": 17,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 30,
+      "y2": 0,
+      "z2": 30,
+      "block": "dirt",
+      "purpose": "yard_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 32,
+      "y2": 0,
+      "z2": 32,
+      "block": "dirt",
+      "purpose": "ground_base_full"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 11,
+      "x2": 32,
+      "y2": 0,
+      "z2": 21,
+      "block": "dirt",
+      "purpose": "arm_floor_east_west"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 0,
+      "z1": 0,
+      "x2": 21,
+      "y2": 0,
+      "z2": 32,
+      "block": "dirt",
+      "purpose": "arm_floor_north_south"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 8,
+      "x2": 24,
+      "y2": 6,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "central_block_solid_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 11,
+      "y1": 1,
+      "z1": 11,
+      "x2": 20,
+      "y2": 5,
+      "z2": 20,
+      "purpose": "central_interior_hall"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 12,
+      "x2": 32,
+      "y2": 6,
+      "z2": 20,
+      "block": "stonebrick",
+      "purpose": "east_west_arm_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 13,
+      "x2": 31,
+      "y2": 5,
+      "z2": 19,
+      "purpose": "east_west_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 6,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "north_south_arm_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 13,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 5,
+      "z2": 31,
+      "purpose": "north_south_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 24,
+      "y1": 1,
+      "z1": 14,
+      "x2": 28,
+      "y2": 5,
+      "z2": 18,
+      "block": "stonebrick",
+      "purpose": "annex_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 25,
+      "y1": 1,
+      "z1": 15,
+      "x2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 32,
+  "ymin": 0,
+  "ymax": 9,
+  "zmin": 0,
+  "zmax": 32,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [1, 0, 1, 31, 0, 31],
+      "block": "dirt",
+      "comment": "yard ground inside perimeter (1-block inset to allow perimeter cobblestone border at edges)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 32, 0, 32],
+      "block": "cobblestone",
+      "comment": "outer cobblestone perimeter border at ground level (single-block-high around plot)"
+    },
+    {
+      "op": "fill",
+      "box": [8, 1, 8, 24, 1, 24],
+      "block": "stonebrick",
+      "comment": "floor slab of building (stonebrick) at y=1 forming footprint central square 17x17"
+    },
+    {
+      "op": "fill",
+      "box": [8, 2, 8, 24, 2, 24],
+      "block": "stonebrick",
+      "comment": "second layer of floor to give slight thickness (2-layer floor)"
+    },
+    {
+      "op": "fill",
+      "box": [8, 2, 15, 24, 7, 17],
+      "block": "air",
+      "comment": "clear interior cross-arm (temporary guarantee interior is hollow). Note: interior hollowing kept within footprint."
+    },
+    {
+      "op": "fill",
+      "box": [15, 2, 8, 17, 7, 24],
+      "block": "air",
+      "comment": "clear north-south arm interior"
+    },
+    {
+      "op": "fill",
+      "box": [10, 2, 10, 22, 7, 22],
+      "block": "air",
+      "comment": "clear central room interior (ensures internal space within walls)"
+    },
+    {
+      "op": "fill",
+      "box": [8, 2, 8, 24, 7, 24],
+      "block": "stonebrick",
+      "comment": "rebuild walls shell layer to ensure consistent placement (will be overlaid with banding). This operation establishes wall extents; subsequent ops will replace portions for openings and banding."
+    },
+    {
+      "op": "replace",
+      "box": [9, 3, 9, 23, 7, 23],
+      "from": "stonebrick",
+      "to": "air",
+      "comment": "carve internal space inside wall thickness to create hollow interior while leaving 1-block-thick walls (walls are stonebrick thickness 1)"
+    },
+    {
+      "op": "fill",
+      "box": [8, 1, 14, 24, 1, 14],
+      "block": "stonebrick",
+      "comment": "internal floor seam to support cross-arm central floor continuity"
+    },
+    {
+      "op": "fill",
+      "box": [8, 2, 8, 24, 8, 24],
+      "block": "stonebrick",
+      "comment": "ensure walls reach up to top wall level before banding (temporary solid to be banded next)"
+    },
+    {
+      "op": "set_block",
+      "pos": [16, 2, 8],
+      "block": "air",
+      "comment": "placeholder to ensure doorway carving doesn't get blocked (part of entrance opening creation)"
+    },
+    {
+      "op": "fill",
+      "box": [12, 2, 8, 20, 5, 8],
+      "block": "air",
+      "comment": "create recessed single doorway on south-facing facade (3 wide x 4 high entrance recess). Coordinates are inside bbox."
+    },
+    {
+      "op": "set_block",
+      "pos": [16, 6, 8],
+      "block": "stonebrick_slab",
+      "comment": "slab lintel over recessed doorway (decorative)"
+    },
+    {
+      "op": "fill",
+      "box": [8, 4, 12, 8, 6, 20],
+      "block": "stonebrick",
+      "comment": "left arm wall thickening (ensures continuous wall thickness at arm edges)"
+    },
+    {
+      "op": "fill",
+      "box": [24, 4, 12, 24, 6, 20],
+      "block": "stonebrick",
+      "comment": "right arm wall thickening"
+    },
+    {
+      "op": "fill",
+      "box": [12, 4, 24, 20, 6, 24],
+      "block": "stonebrick",
+      "comment": "north arm wall banding base"
+    },
+    {
+      "op": "fill",
+      "box": [12, 4, 8, 20, 6, 8],
+      "block": "stonebrick",
+      "comment": "south arm wall banding base"
+    },
+    {
+      "op": "fill",
+      "box": [8, 6, 8, 24, 6, 24],
+      "block": "chiseled_stonebrick",
+      "comment": "decorative horizontal band (chiseled stonebrick) around top of walls at y=6"
+    },
+    {
+      "op": "fill",
+      "box": [8, 7, 8, 24, 7, 24],
+      "block": "stonebrick",
+      "comment": "top course of wall above decorative band up to roof base"
+    },
+    {
+      "op": "fill",
+      "box": [9, 8, 9, 23, 8, 23],
+      "block": "nether_brick",
+      "comment": "flat dark roof surface inset by one to create slab rim; placed at y=8"
+    },
+    {
+      "op": "fill",
+      "box": [8, 8, 8, 24, 8, 8],
+      "block": "stone_slab",
+      "comment": "roof slab rim along west edge (light-colored slab trim). Note: using stone_slab consistent with slab_stone hint."
+    },
+    {
+      "op": "fill",
+      "box": [8, 8, 24, 24, 8, 24],
+      "block": "stone_slab",
+      "comment": "roof slab rim along north edge"
+    },
+    {
+      "op": "fill",
+      "box": [8, 8, 8, 8, 8, 24],
+      "block": "stone_slab",
+      "comment": "roof slab rim along west edge (duplicate to ensure continuous rim)"
+    },
+    {
+      "op": "fill",
+      "box": [24, 8, 8, 24, 8, 24],
+      "block": "stone_slab",
+      "comment": "roof slab rim along east edge"
+    },
+    {
+      "op": "fill",
+      "box": [13, 9, 13, 19, 11, 19],
+      "block": "stonebrick",
+      "comment": "central raised tower base (3x3 internal, 7x7 external footprint) starting at y=9 through y=11"
+    },
+    {
+      "op": "fill",
+      "box": [13, 12, 13, 19, 12, 19],
+      "block": "chiseled_stonebrick",
+      "comment": "tower decorative cap course at top of tower walls"
+    },
+    {
+      "op": "fill",
+      "box": [14, 11, 13, 18, 11, 19],
+      "block": "air",
+      "comment": "tower interior hollowing"
+    },
+    {
+      "op": "fill",

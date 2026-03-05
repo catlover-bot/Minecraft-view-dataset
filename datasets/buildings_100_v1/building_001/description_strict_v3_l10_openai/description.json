@@ -1,0 +1,73 @@
+{
+  "summary": "Two-story rectangular building with a stepped curved wooden roof, stone/brick mid-wall banding, and continuous horizontal window rows on both floors. Surrounded by a low white border ledge and set into a leveled dirt plot. Visible from multiple angles; roof is symmetrical along the long axis.",
+  "building_type": "residential-like block",
+  "shape": {
+    "overall_form": "rectangular prism base with a stepped barrel-style wooden roof centered on top",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral along the long (roof ridge) axis",
+    "floors_estimate": 2,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 19,
+    "height": 9
+  },
+  "materials": [
+    {
+      "name": "wood",
+      "role": "roof and horizontal trim",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "lower wall band",
+      "confidence": 0.75
+    },
+    {
+      "name": "cobblestone",
+      "role": "corner/vertical accents",
+      "confidence": 0.7
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    },
+    {
+      "name": "quartz",
+      "role": "outer ground border/ledge",
+      "confidence": 0.7
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof edging and possibly slab accents",
+      "confidence": 0.5
+    }
+  ],
+  "elements": [
+    "continuous horizontal window strip on each floor (multiple 1x1 glass panes separated by frames)",
+    "raised stepped wooden roof with center ridge and symmetrical steps",
+    "two distinct horizontal wall bands (light top band and darker stone band below)",
+    "corner vertical cobblestone accents",
+    "perimeter low white ledge/bench around base"
+  ],
+  "rebuild_hints": [
+    "Create a rectangular two-floor shell; each floor height appears to be 3 blocks tall (ground floor, middle band, second floor).",
+    "Place a continuous row of windows centered on each long wall spanning most of the length, framed by stonebrick band below and a light block band above.",
+    "Use cobblestone (or similar textured block) at vertical corners extending full building height.",
+    "Add a stepped curved roof made from wood planks: slope up in 1-block steps from both long sides to a central ridge; roof extends slightly beyond walls with stone slab edging near the ridge.",
+    "Surround the base with a single-block-high white ledge (quartz) forming a rectangular rim set one block out from the walls on the long sides."
+  ],
+  "uncertainties": [
+    "Exact block types: light horizontal band may be quartz (assumed) but could be another light block (concrete, wool).",
+    "Precise footprint dimensions: top-down images show rounded roof edges that slightly reduce visible roof width; width/depth integers are estimates.",
+    "Ground border material and thickness are inferred as quartz slabs/blocks; could be smooth stone variants.",
+    "Whether interior floors/partitions exist is not visible; internal layout unknown.",
+    "Roof ridge detail includes small stone slab features; exact slab vs full block usage uncertain."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_001",
+  "created_at": "2026-03-01T07:49:36.316353+00:00"
+}

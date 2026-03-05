@@ -1,0 +1,85 @@
+{
+  "summary": "A small two-story rectangular house with a raised stonebrick foundation border, oak plank walls with vertical log corner posts, horizontal stonebrick band between floors, many small glass windows in rows, and a dark nether-brick stepped gable roof capped with stonebrick corner/edge blocks.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "simple rectangular two-story box with a centered pitched roof; roof ridge runs along the long axis",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral symmetry along the roof ridge (longitudinal)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 5,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "foundation coping / horizontal band",
+      "confidence": 0.9
+    },
+    {
+      "name": "brick",
+      "role": "roof edge/accent (likely stonebrick slabs visible) - ambiguous",
+      "confidence": 0.2
+    },
+    {
+      "name": "wood",
+      "role": "walls (oak planks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "wood",
+      "role": "vertical corner posts (log)",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "slab_stone",
+      "role": "foundation top/trim (stone slab border around base)",
+      "confidence": 0.85
+    },
+    {
+      "name": "slab_wood",
+      "role": "possible interior/roof trim (uncertain)",
+      "confidence": 0.15
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof (dark red/dark blocks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "fence",
+      "role": "not observed but possible for balcony/railing (uncertain)",
+      "confidence": 0.05
+    }
+  ],
+  "elements": [
+    "rows of glass windows on front and sides (two rows: one per floor)",
+    "stonebrick slab border/foundation platform surrounding base",
+    "horizontal stonebrick band between ground and second floor",
+    "vertical log corner posts",
+    "nether-brick stepped gable roof with stonebrick corner blocks",
+    "no visible door on shown facades (entrance not visible from provided angles)"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular footprint ~9x5 blocks (visible roof top occupies inner area with a 1-block stone slab border around).",
+    "Raise a 1-block high stonebrick slab border/platform around the base; build oak plank walls two floors tall with a horizontal stonebrick band separating floors.",
+    "Place vertical log posts at all four exterior corners spanning both floors; insert rows of glass panes (3 or 4 per side segment) centered on each floor.",
+    "Construct a symmetrical nether-brick gable roof along the long axis with stepped layers and stonebrick blocks at the roof corners/ends as caps.",
+    "No visible front door in images; entrance likely on an unseen side or omitted — leave opening placement flexible."
+  ],
+  "uncertainties": [
+    "Exact footprint block counts (width/depth) estimated from top-down roof image; could be off by ±1-2 blocks.",
+    "Material exactness: stone-like trim might be stonebrick or regular stone; roof appears dark (nether_brick) but could be dark oak planks or another dark block.",
+    "Presence and placement of an entrance/door is not visible in any provided views.",
+    "Interior layout and floor heights are not visible; floor-to-ceiling spacing assumed typical (2-3 blocks per floor).",
+    "Some small trim details (slabs vs full blocks at roof edges) are partially occluded and inferred from shadows."
+  ]
+}

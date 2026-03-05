@@ -1,0 +1,480 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 17,
+    "zmin": 0,
+    "zmax": 40
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "slab_stone",
+    "glass": "glass",
+    "light": "sea_lantern",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 39,
+          "label": "courtyard_inner"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor open courtyard, central hall ground level",
+        "perimeter_profile": "rectangular courtyard with inner low wall"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 11
+        },
+        "rooms_hint": "upper story in central hall and tower shafts",
+        "perimeter_profile": "central elongated hall with banded walls, towers rising at corners"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 1,
+        "x2": 11,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 6,
+        "z1": 2,
+        "x2": 7,
+        "y2": 7,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 13,
+        "y1": 6,
+        "z1": 2,
+        "x2": 14,
+        "y2": 7,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 19,
+        "y1": 6,
+        "z1": 9,
+        "x2": 19,
+        "y2": 7,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 9,
+        "y1": 6,
+        "z1": 39,
+        "x2": 11,
+        "y2": 7,
+        "z2": 39
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 6,
+        "z1": 29,
+        "x2": 1,
+        "y2": 7,
+        "z2": 30
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 12,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 12,
+          "x1": 4,
+          "z1": 6,
+          "x2": 16,
+          "z2": 34,
+          "block": "wood"
+        },
+        {
+          "y": 13,
+          "x1": 5,
+          "z1": 7,
+          "x2": 15,
+          "z2": 33,
+          "block": "wood"
+        },
+        {
+          "y": 14,
+          "x1": 6,
+          "z1": 8,
+          "x2": 14,
+          "z2": 32,
+          "block": "wood"
+        },
+        {
+          "y": 15,
+          "x1": 7,
+          "z1": 9,
+          "x2": 13,
+          "z2": 31,
+          "block": "wood"
+        },
+        {
+          "y": 16,
+          "x1": 8,
+          "z1": 10,
+          "x2": 12,
+          "z2": 30,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 40,
+      "block": "dirt",
+      "purpose": "ground_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 19,
+      "y2": 0,
+      "z2": 39,
+      "block": "wood",
+      "purpose": "courtyard_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 1,
+      "z2": 39,
+      "block": "white_concrete",
+      "purpose": "inner_low_wall_base"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 18,
+      "y2": 1,
+      "z2": 38,
+      "block": "air",
+      "purpose": "courtyard_open_space"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 1,
+      "x2": 18,
+      "y2": 5,
+      "z2": 1,
+      "block": "stonebrick",
+      "purpose": "north_boundary_parapet"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 39,
+      "x2": 18,
+      "y2": 5,
+      "z2": 39,
+      "block": "stonebrick",
+      "purpose": "south_boundary_parapet"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 2,
+      "x2": 1,
+      "y2": 5,
+      "z2": 38,
+      "block": "stonebrick",
+      "purpose": "west_boundary_parapet"
+    },
+    {
+      "op": "fill",
+      "x1": 19,
+      "y1": 1,
+      "z1": 2,
+      "x2": 19,
+      "y2": 5,
+      "z2": 38,
+      "block": "stonebrick",
+      "purpose": "east_boundary_parapet"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 1,
+      "z1": 8,
+      "x2": 14,
+      "y2": 7,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "central_building_outer_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 7,
+      "y1": 2,
+      "z1": 9,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 17,
+  "zmin": 0,
+  "zmax": 40,
+  "operations": [
+    {
+      "op": "fill",
+      "from": [1, 0, 1],
+      "to": [19, 0, 39],
+      "block": "dirt",
+      "comment": "ground plane within outer area"
+    },
+    {
+      "op": "fill",
+      "from": [2, 1, 2],
+      "to": [18, 1, 38],
+      "block": "white_concrete",
+      "comment": "one-block-high inner white perimeter border (courtyard border)"
+    },
+    {
+      "op": "fill",
+      "from": [3, 0, 3],
+      "to": [17, 0, 37],
+      "block": "oak_planks",
+      "comment": "courtyard floor (wood floor inside white border)"
+    },
+    {
+      "op": "fill",
+      "from": [3, 1, 3],
+      "to": [17, 1, 37],
+      "block": "air",
+      "comment": "open courtyard space above floor"
+    },
+    {
+      "op": "fill",
+      "from": [4, 1, 4],
+      "to": [16, 1, 36],
+      "block": "air",
+      "comment": "ensure central building area initially clear"
+    },
+    {
+      "op": "fill",
+      "from": [5, 2, 15],
+      "to": [15, 2, 25],
+      "block": "stone_bricks",
+      "comment": "central building ground-level outer wall band (darker band)"
+    },
+    {
+      "op": "fill",
+      "from": [5, 3, 15],
+      "to": [15, 3, 25],
+      "block": "white_concrete",
+      "comment": "central building lighter band above foundation"
+    },
+    {
+      "op": "fill",
+      "from": [5, 4, 15],
+      "to": [15, 6, 25],
+      "block": "stone_bricks",
+      "comment": "upper darker band forming two-story wall section"
+    },
+    {
+      "op": "fill",
+      "from": [9, 2, 25],
+      "to": [11, 4, 25],
+      "block": "air",
+      "comment": "entrance opening on front centerline (through wall) — projection will be added"
+    },
+    {
+      "op": "fill",
+      "from": [8, 2, 25],
+      "to": [12, 5, 26],
+      "block": "oak_planks",
+      "comment": "small entrance projection (one-block deep) with planked floor and partial walls"
+    },
+    {
+      "op": "fill",
+      "from": [9, 3, 25],
+      "to": [11, 4, 25],
+      "block": "air",
+      "comment": "clear doorway space inside projection"
+    },
+    {
+      "op": "fill",
+      "from": [6, 3, 17],
+      "to": [14, 3, 23],
+      "block": "glass_pane",
+      "comment": "horizontal band of windows on ground/first floor (central building)"
+    },
+    {
+      "op": "fill",
+      "from": [6, 5, 17],
+      "to": [14, 5, 23],
+      "block": "glass_pane",
+      "comment": "upper row of windows for second story"
+    },
+    {
+      "op": "fill",
+      "from": [5, 7, 15],
+      "to": [15, 7, 25],
+      "block": "stone_slab",
+      "comment": "stone slab eave/roof edging around central building base of roof"
+    },
+    {
+      "op": "fill",
+      "from": [6, 8, 16],
+      "to": [14, 8, 24],
+      "block": "oak_stairs",
+      "comment": "first layer of stepped gable roof (outer stairs facing outwards)"
+    },
+    {
+      "op": "fill",
+      "from": [7, 9, 17],
+      "to": [13, 9, 23],
+      "block": "oak_stairs",
+      "comment": "second layer of stepped roof"
+    },
+    {
+      "op": "fill",
+      "from": [8, 10, 18],
+      "to": [12, 10, 22],
+      "block": "oak_stairs",
+      "comment": "third (top) stepped roof ridge"
+    },
+    {
+      "op": "fill",
+      "from": [9, 11, 19],
+      "to": [11, 11, 21],
+      "block": "oak_planks",
+      "comment": "roof ridge cap"
+    },
+    {
+      "op": "fill",
+      "from": [3, 1, 3],
+      "to": [3, 14, 3],
+      "block": "stone_bricks",
+      "comment": "northwest tower trunk (one of four) - footprint 1x1 column up to y14"
+    },
+    {
+      "op": "fill",
+      "from": [17, 1, 3],
+      "to": [17, 14, 3],
+      "block": "stone_bricks",
+      "comment": "northeast tower trunk"
+    },
+    {
+      "op": "fill",
+      "from": [3, 1, 37],
+      "to": [3, 14, 37],
+      "block": "stone_bricks",
+      "comment": "southwest tower trunk"
+    },
+    {
+      "op": "fill",
+      "from": [17, 1, 37],
+      "to": [17, 14, 37],
+      "block": "stone_bricks",
+      "comment": "southeast tower trunk"
+    },
+    {
+      "op": "fill",
+      "from": [2, 15, 2],
+      "to": [4, 15, 4],
+      "block": "stone_slab",
+      "comment": "northwest tower top platform outer slabs"
+    },
+    {
+      "op": "fill",
+      "from": [16, 15, 2],
+      "to": [18, 15, 4],
+      "block": "stone_slab",
+      "comment": "northeast tower top platform outer slabs"
+    },
+    {
+      "op": "fill",
+      "from": [2, 15, 36],
+      "to": [4, 15, 38],
+      "block": "stone_slab",
+      "comment": "southwest tower top platform outer slabs"
+    },
+    {
+      "op": "fill",
+      "from": [16, 15, 36],
+      "to": [18, 15, 38],
+      "block": "stone_slab",
+      "comment": "southeast tower top platform outer slabs"
+    },
+    {
+      "op": "fill",
+      "from": [2, 16, 2],
+      "to": [4, 16, 4],
+      "block": "oak_slab",
+      "comment": "northwest tower inner wooden platform layer"
+    },
+    {
+      "op": "fill",
+      "from": [16, 16, 2],
+      "to": [18, 16, 4],
+      "block": "oak_slab",
+      "comment": "northeast tower inner wooden platform"
+    },
+    {
+      "op": "fill",
+      "from": [2, 16, 36],
+      "to": [4, 16, 38],
+      "block": "oak_slab",
+      "comment":

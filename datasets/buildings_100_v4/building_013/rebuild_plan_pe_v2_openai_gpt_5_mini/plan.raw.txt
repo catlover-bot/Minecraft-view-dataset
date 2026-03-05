@@ -1,0 +1,411 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 14,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "slab_stone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 32,
+          "label": "main_compound"
+        }
+      ],
+      "symmetry": "approximate_bilateral_along_z_center"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single large hall with rim corridor around central courtyard",
+        "perimeter_profile": "rectangular rim with central courtyard void"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 11
+        },
+        "rooms_hint": "tower interiors (multi-level small floors); elevated roof volumes at 5-11",
+        "perimeter_profile": "hall walls extend up to mid-height with stepped gable roof above"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 10,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 6,
+        "z1": 6,
+        "x2": 20,
+        "y2": 7,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 9,
+        "z1": 26,
+        "x2": 20,
+        "y2": 10,
+        "z2": 26
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 6,
+        "x2": 0,
+        "y2": 7,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 9,
+        "z1": 26,
+        "x2": 0,
+        "y2": 10,
+        "z2": 26
+      }
+    ],
+    "roof_profile": {
+      "type": "gage_stepped|other",
+      "base_y": 8,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 32,
+          "block": "wood"
+        },
+        {
+          "y": 9,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 31,
+          "block": "wood"
+        },
+        {
+          "y": 10,
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 30,
+          "block": "wood"
+        },
+        {
+          "y": 11,
+          "x1": 4,
+          "z1": 6,
+          "x2": 16,
+          "z2": 26,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 32,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "outer_wall_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 1,
+      "z1": 3,
+      "x2": 17,
+      "y2": 3,
+      "z2": 29,
+      "purpose": "central_courtyard_void"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 32,
+      "block": "slab_stone",
+      "purpose": "wall_base_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 20,
+      "y2": 2,
+      "z2": 32,
+      "block": "quartz_block",
+      "purpose": "light_horizontal_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 20,
+      "y2": 3,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "dark_horizontal_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 20,
+      "y2": 7,
+      "z2": 32,
+      "block": "stonebrick",
+      "purpose": "upper_wall_midsection"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 0,
+      "purpose": "main_entrance_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 0,
+      "z1": 0,
+      "x2": 11,
+      "y2": 0,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "entrance_stairs"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2": 31,
+      "block": "slab_stone",
+      "purpose": "parapet_at_roof_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 8,
+      "z1": 0,
+      "x2": 20,
+      "y2": 8,
+      "z2": 32,
+      "block": "wood",
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 14,
+  "zmin": 0,
+  "zmax": 32,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 20, 0, 32],
+      "block": "oak_planks",
+      "notes": "ground/floor layer (main hall floor ring). Leaves central courtyard hollow later."
+    },
+    {
+      "op": "hollow_box",
+      "box": [1, 1, 1, 19, 10, 31],
+      "wall_block": "quartz_block",
+      "trim_block": "stonebrick",
+      "notes": "main hall shell walls with horizontal banding; wall thickness 1. Will add bands as rows."
+    },
+    {
+      "op": "replace_rows",
+      "box": [1, 1, 1, 19, 10, 31],
+      "pattern": [
+        {"y_offset": 0, "block": "quartz_block"},
+        {"y_offset": 1, "block": "quartz_block"},
+        {"y_offset": 2, "block": "stonebrick"},
+        {"y_offset": 3, "block": "oak_planks"},
+        {"y_offset": 4, "block": "quartz_block"},
+        {"y_offset": 5, "block": "quartz_block"},
+        {"y_offset": 6, "block": "stonebrick"},
+        {"y_offset": 7, "block": "oak_planks"},
+        {"y_offset": 8, "block": "quartz_block"},
+        {"y_offset": 9, "block": "quartz_block"}
+      ],
+      "notes": "applies horizontal banding up walls (repeating light/dark/wood bands). Ensures pattern fits within y 1..10."
+    },
+    {
+      "op": "carve",
+      "box": [8, 1, 8, 12, 8, 24],
+      "block": "air",
+      "notes": "central courtyard / open void inside main hall. Leaves a one-block rim around courtyard."
+    },
+    {
+      "op": "clear",
+      "box": [10, 1, 0, 10, 4, 0],
+      "block": "air",
+      "notes": "placeholder no-op to ensure entrance aligns; real entrance defined below."
+    },
+    {
+      "op": "entrance",
+      "box": [8, 1, 0, 12, 4, 0],
+      "block": "air",
+      "steps": [
+        {"pos": [9,1,0], "block": "stone_slab"},
+        {"pos": [10,1,0], "block": "stone_slab"},
+        {"pos": [11,1,0], "block": "stone_slab"}
+      ],
+      "notes": "entrance opening on short side (z=0). 4-high opening at center width 4. Steps at ground."
+    },
+    {
+      "op": "window_rows",
+      "box": [1, 3, 1, 19, 8, 31],
+      "pattern": [
+        {"face": "north", "interval": 4, "size": [1,2], "block": "glass"},
+        {"face": "south", "interval": 4, "size": [1,2], "block": "glass"},
+        {"face": "east", "interval": 6, "size": [1,2], "block": "glass"},
+        {"face": "west", "interval": 6, "size": [1,2], "block": "glass"}
+      ],
+      "notes": "small narrow windows in towers and hall walls; respects box bounds."
+    },
+    {
+      "op": "build_tower",
+      "box": [1, 1, 1, 4, 12, 4],
+      "block": "stonebrick",
+      "cap": "stone_slab",
+      "windows": [{"pos": [2,4,2], "size": [1,2], "block":"glass"},{"pos":[2,7,2],"size":[1,2],"block":"glass"}],
+      "notes": "front-left tower (4x4 base) rising to y=12. Cap overhang 1 slab around."
+    },
+    {
+      "op": "build_tower",
+      "box": [16, 1, 1, 19, 12, 4],
+      "block": "stonebrick",
+      "cap": "stone_slab",
+      "windows": [{"pos":[17,4,2],"size":[1,2],"block":"glass"},{"pos":[17,7,2],"size":[1,2],"block":"glass"}],
+      "notes": "front-right tower symmetric to front-left."
+    },
+    {
+      "op": "build_tower",
+      "box": [8, 1, 28, 12, 12, 31],
+      "block": "stonebrick",
+      "cap": "stone_slab",
+      "windows": [{"pos":[9,5,30],"size":[1,2],"block":"glass"},{"pos":[11,8,30],"size":[1,2],"block":"glass"}],
+      "notes": "rear-central tower centered on back short side."
+    },
+    {
+      "op": "roof_gable",
+      "box": [1, 11, 1, 19, 14, 31],
+      "material": "oak_planks",
+      "edge": "stone_slab",
+      "profile": "stepped",
+      "notes": "stepped gable roof across long axis. Max roof height y=14 (within ymax). Uses slabs for edging."
+    },
+    {
+      "op": "roof_detail",
+      "box": [1, 13, 1, 19, 14, 31],
+      "block": "spruce_stairs",
+      "notes": "stair accents on gable faces to give stepped slope appearance. Kept within ymax."
+    },
+    {
+      "op": "tower_caps",
+      "boxes": [[0,12,0,5,13,5],[15,12,0,20,13,5],[7,12,27,13,13,32]],
+      "block": "stone_slab",
+      "light": "sea_lantern",
+      "notes": "place slab overhang caps and center light in each cap. Caps stay within bbox up to y=13."
+    },
+    {
+      "op": "outline_markers",
+      "positions": [[0,1,0],[0,1,4],[0,1,8],[0,1,12],[0,1,16],[0,1,20],[0,1,24],[0,1,28],[20,1,0],[20,1,4],[20,1,8],[20,1,12],[20,1,16],[20,1,20],[20,1,24],[20,1,28]],
+      "block": "quartz_block",
+      "notes": "white perimeter markers spaced along x edges. All positions inside bbox (xmax inclusive is 20)."
+    },
+    {
+      "op": "floor_interior",
+      "box": [2, 0, 2, 18, 0, 30],
+      "block": "oak_planks",
+      "notes": "fill interior floor rim around courtyard; courtyard already carved to air."
+    },
+    {
+      "op": "air_clear",
+      "box": [8, 1, 8, 12, 1, 24],
+      "block": "air",
+      "notes": "ensure courtyard base is air, leaving perimeter floor at y=0."
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "ops_count_valid": true,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof": true,
+    "contains_windows": true,
+    "contains_entrance": true,
+    "material

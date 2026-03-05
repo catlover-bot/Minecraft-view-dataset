@@ -1,0 +1,76 @@
+{
+  "summary": "Small single-storey rectangular house with a stepped dark roof and a stone brick border/ledge. Walls are horizontal wooden planks with corner vertical log posts, a continuous band of windows on the visible long sides, and a raised stone slab/brick base surrounding the footprint.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "simple rectangular box for the walls with a multi-step hip-like roof that stair-steps upward to a small central cap",
+    "footprint_hint": "rectangle",
+    "symmetry": "mostly symmetric along the long axis; roof shows mirrored stepping on both long sides",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 13,
+    "depth": 13,
+    "height": 7
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "base/ledge/trim",
+      "confidence": 0.9
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof_main",
+      "confidence": 0.95
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof_steps/coping",
+      "confidence": 0.85
+    },
+    {
+      "name": "wood",
+      "role": "wall_planks",
+      "confidence": 0.9
+    },
+    {
+      "name": "log",
+      "role": "corner_posts",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    },
+    {
+      "name": "slab_stone",
+      "role": "ground edging",
+      "confidence": 0.8
+    }
+  ],
+  "elements": [
+    "continuous horizontal band of windows on each long side (paired glass panes with wood frames)",
+    "entrance likely on one short side (not fully visible) with small step",
+    "stepped dark roof with stone slab accents at each step and a small central cap",
+    "stone brick base/ledge one block high surrounding the structure",
+    "vertical log corner posts framing the plank walls"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular wooden plank box ~11x11 internal with vertical log posts at corners and a one-block high stonebrick base around it.",
+    "Place a continuous row of single-height windows (glass) centered on the long walls between the logs.",
+    "Build a stepped roof using dark nether-brick blocks rising in layers toward center; add stone slabs/stonebrick slabs on the outer edge of each step and a small raised cap at the roof peak.",
+    "Surround the building footprint with a one-block-wide stone slab/stonebrick edging at ground level to match the visible raised border."
+  ],
+  "uncertainties": [
+    "Exact footprint block dimensions: top-down view suggests a centered roof shape but precise outer wall thickness vs roof overhang is uncertain.",
+    "Material identification: dark roof appears to be nether brick; could be another dark block in certain texture packs.",
+    "Location of main entrance: visible corner suggests a doorway on one short side but door position and design are not fully visible.",
+    "Ground edging vs base material: both stonebrick and stone slab are present and their exact layering (slab vs full block) along the border is partly ambiguous."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_005",
+  "created_at": "2026-03-01T09:08:49.245753+00:00"
+}

@@ -1,0 +1,185 @@
+{
+  "operations": [
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": -1,
+      "z1": -1,
+      "x2": 22,
+      "y2": -1,
+      "z2": 30,
+      "block": "dirt",
+      "purpose": "ground/gravel base surrounding building footprint (one layer)."
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 21,
+      "y2": 11,
+      "z2": 29,
+      "block": "sandstone",
+      "purpose": "build outer hollow shell volume as main wall mass (will hollow out interior and carve tiers/trim)."
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 20,
+      "y2": 10,
+      "z2": 28,
+      "block": "air",
+      "purpose": "hollow interior to create open central arena/field and inner circulation space."
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 21,
+      "y2": 2,
+      "z2": 29,
+      "block": "quartz_block",
+      "purpose": "continuous horizontal trim band (first, between ground and first tier)."
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 21,
+      "y2": 6,
+      "z2": 29,
+      "block": "quartz_block",
+      "purpose": "continuous horizontal trim band (between tier 1 and tier 2)."
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 10,
+      "z1": 0,
+      "x2": 21,
+      "y2": 10,
+      "z2": 29,
+      "block": "quartz_block",
+      "purpose": "continuous horizontal trim band under roofline (top trim)."
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 10,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "north-west vertical corner pillar (left-front corner)."
+    },
+    {
+      "op": "fill",
+      "x1": 21,
+      "y1": 2,
+      "z1": 0,
+      "x2": 21,
+      "y2": 10,
+      "z2": 0,
+      "block": "quartz_block",
+      "purpose": "north-east vertical corner pillar (right-front corner)."
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 29,
+      "x2": 0,
+      "y2": 10,
+      "z2": 29,
+      "block": "quartz_block",
+      "purpose": "south-west vertical corner pillar (left-back corner)."
+    },
+    {
+      "op": "fill",
+      "x1": 21,
+      "y1": 2,
+      "z1": 29,
+      "x2": 21,
+      "y2": 10,
+      "z2": 29,
+      "block": "quartz_block",
+      "purpose": "south-east vertical corner pillar (right-back corner)."
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": -1,
+      "z": -1,
+      "block": "glass",
+      "purpose": "row of small windows on front tier (1x1 holes filled with glass), spaced every 2 blocks: operations set contiguous span for efficiency; exact spacing achieved by alternating glass/air in final pass."
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 0,
+      "block": "air",
+      "purpose": "entrance opening on front long side centered (3 blocks wide, 4 high) creating a porch recess."
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 4,
+      "z1": -1,
+      "x2": 13,
+      "y2": 4,
+      "z2": -1,
+      "block": "quartz_block",
+      "purpose": "small porch roof cap framed in quartz immediately outside entrance (1-block overhang)."
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 11,
+      "z1": 0,
+      "x2": 21,
+      "y2": 11,
+      "z2": 29,
+      "block": "brick",
+      "purpose": "build stepped brick gable roof along long sides; internal algorithm will place stairs/blocks inward creating a wrapped stepped profile leaving central open court; kept within bbox by capping at ymax."
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 20,
+      "y2": 1,
+      "z2": 28,
+      "block": "slab_stone",
+      "purpose": "ground-level arena floor layer (sandstone slabs) representing seating tiers' first floor edge; field interior remains air/grass if further pass adds grass."
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": -1,
+      "z": -1,
+      "block": "grass_block",
+      "purpose": "central grassy field on ground layer within arena interior footprint."
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 11,
+      "z1": 0,
+      "x2": 0,
+      "y2": 11,
+      "z2": 29,
+      "block": "stairs_quartz",
+      "purpose": "top trim edge detail and small vertical cap stairs on corners; constrained inside bbox."
+    }
+  ]
+}

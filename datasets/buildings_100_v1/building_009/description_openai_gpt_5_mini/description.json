@@ -1,0 +1,72 @@
+{
+  "summary": "A small two-story rectangular stone building with a raised cobblestone foundation border and a dark red stepped gable roof. Both floors have a continuous band of narrow windows along the long sides, stonebrick detailing around windows, and a recessed ground-level entrance visible on one corner. The roof is composed of dark nether-brick (or similar) slabs/stairs with light stone corner accents.",
+  "building_type": "residential_small|generic_house",
+  "shape": {
+    "overall_form": "compact rectangular block with a raised perimeter foundation and centered pitched roof running along the long axis",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long central axis (roof ridge centered); minor asymmetry at entrance corner",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 17,
+    "height": 9
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "primary_wall_blocks and window surrounds",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "foundation/perimeter low wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof (dark red/brown stair/slab blocks)",
+      "confidence": 0.8
+    },
+    {
+      "name": "slab_stone",
+      "role": "light corner/roof edging (possible stone slab or smooth stone)",
+      "confidence": 0.5
+    },
+    {
+      "name": "wood",
+      "role": "possible door/trim at entrance (uncertain)",
+      "confidence": 0.3
+    }
+  ],
+  "elements": [
+    "windows",
+    "entrance",
+    "roof",
+    "raised_cobblestone_perimeter",
+    "stonebrick_stringcourse"
+  ],
+  "rebuild_hints": [
+    "Footprint: reproduce a rectangular box approximately 9 x 17 blocks with a one-block-thick cobblestone perimeter platform surrounding it, inset the building so platform forms a ledge.",
+    "Walls: build two stories of stonebrick with a decorative horizontal band (stringcourse) of cobblestone or textured stone between floors; place narrow 1x2 window groups spaced evenly along the long sides on both floors.",
+    "Roof: create a centered gable roof along the long axis using dark nether-brick stairs and slabs with stepped white/light-stone corner blocks for the stair transitions; roof peak centered with mirrored slopes.",
+    "Entrance: add a recessed doorway at one short-side corner with glow block(s) (glowstone or similar) above/adjacent for light (visible in one view).",
+    "Height: ground to eaves approx 5 blocks per story including floor thickness; roof adds ~3 blocks of stepped slope above ridge."
+  ],
+  "uncertainties": [
+    "Exact block types for roof edging: appears dark (nether_brick) and light corner accents (could be stone slabs or smooth stone); confidence not full.",
+    "Exact interior layout and presence/location of internal floors/stairs beyond visible windows and external form.",
+    "Precise footprint dimensions: estimated from window counts and roof tiles; actual width/depth may differ by a few blocks.",
+    "Material used for the horizontal decorative band between floors: looks like cobblestone or a cobblestone-like block but could be a different textured stone."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_009",
+  "created_at": "2026-02-28T13:59:12.414869+00:00"
+}

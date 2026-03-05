@@ -1,0 +1,66 @@
+{
+  "summary": "Two-story rectangular building with a stepped brick gable/hip-like roof, sandstone mid-level wall bands, and smooth white stone trim and base. Long horizontal windows form continuous ribbons on both floors. Surrounded by a raised white stone perimeter ledge on a cleared dirt plot.",
+  "building_type": "residential_or_small_office",
+  "shape": {
+    "overall_form": "simple rectangular block, two main stacked volumes with a centered stepped roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along the front-center axis (window spacing and trim mirrored)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 15,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "sandstone",
+      "role": "primary_wall_band",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "roof_brick",
+      "confidence": 0.9
+    },
+    {
+      "name": "quartz",
+      "role": "corner_and_horizontal_trim_base",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "dirt",
+      "role": "surrounding_ground",
+      "confidence": 0.9
+    }
+  ],
+  "elements": [
+    "continuous horizontal ribbon windows on both floors (series of single-block glass panes)",
+    "entrance recessed on one side (visible small doorway gap) - uncertainty on door material",
+    "stepped brick roof with stone/quartz slab edging",
+    "raised single-block white stone perimeter ledge (platform) around building"
+  ],
+  "rebuild_hints": [
+    "Construct a rectangular core with two stacked 3-4 block tall stories separated by a 1-block high white trim band between floors.",
+    "Use sandstone blocks for broad wall areas and place 5-7 evenly spaced 1x1 windows per visible face in continuous horizontal rows (two rows total).",
+    "Cap vertical corners and horizontal bands with white quartz (or smooth white) blocks; add a 1-block high perimeter ledge of the same white material around the base.",
+    "Create a centered stepped roof using brick blocks with a shallow slope (multiple stepped layers), and add darker/stone slabs on the short ends as edging.",
+    "Plot sits inside a shallow excavated dirt area framed by a thin border; replicate cleared dirt around the ledge."
+  ],
+  "uncertainties": [
+    "Exact footprint dimensions (width and depth) are estimated from images; not all sides fully visible.",
+    "Material IDs inferred: white trim assumed quartz (could be smooth stone or quartz), brick roof assumed 'stonebrick/brick' texture.",
+    "Door and internal layout are not visible; entrance location is inferred from a recessed gap in one corner but door material is unknown.",
+    "Roof type labeled gable from stepped appearance but could be a low hipped or mansard variant; exact slope and internal attic space unknown."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_082",
+  "created_at": "2026-02-28T14:18:20.018213+00:00"
+}

@@ -1,0 +1,78 @@
+{
+  "summary": "Small rectangular single-story building with a stepped brick gable roof, continuous row of windows on long sides, raised stone/wood base and a surrounding low white border on the ground. Corners have darker stone blocks and the roof edges use stone slab accents.",
+  "building_type": "small house or pavilion",
+  "shape": {
+    "overall_form": "elongated rectangle with a ridge along the long axis and stepped gabled/hip-like brick roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along the long central axis",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 7,
+    "depth": 15,
+    "height": 7
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner pillars / accents (could be polished or regular stonebrick)",
+      "confidence": 0.7
+    },
+    {
+      "name": "sandstone",
+      "role": "main wall",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "quartz",
+      "role": "low surrounding border / trim",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood",
+      "role": "base trim / plank layer at building base",
+      "confidence": 0.8
+    },
+    {
+      "name": "slab_stone",
+      "role": "stone slab accents on roof edges",
+      "confidence": 0.9
+    }
+  ],
+  "elements": [
+    "continuous horizontal row of 4-5 windows on each long side",
+    "brick stepped roof with central ridge and layered steps",
+    "stone slab accents on roof steps",
+    "darker stone corner pillars",
+    "wooden/plank base course below sandstone walls",
+    "quartz (or white) low border surrounding building on ground"
+  ],
+  "rebuild_hints": [
+    "Footprint is a centered rectangle; long side has repeated window openings (approx 4 windows evenly spaced).",
+    "Build a 1-block high wooden/plank base around the interior of the quartz border, then place sandstone walls 3 blocks high with a 1-block white trim band above the windows.",
+    "Place darker stone blocks at each corner rising full wall height as vertical pillars.",
+    "Create a stepped brick roof: layer brick stairs/blocks to form stepped slopes toward a central ridge; cap each step corner with stone slabs.",
+    "Surround the building with a 1-block high white (quartz) rim set on ground level; leave a shallow dirt moat outside (visible cleared dirt)."
+  ],
+  "uncertainties": [
+    "Exact block types for white trim (quartz vs smooth quartz) and corner darker blocks (stonebrick vs polished variants) are uncertain.",
+    "Interior layout, door location and any interior floors/ceilings are not visible.",
+    "Window count per side inferred from visible images (may be off by ±1).",
+    "Height estimate assumes single interior level with 3 block wall height plus roof; could be 2 if internal slab/loft exists."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_038",
+  "created_at": "2026-02-28T14:06:25.234432+00:00"
+}

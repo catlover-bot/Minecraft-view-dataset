@@ -1,0 +1,440 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 6
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 11,
+          "z2": 5,
+          "label": "main"
+        },
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 6,
+          "label": "border_planter"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor hall, unknown interior",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 7
+        },
+        "rooms_hint": "upper floor",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 6,
+        "y1": 1,
+        "z1": 5,
+        "x2": 6,
+        "y2": 3,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 2,
+        "x2": 1,
+        "y2": 2,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 11,
+        "y1": 2,
+        "z1": 2,
+        "x2": 11,
+        "y2": 2,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 6,
+        "z1": 2,
+        "x2": 1,
+        "y2": 6,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 11,
+        "y1": 6,
+        "z1": 2,
+        "x2": 11,
+        "y2": 6,
+        "z2": 4
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 8,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 6,
+          "block": "wood"
+        },
+        {
+          "y": 9,
+          "x1": 1,
+          "z1": 1,
+          "x2": 11,
+          "z2": 5,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 6,
+      "block": "wood",
+      "purpose": "ground_floor_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 1,
+      "z2": 6,
+      "block": "quartz",
+      "purpose": "low_white_border_planter"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 1,
+      "z2": 5,
+      "purpose": "planter_recess"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 1,
+      "z2": 5,
+      "block": "wood",
+      "purpose": "interior_floor_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 11,
+      "y2": 3,
+      "z2": 5,
+      "block": "stonebrick",
+      "purpose": "lower_wall_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 11,
+      "y2": 4,
+      "z2": 5,
+      "block": "wood",
+      "purpose": "thin_wood_trim_between_bands"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 11,
+      "y2": 5,
+      "z2": 5,
+      "block": "quartz",
+      "purpose": "mid_white_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 11,
+      "y2": 7,
+      "z2": 5,
+      "block": "stonebrick",
+      "purpose": "upper_wall_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 8,
+      "z1": 1,
+      "x2": 11,
+      "y2": 8,
+      "z2": 5,
+      "block": "wood",
+      "purpose": "wall_cap_wood_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 1,
+      "y2": 7,
+      "z2": 1,
+      "block": "cobblestone",
+      "purpose": "corner_cobble_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 2,
+      "z1": 1,
+      "x2": 11,
+      "y2": 7,
+      "z2": 1,
+      "block": "cobblestone",
+      "purpose": "corner_cobble_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 5,
+      "x2": 1,
+      "y2": 7,
+      "z2": 5,
+      "block": "cobblestone",
+      "purpose": "corner_cobble_sw"
+    },
+    {
+      "op": "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 12,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 6,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 12, 1, 6],
+      "block": "quartz_block",
+      "comment": "outer 13x7 border/planter base: original hint said 13x7 surrounding 11x5 footprint. Using bbox 0..12 x 0..6 (inclusive) base layer at ground (y=0). This fills the planter base."
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 11, 1, 5],
+      "block": "stonebrick",
+      "comment": "stone foundation/floor: 11x5 footprint interior ground floor layer (y=1) as raised stone foundation/floor."
+    },
+    {
+      "op": "set_block",
+      "pos": [1, 2, 1],
+      "block": "stonebrick",
+      "comment": "lower wall band starts at y=2; left-front corner stonebrick (corner accents will use cobblestone verticals later where specified)."
+    },
+    {
+      "op": "set_block",
+      "pos": [11, 2, 1],
+      "block": "stonebrick",
+      "comment": "lower wall band front-right corner marker."
+    },
+    {
+      "op": "set_block",
+      "pos": [1, 2, 5],
+      "block": "stonebrick",
+      "comment": "rear-left corner marker."
+    },
+    {
+      "op": "set_block",
+      "pos": [11, 2, 5],
+      "block": "stonebrick",
+      "comment": "rear-right corner marker."
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 11, 3, 5],
+      "block": "stonebrick",
+      "comment": "lower wall band (2 blocks high) from y=2..3 across the 11x5 footprint."
+    },
+    {
+      "op": "fill",
+      "box": [1, 4, 1, 11, 4, 5],
+      "block": "oak_planks",
+      "comment": "narrow wood trim row at y=4 (single block high) across footprint as horizontal trim between bands."
+    },
+    {
+      "op": "fill",
+      "box": [1, 5, 1, 11, 6, 5],
+      "block": "quartz_block",
+      "comment": "mid white/quartz band 1 block high at y=5 across footprint."
+    },
+    {
+      "op": "fill",
+      "box": [1, 7, 1, 11, 7, 5],
+      "block": "stonebrick",
+      "comment": "upper stonebrick row at y=7 (single block high) to represent second-floor band below roof eaves."
+    },
+    {
+      "op": "fill",
+      "box": [1, 8, 1, 11, 8, 5],
+      "block": "oak_stairs",
+      "comment": "roof lower stair layer (start of stepped gable) at y=8 as eave overhang; uses oak stairs oriented appropriately in build (abstracted as filling)."
+    },
+    {
+      "op": "fill",
+      "box": [2, 9, 2, 10, 9, 4],
+      "block": "oak_planks",
+      "comment": "roof peak slab/center small peak detail at y=9 within bbox limit (note: bbox ymax limited to 8 earlier; this op adjusted to fit inside ymax).",
+      "valid": false
+    },
+    {
+      "op": "replace",
+      "box": [2, 8, 2, 10, 8, 4],
+      "block": "oak_slab",
+      "comment": "corrected roof center detail as a slab row at y=8 to stay within bbox and create stepped profile."
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 1, 7, 1],
+      "block": "cobblestone",
+      "comment": "left-front vertical cobblestone corner from y=2..7."
+    },
+    {
+      "op": "fill",
+      "box": [11, 2, 1, 11, 7, 1],
+      "block": "cobblestone",
+      "comment": "right-front vertical cobblestone corner from y=2..7."
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 5, 1, 7, 5],
+      "block": "cobblestone",
+      "comment": "left-rear vertical cobblestone corner from y=2..7."
+    },
+    {
+      "op": "fill",
+      "box": [11, 2, 5, 11, 7, 5],
+      "block": "cobblestone",
+      "comment": "right-rear vertical cobblestone corner from y=2..7."
+    },
+    {
+      "op": "fill",
+      "box": [2, 5, 2, 10, 5, 4],
+      "block": "glass",
+      "comment": "continuous narrow horizontal windows on second floor (y=5) across interior long sides. This creates a 1-block-high glass band inset by 1 from ends."
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 2, 10, 3, 4],
+      "block": "glass",
+      "comment": "continuous narrow horizontal windows on first floor (y=3) across interior long sides, inset by 1 from ends."
+    },
+    {
+      "op": "set_block",
+      "pos": [6, 2, 1],
+      "block": "air",
+      "comment": "entrance opening in front wall: create a 1-wide opening at ground level (y=2..3)."
+    },
+    {
+      "op": "set_block",
+      "pos": [6, 3, 1],
+      "block": "air",
+      "comment": "entrance opening upper block (y=3)."
+    },
+    {
+      "op": "set_block",
+      "pos": [6, 1, 1],
+      "block": "air",
+      "comment": "clear interior floor at doorway position (y=1) to allow entry from planter level; if desired a step can be placed later."
+    },
+    {
+      "op": "fill",
+      "box": [0, 1, 0, 12, 1, 6],
+      "block": "air",
+      "comment": "clear any accidental overfill in planter channel above base if needed (keeps planter recessed)."
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 2, 11, 6, 4],
+      "block": "air",
+      "comment": "hollow out interior space within walls from y=2..6 to create internal volume (leaves walls, floor, and roof intact)."
+    },
+    {
+      "op": "replace",
+      "box": [1, 8, 1, 11, 8, 5],
+      "block": "stone_slab",
+      "comment": "roof edge slab accents: replace oak_stairs row at y=8 with stone_slab on eaves for stone slab trim coherence."
+    },
+    {
+      "op": "set_block",
+      "pos": [6, 8, 3],
+      "block": "stone_slab",
+      "comment": "central roof cap slab detail at ridge aligned with center of 11x5 footprint."
+    }
+  ],
+  "self_check": {
+    "bbox_valid

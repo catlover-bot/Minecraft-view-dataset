@@ -1,0 +1,497 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v3_strict",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 13,
+    "ymin": 0,
+    "ymax": 10,
+    "zmin": 0,
+    "zmax": 13
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "concrete",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "stonebrick",
+      "target_blocks": 380
+    },
+    "roof": {
+      "role": "roof",
+      "block": "wood",
+      "target_blocks": 240
+    },
+    "trim": {
+      "role": "trim",
+      "block": "concrete",
+      "target_blocks": 120
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 64
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 8
+    },
+    "floor": {
+      "role": "floor",
+      "block": "wood",
+      "target_blocks": 288
+    }
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "corner": "nw",
+          "x": 0,
+          "z": 0
+        },
+        {
+          "corner": "ne",
+          "x": 13,
+          "z": 0
+        },
+        {
+          "corner": "se",
+          "x": 13,
+          "z": 13
+        },
+        {
+          "corner": "sw",
+          "x": 0,
+          "z": 13
+        }
+      ]
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 0
+        },
+        "perimeter_profile": "foundation_concrete_border"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 1
+        },
+        "perimeter_profile": "ground_floor_wood"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 5
+        },
+        "perimeter_profile": "second_floor_wood"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 2,
+        "z1": 0,
+        "x2": 4,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 2,
+        "z1": 0,
+        "x2": 10,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 6,
+        "z1": 0,
+        "x2": 4,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 6,
+        "z1": 0,
+        "x2": 10,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 3,
+        "y1": 2,
+        "z1": 13,
+        "x2": 4,
+        "y2": 3,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 9,
+        "y1": 2,
+        "z1": 13,
+        "x2": 10,
+        "y2": 3,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 3,
+        "y1": 6,
+        "z1": 13,
+        "x2": 4,
+        "y2": 7,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 9,
+        "y1": 6,
+        "z1": 13,
+        "x2": 10,
+        "y2": 7,
+        "z2": 13
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 13,
+        "y1": 2,
+        "z1": 3,
+        "x2": 13,
+        "y2": 3,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 13,
+        "y1": 2,
+        "z1": 9,
+        "x2": 13,
+        "y2": 3,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 13,
+        "y1": 6,
+        "z1": 3,
+        "x2": 13,
+        "y2": 7,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 13,
+        "y1": 6,
+        "z1": 9,
+        "x2": 13,
+        "y2": 7,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 3,
+        "x2": 0,
+        "y2": 3,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 9,
+        "x2": 0,
+        "y2": 3,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1":
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 13,
+  "ymin": 0,
+  "ymax": 10,
+  "zmin": 0,
+  "zmax": 13,
+  "palette": {
+    "wall": "stone_bricks",
+    "roof": "oak_planks",
+    "foundation": "white_concrete",
+    "floor": "oak_planks",
+    "window": "glass"
+  },
+  "material_budget": {
+    "wall": {
+      "target_blocks": 180
+    },
+    "roof": {
+      "target_blocks": 60
+    },
+    "foundation": {
+      "target_blocks": 40
+    },
+    "floor": {
+      "target_blocks": 20
+    },
+    "window": {
+      "target_blocks": 0
+    }
+  },
+  "operations": [
+    {
+      "kind": "fill",
+      "role": "foundation",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 13,
+      "y2": 1,
+      "z2": 13
+    },
+    {
+      "kind": "fill",
+      "role": "wall",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 12,
+      "y2": 5,
+      "z2": 12
+    },
+    {
+      "kind": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 11,
+      "y2": 4,
+      "z2": 11
+    },
+    {
+      "kind": "fill",
+      "role": "floor",
+      "x1": 2,
+      "y1": 4,
+      "z1": 2,
+      "x2": 11,
+      "y2": 4,
+      "z2": 11
+    },
+    {
+      "kind": "fill",
+      "role": "wall",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 12,
+      "y2": 8,
+      "z2": 12
+    },
+    {
+      "kind": "carve",
+      "x1": 2,
+      "y1": 4,
+      "z1": 2,
+      "x2": 11,
+      "y2": 7,
+      "z2": 11
+    },
+    {
+      "kind": "fill",
+      "role": "roof",
+      "x1": 1,
+      "y1": 8,
+      "z1": 1,
+      "x2": 12,
+      "y2": 8,
+      "z2": 12
+    },
+    {
+      "kind": "fill",
+      "role": "roof",
+      "x1": 2,
+      "y1": 9,
+      "z1": 2,
+      "x2": 11,
+      "y2": 9,
+      "z2": 11
+    },
+    {
+      "kind": "fill",
+      "role": "roof",
+      "x1": 3,
+      "y1": 10,
+      "z1": 3,
+      "x2": 10,
+      "y2": 10,
+      "z2": 10
+    },
+    {
+      "kind": "window",
+      "face": "north",
+      "x1": 3,
+      "y1": 2,
+      "z1": 1,
+      "x2": 4,
+      "y2": 3,
+      "z2": 1
+    },
+    {
+      "kind": "window",
+      "face": "north",
+      "x1": 9,
+      "y1": 2,
+      "z1": 1,
+      "x2": 10,
+      "y2": 3,
+      "z2": 1
+    },
+    {
+      "kind": "window",
+      "face": "north",
+      "x1": 3,
+      "y1": 6,
+      "z1": 1,
+      "x2": 4,
+      "y2": 7,
+      "z2": 1
+    },
+    {
+      "kind": "window",
+      "face": "north",
+      "x1": 9,
+      "y1": 6,
+      "z1": 1,
+      "x2": 10,
+      "y2": 7,
+      "z2": 1
+    },
+    {
+      "kind": "window",
+      "face": "south",
+      "x1": 3,
+      "y1": 2,
+      "z1": 12,
+      "x2": 4,
+      "y2": 3,
+      "z2": 12
+    },
+    {
+      "kind": "window",
+      "face": "south",
+      "x1": 9,
+      "y1": 2,
+      "z1": 12,
+      "x2": 10,
+      "y2": 3,
+      "z2": 12
+    },
+    {
+      "kind": "window",
+      "face": "south",
+      "x1": 3,
+      "y1": 6,
+      "z1": 12,
+      "x2": 4,
+      "y2": 7,
+      "z2": 12
+    },
+    {
+      "kind": "window",
+      "face": "south",
+      "x1": 9,
+      "y1": 6,
+      "z1": 12,
+      "x2": 10,
+      "y2": 7,
+      "z2": 12
+    },
+    {
+      "kind": "window",
+      "face": "east",
+      "x1": 12,
+      "y1": 2,
+      "z1": 3,
+      "x2": 12,
+      "y2": 3,
+      "z2": 4
+    },
+    {
+      "kind": "window",
+      "face": "east",
+      "x1": 12,
+      "y1": 2,
+      "z1": 9,
+      "x2": 12,
+      "y2": 3,
+      "z2": 10
+    },
+    {
+      "kind": "window",
+      "face": "east",
+      "x1": 12,
+      "y1": 6,
+      "z1": 3,
+      "x2": 12,
+      "y2": 7,
+      "z2": 4
+    },
+    {
+      "kind": "window",
+      "face": "east",
+      "x1": 12,
+      "y1": 6,
+      "z1": 9,
+      "x2": 12,
+      "y2": 7,
+      "z2": 10
+    },
+    {
+      "kind": "window",
+      "

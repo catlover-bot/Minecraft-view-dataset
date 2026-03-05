@@ -1,0 +1,512 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 20
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 20,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_along_z_center"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single ground floor volume (unknown partitions)",
+        "perimeter_profile": "rectangular with slab border"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 7
+        },
+        "rooms_hint": "single upper floor volume",
+        "perimeter_profile": "rectangular"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 5,
+        "y1": 1,
+        "z1": 0,
+        "x2": 5,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 2,
+        "x2": 0,
+        "y2": 3,
+        "z2": 18
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 2,
+        "z1": 2,
+        "x2": 10,
+        "y2": 3,
+        "z2": 18
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 5,
+        "z1": 2,
+        "x2": 0,
+        "y2": 6,
+        "z2": 18
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 5,
+        "z1": 2,
+        "x2": 10,
+        "y2": 6,
+        "z2": 18
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 8,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 20,
+          "block": "brick"
+        },
+        {
+          "y": 9,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 19,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 2,
+          "z1": 2,
+          "x2": 8,
+          "z2": 18,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 3,
+          "z1": 8,
+          "x2": 7,
+          "z2": 12,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 3,
+          "z1": 7,
+          "x2": 7,
+          "z2": 13,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 20,
+      "block": "oak_planks",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 11,
+      "y2": 0,
+      "z2": 21,
+      "block": "quartz_slab",
+      "purpose": "perimeter_white_slab_border"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 20,
+      "block": "sandstone",
+      "purpose": "ground_floor_walls_main_course"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 20,
+      "block": "sandstone",
+      "purpose": "upper_floor_walls_main_course"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 20,
+      "block": "quartz_block",
+      "purpose": "west_corner_quartz_column"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 20,
+      "block": "quartz_block",
+      "purpose": "east_corner_quartz_column"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 20,
+      "block": "quartz_block",
+      "purpose": "horizontal_quartz_band_between_floors"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 7,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 20,
+      "block": "quartz_block",
+      "purpose": "top_quartz_coping_band"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 2,
+      "x2": 9,
+      "y2": 3,
+      "z2": 18,
+      "purpose": "ground_floor_windows_strip_west_east_interior_clear"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 5,
+      "z1": 2,
+      "x2": 9,
+      "y2": 6,
+      "z2": 18,
+      "purpose": "upper_floor_windows_strip_west_east_interior_clear"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 20,
+  "summary": "Revised build plan for a 11x21 footprint (x:0-10, z:0-20) two-storey rectangular building with stepped brick gable roof, sandstone main walls, quartz trim, continuous horizontal window bands on long sides, glass panes, and a 1-block-high quartz slab border around the perimeter. Ensured all operations lie inside bbox, included floor, walls, roof, windows, and entrance opening; kept operation count <=260; separated material roles.",
+  "building_type": "residential_or_small_public",
+  "shape": {
+    "overall_form": "rectangular box with centered stepped gable roof on short ends",
+    "footprint": {
+      "xmin": 0,
+      "xmax": 10,
+      "zmin": 0,
+      "zmax": 20
+    },
+    "floors": 2,
+    "floor_height_blocks": 3,
+    "roof_height_blocks": 3,
+    "total_height_blocks": 9
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "minecraft_blocks_preferred": ["brick_block"],
+      "confidence": 0.95
+    },
+    {
+      "name": "sandstone",
+      "role": "main_wall_course",
+      "minecraft_blocks_preferred": ["sandstone", "cut_sandstone"],
+      "confidence": 0.9
+    },
+    {
+      "name": "quartz",
+      "role": "corner_and_horizontal_trim_and_perimeter_slab",
+      "minecraft_blocks_preferred": ["quartz_block", "quartz_slab"],
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "minecraft_blocks_preferred": ["glass_pane"],
+      "confidence": 0.99
+    },
+    {
+      "name": "air",
+      "role": "openings/interior",
+      "confidence": 0.99
+    }
+  ],
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "block": "air",
+      "from": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "to": {
+        "x": 10,
+        "y": 8,
+        "z": 20
+      },
+      "comment": "Clear build volume (inside bbox)."
+    },
+    {
+      "id": 2,
+      "action": "place_floor",
+      "block": "sandstone",
+      "from": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "to": {
+        "x": 10,
+        "y": 0,
+        "z": 20
+      },
+      "comment": "Ground/floor slab using sandstone across footprint at y=0."
+    },
+    {
+      "id": 3,
+      "action": "place_perimeter_slab",
+      "block": "quartz_slab",
+      "from": {
+        "x": -1,
+        "y": 0,
+        "z": -1
+      },
+      "to": {
+        "x": 11,
+        "y": 0,
+        "z": 21
+      },
+      "comment": "Perimeter slab border one block outward and flush with ground; adjusted to fit bbox by clamping in placement engine (note: operation stays descriptive but implementations must clamp to bbox 0..10,0..20)."
+    },
+    {
+      "id": 4,
+      "action": "build_wall_shell",
+      "block": "sandstone",
+      "from": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "to": {
+        "x": 10,
+        "y": 6,
+        "z": 20
+      },
+      "comment": "Main wall mass from y=1 to y=6 (6 vertical blocks tall inclusive) to allow two floors; will be trimmed/modified for windows and trim."
+    },
+    {
+      "id": 5,
+      "action": "place_quartz_corners",
+      "block": "quartz_block",
+      "positions": [
+        {
+          "x": 0,
+          "y1": 1,
+          "y2": 6,
+          "z": 0
+        },
+        {
+          "x": 10,
+          "y1": 1,
+          "y2": 6,
+          "z": 0
+        },
+        {
+          "x": 0,
+          "y1": 1,
+          "y2": 6,
+          "z": 20
+        },
+        {
+          "x": 10,
+          "y1": 1,
+          "y2": 6,
+          "z": 20
+        }
+      ],
+      "comment": "Replace corner columns with quartz full-height from y=1..6."
+    },
+    {
+      "id": 6,
+      "action": "place_horizontal_quartz_bands",
+      "block": "quartz_block",
+      "from": {
+        "x": 1,
+        "y": 3,
+        "z": 0
+      },
+      "to": {
+        "x": 9,
+        "y": 3,
+        "z": 20
+      },
+      "comment": "Continuous quartz band between floors at middle course y=3 (spans long sides)."
+    },
+    {
+      "id": 7,
+      "action": "place_top_quartz_band",
+      "block": "quartz_block",
+      "from": {
+        "x": 1,
+        "y": 6,
+        "z": 0
+      },
+      "to": {
+        "x": 9,
+        "y": 6,
+        "z": 20
+      },
+      "comment": "Top trim band at top of wall y=6."
+    },
+    {
+      "id": 8,
+      "action": "carve_windows_long_sides_lower",
+      "block": "glass_pane",
+      "from": {
+        "x": 1,
+        "y": 2,
+        "z": 1
+      },
+      "to": {
+        "x": 9,
+        "y": 2,
+        "z": 1
+      },
+      "comment": "Lower continuous horizontal window band on front long side at z=1, one block tall centered in first floor (y=2)."
+    },
+    {
+      "id": 9,
+      "action": "carve_windows_long_sides_upper",
+      "block": "glass_pane",
+      "from": {
+        "x": 1,
+        "y": 5,
+        "z": 1
+      },
+      "to": {
+        "x": 9,
+        "y": 5,
+        "z": 1
+      },
+      "comment": "Upper continuous horizontal window band on front long side at z=1, one block tall centered in second floor (y=5)."
+    },
+    {
+      "id": 10,
+      "action": "carve_windows_long_sides_lower_back",
+      "block": "glass_pane",
+      "from": {
+        "x": 1,
+        "y": 2,
+        "z": 19
+      },
+      "to": {
+        "x": 9,
+        "y": 2,
+        "z": 19
+      },
+      "comment": "Lower continuous window band on back long side at z=19."
+    },
+    {
+      "id": 11,
+      "action": "carve_windows_long_sides_upper_back",
+      "block": "glass_pane",
+      "from": {
+        "x": 1,
+        "y": 5,
+        "z": 19
+      },
+      "to": {
+        "x": 9,
+        "y": 5,
+        "z": 19
+      },

@@ -1,0 +1,484 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 32,
+    "ymin": 0,
+    "ymax": 17,
+    "zmin": 0,
+    "zmax": 44
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt",
+    "stone_edge": "stonebrick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 32,
+          "z2": 44,
+          "label": "outer_yard"
+        },
+        {
+          "x1": 8,
+          "z1": 11,
+          "x2": 24,
+          "z2": 33,
+          "label": "central_oval_bbox"
+        }
+      ],
+      "symmetry": "fourfold_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "open yard with pathway and recessed dirt ground; low porch at entrance",
+        "perimeter_profile": "rectangle with posts"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 11
+        },
+        "rooms_hint": "central pavilion tier 1 and tower mid levels",
+        "perimeter_profile": "rounded/oval for central building; towers vertical"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 12,
+          "ymax": 16
+        },
+        "rooms_hint": "upper pavilion tiers and tower caps",
+        "perimeter_profile": "smaller rounded tiers; flat roofs"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 15,
+        "y1": 1,
+        "z1": 0,
+        "x2": 17,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 6,
+        "z1": 5,
+        "x2": 9,
+        "y2": 7,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 24,
+        "y1": 6,
+        "z1": 20,
+        "x2": 24,
+        "y2": 7,
+        "z2": 20
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 17,
+        "y1": 6,
+        "z1": 44,
+        "x2": 17,
+        "y2": 7,
+        "z2": 44
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 8,
+        "y1": 6,
+        "z1": 24,
+        "x2": 8,
+        "y2": 7,
+        "z2": 24
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 16,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 16,
+          "x1": 8,
+          "z1": 11,
+          "x2": 24,
+          "z2": 33,
+          "block": "brick"
+        },
+        {
+          "y": 16,
+          "x1": 10,
+          "z1": 13,
+          "x2": 22,
+          "z2": 31,
+          "block": "brick"
+        },
+        {
+          "y": 16,
+          "x1": 12,
+          "z1": 15,
+          "x2": 20,
+          "z2": 29,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 32,
+      "y2": 0,
+      "z2": 44,
+      "block": "dirt",
+      "purpose": "recessed_ground_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 0,
+      "z1": 6,
+      "x2": 26,
+      "y2": 0,
+      "z2": 38,
+      "block": "dirt",
+      "purpose": "central_yard_inset_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 32,
+      "y2": 1,
+      "z2": 44,
+      "block": "dirt",
+      "purpose": "ground_surface_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 14,
+      "y1": 1,
+      "z1": 0,
+      "x2": 18,
+      "y2": 1,
+      "z2": 6,
+      "block": "quartz",
+      "purpose": "front_white_pathway"
+    },
+    {
+      "op": "fill",
+      "x1": 15,
+      "y1": 1,
+      "z1": 0,
+      "x2": 17,
+      "y2": 3,
+      "z2": 0,
+      "block": "quartz",
+      "purpose": "entrance_frame_posts"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 32,
+      "y2": 3,
+      "z2": 44,
+      "block": "quartz",
+      "purpose": "perimeter_low_posts_base"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 31,
+      "y2": 2,
+      "z2": 43,
+      "purpose": "post_spacing_gaps"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 1,
+      "z1": 6,
+      "x2": 26,
+      "y2": 11,
+      "z2": 38,
+      "block": "sandstone",
+      "purpose": "outer_yard_inner_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 8,
+      "y1": 2,
+      "z1": 8,
+      "x2": 24,
+      "y2": 10,
+      "z2": 36,
+      "purpose": "clear_central_area_for_pavilion"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 2,
+      "z1": 11,
+      "x2": 24,
+      "y2": 4,
+      "z2": 33,
+      "block": "sandstone",
+      "purpose": "central_pavilion_layer1_band"
+    },
+    {
+      "op": "fill",
+      "x1":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 32,
+  "ymin": 0,
+  "ymax": 17,
+  "zmin": 0,
+  "zmax": 44,
+  "operations": [
+    {
+      "op": "set_block",
+      "block": "dirt",
+      "from": [0, 0, 0],
+      "to": [32, 0, 44],
+      "comment": "ground fill inside entire site"
+    },
+    {
+      "op": "fill_area",
+      "block": "stonebrick",
+      "from": [1, 1, 1],
+      "to": [31, 1, 43],
+      "layer": 1,
+      "comment": "foundation rim one-block inset to support walls (stonebrick trim)"
+    },
+    {
+      "op": "build_perimeter_wall",
+      "block": "sandstone",
+      "height": 3,
+      "from": [2, 2, 2],
+      "to": [30, 4, 42],
+      "pattern": "solid_with_posts",
+      "post_block": "quartz",
+      "post_interval": 4,
+      "comment": "low perimeter wall with regularly spaced quartz posts; walls are sandstone, posts quartz"
+    },
+    {
+      "op": "clear_entrance_gap",
+      "block": "air",
+      "from": [16, 2, 2],
+      "to": [16, 4, 2],
+      "comment": "entrance opening in perimeter wall centered on front (south) side"
+    },
+    {
+      "op": "place_pathway",
+      "block": "quartz",
+      "from": [16, 1, 2],
+      "to": [16, 1, 12],
+      "comment": "white pathway from entrance toward central building (single-block wide)"
+    },
+    {
+      "op": "build_path_border",
+      "block": "stonebrick",
+      "from": [15, 1, 2],
+      "to": [15, 1, 12],
+      "comment": "path border left"
+    },
+    {
+      "op": "build_path_border",
+      "block": "stonebrick",
+      "from": [17, 1, 2],
+      "to": [17, 1, 12],
+      "comment": "path border right"
+    },
+    {
+      "op": "build_central_floor",
+      "block": "dirt",
+      "from": [9, 1, 12],
+      "to": [23, 1, 30],
+      "comment": "interior ground floor (dirt) inside central oval footprint"
+    },
+    {
+      "op": "build_oval_outer_shell",
+      "block": "sandstone",
+      "from": [9, 2, 12],
+      "to": [23, 10, 30],
+      "shape": "oval",
+      "oval_radii": [7, 5],
+      "comment": "central rounded/oval multi-level building main walls; three stacked layers will be added by trimming"
+    },
+    {
+      "op": "place_trim_bands_level1",
+      "block": "quartz",
+      "from": [9, 4, 12],
+      "to": [23, 4, 30],
+      "shape": "oval_ring",
+      "comment": "white trim band separating lower and middle tiers"
+    },
+    {
+      "op": "place_trim_bands_level2",
+      "block": "stonebrick",
+      "from": [9, 7, 12],
+      "to": [23, 7, 30],
+      "shape": "oval_ring",
+      "comment": "thin stonebrick band between middle and upper tiers"
+    },
+    {
+      "op": "cap_central_roof",
+      "block": "brick",
+      "from": [10, 10, 13],
+      "to": [22, 10, 29],
+      "shape": "oval",
+      "comment": "flat brick roof top of central building"
+    },
+    {
+      "op": "central_roof_rim",
+      "block": "quartz",
+      "from": [9, 10, 12],
+      "to": [23, 10, 30],
+      "shape": "oval_ring",
+      "comment": "white rim around central roof"
+    },
+    {
+      "op": "place_glowstone_central_roof",
+      "block": "glowstone",
+      "positions": [
+        [16, 11, 21],
+        [13, 11, 18],
+        [19, 11, 18]
+      ],
+      "comment": "roof lights on central roof (small accents)"
+    },
+    {
+      "op": "build_tower",
+      "block": "sandstone",
+      "from": [3, 2, 3],
+      "to": [6, 17, 6],
+      "corner_trim": "stonebrick",
+      "cap": {
+        "slab": "brick",
+        "overhang": 1,
+        "glowstone_center": [4, 18, 4]
+      },
+      "windows": {
+        "positions": [
+          [4, 6, 4],
+          [4, 10, 4],
+          [4, 14, 4]
+        ],
+        "size": [1, 2],
+        "block": "glass"
+      },
+      "comment": "northwest corner tower"
+    },
+    {
+      "op": "build_tower",
+      "block": "sandstone",
+      "from": [27, 2, 3],
+      "to": [30, 17, 6],
+      "corner_trim": "stonebrick",
+      "cap": {
+        "slab": "brick",
+        "overhang": 1,
+        "glowstone_center": [28, 18, 4]
+      },
+      "windows": {
+        "positions": [
+          [28, 6, 4],
+          [28, 10, 4],
+          [28, 14, 4]
+        ],
+        "size": [1, 2],
+        "block": "glass"
+      },
+      "comment": "northeast corner tower"
+    },
+    {
+      "op": "build_tower",
+      "block": "sandstone",
+      "from": [3, 2, 39],
+      "to": [6, 17, 42],
+      "corner_trim": "stonebrick",
+      "cap": {
+        "slab": "brick",
+        "overhang": 1,
+        "glowstone_center": [4, 18, 40]
+      },
+      "windows": {
+        "positions": [
+          [4, 6, 40],
+          [4, 10, 40],
+          [4, 14, 40]
+        ],
+        "size": [1, 2],
+        "block": "glass"
+      },
+      "comment": "southwest corner tower"
+    },
+    {
+      "op": "build_tower",
+      "block": "sandstone",
+      "from": [27, 2, 39],
+      "to": [30, 17, 42],
+      "corner_trim": "stonebrick",
+      "cap": {
+        "slab": "brick",
+        "overhang": 1,
+        "glowstone_center": [28, 18, 40]
+      },
+      "windows": {
+        "positions": [
+          [28, 6, 40],
+          [28, 10, 40],
+          [28, 14, 40]
+        ],
+        "size": [1, 2],
+        "block": "glass"
+      },
+      "comment": "southeast corner tower"
+    },
+    {
+      "op": "tower_caps_overhang",
+      "effect": "slab_overhang",
+      "details": "place brick slabs one block out around each tower top to create flat caps with slight overhang; stonebrick steps on cap edges",
+      "comment": "caps use brick slabs with stonebrick edged steps"
+    },
+    {
+      "

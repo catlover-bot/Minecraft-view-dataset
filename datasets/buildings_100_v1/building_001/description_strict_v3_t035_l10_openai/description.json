@@ -1,0 +1,73 @@
+{
+  "summary": "Two-story rectangular Minecraft building with a shallow curved / stepped wooden roof. Exterior walls are layered: lower and upper bands of stonebrick-like blocks with cobblestone corner/column accents, separated by horizontal wooden trim and white smooth block bands. Even rows of glass windows run around both floors. A raised white slab border/ledge surrounds the base on a recessed dirt foundation.",
+  "building_type": "residential/small institutional (uncertain)",
+  "shape": {
+    "overall_form": "rectangular prism with stepped/curved gabled roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along central longitudinal axis (front/back mirrored)",
+    "floors_estimate": 2,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 13,
+    "depth": 9,
+    "height": 9
+  },
+  "materials": [
+    {
+      "name": "wood",
+      "role": "roof / horizontal trim",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "main wall band",
+      "confidence": 0.85
+    },
+    {
+      "name": "cobblestone",
+      "role": "corner/column accents",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "slab_stone",
+      "role": "white base border / smooth band",
+      "confidence": 0.8
+    },
+    {
+      "name": "dirt",
+      "role": "surrounding ground / foundation trench",
+      "confidence": 0.9
+    }
+  ],
+  "elements": [
+    "continuous horizontal window rows on both floors (series of 1x1 glass panes)",
+    "white smooth slab/strip band between floors and as base border",
+    "wooden plank stepped/curved roof with stone slab edging at steps",
+    "cobblestone vertical corner details",
+    "raised white slab platform/border around building footprint"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular footprint roughly 13x9 blocks (visible roof top ~11x7 inner area plus 1-block white border).",
+    "Make two full stories of ~3 blocks interior height each; exterior shows two stacked window rows separated by a 1-block white band and a 1-block wooden trim band.",
+    "Use stonebrick blocks for primary wall bands on both floors; place cobblestone at vertical corners/columns.",
+    "Place continuous 1-block-high windows (glass pane or glass) running along the midline of each story with regular spacing (about 5 windows on long side).",
+    "Add a wooden plank roof built as a stepped curved gable: several layers of full wooden slabs/blocks stepping inwards from both long sides with stone slab/stonebrick edge pieces at the step corners.",
+    "Surround base with a 1-block-high white slab border raised one block above surrounding dirt."
+  ],
+  "uncertainties": [
+    "Exact block types for white band and base: looks like quartz slab / smooth stone slab; identification not certain (used slab_stone as normalized).",
+    "Precise footprint dimensions: top-down images suggest interior roof area and border but exact block counts may vary by ±1-2 blocks.",
+    "Interior layout, door placement, and presence of stairs or internal floors are not visible.",
+    "Whether windows are glass panes or full glass blocks is ambiguous; they appear as single-thickness panes from distance."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_001",
+  "created_at": "2026-03-01T09:07:52.715637+00:00"
+}

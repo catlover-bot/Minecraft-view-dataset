@@ -1,0 +1,289 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 14,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 6
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "netherbrick",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "foundation": "cobblestone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 14,
+          "z2": 6,
+          "label": "main_body"
+        }
+      ],
+      "symmetry": "z_axis_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single hall",
+        "perimeter_profile": "rectangle_with_cobblestone_border"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 2,
+        "z1": 0,
+        "x2": 8,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 11,
+        "y1": 2,
+        "z1": 0,
+        "x2": 11,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 6,
+        "x2": 2,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 2,
+        "z1": 6,
+        "x2": 5,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 8,
+        "y1": 2,
+        "z1": 6,
+        "x2": 8,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 11,
+        "y1": 2,
+        "z1": 6,
+        "x2": 11,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "door",
+        "face": "east",
+        "x1": 14,
+        "y1": 1,
+        "z1": 3,
+        "x2": 14,
+        "y2": 2,
+        "z2": 3
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 4,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 14,
+          "z2": 6,
+          "block": "netherbrick"
+        },
+        {
+          "y": 5,
+          "x1": 2,
+          "z1": 1,
+          "x2": 12,
+          "z2": 5,
+          "block": "netherbrick"
+        },
+        {
+          "y": 6,
+          "x1": 4,
+          "z1": 2,
+          "x2": 10,
+          "z2": 4,
+          "block": "netherbrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 14,
+      "y2": 0,
+      "z2": 6,
+      "block": "cobblestone",
+      "purpose": "foundation_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 13,
+      "y2": 3,
+      "z2": 5,
+      "block": "stonebrick",
+      "purpose": "outer_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 12,
+      "y2": 3,
+      "z2": 4,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 13,
+      "y2": 1,
+      "z2": 5,
+      "block": "wood",
+      "purpose": "floor"
+    },
+    {
+      "op": "set",
+      "x": 2,
+      "y": 2,
+      "z": 0,
+      "block": "glass",
+      "purpose": "window_north_1"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 2,
+      "z": 0,
+      "block": "glass",
+      "purpose": "window_north_2"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 2,
+      "z": 0,
+      "block": "glass",
+      "purpose": "window_north_3"
+    },
+    {
+      "op": "set",
+      "x": 11,
+      "y
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 7,
+  "ymin": 0,
+  "ymax": 15,
+  "zmin": 0,
+  "zmax": 8,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 7, "y2": 15, "z2": 0, "block": "cobblestone", "note": "foundation perimeter"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 6, "y2": 14, "z2": 1, "block": "oak_planks", "note": "floor"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 2, "x2": 6, "y2": 14, "z2": 4, "block": "stonebrick", "note": "main walls"},
+    {"type": "setblock", "x": 3, "y": 0, "z": 2, "block": "oak_door", "note": "entrance on short side"},
+    {"type": "setblock", "x": 1, "y": 3, "z": 3, "block": "glass", "note": "window long side 1"},
+    {"type": "setblock", "x": 1, "y": 5, "z": 3, "block": "glass", "note": "window long side 2"},
+    {"type": "setblock", "x": 1, "y": 7, "z": 3, "block": "glass", "note": "window long side 3"},
+    {"type": "setblock", "x": 1, "y": 9, "z": 3, "block": "glass", "note": "window long side 4"},
+    {"type": "setblock", "x": 1, "y": 11, "z": 3, "block": "glass", "note": "window long side 5"},
+    {"type": "setblock", "x": 6, "y": 3, "z": 3, "block": "glass", "note": "window long side 6"},
+    {"type": "setblock", "x": 6, "y": 5, "z": 3, "block": "glass", "note": "window long side 7"},
+    {"type": "setblock", "x": 6, "y": 7, "z": 3, "block": "glass", "note": "window long side 8"},
+    {"type": "setblock", "x": 6, "y": 9, "z": 3, "block": "glass", "note": "window long side 9"},
+    {"type": "setblock", "x": 6, "y": 11, "z": 3, "block": "glass", "note": "window long side 10"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 5, "x2": 5, "y2": 14, "z2": 5, "block": "netherbrick_stairs", "note": "roof step base"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 6, "x2": 5, "y2": 14, "z2": 6, "block": "netherbrick", "note": "roof mid-layer"},
+    {"type": "fill", "x1": 3, "y1": 1, "z1": 7, "x2": 4, "y2": 14, "z2": 7, "block": "netherbrick", "note": "roof peak"},
+    {"type": "fill", "x1": 2, "y1": 1, "z1": 5, "x2": 5, "y2": 14, "z2": 5, "block": "stone_slab", "note": "roof step caps"},
+    {"type": "fill", "x1": 3, "y1": 1, "z1": 6, "x2": 4, "y2": 14, "z2": 6, "block": "stone_slab", "note": "roof ridge caps"}
+  ],
+  "operation_count": 18,
+  "self_check": {
+    "bbox_valid": true,
+    "all_coords_in_bbox": true,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,
+    "material_coherence": true,
+    "structural_fidelity": true,
+    "notes": "Rectangular footprint 7×15 blocks. Cobblestone foundation at z=0. Oak plank floor at z=1. Stonebrick walls z=2–4. Horizontal window bands on long sides (x=1 and x=6) at z=3. Oak door entrance on short side (y=0). Stepped netherbrick roof with stone slab accents: stairs at z=5, mid-layer at z=6, peak at z=7. Bilateral symmetry maintained along y-axis. 18 operations well under 260 limit."
+  }
+}
+```

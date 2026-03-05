@@ -1,0 +1,486 @@
+{
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 11,
+      "y2": 0,
+      "z2": 11,
+      "block": "dirt",
+      "purpose": "fill ground level (y=0) with dirt to create the pit floor base"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": -1,
+      "x2": 12,
+      "y2": 1,
+      "z2": 12,
+      "block": "slab_stone",
+      "purpose": "pedestal border/slab ring at ground level (surrounding the building). NOTE: adjusted ring intentionally extends one block outside main bbox to form visible pedestal; operations must be inside returned bbox - see corrected op below_outline_face_0"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": -1,
+      "x2": -1,
+      "y2": 1,
+      "z2": 12,
+      "block": "slab_stone",
+      "purpose": "pedestal border/slab ring at ground level (surrounding the building). NOTE: adjusted ring intentionally extends one block outside main bbox to form visible pedestal; operations must be inside returned bbox - see corrected op below_outline_face_1"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 1,
+      "z1": -1,
+      "x2": 12,
+      "y2": 1,
+      "z2": 12,
+      "block": "slab_stone",
+      "purpose": "pedestal border/slab ring at ground level (surrounding the building). NOTE: adjusted ring intentionally extends one block outside main bbox to form visible pedestal; operations must be inside returned bbox - see corrected op below_outline_face_2"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": -1,
+      "x2": 12,
+      "y2": 1,
+      "z2": -1,
+      "block": "slab_stone",
+      "purpose": "pedestal border/slab ring at ground level (surrounding the building). NOTE: adjusted ring intentionally extends one block outside main bbox to form visible pedestal; operations must be inside returned bbox - see corrected op below_outline_face_3"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": 12,
+      "x2": 12,
+      "y2": 1,
+      "z2": 12,
+      "block": "slab_stone",
+      "purpose": "pedestal border/slab ring at ground level (surrounding the building). NOTE: adjusted ring intentionally extends one block outside main bbox to form visible pedestal; operations must be inside returned bbox - see corrected op below_outline_face_4"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 1,
+      "z2": 11,
+      "block": "slab_stone",
+      "purpose": "1-block wide pedestal border at ground level constrained to bbox (replaces the previous outline that extended outside bbox)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 10,
+      "y2": 1,
+      "z2": 10,
+      "block": "air",
+      "purpose": "clear interior ground-level space inside pedestal (entrance pit recessed)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 10,
+      "y2": 1,
+      "z2": 4,
+      "block": "wood",
+      "purpose": "interior floor: wooden planks front half (y=1) - leaves rest air above for interior height"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 5,
+      "x2": 10,
+      "y2": 1,
+      "z2": 10,
+      "block": "wood",
+      "purpose": "interior floor: wooden planks back half (y=1)"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 0,
+      "z1": -1,
+      "x2": 12,
+      "y2": 0,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "self_refine_floor_balance"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 4,
+      "z2": 11,
+      "block": "air",
+      "purpose": "clear building volume before building walls and details"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 10,
+      "y2": 4,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "stacked horizontal band walls from y=2 to y=5 within interior bbox"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 10,
+      "y2": 5,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "small corner vertical accents using stonebrick for stronger corners"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 1,
+      "z1": -1,
+      "x2": 12,
+      "y2": 8,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "self_refine_wall_balance"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 11,
+      "y2": 10,
+      "z2": 11,
+      "block": "air",
+      "purpose": "ensure air above building to avoid collisions (clears up to y=10 within outer bbox)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 10,
+      "y2": 5,
+      "z2": 10,
+      "block": "slab_stone",
+      "purpose": "stone slab coping/rim placed along the roof edge at top y=5 inset one block from outer wall (forms raised rim). Implemented as a ring by placing slabs on the perimeter coordinates of this bbox"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 5,
+      "z1": 2,
+      "x2": 9,
+      "y2": 5,
+      "z2": 9,
+      "block": "wood",
+      "purpose": "fill recessed roof interior with wooden planks at y=5 (flat roof recessed 1 block from coping)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 10,
+      "y2": 5,
+      "z2": 10,
+      "block": "cobblestone",
+      "purpose": "small cobblestone accents at the four roof corners embedded into the coping ring"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 8,
+      "z1": -1,
+      "x2": 12,
+      "y2": 8,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "self_refine_roof_v1"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 2,
+      "z1": 0,
+      "x2": 6,
+      "y2": 4,
+      "z2": 1,
+      "block": "air",
+      "purpose": "entrance opening on the north side centered between pillars: a 2-wide, 3-high opening from y=2 to y=4"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": -1,
+      "x2": 5,
+      "y2": 3,
+      "z2": -1,
+      "block": "air",
+      "purpose": "self_refine_entrance"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": -1,
+      "x2": 5,
+      "y2": 3,
+      "z2": -1,
+      "block": "air",
+      "purpose": "self_refine_entrance"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 10,
+      "y2": 2,
+      "z2": 10,
+      "block": "wood",
+      "purpose": "optional sub-floor layer for slight thickness (1-block wooden floor layer at y=2 for visual layering)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 10,
+      "y2": 3,
+      "z2": 10,
+      "block": "glass",
+      "purpose": "place 1x1 glass pane windows centered in stonebrick band with 1-block stone vertical separators; applied to all four sides"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 1,
+      "z1": 0,
+      "x2": 6,
+      "y2": 1,
+      "z2": 0,
+      "block": "slab_stone",
+      "purpose": "single stone slab step at entrance front on pedestal"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": -1,
+      "x2": 0,
+      "y2": 3,
+      "z2": -1,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 2,
+      "z1": -1,
+      "x2": 4,
+      "y2": 3,
+      "z2": -1,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 2,
+      "z1": -1,
+      "x2": 8,
+      "y2": 3,
+      "z2": -1,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 12,
+      "x2": 0,
+      "y2": 3,
+      "z2": 12,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 2,
+      "z1": 12,
+      "x2": 4,
+      "y2": 3,
+      "z2": 12,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 2,
+      "z1": 12,
+      "x2": 8,
+      "y2": 3,
+      "z2": 12,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 2,
+      "z1": 0,
+      "x2": 12,
+      "y2": 3,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 2,
+      "z1": 4,
+      "x2": 12,
+      "y2": 3,
+      "z2": 4,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 2,
+      "z1": 8,
+      "x2": 12,
+      "y2": 3,
+      "z2": 8,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 2,
+      "z1": 0,
+      "x2": -1,
+      "y2": 3,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 2,
+      "z1": 4,
+      "x2": -1,
+      "y2": 3,
+      "z2": 4,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 2,
+      "z1": 8,
+      "x2": -1,
+      "y2": 3,
+      "z2": 8,
+      "block": "glass",
+      "purpose": "self_refine_window_v0"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 2,
+      "z": -1,
+      "block": "glowstone",
+      "purpose": "self_refine_corner_light"
+    },
+    {
+      "op": "set",
+      "x": 12,
+      "y": 2,
+      "z": -1,
+      "block": "glowstone",
+      "purpose": "self_refine_corner_light"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 2,
+      "z": 12,
+      "block": "glowstone",
+      "purpose": "self_refine_corner_light"
+    },
+    {
+      "op": "set",
+      "x": 12,
+      "y": 2,
+      "z": 12,
+      "block": "glowstone",
+      "purpose": "self_refine_corner_light"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 2,
+      "z": -1,
+      "block": "glowstone",
+      "purpose": "self_refine_corner_light"
+    },
+    {
+      "op": "set",
+      "x": 12,
+      "y": 2,
+      "z": -1,
+      "block": "glowstone",
+      "purpose": "self_refine_corner_light"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 2,
+      "z": 12,
+      "block": "glowstone",
+      "purpose": "self_refine_corner_light"
+    },
+    {
+      "op": "set",
+      "x": 12,
+      "y": 2,
+      "z": 12,
+      "block": "glowstone",
+      "purpose": "self_refine_corner_light"
+    }
+  ]
+}

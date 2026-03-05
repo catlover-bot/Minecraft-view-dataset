@@ -1,0 +1,73 @@
+{
+  "summary": "Two-story rectangular brick building with a dark stepped gable roof, stone/white trim base and cornices, horizontal wooden band between floors, regular rows of small glass windows, and corner stone pillars. Sits on a raised white slab border around a dirt foundation.",
+  "building_type": "residential_block_like",
+  "shape": {
+    "overall_form": "simple rectangular prism with a stepped gable roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long center axis (front/back mirrored)",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 17,
+    "height": 9
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof",
+      "confidence": 0.9
+    },
+    {
+      "name": "quartz_block",
+      "role": "base/cornice/trim",
+      "confidence": 0.85
+    },
+    {
+      "name": "oak_planks",
+      "role": "horizontal band/ledges",
+      "confidence": 0.8
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner pillar/vertical trim",
+      "confidence": 0.6
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    }
+  ],
+  "elements": [
+    "rows of small glass windows on both floors (repeating pattern)",
+    "entrance not visible (uncertain) - likely on opposite/side face",
+    "stepped dark gable roof with quartz cornice accents",
+    "raised quartz slab border foundation around perimeter",
+    "wooden horizontal band between first and second floor",
+    "stone/stonebrick corner pillars"
+  ],
+  "rebuild_hints": [
+    "Create a rectangular two-floor box of brick with corners reinforced with stonebrick columns (3-high corners visible).",
+    "Add a continuous oak plank band around mid-height between floors and place a quartz slab/cornice above and below the band.",
+    "Place repeating 1x1 or 1x2 glass windows in a regular row on each floor (spacing consistent across faces).",
+    "Construct a stepped dark nether_brick gable roof centered on the long axis, add quartz block caps at the eaves corners and small quartz slab highlights on steps.",
+    "Surround the building with a one-block-high quartz slab/blocks border raised above the dirt ground as shown."
+  ],
+  "uncertainties": [
+    "Exact interior layout and presence/location of doors are not visible from provided exterior images.",
+    "Material IDs: quartz vs. smooth_sandstone or diorite could be used for white trim; confidence given but not certain.",
+    "Corner vertical blocks may be stonebrick or andesite; identification is medium confidence.",
+    "Exact block counts and precise footprint dimensions estimated from perspective/top views; actual counts may differ by a few blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_000",
+  "created_at": "2026-02-28T13:56:48.672181+00:00"
+}

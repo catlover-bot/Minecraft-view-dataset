@@ -1,0 +1,470 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 8
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "quartz_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "planks",
+    "corner": "stonebrick",
+    "midband": "planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 7,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_front_back_x_axis_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor main hall, narrow window band along walls",
+        "perimeter_profile": "rectangle with slab border"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "upper floor matching window band",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 7,
+        "x2": 5,
+        "y2": 3,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 8,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 6,
+        "z1": 8,
+        "x2": 8,
+        "y2": 6,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 9,
+        "y1": 2,
+        "z1": 3,
+        "x2": 9,
+        "y2": 6,
+        "z2": 4
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 3,
+        "x2": 0,
+        "y2": 6,
+        "z2": 4
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 8,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 8,
+          "block": "nether_brick"
+        },
+        {
+          "y": 9,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 7,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 8,
+      "block": "quartz_slab",
+      "purpose": "raised_slab_border_platform"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 7,
+      "block": "planks",
+      "purpose": "ground_floor_slab_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 7,
+      "block": "brick",
+      "purpose": "ground_floor_walls_outer"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 9,
+      "y2": 7,
+      "z2": 7,
+      "block": "brick",
+      "purpose": "upper_floor_walls_outer"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 7,
+      "block": "planks",
+      "purpose": "horizontal_midband_between_floors"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "west_corner_strip_full_height"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 2,
+      "z1": 0,
+      "x2": 10,
+      "y2": 7,
+      "z2": 8,
+      "block": "stonebrick",
+      "purpose": "east_corner_strip_full_height"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 8,
+      "block": "quartz_slab",
+      "purpose": "white_trim_under_raised_platform_edges"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 8,
+      "y2": 7,
+      "z2": 6,
+      "purpose": "interior_hollowing"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": 7,
+      "x2": 5,
+      "y2": 3,
+      "z2": 7,
+      "purpose": "entrance_recess"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 0,
+      "x2": 8,
+      "y2": 2,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "north_ground_window_row"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 6,
+      "z1": 8,
+      "x2": 8,
+      "y2": 6,
+      "z2": 8,
+      "block": "glass",
+      "purpose": "south_upper_window_row"
+    },
+    {
+      "op": "fill",
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 10,
+  "zmin": 0,
+  "zmax": 8,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "quartz_slab",
+      "from": [0, 0, 0],
+      "to": [10, 0, 8],
+      "desc": "continuous raised white slab foundation border platform one block thick covering full footprint; acts as base ledge"
+    },
+    {
+      "op": "replace",
+      "block": "air",
+      "from": [1, 1, 1],
+      "to": [9, 1, 7],
+      "desc": "clear interior floor space before placing floor layers"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [1, 0, 1],
+      "to": [9, 0, 7],
+      "desc": "ground floor sub-floor (wood planks) sitting on foundation ledge"
+    },
+    {
+      "op": "fill",
+      "block": "brick",
+      "from": [1, 1, 1],
+      "to": [9, 4, 7],
+      "desc": "ground floor walls up to just below the mid horizontal band (3 blocks high)"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [1, 4, 1],
+      "to": [9, 4, 7],
+      "desc": "horizontal wooden midband between floors (single block layer)"
+    },
+    {
+      "op": "fill",
+      "block": "brick",
+      "from": [1, 5, 1],
+      "to": [9, 8, 7],
+      "desc": "second floor walls up to eaves (3 blocks high)"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [1, 1, 1],
+      "to": [1, 8, 1],
+      "desc": "front-left corner pillar full height (stonebrick vertical accent)"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [9, 1, 1],
+      "to": [9, 8, 1],
+      "desc": "front-right corner pillar full height"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [1, 1, 7],
+      "to": [1, 8, 7],
+      "desc": "back-left corner pillar full height"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [9, 1, 7],
+      "to": [9, 8, 7],
+      "desc": "back-right corner pillar full height"
+    },
+    {
+      "op": "hollow_rectangle",
+      "block": "glass_pane",
+      "from": [2, 3, 1],
+      "to": [8, 3, 1],
+      "desc": "ground floor front narrow horizontal windows (glass panes) centered in wall; leave corners as stonebrick"
+    },
+    {
+      "op": "hollow_rectangle",
+      "block": "glass_pane",
+      "from": [2, 6, 1],
+      "to": [8, 6, 1],
+      "desc": "second floor front narrow horizontal windows (aligned above ground floor)"
+    },
+    {
+      "op": "hollow_rectangle",
+      "block": "glass_pane",
+      "from": [2, 3, 7],
+      "to": [8, 3, 7],
+      "desc": "ground floor back narrow horizontal windows"
+    },
+    {
+      "op": "hollow_rectangle",
+      "block": "glass_pane",
+      "from": [2, 6, 7],
+      "to": [8, 6, 7],
+      "desc": "second floor back narrow horizontal windows"
+    },
+    {
+      "op": "hollow_rectangle",
+      "block": "glass_pane",
+      "from": [1, 3, 2],
+      "to": [1, 3, 6],
+      "desc": "ground floor left side narrow horizontal windows"
+    },
+    {
+      "op": "hollow_rectangle",
+      "block": "glass_pane",
+      "from": [1, 6, 2],
+      "to": [1, 6, 6],
+      "desc": "second floor left side narrow windows"
+    },
+    {
+      "op": "hollow_rectangle",
+      "block": "glass_pane",
+      "from": [9, 3, 2],
+      "to": [9, 3, 6],
+      "desc": "ground floor right side narrow windows"
+    },
+    {
+      "op": "hollow_rectangle",
+      "block": "glass_pane",
+      "from": [9, 6, 2],
+      "to": [9, 6, 6],
+      "desc": "second floor right side narrow windows"
+    },
+    {
+      "op": "clear",
+      "from": [5, 1, 1],
+      "to": [5, 2, 1],
+      "desc": "entrance opening at front center (1 block wide, 2 tall) to act as recessed doorway"
+    },
+    {
+      "op": "place",
+      "block": "oak_door",
+      "pos": [5, 1, 1],
+      "desc": "place door in entrance opening"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 4, 0],
+      "to": [10, 4, 8],
+      "desc": "white trim under eaves: continuous band of quartz block one block below roof eave around perimeter"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick_stairs",
+      "from": [0, 9, 0],
+      "to": [10, 9, 8],
+      "desc": "roof base layer of dark stairs forming an overhang; start of stepped gable profile"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick",
+      "from": [1, 8, 1],
+      "to": [9, 8, 7],
+      "desc": "roof inner fill under stairs to create solid ridge and stepped look"
+    },
+    {
+      "op": "fill",
+      "block": "nether_brick_slab",
+      "from": [2, 10, 2],
+      "to": [8, 10, 6],
+      "desc": "top centered ridge slab to give stepped gable peak"
+    },
+    {
+      "op": "outline",
+      "block": "quartz_slab",
+      "from": [0, 9, 0],
+      "to": [10, 9, 8],
+      "desc": "white slab trim under roof overhang on outer edge"
+    },
+    {
+      "op": "place",
+      "block": "ladder",
+      "pos": [2, 1, 2],
+      "desc": "interior ladder placement to access second floor (practicality)"
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [3, 5, 3],
+      "to": [7, 5, 5],
+      "desc": "ensure small attic/roof peak airspace; clears any unintended blocks under roof ridge"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "operations_count": 24,
+    "contains_floor": true,
+    "contains_walls": true,
+    "contains_roof": true,
+    "contains_windows": true,
+    "

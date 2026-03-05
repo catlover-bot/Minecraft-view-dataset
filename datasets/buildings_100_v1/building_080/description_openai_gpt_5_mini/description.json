@@ -1,0 +1,77 @@
+{
+  "summary": "Small single-story rectangular commercial-style building with a raised paved perimeter, brick-tiled flat central roof edged by stone slabs, continuous ground-level windows on the long sides, and corner stone pillars. Exterior walls use a light smooth band above a sandstone or light wood lower wall; a white slab border surrounds the building on ground level.",
+  "building_type": "small commercial / storefront",
+  "shape": {
+    "overall_form": "simple elongated rectangle, raised base with inset central roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis (mirrored front/back and left/right corners similar)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 21,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof_tiles/top band",
+      "confidence": 0.95
+    },
+    {
+      "name": "stone_slab",
+      "role": "roof_edge/coping and top rim",
+      "confidence": 0.9
+    },
+    {
+      "name": "sandstone",
+      "role": "lower wall (beige blocks)",
+      "confidence": 0.8
+    },
+    {
+      "name": "quartz_slab",
+      "role": "surrounding ground border/low wall",
+      "confidence": 0.85
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner pillars",
+      "confidence": 0.7
+    },
+    {
+      "name": "glass",
+      "role": "window panes along long sides",
+      "confidence": 0.99
+    },
+    {
+      "name": "wood",
+      "role": "thin base trim (planks under windows)",
+      "confidence": 0.6
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows (series of glass panes along long walls)",
+    "corner stone/stonebrick pillars",
+    "brick flat roof with stone slab coping",
+    "raised white slab perimeter (single-block border) surrounding building footprint",
+    "wood or plank trim at base of walls"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular footprint approximately 9 x 21 blocks on the inner building; add a one-block-wide white slab border around it.",
+    "Construct a lower wall of beige blocks (sandstone-like) three blocks high with a 1-block wood/plank trim at the base, then a single smooth white band above it, punctuated by repeating glass window openings along the long sides.",
+    "Place stonebrick (or stone) corner pillars 1 block wide that rise the full wall height to meet the white band.",
+    "Top with a single-layer brick tile roof inset one block from the outer white border and surrounded by stone slabs as coping.",
+    "Windows are contiguous horizontal strips: glass panes set in recess between the lower beige and the white band; repeat evenly along each long side."
+  ],
+  "uncertainties": [
+    "Exact block types for the beige lower wall: appears to be sandstone but could be light-colored wood or terracotta (confidence 0.8).",
+    "Base trim material under the windows looks like wood planks but could be a differently textured slab (confidence 0.6).",
+    "Corner pillar material identified as stonebrick has moderate confidence; texture might be chiseled or regular stone variants (confidence 0.7).",
+    "Exact interior layout and any doors are not visible from provided exterior views; entrance location is uncertain."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_080",
+  "created_at": "2026-02-28T14:17:53.161247+00:00"
+}

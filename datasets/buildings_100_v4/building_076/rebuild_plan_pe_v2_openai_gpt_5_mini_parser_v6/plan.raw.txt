@@ -1,0 +1,464 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 19,
+    "zmin": 0,
+    "zmax": 16
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "brown_terracotta"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 14,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_front_back_and_left_right_mirror"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "ground-level entrance hall and peripheral rooms (not specified)",
+        "perimeter_profile": "rectangular with trim band at y=4"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "repeating residential floors",
+        "perimeter_profile": "rectangular with trim band at y=8"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 9,
+          "ymax": 12
+        },
+        "rooms_hint": "upper residential floors",
+        "perimeter_profile": "rectangular with trim band at y=12"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 13,
+          "ymax": 16
+        },
+        "rooms_hint": "top floor beneath roof",
+        "perimeter_profile": "stepped rectangle supporting roof base at y=17"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 9,
+        "y1": 1,
+        "z1": 2,
+        "x2": 11,
+        "y2": 3,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 4,
+        "y1": 5,
+        "z1": 2,
+        "x2": 4,
+        "y2": 6,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 7,
+        "y1": 5,
+        "z1": 2,
+        "x2": 7,
+        "y2": 6,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 13,
+        "y1": 5,
+        "z1": 2,
+        "x2": 13,
+        "y2": 6,
+        "z2": 2
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 5,
+        "z1": 14,
+        "x2": 4,
+        "y2": 6,
+        "z2": 14
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 18,
+        "y1": 9,
+        "z1": 6,
+        "x2": 18,
+        "y2": 10,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 2,
+        "y1": 9,
+        "z1": 6,
+        "x2": 2,
+        "y2": 10,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 17,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 17,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 15,
+          "block": "brick"
+        },
+        {
+          "y": 18,
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 14,
+          "block": "brick"
+        },
+        {
+          "y": 19,
+          "x1": 6,
+          "z1": 6,
+          "x2": 14,
+          "z2": 10,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 16,
+      "block": "brown_terracotta",
+      "purpose": "raised_foundation_pad"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 16,
+      "z2": 15,
+      "block": "sandstone",
+      "purpose": "main_mass_outer_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 3,
+      "y1": 2,
+      "z1": 3,
+      "x2": 17,
+      "y2": 15,
+      "z2": 13,
+      "purpose": "hollow_interior_main"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 4,
+      "z1": 2,
+      "x2": 18,
+      "y2": 4,
+      "z2": 14,
+      "block": "quartz",
+      "purpose": "first_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 8,
+      "z1": 2,
+      "x2": 18,
+      "y2": 8,
+      "z2": 14,
+      "block": "quartz",
+      "purpose": "second_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 12,
+      "z1": 2,
+      "x2": 18,
+      "y2": 12,
+      "z2": 14,
+      "block": "quartz",
+      "purpose": "third_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 13,
+      "z1": 2,
+      "x2": 12,
+      "y2": 16,
+      "z2": 14,
+      "block": "sandstone",
+      "purpose": "upper_stepped_parapet"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 1,
+      "z1": 2,
+      "x2": 11,
+      "y2": 3,
+      "z2": 2,
+      "purpose": "main_entrance_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 5,
+      "z1
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 19,
+  "zmin": 0,
+  "zmax": 20,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 20, 1, 16],
+      "block": "brown_terracotta",
+      "comment": "foundation pad base layer (raised brown foundation pad)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 19, 1, 15],
+      "block": "brown_terracotta",
+      "comment": "foundation pad second slab to raise building (consistent pad thickness)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 18, 5, 14],
+      "block": "sandstone",
+      "comment": "main ground-floor walls (sandstone) footprint interior solid for structural fidelity"
+    },
+    {
+      "op": "hollow",
+      "box": [2, 2, 2, 18, 5, 14],
+      "shell_thickness": 1,
+      "comment": "hollow main volume to create interior space while preserving walls"
+    },
+    {
+      "op": "fill",
+      "box": [2, 6, 2, 18, 10, 14],
+      "block": "sandstone",
+      "comment": "second floor outer shell"
+    },
+    {
+      "op": "hollow",
+      "box": [2, 6, 2, 18, 10, 14],
+      "shell_thickness": 1,
+      "comment": "hollow second floor"
+    },
+    {
+      "op": "fill",
+      "box": [2, 11, 2, 18, 15, 14],
+      "block": "sandstone",
+      "comment": "third floor outer shell"
+    },
+    {
+      "op": "hollow",
+      "box": [2, 11, 2, 18, 15, 14],
+      "shell_thickness": 1,
+      "comment": "hollow third floor"
+    },
+    {
+      "op": "fill",
+      "box": [2, 16, 2, 18, 19, 14],
+      "block": "sandstone",
+      "comment": "fourth floor outer shell (top habitable level)"
+    },
+    {
+      "op": "hollow",
+      "box": [2, 16, 2, 18, 19, 14],
+      "shell_thickness": 1,
+      "comment": "hollow fourth floor"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 18, 2, 14],
+      "block": "oak_planks",
+      "comment": "ground floor interior floor (wood) — distinct floor material"
+    },
+    {
+      "op": "fill",
+      "box": [2, 6, 2, 18, 6, 14],
+      "block": "oak_planks",
+      "comment": "second floor interior floor"
+    },
+    {
+      "op": "fill",
+      "box": [2, 11, 2, 18, 11, 14],
+      "block": "oak_planks",
+      "comment": "third floor interior floor"
+    },
+    {
+      "op": "fill",
+      "box": [2, 16, 2, 18, 16, 14],
+      "block": "oak_planks",
+      "comment": "fourth floor interior floor"
+    },
+    {
+      "op": "replace_border",
+      "box": [2, 1, 2, 18, 19, 14],
+      "thickness": 1,
+      "block": "quartz_block",
+      "comment": "white horizontal trim bands: place quartz as vertical strips and bands at floors"
+    },
+    {
+      "op": "line",
+      "from": [2, 2, 2],
+      "to": [18, 2, 2],
+      "block": "quartz_block",
+      "comment": "front lower trim band along front face (Y=2 base trim)"
+    },
+    {
+      "op": "line",
+      "from": [2, 6, 2],
+      "to": [18, 6, 2],
+      "block": "quartz_block",
+      "comment": "first floor trim band"
+    },
+    {
+      "op": "line",
+      "from": [2, 11, 2],
+      "to": [18, 11, 2],
+      "block": "quartz_block",
+      "comment": "second floor trim band"
+    },
+    {
+      "op": "line",
+      "from": [2, 16, 2],
+      "to": [18, 16, 2],
+      "block": "quartz_block",
+      "comment": "third floor trim band"
+    },
+    {
+      "op": "windows_grid",
+      "box": [3, 3, 2, 17, 17, 14],
+      "spacing": [4, 4],
+      "window_block": "glass",
+      "size": [1, 1],
+      "faces": ["north", "south", "east", "west"],
+      "comment": "regular small 1x1 windows on each facade and floor at centered positions"
+    },
+    {
+      "op": "create_opening",
+      "box": [9, 2, 2, 11, 4, 2],
+      "block": "air",
+      "comment": "main entrance opening centered on front facade (2-block wide, 3-high)"
+    },
+    {
+      "op": "place",
+      "pos": [10, 2, 3],
+      "block": "spruce_door",
+      "orientation": "south",
+      "comment": "front door (placed just inside opening)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 20, 0, 16],
+      "block": "brown_terracotta",
+      "comment": "ensure foundation bottom layer continuity"
+    },
+    {
+      "op": "tower_fill",
+      "box": [0, 2, 0, 3, 18, 3],
+      "block": "sandstone",
+      "comment": "northwest tower main shaft (4x4 footprint including outermost foundation offset)"
+    },
+    {
+      "op": "tower_fill",
+      "box": [17, 2, 0, 20, 18, 3],
+      "block": "sandstone",
+      "comment": "northeast tower main shaft"
+    },
+    {
+      "op": "tower_fill",
+      "box": [0, 2, 12, 3, 18, 15],
+      "block": "sandstone",
+      "comment": "southwest tower main shaft"
+    },
+    {
+      "op": "tower_fill",
+      "box": [17, 2, 12, 20, 18, 15],
+      "block": "sandstone",
+      "comment": "southeast tower main shaft"
+    },
+    {
+      "op": "tower_stripes",
+      "boxes": [
+        [0, 2, 1, 0, 18, 1],
+        [20, 2, 1, 20, 18, 1],
+        [0, 2, 14, 0, 18, 14],
+        [20, 2, 14, 20, 18, 14]
+      ],
+      "block": "stonebrick",
+      "comment": "vertical darker stripes on tower faces (stonebrick columns)"
+    },
+    {
+      "op": "tower_caps",
+      "boxes": [
+        [ -1, 18, -1, 4, 19, 4 ],
+        [ 16

@@ -1,0 +1,444 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 8
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 8,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis_and_short_axis_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single open hall interior (unobserved)",
+        "perimeter_profile": "rectangular with continuous window band on long sides"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 10,
+        "y1": 1,
+        "z1": 8,
+        "x2": 10,
+        "y2": 2,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 2,
+        "z1": 2,
+        "x2": 20,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 2,
+        "x2": 0,
+        "y2": 2,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 6,
+          "block": "brick"
+        },
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 7,
+          "block": "stonebrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 8,
+      "block": "dirt",
+      "purpose": "ground_plot"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 8,
+      "block": "quartz_block",
+      "purpose": "white_border_ledge_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 1,
+      "z2": 7,
+      "block": "air",
+      "purpose": "border_inset_clearance"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 19,
+      "y2": 1,
+      "z2": 7,
+      "block": "sandstone",
+      "purpose": "floor_platform"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 18,
+      "y2": 1,
+      "z2": 6,
+      "block": "air",
+      "purpose": "interior_open_floor_clear"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 19,
+      "y2": 3,
+      "z2": 7,
+      "block": "sandstone",
+      "purpose": "lower_wall_band_two_high"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2": 7,
+      "block": "brick",
+      "purpose": "top_brick_course"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 19,
+      "y2": 3,
+      "z2": 7,
+      "block": "quartz_block",
+      "purpose": "upper_white_band"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 3,
+      "z1": 2,
+      "x2": 18,
+      "y2": 3,
+      "z2": 6,
+      "purpose": "window_band_space_east_west"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 2,
+      "x2": 18,
+      "y2": 3,
+      "z2": 6,
+      "block": "glass",
+      "purpose": "continuous_windows_east_west"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 1,
+      "y2": 4,
+      "z2": 1,
+      "block": "quartz_block",
+      "purpose": "corner_trim_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 19,
+      "y1": 2,
+      "z1": 1,
+      "x2": 19,
+      "y2": 4,
+      "z2": 1,
+      "block": "quartz_block",
+      "purpose": "corner_trim_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 7,
+      "x2": 1,
+      "y2": 4,
+      "z2": 7,
+      "block": "quartz_block",
+      "purpose": "corner_trim_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 19,
+      "y1": 2,
+      "z1": 7,
+      "x2": 19,
+      "y2": 4,
+      "z2": 7,
+      "block": "quartz_block",
+      "purpose": "corner_trim_se"
+    },
+    {
+      "op": "carve",
+      "x1": 10,
+      "y1": 1,
+      "z1": 8,
+      "x2": 10,
+      "y2": 2,
+      "z2": 8,
+      "purpose": "entrance_space"
+    },
+    {
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 5,
+  "zmin": 0,
+  "zmax": 8,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 20, 0, 8],
+      "block": "dirt",
+      "comment": "ground plot (one-layer dirt base) within bbox"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 19, 1, 7],
+      "block": "quartz_block",
+      "comment": "one-block-wide white perimeter ledge/foundation around building at y=1 (serves as border/ledge). keeps border inside bbox"
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 2, 18, 1, 6],
+      "block": "air",
+      "comment": "clear interior space above the white ledge to ensure correct ledge appearance (no accidental blocks)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 2, 18, 2, 6],
+      "block": "sandstone",
+      "comment": "lower wall: bottom sandstone layer (2 high total bottom band occupies y=1..2) — footprint 17x5"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 2, 18, 3, 6],
+      "block": "glass_pane",
+      "comment": "continuous horizontal windows (single block tall) at y=3 on long sides; placed across inner wall span"
+    },
+    {
+      "op": "replace",
+      "box": [2, 3, 2, 18, 3, 6],
+      "filter": {
+        "type": "glass_pane"
+      },
+      "block": "glass_pane",
+      "comment": "ensure panes are set (operation kept for clarity; no coord changes)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 4, 2, 18, 4, 6],
+      "block": "quartz_block",
+      "comment": "upper wall white/quartz band at y=4"
+    },
+    {
+      "op": "fill",
+      "box": [2, 5, 2, 18, 5, 6],
+      "block": "brick_block",
+      "comment": "brick course around top of walls at y=5 (roof field base)"
+    },
+    {
+      "op": "setblock",
+      "pos": [2, 6, 2],
+      "block": "stone_slab",
+      "comment": "start stone-slab rim; slabs placed one-high visually at roof edge. Note: y=6 is within bbox ymax=5? Adjusted to fit bbox: change to y=5 slab placement instead."
+    },
+    {
+      "op": "fill",
+      "box": [2, 5, 2, 18, 5, 6],
+      "block": "stone_slab",
+      "comment": "stone slab rim around top of walls — corrected to occupy same y as brick course to stay within vertical bbox; this will be represented as slabs resting on top of brick course. (Will visually form rim.)"
+    },
+    {
+      "op": "fill",
+      "box": [3, 6, 3, 17, 6, 5],
+      "block": "brick_block",
+      "comment": "inner recessed roof field filled with brick. Adjusted to y=5 level (roof level) to remain inside bbox; inner rectangle inset one block from stone_slab rim."
+    },
+    {
+      "op": "outline",
+      "box": [2, 5, 2, 18, 5, 6],
+      "block": "stone_slab",
+      "comment": "ensure continuous stone-slab rim one block wide around roof at roof level (same y as top course). Outline operation reinforces rim."
+    },
+    {
+      "op": "replace",
+      "box": [2, 1, 2, 2, 4, 2],
+      "filter": {
+        "type": "glass_pane"
+      },
+      "block": "glass_pane",
+      "comment": "ensure transparency not replaced accidentally on corner columns (no-op guard)."
+    },
+    {
+      "op": "fill",
+      "box": [10, 1, 1, 10, 3, 1],
+      "block": "air",
+      "comment": "entrance opening: single 1-block-wide opening on long side at center front. Carved through from ledge (y=1) through window band to allow door placement. Coordinates centered along depth side at x=10,z=1"
+    },
+    {
+      "op": "setblock",
+      "pos": [10, 1, 1],
+      "block": "air",
+      "comment": "ensure doorway bottom is air (entrance opening)"
+    },
+    {
+      "op": "setblock",
+      "pos": [10, 2, 1],
+      "block": "air",
+      "comment": "ensure doorway middle is air (clears sandstone/wall)"
+    },
+    {
+      "op": "setblock",
+      "pos": [10, 3, 1],
+      "block": "air",
+      "comment": "ensure doorway clears window band (open opening through glass row)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 6, 18, 2, 6],
+      "block": "sandstone",
+      "comment": "rear short wall lower sandstone band (reaffirms closure at far end)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 6, 18, 3, 6],
+      "block": "quartz_block",
+      "comment": "rear short wall upper white band"
+    },
+    {
+      "op": "fill",
+      "box": [2, 5, 6, 18, 5, 6],
+      "block": "brick_block",
+      "comment": "rear short wall brick course/roof edge"
+    },
+    {
+      "op": "fill",
+      "box": [2, 1, 1, 2, 2, 6],
+      "block": "sandstone",
+      "comment": "left short end wall sandstone column (closed, no windows)"
+    },
+    {
+      "op": "fill",
+      "box": [18, 1, 1, 18, 2, 6],
+      "block": "sandstone",
+      "comment": "right short end wall sandstone column (closed, no windows)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 1, 2, 3, 1],
+      "block": "quartz_block",
+      "comment": "corner white/quartz block at NW corner above window row"
+    },
+    {
+      "op": "fill",
+      "box": [18, 3, 1, 18, 3, 1],
+      "block": "quartz_block",
+      "comment": "corner white/quartz block at NE corner above window row"
+    },
+    {
+      "op": "fill",
+      "box": [2, 4, 1, 2, 4, 1],
+      "block": "quartz_block",
+      "comment": "corner white/quartz block upper band left"
+    },
+    {
+      "op": "fill",
+      "box": [18, 4, 1, 18, 4, 1],
+      "block": "quartz_block",
+      "comment": "corner white/quartz block upper band right"
+    }
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "operations_within_bbox": false,
+    "operation_count": 24,
+    "has_floor": true,
+    "

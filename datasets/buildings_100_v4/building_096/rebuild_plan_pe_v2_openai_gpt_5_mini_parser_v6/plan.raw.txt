@@ -1,0 +1,532 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 23,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 17
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "slab_wood",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "l_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 23,
+          "z2": 5,
+          "label": "long_wing"
+        },
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 11,
+          "z2": 17,
+          "label": "short_wing"
+        }
+      ],
+      "symmetry": "approx_bilateral_along_long_axis_with_asymmetric_towers"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single open courtyard enclosed by 1-block-thick exterior walls; covered inner perimeter walkway at slab level",
+        "perimeter_profile": "l_shape_thin_wall_with_inner_walkway"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 11,
+        "y1": 1,
+        "z1": 0,
+        "x2": 12,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "inner",
+        "x1": 3,
+        "y1": 2,
+        "z1": 5,
+        "x2": 3,
+        "y2": 3,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "inner",
+        "x1": 9,
+        "y1": 2,
+        "z1": 5,
+        "x2": 9,
+        "y2": 3,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "inner",
+        "x1": 6,
+        "y1": 6,
+        "z1": 17,
+        "x2": 6,
+        "y2": 7,
+        "z2": 17
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 4,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 23,
+          "z2": 17,
+          "block": "slab_wood"
+        },
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 1,
+          "x2": 22,
+          "z2": 16,
+          "block": "slab_wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 23,
+      "y2": 0,
+      "z2": 17,
+      "block": "wood",
+      "purpose": "ground_plane"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 23,
+      "y2": 1,
+      "z2": 17,
+      "block": "stonebrick",
+      "purpose": "stone_base_perimeter"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 23,
+      "y2": 4,
+      "z2": 17,
+      "block": "brick",
+      "purpose": "exterior_walls_full_height"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 10,
+      "y2": 3,
+      "z2": 16,
+      "purpose": "courtyard_open_space_part_a"
+    },
+    {
+      "op": "carve",
+      "x1": 11,
+      "y1": 1,
+      "z1": 1,
+      "x2": 22,
+      "y2": 3,
+      "z2": 4,
+      "purpose": "courtyard_open_space_part_b"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 10,
+      "y2": 3,
+      "z2": 2,
+      "block": "slab_wood",
+      "purpose": "inner_walkway_slab_long_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 2,
+      "x2": 2,
+      "y2": 3,
+      "z2": 16,
+      "block": "slab_wood",
+      "purpose": "inner_walkway_slab_short_wing"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 1,
+      "x2": 2,
+      "y2": 3,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "vertical_white_columns_simulated_by_stone_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 1,
+      "z1": 1,
+      "x2": 10,
+      "y2": 3,
+      "z2": 4,
+      "block": "stonebrick",
+      "purpose": "corner_trim_between_wings"
+    },
+    {
+      "op": "carve",
+      "x1": 11,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 3,
+      "z2": 0,
+      "purpose": "main_entrance_door_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 2,
+      "z1": 5,
+      "x2": 3,
+      "y2": 3,
+      "z2": 5,
+      "block": "glass",
+      "purpose": "tower_window_sample_a"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 2,
+      "z1": 5,
+      "x2": 9,
+      "y2": 3,
+      "z2": 5,
+      "block": "glass",
+      "purpose": "tower_window_sample_b"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 6,
+      "z1": 17,
+      "x2": 6,
+      "y2": 7,
+      "z2": 17,
+      "block": "glass",
+      "purpose": "tower_window_short_wing_back"
+    },
+    {
+      "op": "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 23,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 17,
+  "operations": [
+    {
+      "op": "set_block",
+      "pos": [0, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [1, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [2, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [3, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [4, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [5, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [6, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [7, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [8, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [9, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [10, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [11, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [12, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [13, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [14, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [15, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [16, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [17, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [18, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [19, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [20, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [21, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [22, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [23, 0, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "fill",
+      "from": [0, 0, 0],
+      "to": [23, 0, 17],
+      "block": "air"
+    },
+    {
+      "op": "fill",
+      "from": [0, 0, 0],
+      "to": [23, 0, 17],
+      "block": "dirt"
+    },
+    {
+      "op": "fill",
+      "from": [1, 1, 1],
+      "to": [22, 1, 16],
+      "block": "air"
+    },
+    {
+      "op": "fill",
+      "from": [0, 1, 0],
+      "to": [23, 4, 17],
+      "block": "air"
+    },
+    {
+      "op": "set_block",
+      "pos": [0, 1, 0],
+      "block": "stonebrick"
+    },
+    {
+      "op": "set_block",
+      "pos": [1, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [2, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [3, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [4, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [5, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [6, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [7, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [8, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [9, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [10, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [11, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [12, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [13, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [14, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [15, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [16, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [17, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [18, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [19, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [20, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [21, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [22, 1, 0],
+      "block": "brick"
+    },
+    {
+      "op": "set_block",
+      "pos": [23, 1, 0],

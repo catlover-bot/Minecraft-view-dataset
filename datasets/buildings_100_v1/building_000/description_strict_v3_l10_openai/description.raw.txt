@@ -1,0 +1,74 @@
+{
+  "summary": "Two-story rectangular brick building with a dark stepped gable roof, horizontal mid-tier wooden band, white stone trim base and cornice, and regularly spaced narrow windows on both levels. Corner vertical stone accents and an elevated white slab border platform surround the footprint.",
+  "building_type": "residential_or_townhouse",
+  "shape": {
+    "overall_form": "simple rectangular prism with a centered gable roof that is stepped on the short sides",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric across the long axis",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 7,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "primary_wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "wood",
+      "role": "horizontal_band/floor_separator",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner_pillars/vertical_accent",
+      "confidence": 0.7
+    },
+    {
+      "name": "slab_stone",
+      "role": "base_border/cornice",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof",
+      "confidence": 0.85
+    },
+    {
+      "name": "air",
+      "role": "window_interior/open_space",
+      "confidence": 0.6
+    }
+  ],
+  "elements": [
+    "rows of narrow horizontal windows on both floors (repeating pattern)",
+    "central stepped gable roof with overhang and white cornice blocks",
+    "white raised slab border/platform around building",
+    "wooden band separating floors",
+    "stone/stonebrick corner vertical blocks"
+  ],
+  "rebuild_hints": [
+    "Footprint approx 11x7 blocks (long axis parallel to window rows); two full stories of wall height with a one-block white slab cornice above each floor.",
+    "Place brick walls with a 1-block high wooden plank strip running horizontally between the first and second floor windows; repeat window pattern (narrow 1x1 glass panes) evenly across each long face.",
+    "Add stonebrick (or similar) vertical corner pillars at each short-edge corner rising full height and topped by white slab/cornice blocks that continue along the roof eaves.",
+    "Construct a centered dark (nether-brick-like) gable roof with stepped layers on the short ends; cap roof ridge and add white slab accents on the steps.",
+    "Surround the building with a 1-block-high white slab border platform offset by one block from the walls."
+  ],
+  "uncertainties": [
+    "Exact block IDs: white trim appears to be quartz slabs/blocks but could be another white stone (confidence listed as slab_stone).",
+    "Corner accent material appears as stonebrick but might be polished stone or cobblestone variants (confidence medium).",
+    "Interior floor heights and internal layout are not visible; floor/ceiling thickness assumed minimal based on exterior bands.",
+    "Exact footprint dimensions inferred from pixel scale of images; could vary by ±2 blocks.",
+    "Roof material identified as nether_brick by color but could be dark spruce stairs/blocks; profile (stepped gable) is clear."
+  ]
+}

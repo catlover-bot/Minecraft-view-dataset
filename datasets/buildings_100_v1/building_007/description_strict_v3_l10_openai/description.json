@@ -1,0 +1,71 @@
+{
+  "summary": "A single-story rectangular modern-style building with layered horizontal bands: a white stone base border, a lower wooden plinth, a mid-level stonebrick wall with regular glass windows, a smooth white band above the windows, an upper wooden plank band, and a stone slab coping around a flat roof with an interior wooden floor visible from above.",
+  "building_type": "small commercial/modern single-storey",
+  "shape": {
+    "overall_form": "compact rectangular box with a raised flat roof and a surrounding low outer border",
+    "footprint_hint": "rectangle",
+    "symmetry": "mostly symmetric along both length and width (mirrored facades on long sides)",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 12,
+    "depth": 12,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "mid-level wall (stonebrick/stairs)",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood",
+      "role": "planks bands (upper and lower horizontal bands) and interior floor",
+      "confidence": 0.95
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof coping / top edge",
+      "confidence": 0.9
+    },
+    {
+      "name": "quartz",
+      "role": "white outer border and smooth white band (may be smooth quartz blocks)",
+      "confidence": 0.7
+    },
+    {
+      "name": "cobblestone",
+      "role": "corner/accents (visible on one corner)",
+      "confidence": 0.6
+    }
+  ],
+  "elements": [
+    "windows",
+    "entrance (small projection visible on one side; uncertain details)",
+    "roof",
+    "raised interior wooden floor",
+    "perimeter low white border/walkway"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular wooden floor inset by a one-block-wide border of white blocks (quartz-like) around it.",
+    "Raise walls of ~3 blocks high: bottom wooden plank trim, then stonebrick band with regularly spaced 1x1 glass windows, then a full white smooth block band, then an upper wooden plank band.",
+    "Cap the top with stone slabs as a coping and keep the roof flat and recessed slightly; interior roof area is filled with wood planks.",
+    "Place a low white one-block thick outer frame around the building at ground level matching the aerial placement."
+  ],
+  "uncertainties": [
+    "Exact material identity of white blocks: appear to be quartz or diorite/smooth stone — uncertain.",
+    "Lower corner accent uses cobblestone-like texture on one corner only; unsure if repeated on all corners.",
+    "Precise internal features, door placement and exact window spacing dimensions are inferred from visible faces but not fully visible on all sides.",
+    "Exact block counts for width/depth/height estimated from images; may be off by a few blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_007",
+  "created_at": "2026-03-01T07:51:06.056836+00:00"
+}

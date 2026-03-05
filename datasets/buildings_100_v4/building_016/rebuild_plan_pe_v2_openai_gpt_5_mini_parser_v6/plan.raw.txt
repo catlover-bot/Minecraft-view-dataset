@@ -1,0 +1,473 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 30,
+    "ymin": 0,
+    "ymax": 20,
+    "zmin": 0,
+    "zmax": 30
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "sea_lantern",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "complex",
+      "segments": [
+        {
+          "x1": 6,
+          "z1": 0,
+          "x2": 24,
+          "z2": 30,
+          "label": "north_south_arm"
+        },
+        {
+          "x1": 0,
+          "z1": 6,
+          "x2": 30,
+          "z2": 24,
+          "label": "east_west_arm"
+        },
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 6,
+          "z2": 6,
+          "label": "tower_nw"
+        },
+        {
+          "x1": 24,
+          "z1": 0,
+          "x2": 30,
+          "z2": 6,
+          "label": "tower_ne"
+        },
+        {
+          "x1": 0,
+          "z1": 24,
+          "x2": 6,
+          "z2": 30,
+          "label": "tower_sw"
+        },
+        {
+          "x1": 24,
+          "z1": 24,
+          "x2": 30,
+          "z2": 30,
+          "label": "tower_se"
+        }
+      ],
+      "symmetry": "approx_x_axis_centered (front-back)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground level corridors forming cross; inner courtyard",
+        "perimeter_profile": "cross-shaped with inset courtyard"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "second level with continuous window bands",
+        "perimeter_profile": "stepped cross arms"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 10,
+          "ymax": 14
+        },
+        "rooms_hint": "third level short attic/roof support",
+        "perimeter_profile": "reduced cross arms (stepped)"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 15,
+          "ymax": 20
+        },
+        "rooms_hint": "tower upper levels (occupied in two tall towers)",
+        "perimeter_profile": "towers"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 14,
+        "y1": 1,
+        "z1": 0,
+        "x2": 16,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 14,
+        "y1": 1,
+        "z1": 30,
+        "x2": 16,
+        "y2": 3,
+        "z2": 30
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 6,
+        "z1": 0,
+        "x2": 22,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 8,
+        "y1": 6,
+        "z1": 30,
+        "x2": 22,
+        "y2": 7,
+        "z2": 30
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 30,
+        "y1": 6,
+        "z1": 8,
+        "x2": 30,
+        "y2": 7,
+        "z2": 22
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 8,
+        "x2": 0,
+        "y2": 7,
+        "z2": 22
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 14,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 14,
+          "x1": 6,
+          "z1": 0,
+          "x2": 24,
+          "z2": 30,
+          "block": "brick"
+        },
+        {
+          "y": 14,
+          "x1": 0,
+          "z1": 6,
+          "x2": 30,
+          "z2": 24,
+          "block": "brick"
+        },
+        {
+          "y": 15,
+          "x1": 8,
+          "z1": 2,
+          "x2": 22,
+          "z2": 28,
+          "block": "brick"
+        },
+        {
+          "y": 16,
+          "x1": 10,
+          "z1": 4,
+          "x2": 20,
+          "z2": 26,
+          "block": "brick"
+        },
+        {
+          "y": 17,
+          "x1": 12,
+          "z1": 6,
+          "x2": 18,
+          "z2": 24,
+          "block": "brick"
+        },
+        {
+          "y": 18,
+          "x1": 13,
+          "z1": 7,
+          "x2": 17,
+          "z2": 23,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 30,
+      "y2": 0,
+      "z2": 30,
+      "block": "oak_planks",
+      "purpose": "ground_floor_base"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 4,
+      "z2": 30,
+      "block": "sandstone",
+      "purpose": "north_south_arm_walls_level1"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 6,
+      "x2": 30,
+      "y2": 4,
+      "z2": 24,
+      "block": "sandstone",
+      "purpose": "east_west_arm_walls_level1"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 29,
+      "y2": 4,
+      "z2": 29,
+      "block": "quartz_block",
+      "purpose": "white_midband_level1 (temporary broad band to be carved for detail)"
+    },
+    {
+      "op": "carve",
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 30,
+  "ymin": 0,
+  "ymax": 20,
+  "zmin": 0,
+  "zmax": 30,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [6, 0, 12],
+      "to": [24, 0, 18],
+      "desc": "ground floor solid foundation slab (1 block thick) across central cruciform footprint"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [8, 1, 10],
+      "to": [22, 7, 20],
+      "desc": "main wall mass for three-level cruciform core (walls solid; later cut windows/openings)"
+    },
+    {
+      "op": "hollow_replace",
+      "block": "air",
+      "from": [9, 1, 11],
+      "to": [21, 6, 19],
+      "replace_target": "sandstone",
+      "desc": "hollow out interior volumes for floors and corridors while leaving 1-block thick walls; preserves outer wall thickness"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [8, 3, 10],
+      "to": [22, 3, 20],
+      "desc": "continuous white horizontal band (1 block high) around mid first-floor level"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [8, 6, 10],
+      "to": [22, 6, 20],
+      "desc": "white horizontal band separating second and third floor levels"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [10, 7, 12],
+      "to": [20, 7, 18],
+      "desc": "second floor ceiling / third-floor platform (continuous 1-block thick floor)"
+    },
+    {
+      "op": "fill",
+      "block": "glass",
+      "from": [9, 2, 12],
+      "to": [21, 2, 12],
+      "desc": "front facade continuous window strip (north arm) - single horizontal row"
+    },
+    {
+      "op": "fill",
+      "block": "glass",
+      "from": [9, 2, 18],
+      "to": [21, 2, 18],
+      "desc": "rear facade continuous window strip (south arm)"
+    },
+    {
+      "op": "fill",
+      "block": "glass",
+      "from": [12, 2, 11],
+      "to": [12, 2, 19],
+      "desc": "west arm window band (east-west crossing) - west side strip"
+    },
+    {
+      "op": "fill",
+      "block": "glass",
+      "from": [18, 2, 11],
+      "to": [18, 2, 19],
+      "desc": "east arm window band - east side strip"
+    },
+    {
+      "op": "fill",
+      "block": "glass",
+      "from": [9, 4, 13],
+      "to": [21, 4, 17],
+      "desc": "second-floor window band across front-to-back central section"
+    },
+    {
+      "op": "box",
+      "block": "air",
+      "from": [14, 1, 12],
+      "to": [16, 3, 12],
+      "desc": "entrance opening on front arm (2 wide x 2 high) centered on north central axis"
+    },
+    {
+      "op": "place",
+      "block": "oak_door",
+      "pos": [15, 1, 12],
+      "facing": "north",
+      "desc": "door placed in entrance recess (oak door single)"
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [7, 1, 7],
+      "to": [23, 1, 23],
+      "desc": "low decorative courtyard fence (1 block high) following an inner rectangular ring inside main footprint"
+    },
+    {
+      "op": "replace",
+      "block": "air",
+      "from": [14, 1, 7],
+      "to": [16, 1, 7],
+      "desc": "gap in courtyard fence for path aligned with entrance (north-south)"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [7, 8, 7],
+      "to": [23, 8, 23],
+      "desc": "one-block thick cornice / roof border platform around central roof level"
+    },
+    {
+      "op": "fill",
+      "block": "brick_block",
+      "from": [9, 9, 9],
+      "to": [21, 11, 21],
+      "desc": "central cruciform low stepped roof bulk (brick) - low slab/blocks approximated by block layers"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [9, 11, 9],
+      "to": [21, 11, 21],
+      "desc": "stonebrick trim around top of central roof (1 block high)"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [6, 1, 6],
+      "to": [10, 12, 10],
+      "desc": "southwest corner tower core (taller tower) - built up to y=12"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [20, 1, 6],
+      "to": [24, 12, 10],
+      "desc": "southeast corner tower core (taller tower)"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [6, 1, 20],
+      "to": [10, 9, 24],
+      "desc": "northwest corner tower core (shorter tower)"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [20, 1, 20],
+      "to": [24, 9, 24],
+      "desc": "northeast corner tower core (shorter tower)"
+    },
+    {
+      "op": "hollow_replace",
+      "block": "air",
+      "from": [7, 1, 7],
+      "to": [9, 11, 9],
+      "replace_target": "sandstone",
+      "desc": "interior hollowing for southwest tower (leave 1-block thick walls)"
+    },
+    {
+      "op": "hollow_replace",
+      "block": "air",
+      "from": [21, 1, 7],
+      "to": [23, 11, 9],
+      "replace_target": "sandstone",
+      "desc": "interior hollowing for southeast tower"
+    },
+    {
+      "op": "hollow_replace",
+      "block": "air",
+      "from": [7, 1, 21],
+      "to": [9, 9, 23],
+      "replace_target": "sandstone",
+      "desc": "interior hollowing for northwest tower"
+    },
+    {
+      "op": "hollow_replace",
+      "block": "air",
+      "from": [21, 1, 21],
+      "to": [23, 9, 23],
+      "replace_target": "sandstone",
+      "desc": "interior hollowing for northeast tower"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [5, 12, 5],
+      "to": [

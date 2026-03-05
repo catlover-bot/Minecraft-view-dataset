@@ -1,0 +1,493 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 34,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "wood",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "l_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 34,
+          "z2": 3,
+          "label": "main_wing_north"
+        },
+        {
+          "x1": 0,
+          "z1": 7,
+          "x2": 34,
+          "z2": 10,
+          "label": "main_wing_south"
+        },
+        {
+          "x1": 26,
+          "z1": 3,
+          "x2": 34,
+          "z2": 7,
+          "label": "detached_end_wing"
+        }
+      ],
+      "symmetry": "bilateral_along_x_center"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground-level apartments / corridor",
+        "perimeter_profile": "parallel_wings_with_courtyard"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "upper apartments",
+        "perimeter_profile": "same_as_floor_0"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "z_plus",
+        "x1": 28,
+        "y1": 1,
+        "z1": 7,
+        "x2": 29,
+        "y2": 3,
+        "z2": 7
+      },
+      {
+        "kind": "door",
+        "face": "z_minus",
+        "x1": 28,
+        "y1": 1,
+        "z1": 3,
+        "x2": 29,
+        "y2": 3,
+        "z2": 3
+      },
+      {
+        "kind": "window",
+        "face": "z_minus",
+        "x1": 2,
+        "y1": 2,
+        "z1": 3,
+        "x2": 4,
+        "y2": 3,
+        "z2": 3
+      },
+      {
+        "kind": "window",
+        "face": "z_plus",
+        "x1": 2,
+        "y1": 2,
+        "z1": 7,
+        "x2": 4,
+        "y2": 3,
+        "z2": 7
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 9,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 2,
+          "x2": 34,
+          "z2": 8,
+          "block": "brick"
+        },
+        {
+          "y": 9,
+          "x1": 2,
+          "z1": 3,
+          "x2": 32,
+          "z2": 7,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 34,
+      "y2": 0,
+      "z2": 10,
+      "block": "dirt",
+      "purpose": "ground_base_inside_plot"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 34,
+      "y2": 0,
+      "z2": 10,
+      "block": "grass",
+      "purpose": "surface_note_duplicate_for_plot"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 34,
+      "y2": 0,
+      "z2": 10,
+      "block": "coarse_dirt",
+      "purpose": "alternative_ground_material_choice"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 34,
+      "y2": 0,
+      "z2": 10,
+      "block": "grass",
+      "purpose": "finalize_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 34,
+      "y2": 0,
+      "z2": 10,
+      "block": "white_concrete",
+      "purpose": "border_white_low_layer"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 33,
+      "y2": 8,
+      "z2": 9,
+      "purpose": "clear_building_area_inside_border"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 34,
+      "y2": 1,
+      "z2": 10,
+      "block": "white_concrete",
+      "purpose": "outer_border_top"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 34,
+      "y2": 0,
+      "z2": 10,
+      "block": "dirt",
+      "purpose": "border_padding_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 3,
+      "x2": 34,
+      "y2": 4,
+      "z2": 3,
+      "block": "sandstone",
+      "purpose": "north_wing_walls_full_height"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 7,
+      "x2": 34,
+      "y2": 4,
+      "z2": 7,
+      "block": "sandstone",
+      "purpose": "south_wing_walls_full_height"
+    },
+    {
+      "op": "fill",
+      "x1": 26,
+      "y1": 1,
+      "z1": 3,
+      "x2": 34,
+      "y2": 4,
+      "z2": 7,
+      "block": "sandstone",
+      "purpose": "detached_end_wing_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 3,
+      "x2": 34,
+      "y2": 4,
+      "z2": 7,
+      "block": "wood",
+      "purpose": "horizontal_trim_band_between_floors"
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 34,
+  "ymin": 0,
+  "ymax": 9,
+  "zmin": 0,
+  "zmax": 10,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "dirt",
+      "from": [0, 0, 0],
+      "to": [34, 0, 10]
+    },
+    {
+      "op": "outline",
+      "block": "white_concrete",
+      "from": [0, 0, 0],
+      "to": [34, 0, 10]
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [1, 1, 1],
+      "to": [33, 1, 9]
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [2, 2, 2],
+      "to": [32, 6, 8]
+    },
+    {
+      "op": "replace_region",
+      "block": "oak_planks",
+      "from": [2, 4, 2],
+      "to": [32, 4, 8],
+      "note": "horizontal trim band (between floors) across both wings; also used as possible interior floor"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [2, 1, 2],
+      "to": [32, 1, 8]
+    },
+    {
+      "op": "hollow_box",
+      "block": "air",
+      "from": [3, 2, 3],
+      "to": [31, 5, 7]
+    },
+    {
+      "op": "fill",
+      "block": "brick_block",
+      "from": [2, 7, 2],
+      "to": [32, 8, 8]
+    },
+    {
+      "op": "place_roof_ridge",
+      "block": "brick_block",
+      "from": [3, 9, 3],
+      "to": [31, 9, 7],
+      "note": "ridge spine along long axis, lies within bbox ymax"
+    },
+    {
+      "op": "place",
+      "block": "stone_slab",
+      "from": [2, 8, 2],
+      "to": [32, 8, 8]
+    },
+    {
+      "op": "columns",
+      "block": "quartz_pillar",
+      "positions": [
+        [5, 2, 3],
+        [10, 2, 3],
+        [16, 2, 3],
+        [22, 2, 3],
+        [28, 2, 3],
+        [5, 2, 7],
+        [10, 2, 7],
+        [16, 2, 7],
+        [22, 2, 7],
+        [28, 2, 7]
+      ],
+      "height": 3
+    },
+    {
+      "op": "windows_row",
+      "block": "glass_pane",
+      "from": [4, 3, 3],
+      "to": [30, 3, 3],
+      "spacing": 3,
+      "count": 9,
+      "note": "ground-floor small horizontal windows on left wing corridor face"
+    },
+    {
+      "op": "windows_row",
+      "block": "glass_pane",
+      "from": [4, 5, 3],
+      "to": [30, 5, 3],
+      "spacing": 3,
+      "count": 9,
+      "note": "second-floor small horizontal windows on left wing corridor face"
+    },
+    {
+      "op": "windows_row",
+      "block": "glass_pane",
+      "from": [4, 3, 7],
+      "to": [30, 3, 7],
+      "spacing": 3,
+      "count": 9,
+      "note": "ground-floor windows on right wing corridor face"
+    },
+    {
+      "op": "windows_row",
+      "block": "glass_pane",
+      "from": [4, 5, 7],
+      "to": [30, 5, 7],
+      "spacing": 3,
+      "count": 9,
+      "note": "second-floor windows on right wing corridor face"
+    },
+    {
+      "op": "entrance_opening",
+      "from": [16, 2, 3],
+      "to": [18, 3, 3]
+    },
+    {
+      "op": "entrance_opening",
+      "from": [16, 2, 7],
+      "to": [18, 3, 7]
+    },
+    {
+      "op": "place",
+      "block": "oak_planks",
+      "from": [3, 2, 4],
+      "to": [31, 2, 6],
+      "note": "ground floor corridor wooden flooring"
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [2, 2, 2],
+      "to": [2, 6, 2]
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [32, 2, 2],
+      "to": [32, 6, 2]
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [2, 2, 8],
+      "to": [2, 6, 8]
+    },
+    {
+      "op": "fill",
+      "block": "sandstone",
+      "from": [32, 2, 8],
+      "to": [32, 6, 8]
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [1, 1, 1],
+      "to": [1, 1, 9]
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [33, 1, 1],
+      "to": [33, 1, 9]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [6, 3, 2],
+      "to": [6, 4, 2]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [12, 3, 2],
+      "to": [12, 4, 2]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [18, 3, 2],
+      "to": [18, 4, 2]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [24, 3, 2],
+      "to": [24, 4, 2]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [30, 3, 2],
+      "to": [30, 4, 2]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [6, 3, 8],
+      "to": [6, 4, 8]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [12, 3, 8],
+      "to": [12, 4, 8]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [18, 3, 8],
+      "to": [18, 4, 8]
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",

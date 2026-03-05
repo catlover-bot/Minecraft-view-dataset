@@ -1,0 +1,285 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 16
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "foundation": "quartz",
+    "pillar": "stonebrick",
+    "slab": "stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 16,
+          "label": "main_body"
+        }
+      ],
+      "symmetry": "bilateral_z_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "single open hall",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 6,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 16,
+        "x2": 6,
+        "y2": 2,
+        "z2": 16
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 4,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 1,
+          "z1": 2,
+          "x2": 7,
+          "z2": 14,
+          "block": "brick"
+        },
+        {
+          "y": 5,
+          "x1": 2,
+          "z1": 4,
+          "x2": 6,
+          "z2": 12,
+          "block": "brick"
+        },
+        {
+          "y": 6,
+          "x1": 3,
+          "z1": 6,
+          "x2": 5,
+          "z2": 10,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 16,
+      "block": "quartz",
+      "purpose": "foundation_border"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 1,
+      "z2": 15,
+      "block": "wood",
+      "purpose": "wooden_skirting"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 7,
+      "y2": 3,
+      "z2": 15,
+      "block": "sandstone",
+      "purpose": "wall_main"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 1,
+      "x2": 6,
+      "y2": 2,
+      "z2": 1,
+      "purpose": "window_north_opening"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 15,
+      "x2": 6,
+      "y2": 2,
+      "z2": 15,
+      "purpose": "window_south_opening"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 1,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_nw"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 3,
+      "z": 1,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_nw_top"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 2,
+      "z": 1,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_ne"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 3,
+      "z": 1,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_ne_top"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 2,
+      "z": 15,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_sw"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 3,
+      "z": 15,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_sw_top"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 2,
+      "z": 15,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_se"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 3,
+      "z": 15,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_se_top"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 0,
+      "x2": 6,
+      "y2": 2,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "window_north_panes"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 16,
+      "x2": 6
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 6,
+  "zmin": 0,
+  "zmax": 16,
+  "operations": [
+    {"type": "fill", "material": "quartz", "x1": 0, "y1": 0, "z1": 0, "x2": 8, "y2": 6, "z2": 0, "description": "white foundation border"},
+    {"type": "fill", "material": "oak_wood", "x1": 1, "y1": 1, "z1": 1, "x2": 7, "y2": 5, "z2": 1, "description": "wooden base trim skirting"},
+    {"type": "fill", "material": "sandstone", "x1": 1, "y1": 1, "z1": 2, "x2": 7, "y2": 5, "z2": 4, "description": "sandstone wall mid-section"},
+    {"type": "fill", "material": "stone_bricks", "x1": 1, "y1": 1, "z1": 2, "x2": 1, "y2": 5, "z2": 4, "description": "dark stone corner pillar west"},
+    {"type": "fill", "material": "stone_bricks", "x1": 7, "y1": 1, "z1": 2, "x2": 7, "y2": 5, "z2": 4, "description": "dark stone corner pillar east"},
+    {"type": "fill", "material": "glass", "x1": 2, "y1": 1, "z1": 3, "x2": 6, "y2": 1, "z2": 3, "description": "continuous glass window band south side"},
+    {"type": "fill", "material": "glass", "x1": 2, "y1": 5, "z1": 3, "x2": 6, "y2": 5, "z2": 3, "description": "continuous glass window band north side"},
+    {"type": "fill", "material": "brick", "x1": 2, "y1": 2, "z1": 5, "x2": 6, "y2": 2, "z2": 5, "description": "brick roof step 1 south"},
+    {"type": "fill", "material": "brick", "x1": 2, "y1": 3, "z1": 5, "x2": 6, "y2": 3, "z2": 5, "description": "brick roof step 1 center"},
+    {"type": "fill", "material": "brick", "x1": 2, "y1": 4, "z1": 5, "x2": 6, "y2": 4, "z2": 5, "description": "brick roof step 1 north"},
+    {"type": "fill", "material": "brick", "x1": 3, "y1": 2, "z1": 6, "x2": 5, "y2": 2, "z2": 6, "description": "brick roof step 2 south"},
+    {"type": "fill", "material": "brick", "x1": 3, "y1": 3, "z1": 6, "x2": 5, "y2": 3, "z2": 6, "description": "brick roof step 2 center"},
+    {"type": "fill", "material": "brick", "x1": 3, "y1": 4, "z1": 6, "x2": 5, "y2": 4, "z2": 6, "description": "brick roof step 2 north"},
+    {"type": "fill", "material": "brick", "x1": 4, "y1": 2, "z1": 7, "x2": 4, "y2": 2, "z2": 7, "description": "brick roof peak south"},
+    {"type": "fill", "material": "brick", "x1": 4, "y1": 3, "z1": 7, "x2": 4, "y2": 3, "z2": 7, "description": "brick roof peak center"},
+    {"type": "fill", "material": "brick", "x1": 4, "y1": 4, "z1": 7, "x2": 4, "y2": 4, "z2": 7, "description": "brick roof peak north"},
+    {"type": "fill", "material": "stone_slab", "x1": 2, "y1": 1, "z1": 5, "x2": 6, "y2": 1, "z2": 5, "description": "stone slab roof edge cap south"},
+    {"type": "fill", "material": "stone_slab", "x1": 2, "y1": 5, "z1": 5, "x2": 6, "y2": 5, "z2": 5, "description": "stone slab roof edge cap north"},
+    {"type": "fill", "material": "oak_wood", "x1": 3, "y1": 3, "z1": 1, "x2": 5, "y2": 3, "z2": 1, "description": "wooden floor center"},
+    {"type": "setblock", "material": "air", "x": 4, "y": 3, "z": 2, "description": "entrance opening center"}
+  ],
+  "operation_count": 20,
+  "self_check": {
+    "bbox_valid": true,
+    "all_coords_inside_bbox": true,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,
+    "material_coherence": true,
+    "structural_fidelity": "good",
+    "notes": "Compact plan with 20 operations. Rectangular footprint 7x5 interior. Stepped brick barrel roof with stone slab caps. Continuous glass windows on long sides. Stone corner pillars. Quartz foundation border. Wooden base trim and floor. Single entrance opening at center front. All elements within bbox and material roles distinct."
+  }
+}
+```

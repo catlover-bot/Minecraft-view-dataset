@@ -1,0 +1,73 @@
+{
+  "summary": "Small single-storey rectangular building with brick walls, a stepped dark nether-brick curved roof, stone corner pillars, continuous windows along the visible sides, and a raised white slab border / foundation. Exterior shows a wooden trim/base and a shallow recessed gravel or dirt moat around the white border.",
+  "building_type": "residential or small commercial (uncertain)",
+  "shape": {
+    "overall_form": "rectangular box with stepped curved roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis (roof steps mirrored), corners symmetrical",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 11,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner_pillar",
+      "confidence": 0.6
+    },
+    {
+      "name": "quartz_slab",
+      "role": "foundation_border",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    },
+    {
+      "name": "wood",
+      "role": "lower_trim/flooring",
+      "confidence": 0.7
+    }
+  ],
+  "elements": [
+    "continuous horizontal row of windows on long sides (glass panes)",
+    "single-storey brick walls with stone/stonebrick corner pillars",
+    "stepped dark nether-brick curved roof with stone slab caps at step ends",
+    "raised white slab foundation/border around building",
+    "wooden base trim along bottom of brick wall"
+  ],
+  "rebuild_hints": [
+    "Footprint appears square-ish (about 9x9 interior) with a 1-block white slab border surrounding; roof inset one block from the white border.",
+    "Walls: 3 blocks tall of brick with a row of glass panes centered horizontally across the long faces, stone/stonebrick vertical corner blocks rising to meet a 1-block-high white band (slab or block) under the roof.",
+    "Roof: build a stepped dark nether-brick roof starting one block inset from the white band; each side has multiple 1-block-high tiers creating a curved profile, with stone (likely stone_slab) caps at the tier ends.",
+    "Base: a wooden plank row (1 block high) just above the foundation around the perimeter between brick wall and ground; ground around the white border is lowered (trench) and filled with dirt/gravel.",
+    "Windows: evenly spaced small windows (glass panes) separated by one brick column; count and spacing should match photos (roughly 6 window segments on each long side)."
+  ],
+  "uncertainties": [
+    "Exact block types for the white foundation: appears to be quartz slabs or smooth quartz blocks; uncertain between slab and full block.",
+    "Lower wooden trim: looks like oak planks or stripped wood; uncertain which wood type.",
+    "Corner pillar material: looks like stonebrick or andesite; confidence moderate but not certain.",
+    "Exact internal height and interior layout are unknown (no interior images).",
+    "Precise footprint dimensions are estimated from top views; actual block count may differ by a few blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_096",
+  "created_at": "2026-02-28T14:21:31.958713+00:00"
+}

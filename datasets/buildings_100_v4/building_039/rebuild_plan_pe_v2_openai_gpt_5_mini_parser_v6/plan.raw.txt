@@ -1,0 +1,404 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 17,
+    "zmin": 0,
+    "zmax": 30
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "slab_stone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "nether_brick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "l_shape",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 30,
+          "label": "outer_shell"
+        },
+        {
+          "x1": 3,
+          "z1": 8,
+          "x2": 12,
+          "z2": 30,
+          "label": "courtyard_cutout"
+        }
+      ],
+      "symmetry": "approximate_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground level service area and parapet walk",
+        "perimeter_profile": "thick walls on cobble base"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 12
+        },
+        "rooms_hint": "tower interiors and upper walkway",
+        "perimeter_profile": "walls with crenellations and towers"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 30,
+        "x2": 6,
+        "y2": 3,
+        "z2": 30
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 6,
+        "z1": 0,
+        "x2": 2,
+        "y2": 8,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 12,
+        "y1": 6,
+        "z1": 10,
+        "x2": 12,
+        "y2": 8,
+        "z2": 10
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 6,
+        "z1": 18,
+        "x2": 0,
+        "y2": 8,
+        "z2": 18
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 13,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 13,
+          "x1": 1,
+          "z1": 1,
+          "x2": 11,
+          "z2": 29,
+          "block": "nether_brick"
+        },
+        {
+          "y": 13,
+          "x1": 4,
+          "z1": 9,
+          "x2": 11,
+          "z2": 29,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 30,
+      "block": "nether_brick",
+      "purpose": "courtyard_and_roof_floor_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 30,
+      "block": "stonebrick",
+      "purpose": "outer_wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 1,
+      "z2": 30,
+      "block": "cobblestone",
+      "purpose": "cobble_foundation"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 1,
+      "z1": 9,
+      "x2": 11,
+      "y2": 12,
+      "z2": 29,
+      "purpose": "inner_courtyard_open"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 11,
+      "y2": 12,
+      "z2": 29,
+      "block": "stonebrick",
+      "purpose": "upper_wall_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 10,
+      "y2": 4,
+      "z2": 28,
+      "purpose": "interior_ground_hall"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 30,
+      "block": "slab_stone",
+      "purpose": "parapet_shelf"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 12,
+      "y2": 5,
+      "z2": 30,
+      "block": "stonebrick",
+      "purpose": "crenellation_base"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 11,
+      "y2": 8,
+      "z2": 29,
+      "purpose": "parapet_walkway_clear"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 30,
+      "block": "cobblestone",
+      "purpose": "spaced_cobble_posts_west_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 5,
+      "z1": 0,
+      "x2": 12,
+      "y2": 7,
+      "z2": 30,
+      "block": "cobblestone",
+      "purpose": "spaced_cobble_posts_east_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 12,
+      "y2": 5,
+      "z2": 30,
+      "block": "slab_stone",
+      "purpose": "parapet_edge_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 12,
+  "ymin": 0,
+  "ymax": 17,
+  "zmin": 0,
+  "zmax": 30,
+  "operations": [
+    {
+      "op": "fill",
+      "bbox": [0, 0, 0, 12, 0, 30],
+      "block": "air",
+      "desc": "Clear ground-level interior area"
+    },
+    {
+      "op": "fill",
+      "bbox": [0, 0, 0, 12, 1, 30],
+      "block": "cobblestone",
+      "desc": "Cobblestone foundation layer (1 block high) across footprint"
+    },
+    {
+      "op": "fill",
+      "bbox": [1, 1, 1, 11, 1, 29],
+      "block": "nether_brick",
+      "desc": "Inset nether-brick courtyard floor one block above foundation inside perimeter"
+    },
+    {
+      "op": "fill",
+      "bbox": [0, 1, 0, 12, 4, 30],
+      "block": "stonebrick",
+      "desc": "Outer walls full-fill to wall height (3 blocks above foundation; y=1..4). This creates solid wall volume to carve details into."
+    },
+    {
+      "op": "hollow",
+      "bbox": [1, 2, 1, 11, 4, 29],
+      "desc": "Hollow inner room space above courtyard floor so interior is open; preserves 1-block-thick outer walls"
+    },
+    {
+      "op": "fill",
+      "bbox": [0, 4, 0, 12, 4, 30],
+      "block": "stonebrick_slab",
+      "desc": "Parapet cap slab layer on top of walls (slab_stone) at same y as top wall to form edge"
+    },
+    {
+      "op": "replace",
+      "bbox": [0, 1, 0, 12, 4, 30],
+      "target": "stonebrick",
+      "block": "stonebrick",
+      "pattern": "vertical_groove",
+      "desc": "Decorative vertical grooves simulated by leaving 1-block inset grooves: implemented by clearing grooves in next step"
+    },
+    {
+      "op": "set_blocks",
+      "blocks": [
+        { "x": 2, "y": 2, "z": 0, "block": "air" },
+        { "x": 5, "y": 2, "z": 0, "block": "air" },
+        { "x": 8, "y": 2, "z": 0, "block": "air" },
+        { "x": 2, "y": 2, "z": 30, "block": "air" },
+        { "x": 5, "y": 2, "z": 30, "block": "air" },
+        { "x": 8, "y": 2, "z": 30, "block": "air" },
+        { "x": 0, "y": 2, "z": 3, "block": "air" },
+        { "x": 0, "y": 2, "z": 7, "block": "air" },
+        { "x": 0, "y": 2, "z": 11, "block": "air" },
+        { "x": 12, "y": 2, "z": 3, "block": "air" },
+        { "x": 12, "y": 2, "z": 7, "block": "air" },
+        { "x": 12, "y": 2, "z": 11, "block": "air" }
+      ],
+      "desc": "Carve spaced vertical grooves into wall faces (1x1 notches) to simulate decorative grooves and avoid collapsing material roles"
+    },
+    {
+      "op": "fill",
+      "bbox": [0, 1, 0, 0, 4, 0],
+      "block": "cobblestone",
+      "desc": "Ensure corner foundation solidity (single block fills at corners already covered by foundation layer)"
+    },
+    {
+      "op": "fill",
+      "bbox": [0, 1, 0, 2, 15, 2],
+      "block": "stonebrick",
+      "desc": "Tower A (southwest) solid core up to y=15 (taller than wall). Footprint 3x3 at x=0..2 z=0..2"
+    },
+    {
+      "op": "fill",
+      "bbox": [10, 1, 0, 12, 15, 2],
+      "block": "stonebrick",
+      "desc": "Tower B (southeast) footprint 3x3 at x=10..12 z=0..2 up to y=15"
+    },
+    {
+      "op": "fill",
+      "bbox": [0, 1, 28, 2, 15, 30],
+      "block": "stonebrick",
+      "desc": "Tower C (northwest) footprint 3x3 at x=0..2 z=28..30 up to y=15"
+    },
+    {
+      "op": "fill",
+      "bbox": [5, 1, 28, 7, 12, 30],
+      "block": "stonebrick",
+      "desc": "Smaller mid-side tower (north side center) footprint 3x3 at x=5..7 z=28..30 up to y=12"
+    },
+    {
+      "op": "replace",
+      "bbox": [0, 14, 0, 12, 15, 30],
+      "target": "stonebrick",
+      "block": "slab_stone",
+      "desc": "Tower and parapet caps: topmost layer replaced with stone slabs to form overhanging caps"
+    },
+    {
+      "op": "set_blocks",
+      "blocks": [
+        { "x": 1, "y": 15, "z": 1, "block": "glowstone" },
+        { "x": 11, "y": 15, "z": 1, "block": "glowstone" },
+        { "x": 1, "y": 15, "z": 29, "block": "glowstone" },
+        { "x": 6, "y": 12, "z": 29, "block": "glowstone" }
+      ],
+      "desc": "Glowstone on tower tops, one per tower"
+    },
+    {
+      "op": "fill",
+      "bbox": [1, 5, 1, 11, 5, 29],
+      "block": "air",
+      "desc": "Keep courtyard open to sky by clearing above nether-brick floor to at least y=5"
+    },
+    {
+      "op": "fill",
+      "bbox": [1, 1, 1, 11, 1, 29],
+      "block": "nether_brick_slab",
+      "desc": "Lowered nether-brick floor (slab) for courtyard inset aesthetic; replaces previous nether_brick full block to preserve contrast"
+    },
+    {
+      "op": "fill",
+      "bbox": [0, 1, 0, 12, 1, 30],
+      "block": "cobblestone",
+      "desc": "Reaffirm cobblestone foundation visible around base (foundation layer)"
+    },
+    {
+      "op": "set_blocks",
+      "blocks": [
+        { "x": 6, "y": 2, "z": 0, "block": "air" },
+        { "x": 6, "y": 2, "z": 1, "block": "air" }
+      ],
+      "desc": "Entrance opening centered on south wall at ground

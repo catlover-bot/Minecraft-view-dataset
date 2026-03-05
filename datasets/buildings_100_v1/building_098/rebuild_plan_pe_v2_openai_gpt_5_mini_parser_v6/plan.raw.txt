@@ -1,0 +1,467 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 6
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "wood",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 6,
+          "label": "main"
+        }
+      ],
+      "symmetry": "x_axis_centered_along_x=5"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 2
+        },
+        "rooms_hint": "ground level open hall with entrance",
+        "perimeter_profile": "rectangle with 1-block quartz foundation"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 3,
+          "ymax": 5
+        },
+        "rooms_hint": "upper floor continuous window band",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 5,
+        "y1": 1,
+        "z1": 0,
+        "x2": 5,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 1,
+        "z1": 0,
+        "x2": 9,
+        "y2": 1,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 4,
+        "z1": 0,
+        "x2": 9,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 1,
+        "z1": 6,
+        "x2": 9,
+        "y2": 1,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 4,
+        "z1": 6,
+        "x2": 9,
+        "y2": 4,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 6,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 6,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 6,
+          "block": "brick"
+        },
+        {
+          "y": 7,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 5,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 6,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 5,
+      "z2": 6,
+      "block": "sandstone",
+      "purpose": "outer_walls_full_height"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 6,
+      "block": "quartz",
+      "purpose": "foundation_border_overwrite",
+      "note": "white one-block border at base (same as floor level to ensure continuous look)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 6,
+      "block": "quartz",
+      "purpose": "white_capping_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 10,
+      "y2": 3,
+      "z2": 6,
+      "block": "wood",
+      "purpose": "horizontal_trim_between_floors"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 5,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 5,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 6,
+      "x2": 0,
+      "y2": 5,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 10,
+      "y1": 1,
+      "z1": 6,
+      "x2": 10,
+      "y2": 5,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "corner_pillar_se"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 9,
+      "y2": 1,
+      "z2": 0,
+      "purpose": "north_ground_window_band_recess"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 9,
+      "y2": 1,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "north_ground_window_band"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 4,
+      "z1": 0,
+      "x2": 9,
+      "y2": 4,
+      "z2": 0,
+      "purpose": "north_upper_window_band_recess"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 9,
+  "zmin": 0,
+  "zmax": 6,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "minecraft:smooth_quartz",
+      "from": [0, 0, 0],
+      "to": [10, 0, 6],
+      "comment": "foundation/ground border (one-block-high white border surrounding building footprint)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:dirt",
+      "from": [1, -1, 1],
+      "to": [9, -1, 5],
+      "comment": "lowered dirt foundation under building interior (optional, kept minimal). Note: coordinates must remain inside bbox; use y>=0 so we instead fill interior floor with planks below."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_planks",
+      "from": [1, 1, 1],
+      "to": [9, 1, 5],
+      "comment": "ground-floor interior floor layer (1 block thick). Footprint interior excludes quartz border."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": [1, 2, 1],
+      "to": [9, 4, 5],
+      "comment": "ground and first-floor walls main volume up to just below roof start. This creates two stories: ground story (y=2-3) and second story (y=4)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:oak_planks",
+      "from": [1, 4, 1],
+      "to": [9, 4, 5],
+      "comment": "horizontal wooden trim/separator between floors (one-block-high band). Placed at y=4 across full footprint interior walls."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": [1, 5, 1],
+      "to": [9, 7, 5],
+      "comment": "second-story walls above trim up to top band. Keeps wall material distinct from trim."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:smooth_quartz",
+      "from": [1, 8, 1],
+      "to": [9, 8, 5],
+      "comment": "upper white cap band/cornice running across top of walls (one-block-high)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [1, 2, 1],
+      "to": [1, 8, 1],
+      "comment": "corner pillar NW full height (stonebrick)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [9, 2, 1],
+      "to": [9, 8, 1],
+      "comment": "corner pillar NE full height (stonebrick)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [1, 2, 5],
+      "to": [1, 8, 5],
+      "comment": "corner pillar SW full height (stonebrick)."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [9, 2, 5],
+      "to": [9, 8, 5],
+      "comment": "corner pillar SE full height (stonebrick)."
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [2, 3, 1],
+      "comment": "window band front ground-floor (continuous horizontal band); will be repeated programmatically in loop-equivalent operations below."
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [3, 3, 1],
+      "comment": "front ground-floor window"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [4, 3, 1],
+      "comment": "front ground-floor window"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [5, 3, 1],
+      "comment": "front ground-floor window"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [6, 3, 1],
+      "comment": "front ground-floor window"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [7, 3, 1],
+      "comment": "front ground-floor window"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [8, 3, 1],
+      "comment": "front ground-floor window"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [2, 6, 1],
+      "comment": "front second-floor window band"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [3, 6, 1],
+      "comment": "front second-floor window band"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [4, 6, 1],
+      "comment": "front second-floor window band"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [5, 6, 1],
+      "comment": "front second-floor window band"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [6, 6, 1],
+      "comment": "front second-floor window band"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [7, 6, 1],
+      "comment": "front second-floor window band"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:glass_pane",
+      "at": [8, 6, 1],
+      "comment": "front second-floor window band"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:air",
+      "at": [5, 2, 1],
+      "comment": "entrance opening (centered on front short side), two-block-high doorway: opening lower block"
+    },
+    {
+      "op": "set",
+      "block": "minecraft:air",
+      "at": [5, 3, 1],
+      "comment": "entrance opening upper block (door will be placed by player later)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": [0, 9, 1],
+      "to": [10, 9, 5],
+      "comment": "roof ridge/uppermost brick layer (start of stepped gable). This is within bbox y<=9."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": [1, 8, 1],
+      "to": [9, 8, 5],
+      "comment": "brick roof layer one step lower (stepped gable). Overlaps with quartz cap at edges — quartz cap remains at wall tops; brick sits over it inwardly."
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from":

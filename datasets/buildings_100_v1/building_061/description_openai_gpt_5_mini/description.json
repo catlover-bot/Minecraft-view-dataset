@@ -1,0 +1,72 @@
+{
+  "summary": "Single-storey rectangular pavilion with stepped oak plank gable-like roof, stone-brick lower walls, a white smooth border plinth and continuous row of windows on each long side. Building sits centered inside a shallow recessed dirt perimeter.",
+  "building_type": "pavilion/small hall",
+  "shape": {
+    "overall_form": "simple rectangular box with a symmetrical stepped roof running along the long axis",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along the roof ridge (longitudinal symmetry)",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 7,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "wood",
+      "role": "roof/plinth",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "lower wall (stone brick)",
+      "confidence": 0.85
+    },
+    {
+      "name": "smooth_quartz_or_concrete",
+      "role": "outer border/plinth",
+      "confidence": 0.6
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.95
+    },
+    {
+      "name": "cobblestone",
+      "role": "corner/vertical accent",
+      "confidence": 0.6
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof edge/step",
+      "confidence": 0.5
+    }
+  ],
+  "elements": [
+    "continuous horizontal row of glass windows along each long side (4-5 windows per side)",
+    "raised inner wooden floor/plinth visible at base of walls",
+    "stepped layered oak plank roof with stone slab end-caps",
+    "white smooth border (one block wide) around building perimeter at ground level",
+    "stonebrick lower wall band and occasional cobblestone corner blocks"
+  ],
+  "rebuild_hints": [
+    "Footprint is rectangular with a 1-block white smooth border around the base; build inner floor one block inset from that border.",
+    "Lower wall: one to two block high wood plank (base), then ~2 blocks of stonebrick with glass windows inserted in the middle band.",
+    "Roof: centered ridge along long axis using oak planks laid as horizontal stepped layers descending to each side; place stone slabs or similar at each step's end as caps.",
+    "Place cobblestone or textured block at short-side corners as vertical accents.",
+    "Windows are narrow horizontal panes separated by 1-block stonebrick columns; repeat evenly along each long side."
+  ],
+  "uncertainties": [
+    "Exact material for the white border is ambiguous (quartz, white concrete, or smooth stone); labeled as smooth_quartz_or_concrete with medium confidence.",
+    "Precise block types for roof caps and small decorative slabs are uncertain (stone slab vs smooth stone slab).",
+    "Internal layout, floor height, and presence of doors/entrances are not visible from provided views; entrance location and interior details are unknown.",
+    "Exact footprint dimensions estimated from pixel views; actual block counts may differ by a few blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_061",
+  "created_at": "2026-02-28T14:12:37.961718+00:00"
+}

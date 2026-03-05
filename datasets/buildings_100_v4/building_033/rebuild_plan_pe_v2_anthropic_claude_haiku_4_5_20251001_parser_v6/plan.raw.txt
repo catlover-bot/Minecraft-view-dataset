@@ -1,0 +1,276 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 32
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "cobblestone",
+    "glass": "smooth_stone_slab",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "complex",
+      "segments": [
+        {
+          "x1": 6,
+          "z1": 0,
+          "x2": 14,
+          "z2": 8,
+          "label": "north_arm"
+        },
+        {
+          "x1": 6,
+          "z1": 24,
+          "x2": 14,
+          "z2": 32,
+          "label": "south_arm"
+        },
+        {
+          "x1": 0,
+          "z1": 12,
+          "x2": 8,
+          "z2": 20,
+          "label": "west_arm"
+        },
+        {
+          "x1": 12,
+          "z1": 12,
+          "x2": 20,
+          "z2": 20,
+          "label": "east_arm"
+        },
+        {
+          "x1": 6,
+          "z1": 12,
+          "x2": 14,
+          "z2": 20,
+          "label": "central_core"
+        }
+      ],
+      "symmetry": "fourfold_axial"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 1
+        },
+        "rooms_hint": "single open temple interior with central dome",
+        "perimeter_profile": "cruciform"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 7,
+        "y1": 2,
+        "z1": 1,
+        "x2": 13,
+        "y2": 3,
+        "z2": 1
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 4,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 6,
+          "z1": 12,
+          "x2": 14,
+          "z2": 20,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 7,
+          "z1": 13,
+          "x2": 13,
+          "z2": 19,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 8,
+          "z1": 14,
+          "x2": 12,
+          "z2": 18,
+          "block": "smooth_stone_slab"
+        },
+        {
+          "y": 7,
+          "x1": 9,
+          "z1": 15,
+          "x2": 11,
+          "z2": 17,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 10,
+          "z1": 16,
+          "x2": 10,
+          "z2": 16,
+          "block": "glowstone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 32,
+      "block": "dirt",
+      "purpose": "yard_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 1,
+      "y2": 1,
+      "z2": 32,
+      "block": "cobblestone",
+      "purpose": "perimeter_west"
+    },
+    {
+      "op": "fill",
+      "x1": 19,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 32,
+      "block": "cobblestone",
+      "purpose": "perimeter_east"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 1,
+      "block": "cobblestone",
+      "purpose": "perimeter_north"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 31,
+      "x2": 20,
+      "y2": 1,
+      "z2": 32,
+      "block": "cobblestone",
+      "purpose": "perimeter_south"
+    },
+    {
+      "op": "set",
+      "x": 2,
+      "y": 1,
+      "z": 8,
+      "block": "cobblestone",
+      "purpose": "post_nw"
+    },
+    {
+      "op": "set",
+      "x": 18,
+      "y": 1,
+      "z": 8,
+      "block": "cobblestone",
+      "purpose": "post_ne"
+    },
+    {
+      "op": "set",
+      "x": 2,
+      "y": 1,
+      "z": 24,
+      "block": "cobblestone",
+      "purpose": "post_sw"
+    },
+    {
+      "op": "set",
+      "x": 18,
+      "y": 1,
+      "z": 24,
+      "block": "cobblestone",
+      "purpose": "post_se"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 1,
+      "
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 21,
+  "ymin": 0,
+  "ymax": 9,
+  "zmin": 0,
+  "zmax": 33,
+  "operations": [
+    {"type": "fill", "material": "dirt", "x1": 0, "y1": 0, "z1": 0, "x2": 21, "y2": 0, "z2": 33, "role": "ground"},
+    {"type": "fill", "material": "stonebrick", "x1": 2, "y1": 1, "z1": 8, "x2": 19, "y2": 3, "z2": 8, "role": "north_wall_base"},
+    {"type": "fill", "material": "stonebrick", "x1": 2, "y1": 1, "z1": 24, "x2": 19, "y2": 3, "z2": 24, "role": "south_wall_base"},
+    {"type": "fill", "material": "stonebrick", "x1": 8, "y1": 1, "z1": 2, "x2": 13, "y2": 3, "z2": 30, "role": "east_wall_base"},
+    {"type": "fill", "material": "stonebrick", "x1": 8, "y1": 1, "z1": 2, "x2": 13, "y2": 3, "z2": 30, "role": "west_wall_base"},
+    {"type": "fill", "material": "stonebrick", "x1": 2, "y1": 4, "z1": 8, "x2": 19, "y2": 5, "z2": 8, "role": "north_wall_mid"},
+    {"type": "fill", "material": "stonebrick", "x1": 2, "y1": 4, "z1": 24, "x2": 19, "y2": 5, "z2": 24, "role": "south_wall_mid"},
+    {"type": "fill", "material": "stonebrick", "x1": 8, "y1": 4, "z1": 2, "x2": 13, "y2": 5, "z2": 30, "role": "east_wall_mid"},
+    {"type": "fill", "material": "stonebrick", "x1": 8, "y1": 4, "z1": 2, "x2": 13, "y2": 5, "z2": 30, "role": "west_wall_mid"},
+    {"type": "fill", "material": "stonebrick", "x1": 2, "y1": 6, "z1": 8, "x2": 19, "y2": 7, "z2": 8, "role": "north_wall_upper"},
+    {"type": "fill", "material": "stonebrick", "x1": 2, "y1": 6, "z1": 24, "x2": 19, "y2": 7, "z2": 24, "role": "south_wall_upper"},
+    {"type": "fill", "material": "stonebrick", "x1": 8, "y1": 6, "z1": 2, "x2": 13, "y2": 7, "z2": 30, "role": "east_wall_upper"},
+    {"type": "fill", "material": "stonebrick", "x1": 8, "y1": 6, "z1": 2, "x2": 13, "y2": 7, "z2": 30, "role": "west_wall_upper"},
+    {"type": "fill", "material": "smooth_stone_slab", "x1": 8, "y1": 1, "z1": 15, "x2": 13, "y2": 1, "z2": 17, "role": "central_walkway"},
+    {"type": "fill", "material": "smooth_stone_slab", "x1": 10, "y1": 1, "z1": 8, "x2": 11, "y2": 1, "z2": 24, "role": "main_approach"},
+    {"type": "fill", "material": "cobblestone", "x1": 1, "y1": 1, "z1": 1, "x2": 1, "y2": 1, "z2": 32, "role": "perimeter_posts_north"},
+    {"type": "fill", "material": "cobblestone", "x1": 20, "y1": 1, "z1": 1, "x2": 20, "y2": 1, "z2": 32, "role": "perimeter_posts_south"},
+    {"type": "fill", "material": "cobblestone", "x1": 2, "y1": 1, "z1": 1, "x2": 19, "y2": 1, "z2": 1, "role": "perimeter_posts_west"},
+    {"type": "fill", "material": "cobblestone", "x1": 2, "y1": 1, "z1": 32, "x2": 19, "y2": 1, "z2": 32, "role": "perimeter_posts_east"},
+    {"type": "fill", "material": "nether_brick", "x1": 9, "y1": 5, "z1": 15, "x2": 12, "y2": 5, "z2": 17, "role": "dome_base_ring"},
+    {"type": "fill", "material": "nether_brick", "x1": 9, "y1": 6, "z1": 15, "x2": 12, "y2": 6, "z2": 17, "role": "dome_mid_ring"},
+    {"type": "fill", "material": "nether_brick", "x1": 10, "y1": 7, "z1": 16, "x2": 11, "y2": 7, "z2": 16, "role": "dome_upper_ring"},
+    {"type": "fill", "material": "glowstone", "x1": 10, "y1": 8, "z1": 16, "x2": 11, "y2": 8, "z2": 16, "role": "dome_apex_light"},
+    {"type": "fill", "material": "air", "x1": 3, "y1": 1, "z1": 8, "x2": 7, "y2": 3, "z2": 8, "role": "north_entrance_opening"},
+    {"type": "fill", "material": "air", "x1": 14, "y1": 1, "z1": 8, "x2": 18, "y2": 3, "z2": 8, "role": "north_entrance_opening_alt"},
+    {"type": "fill", "material": "air", "x1": 3, "y1": 1, "z1": 24

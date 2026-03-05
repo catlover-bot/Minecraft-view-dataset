@@ -1,0 +1,71 @@
+{
+  "summary": "A small rectangular single-story house with horizontal plank walls, a raised stonebrick border foundation, narrow continuous windows on the long sides, corner log posts, and a stepped dark-red tiled gable-like roof with stonebrick slab accents along the eaves.",
+  "building_type": "residential_small_house",
+  "shape": {
+    "overall_form": "simple elongated rectangle with a centered pitched/stepped roof running along the long axis",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long centerline",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 7,
+    "depth": 17,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "wood_planks",
+      "role": "wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "log",
+      "role": "corner_post",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "foundation/trim",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "window",
+      "confidence": 0.98
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof_eave_accent",
+      "confidence": 0.9
+    }
+  ],
+  "elements": [
+    "long continuous three-pane high windows along both long sides (repeating openings)",
+    "stonebrick border foundation plinth one-block high with corner returns",
+    "vertical log corner posts framing walls",
+    "stepped/stacked nether-brick roof with stonebrick slab accents at each step",
+    "raised shallow platform base (stone) around building"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular footprint roughly 7 blocks wide (short side) by 17 blocks long (long side) on a 1-block high stonebrick border plinth.",
+    "Use vertical logs at the four corners and fill walls between logs with horizontal wood planks; leave a row of glass windows (single-block tall, repeating) centered on the wall height.",
+    "Construct a stepped nether-brick roof along the long axis: center ridge running lengthwise, step down outward in symmetrical terraces; cap each step edge with stonebrick slabs (or single stonebrick blocks) as eaves.",
+    "Ensure the stonebrick plinth projects one block out from the wall all around to form a visible border/platform."
+  ],
+  "uncertainties": [
+    "Exact block counts for width/depth/height are estimated from images; internal room layout and door location are not visible.",
+    "Roof may be nether_brick_stairs or nether_brick_slab combinations; I labelled as nether_brick (roof) with high but not absolute confidence.",
+    "Ground material surrounding the house is unclear (appears as dirt/terracotta-like), not used as a primary material for the building itself.",
+    "Possible small decorative details (interior, back wall, door placement) are not visible in provided views."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_065",
+  "created_at": "2026-02-28T14:13:46.049713+00:00"
+}

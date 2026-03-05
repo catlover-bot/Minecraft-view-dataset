@@ -1,0 +1,476 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 15,
+    "zmin": 0,
+    "zmax": 20
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "coarse_dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 20,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_x_centered (approx front-back symmetrical)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "raised base and ground floor open hall",
+        "perimeter_profile": "raised base pad"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 10
+        },
+        "rooms_hint": "upper gallery level with tower access",
+        "perimeter_profile": "rectangular with corner towers"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 5,
+        "y1": 1,
+        "z1": 0,
+        "x2": 6,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 6,
+        "z1": 0,
+        "x2": 3,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 9,
+        "y1": 6,
+        "z1": 0,
+        "x2": 9,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 7,
+        "z1": 5,
+        "x2": 0,
+        "y2": 8,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 12,
+        "y1": 7,
+        "z1": 15,
+        "x2": 12,
+        "y2": 8,
+        "z2": 15
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 11,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 11,
+          "x1": 2,
+          "z1": 2,
+          "x2": 10,
+          "z2": 18,
+          "block": "wood"
+        },
+        {
+          "y": 12,
+          "x1": 3,
+          "z1": 3,
+          "x2": 9,
+          "z2": 17,
+          "block": "wood"
+        },
+        {
+          "y": 13,
+          "x1": 4,
+          "z1": 5,
+          "x2": 8,
+          "z2": 15,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 20,
+      "block": "coarse_dirt",
+      "purpose": "ground_plane"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 1,
+      "z2": 20,
+      "block": "quartz_block",
+      "purpose": "raised_perimeter_base_pad"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 11,
+      "y2": 2,
+      "z2": 19,
+      "block": "quartz_block",
+      "purpose": "base_belt_second_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 11,
+      "y2": 10,
+      "z2": 19,
+      "block": "stonebrick",
+      "purpose": "main_shell_solid"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 3,
+      "z1": 2,
+      "x2": 10,
+      "y2": 9,
+      "z2": 18,
+      "purpose": "interior_hall_open"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 11,
+      "y2": 5,
+      "z2": 19,
+      "block": "quartz_block",
+      "purpose": "horizontal_trim_band_mid"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 9,
+      "z1": 1,
+      "x2": 11,
+      "y2": 9,
+      "z2": 19,
+      "block": "quartz_block",
+      "purpose": "horizontal_trim_band_upper"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 11,
+      "z2": 20,
+      "block": "stonebrick",
+      "purpose": "west_outer_wall_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 12,
+      "y1": 2,
+      "z1": 0,
+      "x2": 12,
+      "y2": 11,
+      "z2": 20,
+      "block": "stonebrick",
+      "purpose": "east_outer_wall_edge"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 12,
+      "y2": 11,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "north_outer_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 20,
+      "x2": 12,
+      "y2": 11,
+      "z2": 20,
+      "block": "stonebrick",
+      "purpose": "south_outer_wall"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": 0,
+      "x2": 6,
+      "y2": 3,
+      "z2": 0,
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 12,
+  "ymin": 0,
+  "ymax": 16,
+  "zmin": 0,
+  "zmax": 20,
+  "operations": [
+    {
+      "id": 1,
+      "type": "fill",
+      "block": "coarse_dirt",
+      "from": [0, 0, 0],
+      "to": [12, 0, 20],
+      "comment": "ground plane (1-layer)"
+    },
+    {
+      "id": 2,
+      "type": "fill",
+      "block": "quartz_block",
+      "from": [0, 1, 0],
+      "to": [12, 1, 20],
+      "comment": "raised white perimeter base (1 block high continuous pad)"
+    },
+    {
+      "id": 3,
+      "type": "outline",
+      "block": "quartz_block",
+      "from": [0, 1, 0],
+      "to": [12, 1, 20],
+      "thickness": 1,
+      "comment": "ensure visible perimeter band (same as base but kept as outline semantic)"
+    },
+    {
+      "id": 4,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [1, 2, 1],
+      "to": [11, 8, 19],
+      "comment": "main body walls base layer up to first trim band (walls run inside the white perimeter)"
+    },
+    {
+      "id": 5,
+      "type": "fill",
+      "block": "quartz_block",
+      "from": [1, 9, 1],
+      "to": [11, 9, 19],
+      "comment": "first horizontal white trim band across long faces (at y=9)"
+    },
+    {
+      "id": 6,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [1, 10, 1],
+      "to": [11, 12, 19],
+      "comment": "second wall segment between trim bands"
+    },
+    {
+      "id": 7,
+      "type": "fill",
+      "block": "quartz_block",
+      "from": [1, 13, 1],
+      "to": [11, 13, 19],
+      "comment": "second horizontal white trim band (at y=13)"
+    },
+    {
+      "id": 8,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [1, 14, 1],
+      "to": [11, 15, 19],
+      "comment": "upper wall segment up to roof base (caps main body height within bbox)"
+    },
+    {
+      "id": 9,
+      "type": "fill",
+      "block": "wooden_planks",
+      "from": [5, 14, 1],
+      "to": [7, 14, 19],
+      "comment": "interior floor/ceiling between levels (single wooden layer at y=14 to delineate floors)"
+    },
+    {
+      "id": 10,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [0, 2, 0],
+      "to": [0, 15, 0],
+      "comment": "corner tower 1 (NW) column - will be expanded; initial edge to ensure bbox containment"
+    },
+    {
+      "id": 11,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [12, 2, 0],
+      "to": [12, 15, 0],
+      "comment": "corner tower 2 (NE) edge"
+    },
+    {
+      "id": 12,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [0, 2, 20],
+      "to": [0, 15, 20],
+      "comment": "corner tower 3 (SW) edge"
+    },
+    {
+      "id": 13,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [12, 2, 20],
+      "to": [12, 15, 20],
+      "comment": "corner tower 4 (SE) edge"
+    },
+    {
+      "id": 14,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [1, 2, 1],
+      "to": [3, 15, 3],
+      "comment": "full NW tower column (3x3 footprint) inset 1 from perimeter; height to y=15"
+    },
+    {
+      "id": 15,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [9, 2, 1],
+      "to": [11, 15, 3],
+      "comment": "full NE tower column (3x3)"
+    },
+    {
+      "id": 16,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [1, 2, 17],
+      "to": [3, 15, 19],
+      "comment": "full SW tower column (3x3)"
+    },
+    {
+      "id": 17,
+      "type": "fill",
+      "block": "stonebrick",
+      "from": [9, 2, 17],
+      "to": [11, 15, 19],
+      "comment": "full SE tower column (3x3)"
+    },
+    {
+      "id": 18,
+      "type": "hollow_fill",
+      "block": "air",
+      "from": [2, 4, 2],
+      "to": [10, 14, 18],
+      "comment": "clear interior space (create internal rooms); keep walls intact"
+    },
+    {
+      "id": 19,
+      "type": "replace",
+      "block": "glass",
+      "from": [2, 6, 2],
+      "to": [2, 6, 2],
+      "comment": "NW tower small window (single block) at y=6"
+    },
+    {
+      "id": 20,
+      "type": "replace",
+      "block": "glass",
+      "from": [10, 6, 2],
+      "to": [10, 6, 2],
+      "comment": "NE tower small window"
+    },
+    {
+      "id": 21,
+      "type": "replace",
+      "block": "glass",
+      "from": [2, 8, 18],
+      "to": [2, 8, 18],
+      "comment": "SW tower small window"
+    },
+    {
+      "id": 22,
+      "type": "replace",
+      "block": "glass",
+      "from": [10, 8, 18],
+      "to": [10, 8, 18],
+      "comment": "SE tower small window"
+    },
+    {
+      "id": 23,
+      "type": "fill",
+      "block": "stone_slab",
+      "from": [0, 16, 0],
+      "to": [12, 16, 20],
+      "comment": "roof edging slab layer around full bbox top (stone slab cap at y=16) - establishes eave line"
+    },
+    {
+      "id": 24,
+      "type": "fill",
+      "block": "wooden_stairs",
+      "from": [4, 15, 2],
+      "to": [8, 15, 18],
+      "comment": "central pitched roof ridge: wooden stairs row along center to form gable profile base (within bbox height)"
+    },
+    {
+      "id": 25,
+      "type": "fill",
+      "block": "wooden_planks",
+      "from": [5, 16, 3],
+      "to": [7, 16,

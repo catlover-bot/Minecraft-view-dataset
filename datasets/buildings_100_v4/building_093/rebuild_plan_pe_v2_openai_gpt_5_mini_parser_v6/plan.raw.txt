@@ -1,0 +1,465 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 22,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 18
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "slab_stone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "cobblestone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 22,
+          "z2": 18,
+          "label": "outer_shell"
+        }
+      ],
+      "symmetry": "bilateral_x_center (along x=11)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground level with perimeter walkway and open central courtyard",
+        "perimeter_profile": "thick_walls_with_posts"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "upper wall walkway and tower base",
+        "perimeter_profile": "parapet_with_windows"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 9,
+          "ymax": 12
+        },
+        "rooms_hint": "tower cap and roof",
+        "perimeter_profile": "tower_rise"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 10,
+        "y1": 1,
+        "z1": 0,
+        "x2": 12,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 3,
+        "y1": 2,
+        "z1": 0,
+        "x2": 4,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 18,
+        "y1": 2,
+        "z1": 0,
+        "x2": 19,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 3,
+        "y1": 2,
+        "z1": 18,
+        "x2": 4,
+        "y2": 3,
+        "z2": 18
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 18,
+        "y1": 2,
+        "z1": 18,
+        "x2": 19,
+        "y2": 3,
+        "z2": 18
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 6,
+        "x2": 0,
+        "y2": 3,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 22,
+        "y1": 2,
+        "z1": 11,
+        "x2": 22,
+        "y2": 3,
+        "z2": 12
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 9,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 3,
+          "z1": 4,
+          "x2": 10,
+          "z2": 14,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 4,
+          "x2": 11,
+          "z2": 14,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 1,
+          "z1": 4,
+          "x2": 12,
+          "z2": 14,
+          "block": "nether_brick"
+        },
+        {
+          "y": 5,
+          "x1": 12,
+          "z1": 4,
+          "x2": 19,
+          "z2": 14,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 11,
+          "z1": 4,
+          "x2": 20,
+          "z2": 14,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 10,
+          "z1": 4,
+          "x2": 21,
+          "z2": 14,
+          "block": "nether_brick"
+        },
+        {
+          "y": 10,
+          "x1": 9,
+          "z1": 7,
+          "x2": 13,
+          "z2": 11,
+          "block": "slab_stone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 22,
+      "y2": 0,
+      "z2": 18,
+      "block": "cobblestone",
+      "purpose": "outer_perimeter_posts_base_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 22,
+      "y2": 4,
+      "z2": 18,
+      "block": "stonebrick",
+      "purpose": "outer_shell_walls"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_west_south_buttress_pixel (placeholder)"
+    },
+    {
+      "op": "fill",
+      "x1": 22,
+      "y1": 1,
+      "z1": 0,
+      "x2": 22,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "corner_east_south_buttress_pixel (placeholder)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 18,
+      "x2": 0,
+      "y2": 4,
+      "z2": 18,
+      "block": "stonebrick",
+      "purpose": "corner_west_north_buttress_pixel (placeholder)"
+    },
+    {
+      "op": "fill",
+      "x1": 22,
+      "y1": 1,
+      "z1": 18,
+      "x2": 22,
+      "y2": 4,
+      "z2": 18,
+      "block": "stonebrick",
+      "purpose": "corner_east_north
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 23,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 19,
+  "operations": [
+    {
+      "op": "fill",
+      "from": [0, 0, 0],
+      "to": [23, 0, 19],
+      "block": "stonebrick",
+      "note": "ground floor base layer (floor layer 0): continuous foundation/floor to ensure a consistent floor plane"
+    },
+    {
+      "op": "fill",
+      "from": [1, 1, 1],
+      "to": [22, 1, 18],
+      "block": "stonebrick",
+      "note": "floor layer 1 inside outer shell (raised interior floor)"
+    },
+    {
+      "op": "fill",
+      "from": [2, 1, 2],
+      "to": [21, 1, 17],
+      "block": "air",
+      "note": "clear central courtyard volume (courtyard open to sky)"
+    },
+    {
+      "op": "fill",
+      "from": [0, 1, 0],
+      "to": [23, 4, 0],
+      "block": "cobblestone",
+      "note": "front low perimeter posts on front face (row of posts along z=0) - decorative low wall"
+    },
+    {
+      "op": "fill",
+      "from": [0, 1, 19],
+      "to": [23, 4, 19],
+      "block": "cobblestone",
+      "note": "back low perimeter posts on back face"
+    },
+    {
+      "op": "fill",
+      "from": [0, 1, 0],
+      "to": [0, 4, 19],
+      "block": "cobblestone",
+      "note": "left perimeter posts"
+    },
+    {
+      "op": "fill",
+      "from": [23, 1, 0],
+      "to": [23, 4, 19],
+      "block": "cobblestone",
+      "note": "right perimeter posts"
+    },
+    {
+      "op": "fill",
+      "from": [1, 2, 1],
+      "to": [22, 7, 18],
+      "block": "stonebrick",
+      "note": "outer walls (solid stonebrick shell) from y=2 up to y=7"
+    },
+    {
+      "op": "hollow",
+      "from": [2, 3, 2],
+      "to": [21, 6, 17],
+      "block": "air",
+      "note": "create interior hollow rooms/corridor space between walls and courtyard"
+    },
+    {
+      "op": "fill",
+      "from": [1, 7, 1],
+      "to": [22, 7, 18],
+      "block": "slab_stone",
+      "note": "cornice ledge around top of walls (slab layer at wall top)"
+    },
+    {
+      "op": "replace",
+      "from": [4, 3, 1],
+      "to": [6, 4, 1],
+      "block": "stonebrick_stairs",
+      "target": "stonebrick",
+      "note": "front entrance recessed stair-like buttresses flanking entrance, left side"
+    },
+    {
+      "op": "replace",
+      "from": [17, 3, 1],
+      "to": [19, 4, 1],
+      "block": "stonebrick_stairs",
+      "target": "stonebrick",
+      "note": "front entrance recessed stair-like buttresses flanking entrance, right side"
+    },
+    {
+      "op": "fill",
+      "from": [9, 2, 1],
+      "to": [14, 5, 1],
+      "block": "air",
+      "note": "entrance opening (3 high, 6 wide centered on front face between buttresses)"
+    },
+    {
+      "op": "fill",
+      "from": [9, 1, 1],
+      "to": [14, 1, 1],
+      "block": "stonebrick",
+      "note": "entrance threshold (stonebrick) to ground"
+    },
+    {
+      "op": "fill",
+      "from": [3, 3, 3],
+      "to": [20, 3, 16],
+      "block": "stonebrick",
+      "note": "interior walkable ledges around courtyard (one-block-wide ring at y=3)"
+    },
+    {
+      "op": "fill",
+      "from": [7, 2, 5],
+      "to": [10, 6, 14],
+      "block": "nether_brick",
+      "note": "left semi-cylindrical vault base block volume (will be carved/approximated with stairs in detailed build)"
+    },
+    {
+      "op": "fill",
+      "from": [13, 2, 5],
+      "to": [16, 6, 14],
+      "block": "nether_brick",
+      "note": "right semi-cylindrical vault base block volume (mirror of left)"
+    },
+    {
+      "op": "replace",
+      "from": [7, 2, 5],
+      "to": [10, 6, 14],
+      "block": "nether_brick_stairs",
+      "target": "nether_brick",
+      "note": "shape left vault with stair blocks for curvature - replace core with stair orientation as needed during build"
+    },
+    {
+      "op": "replace",
+      "from": [13, 2, 5],
+      "to": [16, 6, 14],
+      "block": "nether_brick_stairs",
+      "target": "nether_brick",
+      "note": "shape right vault with stair blocks"
+    },
+    {
+      "op": "fill",
+      "from": [10, 6, 9],
+      "to": [13, 9, 10],
+      "block": "stonebrick",
+      "note": "central square tower core rising above courtyard"
+    },
+    {
+      "op": "fill",
+      "from": [9, 9, 8],
+      "to": [14, 9, 11],
+      "block": "slab_stone",
+      "note": "tower overhanging layered cap (slab layer forming an overhang)"
+    },
+    {
+      "op": "fill",
+      "from": [10, 10, 9],
+      "to": [13, 10, 10],
+      "block": "slab_stone",
+      "note": "upper slab cap layer"
+    },
+    {
+      "op": "fill",
+      "from": [11, 11, 9],
+      "to": [12, 11, 10],
+      "block": "glowstone",
+      "note": "glowstone top marker centered on tower"
+    },
+    {
+      "op": "fill",
+      "from": [2, 4, 2],
+      "to": [2, 6, 4],
+      "block": "stonebrick",
+      "note": "corner buttress NW (stepped outward at base)"
+    },
+    {
+      "op": "fill",
+      "from": [21, 4, 2],
+      "to": [21, 6, 4],
+      "block": "stonebrick",
+      "note": "corner buttress NE"
+    },
+    {
+      "op": "fill",
+      "from": [2, 4, 15],
+      "to": [2, 6, 17],
+      "block": "stonebrick",
+      "note": "corner buttress SW"
+    },
+    {
+      "op": "fill",
+      "from": [21, 4, 15],
+      "to": [21, 6, 17],
+      "block": "

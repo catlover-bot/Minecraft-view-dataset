@@ -1,0 +1,68 @@
+{
+  "summary": "Small single-storey rectangular building with thick low walls, a raised stone-brick coping and a dark nether-brick (or similar) band under a stone-slab rim. The structure sits on a cobblestone ledge/step and is surrounded by a shallow dirt trench. Long horizontal windows run along the visible sides; interior appears open/topped (roofless) with a dark floor material.",
+  "building_type": "industrial/shed-like single-storey",
+  "shape": {
+    "overall_form": "simple rectangular box with a recessed interior courtyard/open top",
+    "footprint_hint": "rectangle",
+    "symmetry": "approximately symmetric along both long axes (mirrored left/right and front/back windows/layout)",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 13,
+    "depth": 17,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "lower wall blocks / decorative blocks (looks like stone brick)",
+      "confidence": 0.8
+    },
+    {
+      "name": "cobblestone",
+      "role": "base/step/ledge around building",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "horizontal windows",
+      "confidence": 1.0
+    },
+    {
+      "name": "nether_brick",
+      "role": "dark band under the top rim (could be nether brick or dark brick)",
+      "confidence": 0.75
+    },
+    {
+      "name": "slab_stone",
+      "role": "top rim coping (light grey slabs)",
+      "confidence": 0.85
+    },
+    {
+      "name": "dirt",
+      "role": "surrounding ground and trench floor",
+      "confidence": 0.95
+    }
+  ],
+  "elements": [
+    "windows",
+    "entrance",
+    "roof",
+    "base_step",
+    "open_interior"
+  ],
+  "rebuild_hints": [
+    "Build a rectangular outer wall ~13x17 blocks footprint on a 1-block-high cobblestone platform (platform projects 1 block out from wall on all sides).",
+    "Wall height is about 4 blocks tall: lower 2 rows use stonebrick (or smooth stone bricks), third row uses cobblestone texture band, fourth row contains 5 evenly spaced horizontal windows (glass panes) separated by 1-block stonebrick columns.",
+    "Add a 1-block-high dark brick band (nether_brick) above the wall, then place light grey stone slabs as a continuous coping around the top edge.",
+    "Interior appears open/topped with a dark floor (nether_brick or dark blocks) recessed one block below coping; no visible peaked roof.",
+    "Surround the whole build with a shallow dirt trench/basin with a raised outer dirt rim."
+  ],
+  "uncertainties": [
+    "Exact block types for the lower wall: looks like stonebrick but could be smooth stone or stone blocks.",
+    "Dark band material identified as nether_brick with moderate confidence; could be another dark brick variant.",
+    "Precise internal floor material is inferred as nether_brick/dark blocks from top-down view but not certain.",
+    "Exact footprint dimensions are estimated from pixel proportions; real block counts may differ by ±2."
+  ]
+}

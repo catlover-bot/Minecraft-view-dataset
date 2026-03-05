@@ -1,0 +1,455 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 24
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "brick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "slab_stone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 24,
+          "label": "main_base"
+        }
+      ],
+      "symmetry": "approximate_bilateral_x_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single monolithic stepped terraces with plateau",
+        "perimeter_profile": "stepped terraces (inset rings)"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 11,
+        "y1": 1,
+        "z1": 24,
+        "x2": 13,
+        "y2": 4,
+        "z2": 24
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 6,
+        "z1": 0,
+        "x2": 2,
+        "y2": 7,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 8,
+        "z1": 6,
+        "x2": 0,
+        "y2": 9,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 12,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 12,
+          "x1": 6,
+          "z1": 6,
+          "x2": 18,
+          "z2": 18,
+          "block": "slab_stone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 24,
+      "block": "slab_stone",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 1,
+      "z2": 24,
+      "block": "brick",
+      "purpose": "base_trim_ring"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 23,
+      "y2": 2,
+      "z2": 23,
+      "block": "slab_stone",
+      "purpose": "terrace_level_1_tread"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 24,
+      "y2": 2,
+      "z2": 24,
+      "block": "fence",
+      "purpose": "white_band_level_1"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 2,
+      "x2": 22,
+      "y2": 3,
+      "z2": 22,
+      "block": "slab_stone",
+      "purpose": "terrace_level_2_tread"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 23,
+      "y2": 3,
+      "z2": 23,
+      "block": "fence",
+      "purpose": "white_band_level_2"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 4,
+      "z1": 3,
+      "x2": 21,
+      "y2": 4,
+      "z2": 21,
+      "block": "slab_stone",
+      "purpose": "terrace_level_3_tread"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 4,
+      "z1": 2,
+      "x2": 22,
+      "y2": 4,
+      "z2": 22,
+      "block": "fence",
+      "purpose": "white_band_level_3"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 5,
+      "z1": 4,
+      "x2": 20,
+      "y2": 5,
+      "z2": 20,
+      "block": "slab_stone",
+      "purpose": "terrace_level_4_tread"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 5,
+      "z1": 3,
+      "x2": 21,
+      "y2": 5,
+      "z2": 21,
+      "block": "fence",
+      "purpose": "white_band_level_4"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 6,
+      "z1": 5,
+      "x2": 19,
+      "y2": 6,
+      "z2": 19,
+      "block": "slab_stone",
+      "purpose": "terrace_level_5_tread"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 6,
+      "z1": 4,
+      "x2": 20,
+      "y2": 6,
+      "z2": 20,
+      "block": "fence",
+      "purpose": "white_band_level_5"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 7,
+      "z1": 6,
+      "x2": 18,
+      "y2": 7,
+      "z2": 18,
+      "block": "slab_stone",
+      "purpose": "terrace_level_6_tread"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 7,
+      "z1": 5,
+      "x2": 19,
+      "y2": 7,
+      "z2": 19,
+      "block": "fence",
+      "purpose": "white_band_level_6"
+    },
+    {
+      "op": "fill",
+      "x1": 7,
+      "y1": 8,
+      "z1": 7,
+      "x2": 17,
+      "y2": 8,
+      "z2": 17,
+      "block": "slab_stone",
+      "purpose": "terrace_level_7_tread"
+    },
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 24,
+  "operations": [
+    {
+      "op": "fill",
+      "bbox": [0, 0, 0, 24, 0, 24],
+      "block": "grass_block",
+      "comment": "ground plane / base terrain"
+    },
+    {
+      "op": "outline",
+      "bbox": [1, 1, 1, 23, 1, 23],
+      "block": "quartz_block",
+      "thickness": 1,
+      "comment": "low white perimeter border (1-block inset from footprint edges) - ensures visible border around pyramid"
+    },
+    {
+      "op": "fill",
+      "bbox": [2, 1, 2, 22, 1, 22],
+      "block": "dirt",
+      "comment": "ground fill inside border"
+    },
+    {
+      "op": "layered_terrace",
+      "bbox": [3, 1, 3, 21, 5, 21],
+      "layers": [
+        {
+          "y": 1,
+          "xmin": 3,
+          "xmax": 21,
+          "zmin": 3,
+          "zmax": 21,
+          "floor": "stone_slab",
+          "band": "quartz_block",
+          "band_height": 1
+        },
+        {
+          "y": 2,
+          "xmin": 4,
+          "xmax": 20,
+          "zmin": 4,
+          "zmax": 20,
+          "floor": "stone_slab",
+          "band": "quartz_block",
+          "band_height": 1
+        },
+        {
+          "y": 3,
+          "xmin": 5,
+          "xmax": 19,
+          "zmin": 5,
+          "zmax": 19,
+          "floor": "stone_slab",
+          "band": "quartz_block",
+          "band_height": 1
+        },
+        {
+          "y": 4,
+          "xmin": 6,
+          "xmax": 18,
+          "zmin": 6,
+          "zmax": 18,
+          "floor": "stone_slab",
+          "band": "quartz_block",
+          "band_height": 1
+        },
+        {
+          "y": 5,
+          "xmin": 7,
+          "xmax": 17,
+          "zmin": 7,
+          "zmax": 17,
+          "floor": "stone_slab",
+          "band": "quartz_block",
+          "band_height": 1
+        }
+      ],
+      "comment": "Stepped terraces: each terrace is 1 block inward and 1 block higher. Floors use stone_slab; continuous quartz band under each terrace tread for white horizontal bands."
+    },
+    {
+      "op": "fill",
+      "bbox": [7, 6, 7, 17, 6, 17],
+      "block": "stone_slab",
+      "comment": "top plateau floor (flat central top)"
+    },
+    {
+      "op": "tower",
+      "bbox": [3, 6, 3, 6, 17, 6],
+      "footprint": [3, 6, 3, 6, 17, 6],
+      "width": 4,
+      "depth": 4,
+      "y_base": 1,
+      "y_top": 17,
+      "wall_block": "stone_bricks",
+      "window_block": "glass_pane",
+      "roof": {
+        "type": "flat_platform",
+        "size": [5, 5],
+        "material": "oak_planks",
+        "edge": "stone_slab",
+        "center_light": "sea_lantern"
+      },
+      "comment": "Corner tower at northwest (placed on terrace base). Tower occupies x3-6, z3-6, rises to y=17."
+    },
+    {
+      "op": "tower",
+      "bbox": [15, 6, 3, 18, 17, 6],
+      "footprint": [15, 6, 3, 18, 17, 6],
+      "width": 4,
+      "depth": 4,
+      "y_base": 1,
+      "y_top": 17,
+      "wall_block": "stone_bricks",
+      "window_block": "glass_pane",
+      "roof": {
+        "type": "flat_platform",
+        "size": [5, 5],
+        "material": "oak_planks",
+        "edge": "stone_slab",
+        "center_light": "sea_lantern"
+      },
+      "comment": "Corner tower at northeast (placed on terrace base). Coordinates chosen to match three-tower asymmetry."
+    },
+    {
+      "op": "tower",
+      "bbox": [3, 6, 15, 6, 17, 18],
+      "footprint": [3, 6, 15, 6, 17, 18],
+      "width": 4,
+      "depth": 4,
+      "y_base": 1,
+      "y_top": 17,
+      "wall_block": "stone_bricks",
+      "window_block": "glass_pane",
+      "roof": {
+        "type": "flat_platform",
+        "size": [5, 5],
+        "material": "oak_planks",
+        "edge": "stone_slab",
+        "center_light": "sea_lantern"
+      },
+      "comment": "Corner tower at southwest (third tower)."
+    },
+    {
+      "op": "carve",
+      "bbox": [7, 1, 3, 11, 4, 3],
+      "shape": "entrance_arch",
+      "material": "air",
+      "comment": "Entrance opening on one side: a 4-wide x 4-high arched/rectangular opening at north face centered on that terrace level. Ensures accessible entrance through terraces to inner area."
+    },
+    {
+      "op": "door_frame",
+      "bbox": [7, 1, 3, 11, 4, 3],
+      "frame_block": "quartz_block",
+      "comment": "White framed entrance using same perimeter material to read as intended opening."
+    },
+    {
+      "op": "windows_towers",
+      "bbox": [3, 6, 3, 18, 17, 18],
+      "pattern": "every 3 blocks vertically on tower faces",
+      "window_block": "glass_pane",
+      "comment": "Small vertical windows inset into tower faces at intervals (adds fidelity)."
+    },
+    {
+      "op": "trim",
+      "bbox": [3, 1, 3, 21, 1, 21],
+      "block": "stone_bricks",
+      "comment": "Ground trim / low base layer around pyramid footprint using stone_bricks for coherent contrast (replaces ambiguous 'brick')."
+    },
+    {
+      "op": "cap_top",
+      "bbox": [10, 6, 10, 14, 7, 14],
+      "block": "chiseled_stone_bricks",
+      "comment": "Small central decorative block/feature on top plateau."
+    },
+    {
+      "op": "parapet",
+      "bbox": [3, 6, 3, 21, 6, 21],
+      "block": "quartz_slab",
+      "pattern": "edge",
+      "comment": "Low white parapet/band at terrace outer edges (slab) to read as continuous white bands wrapping terraces."
+    },
+    {
+      "op": "roof_edges",
+      "bbox": [1, 17, 1, 23, 17, 23],
+      "block": "stone_slab",
+      "comment": "Ensure roof edging pieces are slab to provide overhang on tower roofs"
+    }
+  ],
+  "self_check": {
+    "bbox_inside":

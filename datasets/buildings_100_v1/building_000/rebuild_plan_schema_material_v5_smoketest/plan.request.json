@@ -1,0 +1,150 @@
+{
+  "building": "building_000",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "description_path": "description_openai_gpt_5_mini/description.json",
+  "mode": "heuristic_only",
+  "llm_attempted": false,
+  "llm_failed": false,
+  "prompt_profile": {
+    "name": "rebuild_plan_strict_material_v3",
+    "version": "2026-03-01",
+    "path": "/Users/hirotaka-m/Minecraft-view-dataset/prompts/rebuild_plan_strict_material_v3.json",
+    "critic_revise_enabled": false,
+    "few_shots_count": 1,
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.72,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "system_prompt": "",
+  "prompt": "",
+  "planner_system_prompt": "",
+  "planner_prompt": "",
+  "critic_system_prompt": "",
+  "critic_prompt": "",
+  "draft_parse_report": {},
+  "revise_parse_report": {},
+  "temperature": 0.2,
+  "max_tokens": 1800,
+  "fallback_triggered": false,
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 27,
+    "accepted_operations_count": 27,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "fallback_coerce_report": null,
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.72,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "brick",
+        "score": 0.95,
+        "source_role": "wall"
+      },
+      "roof": {
+        "block": "nether_brick",
+        "score": 0.9,
+        "source_role": "roof"
+      },
+      "trim": {
+        "block": "quartz_block",
+        "score": 0.85,
+        "source_role": "base/cornice/trim"
+      },
+      "floor": {
+        "block": "quartz_block",
+        "score": 0.85,
+        "source_role": "base/cornice/trim"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.98,
+        "source_role": "windows"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "glass",
+          "from": "brick",
+          "to": "glass",
+          "score": 0.98,
+          "reason": "description_preferred"
+        },
+        {
+          "role": "floor",
+          "from": "brick",
+          "to": "quartz_block",
+          "score": 0.85,
+          "reason": "description_preferred"
+        }
+      ],
+      "coherence_repairs": [
+        {
+          "role": "light",
+          "from": "brick",
+          "to": "glowstone"
+        },
+        {
+          "role": "trim",
+          "from": "quartz_block",
+          "to": "quartz_block"
+        }
+      ]
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 25,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 20,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 0.859259259259259,
+    "role_infer_reasons": {
+      "purpose_hint": 25,
+      "unknown": 1,
+      "carve_entrance": 1
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "created_at": "2026-03-01T09:40:20.608160+00:00"
+}

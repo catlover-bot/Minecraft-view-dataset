@@ -1,0 +1,452 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 10,
+    "zmin": 0,
+    "zmax": 8
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "foundation": "cobblestone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 11,
+          "z2": 7,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 3
+        },
+        "rooms_hint": "ground floor hall with recessed entrance/porch",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 6
+        },
+        "rooms_hint": "upper floor with aligned window row",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 6,
+        "y1": 1,
+        "z1": 1,
+        "x2": 6,
+        "y2": 3,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 11,
+        "y1": 2,
+        "z1": 2,
+        "x2": 11,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 11,
+        "y1": 5,
+        "z1": 2,
+        "x2": 11,
+        "y2": 5,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 2,
+        "x2": 1,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 5,
+        "z1": 2,
+        "x2": 1,
+        "y2": 5,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 7,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 8,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 1,
+          "z1": 1,
+          "x2": 11,
+          "z2": 7,
+          "block": "nether_brick"
+        },
+        {
+          "y": 9,
+          "x1": 2,
+          "z1": 2,
+          "x2": 10,
+          "z2": 6,
+          "block": "nether_brick"
+        },
+        {
+          "y": 10,
+          "x1": 5,
+          "z1": 3,
+          "x2": 7,
+          "z2": 5,
+          "block": "nether_brick"
+        },
+        {
+          "y": 10,
+          "x1": 5,
+          "z1": 2,
+          "x2": 7,
+          "z2": 2,
+          "block": "stone_slab"
+        },
+        {
+          "y": 10,
+          "x1": 5,
+          "z1": 6,
+          "x2": 7,
+          "z2": 6,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 8,
+      "block": "cobblestone",
+      "purpose": "ground_plate_platform_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 1,
+      "z2": 7,
+      "block": "cobblestone",
+      "purpose": "raised_perimeter_platform"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 1,
+      "z2": 7,
+      "block": "wood",
+      "purpose": "interior_floor_placeholder"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 11,
+      "y2": 6,
+      "z2": 7,
+      "block": "stonebrick",
+      "purpose": "outer_shell_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 10,
+      "y2": 6,
+      "z2": 6,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 11,
+      "y2": 3,
+      "z2": 7,
+      "block": "stonebrick",
+      "purpose": "mid_floor_decorative_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 1,
+      "y2": 6,
+      "z2": 7,
+      "block": "stonebrick",
+      "purpose": "west_corner_pillar"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 2,
+      "z1": 1,
+      "x2": 11,
+      "y2": 6,
+      "z2": 7,
+      "block": "stonebrick",
+      "purpose": "east_corner_pillar"
+    },
+    {
+      "op": "carve",
+      "x1": 6,
+      "y1": 1,
+      "z1": 1,
+      "x2": 6,
+      "y2": 3,
+      "z2": 1,
+      "purpose": "main_entrance_recess"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 1,
+      "z1": 1,
+      "x2": 6,
+      "y2": 2,
+      "z2
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 11,
+  "ymin": 0,
+  "ymax": 7,
+  "zmin": 0,
+  "zmax": 9,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "from": [ -1, 0, -1 ],
+      "to": [ 11, 0, 7 ],
+      "comment": "raised cobblestone perimeter platform (1 block high) extending 1 block outward around footprint"
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [ 0, 1, 0 ],
+      "to": [ 10, 4, 6 ],
+      "comment": "primary stonebrick walls volume for two floors (walls will be hollowed for interior/air and windows/entrance later)"
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [ 1, 2, 1 ],
+      "to": [ 9, 3, 5 ],
+      "comment": "clear interior space for ground floor (leave 1 block wall thickness)"
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [ 1, 4, 1 ],
+      "to": [ 9, 4, 5 ],
+      "comment": "clear second-floor walkway area placeholder (can be replaced with floor blocks later); keep minimal clearing for headroom"
+    },
+    {
+      "op": "place",
+      "block": "oak_planks",
+      "from": [ 1, 1, 1 ],
+      "to": [ 9, 1, 5 ],
+      "comment": "ground floor wooden floor (1-block thick) inset from walls"
+    },
+    {
+      "op": "place",
+      "block": "oak_planks",
+      "from": [ 1, 3, 1 ],
+      "to": [ 9, 3, 5 ],
+      "comment": "intermediate floor between floors (ceiling of ground floor / floor of second floor) at Y=3"
+    },
+    {
+      "op": "place",
+      "block": "stonebrick",
+      "from": [ 0, 2, 0 ],
+      "to": [ 0, 3, 6 ],
+      "comment": "west corner pilaster (1-block thick) continuous between floors"
+    },
+    {
+      "op": "place",
+      "block": "stonebrick",
+      "from": [ 10, 2, 0 ],
+      "to": [ 10, 3, 6 ],
+      "comment": "east corner pilaster"
+    },
+    {
+      "op": "place",
+      "block": "stonebrick",
+      "from": [ 0, 4, 0 ],
+      "to": [ 10, 4, 6 ],
+      "comment": "decorative horizontal stonebrick band between floors at top of first floor (1 block thick)"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [ 2, 2, 0 ],
+      "to": [ 8, 2, 0 ],
+      "comment": "row of glass panes centered on long west wall (first floor) - 7 panes"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [ 2, 5, 6 ],
+      "to": [ 8, 5, 6 ],
+      "comment": "row of glass panes centered on long east wall (second floor) - 7 panes; note Y=5 assumed second-floor window center"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [ 2, 5, 0 ],
+      "to": [ 8, 5, 0 ],
+      "comment": "row of glass panes centered on long west wall (second floor) - aligns with band"
+    },
+    {
+      "op": "replace",
+      "block": "glass_pane",
+      "from": [ 2, 2, 6 ],
+      "to": [ 8, 2, 6 ],
+      "comment": "row of glass panes centered on long east wall (first floor)"
+    },
+    {
+      "op": "replace",
+      "block": "air",
+      "from": [ 5, 1, 0 ],
+      "to": [ 5, 2, 0 ],
+      "comment": "entrance opening on west long side (2-block tall, 1-block wide) with small recessed porch"
+    },
+    {
+      "op": "place",
+      "block": "stonebrick_stairs[facing=north,half=bottom]",
+      "from": [ 5, 1, -1 ],
+      "to": [ 5, 1, -1 ],
+      "comment": "porch step in front of entrance on cobblestone platform"
+    },
+    {
+      "op": "place",
+      "block": "stone_slab",
+      "from": [ 5, 2, -1 ],
+      "to": [ 5, 2, -1 ],
+      "comment": "small canopy slab above entrance step"
+    },
+    {
+      "op": "place",
+      "block": "nether_brick",
+      "from": [ 0, 6, 0 ],
+      "to": [ 10, 6, 6 ],
+      "comment": "start of roof ridge layer (first roof layer across entire top at Y=6)"
+    },
+    {
+      "op": "place",
+      "block": "nether_brick",
+      "from": [ 1, 7, 0 ],
+      "to": [ 9, 7, 6 ],
+      "comment": "second roof layer inset by 1 on long sides to form 1-block stepped slope"
+    },
+    {
+      "op": "place",
+      "block": "stone_slab",
+      "from": [ 2, 8, 0 ],
+      "to": [ 8, 8, 6 ],
+      "comment": "gable cap slabs along the ridge (light-colored slabs) to finish peak; centered"
+    },
+    {
+      "op": "place",
+      "block": "nether_brick_stairs[facing=east,half=bottom]",
+      "from": [ 0, 6, 0 ],
+      "to": [ 0, 6, 0 ],
+      "comment": "roof stepped edge - west gable side stairs"
+    },
+    {
+      "op": "place",
+      "block": "nether_brick_stairs[facing=west,half=bottom]",
+      "from": [ 10, 6, 0 ],
+      "to": [ 10, 6, 0 ],
+      "comment": "roof stepped edge - east gable side stairs"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [ 0, 5, 3 ],
+      "to": [ 0, 5, 3 ],
+      "comment": "single central window on north short wall second floor (gable end small window)"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [ 10, 5, 3 ],
+      "to": [ 10, 5, 3 ],
+      "comment": "single central window on south short wall second floor (gable end small window)"
+    },
+    {
+      "op": "place",
+      "block": "stonebrick",
+      "from": [ 0, 1, 0 ],
+      "to": [ 10, 1, 6 ],
+      "comment": "lower decorative sill row / reinforce foundation wall at ground level"
+    },
+    {
+      "op": "replace",
+      "block": "air",
+      "from": [ 5, 3, 3 ],
+      "to": [ 5, 3, 3 ],
+      "comment": "hole reserved

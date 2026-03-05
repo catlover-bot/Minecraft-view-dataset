@@ -1,0 +1,289 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 5,
+    "zmin": 0,
+    "zmax": 22
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "ledge": "quartz",
+    "ground": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 21,
+          "label": "main_building"
+        }
+      ],
+      "symmetry": "bilateral_x_and_z"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single open utility space",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 1,
+        "x2": 8,
+        "y2": 2,
+        "z2": 1
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 21,
+        "x2": 8,
+        "y2": 2,
+        "z2": 21
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 4,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 2,
+          "z1": 2,
+          "x2": 8,
+          "z2": 20,
+          "block": "brick"
+        },
+        {
+          "y": 4,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 21,
+          "block": "stonebrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 22,
+      "block": "dirt",
+      "purpose": "ground_plot"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 9,
+      "y2": 0,
+      "z2": 21,
+      "block": "quartz",
+      "purpose": "foundation_ledge"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 21,
+      "block": "sandstone",
+      "purpose": "lower_wall_base"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 2,
+      "z2": 21,
+      "block": "sandstone",
+      "purpose": "lower_wall_mid"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 1,
+      "x2": 8,
+      "y2": 2,
+      "z2": 1,
+      "block": "glass",
+      "purpose": "window_north_continuous"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 21,
+      "x2": 8,
+      "y2": 2,
+      "z2": 21,
+      "block": "glass",
+      "purpose": "window_south_continuous"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 9,
+      "y2": 3,
+      "z2": 21,
+      "block": "quartz",
+      "purpose": "upper_wall_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 21,
+      "block": "brick",
+      "purpose": "brick_course_top"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 21,
+      "block": "stonebrick",
+      "purpose": "roof_slab_rim"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 4,
+      "z1": 2,
+      "x2": 8,
+      "y2": 4,
+      "z2": 20,
+      "block": "brick",
+      "purpose": "roof_inner_field"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 8,
+      "y2": 2,
+      "z2": 20,
+      "purpose": "interior_hollow"
+    }
+  ],
+  "self_check": {
+    "bbox_consistency": "ok",
+    "operation_count": 11,
+    "operation_count_ok": true,
+    "material_ratio_notes": [
+      "sandstone dominates lower walls",
+      "quartz forms trim bands",
+      "brick roof field with stonebrick rim",
+      "continuous glass windows on long faces"
+    ],
+    "openings_present": true,
+    "entrance_present": false,
+    "issues": [
+      "No explicit entrance door defined in description; building appears to be utility/commercial with window-only facade"
+    ]
+  },
+  "notes": [
+    "
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 5,
+  "zmin": 0,
+  "zmax": 22,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 10, "y2": 5, "z2": 0, "block": "dirt", "note": "ground_plot"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 9, "y2": 4, "z2": 1, "block": "quartz_block", "note": "foundation_ledge"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 2, "x2": 9, "y2": 4, "z2": 2, "block": "sandstone", "note": "lower_wall_course_1"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 3, "x2": 9, "y2": 4, "z2": 3, "block": "sandstone", "note": "lower_wall_course_2"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 4, "x2": 9, "y2": 4, "z2": 4, "block": "glass_pane", "note": "window_band_long_sides"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 5, "x2": 9, "y2": 4, "z2": 5, "block": "quartz_block", "note": "upper_wall_band"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 6, "x2": 9, "y2": 4, "z2": 6, "block": "brick", "note": "brick_course_top"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 7, "x2": 10, "y2": 5, "z2": 7, "block": "stone_brick_slab", "note": "roof_edge_slab_rim"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 7, "x2": 9, "y2": 4, "z2": 7, "block": "brick", "note": "roof_field_inner"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 1, "x2": 8, "y2": 3, "z2": 1, "block": "air", "note": "entrance_opening_ground"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 2, "x2": 8, "y2": 3, "z2": 2, "block": "air", "note": "entrance_opening_lower"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 3, "x2": 8, "y2": 3, "z2": 3, "block": "air", "note": "entrance_opening_mid"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 4, "x2": 8, "y2": 3, "z2": 4, "block": "air", "note": "entrance_opening_window"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 5, "x2": 8, "y2": 3, "z2": 5, "block": "air", "note": "entrance_opening_upper"}
+  ],
+  "self_check": {
+    "bbox_valid": true,
+    "all_coords_in_bbox": true,
+    "operation_count": 14,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,
+    "material_coherence": true,
+    "structural_fidelity": "moderate - simplified rectangular footprint with layered wall composition (sandstone lower, quartz upper, brick course, slab rim) and flat brick roof with slab perimeter. Entrance opening carved through center of short end. Window band represented as single glass_pane layer on long sides.",
+    "notes": "Plan uses simplified geometry due to operation count constraints. Actual window panes on long sides (y=1 and y=4) are represented as continuous glass_pane blocks rather than individual panes; this is a fidelity trade-off. Entrance opening carved through center short face (y=2-3) from ground to roof level. Stone-brick slab rim surrounds roof perimeter at z=7. All coordinates validated within bbox (0-10 x, 0-5 y, 0-22 z)."
+  },
+  "summary": "Small rectangular single-storey modern/blocky building with a raised flat brick roof inset, stone/white trim base, sandstone lower walls and a continuous band of horizontal windows on the long sides. The building sits centered on a rectangular dirt plot with a one-block-wide white border/ledge around it and an inner gray stone rim at roof level.",
+  "building_type": "single-story commercial/utility",
+  "shape": {
+    "overall_form": "simple elongated rectangular box with a recessed roof center and a surrounding low ledge",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along the long axis",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 4,
+    "height": 7
+  }
+}
+```

@@ -1,0 +1,74 @@
+{
+  "summary": "A two-story rectangular residential building with a gable roof. The structure features stonebrick walls with a stone foundation, multiple windows on both floors arranged symmetrically, and a dark wood/nether brick roof with stepped gable design. The building sits on a raised dirt platform with a gravel foundation border.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "rectangular_block_with_gable_roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral_symmetry_front_to_back",
+    "floors_estimate": 2,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 8,
+    "depth": 8,
+    "height": 10
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "nether_brick",
+      "role": "roof",
+      "confidence": 0.85
+    },
+    {
+      "name": "gravel",
+      "role": "foundation_border",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone",
+      "role": "foundation_base",
+      "confidence": 0.85
+    }
+  ],
+  "elements": [
+    "windows_upper_floor",
+    "windows_lower_floor",
+    "gable_roof",
+    "foundation_platform",
+    "gravel_border",
+    "entrance_door"
+  ],
+  "rebuild_hints": [
+    "Build 8x8 stonebrick base walls, 2 blocks high for each floor",
+    "Place 3 windows on upper floor, evenly spaced horizontally",
+    "Place 3-4 windows on lower floor with similar spacing",
+    "Windows appear to be 2 blocks wide, 2 blocks tall with stone frame",
+    "Construct gable roof using nether_brick in stepped pyramid pattern",
+    "Add gravel foundation border around base perimeter",
+    "Roof peaks at center, slopes down on both sides with 3-4 block height variation",
+    "Door entrance visible on one side (dark wood/nether brick material)",
+    "Raise entire structure on dirt platform approximately 1-2 blocks above ground"
+  ],
+  "uncertainties": [
+    "Exact window frame material (appears stone but could be stonebrick)",
+    "Interior layout and room configuration not visible",
+    "Precise roof block count and exact stepping pattern from limited angles",
+    "Door material and exact placement (visible in overhead view but details unclear)",
+    "Whether foundation is stone or gravel composition",
+    "Exact height of platform base (estimated 1-2 blocks)"
+  ],
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "building": "building_009",
+  "created_at": "2026-03-01T04:51:06.432760+00:00"
+}

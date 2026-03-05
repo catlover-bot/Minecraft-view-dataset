@@ -1,0 +1,478 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 11,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 15
+  },
+  "palette": {
+    "wall": "wood",
+    "roof": "netherbrick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 13,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 3
+        },
+        "rooms_hint": "single hall / unknown interior partition",
+        "perimeter_profile": "rectangular with log corner posts"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 1,
+        "y1": 2,
+        "z1": 3,
+        "x2": 1,
+        "y2": 2,
+        "z2": 11
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 9,
+        "y1": 2,
+        "z1": 3,
+        "x2": 9,
+        "y2": 2,
+        "z2": 11
+      },
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 5,
+        "y1": 1,
+        "z1": 1,
+        "x2": 6,
+        "y2": 2,
+        "z2": 1
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 4,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 14,
+          "block": "netherbrick"
+        },
+        {
+          "y": 5,
+          "x1": 0,
+          "z1": 1,
+          "x2": 10,
+          "z2": 13,
+          "block": "netherbrick"
+        },
+        {
+          "y": 6,
+          "x1": 0,
+          "z1": 2,
+          "x2": 10,
+          "z2": 12,
+          "block": "netherbrick"
+        },
+        {
+          "y": 7,
+          "x1": 2,
+          "z1": 4,
+          "x2": 8,
+          "z2": 10,
+          "block": "netherbrick"
+        },
+        {
+          "y": 7,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 14,
+          "block": "slab_stone"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 14,
+      "block": "dirt",
+      "purpose": "site_pad_fill"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 14,
+      "purpose": "flatten_pad_top"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 14,
+      "block": "grass_block",
+      "purpose": "pad_surface"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 14,
+      "block": "stonebrick",
+      "purpose": "stone_platform"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 13,
+      "block": "wood",
+      "purpose": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 13,
+      "block": "wood",
+      "purpose": "walls_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 1,
+      "y2": 4,
+      "z2": 1,
+      "block": "log",
+      "purpose": "corner_post_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 1,
+      "block": "log",
+      "purpose": "corner_post_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 13,
+      "x2": 1,
+      "y2": 4,
+      "z2": 13,
+      "block": "log",
+      "purpose": "corner_post_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 2,
+      "z1": 13,
+      "x2": 9,
+      "y2": 4,
+      "z2": 13,
+      "block": "log",
+      "purpose": "corner_post_se"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 8,
+      "y2": 4,
+      "z2": 12,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": 1,
+      "x2": 6,
+      "y2": 2,
+      "z2": 1,
+      "purpose": "entrance_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 3,
+      "x2": 1,
+      "y2": 3,
+      "z2": 11,
+      "block": "glass",
+      "purpose": "window_west_row"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 2,
+      "z1": 3,
+      "x
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 11,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 15,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "block": "dirt",
+      "from": [0, 0, 0],
+      "to": [11, 0, 15],
+      "note": "level ground and shallow pad base"
+    },
+    {
+      "id": 2,
+      "action": "replace",
+      "block": "grass_path",
+      "from": [0, 0, 0],
+      "to": [11, 0, 15],
+      "condition": "optional_surface",
+      "note": "optional: top surface treatment of pad (kept as non-solid marker); safe no-op if not desired"
+    },
+    {
+      "id": 3,
+      "action": "fill",
+      "block": "stone_bricks",
+      "from": [0, 1, 0],
+      "to": [11, 1, 15],
+      "note": "one-block-high stonebrick surrounding platform (full footprint under house + 1-block border)"
+    },
+    {
+      "id": 4,
+      "action": "hollow",
+      "block": "air",
+      "from": [1, 2, 1],
+      "to": [10, 7, 14],
+      "note": "clear interior volume for building (walls will be placed on this volume's boundary)"
+    },
+    {
+      "id": 5,
+      "action": "fill",
+      "block": "oak_log",
+      "from": [1, 2, 1],
+      "to": [1, 5, 1],
+      "note": "front-left vertical corner post (3-block-high post from y=2 to y=5 inclusive)"
+    },
+    {
+      "id": 6,
+      "action": "fill",
+      "block": "oak_log",
+      "from": [10, 2, 1],
+      "to": [10, 5, 1],
+      "note": "front-right vertical corner post"
+    },
+    {
+      "id": 7,
+      "action": "fill",
+      "block": "oak_log",
+      "from": [1, 2, 14],
+      "to": [1, 5, 14],
+      "note": "back-left vertical corner post"
+    },
+    {
+      "id": 8,
+      "action": "fill",
+      "block": "oak_log",
+      "from": [10, 2, 14],
+      "to": [10, 5, 14],
+      "note": "back-right vertical corner post"
+    },
+    {
+      "id": 9,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [2, 2, 1],
+      "to": [9, 4, 1],
+      "note": "front wall wooden planks between corner posts, 3 blocks high (y=2..4). Lower y=1 is platform; interior cleared above"
+    },
+    {
+      "id": 10,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [2, 2, 14],
+      "to": [9, 4, 14],
+      "note": "back wall wooden planks"
+    },
+    {
+      "id": 11,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [1, 2, 2],
+      "to": [1, 4, 13],
+      "note": "left long wall wooden planks between logs"
+    },
+    {
+      "id": 12,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [10, 2, 2],
+      "to": [10, 4, 13],
+      "note": "right long wall wooden planks between logs"
+    },
+    {
+      "id": 13,
+      "action": "hollow",
+      "block": "air",
+      "from": [5, 2, 1],
+      "to": [6, 3, 1],
+      "note": "entrance opening (2-wide, 2-high) centered on front wall; ensures an entrance is present"
+    },
+    {
+      "id": 14,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [5, 1, 1],
+      "to": [6, 1, 1],
+      "note": "step at entrance on platform level (stone bricks below at y=1)"
+    },
+    {
+      "id": 15,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [3, 3, 1],
+      "to": [4, 3, 1],
+      "note": "front decorative high window (optional small)"
+    },
+    {
+      "id": 16,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [7, 3, 1],
+      "to": [8, 3, 1],
+      "note": "front decorative high window (optional small)"
+    },
+    {
+      "id": 17,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [3, 3, 14],
+      "to": [4, 3, 14],
+      "note": "back decorative high window"
+    },
+    {
+      "id": 18,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [7, 3, 14],
+      "to": [8, 3, 14],
+      "note": "back decorative high window"
+    },
+    {
+      "id": 19,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [1, 3, 4],
+      "to": [1, 3, 10],
+      "note": "left continuous long windows (centered row at y=3)"
+    },
+    {
+      "id": 20,
+      "action": "fill",
+      "block": "glass_pane",
+      "from": [10, 3, 4],
+      "to": [10, 3, 10],
+      "note": "right continuous long windows"
+    },
+    {
+      "id": 21,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [2, 1, 2],
+      "to": [9, 1, 13],
+      "note": "interior floor (wood planks) at y=1 within the platform"
+    },
+    {
+      "id": 22,
+      "action": "fill",
+      "block": "oak_slab",
+      "from": [2, 2, 2],
+      "to": [9, 2, 13],
+      "note": "option: thin floor layer (slab) as interior step for visual layering; if undesired, treated as planks"
+    },
+    {
+      "id": 23,
+      "action": "fill",
+      "block": "nether_brick_stairs_north",
+      "from": [1, 5, 2],
+      "to": [10, 5, 2],
+      "note": "first roof step outward from walls (front slope row y=5)"
+    },
+    {
+      "id": 24,
+      "action": "fill",
+      "block": "nether_brick_stairs_south",
+      "from": [1, 5, 13],
+      "to": [10, 5, 13],
+      "note": "rear roof first step"
+    },
+    {
+      "id": 25,
+      "action": "fill",
+      "block": "nether_brick_stairs_north",

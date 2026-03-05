@@ -1,0 +1,73 @@
+{
+  "summary": "Two-story rectangular house with a raised stone brick foundation border, horizontal wooden plank walls with vertical log corner posts, a mid-wall stonebrick belt between floors, rows of small glass windows on each floor, and a dark red (netherbrick) stepped curved roof capped with stone slab trim.",
+  "building_type": "residential house",
+  "shape": {
+    "overall_form": "rectangular box with raised foundation and symmetrical roof ridge",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along the long axis (front to back) and roughly symmetrical left-right",
+    "floors_estimate": 2,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 9,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "foundation/trim",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood",
+      "role": "walls (planks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "log",
+      "role": "vertical corner posts",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "netherbrick",
+      "role": "roof",
+      "confidence": 0.9
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof edging/trim",
+      "confidence": 0.85
+    }
+  ],
+  "elements": [
+    "ground-level raised stonebrick border platform around building",
+    "two full stories of horizontal wood plank walls",
+    "stonebrick belt/band separating floors and capping walls",
+    "rows of small rectangular windows (glass panes) evenly spaced on each floor",
+    "vertical log posts at visible corners",
+    "stepped/curved netherbrick roof with stone slab edging"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular footprint ~11x9. Place a one-block-high stonebrick border platform around the base (1 block out from wall).",
+    "Construct two stacked wooden-plank story walls separated by a horizontal stonebrick belt 1 block tall that wraps the building.",
+    "Place vertical log blocks at each external corner spanning both stories aligned with the outer face of planks.",
+    "On each story add a continuous row of small 1x1 glass windows spaced with 1-2 planks between; align top and bottom rows horizontally.",
+    "Build a curved stepped roof using dark red netherbrick: two symmetrical long slopes meeting at center ridge; cap edges with stone slabs forming a trim/overhang."
+  ],
+  "uncertainties": [
+    "Exact block counts for width, depth, and height are estimated from images (could be off by a few blocks).",
+    "Material identification for roof and slabs is high-confidence visually but could be alternate dark red wood/brick or stone variants.",
+    "Ground surrounding the foundation appears dirt/gravel but exact surface material is uncertain and not specified.",
+    "Unknown presence or design of an entrance/door on unseen faces; none visible in provided angles."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_029",
+  "created_at": "2026-02-28T14:04:04.947455+00:00"
+}

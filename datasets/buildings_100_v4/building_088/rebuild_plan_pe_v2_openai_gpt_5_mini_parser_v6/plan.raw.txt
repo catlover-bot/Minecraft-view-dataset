@@ -1,0 +1,432 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 15,
+    "zmin": 0,
+    "zmax": 24
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "sea_lantern",
+    "floor": "packed_mud"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 24,
+          "label": "main"
+        }
+      ],
+      "symmetry": "z_axis_centered (bilateral along long axis)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single open ceremonial hall with raised central walkway",
+        "perimeter_profile": "rectangular with corner tower footprints"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 24,
+        "x2": 5,
+        "y2": 3,
+        "z2": 24
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 3,
+        "z1": 0,
+        "x2": 5,
+        "y2": 5,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 9,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 9,
+          "x1": 3,
+          "z1": 6,
+          "x2": 7,
+          "z2": 18,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 2,
+          "z1": 7,
+          "x2": 8,
+          "z2": 17,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 1,
+          "z1": 8,
+          "x2": 9,
+          "z2": 16,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 24,
+      "block": "packed_mud",
+      "purpose": "ground_packed_earth_plot"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "white_base_plinth_ring"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 23,
+      "purpose": "clear_interior_core_keep_plinth_outline"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 23,
+      "block": "sandstone",
+      "purpose": "exterior_walls_base_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 2,
+      "z2": 23,
+      "block": "smooth_sandstone",
+      "purpose": "second_horizontal_band (striping)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 9,
+      "y2": 3,
+      "z2": 23,
+      "block": "sandstone",
+      "purpose": "third_horizontal_band (striping)"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 9,
+      "y2": 11,
+      "z2": 23,
+      "block": "sandstone",
+      "purpose": "upper_wall_mass"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": 24,
+      "x2": 5,
+      "y2": 3,
+      "z2": 24,
+      "purpose": "main_entrance_opening"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 3,
+      "z1": 0,
+      "x2": 5,
+      "y2": 5,
+      "z2": 0,
+      "purpose": "rear_small_window_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 1,
+      "x2": 8,
+      "y2": 1,
+      "z2": 23,
+      "block": "brick",
+      "purpose": "central_red_brick_walkway_floor"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 1,
+      "z": 12,
+      "block": "sea_lantern",
+      "purpose": "central_walkway_light_center"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 11,
+      "z2": 24,
+      "block": "stonebrick",
+      "purpose": "temporary_mask_for_tower_placement"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 3,
+      "y2": 14,
+      "z2": 3,
+      "purpose": "interior_tower_a_cut"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 3,
+      "y2": 14,
+      "z2": 3,
+      "block": "stonebrick",
+      "purpose": "tower_nw_shell"
+    },
+    {
+      "op": "carve",
+      "x1": 7,
+      "y1": 5,
+      "z1": 1,
+      "x2": 9,
+      "y2": 14,
+      "z2": 3,
+      "purpose": "interior_tower_b_cut"
+    },
+    {
+      "op": "fill",
+      "x1": 7,
+      "y1": 5,
+      "z1": 1,
+      "x2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 15,
+  "zmin": 0,
+  "zmax": 24,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 10, 0, 24],
+      "block": "packed_mud",
+      "note": "ground plot / packed-earth base"
+    },
+    {
+      "op": "outline",
+      "box": [0, 1, 0, 10, 1, 24],
+      "block": "quartz_block",
+      "note": "one-block-high white plinth/base ring along perimeter (full perimeter at y=1)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 9, 1, 23],
+      "block": "air",
+      "note": "keep interior above base empty for now"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 9, 1, 23],
+      "block": "red_brick",
+      "note": "central walkway layer at same elevation as plinth (y=1) occupying central 8x22 area; later trimmed by floor placement"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 9, 2, 23],
+      "block": "polished_andesite",
+      "note": "main interior floor layer at y=2 (separates walkway visually if needed)"
+    },
+    {
+      "op": "fill",
+      "box": [0, 2, 0, 10, 7, 24],
+      "block": "sandstone",
+      "note": "primary wall bands (lower band). Ensures full-height walls within bbox"
+    },
+    {
+      "op": "fill",
+      "box": [0, 6, 0, 10, 11, 24],
+      "block": "cut_sandstone",
+      "note": "alternate lighter/darker horizontal band above lower sandstone to create striped effect; overlaps one layer (y=6) to produce banding"
+    },
+    {
+      "op": "replace",
+      "box": [0, 2, 0, 10, 11, 24],
+      "filter": {"y_mod": 2},
+      "block": "smooth_sandstone",
+      "note": "apply alternating pattern every 2 blocks vertically for clearer stripes (implementation: replace every 2nd layer with smooth_sandstone)"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 9, 11, 23],
+      "block": "air",
+      "note": "clear interior space for building interior up to wall height"
+    },
+    {
+      "op": "fill",
+      "box": [0, 11, 0, 10, 11, 24],
+      "block": "stone_bricks",
+      "note": "top trim/cornice layer around the top of walls at y=11"
+    },
+    {
+      "op": "fill",
+      "box": [0, 12, 0, 10, 12, 24],
+      "block": "air",
+      "note": "enable roof structure starting above cornice"
+    },
+    {
+      "op": "tower",
+      "positions": [[0,0,0],[10,0,0],[0,0,24],[10,0,24]],
+      "width": 3,
+      "depth": 3,
+      "height": 12,
+      "base_y": 1,
+      "walls": "stone_bricks",
+      "inset_window": {
+        "pattern": {"every": 3, "size": [1,1]},
+        "block": "iron_trapdoor"
+      },
+      "cap": {
+        "overhang": 1,
+        "cap_block": "smooth_stone_slab",
+        "light": "sea_lantern",
+        "note": "four corner towers with overhanging slab trim and central sea-lantern light"
+      },
+      "note": "towers anchored to base ring; coordinates are inside bbox corners"
+    },
+    {
+      "op": "fill",
+      "box": [4, 12, 1, 6, 14, 23],
+      "block": "red_brick",
+      "note": "central raised roof ridge / tiled roof spine (3 blocks wide along center). Height spans y=12..14 to form a raised ridge within bbox"
+    },
+    {
+      "op": "stairs",
+      "box": [3, 11, 1, 7, 12, 23],
+      "material": "red_brick_stairs",
+      "facing": "inward",
+      "note": "stepped sides of the central ridge giving a tiered roof appearance"
+    },
+    {
+      "op": "fill",
+      "box": [4, 15, 1, 6, 15, 23],
+      "block": "sea_lantern",
+      "note": "sea-lantern lighting along ridge tops at highest accessible y within bbox (y=15). This remains inside ymax=15"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 11, 9, 4, 13],
+      "block": "air",
+      "note": "entrance opening centered on long side: a 8-wide, 2-high opening at central front (z=11..13). Ensures entrance is present"
+    },
+    {
+      "op": "replace",
+      "box": [1, 2, 11, 9, 11, 13],
+      "filter": {"x_in": [1,9], "z_in": [11,13]},
+      "block": "air",
+      "note": "clear vertical shaft for entrance through wall up to cornice"
+    },
+    {
+      "op": "place",
+      "box": [4, 2, 11, 6, 5, 13],
+      "block": "quartz_block",
+      "note": "vertical entrance trim/pillars framing the opening (centered), extends to y=5"
+    },
+    {
+      "op": "fill",
+      "box": [1, 2, 1, 9, 2, 23],
+      "block": "red_brick",
+      "note": "ensures central walkway row of red_brick at floor level is continuous and centered"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 3, 8, 2, 21],
+      "block": "sea_lantern",
+      "note": "line of sea-lanterns set into walkway centerline at floor level for lighting (spaced every 4 blocks). Implemented here as continuous fill within walkway center to ensure at least some lamps"
+    },
+    {
+      "op": "decorate",
+      "positions": [[1,2,0],[9,2,0],[1,2,24],[9,2,24]],
+      "block": "chiseled_stone_bricks",
+      "note": "corner base decorative blocks under towers"
+    },
+    {
+      "op": "trim",
+      "box": [0, 11, 0, 10, 12, 24],
+      "block": "smooth_stone_slab",
+      "note": "stone slab trim under overhangs and along top edge for cornice continuity"
+    }
+  ],
+  "self_check": {
+    "bbox_integrity": {
+      "valid": true,
+      "notes": "All operation coordinates and towers are inside provided bbox [0..10] x [0..15] x [0..24]. Tower generator uses corners at (0/10,0/24) within bbox."
+    },
+    "operation_count": {
+      "count": 26,
+      "allowed_max": 260,
+      "valid": true,
+      "notes": "Total

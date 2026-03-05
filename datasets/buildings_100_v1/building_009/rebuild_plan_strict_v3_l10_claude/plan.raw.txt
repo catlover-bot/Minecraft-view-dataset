@@ -1,0 +1,488 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v3_strict",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 7,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 7
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "stone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "stonebrick",
+      "target_blocks": 280
+    },
+    "roof": {
+      "role": "roof",
+      "block": "nether_brick",
+      "target_blocks": 120
+    },
+    "trim": {
+      "role": "trim",
+      "block": "stone",
+      "target_blocks": 60
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 32
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 4
+    },
+    "floor": {
+      "role": "floor",
+      "block": "wood",
+      "target_blocks": 64
+    }
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "corner": "nw",
+          "x": 0,
+          "z": 0
+        },
+        {
+          "corner": "ne",
+          "x": 7,
+          "z": 0
+        },
+        {
+          "corner": "se",
+          "x": 7,
+          "z": 7
+        },
+        {
+          "corner": "sw",
+          "x": 0,
+          "z": 7
+        }
+      ]
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 0
+        },
+        "perimeter_profile": "foundation_platform_stone"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "perimeter_profile": "lower_floor_walls"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "perimeter_profile": "upper_floor_walls"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 3,
+        "y1": 1,
+        "z1": 7,
+        "x2": 4,
+        "y2": 2,
+        "z2": 7,
+        "purpose": "main_entrance"
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 2,
+        "z1": 7,
+        "x2": 2,
+        "y2": 3,
+        "z2": 7,
+        "purpose": "lower_floor_window"
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 2,
+        "z1": 7,
+        "x2": 6,
+        "y2": 3,
+        "z2": 7,
+        "purpose": "lower_floor_window"
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 6,
+        "z1": 7,
+        "x2": 2,
+        "y2": 7,
+        "z2": 7,
+        "purpose": "upper_floor_window"
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 5,
+        "y1": 6,
+        "z1": 7,
+        "x2": 6,
+        "y2": 7,
+        "z2": 7,
+        "purpose": "upper_floor_window"
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 3,
+        "z2": 0,
+        "purpose": "lower_floor_window"
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 6,
+        "y2": 3,
+        "z2": 0,
+        "purpose": "lower_floor_window"
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 6,
+        "z1": 0,
+        "x2": 2,
+        "y2": 7,
+        "z2": 0,
+        "purpose": "upper_floor_window"
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 6,
+        "z1": 0,
+        "x2": 6,
+        "y2": 7,
+        "z2": 0,
+        "purpose": "upper_floor_window"
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 8,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "layer_index": 0,
+          "y": 8,
+          "x_range": {
+            "xmin": 0,
+            "xmax": 7
+          },
+          "z_range": {
+            "zmin": 0,
+            "zmax": 7
+          }
+        },
+        {
+          "layer_index": 1,
+          "y": 9,
+          "x_range": {
+            "xmin": 1,
+            "xmax": 6
+          },
+          "z_range": {
+            "zmin": 1,
+            "zmax": 6
+          }
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "role": "trim",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 7,
+      "y2": 0,
+      "z2": 7,
+      "
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 10,
+  "zmin": 0,
+  "zmax": 8,
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "windows": "glass",
+    "foundation_base": "gravel",
+    "foundation_platform": "stone",
+    "floor": "stonebrick"
+  },
+  "material_budget": {
+    "wall": {
+      "target_blocks": 180
+    },
+    "roof": {
+      "target_blocks": 64
+    },
+    "windows": {
+      "target_blocks": 16
+    },
+    "foundation_base": {
+      "target_blocks": 0
+    },
+    "foundation_platform": {
+      "target_blocks": 81
+    },
+    "floor": {
+      "target_blocks": 0
+    }
+  },
+  "operations": [
+    {
+      "kind": "fill",
+      "role": "foundation_platform",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 8
+    },
+    {
+      "kind": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 1,
+      "z2": 8
+    },
+    {
+      "kind": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 8,
+      "y2": 2,
+      "z2": 8
+    },
+    {
+      "kind": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 8
+    },
+    {
+      "kind": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 8
+    },
+    {
+      "kind": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 8,
+      "y2": 5,
+      "z2": 8
+    },
+    {
+      "kind": "fill",
+      "role": "wall",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 8,
+      "y2": 6,
+      "z2": 8
+    },
+    {
+      "kind": "fill",
+      "role": "roof",
+      "x1": 1,
+      "y1": 7,
+      "z1": 1,
+      "x2": 7,
+      "y2": 7,
+      "z2": 7
+    },
+    {
+      "kind": "fill",
+      "role": "roof",
+      "x1": 2,
+      "y1": 8,
+      "z1": 2,
+      "x2": 6,
+      "y2": 8,
+      "z2": 6
+    },
+    {
+      "kind": "fill",
+      "role": "roof",
+      "x1": 3,
+      "y1": 9,
+      "z1": 3,
+      "x2": 5,
+      "y2": 9,
+      "z2": 5
+    },
+    {
+      "kind": "fill",
+      "role": "roof",
+      "x1": 4,
+      "y1": 10,
+      "z1": 4,
+      "x2": 4,
+      "y2": 10,
+      "z2": 4
+    },
+    {
+      "kind": "door",
+      "face": "south",
+      "x1": 3,
+      "y1": 1,
+      "z1": 8,
+      "x2": 5,
+      "y2": 2,
+      "z2": 8,
+      "purpose": "main_entrance"
+    },
+    {
+      "kind": "window",
+      "face": "south",
+      "x1": 1,
+      "y1": 2,
+      "z1": 8,
+      "x2": 2,
+      "y2": 3,
+      "z2": 8,
+      "purpose": "lower_floor_window"
+    },
+    {
+      "kind": "window",
+      "face": "south",
+      "x1": 6,
+      "y1": 2,
+      "z1": 8,
+      "x2": 7,
+      "y2": 3,
+      "z2": 8,
+      "purpose": "lower_floor_window"
+    },
+    {
+      "kind": "window",
+      "face": "south",
+      "x1": 1,
+      "y1": 5,
+      "z1": 8,
+      "x2": 2,
+      "y2": 6,
+      "z2": 8,
+      "purpose": "upper_floor_window"
+    },
+    {
+      "kind": "window",
+      "face": "south",
+      "x1": 6,
+      "y1": 5,
+      "z1": 8,
+      "x2": 7,
+      "y2": 6,
+      "z2": 8,
+      "purpose": "upper_floor_window"
+    },
+    {
+      "kind": "window",
+      "face": "north",
+      "x1": 1,
+      "y1": 2,
+      "z1": 0,
+      "x2": 2,
+      "y2": 3,
+      "z2": 0,
+      "purpose": "lower_floor_window"
+    },
+    {
+      "kind": "window",
+      "face": "north",
+      "x1": 6,
+      "y1": 2,
+      "z1": 0,
+      "x2": 7,
+      "y2": 3,
+      "z2": 0,
+      "purpose": "lower_floor_window"
+    },
+    {
+      "kind": "window",
+      "face": "north",
+      "x1": 1,
+      "y1": 5,
+      "z1": 0,
+      "x2": 2,
+      "y2": 6,
+      "z2": 0,
+      "purpose": "upper_floor_window"
+    },
+    {
+      "kind": "window",
+      "face

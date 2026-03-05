@@ -1,0 +1,448 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 16
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "brick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 16,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_along_z_center (long axis symmetry)"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 3
+        },
+        "rooms_hint": "ground floor open hall with narrow continuous windows along long faces",
+        "perimeter_profile": "rectangle with 1-block raised foundation"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 4,
+          "ymax": 7
+        },
+        "rooms_hint": "upper floor similar banding, continuous windows",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 4,
+        "y1": 1,
+        "z1": 16,
+        "x2": 4,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 2,
+        "z1": 2,
+        "x2": 8,
+        "y2": 2,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 2,
+        "z1": 10,
+        "x2": 8,
+        "y2": 2,
+        "z2": 14
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 5,
+        "z1": 2,
+        "x2": 8,
+        "y2": 5,
+        "z2": 6
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 5,
+        "z1": 10,
+        "x2": 8,
+        "y2": 5,
+        "z2": 14
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 2,
+        "x2": 0,
+        "y2": 2,
+        "z2": 14
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 5,
+        "z1": 2,
+        "x2": 0,
+        "y2": 5,
+        "z2": 14
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 7,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 16,
+          "block": "wood"
+        },
+        {
+          "y": 8,
+          "x1": 1,
+          "z1": 1,
+          "x2": 7,
+          "z2": 15,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 16,
+      "block": "slab_stone",
+      "purpose": "raised_foundation_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 1,
+      "z2": 16,
+      "block": "slab_stone",
+      "purpose": "raised_foundation_border"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 16,
+      "block": "cobblestone",
+      "purpose": "west_corner_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 7,
+      "z2": 16,
+      "block": "cobblestone",
+      "purpose": "east_corner_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 7,
+      "y2": 3,
+      "z2": 16,
+      "block": "cobblestone",
+      "purpose": "lower_wall_band_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 3,
+      "z1": 0,
+      "x2": 7,
+      "y2": 3,
+      "z2": 16,
+      "block": "wood",
+      "purpose": "horizontal_plank_band_between_stories_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 0,
+      "x2": 7,
+      "y2": 6,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "upper_wall_band"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 0,
+      "x2": 7,
+      "y2": 6,
+      "z2": 16,
+      "block": "slab_stone",
+      "purpose": "white_slab_band_top"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 1,
+      "x2": 6,
+      "y2": 2,
+      "z2": 15,
+      "purpose": "ground_floor_long_window_strip_east_west (carve before window fill)"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 1,
+      "x2": 6,
+      "y2": 2,
+      "z2": 15,
+      "block": "glass",
+      "purpose": "ground_floor_long_windows"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 5,
+      "z1": 1,
+      "
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 8,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 16,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "quartz_slab",
+      "from": [0, 0, 0],
+      "to": [8, 0, 16],
+      "desc": "1-block-high white slab perimeter foundation/floor base across footprint (covers entire footprint as raised slab border and floor base)."
+    },
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "from": [0, 1, 0],
+      "to": [0, 3, 16],
+      "desc": "Left vertical corner post (3 blocks high) using cobblestone."
+    },
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "from": [8, 1, 0],
+      "to": [8, 3, 16],
+      "desc": "Right vertical corner post (3 blocks high) using cobblestone."
+    },
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "from": [0, 1, 0],
+      "to": [8, 1, 0],
+      "desc": "Front (short side at z=0) lower cobblestone band base along front edge, 1 block tall between y=1 and y=1."
+    },
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "from": [0, 1, 16],
+      "to": [8, 1, 16],
+      "desc": "Back (short side at z=16) lower cobblestone band base along back edge."
+    },
+    {
+      "op": "fill",
+      "block": "stone_bricks",
+      "from": [1, 1, 1],
+      "to": [7, 1, 15],
+      "desc": "Lower wall textured band filling between corner posts along base level (stonebrick as decorative lower wall)."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [0, 2, 0],
+      "to": [8, 2, 16],
+      "desc": "Continuous horizontal wooden trim band above lower wall at y=2 (wraps whole building)."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_slab",
+      "from": [0, 3, 0],
+      "to": [8, 3, 16],
+      "desc": "White slab band separating first and second story at y=3 (1 block high slab layer aligned as full block visually)."
+    },
+    {
+      "op": "fill",
+      "block": "stone_bricks",
+      "from": [1, 4, 1],
+      "to": [7, 4, 15],
+      "desc": "Upper wall band (stonebrick) base for second floor at y=4."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [0, 5, 0],
+      "to": [8, 5, 16],
+      "desc": "Upper wooden trim band under roof eaves at y=5."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [2, 1, 1],
+      "to": [6, 1, 1],
+      "desc": "Front lower continuous narrow window strip centered on front wall at z=1 (1-high row of glass panes)."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [2, 4, 1],
+      "to": [6, 4, 1],
+      "desc": "Front upper continuous narrow window strip centered on front wall at z=1."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [2, 1, 15],
+      "to": [6, 1, 15],
+      "desc": "Back lower continuous narrow window strip at z=15."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [2, 4, 15],
+      "to": [6, 4, 15],
+      "desc": "Back upper continuous narrow window strip at z=15."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [1, 1, 4],
+      "to": [1, 1, 12],
+      "desc": "Left long-side lower continuous window strip along x=1 between z=4..12."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [1, 4, 4],
+      "to": [1, 4, 12],
+      "desc": "Left long-side upper continuous window strip at y=4 along x=1."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [7, 1, 4],
+      "to": [7, 1, 12],
+      "desc": "Right long-side lower continuous window strip along x=7."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "from": [7, 4, 4],
+      "to": [7, 4, 12],
+      "desc": "Right long-side upper continuous window strip at y=4 along x=7."
+    },
+    {
+      "op": "set",
+      "block": "oak_door",
+      "pos": [4, 1, 0],
+      "desc": "Entrance door centered on front short side at z=0 between x=4. Door occupies z=0..0 and y=1..2; opening ensured by not placing wall blocks at that position."
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [4, 1, 0],
+      "to": [4, 2, 0],
+      "desc": "Ensure entrance opening is clear for door placement (air space for door)."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [2, 6, 2],
+      "to": [6, 6, 14],
+      "desc": "Roof base inner ridge platform (support) at y=6 to start stepped gable."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [1, 6, 3],
+      "to": [7, 6, 13],
+      "desc": "First roof step extending out one block from inner ridge at y=6 to create gable slope."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": [0, 6, 4],
+      "to": [8, 6, 12],
+      "desc": "Second roof step forming roof eaves at y=6 aligning with building edges for stepped gable profile."
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [4, 7, 8],
+      "to": [4, 7, 8],
+      "desc": "Small central ridge cap accent (single stone slab) at roof peak center (visual accent)."
+    },
+    {
+      "op": "fill",
+      "block": "air",
+      "from": [1, 2, 1],
+      "to": [7, 5, 15],
+      "desc": "Clear interior space (air) to ensure interior is hollowed out for two

@@ -1,0 +1,431 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 14,
+    "zmin": 0,
+    "zmax": 24
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "quartz",
+    "slab": "stone_slab",
+    "sand": "sandstone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 24,
+          "label": "main"
+        }
+      ],
+      "symmetry": "fourfold_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single central chamber with parapet walkway",
+        "perimeter_profile": "striped_banded_rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 11,
+        "y1": 1,
+        "z1": 0,
+        "x2": 12,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 7,
+        "y1": 2,
+        "z1": 0,
+        "x2": 7,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 17,
+        "y1": 2,
+        "z1": 0,
+        "x2": 17,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 24,
+        "y1": 2,
+        "z1": 7,
+        "x2": 24,
+        "y2": 3,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 24,
+        "y1": 2,
+        "z1": 17,
+        "x2": 24,
+        "y2": 3,
+        "z2": 17
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 7,
+        "y1": 2,
+        "z1": 24,
+        "x2": 7,
+        "y2": 3,
+        "z2": 24
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 17,
+        "y1": 2,
+        "z1": 24,
+        "x2": 17,
+        "y2": 3,
+        "z2": 24
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 7,
+        "x2": 0,
+        "y2": 3,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 17,
+        "x2": 0,
+        "y2": 3,
+        "z2": 17
+      },
+      {
+        "kind": "window",
+        "face": "roof",
+        "x1": 12,
+        "y1": 9,
+        "z1": 12,
+        "x2": 12,
+        "y2": 9,
+        "z2": 12
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 5,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 5,
+          "x1": 6,
+          "z1": 6,
+          "x2": 18,
+          "z2": 18,
+          "block": "nether_brick"
+        },
+        {
+          "y": 6,
+          "x1": 5,
+          "z1": 5,
+          "x2": 19,
+          "z2": 19,
+          "block": "nether_brick"
+        },
+        {
+          "y": 7,
+          "x1": 4,
+          "z1": 4,
+          "x2": 20,
+          "z2": 20,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 3,
+          "z1": 3,
+          "x2": 21,
+          "z2": 21,
+          "block": "nether_brick"
+        },
+        {
+          "y": 9,
+          "x1": 2,
+          "z1": 2,
+          "x2": 22,
+          "z2": 22,
+          "block": "nether_brick"
+        },
+        {
+          "y": 10,
+          "x1": 1,
+          "z1": 1,
+          "x2": 23,
+          "z2": 23,
+          "block": "nether_brick"
+        },
+        {
+          "y": 11,
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 24,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "floor_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 4,
+      "z2": 24,
+      "block": "brick",
+      "purpose": "outer_wall_primary_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 24,
+      "y2": 2,
+      "z2": 24,
+      "block": "quartz",
+      "purpose": "light_horizontal_band_mid (single layer)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 24,
+      "y2": 3,
+      "z2": 24,
+      "block": "sandstone",
+      "purpose": "thin_sandstone_stripe"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 23,
+      "y2": 4,
+      "z2": 23,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 14,
+  "zmin": 0,
+  "zmax": 24,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "minecraft:stone_brick_slab",
+      "from": {"x": -1, "y": 0, "z": -1},
+      "to": {"x": 25, "y": 0, "z": 25},
+      "desc": "base border slabs (one-block out from outer wall) to create raised white border footprint"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": {"x": 0, "y": 1, "z": 0},
+      "to": {"x": 24, "y": 1, "z": 24},
+      "desc": "ground-floor main floor (quartz as light floor layer inside building footprint)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": {"x": 1, "y": 2, "z": 1},
+      "to": {"x": 23, "y": 4, "z": 23},
+      "desc": "primary wall band (lower brick band) forming inner wall shell; leaves 1-block inset border and floor"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": {"x": 1, "y": 5, "z": 1},
+      "to": {"x": 23, "y": 5, "z": 23},
+      "desc": "light horizontal quartz stripe above lower brick band"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": {"x": 1, "y": 6, "z": 1},
+      "to": {"x": 23, "y": 6, "z": 23},
+      "desc": "thin sandstone stripe"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": {"x": 1, "y": 7, "z": 1},
+      "to": {"x": 23, "y": 9, "z": 23},
+      "desc": "upper brick band"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": {"x": 1, "y": 10, "z": 1},
+      "to": {"x": 23, "y": 10, "z": 23},
+      "desc": "top quartz parapet band (parapet walkway base)"
+    },
+    {
+      "op": "replace",
+      "block": "minecraft:air",
+      "from": {"x": 12, "y": 2, "z": 0},
+      "to": {"x": 12, "y": 4, "z": 0},
+      "desc": "main entrance opening centered on front wall (2 blocks wide tall opening) — carved through outer wall at z=0"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": {"x": 0, "y": 2, "z": 0},
+      "to": {"x": 0, "y": 11, "z": 0},
+      "desc": "stonebrick pillar at front-left outer corner (visual continuity) - overlaps border slab but stays within bbox"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": {"x": 24, "y": 2, "z": 0},
+      "to": {"x": 24, "y": 11, "z": 0},
+      "desc": "stonebrick pillar at front-right outer corner"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": {"x": 0, "y": 2, "z": 24},
+      "to": {"x": 0, "y": 11, "z": 24},
+      "desc": "stonebrick pillar at back-left outer corner"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": {"x": 24, "y": 2, "z": 24},
+      "to": {"x": 24, "y": 11, "z": 24},
+      "desc": "stonebrick pillar at back-right outer corner"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": {"x": 1, "y": 2, "z": 0},
+      "to": {"x": 23, "y": 9, "z": 0},
+      "desc": "front outer wall face (brick) between pillars; aligns with main wall bands"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": {"x": 1, "y": 2, "z": 24},
+      "to": {"x": 23, "y": 9, "z": 24},
+      "desc": "back outer wall face (brick)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": {"x": 0, "y": 2, "z": 1},
+      "to": {"x": 0, "y": 9, "z": 23},
+      "desc": "left outer wall face (brick)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": {"x": 24, "y": 2, "z": 1},
+      "to": {"x": 24, "y": 9, "z": 23},
+      "desc": "right outer wall face (brick)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass",
+      "from": {"x": 2, "y": 5, "z": 2},
+      "to": {"x": 3, "y": 6, "z": 3},
+      "desc": "tower window group northwest (small square windows inset)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass",
+      "from": {"x": 21, "y": 5, "z": 2},
+      "to": {"x": 22, "y": 6, "z": 3},
+      "desc": "tower window group northeast"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass",
+      "from": {"x": 2, "y": 5, "z": 21},
+      "to": {"x": 3, "y": 6, "z": 22},
+      "desc": "tower window group southwest"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass",
+      "from": {"x": 21, "y": 5, "z": 21},
+      "to": {"x": 22, "y": 6, "z": 22},
+      "desc": "tower window group southeast"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_slab",
+      "from": {"x": 0, "y": 11, "z": 0},
+      "to": {"x": 24, "y": 11, "z": 24},
+      "desc": "tower caps / overhanging slab trim layer across top of perimeter (stone slab caps)"
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_br

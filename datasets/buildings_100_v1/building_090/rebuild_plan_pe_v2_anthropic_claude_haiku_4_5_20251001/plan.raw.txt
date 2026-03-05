@@ -1,0 +1,281 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "netherbrick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "quartz_block",
+    "floor": "wood",
+    "corner": "stonebrick"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 9,
+          "label": "main_body"
+        }
+      ],
+      "symmetry": "bilateral_x_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground floor with windows",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "upper floor with windows",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 2,
+        "z1": 0,
+        "x2": 8,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 10,
+        "y1": 2,
+        "z1": 0,
+        "x2": 10,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 6,
+        "z1": 0,
+        "x2": 2,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 6,
+        "z1": 0,
+        "x2": 5,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 6,
+        "z1": 0,
+        "x2": 8,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 10,
+        "y1": 6,
+        "z1": 0,
+        "x2": 10,
+        "y2": 6,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 6,
+        "y1": 1,
+        "z1": 0,
+        "x2": 6,
+        "y2": 3,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 8,
+      "ridge_axis": "x",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 12,
+          "z2": 9,
+          "block": "netherbrick"
+        },
+        {
+          "y": 9,
+          "x1": 1,
+          "z1": 1,
+          "x2": 11,
+          "z2": 8,
+          "block": "netherbrick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 12,
+      "y2": 0,
+      "z2": 9,
+      "block": "quartz_block",
+      "purpose": "raised_base_ledge"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 1,
+      "z2": 8,
+      "block": "wood",
+      "purpose": "floor_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 9,
+      "block": "brick",
+      "purpose": "outer_shell_ground_floor"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 4,
+      "z2": 8,
+      "purpose": "interior_ground_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 9,
+      "block": "quartz_block",
+      "purpose": "horizontal_trim_band_lower"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 11,
+      "y2": 5,
+      "z2": 8,
+      "block": "wood",
+      "purpose": "floor_upper"
+    },
+    {
+      "op
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 12,
+  "ymin": 0,
+  "ymax": 10,
+  "zmin": 0,
+  "zmax": 11,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 12, "y2": 10, "z2": 0, "block": "quartz_block", "description": "base ledge layer"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 11, "y2": 9, "z2": 1, "block": "oak_planks", "description": "floor 1"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 2, "x2": 11, "y2": 9, "z2": 4, "block": "brick", "description": "walls floor 1"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 5, "x2": 11, "y2": 9, "z2": 5, "block": "oak_planks", "description": "floor separator band"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 6, "x2": 11, "y2": 9, "z2": 8, "block": "brick", "description": "walls floor 2"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 2, "x2": 0, "y2": 9, "z2": 4, "block": "stonebrick", "description": "left corner pillar floor 1"},
+    {"type": "fill", "x1": 12, "y1": 1, "z1": 2, "x2": 12, "y2": 9, "z2": 4, "block": "stonebrick", "description": "right corner pillar floor 1"},
+    {"type": "fill", "x1": 0, "y1": 1, "z1": 6, "x2": 0, "y2": 9, "z2": 8, "block": "stonebrick", "description": "left corner pillar floor 2"},
+    {"type": "fill", "x1": 12, "y1": 1, "z1": 6, "x2": 12, "y2": 9, "z2": 8, "block": "stonebrick", "description": "right corner pillar floor 2"},
+    {"type": "fill", "x1": 1, "y1": 0, "z1": 2, "x2": 11, "y2": 0, "z2": 4, "block": "quartz_block", "description": "front trim floor 1"},
+    {"type": "fill", "x1": 1, "y1": 10, "z1": 2, "x2": 11, "y2": 10, "z2": 4, "block": "quartz_block", "description": "back trim floor 1"},
+    {"type": "fill", "x1": 1, "y1": 0, "z1": 6, "x2": 11, "y2": 0, "z2": 8, "block": "quartz_block", "description": "front trim floor 2"},
+    {"type": "fill", "x1": 1, "y1": 10, "z1": 6, "x2": 11, "y2": 10, "z2": 8, "block": "quartz_block", "description": "back trim floor 2"},
+    {"type": "setblock", "x": 2, "y": 0, "z": 3, "block": "air", "description": "window front floor 1 pos 1"},
+    {"type": "setblock", "x": 4, "y": 0, "z": 3, "block": "air", "description": "window front floor 1 pos 2"},
+    {"type": "setblock", "x": 6, "y": 0, "z": 3, "block": "air", "description": "window front floor 1 pos 3"},
+    {"type": "setblock", "x": 8, "y": 0, "z": 3, "block": "air", "description": "window front floor 1 pos 4"},
+    {"type": "setblock", "x": 10, "y": 0, "z": 3, "block": "air", "description": "window front floor 1 pos 5"},
+    {"type": "setblock", "x": 2, "y": 0, "z": 7, "block": "air", "description": "window front floor 2 pos 1"},
+    {"type": "setblock", "x": 4, "y": 0, "z": 7, "block": "air", "description": "window front floor 2 pos 2"},
+    {"type": "setblock", "x": 6, "y": 0, "z": 7, "block": "air", "description": "window front floor 2 pos 3"},
+    {"type": "setblock", "x": 8, "y": 0, "z": 7, "block": "air", "description": "window front floor 2 pos 4"},
+    {"type": "setblock", "x": 10, "y": 0, "z": 7, "block": "air", "description": "window front floor 2 pos 5"},
+    {"type": "setblock", "x": 2, "y": 10, "z": 3, "block": "air", "description": "window back floor 1 pos 1"},
+    {"type": "setblock", "x": 4, "y": 10, "z": 3, "block": "air", "description": "window back floor 1 pos 2"},
+    {"type": "setblock", "x": 6, "y": 10, "z": 3, "block": "air", "description": "window back floor 1 pos 3"},
+    {"type": "setblock", "x": 8, "y": 10, "z": 3, "block": "air", "description": "window back floor 1 pos 4"},
+    {"type": "setblock", "x": 10, "y": 10, "z": 3, "block": "air", "description": "window back floor 1 pos 5"},
+    {"type": "setblock", "x": 2, "y": 10, "z": 7, "block": "air", "description": "window back floor 2 pos 1"},
+    {"type": "setblock", "x": 4, "y": 10, "z": 7, "block": "air", "description": "window back floor 2 pos 2"},
+    {"type": "setblock", "x": 6, "y": 10, "z": 7, "block": "air", "description": "window back floor 2 pos 3"},

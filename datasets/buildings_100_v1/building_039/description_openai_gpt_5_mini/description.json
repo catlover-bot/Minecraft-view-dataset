@@ -1,0 +1,72 @@
+{
+  "summary": "Small rectangular single-story building with raised stone walls, a recessed cobblestone perimeter foundation, horizontal banded windows on long sides, and a stepped dark-red (netherbrick) gable-like roof with stone slab accents at each step.",
+  "building_type": "house-like / small hall",
+  "shape": {
+    "overall_form": "rectangular prism for main volume with stepped/pitched roof and low outer perimeter wall",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along long centerline",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 7,
+    "depth": 15,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "primary wall (appears as smooth stone-brick texture)",
+      "confidence": 0.8
+    },
+    {
+      "name": "cobblestone",
+      "role": "foundation / low perimeter wall",
+      "confidence": 0.9
+    },
+    {
+      "name": "netherbrick",
+      "role": "roof (dark red stepped blocks / stairs)",
+      "confidence": 0.95
+    },
+    {
+      "name": "slab_stone",
+      "role": "stone slab accents on roof steps / corners",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.95
+    },
+    {
+      "name": "wood",
+      "role": "possible door/frame material (uncertain)",
+      "confidence": 0.3
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows (3-4 panes per side) on long walls",
+    "single-story rectangular interior volume",
+    "stepped dark roof composed of stairs/blocks with slabs at step edges",
+    "cobblestone low outer border around building (one block high)",
+    "stone-slab corner/step caps"
+  ],
+  "rebuild_hints": [
+    "Create rectangular footprint with inner raised stonebrick walls elevated one block above cobblestone perimeter.",
+    "Place cobblestone one-block-high border set flush around building footprint with a one-block gap to earth outside (visible trench).",
+    "Use netherbrick stairs and blocks to form a stepped gable roof along long axis; cap each step riser with a stone slab (slab_stone).",
+    "Cut horizontal window rows centered on long walls: repeated 1x2 windows separated by single stonebrick columns.",
+    "Maintain bilateral symmetry: central roof ridge runs along length; roof steps appear mirrored on both long sides."
+  ],
+  "uncertainties": [
+    "Exact internal layout and floor height not visible (assumed single floor).",
+    "Material identification between stonebrick and plain stone is uncertain; chosen stonebrick by texture similarity but could be regular stone or andesite.",
+    "Door location and exact count of window panes partially occluded in some angles; counts estimated from visible sections.",
+    "Depth and width in blocks are approximate (rounded to nearest whole number)."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_039",
+  "created_at": "2026-02-28T14:06:39.465364+00:00"
+}

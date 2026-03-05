@@ -1,0 +1,345 @@
+{
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "floor (oak planks) 9x13 footprint on y=0"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": -1,
+      "z1": -1,
+      "x2": 9,
+      "y2": -1,
+      "z2": 13,
+      "block": "dirt",
+      "purpose": "shallow moat ground (dirt) around building; outside bbox - removed in final (kept only within bbox)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 1,
+      "z2": 12,
+      "block": "wood",
+      "purpose": "1-block-high wooden plinth layer above floor (oak planks) to match 'lower wooden plinth'"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": -1,
+      "z1": -1,
+      "x2": 9,
+      "y2": -1,
+      "z2": 13,
+      "block": "wood",
+      "purpose": "self_refine_floor_balance"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 7,
+      "y2": 4,
+      "z2": 11,
+      "block": "brick",
+      "purpose": "main brick walls (solid) leaving 1-block border for corner pillars and outer parapet"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 8,
+      "y2": 5,
+      "z2": 12,
+      "block": "quartz_block",
+      "purpose": "white band / parapet top layer (quartz blocks) at wall-top level (y=5) — cap across bbox"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "block": "glass",
+      "purpose": "short side small windows (west) — within wall"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "block": "glass",
+      "purpose": "short side small windows (east) — within wall"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "block": "air",
+      "purpose": "entrance opening centered on north face (1-block wide, 2-high opening) within bbox"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "block": "air",
+      "purpose": "ensure adjacent opening space (double-wide opening option) — still within bbox"
+    },
+    {
+      "op": "carve",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 12,
+      "block": "air",
+      "purpose": "clear interior space before walls (ensure empty) - replacement only inside bbox"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 7,
+      "y2": 5,
+      "z2": 11,
+      "block": "nether_brick",
+      "purpose": "nether brick upper band filling inner top band inside parapet"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 8,
+      "y2": 6,
+      "z2": 12,
+      "block": "slab_stone",
+      "purpose": "stone slab roof edge/parapet cap (y=6) — note: ymax=5 so keep slabs within bbox by capping at y=5 instead"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 8,
+      "y2": 5,
+      "z2": 12,
+      "block": "slab_stone",
+      "purpose": "stone slab parapet placed on same y as quartz to remain within bbox (parapet thickness reduced)"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 5,
+      "z1": 2,
+      "x2": 6,
+      "y2": 5,
+      "z2": 10,
+      "block": "nether_brick",
+      "purpose": "recessed central roof floor (nether brick) at parapet level representing inner dark floor; kept inside bbox"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 6,
+      "y2": 4,
+      "z2": 10,
+      "block": "air",
+      "purpose": "recessed central roof opening (air vertical void) sized 5x9 horizontally, cleared to create courtyard opening"
+    },
+    {
+      "op": "fill",
+      "x1": -1,
+      "y1": 5,
+      "z1": -1,
+      "x2": 9,
+      "y2": 5,
+      "z2": 13,
+      "block": "wood",
+      "purpose": "self_refine_roof_v2"
+    },
+    {
+      "op": "carve",
+      "x1": 4,
+      "y1": 0,
+      "z1": -1,
+      "x2": 4,
+      "y2": 2,
+      "z2": -1,
+      "block": "air",
+      "purpose": "self_repair_entrance"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "stone corner pillar NW (single column) within bbox"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 2,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "stone corner pillar NE"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 12,
+      "x2": 0,
+      "y2": 4,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "stone corner pillar SW"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 2,
+      "z1": 12,
+      "x2": 8,
+      "y2": 4,
+      "z2": 12,
+      "block": "stonebrick",
+      "purpose": "stone corner pillar SE"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "block": "glass",
+      "purpose": "row of windows on north long side (3 panes with spacing) — placed inside bbox"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "block": "glass",
+      "purpose": "row of windows on south long side"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 1,
+      "z2": 11,
+      "block": "slab_wood",
+      "purpose": "wooden slab threshold / interior sill row above plinth"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "block": "air",
+      "purpose": "entrance exterior clearance on westmost block to keep corner pillar intact (small opening on west face) — within bbox"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 1,
+      "z1": 0,
+      "x2": 5,
+      "y2": 1,
+      "z2": 0,
+      "block": "stairs_brick",
+      "purpose": "optional entrance step using brick_stairs within bbox"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 1,
+      "z": -1,
+      "block": "glowstone",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 9,
+      "y": 1,
+      "z": -1,
+      "block": "glowstone",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": -1,
+      "y": 1,
+      "z": 13,
+      "block": "glowstone",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "set",
+      "x": 9,
+      "y": 1,
+      "z": 13,
+      "block": "glowstone",
+      "purpose": "self_repair_light"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": -1,
+      "x2": 0,
+      "y2": 2,
+      "z2": -1,
+      "block": "glass",
+      "purpose": "self_refine_window_v1"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 1,
+      "z1": -1,
+      "x2": 4,
+      "y2": 2,
+      "z2": -1,
+      "block": "glass",
+      "purpose": "self_refine_window_v1"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 1,
+      "z1": -1,
+      "x2": 8,
+      "y2": 2,
+      "z2": -1,
+      "block": "glass",
+      "purpose": "self_refine_window_v1"
+    }
+  ]
+}

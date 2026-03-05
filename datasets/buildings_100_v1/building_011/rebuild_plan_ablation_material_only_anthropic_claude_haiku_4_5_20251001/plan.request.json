@@ -1,0 +1,158 @@
+{
+  "building": "building_011",
+  "source_plan": "rebuild_plan_pe_v2_anthropic_claude_haiku_4_5_20251001/plan.json",
+  "description_path": "description_anthropic_claude_haiku_4_5_20251001/description.json",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 28,
+    "accepted_operations_count": 28,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": false,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "floor": {
+        "block": "stonebrick",
+        "score": 0.95,
+        "source_role": "foundation and platform"
+      },
+      "wall": {
+        "block": "wood",
+        "score": 0.9,
+        "source_role": "wall planks and roof"
+      },
+      "roof": {
+        "block": "wood",
+        "score": 0.9,
+        "source_role": "wall planks and roof"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.85,
+        "source_role": "windows"
+      },
+      "trim": {
+        "block": "fence",
+        "score": 0.7,
+        "source_role": "corner posts and trim"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "light"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "wood",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "wood",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "fence",
+          "score": 0.7,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "glass",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.85,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.95,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": [
+        {
+          "role": "roof",
+          "from": "wood",
+          "to": "wood"
+        }
+      ]
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 32,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 9,
+    "role_fixed_skipped_low_conf_count": 13,
+    "role_infer_confidence_mean": 0.48214285714285726,
+    "role_infer_reasons": {
+      "purpose_hint": 15,
+      "unknown": 13
+    },
+    "self_repair_report": {
+      "added_operations": 4,
+      "added_tags": [
+        "light",
+        "light",
+        "light",
+        "light"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "repair_profile": {
+    "strict_schema": false,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "prefer_description_palette": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "created_at": "2026-03-01T13:19:26.355711+00:00"
+}

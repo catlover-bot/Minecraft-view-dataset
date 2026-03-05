@@ -1,0 +1,491 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 21,
+    "ymin": 0,
+    "ymax": 15,
+    "zmin": 0,
+    "zmax": 39
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 21,
+          "z2": 39,
+          "label": "outer_shell"
+        }
+      ],
+      "symmetry": "bilateral_along_x_center"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 1
+        },
+        "rooms_hint": "courtyard ground (open)",
+        "perimeter_profile": "rectangle with central recessed entrance on north face"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 5
+        },
+        "rooms_hint": "ground-level walls and low hall",
+        "perimeter_profile": "solid walls with bands"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 6,
+          "ymax": 12
+        },
+        "rooms_hint": "tower shafts (taller) and upper hall space",
+        "perimeter_profile": "towers rise above main roof"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 12,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 4,
+        "y1": 3,
+        "z1": 0,
+        "x2": 4,
+        "y2": 4,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 17,
+        "y1": 3,
+        "z1": 0,
+        "x2": 17,
+        "y2": 4,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 7,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 1,
+          "z1": 1,
+          "x2": 20,
+          "z2": 38,
+          "block": "brick"
+        },
+        {
+          "y": 8,
+          "x1": 2,
+          "z1": 3,
+          "x2": 19,
+          "z2": 36,
+          "block": "brick"
+        },
+        {
+          "y": 9,
+          "x1": 3,
+          "z1": 6,
+          "x2": 18,
+          "z2": 33,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 21,
+      "y2": 0,
+      "z2": 39,
+      "block": "dirt",
+      "purpose": "courtyard_ground_fill"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 21,
+      "y2": 1,
+      "z2": 39,
+      "block": "quartz",
+      "purpose": "perimeter_quartz_curb"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 20,
+      "y2": 1,
+      "z2": 38,
+      "purpose": "clear_courtyard_interior (leave curb)"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 21,
+      "y2": 5,
+      "z2": 39,
+      "block": "sandstone",
+      "purpose": "outer_wall_shell_base_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 21,
+      "y2": 6,
+      "z2": 39,
+      "block": "smooth_sandstone",
+      "purpose": "outer_wall_shell_second_band (overlapping band to create alternating bands)"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 20,
+      "y2": 5,
+      "z2": 38,
+      "purpose": "interior_hall_void"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 4,
+      "z2": 0,
+      "purpose": "main_north_entrance_recess"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 1,
+      "z2": 0,
+      "block": "sandstone",
+      "purpose": "entrance_step"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 3,
+      "z1": 0,
+      "x2": 4,
+      "y2": 4,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "north_small_window_left"
+    },
+    {
+      "op": "fill",
+      "x1": 17,
+      "y1": 3,
+      "z1": 0,
+      "x2": 17,
+      "y2": 4,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "north_small_window_right"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 21,
+      "y2": 6,
+      "z2": 39,
+      "block": "stonebrick",
+      "purpose": "parapet_crenellated_base"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 20,
+      "y2": 6,
+      "z2": 38,
+      "purpose": "parapet_interior_crenel_clear"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 20,
+      "y2": 7
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 21,
+  "ymin": 0,
+  "ymax": 15,
+  "zmin": 0,
+  "zmax": 39,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "minecraft:dirt",
+      "from": [1, 0, 1],
+      "to": [20, 0, 38]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [0, 1, 0],
+      "to": [21, 1, 39]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": [2, 1, 2],
+      "to": [19, 6, 37]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:smooth_sandstone",
+      "from": [2, 3, 2],
+      "to": [19, 4, 37]
+    },
+    {
+      "op": "replace",
+      "block": "minecraft:sandstone",
+      "from": [2, 5, 2],
+      "to": [19, 6, 37],
+      "filter": "minecraft:air"
+    },
+    {
+      "op": "outline",
+      "block": "minecraft:stonebrick",
+      "from": [2, 1, 2],
+      "to": [19, 8, 37]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": [6, 1, 6],
+      "to": [15, 1, 31]
+    },
+    {
+      "op": "air",
+      "from": [9, 1, 2],
+      "to": [12, 6, 2]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": [3, 9, 3],
+      "to": [18, 11, 36]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_slab",
+      "from": [2, 11, 2],
+      "to": [19, 11, 37]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stonebrick",
+      "from": [1, 1, 1],
+      "to": [20, 12, 38]
+    },
+    {
+      "op": "air",
+      "from": [9, 1, 0],
+      "to": [12, 6, 0]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [3, 4, 3],
+      "to": [3, 6, 3]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [18, 4, 3],
+      "to": [18, 6, 3]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [3, 4, 36],
+      "to": [3, 6, 36]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [18, 4, 36],
+      "to": [18, 6, 36]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stonebrick",
+      "from": [1, 1, 1],
+      "to": [1, 13, 1]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stonebrick",
+      "from": [20, 1, 1],
+      "to": [20, 13, 1]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stonebrick",
+      "from": [1, 1, 38],
+      "to": [1, 13, 38]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stonebrick",
+      "from": [20, 1, 38],
+      "to": [20, 13, 38]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": [2, 1, 2],
+      "to": [5, 13, 5]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": [16, 1, 2],
+      "to": [19, 13, 5]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": [2, 1, 34],
+      "to": [5, 13, 37]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sandstone",
+      "from": [16, 1, 34],
+      "to": [19, 13, 37]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:smooth_sandstone",
+      "from": [3, 8, 3],
+      "to": [4, 9, 4]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:smooth_sandstone",
+      "from": [17, 8, 3],
+      "to": [18, 9, 4]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:smooth_sandstone",
+      "from": [3, 8, 35],
+      "to": [4, 9, 36]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:smooth_sandstone",
+      "from": [17, 8, 35],
+      "to": [18, 9, 36]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:brick_block",
+      "from": [4, 13, 4],
+      "to": [17, 13, 36]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:stone_slab",
+      "from": [4, 14, 4],
+      "to": [17, 14, 36]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:air",
+      "from": [9, 2, 0],
+      "to": [12, 5, 1]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:air",
+      "from": [9, 6, 1],
+      "to": [12, 10, 2]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:air",
+      "from": [9, 1, 18],
+      "to": [12, 6, 21]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:quartz_stairs",
+      "from": [9, 1, 0],
+      "to": [11, 1, 0]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sea_lantern",
+      "from": [10, 15, 20],
+      "to": [10, 15, 20]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sea_lantern",
+      "from": [4, 14, 20],
+      "to": [4, 14, 20]
+    },
+    {
+      "op": "fill",
+      "block": "minecraft:sea_lantern",
+      "from": [17, 14

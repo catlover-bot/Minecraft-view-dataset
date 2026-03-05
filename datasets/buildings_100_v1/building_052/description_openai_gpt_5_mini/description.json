@@ -1,0 +1,70 @@
+{
+  "summary": "Small rectangular single-storey building with a flat brick roof inset and a raised stone border; walls combine a lower sand-colored textured block, a middle band of light smooth blocks, and a top brick course with a stone slab coping. Windows are a continuous horizontal row of glass panes around the mid-wall. A low white stone perimeter ledge/step surrounds the building within a shallow trench.",
+  "building_type": "small utility/commercial single-storey",
+  "shape": {
+    "overall_form": "simple rectangular box with a recessed flat roof and continuous window band on the sides",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetrical along the long axis (both long sides match); short sides appear symmetric as well",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 19,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "upper wall course / roof field",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "roof coping / slab edge",
+      "confidence": 0.8
+    },
+    {
+      "name": "sandstone",
+      "role": "lower wall",
+      "confidence": 0.8
+    },
+    {
+      "name": "quartz",
+      "role": "middle wall band and corner pillars and low perimeter ledge",
+      "confidence": 0.7
+    },
+    {
+      "name": "glass",
+      "role": "windows (glass panes)",
+      "confidence": 0.95
+    },
+    {
+      "name": "dirt",
+      "role": "ground / excavated trench",
+      "confidence": 0.9
+    }
+  ],
+  "elements": [
+    "continuous horizontal window band (multiple adjacent glass panes at mid-height)",
+    "single-storey rectangular wall stack: lower textured block layer, smooth middle band, brick top band",
+    "flat recessed roof with stone slab coping",
+    "raised white perimeter ledge/step around the building set into surrounding earth"
+  ],
+  "rebuild_hints": [
+    "Build a rectangle footprint ~11x19 blocks (estimate) and raise walls about 5 blocks high to window band midpoint.",
+    "Use sandstone (or sand-colored textured blocks) for the lower 2 layers of walls, a smooth light block (quartz) for the band above, then a 1-block-high brick course near the top. Cap with stone slabs around a recessed flat brick roof.",
+    "Place a continuous row of glass panes one block above the lower sandstone section spanning the long sides with regular spacing (in images there are 5 windows across the long face).",
+    "Add corner vertical smooth blocks (quartz-like) that frame the middle band on each corner, and a 1-block-high white ledge around the base extending one block out from the wall placed on the ground level."
+  ],
+  "uncertainties": [
+    "Exact block types: sandstone and quartz are visually matched but could be other similar light/sand-colored or smooth white blocks.",
+    "Footprint exact dimensions: counted from imagery but may be off by ±1–2 blocks; width/depth are estimates.",
+    "Height: internal floor/ceiling thickness unknown; only external visible wall height used.",
+    "There may be a small entrance or step on one short side not fully visible in all views; entrance location uncertain."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_052",
+  "created_at": "2026-02-28T14:09:56.583362+00:00"
+}

@@ -1,0 +1,281 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 18,
+    "zmin": 0,
+    "zmax": 34
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "dirt",
+    "tower": "stonebrick",
+    "platform": "stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 34,
+          "label": "compound_outer"
+        },
+        {
+          "x1": 5,
+          "z1": 8,
+          "x2": 19,
+          "z2": 26,
+          "label": "central_block"
+        }
+      ],
+      "symmetry": "bilateral_z_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 5
+        },
+        "rooms_hint": "ground level with compound boundary and central base",
+        "perimeter_profile": "rectangle with inner courtyard"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 6,
+          "ymax": 11
+        },
+        "rooms_hint": "middle tier with windows",
+        "perimeter_profile": "stepped rectangle"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 12,
+          "ymax": 15
+        },
+        "rooms_hint": "upper tier with windows",
+        "perimeter_profile": "stepped rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 7,
+        "z1": 8,
+        "x2": 8,
+        "y2": 8,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 7,
+        "z1": 8,
+        "x2": 16,
+        "y2": 8,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 8,
+        "y1": 12,
+        "z1": 8,
+        "x2": 8,
+        "y2": 13,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 16,
+        "y1": 12,
+        "z1": 8,
+        "x2": 16,
+        "y2": 13,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 8,
+        "y1": 7,
+        "z1": 26,
+        "x2": 8,
+        "y2": 8,
+        "z2": 26
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 16,
+        "y1": 7,
+        "z1": 26,
+        "x2": 16,
+        "y2": 8,
+        "z2": 26
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 8,
+        "y1": 12,
+        "z1": 26,
+        "x2": 8,
+        "y2": 13,
+        "z2": 26
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 16,
+        "y1": 12,
+        "z1": 26,
+        "x2": 16,
+        "y2": 13,
+        "z2": 26
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 16,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 16,
+          "x1": 5,
+          "z1": 8,
+          "x2": 19,
+          "z2": 26,
+          "block": "brick"
+        },
+        {
+          "y": 17,
+          "x1": 6,
+          "z1": 10,
+          "x2": 18,
+          "z2": 24,
+          "block": "brick"
+        },
+        {
+          "y": 18,
+          "x1": 7,
+          "z1": 12,
+          "x2": 17,
+          "z2": 22,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 34,
+      "block": "dirt",
+      "purpose": "ground_compound"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 22,
+      "y2": 1,
+      "z2": 32,
+      "block": "quartz",
+      "purpose": "inner_boundary_low_wall"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 1,
+      "z1": 8,
+      "x2": 19,
+      "y2": 5,
+      "z2": 26,
+      "block": "sandstone",
+      "purpose": "central_base_tier"
+    },
+    {
+      "op": "carve",
+      "x1": 6,
+      "y1": 1,
+      "z1": 9,
+      "x2": 18,
+      "y2": 5,
+      "z2": 25,
+      "purpose": "central_interior_base"
+    },
+    {
+      "op": "fill",
+      "x1": 6,
+      "y1": 6,
+      "z1": 9,
+      "x2": 18,
+      "y2": 11,
+      "z2": 25,
+      "block": "sand
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 18,
+  "zmin": 0,
+  "zmax": 34,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 24, "y2": 18, "z2": 0, "block": "dirt"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 1, "x2": 22, "y2": 16, "z2": 1, "block": "sandstone"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 2, "x2": 21, "y2": 15, "z2": 6, "block": "sandstone"},
+    {"type": "fill", "x1": 4, "y1": 4, "z1": 7, "x2": 20, "y2": 14, "z2": 11, "block": "sandstone"},
+    {"type": "fill", "x1": 5, "y1": 5, "z1": 12, "x2": 19, "y2": 13, "z2": 15, "block": "sandstone"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 2, "x2": 21, "y2": 15, "z2": 2, "block": "quartz"},
+    {"type": "fill", "x1": 4, "y1": 4, "z1": 7, "x2": 20, "y2": 14, "z2": 7, "block": "quartz"},
+    {"type": "fill", "x1": 5, "y1": 5, "z1": 12, "x2": 19, "y2": 13, "z2": 12, "block": "quartz"},
+    {"type": "fill", "x1": 8, "y1": 6, "z1": 3, "x2": 8, "y2": 12, "z2": 5, "block": "glass"},
+    {"type": "fill", "x1": 16, "y1": 6, "z1": 3, "x2": 16, "y2": 12, "z2": 5, "block": "glass"},
+    {"type": "fill", "x1": 8, "y1": 6, "z1": 8, "x2": 8, "y2": 12, "z2": 10, "block": "glass"},
+    {"type": "fill", "x1": 16, "y1": 6, "z1": 8, "x2": 16, "y2": 12, "z2": 10, "block": "glass"},
+    {"type": "fill", "x1": 10, "y1": 6, "z1": 13, "x2": 14, "y2": 12, "z2": 14, "block": "glass"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 2, "y2": 18, "z2": 8, "block": "stonebrick"},
+    {"type": "fill", "x1": 22, "y1": 0, "z1": 1, "x2": 24, "y2": 18, "z2": 8, "block": "stonebrick"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 24, "y2": 2, "z2": 8, "block": "stonebrick"},
+    {"type": "fill", "x1": 0, "y1": 16, "z1": 1, "x2": 24, "y2": 18, "z2": 8, "block": "stonebrick"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 8, "x2": 23, "y2": 17, "z2": 8, "block": "slab_stone"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 9, "x2": 22, "y2": 16, "z2": 16, "block": "brick"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 16, "x2": 21, "y2": 15, "z2": 18, "block": "brick"},
+    {"type": "fill", "x1": 4, "y1": 4, "z1": 18, "x2": 20, "y2": 14, "z2": 20, "block": "brick"},
+    {"type": "fill", "x1": 5, "y1": 5, "z1": 20, "x2": 19, "y2": 13, "z2": 22, "block": "brick"},
+    {"type": "fill", "x1": 6, "y1": 6, "z1": 22, "x2": 18, "y2": 12, "z2": 24, "block": "brick"},
+    {"type": "fill", "x1": 7, "y1": 7, "z1": 24, "x2": 17, "y2": 11, "z2": 26, "block": "brick"},
+    {"type": "fill", "x1": 8, "y1": 8, "z1": 26, "x2": 16, "y2": 10, "z2": 28, "block": "brick"},
+    {"type": "fill", "x1": 9, "y1": 9, "z1": 28, "x2": 15, "y2": 9, "z2": 30, "block": "brick"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 1, "y2": 17, "z2": 1, "block": "quartz"},
+    {"type": "fill", "x1": 23, "y1": 1, "z1": 1, "x2": 23, "y2": 17, "z2": 1, "block": "quartz"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 23, "y2": 1, "z2": 1, "block": "quartz"},
+    {"type": "fill", "x1": 1, "y1": 17, "z1": 1, "x2": 23, "y2": 17, "z2": 1, "block": "quartz"},
+    {"type": "fill", "x1": 11, "y1": 8, "z1": 3, "x2":

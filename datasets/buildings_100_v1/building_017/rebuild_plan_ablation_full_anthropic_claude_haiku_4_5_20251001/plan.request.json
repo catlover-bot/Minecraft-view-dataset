@@ -1,0 +1,241 @@
+{
+  "building": "building_017",
+  "source_plan": "rebuild_plan_ablation_full_pre_anthropic_claude_haiku_4_5_20251001/plan.json",
+  "description_path": "description_anthropic_claude_haiku_4_5_20251001/description.json",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 34,
+    "accepted_operations_count": 34,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "wood",
+        "score": 0.95,
+        "source_role": "primary wall material"
+      },
+      "roof": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "foundation, bands between floors, roof trim"
+      },
+      "trim": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "foundation, bands between floors, roof trim"
+      },
+      "floor": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "foundation, bands between floors, roof trim"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.95,
+        "source_role": "windows"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [],
+      "coherence_repairs": [
+        {
+          "role": "trim",
+          "from": "stonebrick",
+          "to": "stonebrick"
+        }
+      ]
+    },
+    "budget_source": "root.material_budget",
+    "budget_present_in_input": true,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 72,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 0,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 1.0,
+    "role_infer_reasons": {
+      "explicit_role": 72
+    },
+    "self_repair_report": {
+      "added_operations": 0,
+      "added_tags": [],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [
+      {
+        "role": "wall",
+        "target_blocks": 85,
+        "actual_blocks": 338,
+        "relative_error": 2.976471
+      },
+      {
+        "role": "roof",
+        "target_blocks": 38,
+        "actual_blocks": 158,
+        "relative_error": 3.157895
+      },
+      {
+        "role": "glass",
+        "target_blocks": 16,
+        "actual_blocks": 28,
+        "relative_error": 0.75
+      },
+      {
+        "role": "floor",
+        "target_blocks": 156,
+        "actual_blocks": 306,
+        "relative_error": 0.961538
+      }
+    ],
+    "schema_violations": [],
+    "strict_blocking_issues": [
+      "material_budget_violation"
+    ],
+    "valid_strict": false
+  },
+  "self_refine_no_gt": {
+    "enabled": true,
+    "accepted_iterations": 2,
+    "total_added_ops": 74,
+    "final_score": 0.8113540717972071,
+    "final_components": {
+      "material": 0.6442622950819672,
+      "dim": 0.7175925925925926,
+      "roof": 0.96171875,
+      "window": 1.0,
+      "entrance": 1.0
+    },
+    "history": [
+      {
+        "iter": 0,
+        "accepted": true,
+        "score": 0.6801638899995558,
+        "components": {
+          "material": 0.5658650825384133,
+          "dim": 0.6805555555555557,
+          "roof": 0.73,
+          "window": 0.6666666666666666,
+          "entrance": 1.0
+        },
+        "added_ops": 0
+      },
+      {
+        "iter": 1,
+        "accepted": true,
+        "gain": 0.013941546458339671,
+        "score": 0.6941054364578955,
+        "components": {
+          "material": 0.6729508196721312,
+          "dim": 0.6805555555555557,
+          "roof": 0.6123076923076922,
+          "window": 0.6666666666666666,
+          "entrance": 1.0
+        },
+        "added_ops": 23,
+        "candidate_index": 0,
+        "candidates_tested": 1,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 21,
+        "budget_reproject_report": {
+          "added_by_role": {
+            "floor": 1
+          },
+          "reduced_by_role": {
+            "trim": 14,
+            "roof": 6
+          },
+          "total_added_ops": 21
+        },
+        "selection_score": 0.6711054364578954,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 1
+        }
+      },
+      {
+        "iter": 2,
+        "accepted": true,
+        "gain": 0.11724863533931162,
+        "score": 0.8113540717972071,
+        "components": {
+          "material": 0.6442622950819672,
+          "dim": 0.7175925925925926,
+          "roof": 0.96171875,
+          "window": 1.0,
+          "entrance": 1.0
+        },
+        "added_ops": 36,
+        "candidate_index": 5,
+        "candidates_tested": 8,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 32,
+        "budget_reproject_report": {
+          "added_by_role": {
+            "wall": 2,
+            "glass": 6,
+            "floor": 1
+          },
+          "reduced_by_role": {
+            "trim": 17,
+            "roof": 5
+          },
+          "total_added_ops": 32
+        },
+        "selection_score": 0.7753540717972071,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 4
+        }
+      }
+    ],
+    "profile": {
+      "max_iterations": 2,
+      "min_score_gain": 0.01,
+      "max_added_ops_per_iter": 64,
+      "roof_search_variants": 8,
+      "window_search_variants": 8,
+      "max_search_candidates": 20,
+      "enable_material_budget_reprojection": true,
+      "material_budget_reprojection_strength": 0.6,
+      "material_budget_reprojection_min_deficit_ratio": 0.025,
+      "material_budget_reprojection_trigger_material_score": 0.78,
+      "selection_op_penalty": 0.001,
+      "strict_schema": true,
+      "enforce_role_fixed": true,
+      "require_material_budget": true,
+      "material_budget_tolerance": 0.35,
+      "role_fix_min_confidence": 0.78,
+      "prefer_description_palette": true
+    }
+  },
+  "created_at": "2026-03-01T13:20:39.041387+00:00"
+}

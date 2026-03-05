@@ -1,0 +1,470 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 29,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 6
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "quartz_block",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "spruce_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 29,
+          "z2": 6,
+          "label": "main"
+        }
+      ],
+      "symmetry": "z_axis_centered_along_length"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "single long hall with hollow interior; corner tower interiors likely hollow",
+        "perimeter_profile": "rectangular with four corner tower extrusions"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 14,
+        "y1": 1,
+        "z1": 0,
+        "x2": 15,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 14,
+        "y1": 3,
+        "z1": 6,
+        "x2": 15,
+        "y2": 5,
+        "z2": 6
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 8,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 29,
+          "z2": 6,
+          "block": "nether_brick"
+        },
+        {
+          "y": 9,
+          "x1": 8,
+          "z1": 1,
+          "x2": 20,
+          "z2": 5,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 29,
+      "y2": 0,
+      "z2": 6,
+      "block": "spruce_planks",
+      "purpose": "floor_main"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 29,
+      "y2": 1,
+      "z2": 6,
+      "block": "quartz_block",
+      "purpose": "perimeter_base_trim"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 29,
+      "y2": 4,
+      "z2": 6,
+      "block": "brick",
+      "purpose": "central_body_shell_band_base"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 28,
+      "y2": 4,
+      "z2": 5,
+      "purpose": "hollow_central_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 29,
+      "y2": 5,
+      "z2": 6,
+      "block": "brick",
+      "purpose": "upper_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 29,
+      "y2": 6,
+      "z2": 6,
+      "block": "quartz_block",
+      "purpose": "upper_trim_band"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 5,
+      "z1": 1,
+      "x2": 20,
+      "y2": 7,
+      "z2": 5,
+      "block": "nether_brick",
+      "purpose": "raised_dark_central_roof_area"
+    },
+    {
+      "op": "carve",
+      "x1": 9,
+      "y1": 6,
+      "z1": 2,
+      "x2": 19,
+      "y2": 7,
+      "z2": 4,
+      "purpose": "recess_center_feature"
+    },
+    {
+      "op": "fill",
+      "x1": 14,
+      "y1": 7,
+      "z1": 3,
+      "x2": 15,
+      "y2": 7,
+      "z2": 3,
+      "block": "glowstone",
+      "purpose": "central_roof_light"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 7,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "tower_nw_corner_column"
+    },
+    {
+      "op": "fill",
+      "x1": 29,
+      "y1": 1,
+      "z1": 0,
+      "x2": 29,
+      "y2": 7,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "tower_ne_corner_column"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 6,
+      "x2": 0,
+      "y2": 7,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "tower_sw_corner_column"
+    },
+    {
+      "op": "fill",
+      "x1": 29,
+      "y1": 1,
+      "z1": 6,
+      "x2": 29,
+      "y2": 7,
+      "z2": 6,
+      "block": "stonebrick",
+      "purpose": "tower_se_corner_column"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 6,
+      "y2": 10,
+      "z2": 0,
+      "block": "brick",
+      "purpose": "tower_nw_body"
+    },
+    {
+      "op": "fill",
+      "x1": 23,
+      "y1": 1,
+      "z1": 0,
+      "x2": 28,
+      "y2": 10,
+      "z2": 0,
+      "block": "brick",
+      "purpose": "tower_ne_body"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 6,
+      "x2": 6,
+      "y2": 10,
+      "z2":
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 29,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 6,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "block": "air",
+      "from": [1, 1, 1],
+      "to": [28, 11, 5],
+      "note": "Clear interior workspace inside perimeter base"
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "block": "quartz_block",
+      "from": [0, 0, 0],
+      "to": [29, 0, 6],
+      "note": "One-block high continuous white base around entire footprint (floor level y=0)"
+    },
+    {
+      "id": 3,
+      "action": "fill",
+      "block": "quartz_slab",
+      "from": [0, 1, 0],
+      "to": [29, 1, 6],
+      "note": "Raised thin white perimeter trim layer (slab) at y=1 over base to read as trim"
+    },
+    {
+      "id": 4,
+      "action": "fill",
+      "block": "stone_bricks",
+      "from": [0, 1, 0],
+      "to": [2, 10, 2],
+      "note": "North-west corner tower column (stonebrick corner and internal column). Tower footprint 3x3 in corner"
+    },
+    {
+      "id": 5,
+      "action": "fill",
+      "block": "brick_block",
+      "from": [1, 1, 1],
+      "to": [3, 10, 3],
+      "note": "North-west tower brick faces (overlaps stone corners to create corner columns). Tower interior mostly brick"
+    },
+    {
+      "id": 6,
+      "action": "fill",
+      "block": "stone_bricks",
+      "from": [0, 1, 4],
+      "to": [2, 10, 6],
+      "note": "South-west corner tower stone corner columns"
+    },
+    {
+      "id": 7,
+      "action": "fill",
+      "block": "brick_block",
+      "from": [1, 1, 4],
+      "to": [3, 10, 6],
+      "note": "South-west tower brick faces"
+    },
+    {
+      "id": 8,
+      "action": "fill",
+      "block": "stone_bricks",
+      "from": [27, 1, 0],
+      "to": [29, 10, 2],
+      "note": "North-east corner tower stone corner columns"
+    },
+    {
+      "id": 9,
+      "action": "fill",
+      "block": "brick_block",
+      "from": [26, 1, 1],
+      "to": [28, 10, 3],
+      "note": "North-east tower brick faces"
+    },
+    {
+      "id": 10,
+      "action": "fill",
+      "block": "stone_bricks",
+      "from": [27, 1, 4],
+      "to": [29, 10, 6],
+      "note": "South-east corner tower stone corner columns"
+    },
+    {
+      "id": 11,
+      "action": "fill",
+      "block": "brick_block",
+      "from": [26, 1, 4],
+      "to": [28, 10, 6],
+      "note": "South-east tower brick faces"
+    },
+    {
+      "id": 12,
+      "action": "fill",
+      "block": "oak_planks",
+      "from": [3, 1, 1],
+      "to": [25, 1, 5],
+      "note": "Main interior floor (oak planks) at y=1 between towers; leaves 1-block ring of quartz_slab perimeter"
+    },
+    {
+      "id": 13,
+      "action": "fill",
+      "block": "nether_bricks",
+      "from": [12, 3, 2],
+      "to": [16, 3, 4],
+      "note": "Raised dark central platform (2x2 area) on top of floor at y=3 to read as raised central roof/floor area"
+    },
+    {
+      "id": 14,
+      "action": "fill",
+      "block": "quartz_block",
+      "from": [3, 2, 1],
+      "to": [25, 2, 5],
+      "note": "White horizontal band (middle band) above floor at y=2 across long body"
+    },
+    {
+      "id": 15,
+      "action": "fill",
+      "block": "brick_block",
+      "from": [3, 3, 1],
+      "to": [25, 3, 5],
+      "note": "Brick band above white trim to create three-band horizontal banding; this band is at y=3 except where central raised occupies y=3"
+    },
+    {
+      "id": 16,
+      "action": "fill",
+      "block": "quartz_block",
+      "from": [3, 4, 1],
+      "to": [25, 4, 5],
+      "note": "Upper white trim band at y=4"
+    },
+    {
+      "id": 17,
+      "action": "fill",
+      "block": "stone_slab",
+      "from": [0, 11, 0],
+      "to": [2, 11, 2],
+      "note": "North-west tower layered flat cap: stone slab outer layer"
+    },
+    {
+      "id": 18,
+      "action": "fill",
+      "block": "nether_bricks",
+      "from": [1, 11, 1],
+      "to": [1, 11, 1],
+      "note": "NW tower cap center dark block (glowblock will be placed on top)"
+    },
+    {
+      "id": 19,
+      "action": "setblock",
+      "block": "glowstone",
+      "pos": [1, 12, 1],
+      "note": "Glow lighting centered above NW tower cap"
+    },
+    {
+      "id": 20,
+      "action": "fill",
+      "block": "stone_slab",
+      "from": [0, 11, 4],
+      "to": [2, 11, 6],
+      "note": "SW tower layered flat cap slabs"
+    },
+    {
+      "id": 21,
+      "action": "fill",
+      "block": "nether_bricks",
+      "from": [1, 11, 5],
+      "to": [1, 11, 5],
+      "note": "SW tower cap center dark block"
+    },
+    {
+      "id": 22,
+      "action": "setblock",
+      "block": "glowstone",
+      "pos": [1, 12, 5],
+      "note": "Glow lighting centered above SW tower cap"
+    },
+    {
+      "id": 23,
+      "action": "fill",
+      "block": "stone_slab",
+      "from": [27, 11, 0],
+      "to": [29, 11, 2],
+      "note": "NE tower cap slabs"
+    },
+    {
+      "id": 24,
+      "action": "fill",
+      "block": "nether_bricks",
+      "from": [28, 11, 1],
+      "to": [28, 11, 1],
+      "note": "NE tower cap center dark block"
+    },
+    {
+      "id": 25,
+      "action": "setblock",
+      "block": "glowstone",
+      "pos": [28, 12, 1],
+      "note": "Glow lighting centered above NE tower cap"
+    },
+    {

@@ -1,0 +1,287 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 8,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 16
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "wood",
+    "trim": "quartz",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "accent": "cobblestone",
+    "slab": "stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 16,
+          "label": "main_pavilion"
+        }
+      ],
+      "symmetry": "bilateral_z_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 1
+        },
+        "rooms_hint": "single open pavilion space",
+        "perimeter_profile": "rectangle"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 1,
+        "y1": 2,
+        "z1": 0,
+        "x2": 7,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 1,
+        "y1": 2,
+        "z1": 16,
+        "x2": 7,
+        "y2": 2,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 8,
+        "y1": 2,
+        "z1": 2,
+        "x2": 8,
+        "y2": 2,
+        "z2": 14
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 2,
+        "x2": 0,
+        "y2": 2,
+        "z2": 14
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 4,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 4,
+          "x1": 0,
+          "z1": 0,
+          "x2": 8,
+          "z2": 16,
+          "block": "wood"
+        },
+        {
+          "y": 5,
+          "x1": 1,
+          "z1": 2,
+          "x2": 7,
+          "z2": 14,
+          "block": "wood"
+        },
+        {
+          "y": 6,
+          "x1": 2,
+          "z1": 4,
+          "x2": 6,
+          "z2": 12,
+          "block": "wood"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 8,
+      "y2": 0,
+      "z2": 16,
+      "block": "wood",
+      "purpose": "wooden_plinth_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 8,
+      "y2": 3,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "lower_wall_band"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "block": "cobblestone",
+      "purpose": "corner_accent_nw"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 1,
+      "z": 0,
+      "block": "cobblestone",
+      "purpose": "corner_accent_ne"
+    },
+    {
+      "op": "set",
+      "x": 0,
+      "y": 1,
+      "z": 16,
+      "block": "cobblestone",
+      "purpose": "corner_accent_sw"
+    },
+    {
+      "op": "set",
+      "x": 8,
+      "y": 1,
+      "z": 16,
+      "block": "cobblestone",
+      "purpose": "corner_accent_se"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 7,
+      "y2": 3,
+      "z2": 15,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 0,
+      "x2": 7,
+      "y2": 2,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "window_north"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 2,
+      "z1": 16,
+      "x2": 7,
+      "y2": 2,
+      "z2": 16,
+      "block": "glass",
+      "purpose": "window_south"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 2,
+      "z1": 2,
+      "x2": 8,
+      "y2": 2,
+      "z2": 14,
+      "block": "glass",
+      "purpose": "window_east"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 2,
+      "x2": 0,
+      "y2": 2,
+      "z2": 14,
+      "block": "glass",
+      "purpose": "window_west"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 16,
+      "block": "
+
+[REVISED_RESPONSE]
+```json
+{
+  "xmin": 0,
+  "xmax": 9,
+  "ymin": 0,
+  "ymax": 17,
+  "zmin": 0,
+  "zmax": 7,
+  "operations": [
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 0, "x2": 9, "y2": 17, "z2": 0, "block": "oak_planks", "description": "wooden plinth base layer"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 1, "x2": 9, "y2": 17, "z2": 1, "block": "stone_bricks", "description": "lower wall band - stone brick"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 2, "x2": 9, "y2": 17, "z2": 2, "block": "stone_bricks", "description": "lower wall band - stone brick second layer"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 3, "x2": 0, "y2": 17, "z2": 3, "block": "stone_bricks", "description": "wall north side"},
+    {"type": "fill", "x1": 9, "y1": 0, "z1": 3, "x2": 9, "y2": 17, "z2": 3, "block": "stone_bricks", "description": "wall south side"},
+    {"type": "fill", "x1": 1, "y1": 0, "z1": 3, "x2": 8, "y2": 0, "z2": 3, "block": "stone_bricks", "description": "wall west side"},
+    {"type": "fill", "x1": 1, "y1": 17, "z1": 3, "x2": 8, "y2": 17, "z2": 3, "block": "stone_bricks", "description": "wall east side"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 3, "x2": 0, "y2": 17, "z2": 3, "block": "cobblestone", "description": "corner accent north-west"},
+    {"type": "fill", "x1": 9, "y1": 0, "z1": 3, "x2": 9, "y2": 17, "z2": 3, "block": "cobblestone", "description": "corner accent south-west"},
+    {"type": "fill", "x1": 0, "y1": 17, "z1": 3, "x2": 9, "y2": 17, "z2": 3, "block": "cobblestone", "description": "corner accent east"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 3, "x2": 9, "y2": 0, "z2": 3, "block": "cobblestone", "description": "corner accent west"},
+    {"type": "fill", "x1": 1, "y1": 0, "z1": 3, "x2": 8, "y2": 17, "z2": 3, "block": "glass", "description": "continuous window band - horizontal"},
+    {"type": "fill", "x1": 0, "y1": 0, "z1": 4, "x2": 9, "y2": 17, "z2": 4, "block": "quartz_block", "description": "white trim border above stone band"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 5, "x2": 8, "y2": 16, "z2": 5, "block": "oak_planks", "description": "roof step 1 - lower layer"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 6, "x2": 7, "y2": 15, "z2": 6, "block": "oak_planks", "description": "roof step 2 - middle layer"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 7, "x2": 6, "y2": 14, "z2": 7, "block": "oak_planks", "description": "roof step 3 - upper layer"},
+    {"type": "fill", "x1": 1, "y1": 1, "z1": 5, "x2": 8, "y2": 16, "z2": 5, "block": "stone_slab", "description": "roof ridge accent - stone slabs"},
+    {"type": "fill", "x1": 2, "y1": 2, "z1": 6, "x2": 7, "y2": 15, "z2": 6, "block": "stone_slab", "description": "roof ridge accent - stone slabs middle"},
+    {"type": "fill", "x1": 3, "y1": 3, "z1": 7, "x2": 6, "y2": 14, "z2": 7, "block": "stone_slab", "description": "roof ridge accent - stone slabs top"},
+    {"type": "setblock", "x": 4, "y": 8, "z": 3, "block": "air", "description": "entrance opening - center of long wall"}
+  ],
+  "operation_count": 20,
+  "self_check": {
+    "bbox_valid": true,
+    "all_coords_in_bbox": true,
+    "operation_count_valid": true,
+    "has_floor": true,
+    "has_walls": true,
+    "has_roof": true,
+    "has_windows": true,
+    "has_entrance": true,
+    "material_coherence": true,
+    "structural_fidelity": true,
+    "notes": "Revised plan corrects bbox to match 9x17 footprint and 7-block height. Wooden plinth (z=0), stone brick walls (z=1-3), white quartz trim (z=4), stepped oak plank roof with stone slab accents (z=5-7). Continuous glass window band at z=3. Entrance opening added at center of long wall. All 20 operations fit within 260 limit."
+  }
+}
+```

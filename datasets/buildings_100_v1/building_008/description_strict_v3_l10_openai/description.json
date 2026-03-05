@@ -1,0 +1,73 @@
+{
+  "summary": "A small two-story rectangular house with a curved gable-style brick roof, continuous horizontal window bands on both floors, and a low white stone border platform around the base. Walls are layered with a light sand-colored block and a wooden plank trim between floors, with darker corner pillars.",
+  "building_type": "residential_house",
+  "shape": {
+    "overall_form": "compact rectangular block with a stepped curved roof (rounded gable)",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis (left-right symmetry visible from front and top)",
+    "floors_estimate": 2,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 7,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "sandstone",
+      "role": "wall",
+      "confidence": 0.85
+    },
+    {
+      "name": "wood",
+      "role": "horizontal_trim",
+      "confidence": 0.9
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner_pillar",
+      "confidence": 0.7
+    },
+    {
+      "name": "quartz",
+      "role": "base_border",
+      "confidence": 0.8
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    }
+  ],
+  "elements": [
+    "continuous window bands on both floors (three or more panes wide)",
+    "stepped curved brick roof with quartz/stone edging",
+    "stonebrick-like corner vertical pillars",
+    "wooden plank horizontal trim between floors",
+    "low white stone/quartz border platform around building"
+  ],
+  "rebuild_hints": [
+    "Use a rectangular footprint roughly 11x7 blocks; place a one-block high white/quartz border platform inset from the edge by 1 block as shown.",
+    "Walls: two stacked stories of sandstone-like blocks with a continuous horizontal wooden plank layer between stories; add glass pane windows as continuous horizontal strips (approximately 3-4 windows per visible face).",
+    "Corners: place darker stonebrick blocks as vertical corner pillars spanning both floors.",
+    "Roof: build a symmetrical stepped curved gable using brick blocks centered on the long axis; cap edges with quartz/stone slabs to match the light edging.",
+    "Height: each floor about 3 blocks tall; roof rises ~2-3 blocks above second floor in stepped layers."
+  ],
+  "uncertainties": [
+    "Exact block types: sandstone vs smooth_sandstone or cut variants uncertain; I labeled as sandstone.",
+    "Base border material could be quartz or smooth_stone (confidence 0.8).",
+    "Corner pillar material looks like stonebrick or polished_andesite; uncertain (confidence 0.7).",
+    "Exact internal layout and presence/location of doors are not visible in provided views.",
+    "Precise footprint dimensions inferred from visible window counts and roof width; could be off by a few blocks."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_008",
+  "created_at": "2026-03-01T07:51:18.929618+00:00"
+}

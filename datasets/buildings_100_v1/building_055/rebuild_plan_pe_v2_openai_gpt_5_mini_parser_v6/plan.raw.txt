@@ -1,0 +1,504 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 8
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "oak_planks",
+    "trim": "cobblestone",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks",
+    "slab_white": "smooth_stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 7,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_longitudinal_and_transverse"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "open ground floor hall; interior unspecified",
+        "perimeter_profile": "stonebrick lower band with windows above"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "upper floor rooms; windows continuous",
+        "perimeter_profile": "stonebrick upper band with oak planks under roof"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 5,
+        "y1": 1,
+        "z1": 7,
+        "x2": 5,
+        "y2": 3,
+        "z2": 7
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 8,
+        "y2": 2,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 2,
+        "y1": 2,
+        "z1": 8,
+        "x2": 8,
+        "y2": 2,
+        "z2": 8
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 3,
+        "x2": 0,
+        "y2": 2,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 10,
+        "y1": 2,
+        "z1": 3,
+        "x2": 10,
+        "y2": 2,
+        "z2": 5
+      }
+    ],
+    "roof_profile": {
+      "type": "gable",
+      "base_y": 8,
+      "ridge_axis": "z",
+      "layers": [
+        {
+          "y": 8,
+          "x1": 0,
+          "z1": 0,
+          "x2": 10,
+          "z2": 8,
+          "block": "oak_planks"
+        },
+        {
+          "y": 9,
+          "x1": 1,
+          "z1": 1,
+          "x2": 9,
+          "z2": 7,
+          "block": "oak_planks"
+        },
+        {
+          "y": 9,
+          "x1": 4,
+          "z1": 2,
+          "x2": 6,
+          "z2": 6,
+          "block": "oak_planks"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 8,
+      "block": "smooth_stone_slab",
+      "purpose": "raised_border_platform"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 7,
+      "block": "oak_planks",
+      "purpose": "ground_floor_flooring"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 8,
+      "z2": 7,
+      "block": "stonebrick",
+      "purpose": "outer_shell_base_full"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 1,
+      "y2": 8,
+      "z2": 1,
+      "block": "cobblestone",
+      "purpose": "corner_column_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 8,
+      "z2": 1,
+      "block": "cobblestone",
+      "purpose": "corner_column_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 7,
+      "x2": 1,
+      "y2": 8,
+      "z2": 7,
+      "block": "cobblestone",
+      "purpose": "corner_column_sw"
+    },
+    {
+      "op": "fill",
+      "x1": 9,
+      "y1": 1,
+      "z1": 7,
+      "x2": 9,
+      "y2": 8,
+      "z2": 7,
+      "block": "cobblestone",
+      "purpose": "corner_column_se"
+    },
+    {
+      "op": "carve",
+      "x1": 2,
+      "y1": 2,
+      "z1": 2,
+      "x2": 8,
+      "y2": 7,
+      "z2": 6,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "carve",
+      "x1": 5,
+      "y1": 1,
+      "z1": 8,
+      "x2": 5,
+      "y2": 3,
+      "z2": 8,
+      "purpose": "front_entrance_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 0,
+      "x2": 8,
+      "y2": 2,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "north_windows_ground_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 6,
+      "z1": 0,
+      "x2": 8,
+      "y2": 6,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "north_windows_upper_floor"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 2,
+      "z1": 8,
+      "x
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 10,
+  "ymin": 0,
+  "ymax": 9,
+  "zmin": 0,
+  "zmax": 8,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "smooth_stone_slab",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 0,
+      "z2": 9,
+      "comment": "shallow raised white slab border/platform (one block tall slab layer) covering footprint"
+    },
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 6,
+      "z2": 0,
+      "comment": "front-left corner column full height (spans both bands)"
+    },
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "x1": 10,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 0,
+      "comment": "front-right corner column"
+    },
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "x1": 0,
+      "y1": 1,
+      "z1": 9,
+      "x2": 0,
+      "y2": 6,
+      "z2": 9,
+      "comment": "back-left corner column"
+    },
+    {
+      "op": "fill",
+      "block": "cobblestone",
+      "x1": 10,
+      "y1": 1,
+      "z1": 9,
+      "x2": 10,
+      "y2": 6,
+      "z2": 9,
+      "comment": "back-right corner column"
+    },
+    {
+      "op": "fill",
+      "block": "stone_bricks",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 1,
+      "z2": 8,
+      "comment": "ground-floor lower stonebrick band (continuous between corner columns)"
+    },
+    {
+      "op": "fill",
+      "block": "stone_bricks",
+      "x1": 1,
+      "y1": 3,
+      "z1": 1,
+      "x2": 9,
+      "y2": 3,
+      "z2": 8,
+      "comment": "second stonebrick band below second-floor windows"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "x1": 1,
+      "y1": 6,
+      "z1": 1,
+      "x2": 9,
+      "y2": 6,
+      "z2": 8,
+      "comment": "upper oak plank band under roof"
+    },
+    {
+      "op": "fill",
+      "block": "smooth_stone_slab",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 9,
+      "y2": 2,
+      "z2": 8,
+      "comment": "white smooth horizontal band between floors"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "x1": 2,
+      "y1": 2,
+      "z1": 0,
+      "x2": 8,
+      "y2": 2,
+      "z2": 0,
+      "comment": "front middle-row windows (ground-floor row along front face). Uses glass panes 1-high."
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "x1": 2,
+      "y1": 4,
+      "z1": 0,
+      "x2": 8,
+      "y2": 4,
+      "z2": 0,
+      "comment": "front second-floor windows"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "x1": 2,
+      "y1": 2,
+      "z1": 9,
+      "x2": 8,
+      "y2": 2,
+      "z2": 9,
+      "comment": "back ground-floor windows"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "x1": 2,
+      "y1": 4,
+      "z1": 9,
+      "x2": 8,
+      "y2": 4,
+      "z2": 9,
+      "comment": "back second-floor windows"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "x1": 0,
+      "y1": 2,
+      "z1": 2,
+      "x2": 0,
+      "y2": 2,
+      "z2": 6,
+      "comment": "left side ground-floor windows"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "x1": 0,
+      "y1": 4,
+      "z1": 2,
+      "x2": 0,
+      "y2": 4,
+      "z2": 6,
+      "comment": "left side second-floor windows"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "x1": 10,
+      "y1": 2,
+      "z1": 2,
+      "x2": 10,
+      "y2": 2,
+      "z2": 6,
+      "comment": "right side ground-floor windows"
+    },
+    {
+      "op": "fill",
+      "block": "glass_pane",
+      "x1": 10,
+      "y1": 4,
+      "z1": 2,
+      "x2": 10,
+      "y2": 4,
+      "z2": 6,
+      "comment": "right side second-floor windows"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 9,
+      "y2": 1,
+      "z2": 0,
+      "comment": "front row of oak/plank cheek under windows where stonebrick not present (adds consistent sill where appropriate)"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "x1": 1,
+      "y1": 1,
+      "z1": 9,
+      "x2": 9,
+      "y2": 1,
+      "z2": 9,
+      "comment": "back sill row"
+    },
+    {
+      "op": "fill",
+      "block": "oak_stairs",
+      "x1": 2,
+      "y1": 7,
+      "z1": 4,
+      "x2": 8,
+      "y2": 7,
+      "z2": 4,
+      "comment": "roof base row: start of gable slope using stairs along ridge centerline (short axis gable). Placed as decorative ridge caps."
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "x1": 1,
+      "y1": 7,
+      "z1": 1,
+      "x2": 9,
+      "y2": 7,
+      "z2": 8,
+      "comment": "roof

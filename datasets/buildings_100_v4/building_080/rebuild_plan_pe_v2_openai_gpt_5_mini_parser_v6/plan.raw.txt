@@ -1,0 +1,474 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 20,
+    "ymin": 0,
+    "ymax": 15,
+    "zmin": 0,
+    "zmax": 20
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "accent": "quartz",
+    "slab": "stone_slab",
+    "fence": "iron_bars"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 20,
+          "label": "main"
+        }
+      ],
+      "symmetry": "fourfold_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "ground level plinth and entrance corridors around inner courtyard",
+        "perimeter_profile": "rectangular with pilasters and banding"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 9
+        },
+        "rooms_hint": "upper ceremonial hall with banded windows",
+        "perimeter_profile": "rectangle with openings and pilasters"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 9,
+        "y1": 1,
+        "z1": 0,
+        "x2": 11,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 9,
+        "y1": 1,
+        "z1": 20,
+        "x2": 11,
+        "y2": 3,
+        "z2": 20
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 20,
+        "y1": 3,
+        "z1": 9,
+        "x2": 20,
+        "y2": 4,
+        "z2": 11
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 3,
+        "z1": 9,
+        "x2": 0,
+        "y2": 4,
+        "z2": 11
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 10,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 10,
+          "x1": 4,
+          "z1": 4,
+          "x2": 16,
+          "z2": 16,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 3,
+          "z1": 3,
+          "x2": 17,
+          "z2": 17,
+          "block": "brick"
+        },
+        {
+          "y": 12,
+          "x1": 2,
+          "z1": 2,
+          "x2": 18,
+          "z2": 18,
+          "block": "brick"
+        },
+        {
+          "y": 13,
+          "x1": 1,
+          "z1": 1,
+          "x2": 19,
+          "z2": 19,
+          "block": "brick"
+        },
+        {
+          "y": 14,
+          "x1": 8,
+          "z1": 8,
+          "x2": 12,
+          "z2": 12,
+          "block": "brick"
+        },
+        {
+          "y": 14,
+          "x1": 0,
+          "z1": 0,
+          "x2": 20,
+          "z2": 20,
+          "block": "stone_slab"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 20,
+      "y2": 0,
+      "z2": 20,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 0,
+      "z1": 2,
+      "x2": 18,
+      "y2": 0,
+      "z2": 18,
+      "block": "quartz",
+      "purpose": "inner_courtyard_border"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 20,
+      "block": "sandstone",
+      "purpose": "main_wall_lower_and_bands"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 20,
+      "y2": 9,
+      "z2": 20,
+      "block": "sandstone",
+      "purpose": "main_wall_upper"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 20,
+      "y2": 4,
+      "z2": 20,
+      "block": "quartz",
+      "purpose": "horizontal_cap_band_between_floors"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 9,
+      "z1": 0,
+      "x2": 20,
+      "y2": 9,
+      "z2": 20,
+      "block": "quartz",
+      "purpose": "top_wall_cap_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 9,
+      "z2": 20,
+      "block": "quartz",
+      "purpose": "west_pilaster_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 20,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 9,
+      "z2": 20,
+      "block": "quartz",
+      "purpose": "east_pilaster_strip"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 20,
+      "y2": 1,
+      "z2": 0,
+      "block": "quartz",
+      "purpose": "southwest_corner_pilaster_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 20,
+      "x2": 20,
+      "y2": 1,
+      "z2": 20,
+      "block": "quartz",
+      "purpose": "northeast_corner_pilaster_base"
+    },
+    {
+      "op": "fill
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 20,
+  "ymin": 0,
+  "ymax": 15,
+  "zmin": 0,
+  "zmax": 20,
+  "operations": [
+    {
+      "id": 1,
+      "action": "fill",
+      "block": "minecraft:air",
+      "from": [0, 0, 0],
+      "to": [20, 15, 20],
+      "comment": "Clear volume inside bounding box"
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [3, 0, 3],
+      "to": [17, 0, 17],
+      "comment": "ground/floor base (courtyard floor outline uses quartz at ground level)"
+    },
+    {
+      "id": 3,
+      "action": "fill",
+      "block": "minecraft:stonebrick",
+      "from": [2, 0, 2],
+      "to": [18, 0, 18],
+      "comment": "foundation ground layer (stonebrick plinth under main footprint)"
+    },
+    {
+      "id": 4,
+      "action": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [5, 1, 5],
+      "to": [15, 1, 15],
+      "comment": "inner low quartz courtyard border (1-block thick outline inset 5..15)"
+    },
+    {
+      "id": 5,
+      "action": "fill",
+      "block": "minecraft:sandstone",
+      "from": [2, 1, 2],
+      "to": [18, 4, 18],
+      "comment": "main lower wall band (sandstone) - covers walls up to y=4"
+    },
+    {
+      "id": 6,
+      "action": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [2, 1, 2],
+      "to": [2, 6, 18],
+      "comment": "stonebrick vertical trim - west wall left strip"
+    },
+    {
+      "id": 7,
+      "action": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [18, 1, 2],
+      "to": [18, 6, 18],
+      "comment": "stonebrick vertical trim - east wall right strip"
+    },
+    {
+      "id": 8,
+      "action": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [2, 1, 2],
+      "to": [18, 6, 2],
+      "comment": "stonebrick vertical trim - north wall strip"
+    },
+    {
+      "id": 9,
+      "action": "fill",
+      "block": "minecraft:stone_bricks",
+      "from": [2, 1, 18],
+      "to": [18, 6, 18],
+      "comment": "stonebrick vertical trim - south wall strip"
+    },
+    {
+      "id": 10,
+      "action": "replace",
+      "block": "minecraft:quartz_block",
+      "from": [2, 5, 2],
+      "to": [18, 6, 18],
+      "comment": "quartz pilasters/caps across top of lower band (1-high decorative band)"
+    },
+    {
+      "id": 11,
+      "action": "fill",
+      "block": "minecraft:smooth_sandstone",
+      "from": [3, 6, 3],
+      "to": [17, 9, 17],
+      "comment": "upper wall lighter band (smooth_sandstone) forming second level"
+    },
+    {
+      "id": 12,
+      "action": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [3, 6, 10],
+      "to": [3, 9, 10],
+      "comment": "quartz pilaster (west mid) - vertical accent"
+    },
+    {
+      "id": 13,
+      "action": "fill",
+      "block": "minecraft:quartz_block",
+      "from": [17, 6, 10],
+      "to": [17, 9, 10],
+      "comment": "quartz pilaster (east mid) - vertical accent"
+    },
+    {
+      "id": 14,
+      "action": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [5, 7, 2],
+      "to": [15, 7, 2],
+      "comment": "north narrow horizontal windows (glass panes in band)"
+    },
+    {
+      "id": 15,
+      "action": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [5, 7, 18],
+      "to": [15, 7, 18],
+      "comment": "south narrow horizontal windows"
+    },
+    {
+      "id": 16,
+      "action": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [2, 7, 5],
+      "to": [2, 7, 15],
+      "comment": "west narrow horizontal windows"
+    },
+    {
+      "id": 17,
+      "action": "fill",
+      "block": "minecraft:glass_pane",
+      "from": [18, 7, 5],
+      "to": [18, 7, 15],
+      "comment": "east narrow horizontal windows"
+    },
+    {
+      "id": 18,
+      "action": "fill",
+      "block": "minecraft:air",
+      "from": [9, 1, 2],
+      "to": [11, 4, 2],
+      "comment": "entrance opening on north face (3 wide x 3 high), ensures access - inside bbox"
+    },
+    {
+      "id": 19,
+      "action": "fill",
+      "block": "minecraft:air",
+      "from": [9, 1, 18],
+      "to": [11, 3, 18],
+      "comment": "secondary south opening (smaller) for symmetry (2-high lintel)"
+    },
+    {
+      "id": 20,
+      "action": "fill",
+      "block": "minecraft:sandstone",
+      "from": [4, 9, 4],
+      "to": [16, 9, 16],
+      "comment": "floor/level between stories (ceiling layer) at y=9"
+    },
+    {
+      "id": 21,
+      "action": "fill",
+      "block": "minecraft:brick_block",
+      "from": [6, 10, 6],
+      "to": [14, 10, 14],
+      "comment": "start of stepped brick dome layer 1 (centered)"
+    },
+    {
+      "id": 22,
+      "action": "fill",
+      "block": "minecraft:brick_block",
+      "from": [5, 11, 5],
+      "to": [15, 11, 15],
+      "comment": "stepped brick dome layer 2"
+    },
+    {
+      "id": 23,
+      "action": "fill",
+      "block": "minecraft:brick_block",
+      "from": [4, 12, 4],
+      "to": [16, 12, 16],
+      "comment": "stepped brick dome layer 3"
+    },
+    {
+      "id": 24,
+      "action": "fill",
+      "block": "minecraft:brick_block",
+      "from": [3, 13, 3],
+      "to": [17, 13, 17],
+      "comment": "stepped brick dome layer 4 (near top)"
+    },
+    {
+      "id": 25,
+      "action": "set",
+      "block": "minecraft:stone_slab",
+      "

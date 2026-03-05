@@ -1,0 +1,78 @@
+{
+  "summary": "Small single-story rectangular building with raised stepped brick gable roof, light-colored corner pillars and band, sandstone lower walls with a continuous row of glass windows, and a surrounding low white border placed on flattened dirt. Roof has stone slab accents at the short ends and a small central chimney-like stack.",
+  "building_type": "house",
+  "shape": {
+    "overall_form": "rectangular box core with stepped gable roof",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral along length (roof ridge centered)",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 7,
+    "depth": 11,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "brick",
+      "role": "roof",
+      "confidence": 0.95
+    },
+    {
+      "name": "stonebrick",
+      "role": "corner pillars / top band (appears smooth white in screenshots, possibly quartz)",
+      "confidence": 0.6
+    },
+    {
+      "name": "sandstone",
+      "role": "lower wall",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.99
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof edge accents / small slabs on gable steps",
+      "confidence": 0.85
+    },
+    {
+      "name": "slab_wood",
+      "role": "uncertain - not observed, included as low confidence candidate",
+      "confidence": 0.1
+    },
+    {
+      "name": "air",
+      "role": "interior empty space",
+      "confidence": 0.95
+    }
+  ],
+  "elements": [
+    "continuous horizontal window band on long sides (3-4 panes per side)",
+    "prominent stepped brick gable roof with multiple terraces",
+    "small central chimney/stack on roof ridge",
+    "corner vertical white blocks forming frame",
+    "surrounding white low border/walkway around building on dirt pad"
+  ],
+  "rebuild_hints": [
+    "Footprint: rectangular core approximately 7x11 blocks (estimate based on top views) with the long sides having a 3-4 block wide window band.",
+    "Walls: lower ~2 blocks of sandstone, then a 1-block-high white band (quartz or smooth stone) forming a continuous top course and corner pillars rising to roofline.",
+    "Windows: place contiguous glass panes in a horizontal row centered on the wall, separated by minimal vertical supports (corner pillars occupy ends).",
+    "Roof: build stepped brick layers ascending to a central ridge; each step inset one block from the previous; add stone slabs at the short-end steps and a small 1x1 chimney stack at center.",
+    "Perimeter: add a single-block-high white border around the building footprint, set on the flattened dirt area; building sits recessed slightly within a larger dirt trench."
+  ],
+  "uncertainties": [
+    "Exact block IDs for the white smooth material: appears like quartz or smooth stone; labeled as stonebrick in schema but confidence is moderate.",
+    "Precise footprint dimensions: estimated from top-down images; count uncertain by +/-1-2 blocks in each direction.",
+    "Interior layout not visible; floor height and interior partitions are unknown.",
+    "Lower wall material appears as sandstone texture but could be another yellowish stone variant; confidence is high but not certain.",
+    "Whether the white border around the building is one-block thick all around or includes slabs is partially ambiguous from angles."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_004",
+  "created_at": "2026-02-28T13:58:00.361506+00:00"
+}

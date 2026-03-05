@@ -1,0 +1,351 @@
+{
+  "xmin": 0,
+  "xmax": 11,
+  "ymin": -2,
+  "ymax": 9,
+  "zmin": 0,
+  "zmax": 13,
+  "palette": {
+    "floor": "concrete",
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone"
+  },
+  "material_budget": {
+    "wall": {
+      "role": "wall",
+      "block": "sandstone",
+      "target_blocks": 120,
+      "actual_blocks": 176,
+      "within_tolerance": false
+    },
+    "roof": {
+      "role": "roof",
+      "block": "brick",
+      "target_blocks": 85,
+      "actual_blocks": 280,
+      "within_tolerance": false
+    },
+    "trim": {
+      "role": "trim",
+      "block": "stonebrick",
+      "target_blocks": 40,
+      "actual_blocks": 118,
+      "within_tolerance": false
+    },
+    "glass": {
+      "role": "glass",
+      "block": "glass",
+      "target_blocks": 6,
+      "actual_blocks": 12,
+      "within_tolerance": false
+    },
+    "light": {
+      "role": "light",
+      "block": "glowstone",
+      "target_blocks": 0,
+      "actual_blocks": 0,
+      "within_tolerance": true
+    },
+    "floor": {
+      "role": "floor",
+      "block": "concrete",
+      "target_blocks": 168,
+      "actual_blocks": 168,
+      "within_tolerance": true
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 11,
+      "y2": 0,
+      "z2": 13,
+      "block": "concrete",
+      "purpose": "main_floor_platform",
+      "role": "floor"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 0,
+      "y2": 4,
+      "z2": 13,
+      "block": "stonebrick",
+      "purpose": "west_corner_reinforcement",
+      "role": "trim"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 0,
+      "x2": 11,
+      "y2": 4,
+      "z2": 13,
+      "block": "stonebrick",
+      "purpose": "east_corner_reinforcement",
+      "role": "trim"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 4,
+      "z2": 0,
+      "block": "sandstone",
+      "purpose": "south_wall",
+      "role": "wall"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 13,
+      "x2": 10,
+      "y2": 4,
+      "z2": 13,
+      "block": "sandstone",
+      "purpose": "north_wall",
+      "role": "wall"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 1,
+      "x2": 0,
+      "y2": 4,
+      "z2": 12,
+      "block": "sandstone",
+      "purpose": "west_wall",
+      "role": "wall"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 1,
+      "x2": 11,
+      "y2": 4,
+      "z2": 12,
+      "block": "sandstone",
+      "purpose": "east_wall",
+      "role": "wall"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 5,
+      "z1": 1,
+      "x2": 10,
+      "y2": 5,
+      "z2": 12,
+      "block": "brick",
+      "purpose": "roof_base_layer",
+      "role": "roof"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 6,
+      "z1": 2,
+      "x2": 9,
+      "y2": 6,
+      "z2": 11,
+      "block": "brick",
+      "purpose": "roof_step_2",
+      "role": "roof"
+    },
+    {
+      "op": "fill",
+      "x1": 3,
+      "y1": 7,
+      "z1": 3,
+      "x2": 8,
+      "y2": 7,
+      "z2": 10,
+      "block": "brick",
+      "purpose": "roof_step_3",
+      "role": "roof"
+    },
+    {
+      "op": "fill",
+      "x1": 4,
+      "y1": 8,
+      "z1": 4,
+      "x2": 7,
+      "y2": 8,
+      "z2": 9,
+      "block": "brick",
+      "purpose": "roof_step_4",
+      "role": "roof"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 9,
+      "z1": 5,
+      "x2": 6,
+      "y2": 9,
+      "z2": 8,
+      "block": "brick",
+      "purpose": "roof_peak",
+      "role": "roof"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 3,
+      "z1": 0,
+      "x2": 3,
+      "y2": 4,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "left_window",
+      "role": "glass"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 3,
+      "z1": 0,
+      "x2": 6,
+      "y2": 4,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "center_window",
+      "role": "glass"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+      "y1": 3,
+      "z1": 0,
+      "x2": 9,
+      "y2": 4,
+      "z2": 0,
+      "block": "glass",
+      "purpose": "right_window",
+      "role": "glass"
+    },
+    {
+      "op": "fill",
+      "x1": 5,
+      "y1": 0,
+      "z1": 0,
+      "x2": 6,
+      "y2": 2,
+      "z2": 0,
+      "block": "stonebrick",
+      "purpose": "entrance",
+      "role": "trim"
+    }
+  ],
+  "bbox": {
+    "xmin": 0,
+    "xmax": 11,
+    "ymin": -2,
+    "ymax": 9,
+    "zmin": 0,
+    "zmax": 13
+  },
+  "notes": [],
+  "plan_version": "v1",
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 16,
+    "accepted_operations_count": 16,
+    "repaired_operations_count": 4,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "self_check": {
+    "operation_count": 16,
+    "operation_count_ok": true,
+    "bbox_consistency": "ok",
+    "role_fixed_consistency": "repaired_3",
+    "material_budget_consistency": "warning",
+    "required_roles_present": true,
+    "issues": [
+      "material_budget_violations=4"
+    ]
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "light"
+      ],
+      "dropped_unknown_roles": [
+        "entrance"
+      ],
+      "coherence_repairs": []
+    },
+    "budget_source": "root.material_budget",
+    "budget_present_in_input": true,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 16,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 3,
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [
+      {
+        "role": "wall",
+        "target_blocks": 120,
+        "actual_blocks": 176,
+        "relative_error": 0.466667
+      },
+      {
+        "role": "roof",
+        "target_blocks": 85,
+        "actual_blocks": 280,
+        "relative_error": 2.294118
+      },
+      {
+        "role": "trim",
+        "target_blocks": 40,
+        "actual_blocks": 118,
+        "relative_error": 1.95
+      },
+      {
+        "role": "glass",
+        "target_blocks": 6,
+        "actual_blocks": 12,
+        "relative_error": 1.0
+      }
+    ],
+    "schema_violations": [],
+    "strict_blocking_issues": [
+      "material_budget_violation"
+    ],
+    "valid_strict": false
+  },
+  "building": "building_002",
+  "created_at": "2026-03-01T09:19:33.225160+00:00",
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001"
+}

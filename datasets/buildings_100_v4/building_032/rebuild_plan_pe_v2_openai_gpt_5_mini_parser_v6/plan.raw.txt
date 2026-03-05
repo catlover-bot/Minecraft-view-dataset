@@ -1,0 +1,443 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 27,
+    "ymin": 0,
+    "ymax": 12,
+    "zmin": 0,
+    "zmax": 19
+  },
+  "palette": {
+    "wall": "sandstone",
+    "roof": "brick",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "complex",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 19,
+          "label": "main_complex_envelope"
+        },
+        {
+          "x1": 20,
+          "z1": 2,
+          "x2": 24,
+          "z2": 6,
+          "label": "tower_front_proj"
+        },
+        {
+          "x1": 22,
+          "z1": 12,
+          "x2": 26,
+          "z2": 18,
+          "label": "tower_rear_proj"
+        },
+        {
+          "x1": 6,
+          "z1": 0,
+          "x2": 10,
+          "z2": 4,
+          "label": "front_bay"
+        }
+      ],
+      "symmetry": "approximate_bilateral_centered_on_x=13"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 1,
+          "ymax": 4
+        },
+        "rooms_hint": "ground: entrance hall + side rooms, open corridor",
+        "perimeter_profile": "rectangular with projecting bays and tower bases"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 5,
+          "ymax": 8
+        },
+        "rooms_hint": "upper residential rooms, continuous horizontal banding",
+        "perimeter_profile": "same as ground with parapet"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 9,
+          "ymax": 11
+        },
+        "rooms_hint": "roof / attic volumes (partially filled by gables)",
+        "perimeter_profile": "roof base and gable forms"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 13,
+        "y1": 1,
+        "z1": 0,
+        "x2": 14,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 3,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 2,
+        "z1": 0,
+        "x2": 7,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 18,
+        "y1": 2,
+        "z1": 0,
+        "x2": 19,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "east",
+        "x1": 27,
+        "y1": 2,
+        "z1": 4,
+        "x2": 27,
+        "y2": 3,
+        "z2": 5
+      },
+      {
+        "kind": "window",
+        "face": "west",
+        "x1": 0,
+        "y1": 2,
+        "z1": 10,
+        "x2": 0,
+        "y2": 3,
+        "z2": 11
+      },
+      {
+        "kind": "door",
+        "face": "east",
+        "x1": 27,
+        "y1": 1,
+        "z1": 9,
+        "x2": 27,
+        "y2": 3,
+        "z2": 9
+      }
+    ],
+    "roof_profile": {
+      "type": "other",
+      "base_y": 9,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 9,
+          "x1": 0,
+          "z1": 0,
+          "x2": 27,
+          "z2": 19,
+          "block": "brick"
+        },
+        {
+          "y": 10,
+          "x1": 2,
+          "z1": 1,
+          "x2": 25,
+          "z2": 17,
+          "block": "brick"
+        },
+        {
+          "y": 11,
+          "x1": 5,
+          "z1": 3,
+          "x2": 22,
+          "z2": 14,
+          "block": "brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 27,
+      "y2": 0,
+      "z2": 19,
+      "block": "dirt",
+      "purpose": "yard_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 27,
+      "y2": 1,
+      "z2": 19,
+      "block": "quartz",
+      "purpose": "low_white_perimeter_border"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 0,
+      "z1": 1,
+      "x2": 26,
+      "y2": 0,
+      "z2": 18,
+      "block": "dirt",
+      "purpose": "inner_yard_dirt"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 27,
+      "y2": 1,
+      "z2": 19,
+      "block": "stonebrick",
+      "purpose": "foundation_course"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 24,
+      "y2": 1,
+      "z2": 16,
+      "block": "wood",
+      "purpose": "ground_floor_subfloor"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 25,
+      "y2": 4,
+      "z2": 17,
+      "block": "sandstone",
+      "purpose": "main_wall_shell_ground_and_first"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 4,
+      "z1": 1,
+      "x2": 25,
+      "y2": 4,
+      "z2": 17,
+      "block": "sandstone",
+      "purpose": "banding_line_plate"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 27,
+  "ymin": 0,
+  "ymax": 12,
+  "zmin": 0,
+  "zmax": 19,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 27, 0, 19],
+      "block": "dirt"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 26, 1, 18],
+      "block": "stonebrick",
+      "comment": "foundation course (one-high) inset from outer white border"
+    },
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 27, 0, 19],
+      "block": "air",
+      "comment": "clear ground layer preserved (dirt already placed); operation kept as no-op to ensure coordinate bounds explicit"
+    },
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 27, 0, 19],
+      "block": "dirt",
+      "comment": "ensure yard dirt exists"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 26, 1, 18],
+      "block": "stonebrick",
+      "comment": "redundant safe-set of foundation course inside border"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 25, 2, 17],
+      "block": "sandstone",
+      "comment": "ground-floor subfloor layer (floor level) atop foundation"
+    },
+    {
+      "op": "fill",
+      "box": [1, 1, 1, 26, 1, 18],
+      "block": "quartz",
+      "comment": "outer low white perimeter border (height 1) on plot edge"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 25, 3, 17],
+      "block": "sandstone",
+      "comment": "walls: two-block-high beige band for ground and first floors will be built in wall operations; this fills first band to unify base"
+    },
+    {
+      "op": "replace",
+      "box": [2, 2, 2, 25, 2, 17],
+      "block": "sandstone",
+      "target": "air",
+      "comment": "ensure floor solid"
+    },
+    {
+      "op": "fill",
+      "box": [2, 4, 2, 25, 4, 17],
+      "block": "sandstone",
+      "comment": "second-story floor (y=4) main slab"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 25, 5, 17],
+      "block": "air",
+      "comment": "clear interior between floors (ensure air space)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 3, 2, 25, 3, 17],
+      "block": "sandstone_slab",
+      "comment": "half-slab transition at ceiling level (decorative)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 5, 2, 25, 8, 17],
+      "block": "sandstone",
+      "comment": "upper wall band (two-block-high from y=5..6 and filler to y=8 for parapet region when roof sits)"
+    },
+    {
+      "op": "replace",
+      "box": [2, 2, 2, 25, 8, 17],
+      "block": "air",
+      "target": "glass",
+      "comment": "placeholder no-op to keep schema consistent"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 2, 25, 6, 17],
+      "block": "glass",
+      "comment": "rows of small windows: fill broad area then carve vertical columns to simulate many small windows separated by columns"
+    },
+    {
+      "op": "set_blocks",
+      "blocks": [
+        {"pos":[2,2,4],"block":"glass"},
+        {"pos":[4,2,4],"block":"glass"},
+        {"pos":[6,2,4],"block":"glass"},
+        {"pos":[8,2,4],"block":"glass"},
+        {"pos":[10,2,4],"block":"glass"},
+        {"pos":[12,2,4],"block":"glass"},
+        {"pos":[14,2,4],"block":"glass"},
+        {"pos":[16,2,4],"block":"glass"},
+        {"pos":[18,2,4],"block":"glass"},
+        {"pos":[20,2,4],"block":"glass"},
+        {"pos":[22,2,4],"block":"glass"}
+      ],
+      "comment": "explicit small ground-floor window placements (row 1)"
+    },
+    {
+      "op": "set_blocks",
+      "blocks": [
+        {"pos":[2,5,4],"block":"glass"},
+        {"pos":[4,5,4],"block":"glass"},
+        {"pos":[6,5,4],"block":"glass"},
+        {"pos":[8,5,4],"block":"glass"},
+        {"pos":[10,5,4],"block":"glass"},
+        {"pos":[12,5,4],"block":"glass"},
+        {"pos":[14,5,4],"block":"glass"},
+        {"pos":[16,5,4],"block":"glass"},
+        {"pos":[18,5,4],"block":"glass"},
+        {"pos":[20,5,4],"block":"glass"},
+        {"pos":[22,5,4],"block":"glass"}
+      ],
+      "comment": "explicit small first-floor window placements (row 2)"
+    },
+    {
+      "op": "fill",
+      "box": [2, 2, 16, 25, 6, 16],
+      "block": "quartz",
+      "comment": "white vertical columns/banding: place front columns every 6 blocks; this operation adds a continuous band at rear for clarity"
+    },
+    {
+      "op": "set_blocks",
+      "blocks": [
+        {"pos":[2,2,2],"block":"quartz"},
+        {"pos":[8,2,2],"block":"quartz"},
+        {"pos":[14,2,2],"block":"quartz"},
+        {"pos":[20,2,2],"block":"quartz"},
+        {"pos":[25,2,2],"block":"quartz"},
+        {"pos":[2,5,2],"block":"quartz"},
+        {"pos":[8,5,2],"block":"quartz"},
+        {"pos":[14,5,2],"block":"quartz"},
+        {"pos":[20,5,2],"block":"quartz"},
+        {"pos":[25,5,2],"block":"quartz"}
+      ],
+      "comment": "vertical corner/column accents on front face and repeats for first floor"
+    },
+    {
+      "op": "fill",
+      "box": [22, 2, 12, 24, 9, 14],
+      "block": "stonebrick",
+      "comment": "right-front tower shaft (shorter tower), square 3x3 footprint from x=22..24 z=12..14, y=2..9"
+    },
+    {
+      "op": "fill",
+      "box": [24, 2, 3, 26, 12, 5],
+      "block": "stonebrick",
+      "comment": "right-rear taller tower shaft (3x3 footprint) from x=24..26 z=3..5 y=2..12 (taller)"
+    },
+    {
+      "op": "fill",
+      "box": [22, 9, 12, 24, 9, 14],
+      "block": "red_brick_slab",
+      "comment":

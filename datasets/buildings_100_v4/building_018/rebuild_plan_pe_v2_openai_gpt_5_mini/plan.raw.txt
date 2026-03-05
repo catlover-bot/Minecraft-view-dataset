@@ -1,0 +1,412 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 24,
+    "ymin": 0,
+    "ymax": 8,
+    "zmin": 0,
+    "zmax": 16
+  },
+  "palette": {
+    "wall": "brick",
+    "roof": "nether_brick",
+    "trim": "stonebrick",
+    "glass": "glass_pane",
+    "light": "glowstone",
+    "floor": "grass_block",
+    "buttress": "quartz_block",
+    "coping": "stone_slab"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 16,
+          "label": "main_enclosure"
+        }
+      ],
+      "symmetry": "bilateral_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 4
+        },
+        "rooms_hint": "open central courtyard with perimeter walkway",
+        "perimeter_profile": "thick_banded_wall_with_buttresses_and_towers"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 12,
+        "y1": 1,
+        "z1": 0,
+        "x2": 13,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 12,
+        "y1": 1,
+        "z1": 16,
+        "x2": 13,
+        "y2": 3,
+        "z2": 16
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 6,
+        "y1": 3,
+        "z1": 0,
+        "x2": 6,
+        "y2": 5,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "south",
+        "x1": 18,
+        "y1": 3,
+        "z1": 16,
+        "x2": 18,
+        "y2": 5,
+        "z2": 16
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 7,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 7,
+          "x1": 0,
+          "z1": 0,
+          "x2": 24,
+          "z2": 16,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 9,
+          "z1": 0,
+          "x2": 15,
+          "z2": 3,
+          "block": "nether_brick"
+        },
+        {
+          "y": 8,
+          "x1": 9,
+          "z1": 13,
+          "x2": 15,
+          "z2": 16,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 16,
+      "block": "grass_block",
+      "purpose": "courtyard_floor_grass"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 0,
+      "z2": 16,
+      "block": "air",
+      "purpose": "clear_surface_duplicates"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 4,
+      "z2": 16,
+      "block": "brick",
+      "purpose": "outer_wall_solid_shell_base_and_middle_bands"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 24,
+      "y2": 2,
+      "z2": 16,
+      "block": "wood",
+      "purpose": "wood_mid_band_inner_layer"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 24,
+      "y2": 3,
+      "z2": 16,
+      "block": "brick",
+      "purpose": "brick_upper_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 24,
+      "y2": 1,
+      "z2": 16,
+      "block": "stonebrick",
+      "purpose": "lower_trim_and_corner_blocks"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 3,
+      "z1": 0,
+      "x2": 24,
+      "y2": 3,
+      "z2": 16,
+      "block": "quartz_block",
+      "purpose": "white_trim_row"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 4,
+      "z1": 0,
+      "x2": 24,
+      "y2": 4,
+      "z2": 16,
+      "block": "stone_slab",
+      "purpose": "coping_top_rim"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 23,
+      "y2": 3,
+      "z2": 15,
+      "purpose": "interior_open_courtyard_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 0,
+      "x2": 12,
+      "y2": 3,
+      "z2": 0,
+      "block": "air",
+      "purpose": "north_gate_clear"
+    },
+    {
+      "op": "fill",
+      "x1": 11,
+      "y1": 1,
+      "z1": 16,
+      "x2": 12,
+      "y2": 3,
+      "z2": 16,
+      "block": "air",
+      "purpose": "south_gate_clear"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 0,
+      "z1": 0,
+      "x2": 22,
+      "y2": 0,
+      "z2": 16,
+      "block": "quartz_block",
+      "purpose": "ground_outline_low_white_row"
+    },
+    {
+      "op": "fill",
+      "x1": 2,
+      "y1": 1,
+      "z1": 2,
+      "x2": 22,
+      "y2": 1,
+      "z2": 14,
+      "block": "stone_slab",
+      "purpose": "inner_cour
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 24,
+  "ymin": 0,
+  "ymax": 8,
+  "zmin": 0,
+  "zmax": 16,
+  "operations": [
+    {
+      "op": "fill",
+      "block": "grass_block",
+      "from": [1, 0, 1],
+      "to": [23, 0, 15],
+      "description": "Ground plane inside outer outline: grass for courtyard and surrounding ground within footprint."
+    },
+    {
+      "op": "fill",
+      "block": "quartz_block",
+      "from": [0, 0, 0],
+      "to": [24, 0, 16],
+      "description": "Low white block outline on ground surrounding the structure (single-layer border); overlaps outermost edge to match visible outline."
+    },
+    {
+      "op": "fill",
+      "block": "stonebrick",
+      "from": [0, 1, 0],
+      "to": [24, 1, 16],
+      "description": "Continuous foundation / lower trim layer (stonebrick) one block high around full footprint to ground level base for walls and towers."
+    },
+    {
+      "op": "replace_outline_gap_check",
+      "block": "air",
+      "from": [2, 1, 2],
+      "to": [22, 1, 14],
+      "description": "Ensure interior courtyard remains open (no floor fill) except the grass placed earlier; this is a no-op intended as a validation step."
+    },
+    {
+      "op": "fill",
+      "block": "planks",
+      "from": [1, 2, 1],
+      "to": [23, 2, 15],
+      "description": "Lower wall band: wood planks layer (mid band) starting at y=2 across wall footprint; this fills interior area but will be carved out by wall hollowing next—serves as consistent band level."
+    },
+    {
+      "op": "hollow",
+      "from": [1, 2, 1],
+      "to": [23, 5, 15],
+      "description": "Carve interior of walls to create hollow enclosure interior up to y=5; ensures walls are layered and interior courtyard open. Implementation means leave walls 1 block thick with interior air where appropriate."
+    },
+    {
+      "op": "walls_build",
+      "block_layers": [
+        {"block": "stonebrick", "y1": 1, "y2": 1},
+        {"block": "planks", "y1": 2, "y2": 2},
+        {"block": "brick", "y1": 3, "y2": 3},
+        {"block": "quartz_block", "y1": 4, "y2": 4}
+      ],
+      "wall_outline": {"minx": 1, "maxx": 23, "minz": 1, "maxz": 15},
+      "description": "Construct the layered banded walls around perimeter: stonebrick base, wood plank mid-band, brick band, quartz trim at top (below coping). Walls are 4 blocks tall (y=1..4)."
+    },
+    {
+      "op": "fill",
+      "block": "stone_slab",
+      "from": [1, 5, 1],
+      "to": [23, 5, 15],
+      "description": "Top coping: stone slab rim around inner edge of wall (y=5) matching perimeter; forms upper rim above quartz trim."
+    },
+    {
+      "op": "pillars",
+      "block": "quartz_block",
+      "pillar_positions": [
+        [3, 2, 1],
+        [7, 2, 1],
+        [11, 2, 1],
+        [15, 2, 1],
+        [19, 2, 1],
+        [3, 2, 15],
+        [7, 2, 15],
+        [11, 2, 15],
+        [15, 2, 15],
+        [19, 2, 15],
+        [1, 2, 3],
+        [1, 2, 7],
+        [1, 2, 11],
+        [1, 2, 13],
+        [23, 2, 3],
+        [23, 2, 7],
+        [23, 2, 11],
+        [23, 2, 13]
+      ],
+      "pillar_height": 3,
+      "description": "White vertical buttress pillars (quartz) projecting from wall faces. Each pillar is 3 blocks tall (y=2..4) to align with wall height and trim."
+    },
+    {
+      "op": "towers_build",
+      "tower_specs": [
+        {
+          "center": [12, 1, 0],
+          "size": [6, 6],
+          "height": 8,
+          "trim": "stonebrick",
+          "wall": "brick",
+          "windows": {"pattern": "vertical", "positions": [[13, 3, 0], [11, 3, 0]], "block": "glass_pane"},
+          "roof": {"block": "nether_brick_slab", "overhang": 1, "y": 8},
+          "top_light": {"block": "glowstone", "pos": [12, 9, 0]}
+        },
+        {
+          "center": [12, 1, 16],
+          "size": [6, 6],
+          "height": 8,
+          "trim": "stonebrick",
+          "wall": "brick",
+          "windows": {"pattern": "vertical", "positions": [[13, 3, 16], [11, 3, 16]], "block": "glass_pane"},
+          "roof": {"block": "nether_brick_slab", "overhang": 1, "y": 8},
+          "top_light": {"block": "glowstone", "pos": [12, 9, 16]}
+        }
+      ],
+      "description": "Construct two square towers centered on short sides. Each tower footprint is 6x6 (covers x 9..14 and z 0..5 for front tower, and z 11..16 for rear tower), height 8 (y=1..8). Stonebrick vertical trim on corners, brick infill, small vertical glass pane windows, nether brick slab flat overhanging roof with glowstone lamp on top. All coordinates kept inside bbox."
+    },
+    {
+      "op": "carve_entrance",
+      "from": [10, 1, 0],
+      "to": [14, 4, 0],
+      "block": "air",
+      "description": "Entrance opening centered on front short side: 4 blocks wide and 4 blocks tall (y=1..4) through the front tower/wall seam to allow direct access to courtyard. Ensures opening exists and is inside bbox."
+    },
+    {
+      "op": "carve_back_entrance",
+      "from": [10, 1, 16],
+      "to": [14, 4, 16],
+      "block": "air",
+      "description": "Matching opening on rear short side tower/wall for symmetry (optional secondary entrance)."
+    },
+    {
+      "op": "courtyard_padding",
+      "block": "grass_path",
+      "positions": [
+        [2, 0, 2, 22, 0, 14]
+      ],
+      "pattern": "diagonal_glowstone_lines",
+      "description": "Interior courtyard: lay diagonal glowstone lines embedded in grass to form lit paths. Implementation detail: replace grass at y=0 with glowstone at positions forming diagonal lines from corners toward center every 4 blocks. Ensures lighting inside courtyard."
+    },
+    {
+      "op": "inner_slab_rim",
+      "block": "stone_slab",
+      "from": [2, 5, 2],
+      "to": [22, 5, 14],
+      "description": "Inner

@@ -1,0 +1,434 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 16,
+    "ymin": 0,
+    "ymax": 17,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "oak_planks",
+    "roof": "nether_bricks",
+    "trim": "stonebrick",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 16,
+          "z2": 10,
+          "label": "main"
+        }
+      ],
+      "symmetry": "x_axis_centered_long_axis"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 5
+        },
+        "rooms_hint": "ground level entrance hall + service spaces",
+        "perimeter_profile": "rectangular with towers"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 6,
+          "ymax": 10
+        },
+        "rooms_hint": "second floor living/guard galleries",
+        "perimeter_profile": "rectangular with balconies"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 11,
+          "ymax": 15
+        },
+        "rooms_hint": "third floor chambers and parapet",
+        "perimeter_profile": "rectangular with recessed roof courtyard"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 16,
+          "ymax": 17
+        },
+        "rooms_hint": "tower caps and small roof details",
+        "perimeter_profile": "tower caps"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "north",
+        "x1": 7,
+        "y1": 1,
+        "z1": 0,
+        "x2": 8,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 5,
+        "y1": 2,
+        "z1": 0,
+        "x2": 5,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 10,
+        "y1": 2,
+        "z1": 0,
+        "x2": 10,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "window",
+        "face": "north",
+        "x1": 13,
+        "y1": 2,
+        "z1": 0,
+        "x2": 13,
+        "y2": 3,
+        "z2": 0
+      },
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 7,
+        "y1": 1,
+        "z1": 10,
+        "x2": 8,
+        "y2": 3,
+        "z2": 10
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 15,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 15,
+          "x1": 2,
+          "z1": 2,
+          "x2": 14,
+          "z2": 8,
+          "block": "stonebrick"
+        },
+        {
+          "y": 16,
+          "x1": 3,
+          "z1": 3,
+          "x2": 13,
+          "z2": 7,
+          "block": "stonebrick"
+        },
+        {
+          "y": 16,
+          "x1": 6,
+          "z1": 5,
+          "x2": 10,
+          "z2": 5,
+          "block": "nether_bricks"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 10,
+      "block": "oak_planks",
+      "purpose": "floor_ground"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 15,
+      "z2": 10,
+      "block": "oak_planks",
+      "purpose": "main_wall_shell"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 16,
+      "y2": 0,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "stone_foundation_edge_replace"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 1,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "stone_base_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 16,
+      "y2": 5,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "band_between_floor_0_1"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 11,
+      "z1": 0,
+      "x2": 16,
+      "y2": 11,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "band_between_floor_1_2"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 2,
+      "z1": 1,
+      "x2": 15,
+      "y2": 14,
+      "z2": 9,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 2,
+      "y2": 17,
+      "z2": 2,
+      "block": "spruce_log",
+      "purpose": "tower_nw"
+    },
+    {
+      "op": "fill",
+      "x1": 14,
+      "y1": 1,
+      "z1": 0,
+      "x2": 16,
+      "y2": 17,
+      "z2": 2,
+      "block": "spruce_log",
+      "purpose": "tower_ne"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 16,
+  "ymin": 0,
+  "ymax": 17,
+  "zmin": 0,
+  "zmax": 10,
+  "summary": "Rectangular three-story fortress-like building with four corner towers and recessed central courtyard/roof area. Exterior: horizontal oak planks walls with regular 1x1 glass windows, stonebrick foundation and horizontal stone slab/stonebrick bands, dark oak corner tower logs rising above roof with overhanging slab caps and dark red flat top. Recessed top courtyard with central raised stone platform and low fence parapet; entrance opening on front long facade.",
+  "building_type": "fortress / watch-tower residence",
+  "shape": {
+    "overall_form": "rectangular main block with four corner towers and an internal recessed roof/courtyard",
+    "footprint": {
+      "x1": 1,
+      "x2": 15,
+      "z1": 1,
+      "z2": 9
+    },
+    "symmetry": "bilateral along X axis (length 15, depth 9 footprint)",
+    "floors": 3,
+    "floor_height": 5,
+    "wall_height": 15,
+    "roof_type": "flat recessed courtyard",
+    "notes": "Towers occupy corners with 3x3 footprint each; courtyard recessed into center of roof"
+  },
+  "materials": [
+    {
+      "name": "oak_planks",
+      "role": "primary wall (horizontal) and floor base",
+      "confidence": 0.95
+    },
+    {
+      "name": "dark_oak_log",
+      "role": "corner tower vertical logs and structural vertical accents",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass_pane",
+      "role": "windows (1x1 openings filled with glass panes)",
+      "confidence": 0.95
+    },
+    {
+      "name": "stone_bricks",
+      "role": "foundation, horizontal bands, pillars, raised platform",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone_slab",
+      "role": "band coping, overhang trim at tower tops, balcony slab projections",
+      "confidence": 0.9
+    },
+    {
+      "name": "nether_bricks",
+      "role": "dark red flat cap on tower tops (alternative to red concrete)",
+      "confidence": 0.6
+    },
+    {
+      "name": "fence",
+      "role": "parapet/railing around recessed courtyard",
+      "confidence": 0.7
+    },
+    {
+      "name": "glowstone",
+      "role": "central light in tower cap and courtyard platform",
+      "confidence": 0.9
+    }
+  ],
+  "operations": [
+    {
+      "op": "fill",
+      "block": "stone_bricks",
+      "from": { "x": 1, "y": 0, "z": 1 },
+      "to": { "x": 15, "y": 0, "z": 9 },
+      "comment": "single-block foundation/floor layer"
+    },
+    {
+      "op": "hollow_box",
+      "block": "oak_planks",
+      "from": { "x": 1, "y": 1, "z": 1 },
+      "to": { "x": 15, "y": 14, "z": 9 },
+      "thickness": 1,
+      "comment": "main exterior walls (3 floors total, wall outer shell)"
+    },
+    {
+      "op": "replace_layer",
+      "block": "stone_slab",
+      "y": 4,
+      "from": { "x": 1, "z": 1 },
+      "to": { "x": 15, "z": 9 },
+      "comment": "stone slab horizontal band between ground and 2nd floor (wraps entire perimeter)"
+    },
+    {
+      "op": "replace_layer",
+      "block": "stone_slab",
+      "y": 9,
+      "from": { "x": 1, "z": 1 },
+      "to": { "x": 15, "z": 9 },
+      "comment": "stone slab horizontal band between 2nd and 3rd floor"
+    },
+    {
+      "op": "set_column",
+      "block": "dark_oak_log",
+      "from": { "x": 1, "y": 1, "z": 1 },
+      "to": { "x": 1, "y": 17, "z": 1 },
+      "comment": "northwest corner tower vertical log"
+    },
+    {
+      "op": "set_column",
+      "block": "dark_oak_log",
+      "from": { "x": 15, "y": 1, "z": 1 },
+      "to": { "x": 15, "y": 17, "z": 1 },
+      "comment": "northeast corner tower vertical log"
+    },
+    {
+      "op": "set_column",
+      "block": "dark_oak_log",
+      "from": { "x": 1, "y": 1, "z": 9 },
+      "to": { "x": 1, "y": 17, "z": 9 },
+      "comment": "southwest corner tower vertical log"
+    },
+    {
+      "op": "set_column",
+      "block": "dark_oak_log",
+      "from": { "x": 15, "y": 1, "z": 9 },
+      "to": { "x": 15, "y": 17, "z": 9 },
+      "comment": "southeast corner tower vertical log"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": { "x": 2, "y": 1, "z": 1 },
+      "to": { "x": 14, "y": 14, "z": 1 },
+      "comment": "front wall plane between corner logs"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": { "x": 2, "y": 1, "z": 9 },
+      "to": { "x": 14, "y": 14, "z": 9 },
+      "comment": "rear wall plane"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": { "x": 1, "y": 1, "z": 2 },
+      "to": { "x": 1, "y": 14, "z": 8 },
+      "comment": "left wall plane"
+    },
+    {
+      "op": "fill",
+      "block": "oak_planks",
+      "from": { "x": 15, "y": 1, "z": 2 },
+      "to": { "x": 15, "y": 14, "z": 8 },
+      "comment": "right wall plane"
+    },
+    {
+      "op": "windows_rows",
+      "block": "glass_pane",
+      "positions": [
+        { "y": 2, "z_offsets": [1], "x_start": 3, "x_end": 13, "step": 3 },
+        { "y": 6, "z_offsets": [1], "x_start": 3, "x_end": 13, "step": 3 },
+        { "y": 11, "z_offsets": [1], "x_start": 3, "x_end": 13, "step": 3 },
+        { "y": 2, "z_offsets": [9], "x_start": 3, "x_end": 13, "step": 3 },
+        { "y": 6, "z_offsets": [9], "x_start": 3, "x_end": 13, "step": 3 },
+        { "

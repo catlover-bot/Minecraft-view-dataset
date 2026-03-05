@@ -1,0 +1,204 @@
+{
+  "building": "building_090",
+  "source_plan": "rebuild_plan_ablation_full_pre_anthropic_claude_haiku_4_5_20251001/plan.json",
+  "description_path": "description_anthropic_claude_haiku_4_5_20251001/description.json",
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 30,
+    "accepted_operations_count": 30,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "brick",
+        "score": 0.9,
+        "source_role": "wall primary"
+      },
+      "trim": {
+        "block": "stonebrick",
+        "score": 0.8,
+        "source_role": "wall accent bands"
+      },
+      "roof": {
+        "block": "wood",
+        "score": 0.85,
+        "source_role": "roof shingles dark"
+      },
+      "light": {
+        "block": "concrete",
+        "score": 0.7,
+        "source_role": "wall bands light"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [],
+      "coherence_repairs": [
+        {
+          "role": "light",
+          "from": "concrete",
+          "to": "concrete"
+        }
+      ]
+    },
+    "budget_source": "root.material_budget",
+    "budget_present_in_input": true,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 36,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 0,
+    "role_fixed_skipped_low_conf_count": 0,
+    "role_infer_confidence_mean": 1.0,
+    "role_infer_reasons": {
+      "explicit_role": 36
+    },
+    "self_repair_report": {
+      "added_operations": 0,
+      "added_tags": [],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [
+      {
+        "role": "wall",
+        "target_blocks": 4260,
+        "actual_blocks": 10110,
+        "relative_error": 1.373239
+      },
+      {
+        "role": "roof",
+        "target_blocks": 178,
+        "actual_blocks": 802,
+        "relative_error": 3.505618
+      }
+    ],
+    "schema_violations": [],
+    "strict_blocking_issues": [
+      "material_budget_violation"
+    ],
+    "valid_strict": false
+  },
+  "self_refine_no_gt": {
+    "enabled": true,
+    "accepted_iterations": 2,
+    "total_added_ops": 4,
+    "final_score": 0.8340580217635558,
+    "final_components": {
+      "material": 0.8352626831545054,
+      "dim": 0.4761904761904762,
+      "roof": 0.9823899371069182,
+      "window": 1.0,
+      "entrance": 1.0
+    },
+    "history": [
+      {
+        "iter": 0,
+        "accepted": true,
+        "score": 0.7702827338301002,
+        "components": {
+          "material": 0.8678463122075233,
+          "dim": 0.4761904761904762,
+          "roof": 0.6064921465968587,
+          "window": 1.0,
+          "entrance": 1.0
+        },
+        "added_ops": 0
+      },
+      {
+        "iter": 1,
+        "accepted": true,
+        "gain": 0.041029467429224864,
+        "score": 0.811312201259325,
+        "components": {
+          "material": 0.8045603388567034,
+          "dim": 0.4761904761904762,
+          "roof": 0.9223899371069182,
+          "window": 1.0,
+          "entrance": 1.0
+        },
+        "added_ops": 4,
+        "candidate_index": 7,
+        "candidates_tested": 8,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 0,
+        "budget_reproject_report": {},
+        "selection_score": 0.807312201259325,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 1
+        }
+      },
+      {
+        "iter": 2,
+        "accepted": true,
+        "gain": 0.022745820504230796,
+        "score": 0.8340580217635558,
+        "components": {
+          "material": 0.8352626831545054,
+          "dim": 0.4761904761904762,
+          "roof": 0.9823899371069182,
+          "window": 1.0,
+          "entrance": 1.0
+        },
+        "added_ops": 2,
+        "candidate_index": 0,
+        "candidates_tested": 1,
+        "render_fail_count": 0,
+        "budget_reproject_ops_count": 0,
+        "budget_reproject_report": {},
+        "selection_score": 0.8320580217635558,
+        "validation_report": {
+          "strict_blocking_issues": [
+            "material_budget_violation"
+          ],
+          "budget_violations_count": 2
+        }
+      }
+    ],
+    "profile": {
+      "max_iterations": 2,
+      "min_score_gain": 0.01,
+      "max_added_ops_per_iter": 64,
+      "roof_search_variants": 8,
+      "window_search_variants": 8,
+      "max_search_candidates": 20,
+      "enable_material_budget_reprojection": true,
+      "material_budget_reprojection_strength": 0.6,
+      "material_budget_reprojection_min_deficit_ratio": 0.025,
+      "material_budget_reprojection_trigger_material_score": 0.78,
+      "selection_op_penalty": 0.001,
+      "strict_schema": true,
+      "enforce_role_fixed": true,
+      "require_material_budget": true,
+      "material_budget_tolerance": 0.35,
+      "role_fix_min_confidence": 0.78,
+      "prefer_description_palette": true
+    }
+  },
+  "created_at": "2026-03-01T14:12:44.301459+00:00"
+}

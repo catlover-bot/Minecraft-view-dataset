@@ -1,0 +1,435 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v2_strong",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 18,
+    "ymin": 0,
+    "ymax": 21,
+    "zmin": 0,
+    "zmax": 28
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "nether_brick",
+    "trim": "smooth_stone_slab",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood",
+    "perimeter": "cobblestone"
+  },
+  "structure_spec": {
+    "footprint_2d": {
+      "type": "rectangle",
+      "segments": [
+        {
+          "x1": 0,
+          "z1": 0,
+          "x2": 18,
+          "z2": 28,
+          "label": "main"
+        }
+      ],
+      "symmetry": "bilateral_long_axis_centered"
+    },
+    "floors": [
+      {
+        "floor_index": 0,
+        "y_range": {
+          "ymin": 0,
+          "ymax": 5
+        },
+        "rooms_hint": "ground level with entrance/vestibule, service spaces",
+        "perimeter_profile": "rectangle with terrace on north short side"
+      },
+      {
+        "floor_index": 1,
+        "y_range": {
+          "ymin": 6,
+          "ymax": 10
+        },
+        "rooms_hint": "main living/defensive walkway",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 2,
+        "y_range": {
+          "ymin": 11,
+          "ymax": 15
+        },
+        "rooms_hint": "upper floor / battlements access",
+        "perimeter_profile": "rectangle"
+      },
+      {
+        "floor_index": 3,
+        "y_range": {
+          "ymin": 16,
+          "ymax": 18
+        },
+        "rooms_hint": "parapet and roof access",
+        "perimeter_profile": "parapet"
+      }
+    ],
+    "openings": [
+      {
+        "kind": "door",
+        "face": "south",
+        "x1": 8,
+        "y1": 1,
+        "z1": 28,
+        "x2": 9,
+        "y2": 3,
+        "z2": 28
+      },
+      {
+        "kind": "window",
+        "face": "all",
+        "x1": 2,
+        "y1": 2,
+        "z1": 0,
+        "x2": 2,
+        "y2": 2,
+        "z2": 0
+      }
+    ],
+    "roof_profile": {
+      "type": "flat",
+      "base_y": 16,
+      "ridge_axis": "none",
+      "layers": [
+        {
+          "y": 16,
+          "x1": 1,
+          "z1": 1,
+          "x2": 17,
+          "z2": 27,
+          "block": "nether_brick"
+        },
+        {
+          "y": 17,
+          "x1": 1,
+          "z1": 1,
+          "x2": 17,
+          "z2": 27,
+          "block": "nether_brick"
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 18,
+      "y2": 0,
+      "z2": 28,
+      "block": "wood",
+      "purpose": "ground_floor_slab"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 18,
+      "y2": 15,
+      "z2": 28,
+      "block": "stonebrick",
+      "purpose": "outer_shell_main"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 17,
+      "y2": 15,
+      "z2": 27,
+      "purpose": "interior_hollow"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 16,
+      "z1": 0,
+      "x2": 18,
+      "y2": 16,
+      "z2": 28,
+      "block": "stonebrick",
+      "purpose": "parapet_wall_ring"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 16,
+      "z1": 1,
+      "x2": 17,
+      "y2": 17,
+      "z2": 27,
+      "block": "nether_brick",
+      "purpose": "flat_roof_surface"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 18,
+      "y2": 1,
+      "z2": 28,
+      "block": "stonebrick",
+      "purpose": "ground_floor_outer_band"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 18,
+      "y2": 5,
+      "z2": 28,
+      "block": "stonebrick",
+      "purpose": "floor_separators_band_level1"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 11,
+      "z1": 0,
+      "x2": 18,
+      "y2": 11,
+      "z2": 28,
+      "block": "stonebrick",
+      "purpose": "floor_separators_band_level2"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 2,
+      "z1": 0,
+      "x2": 18,
+      "y2": 2,
+      "z2": 28,
+      "block": "stonebrick",
+      "purpose": "horizontal_banding_low"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 6,
+      "z1": 0,
+      "x2": 18,
+      "y2": 6,
+      "z2": 28,
+      "block": "stonebrick",
+      "purpose": "horizontal_banding_mid"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 12,
+      "z1": 0,
+      "x2": 18,
+      "y2": 12,
+      "z2": 28,
+      "block": "stonebrick",
+      "purpose": "horizontal_banding_high"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 18,
+      "y2": 1,
+      "z2": 28,
+      "block": "cobblestone",
+      "purpose": "perimeter_low_border"
+    },
+    {
+      "op": "carve",
+      "x1": 8,
+      "y1": 1,
+      "z1": 28,
+      "x2": 9,
+      "y2": 3,
+      "z2": 28,
+      "purpose": "main_entrance_opening"
+    },
+    {
+      "op": "fill",
+      "x1": 8,
+
+[REVISED_RESPONSE]
+{
+  "xmin": 0,
+  "xmax": 18,
+  "ymin": 0,
+  "ymax": 21,
+  "zmin": 0,
+  "zmax": 28,
+  "operations": [
+    {
+      "op": "fill",
+      "box": [0, 0, 0, 18, 11, 28],
+      "material": "stonebrick",
+      "notes": "Main solid interior floor-to-ceiling shell for 3 floors (each ~3 blocks internal height + floor slabs), using stonebrick walls. This fills the main mass but will be hollowed where openings and floors are placed."
+    },
+    {
+      "op": "hollow",
+      "box": [1, 1, 1, 17, 10, 27],
+      "notes": "Hollow interior to create rooms and corridors, leaving 1-block thick exterior walls and tower thickness intact."
+    },
+    {
+      "op": "place",
+      "box": [0, 0, 0, 18, 0, 28],
+      "material": "smooth_stone_slab",
+      "notes": "Ground floor base slab layer (floor). Using slabs to provide subtle thickness; sits at y=0."
+    },
+    {
+      "op": "place",
+      "box": [1, 1, 1, 17, 1, 27],
+      "material": "oak_planks",
+      "notes": "Main interior floor at y=1. Distinct material to ensure floor role is separate from walls."
+    },
+    {
+      "op": "place",
+      "box": [1, 4, 1, 17, 4, 27],
+      "material": "oak_planks",
+      "notes": "Second floor slab at ~y=4 (floor between 1st and 2nd floors)."
+    },
+    {
+      "op": "place",
+      "box": [1, 7, 1, 17, 7, 27],
+      "material": "oak_planks",
+      "notes": "Third floor slab at ~y=7 (floor between 2nd and 3rd floors)."
+    },
+    {
+      "op": "place",
+      "box": [1, 10, 1, 17, 10, 27],
+      "material": "oak_planks",
+      "notes": "Parapet/roof walking surface layer at top of main mass (just below roof)."
+    },
+    {
+      "op": "build_tower",
+      "box": [0, 11, 0, 4, 17, 4],
+      "material": "stonebrick",
+      "notes": "Southwest tower (short corner). 4x4 footprint from x0-3,z0-3, extends above roof to y=17 (6 blocks above parapet)."
+    },
+    {
+      "op": "build_tower",
+      "box": [14, 11, 24, 18, 17, 28],
+      "material": "stonebrick",
+      "notes": "Northeast tower (opposite short corner). 4x4 footprint from x14-17,z24-27, extends above roof to y=17."
+    },
+    {
+      "op": "cap",
+      "box": [0, 18, 0, 3, 18, 3],
+      "material": "smooth_stone_slab",
+      "notes": "Tower cap slabs SW tower (stacked cap layer)."
+    },
+    {
+      "op": "cap",
+      "box": [15, 18, 25, 17, 18, 27],
+      "material": "smooth_stone_slab",
+      "notes": "Tower cap slabs NE tower."
+    },
+    {
+      "op": "roof",
+      "box": [1, 11, 1, 17, 12, 27],
+      "material": "netherbrick",
+      "notes": "Flat dark main roof inset 1 block from parapet at y=11-12 (single thick roof)."
+    },
+    {
+      "op": "parapet",
+      "box": [0, 11, 0, 18, 11, 28],
+      "material": "stonebrick",
+      "notes": "Low parapet around roof edge (1 block thick) left as stonebrick for continuity."
+    },
+    {
+      "op": "place",
+      "box": [0, 11, 0, 0, 11, 0],
+      "material": "glowstone",
+      "notes": "Glowstone corner light SW (on parapet edge)."
+    },
+    {
+      "op": "place",
+      "box": [17, 11, 0, 17, 11, 0],
+      "material": "glowstone",
+      "notes": "Glowstone corner light SE."
+    },
+    {
+      "op": "place",
+      "box": [0, 11, 27, 0, 11, 27],
+      "material": "glowstone",
+      "notes": "Glowstone corner light NW."
+    },
+    {
+      "op": "place",
+      "box": [17, 11, 27, 17, 11, 27],
+      "material": "glowstone",
+      "notes": "Glowstone corner light NE."
+    },
+    {
+      "op": "banding",
+      "box": [0, 2, 0, 17, 2, 27],
+      "material": "stonebrick",
+      "notes": "Horizontal banding line at y=2 achieved by a 1-block high trim (same material but placed recessed in next op)."
+    },
+    {
+      "op": "recess",
+      "box": [1, 2, 1, 16, 2, 26],
+      "material": "air",
+      "notes": "Recess back 1 block around main facades to form banding groove at y=2."
+    },
+    {
+      "op": "windows_rows",
+      "details": {
+        "floors_y": [1, 4, 7],
+        "rows_z": [3, 7, 11, 15, 19, 23],
+        "x_positions": [2,5,8,11,14]
+      },
+      "material": "glass_pane",
+      "notes": "Place 1x1 glass pane windows aligned per floor and across facades. Coordinates ensured inside bbox and not intersecting towers where inappropriate."
+    },
+    {
+      "op": "entrance_opening",
+      "box": [8, 1, 0, 10, 3, 0],
+      "material": "air",
+      "notes": "Main entrance opening on front short side (centered along width). 2 blocks wide x 3 tall opening through wall at z=0. Leaves space for door. Inside bbox."
+    },
+    {
+      "op": "stepped_terrace",
+      "steps": [
+        {
+          "box": [6, 1, 28, 11, 2, 28],
+          "material": "stonebrick"
+        },
+        {
+          "box": [7, 3, 28, 10, 4, 28],
+          "material": "stonebrick"
+        },
+        {
+          "box": [8, 5, 28, 9, 6, 28],
+          "material": "stonebrick"
+        }
+      ],
+      "notes": "Three decreasing ledges projecting from the north short side (z=28 face) to form stepped terrace aligned with floor levels."
+    },
+    {
+      "op": "perimeter_stubs",
+      "details": {
+        "positions": [
+          [0,0,4],
+          [0,0,12],
+          [0,0,20],
+          [17,0,4],
+          [17,0,12],
+          [17,0,20]
+        ],
+        "size": [1,1,1]
+      },
+      "material": "cobblestone",
+      "notes": "1-block-high cobblestone stubs spaced along

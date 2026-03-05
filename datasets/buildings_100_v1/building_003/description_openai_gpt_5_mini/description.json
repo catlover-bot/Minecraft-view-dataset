@@ -1,0 +1,65 @@
+{
+  "summary": "A single-storey rectangular stone building with a stepped dark-red (netherbrick) gable-like roof, a low cobblestone perimeter foundation, horizontal row windows on each long side, and stone slab accents on roof steps and corners.",
+  "building_type": "small hall / shed",
+  "shape": {
+    "overall_form": "rectangular box with a raised stepped roof running along the long axis",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the central longitudinal axis",
+    "floors_estimate": 1,
+    "roof_type": "gable"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 19,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "upper wall (main)",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "foundation / low perimeter wall",
+      "confidence": 0.95
+    },
+    {
+      "name": "netherbrick",
+      "role": "roof (stair blocks)",
+      "confidence": 0.95
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof step/corner accents",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows",
+      "confidence": 0.98
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows (3-4 per long side) set one block above the lower stonebrick course",
+    "single-storey interior implied (no visible upstairs windows or dormers)",
+    "stepped netherbrick roof with stone slab accents on each step and at roof corners",
+    "cobblestone surround one block high around the base forming a shallow moat/ledge"
+  ],
+  "rebuild_hints": [
+    "Start with a rectangular stonebrick wall of about 11x19 blocks footprint and 3-4 blocks tall for the main wall.",
+    "Place a one-block-high cobblestone border around the outside perimeter flush with the ground (serves as foundation/ledge).",
+    "Install a continuous row of glass panes/windows centered horizontally on both long walls (three windows separated by one stonebrick column each).",
+    "Construct a symmetrical stepped netherbrick roof along the long axis: multiple layers of netherbrick stairs/slabs rising to a short ridge; add stone slabs at the outer corners of each step.",
+    "Ensure roof overhang is minimal; roof top is flat/ridge about 1-2 blocks wide."
+  ],
+  "uncertainties": [
+    "Exact interior layout and door location are not visible; entrance may be on a short side or obscured.",
+    "Precise block counts for width/depth/height are estimated from perspective images and top views; could be off by a few blocks.",
+    "Material identification for roof accent slabs is based on color/shape and assumed to be stone slabs; could be a different light-gray slab (e.g., smooth stone)."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "building_003",
+  "created_at": "2026-02-28T13:57:44.951705+00:00"
+}

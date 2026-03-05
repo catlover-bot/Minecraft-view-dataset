@@ -1,0 +1,157 @@
+{
+  "building": "building_078",
+  "source_plan_subdir": "rebuild_plan_pe_v2_anthropic_claude_haiku_4_5_20251001",
+  "source_plan_path": "rebuild_plan_pe_v2_anthropic_claude_haiku_4_5_20251001/plan.json",
+  "description_path": "description_anthropic_claude_haiku_4_5_20251001/description.json",
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "parse_report": {
+    "method": "operation_object_scan",
+    "candidate_count": 54,
+    "selected_candidate_score": 20,
+    "used_ops_array_repair": false,
+    "used_op_objects_repair": true,
+    "jsonish_loader_used": false
+  },
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "input_operations_count": 41,
+    "accepted_operations_count": 41,
+    "repaired_operations_count": 33,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": []
+  },
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "brick",
+        "score": 0.95,
+        "source_role": "wall_primary"
+      },
+      "trim": {
+        "block": "concrete",
+        "score": 0.85,
+        "source_role": "pillar_and_railing"
+      },
+      "roof": {
+        "block": "dark_wood_or_nether_brick",
+        "score": 0.8,
+        "source_role": "roof"
+      },
+      "floor": {
+        "block": "stonebrick",
+        "score": 0.7,
+        "source_role": "foundation_trim"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "glass",
+        "light"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "brick",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "dark_wood_or_nether_brick",
+          "score": 0.8,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "concrete",
+          "score": 0.85,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.7,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": []
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 45,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 28,
+    "role_fixed_skipped_low_conf_count": 8,
+    "role_infer_confidence_mean": 0.8160975609756093,
+    "role_infer_reasons": {
+      "thin_outer_detail": 1,
+      "block_family": 4,
+      "purpose_hint": 32,
+      "unknown": 2,
+      "set_block_family": 1,
+      "perimeter_shell": 1
+    },
+    "self_repair_report": {
+      "added_operations": 4,
+      "added_tags": [
+        "light",
+        "light",
+        "light",
+        "light"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 4,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "fallback_triggered": false,
+  "created_at": "2026-03-01T15:29:24.903790+00:00",
+  "settings": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.35,
+    "role_fix_min_confidence": 0.78,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  }
+}
