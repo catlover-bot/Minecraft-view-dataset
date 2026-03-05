@@ -123,7 +123,7 @@ Baseline比（最終設定）:
 - `auto_score_mean`:
   - 説明文全体の総合点（形・材質・寸法の情報がどれだけ含まれるか）
 - `strict_material_f1`:
-  - 材質を厳密に一致判定（例: `stone_brick` と `stone` は別扱い）
+  - 材質を厳密に一致判定（例: `stone_brick` と `stone` は別扱い）ここが低い、rebuildにもつながっている
 - `coarse_material_f1`:
   - 材質を粗カテゴリで判定（例: どちらも STONE 系なら一致）
 - `dimension_score`:
