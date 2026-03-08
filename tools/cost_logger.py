@@ -30,6 +30,22 @@ def _default_pricing_per_mtok(provider: str, model: str) -> Tuple[Optional[float
     if p == "anthropic" and "sonnet" in m:
         return 3.0, 15.0, "heuristic_anthropic_sonnet"
 
+    # Gemini pricing defaults (public pricing page; standard tier assumptions).
+    if p == "gemini" and "3.1-pro-preview" in m:
+        return 2.0, 12.0, "default_gemini_3_1_pro_preview"
+    if p == "gemini" and "3-pro-preview" in m:
+        return 2.0, 12.0, "default_gemini_3_pro_preview"
+    if p == "gemini" and "3.1-flash-lite-preview" in m:
+        return 0.25, 1.5, "default_gemini_3_1_flash_lite_preview"
+    if p == "gemini" and "3-flash-preview" in m:
+        return 0.5, 3.0, "default_gemini_3_flash_preview"
+    if p == "gemini" and "flash-lite" in m:
+        return 0.25, 1.5, "heuristic_gemini_flash_lite"
+    if p == "gemini" and "flash" in m:
+        return 0.5, 3.0, "heuristic_gemini_flash"
+    if p == "gemini" and "pro" in m:
+        return 2.0, 12.0, "heuristic_gemini_pro"
+
     return None, None, "unknown"
 
 
@@ -45,6 +61,9 @@ def _env_pricing_override(provider: str) -> Tuple[Optional[float], Optional[floa
     elif p == "anthropic":
         in_p = _to_float(os.environ.get("ANTHROPIC_PRICE_INPUT_PER_MTOK"))
         out_p = _to_float(os.environ.get("ANTHROPIC_PRICE_OUTPUT_PER_MTOK"))
+    elif p == "gemini":
+        in_p = _to_float(os.environ.get("GEMINI_PRICE_INPUT_PER_MTOK"))
+        out_p = _to_float(os.environ.get("GEMINI_PRICE_OUTPUT_PER_MTOK"))
     else:
         in_p = None
         out_p = None

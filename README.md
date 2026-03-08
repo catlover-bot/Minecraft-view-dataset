@@ -142,18 +142,18 @@ python3 -c "import MalmoPython; print('MalmoPython OK')"
 ```bash
 python3 tools/evaluate_rebuild_metrics.py \
   --gt_root datasets/buildings_100_v1 \
-  --pred_root datasets/buildings_100_v1 \
-  --pred_source rebuild_world \
+  --pred_root outputs/i2t2b/buildings_100_v1 \
+  --pred_subdir rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned \
   --thresholds_json tools/thresholds_levels.example.json \
   --allow_gt_fallback \
-  --out datasets/buildings_100_v1/metrics_levels.json
+  --out outputs/i2t2b/buildings_100_v1/metrics/rebuild/schema_v5_repair_openai_self_refine_tuned_eval.json
 ```
 
 `--pred_source rebuild_world` がデフォルトです。  
-再建築結果が `building_xxx/rebuild_world/{voxels.npy,bbox.json}` にあればそれを優先し、`--allow_gt_fallback` を付けると `building_xxx/gt` にフォールバックできます。
+出力を `outputs/` に分離している場合は、上の例のように `--pred_root` と `--pred_subdir` を明示指定してください。
 
 ## LLM APIキー設定
-`GPT` と `Claude` のキーは `.env` に置けます。
+`GPT` / `Claude` / `Gemini` のキーは `.env` に置けます。
 
 1. テンプレートをコピー:
 ```bash
@@ -163,14 +163,25 @@ cp .env.example .env
 2. `.env` を編集してキーを設定:
 - `OPENAI_API_KEY=...`
 - `ANTHROPIC_API_KEY=...`
-- `LLM_PROVIDER=openai` または `anthropic`
+- `GEMINI_API_KEY=...`
+- `LLM_PROVIDER=openai` または `anthropic` または `gemini`
 - 低コスト寄りの推奨モデル:
   - `OPENAI_MODEL=gpt-5-mini`
   - `ANTHROPIC_MODEL=claude-haiku-4-5-20251001`
+  - `GEMINI_MODEL=gemini-3.1-pro-preview`（精度重視）
+  - `GEMINI_MODEL=gemini-3.1-flash-lite-preview`（低コスト重視）
 
 3. 読み込み確認:
 ```bash
 python3 tools/llm_config.py
+```
+
+Geminiで実行する例:
+```bash
+scripts/run_i2t2b_experiment.sh \
+  --dataset_root datasets/buildings_100_v1 \
+  --provider gemini \
+  --dotenv .env
 ```
 
 ## image-to-text-to-build 実験
@@ -198,7 +209,7 @@ python3 tools/llm_config.py
 ### 現在の最終採用設定（直近更新）
 - OpenAI経路の候補多様化は `candidate_diversification_high_risk_only=ON` を採用。
 - 常時多様化ON（`candidate_diversification_high_risk_only=OFF`）は limit=10 比較で IoU/F1/material が悪化したため不採用。
-- 記録: `reports/final_decision_2026-03-08_diversification_ja.md`
+- 記録: `reports/final/decision_diversification_ja.md`
 
 ### rebuild_plan のスキーマ自動修復（重要）
 `tools/generate_rebuild_plans.py` は、LLM出力の表記ゆれを吸収して `fallback` を減らすために以下を自動修復します。
@@ -265,9 +276,9 @@ python3 tools/render_rebuild_from_plan.py \
 
 python3 tools/evaluate_rebuild_metrics.py \
   --gt_root datasets/buildings_100_v1 \
-  --pred_root datasets/buildings_100_v1 \
+  --pred_root outputs/i2t2b/buildings_100_v1 \
   --pred_subdir rebuild_world_schema_material_v5_repair_openai_gpt_5_mini \
-  --out datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_openai_gpt_5_mini.json
+  --out outputs/i2t2b/buildings_100_v1/metrics/rebuild/schema_v5_repair_openai_gpt_5_mini_eval.json
 ```
 
 v5ロジックの主変更:
@@ -352,25 +363,10 @@ python3 tools/render_rebuild_from_plan.py \
   --out_subdir rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned
 python3 tools/evaluate_rebuild_metrics.py \
   --gt_root datasets/buildings_100_v1 \
-  --pred_root datasets/buildings_100_v1 \
+  --pred_root outputs/i2t2b/buildings_100_v1 \
   --pred_subdir rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned \
-  --out datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned.json
+  --out outputs/i2t2b/buildings_100_v1/metrics/rebuild/schema_v5_repair_openai_self_refine_tuned_eval.json
 ```
-
-limit=10 の実測（buildings_100_v1, v5_repair系）:
-
-- OpenAI:
-  - baseline: IoU `0.2970`, F1 `0.4406`, material_match `0.2193`
-  - self_refine_no_gt: IoU `0.3344`, F1 `0.4903`, material_match `0.3967`
-- Claude:
-  - baseline: IoU `0.2289`, F1 `0.3697`, material_match `0.1567`
-  - self_refine_no_gt: IoU `0.2526`, F1 `0.4000`, material_match `0.1884`
-
-評価JSON:
-- `datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_openai_gpt_5_mini_l10_baseline_compare.json`
-- `datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_l10.json`
-- `datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_l10_baseline_compare.json`
-- `datasets/buildings_100_v1/metrics_levels_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_self_refine_no_gt_l10.json`
 
 ### 一括実行（推奨）
 ```bash
@@ -380,6 +376,10 @@ scripts/run_i2t2b_experiment.sh \
   --dotenv .env \
   --thresholds_json tools/thresholds_levels.example.json
 ```
+
+このラッパーは実行後に自動で `scripts/relocate_i2t2b_outputs.sh` を呼び、  
+`description/rebuild_plan/rebuild_world/logs/metrics` を `outputs/i2t2b/` へ移動します。  
+無効化したい場合は `--no_relocate_outputs` を付けます。
 
 デフォルトで `provider + model` タグにより出力先が自動分離されます（上書き回避）。
 例: `description_openai_gpt_5_mini`, `rebuild_plan_openai_gpt_5_mini`, `rebuild_world_openai_gpt_5_mini`
@@ -404,40 +404,35 @@ scripts/run_i2t2b_experiment.sh \
   --output_tag anthropic_haiku_retry1
 ```
 
+実験後に `datasets/` と `outputs/` を分離する場合:
+```bash
+scripts/relocate_i2t2b_outputs.sh --dataset_root datasets/buildings_100_v1
+scripts/relocate_i2t2b_outputs.sh --dataset_root datasets/buildings_100_v4
+```
+
 ### 主要出力
-- `building_xxx/description/description.json`
-- `building_xxx/rebuild_plan/plan.json`
-- `building_xxx/rebuild_world/voxels.npy`
-- `building_xxx/rebuild_world/bbox.json`
-- `datasets/.../description_metrics.json`
-- `datasets/.../metrics_levels.json`
-
-
-buildings_100_v1 / openai_gpt_5_mini
-auto_score_mean=0.8102, IoU=0.2872, F1=0.4418, material_match=0.2679
-buildings_100_v1 / anthropic_claude_haiku_4_5_20251001
-auto_score_mean=0.7202, IoU=0.3025, F1=0.4610, material_match=0.2042
-buildings_100_v4 / openai_gpt_5_mini
-auto_score_mean=0.7520, IoU=0.1522, F1=0.2604, material_match=0.3246
-buildings_100_v4 / anthropic_claude_haiku_4_5_20251001
-auto_score_mean=0.6893, IoU=0.1205, F1=0.2130, material_match=0.2893
+- `outputs/i2t2b/<dataset>/building_xxx/description_*/description.json`
+- `outputs/i2t2b/<dataset>/building_xxx/rebuild_plan_*/plan.json`
+- `outputs/i2t2b/<dataset>/building_xxx/rebuild_world_*/voxels.npy`
+- `outputs/i2t2b/<dataset>/building_xxx/rebuild_world_*/bbox.json`
+- `outputs/i2t2b/<dataset>/metrics/description/<model>.json`
+- `outputs/i2t2b/<dataset>/metrics/rebuild/<setting>.json`
 
 ## 実験結果サマリ
-- まず最初に見る（結論だけ）: `reports/final_results_concise_ja.md`
-- 最終報告（本実験全体）: `reports/final_experiment_report_ja.md`
-- 最新の考察・比較まとめ: `reports/experiment_summary_2026-03-01.md`
-- 統計的検証 + アブレーション + 外的妥当性（CI/p値付き）: `reports/statistical_validity_ablation_external_validity_ja.md`
-- 再建築評価（IoU/F1等）の詳説: `reports/rebuild_metrics_guide_ja.md`
-- 2種類実験（baseline vs 強化プロンプト）の比較: `reports/two_experiment_types_summary_ja.md`
-- 統計JSON集計: `reports/statistics/stat_ablation_external_summary_2026-03-01.json`
-- 検定のseed反復安定性（resampling）: `reports/statistics/seed_repeat_resampling/summary.md`
-- 低IoU失敗ケースの系統分析（件数 + 修正優先順位）: `reports/failure_analysis/low_iou_failure_taxonomy_2026-03-01.md`
-- fallback削減（schema拘束 + parser_v6）の図付きレポート: `reports/fallback_reduction_parser_v6_report_ja.md`
-- モデル別外的妥当性比較:
-  - `reports/statistics/external_validity_openai_gpt_5_mini.md`
-  - `reports/statistics/external_validity_anthropic_claude_haiku_4_5_20251001.md`
+- まず最初に見る（結論だけ）: `reports/final/summary_ja.md`
+- 最終報告（本実験全体）: `reports/final/report_full_ja.md`
+- 最終採用設定の判断メモ: `reports/final/decision_diversification_ja.md`
+- 最終成果物インデックス: `reports/final/artifacts_index.md`
+- レポート全体の案内: `reports/README.md`
+- データセット構成の案内: `datasets/README.md`
+- 出力ディレクトリ構成の案内: `outputs/README.md`
+- 補助分析（比較レポート/評価ガイド/統計/失敗分析/図の元データ）は `reports/support/`, `reports/statistics/`, `reports/failure_analysis/` を参照
 - 図を再生成する場合: `python3 tools/plot_experiment_figures.py`
 - 2種類比較図を再生成する場合: `python3 tools/plot_experiment_type_comparison.py`
 - self_refine比較図を再生成する場合: `python3 tools/plot_self_refine_comparison.py`
 - parser_v6 fallback比較図を再生成する場合: `python3 tools/plot_fallback_reduction_parser_v6.py`
-- 日本語ラベル版図は `reports/figures/*_ja.svg` に出力
+- 日本語ラベル版図は `reports/figures/` 配下の `*_ja.svg` に出力
+
+## リポジトリ整理メモ（2026-03-08）
+- 実験メトリクスは `outputs/i2t2b/*/metrics/` に集約
+- 最終レポートは `reports/final/` に集約

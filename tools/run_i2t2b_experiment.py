@@ -16,7 +16,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run image->text->build experiment pipeline.")
     parser.add_argument("--dataset_root", required=True, help="Dataset root with building_xxx")
     parser.add_argument("--dotenv", default="", help="Optional .env path")
-    parser.add_argument("--provider", default="", help="openai|anthropic|mock")
+    parser.add_argument("--provider", default="", help="openai|anthropic|gemini|mock")
     parser.add_argument(
         "--output_tag",
         default="",
@@ -277,6 +277,8 @@ def _resolve_provider_model(args: argparse.Namespace) -> Tuple[str, str]:
         model = cfg.openai_model or "openai_model"
     elif provider == "anthropic":
         model = cfg.anthropic_model or "anthropic_model"
+    elif provider == "gemini":
+        model = cfg.gemini_model or "gemini_model"
     elif provider == "mock":
         model = "mock-model"
     else:

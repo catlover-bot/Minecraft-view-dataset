@@ -6,6 +6,7 @@ import json
 import mimetypes
 import ssl
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
@@ -138,6 +139,31 @@ def _extract_anthropic_text(payload: Dict[str, Any]) -> Optional[str]:
     return None
 
 
+def _extract_gemini_text(payload: Dict[str, Any]) -> Optional[str]:
+    candidates = payload.get("candidates")
+    if not isinstance(candidates, list):
+        return None
+    chunks: List[str] = []
+    for cand in candidates:
+        if not isinstance(cand, dict):
+            continue
+        content = cand.get("content")
+        if not isinstance(content, dict):
+            continue
+        parts = content.get("parts")
+        if not isinstance(parts, list):
+            continue
+        for part in parts:
+            if not isinstance(part, dict):
+                continue
+            txt = part.get("text")
+            if isinstance(txt, str) and txt.strip():
+                chunks.append(txt.strip())
+    if chunks:
+        return "\n".join(chunks)
+    return None
+
+
 def _usage_from_openai_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
     usage = payload.get("usage")
     if not isinstance(usage, dict):
@@ -180,6 +206,26 @@ def _usage_from_anthropic_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
     input_tokens = int(usage.get("input_tokens", 0) or 0)
     output_tokens = int(usage.get("output_tokens", 0) or 0)
     total_tokens = int(usage.get("total_tokens", input_tokens + output_tokens) or (input_tokens + output_tokens))
+    return {
+        "input_tokens": input_tokens,
+        "output_tokens": output_tokens,
+        "total_tokens": total_tokens,
+        "raw": usage,
+    }
+
+
+def _usage_from_gemini_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
+    usage = payload.get("usageMetadata")
+    if not isinstance(usage, dict):
+        return {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "raw": {},
+        }
+    input_tokens = int(usage.get("promptTokenCount", 0) or 0)
+    output_tokens = int(usage.get("candidatesTokenCount", 0) or 0)
+    total_tokens = int(usage.get("totalTokenCount", input_tokens + output_tokens) or (input_tokens + output_tokens))
     return {
         "input_tokens": input_tokens,
         "output_tokens": output_tokens,
@@ -342,6 +388,59 @@ def _anthropic_messages(
     )
 
 
+def _gemini_generate_content(
+    cfg: LLMConfig,
+    system_prompt: str,
+    user_prompt: str,
+    image_paths: Sequence[Path],
+    temperature: float,
+    max_tokens: int,
+    llm_seed: Optional[int] = None,
+) -> LLMCompletion:
+    del llm_seed  # Gemini REST does not currently support deterministic seeding via this path.
+
+    user_parts: List[Dict[str, Any]] = [{"text": user_prompt}]
+    for path in image_paths:
+        b64 = _read_base64(path)
+        media = _guess_media_type(path)
+        user_parts.append(
+            {
+                "inline_data": {
+                    "mime_type": media,
+                    "data": b64,
+                }
+            }
+        )
+
+    payload: Dict[str, Any] = {
+        "contents": [{"role": "user", "parts": user_parts}],
+        "generationConfig": {
+            "temperature": float(temperature),
+            "maxOutputTokens": int(max_tokens),
+        },
+    }
+    if system_prompt.strip():
+        payload["system_instruction"] = {"parts": [{"text": system_prompt}]}
+
+    model_name = urllib.parse.quote(cfg.gemini_model, safe="")
+    api_key = urllib.parse.quote(cfg.gemini_api_key, safe="")
+    endpoint = f"/v1beta/models/{cfg.gemini_model}:generateContent"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
+    headers = {"Content-Type": "application/json"}
+    data = _http_post_json(url, headers=headers, payload=payload)
+    text = _extract_gemini_text(data)
+    if not text:
+        raise LLMError("Gemini generateContent endpoint returned no text output.")
+    return LLMCompletion(
+        text=text,
+        provider="gemini",
+        model=cfg.gemini_model,
+        endpoint=endpoint,
+        usage=_usage_from_gemini_payload(data),
+        raw_response=data,
+    )
+
+
 def complete_multimodal_with_meta(
     cfg: LLMConfig,
     system_prompt: str,
@@ -374,6 +473,17 @@ def complete_multimodal_with_meta(
 
     if provider == "anthropic":
         return _anthropic_messages(
+            cfg=cfg,
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+            image_paths=images,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            llm_seed=llm_seed,
+        )
+
+    if provider == "gemini":
+        return _gemini_generate_content(
             cfg=cfg,
             system_prompt=system_prompt,
             user_prompt=user_prompt,

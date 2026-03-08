@@ -9,7 +9,7 @@ from typing import Any, Dict, List
 
 from tools.cost_logger import append_cost_event, estimate_usage_cost
 from tools.llm_client import LLMError, complete_multimodal_with_meta, extract_json_object
-from tools.llm_config import load_llm_config, require_provider_key
+from tools.llm_config import load_llm_config, model_for_provider, require_provider_key
 
 
 SYSTEM_PROMPT = (
@@ -67,7 +67,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max_tokens", type=int, default=1800, help="LLM max output tokens.")
     parser.add_argument("--llm_seed", type=int, default=-1, help="Optional LLM seed (OpenAI only, -1 disables).")
     parser.add_argument("--dotenv", default="", help="Optional .env path.")
-    parser.add_argument("--provider", default="", help="Optional provider override: openai|anthropic|mock")
+    parser.add_argument("--provider", default="", help="Optional provider override: openai|anthropic|gemini|mock")
     return parser.parse_args()
 
 
@@ -266,12 +266,7 @@ def main() -> None:
                 },
             )
         except Exception as exc:  # noqa: BLE001
-            if cfg.provider == "openai":
-                model_name = cfg.openai_model
-            elif cfg.provider == "anthropic":
-                model_name = cfg.anthropic_model
-            else:
-                model_name = "mock-model"
+            model_name = model_for_provider(cfg)
             append_cost_event(
                 dataset_root=dataset_root,
                 event={
@@ -304,7 +299,7 @@ def main() -> None:
 
         desc_obj = _coerce_description_schema(desc_obj)
         desc_obj["provider"] = cfg.provider
-        desc_obj["model"] = cfg.openai_model if cfg.provider == "openai" else cfg.anthropic_model
+        desc_obj["model"] = model_for_provider(cfg)
         desc_obj["building"] = bdir.name
         desc_obj["created_at"] = datetime.now(timezone.utc).isoformat()
         desc_obj["llm_seed"] = int(args.llm_seed)

@@ -12,8 +12,10 @@ class LLMConfig:
     provider: str
     openai_api_key: str
     anthropic_api_key: str
+    gemini_api_key: str
     openai_model: str
     anthropic_model: str
+    gemini_model: str
 
 
 def _parse_dotenv(path: Path) -> Dict[str, str]:
@@ -43,8 +45,10 @@ def load_llm_config(dotenv_path: Optional[str] = None) -> LLMConfig:
         provider=pick("LLM_PROVIDER", "openai"),
         openai_api_key=pick("OPENAI_API_KEY"),
         anthropic_api_key=pick("ANTHROPIC_API_KEY"),
+        gemini_api_key=pick("GEMINI_API_KEY"),
         openai_model=pick("OPENAI_MODEL", "gpt-5-mini"),
         anthropic_model=pick("ANTHROPIC_MODEL", "claude-haiku-4-5-20251001"),
+        gemini_model=pick("GEMINI_MODEL", "gemini-3.1-pro-preview"),
     )
 
 
@@ -54,8 +58,23 @@ def require_provider_key(config: LLMConfig) -> None:
         raise RuntimeError("OPENAI_API_KEY is empty. Set it in .env or environment variables.")
     if provider == "anthropic" and not config.anthropic_api_key:
         raise RuntimeError("ANTHROPIC_API_KEY is empty. Set it in .env or environment variables.")
-    if provider not in {"openai", "anthropic"}:
-        raise RuntimeError("LLM_PROVIDER must be one of: openai, anthropic")
+    if provider == "gemini" and not config.gemini_api_key:
+        raise RuntimeError("GEMINI_API_KEY is empty. Set it in .env or environment variables.")
+    if provider not in {"openai", "anthropic", "gemini", "mock"}:
+        raise RuntimeError("LLM_PROVIDER must be one of: openai, anthropic, gemini, mock")
+
+
+def model_for_provider(config: LLMConfig, provider: Optional[str] = None) -> str:
+    p = (provider or config.provider or "").strip().lower()
+    if p == "openai":
+        return config.openai_model or "openai_model"
+    if p == "anthropic":
+        return config.anthropic_model or "anthropic_model"
+    if p == "gemini":
+        return config.gemini_model or "gemini_model"
+    if p == "mock":
+        return "mock-model"
+    return "unknown-model"
 
 
 if __name__ == "__main__":
@@ -64,5 +83,6 @@ if __name__ == "__main__":
     print(
         f"provider={cfg.provider} "
         f"openai_model={cfg.openai_model} "
-        f"anthropic_model={cfg.anthropic_model}"
+        f"anthropic_model={cfg.anthropic_model} "
+        f"gemini_model={cfg.gemini_model}"
     )

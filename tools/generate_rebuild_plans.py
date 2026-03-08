@@ -11,7 +11,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 
 from tools.cost_logger import append_cost_event, estimate_usage_cost
 from tools.llm_client import LLMCompletion, complete_multimodal_with_meta, extract_json_object
-from tools.llm_config import load_llm_config, require_provider_key
+from tools.llm_config import load_llm_config, model_for_provider, require_provider_key
 
 
 BASELINE_SYSTEM_PROMPT = (
@@ -271,7 +271,7 @@ def parse_args() -> argparse.Namespace:
         prefer_description_palette=True,
     )
     parser.add_argument("--dotenv", default="")
-    parser.add_argument("--provider", default="", help="Optional override: openai|anthropic|mock")
+    parser.add_argument("--provider", default="", help="Optional override: openai|anthropic|gemini|mock")
     return parser.parse_args()
 
 
@@ -3119,7 +3119,7 @@ def main() -> None:
                                 "building": bdir.name,
                                 "stage": "plan_revise",
                                 "provider": completion.provider if completion is not None else cfg.provider,
-                                "model": completion.model if completion is not None else (cfg.openai_model if cfg.provider == "openai" else cfg.anthropic_model),
+                                "model": completion.model if completion is not None else model_for_provider(cfg),
                                 "endpoint": "unknown",
                                 "usage": {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0},
                                 "cost": {
@@ -3140,12 +3140,7 @@ def main() -> None:
                         print(f"[generate_rebuild_plans] {bdir.name} critic-revise failed, keep draft: {exc}")
             except Exception as exc:  # noqa: BLE001
                 llm_failed = True
-                if cfg.provider == "openai":
-                    model_name = cfg.openai_model
-                elif cfg.provider == "anthropic":
-                    model_name = cfg.anthropic_model
-                else:
-                    model_name = "mock-model"
+                model_name = model_for_provider(cfg)
                 append_cost_event(
                     dataset_root=dataset_root,
                     event={
@@ -3265,7 +3260,7 @@ def main() -> None:
                         {
                             "building": bdir.name,
                             "provider": completion.provider if completion is not None else cfg.provider,
-                            "model": completion.model if completion is not None else (cfg.openai_model if cfg.provider == "openai" else cfg.anthropic_model),
+                            "model": completion.model if completion is not None else model_for_provider(cfg),
                             "mode": "llm",
                             "llm_attempted": True,
                             "llm_failed": bool(llm_failed),
@@ -3306,7 +3301,7 @@ def main() -> None:
             coerced["model"] = completion.model
         else:
             coerced["provider"] = cfg.provider
-            coerced["model"] = cfg.openai_model if cfg.provider == "openai" else cfg.anthropic_model
+            coerced["model"] = model_for_provider(cfg)
 
         out_plan.write_text(json.dumps(coerced, ensure_ascii=False, indent=2), encoding="utf-8")
         out_raw.write_text(response_text, encoding="utf-8")
