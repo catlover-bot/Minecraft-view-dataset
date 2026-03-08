@@ -2,7 +2,7 @@
 
 このプロジェクトは、Malmo 上に **単一の建築物** を生成し、見やすい距離・角度の多視点画像とGTを保存する最小構成です。
 
-## 前提環境 (Mac)
+## 前提環境
 - Java 8 (`JAVA_HOME` が有効)
 - Malmo がローカルに配置済み
 - Python 3.9+ 推奨
@@ -120,6 +120,16 @@ python3 -c "import MalmoPython; print('MalmoPython OK')"
   - 例: `oak_planks` -> `wood`
   - 例: `stone_slab`, `stone_slab2` -> `slab_stone`
 - `material_match` を intersection 上の一致率として算出
+- `material_match_relaxed_id` を追加
+  - 定義: IDゆれ吸収後（例: `nether_brick` と `netherbrick`）の一致率
+- `correct_placement_rate` を追加
+  - 定義: `strict一致ブロック数 / pred_non_air_after_shift`
+  - 「エージェントが実際に置いたブロックのうち、正しく置けた割合」
+- `correct_placement_coverage` を追加
+  - 定義: `strict一致ブロック数 / gt_non_air`
+  - 「GT全体に対して、正しく配置できた割合」
+- `correct_placement_rate_relaxed_id` / `correct_placement_coverage_relaxed_id` を追加
+  - 定義: relaxed ID一致ブロックを使った配置率（表記ゆれの影響を軽減）
 
 ### レベル別評価 (metrics_levels.json)
 - Level 0: 位置合わせ（shift探索）
@@ -184,6 +194,11 @@ python3 tools/llm_config.py
   - 上記を一括実行
 - `scripts/run_i2t2b_experiment.sh`
   - 一括実行ラッパー
+
+### 現在の最終採用設定（直近更新）
+- OpenAI経路の候補多様化は `candidate_diversification_high_risk_only=ON` を採用。
+- 常時多様化ON（`candidate_diversification_high_risk_only=OFF`）は limit=10 比較で IoU/F1/material が悪化したため不採用。
+- 記録: `reports/final_decision_2026-03-08_diversification_ja.md`
 
 ### rebuild_plan のスキーマ自動修復（重要）
 `tools/generate_rebuild_plans.py` は、LLM出力の表記ゆれを吸収して `fallback` を減らすために以下を自動修復します。

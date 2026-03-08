@@ -95,6 +95,26 @@ BRICK_HINTS = (
     "terracotta",
 )
 
+RELAXED_ID_EQUIV = {
+    # Common lexical variants.
+    "nether_brick": "netherbrick",
+    "nether_bricks": "netherbrick",
+    "netherbrick": "netherbrick",
+    "quartz_block": "quartz",
+    "quartz": "quartz",
+    # Wood-like coarse lexical variants often mixed by planners.
+    "log": "wood",
+    "wood": "wood",
+    "planks": "wood",
+    "stripped_log": "wood",
+    "stripped_wood": "wood",
+    # Brick lexical variants.
+    "brick": "brick",
+    "bricks": "brick",
+    "brick_block": "brick",
+    "stonebrick": "stonebrick",
+}
+
 
 @dataclass
 class ShiftResult:
@@ -259,6 +279,30 @@ def normalize_block_type(raw: object) -> str:
     return token
 
 
+def relaxed_block_id(norm_type: str) -> str:
+    token = _clean_token(norm_type)
+    if not token:
+        return "air"
+
+    # Handle common postfix/prefix variants.
+    if token.startswith("stripped_"):
+        token = token[len("stripped_") :]
+    if token.endswith("_block") and token not in {"command_block"}:
+        token = token[: -len("_block")]
+    if token.endswith("_bricks"):
+        token = token[: -len("_bricks")] + "_brick"
+    if token.endswith("_planks"):
+        token = "wood"
+    if token.endswith("_log"):
+        token = "wood"
+    if token in {"oak_wood", "spruce_wood", "birch_wood", "jungle_wood", "acacia_wood", "dark_oak_wood"}:
+        token = "wood"
+    if token in {"oak_log", "spruce_log", "birch_log", "jungle_log", "acacia_log", "dark_oak_log"}:
+        token = "wood"
+
+    return RELAXED_ID_EQUIV.get(token, token)
+
+
 def coarse_material(norm_type: str) -> str:
     if norm_type == "air":
         return "AIR"
@@ -405,23 +449,34 @@ def material_metrics(gt_map: Dict[Coord3D, str], pred_map: Dict[Coord3D, str]) -
     if inter_count == 0:
         return {
             "intersection_count": 0.0,
+            "strict_match_count": 0.0,
+            "relaxed_match_count": 0.0,
+            "coarse_match_count": 0.0,
             "material_match": 0.0,
+            "material_match_relaxed_id": 0.0,
             "coarse_material_match": 0.0,
         }
 
     strict_match = 0
+    relaxed_match = 0
     coarse_match = 0
     for coord in inter_coords:
         gt_t = gt_map[coord]
         pr_t = pred_map[coord]
         if gt_t == pr_t:
             strict_match += 1
+        if relaxed_block_id(gt_t) == relaxed_block_id(pr_t):
+            relaxed_match += 1
         if coarse_material(gt_t) == coarse_material(pr_t):
             coarse_match += 1
 
     return {
         "intersection_count": float(inter_count),
+        "strict_match_count": float(strict_match),
+        "relaxed_match_count": float(relaxed_match),
+        "coarse_match_count": float(coarse_match),
         "material_match": safe_div(strict_match, inter_count),
+        "material_match_relaxed_id": safe_div(relaxed_match, inter_count),
         "coarse_material_match": safe_div(coarse_match, inter_count),
     }
 
@@ -665,6 +720,12 @@ def main() -> None:
             **mat_m,
             **comp_m,
         }
+        strict_match_count = float(merged_metrics["strict_match_count"])
+        relaxed_match_count = float(merged_metrics["relaxed_match_count"])
+        merged_metrics["correct_placement_rate"] = safe_div(strict_match_count, len(pred_shifted_occ))
+        merged_metrics["correct_placement_coverage"] = safe_div(strict_match_count, len(gt_occ))
+        merged_metrics["correct_placement_rate_relaxed_id"] = safe_div(relaxed_match_count, len(pred_shifted_occ))
+        merged_metrics["correct_placement_coverage_relaxed_id"] = safe_div(relaxed_match_count, len(gt_occ))
         pass_flags = level_passes(merged_metrics, thresholds=thresholds)
 
         item = {
@@ -676,6 +737,8 @@ def main() -> None:
                 "gt_non_air": len(gt_occ),
                 "pred_non_air": len(pred_occ),
                 "pred_non_air_after_shift": len(pred_shifted_occ),
+                "strict_correct_blocks": int(strict_match_count),
+                "relaxed_correct_blocks": int(relaxed_match_count),
             },
             "shift": {
                 "dx": shift.dx,
@@ -739,8 +802,17 @@ def main() -> None:
         "recall",
         "f1",
         "iou",
+        "intersection_count",
+        "strict_match_count",
+        "relaxed_match_count",
+        "coarse_match_count",
         "material_match",
+        "material_match_relaxed_id",
         "coarse_material_match",
+        "correct_placement_rate",
+        "correct_placement_coverage",
+        "correct_placement_rate_relaxed_id",
+        "correct_placement_coverage_relaxed_id",
         "component_f1",
         "component_precision",
         "component_recall",
@@ -800,8 +872,11 @@ def main() -> None:
             "[evaluate_rebuild_metrics] aggregate: "
             f"IoU={aggregate_metrics['iou']:.4f}, "
             f"F1={aggregate_metrics['f1']:.4f}, "
+            f"correct_placement_rate={aggregate_metrics['correct_placement_rate']:.4f}, "
+            f"correct_placement_rate_relaxed_id={aggregate_metrics['correct_placement_rate_relaxed_id']:.4f}, "
             f"coarse_material={aggregate_metrics['coarse_material_match']:.4f}, "
             f"material_match={aggregate_metrics['material_match']:.4f}, "
+            f"material_match_relaxed_id={aggregate_metrics['material_match_relaxed_id']:.4f}, "
             f"component_f1={aggregate_metrics['component_f1']:.4f}"
         )
 

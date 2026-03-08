@@ -93,8 +93,61 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--self_refine_roof_search_variants", type=int, default=6)
     parser.add_argument("--self_refine_window_search_variants", type=int, default=6)
     parser.add_argument("--self_refine_max_search_candidates", type=int, default=16)
+    parser.add_argument(
+        "--self_refine_enable_candidate_diversification",
+        dest="self_refine_enable_candidate_diversification",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_enable_candidate_diversification",
+        dest="self_refine_enable_candidate_diversification",
+        action="store_false",
+    )
+    parser.add_argument(
+        "--self_refine_candidate_diversification_high_risk_only",
+        dest="self_refine_candidate_diversification_high_risk_only",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_candidate_diversification_high_risk_only",
+        dest="self_refine_candidate_diversification_high_risk_only",
+        action="store_false",
+    )
+    parser.add_argument("--self_refine_candidate_diversification_risk_threshold", type=float, default=-1.0)
+    parser.add_argument("--self_refine_candidate_diversification_underbuild_ratio_threshold", type=float, default=0.92)
     parser.add_argument("--self_refine_material_budget_reprojection_strength", type=float, default=0.5)
     parser.add_argument("--self_refine_material_budget_reprojection_min_deficit_ratio", type=float, default=0.03)
+    parser.add_argument("--self_refine_material_budget_reprojection_trigger_material_score", type=float, default=0.65)
+    parser.add_argument("--self_refine_selection_op_penalty", type=float, default=0.0015)
+    parser.add_argument("--self_refine_selection_overbuild_penalty", type=float, default=0.35)
+    parser.add_argument("--self_refine_selection_underbuild_penalty", type=float, default=0.0)
+    parser.add_argument("--self_refine_selection_material_budget_violation_penalty", type=float, default=0.03)
+    parser.add_argument("--self_refine_selection_material_budget_count_weight", type=float, default=0.25)
+    parser.add_argument("--self_refine_selection_ratio_target_penalty", type=float, default=0.18)
+    parser.add_argument("--self_refine_selection_shape_drop_penalty", type=float, default=0.25)
+    parser.add_argument("--self_refine_selection_dim_drop_penalty", type=float, default=0.30)
+    parser.add_argument("--self_refine_selection_growth_excess_penalty", type=float, default=0.35)
+    parser.add_argument("--self_refine_max_pred_target_ratio", type=float, default=1.05)
+    parser.add_argument("--self_refine_adaptive_risk_ratio_threshold", type=float, default=1.25)
+    parser.add_argument("--self_refine_adaptive_high_risk_max_pred_target_ratio", type=float, default=1.10)
+    parser.add_argument("--self_refine_adaptive_high_risk_overbuild_penalty", type=float, default=0.35)
+    parser.add_argument("--self_refine_adaptive_normal_max_pred_target_ratio", type=float, default=1.20)
+    parser.add_argument("--self_refine_adaptive_normal_overbuild_penalty", type=float, default=0.15)
+    parser.add_argument(
+        "--self_refine_enable_candidate_growth_guard",
+        dest="self_refine_enable_candidate_growth_guard",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_enable_candidate_growth_guard",
+        dest="self_refine_enable_candidate_growth_guard",
+        action="store_false",
+    )
+    parser.add_argument("--self_refine_candidate_growth_ratio_max", type=float, default=1.18)
+    parser.add_argument("--self_refine_candidate_growth_ratio_underbuild_threshold", type=float, default=0.90)
+    parser.add_argument("--self_refine_candidate_growth_ratio_underbuild_max", type=float, default=1.45)
+    parser.add_argument("--self_refine_max_shape_proxy_drop", type=float, default=0.03)
+    parser.add_argument("--self_refine_max_dim_score_drop", type=float, default=0.06)
     parser.add_argument(
         "--self_refine_enable_material_budget_reprojection",
         dest="self_refine_enable_material_budget_reprojection",
@@ -105,12 +158,99 @@ def parse_args() -> argparse.Namespace:
         dest="self_refine_enable_material_budget_reprojection",
         action="store_false",
     )
+    parser.add_argument(
+        "--self_refine_enable_overbuild_guard",
+        dest="self_refine_enable_overbuild_guard",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_enable_overbuild_guard",
+        dest="self_refine_enable_overbuild_guard",
+        action="store_false",
+    )
+    parser.add_argument(
+        "--self_refine_enable_adaptive_overbuild_control",
+        dest="self_refine_enable_adaptive_overbuild_control",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_enable_adaptive_overbuild_control",
+        dest="self_refine_enable_adaptive_overbuild_control",
+        action="store_false",
+    )
+    parser.add_argument(
+        "--self_refine_enable_shape_degradation_guard",
+        dest="self_refine_enable_shape_degradation_guard",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_enable_shape_degradation_guard",
+        dest="self_refine_enable_shape_degradation_guard",
+        action="store_false",
+    )
+    parser.add_argument(
+        "--self_refine_reject_strict_blocking_candidates",
+        dest="self_refine_reject_strict_blocking_candidates",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_reject_strict_blocking_candidates",
+        dest="self_refine_reject_strict_blocking_candidates",
+        action="store_false",
+    )
+    parser.add_argument(
+        "--self_refine_enable_conditional_precboost",
+        dest="self_refine_enable_conditional_precboost",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_enable_conditional_precboost",
+        dest="self_refine_enable_conditional_precboost",
+        action="store_false",
+    )
+    parser.add_argument(
+        "--self_refine_conditional_precboost_require_keyword_match",
+        dest="self_refine_conditional_precboost_require_keyword_match",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_conditional_precboost_require_keyword_match",
+        dest="self_refine_conditional_precboost_require_keyword_match",
+        action="store_false",
+    )
+    parser.add_argument("--self_refine_conditional_precboost_allow_keywords", type=str, default="bunker,storage,shed,house,residential,cottage")
+    parser.add_argument("--self_refine_conditional_precboost_block_keywords", type=str, default="monument,watchtower,fortification,shrine,decorative")
+    parser.add_argument("--self_refine_conditional_precboost_max_roof_score", type=float, default=0.92)
+    parser.add_argument("--self_refine_conditional_precboost_min_material_score", type=float, default=0.6)
+    parser.add_argument("--self_refine_conditional_precboost_max_window_score", type=float, default=1.0)
+    parser.add_argument("--self_refine_conditional_precboost_min_raw_score_gain", type=float, default=0.008)
+    parser.add_argument("--self_refine_conditional_precboost_max_overbuild_excess", type=float, default=0.12)
+    parser.add_argument("--self_refine_conditional_precboost_max_underbuild_excess", type=float, default=0.35)
+    parser.add_argument("--self_refine_conditional_precboost_max_budget_violation_rel_increase", type=float, default=0.05)
+    parser.add_argument("--self_refine_precboost_selection_op_penalty", type=float, default=0.001)
+    parser.add_argument("--self_refine_precboost_selection_overbuild_penalty", type=float, default=0.25)
+    parser.add_argument("--self_refine_precboost_selection_underbuild_penalty", type=float, default=0.45)
+    parser.add_argument("--self_refine_precboost_max_pred_target_ratio", type=float, default=1.05)
+    parser.add_argument("--self_refine_precboost_adaptive_risk_ratio_threshold", type=float, default=1.22)
+    parser.add_argument("--self_refine_precboost_adaptive_high_risk_max_pred_target_ratio", type=float, default=1.12)
+    parser.add_argument("--self_refine_precboost_adaptive_high_risk_overbuild_penalty", type=float, default=0.30)
+    parser.add_argument("--self_refine_precboost_adaptive_normal_max_pred_target_ratio", type=float, default=1.22)
+    parser.add_argument("--self_refine_precboost_adaptive_normal_overbuild_penalty", type=float, default=0.12)
     parser.set_defaults(
         plan_strict_schema=True,
         plan_enforce_role_fixed=True,
         plan_require_material_budget=True,
         plan_prefer_description_palette=True,
         self_refine_enable_material_budget_reprojection=True,
+        self_refine_enable_overbuild_guard=True,
+        self_refine_enable_adaptive_overbuild_control=True,
+        self_refine_enable_shape_degradation_guard=True,
+        self_refine_reject_strict_blocking_candidates=True,
+        self_refine_enable_candidate_diversification=False,
+        self_refine_candidate_diversification_high_risk_only=True,
+        self_refine_enable_conditional_precboost=True,
+        self_refine_conditional_precboost_require_keyword_match=True,
+        self_refine_enable_candidate_growth_guard=True,
     )
 
     parser.add_argument("--rebuild_metrics_out", default="metrics_levels.json")
@@ -305,6 +445,88 @@ def main() -> None:
             str(args.self_refine_material_budget_reprojection_strength),
             "--material_budget_reprojection_min_deficit_ratio",
             str(args.self_refine_material_budget_reprojection_min_deficit_ratio),
+            "--material_budget_reprojection_trigger_material_score",
+            str(args.self_refine_material_budget_reprojection_trigger_material_score),
+            "--selection_op_penalty",
+            str(args.self_refine_selection_op_penalty),
+            "--selection_overbuild_penalty",
+            str(args.self_refine_selection_overbuild_penalty),
+            "--selection_underbuild_penalty",
+            str(args.self_refine_selection_underbuild_penalty),
+            "--selection_material_budget_violation_penalty",
+            str(args.self_refine_selection_material_budget_violation_penalty),
+            "--selection_material_budget_count_weight",
+            str(args.self_refine_selection_material_budget_count_weight),
+            "--selection_ratio_target_penalty",
+            str(args.self_refine_selection_ratio_target_penalty),
+            "--selection_shape_drop_penalty",
+            str(args.self_refine_selection_shape_drop_penalty),
+            "--selection_dim_drop_penalty",
+            str(args.self_refine_selection_dim_drop_penalty),
+            "--selection_growth_excess_penalty",
+            str(args.self_refine_selection_growth_excess_penalty),
+            "--max_pred_target_ratio",
+            str(args.self_refine_max_pred_target_ratio),
+            "--adaptive_risk_ratio_threshold",
+            str(args.self_refine_adaptive_risk_ratio_threshold),
+            "--adaptive_high_risk_max_pred_target_ratio",
+            str(args.self_refine_adaptive_high_risk_max_pred_target_ratio),
+            "--adaptive_high_risk_overbuild_penalty",
+            str(args.self_refine_adaptive_high_risk_overbuild_penalty),
+            "--adaptive_normal_max_pred_target_ratio",
+            str(args.self_refine_adaptive_normal_max_pred_target_ratio),
+            "--adaptive_normal_overbuild_penalty",
+            str(args.self_refine_adaptive_normal_overbuild_penalty),
+            "--candidate_growth_ratio_max",
+            str(args.self_refine_candidate_growth_ratio_max),
+            "--candidate_growth_ratio_underbuild_threshold",
+            str(args.self_refine_candidate_growth_ratio_underbuild_threshold),
+            "--candidate_growth_ratio_underbuild_max",
+            str(args.self_refine_candidate_growth_ratio_underbuild_max),
+            "--candidate_diversification_risk_threshold",
+            str(args.self_refine_candidate_diversification_risk_threshold),
+            "--candidate_diversification_underbuild_ratio_threshold",
+            str(args.self_refine_candidate_diversification_underbuild_ratio_threshold),
+            "--max_shape_proxy_drop",
+            str(args.self_refine_max_shape_proxy_drop),
+            "--max_dim_score_drop",
+            str(args.self_refine_max_dim_score_drop),
+            "--conditional_precboost_allow_keywords",
+            str(args.self_refine_conditional_precboost_allow_keywords),
+            "--conditional_precboost_block_keywords",
+            str(args.self_refine_conditional_precboost_block_keywords),
+            "--conditional_precboost_max_roof_score",
+            str(args.self_refine_conditional_precboost_max_roof_score),
+            "--conditional_precboost_min_material_score",
+            str(args.self_refine_conditional_precboost_min_material_score),
+            "--conditional_precboost_max_window_score",
+            str(args.self_refine_conditional_precboost_max_window_score),
+            "--conditional_precboost_min_raw_score_gain",
+            str(args.self_refine_conditional_precboost_min_raw_score_gain),
+            "--conditional_precboost_max_overbuild_excess",
+            str(args.self_refine_conditional_precboost_max_overbuild_excess),
+            "--conditional_precboost_max_underbuild_excess",
+            str(args.self_refine_conditional_precboost_max_underbuild_excess),
+            "--conditional_precboost_max_budget_violation_rel_increase",
+            str(args.self_refine_conditional_precboost_max_budget_violation_rel_increase),
+            "--precboost_selection_op_penalty",
+            str(args.self_refine_precboost_selection_op_penalty),
+            "--precboost_selection_overbuild_penalty",
+            str(args.self_refine_precboost_selection_overbuild_penalty),
+            "--precboost_selection_underbuild_penalty",
+            str(args.self_refine_precboost_selection_underbuild_penalty),
+            "--precboost_max_pred_target_ratio",
+            str(args.self_refine_precboost_max_pred_target_ratio),
+            "--precboost_adaptive_risk_ratio_threshold",
+            str(args.self_refine_precboost_adaptive_risk_ratio_threshold),
+            "--precboost_adaptive_high_risk_max_pred_target_ratio",
+            str(args.self_refine_precboost_adaptive_high_risk_max_pred_target_ratio),
+            "--precboost_adaptive_high_risk_overbuild_penalty",
+            str(args.self_refine_precboost_adaptive_high_risk_overbuild_penalty),
+            "--precboost_adaptive_normal_max_pred_target_ratio",
+            str(args.self_refine_precboost_adaptive_normal_max_pred_target_ratio),
+            "--precboost_adaptive_normal_overbuild_penalty",
+            str(args.self_refine_precboost_adaptive_normal_overbuild_penalty),
             "--material_budget_tolerance",
             str(args.plan_material_budget_tolerance),
             "--role_fix_min_confidence",
@@ -336,6 +558,42 @@ def main() -> None:
             cmd.append("--enable_material_budget_reprojection")
         else:
             cmd.append("--no_enable_material_budget_reprojection")
+        if args.self_refine_enable_candidate_diversification:
+            cmd.append("--enable_candidate_diversification")
+        else:
+            cmd.append("--no_enable_candidate_diversification")
+        if args.self_refine_candidate_diversification_high_risk_only:
+            cmd.append("--candidate_diversification_high_risk_only")
+        else:
+            cmd.append("--no_candidate_diversification_high_risk_only")
+        if args.self_refine_enable_overbuild_guard:
+            cmd.append("--enable_overbuild_guard")
+        else:
+            cmd.append("--no_enable_overbuild_guard")
+        if args.self_refine_enable_adaptive_overbuild_control:
+            cmd.append("--enable_adaptive_overbuild_control")
+        else:
+            cmd.append("--no_enable_adaptive_overbuild_control")
+        if args.self_refine_enable_candidate_growth_guard:
+            cmd.append("--enable_candidate_growth_guard")
+        else:
+            cmd.append("--no_enable_candidate_growth_guard")
+        if args.self_refine_enable_shape_degradation_guard:
+            cmd.append("--enable_shape_degradation_guard")
+        else:
+            cmd.append("--no_enable_shape_degradation_guard")
+        if args.self_refine_reject_strict_blocking_candidates:
+            cmd.append("--reject_strict_blocking_candidates")
+        else:
+            cmd.append("--no_reject_strict_blocking_candidates")
+        if args.self_refine_enable_conditional_precboost:
+            cmd.append("--enable_conditional_precboost")
+        else:
+            cmd.append("--no_enable_conditional_precboost")
+        if args.self_refine_conditional_precboost_require_keyword_match:
+            cmd.append("--conditional_precboost_require_keyword_match")
+        else:
+            cmd.append("--no_conditional_precboost_require_keyword_match")
         run_cmd(cmd, cwd=root)
         effective_plan_subdir = self_refine_plan_subdir
         print(

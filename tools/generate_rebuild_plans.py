@@ -1307,6 +1307,7 @@ def _validate_and_repair_plan(
     prefer_description_palette: bool,
     max_operations: int,
     required_palette_roles: Tuple[str, ...],
+    fallback_wall_min_confidence: float = 0.55,
 ) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     out = dict(plan)
     desc_hints = _extract_desc_material_hints(desc if isinstance(desc, dict) else {}, required_palette_roles)
@@ -1346,6 +1347,7 @@ def _validate_and_repair_plan(
     unknown_role_count = 0
     role_fixed_block_count = 0
     role_fixed_skipped_low_conf_count = 0
+    fallback_wall_suppressed_count = 0
     bbox_outside_count = 0
     role_infer_reasons: Dict[str, int] = {}
     role_infer_conf_sum = 0.0
@@ -1367,14 +1369,19 @@ def _validate_and_repair_plan(
             fixed["block"] = _normalize_block_type(fixed.get("block", "stonebrick"))
 
         role, role_conf, role_reason = _infer_operation_role_with_confidence(fixed, palette, bbox_fixed)
+        if not role and kind != "carve":
+            # Suppress low-confidence unknown ops instead of always forcing wall.
+            if float(role_conf) >= float(fallback_wall_min_confidence):
+                role = "wall"
+                role_conf = max(role_conf, 0.35)
+                role_reason = "fallback_wall"
+            else:
+                role_reason = "fallback_wall_suppressed_low_conf"
+                fallback_wall_suppressed_count += 1
+
         role_infer_reasons[role_reason] = int(role_infer_reasons.get(role_reason, 0)) + 1
         role_infer_conf_sum += float(role_conf)
         role_infer_conf_count += 1
-        if not role and kind != "carve":
-            # Prefer wall as deterministic fallback for untagged structural fills.
-            role = "wall"
-            role_conf = max(role_conf, 0.35)
-            role_reason = "fallback_wall"
 
         if role in palette and kind != "carve":
             assigned_role_count += 1
@@ -1390,6 +1397,8 @@ def _validate_and_repair_plan(
             role_actual_blocks[role] += _op_volume(fixed)
         elif kind != "carve":
             unknown_role_count += 1
+            fixed["role_confidence"] = round(float(role_conf), 4)
+            fixed["role_reason"] = role_reason
 
         if not _is_inside_bbox(fixed, bbox_fixed):
             bbox_outside_count += 1
@@ -1526,6 +1535,8 @@ def _validate_and_repair_plan(
         "operations_unknown_role_count": unknown_role_count,
         "role_fixed_block_count": role_fixed_block_count,
         "role_fixed_skipped_low_conf_count": role_fixed_skipped_low_conf_count,
+        "fallback_wall_min_confidence": float(fallback_wall_min_confidence),
+        "fallback_wall_suppressed_count": int(fallback_wall_suppressed_count),
         "role_infer_confidence_mean": (role_infer_conf_sum / role_infer_conf_count) if role_infer_conf_count > 0 else 0.0,
         "role_infer_reasons": role_infer_reasons,
         "self_repair_report": self_repair_report,
