@@ -70,8 +70,13 @@ fi
 if [[ -f "${PID_FILE}" ]]; then
   existing_pid="$(cat "${PID_FILE}" 2>/dev/null || true)"
   if [[ -n "${existing_pid}" ]] && kill -0 "${existing_pid}" >/dev/null 2>&1; then
-    echo "[start_malmo_client_mac] Existing Malmo client process found (pid=${existing_pid}); skip launch."
-    exit 0
+    echo "[start_malmo_client_mac] Existing process found but :${PORT} is not LISTEN (pid=${existing_pid}); restarting."
+    kill "${existing_pid}" >/dev/null 2>&1 || true
+    sleep 1
+    if kill -0 "${existing_pid}" >/dev/null 2>&1; then
+      kill -9 "${existing_pid}" >/dev/null 2>&1 || true
+      sleep 1
+    fi
   fi
   rm -f "${PID_FILE}"
 fi
