@@ -24,6 +24,7 @@ from tools.generate_rebuild_plans import (
 )
 
 NON_FATAL_STRICT_ISSUES = {"material_budget_violation"}
+NON_FATAL_STRICT_PREFIXES = ("material_budget_violation",)
 
 
 def parse_args() -> argparse.Namespace:
@@ -94,6 +95,36 @@ def parse_args() -> argparse.Namespace:
         help="Enable diversification when pred/target ratio is below this threshold (underbuild-heavy case).",
     )
     parser.add_argument(
+        "--wall_balance_shell_high_risk_only",
+        dest="wall_balance_shell_high_risk_only",
+        action="store_true",
+        help="Apply self_refine wall shell balance only when current state is high-risk.",
+    )
+    parser.add_argument(
+        "--no_wall_balance_shell_high_risk_only",
+        dest="wall_balance_shell_high_risk_only",
+        action="store_false",
+        help="Apply self_refine wall shell balance regardless of risk.",
+    )
+    parser.add_argument(
+        "--wall_balance_shell_min_deficit",
+        type=float,
+        default=0.06,
+        help="Enable wall-shell balance only when wall role deficit is above this threshold.",
+    )
+    parser.add_argument(
+        "--wall_balance_shell_max_shape_drop_forecast",
+        type=float,
+        default=0.06,
+        help="Enable wall-shell balance only when forecasted shape-proxy drop is below this threshold.",
+    )
+    parser.add_argument(
+        "--wall_balance_shell_shape_drop_scale",
+        type=float,
+        default=0.30,
+        help="Scale factor for wall-shell shape-drop forecast from overbuild excess.",
+    )
+    parser.add_argument(
         "--material_budget_reprojection_strength",
         type=float,
         default=0.25,
@@ -150,13 +181,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--selection_shape_drop_penalty",
         type=float,
-        default=0.25,
+        default=0.35,
         help="Penalty applied to shape proxy drop from current plan state.",
     )
     parser.add_argument(
         "--selection_dim_drop_penalty",
         type=float,
-        default=0.30,
+        default=0.40,
         help="Penalty applied to dimension score drop from current plan state.",
     )
     parser.add_argument(
@@ -164,6 +195,18 @@ def parse_args() -> argparse.Namespace:
         type=float,
         default=0.35,
         help="Penalty on per-iteration non-air growth beyond allowed growth ratio.",
+    )
+    parser.add_argument(
+        "--selection_footprint_profile_penalty",
+        type=float,
+        default=0.15,
+        help="Penalty on footprint profile mismatch against current plan state.",
+    )
+    parser.add_argument(
+        "--selection_height_profile_penalty",
+        type=float,
+        default=0.20,
+        help="Penalty on height profile mismatch against current plan state.",
     )
     parser.add_argument(
         "--max_pred_target_ratio",
@@ -290,6 +333,48 @@ def parse_args() -> argparse.Namespace:
         type=float,
         default=0.06,
         help="Maximum allowed drop for dimension score from current plan state.",
+    )
+    parser.add_argument(
+        "--enable_profile_match_guard",
+        dest="enable_profile_match_guard",
+        action="store_true",
+        help="Reject candidates when footprint/height profile mismatch is too large.",
+    )
+    parser.add_argument(
+        "--no_enable_profile_match_guard",
+        dest="enable_profile_match_guard",
+        action="store_false",
+        help="Disable profile mismatch hard guard (penalty still applies).",
+    )
+    parser.add_argument(
+        "--max_footprint_profile_l1",
+        type=float,
+        default=0.22,
+        help="Maximum footprint profile L1 mismatch allowed by profile guard.",
+    )
+    parser.add_argument(
+        "--max_height_profile_l1",
+        type=float,
+        default=0.25,
+        help="Maximum height profile L1 mismatch allowed by profile guard.",
+    )
+    parser.add_argument(
+        "--enforce_two_stage_generation",
+        dest="enforce_two_stage_generation",
+        action="store_true",
+        help="Force coarse-shape-first candidate generation before decor candidates.",
+    )
+    parser.add_argument(
+        "--no_enforce_two_stage_generation",
+        dest="enforce_two_stage_generation",
+        action="store_false",
+        help="Disable coarse/decor staged candidate generation.",
+    )
+    parser.add_argument(
+        "--two_stage_coarse_ready_threshold",
+        type=float,
+        default=0.70,
+        help="Decor stage is enabled only after coarse stage score reaches this threshold.",
     )
     parser.add_argument(
         "--reject_strict_blocking_candidates",
@@ -463,11 +548,14 @@ def parse_args() -> argparse.Namespace:
         enable_adaptive_overbuild_control=True,
         reject_strict_blocking_candidates=True,
         enable_shape_degradation_guard=True,
+        enable_profile_match_guard=True,
+        enforce_two_stage_generation=True,
         enable_candidate_diversification=False,
         candidate_diversification_high_risk_only=True,
         enable_conditional_precboost=True,
         conditional_precboost_require_keyword_match=True,
         enable_candidate_growth_guard=True,
+        wall_balance_shell_high_risk_only=False,
     )
     return parser.parse_args()
 
@@ -793,6 +881,64 @@ def _shape_proxy(components: Dict[str, Any]) -> float:
     return 0.40 * dim + 0.30 * roof + 0.20 * window + 0.10 * entrance
 
 
+def _coarse_stage_score(components: Dict[str, Any]) -> float:
+    dim = float(components.get("dim", 0.0) or 0.0)
+    roof = float(components.get("roof", 0.0) or 0.0)
+    entrance = float(components.get("entrance", 0.0) or 0.0)
+    return 0.50 * dim + 0.35 * roof + 0.15 * entrance
+
+
+def _resample_profile(vals: np.ndarray, target_len: int) -> np.ndarray:
+    if target_len <= 0:
+        return np.zeros((0,), dtype=np.float64)
+    arr = np.asarray(vals, dtype=np.float64).reshape(-1)
+    if arr.size == 0:
+        return np.zeros((target_len,), dtype=np.float64)
+    if arr.size == target_len:
+        return arr
+    if arr.size == 1:
+        return np.full((target_len,), float(arr[0]), dtype=np.float64)
+    src_x = np.linspace(0.0, 1.0, num=arr.size, dtype=np.float64)
+    dst_x = np.linspace(0.0, 1.0, num=target_len, dtype=np.float64)
+    return np.interp(dst_x, src_x, arr)
+
+
+def _profile_l1(a: List[float], b: List[float]) -> float:
+    arr_a = np.asarray(a, dtype=np.float64).reshape(-1)
+    arr_b = np.asarray(b, dtype=np.float64).reshape(-1)
+    target_len = int(max(1, arr_a.size, arr_b.size))
+    ra = _resample_profile(arr_a, target_len)
+    rb = _resample_profile(arr_b, target_len)
+    return float(np.mean(np.abs(ra - rb)))
+
+
+def _spatial_profiles(vox: np.ndarray) -> Dict[str, Any]:
+    occ = vox != "air"
+    sy, sx, sz = occ.shape
+    denom_layer = float(max(1, sx * sz))
+    height_profile = occ.reshape(sy, -1).sum(axis=1).astype(np.float64) / denom_layer
+    footprint = np.any(occ, axis=0).astype(np.float64)  # (sx, sz)
+    footprint_x = np.mean(footprint, axis=1) if sz > 0 else np.zeros((sx,), dtype=np.float64)
+    footprint_z = np.mean(footprint, axis=0) if sx > 0 else np.zeros((sz,), dtype=np.float64)
+    return {
+        "height": height_profile.tolist(),
+        "footprint_x": footprint_x.tolist(),
+        "footprint_z": footprint_z.tolist(),
+    }
+
+
+def _profile_mismatch(base_profiles: Dict[str, Any], cand_profiles: Dict[str, Any]) -> Tuple[float, float]:
+    base_fx = base_profiles.get("footprint_x", [])
+    base_fz = base_profiles.get("footprint_z", [])
+    base_h = base_profiles.get("height", [])
+    cand_fx = cand_profiles.get("footprint_x", [])
+    cand_fz = cand_profiles.get("footprint_z", [])
+    cand_h = cand_profiles.get("height", [])
+    footprint_l1 = 0.5 * (_profile_l1(base_fx, cand_fx) + _profile_l1(base_fz, cand_fz))
+    height_l1 = _profile_l1(base_h, cand_h)
+    return float(footprint_l1), float(height_l1)
+
+
 def _material_budget_violation_penalty(
     validation: Dict[str, Any],
     *,
@@ -894,6 +1040,94 @@ def _effective_candidate_diversification(metrics: Dict[str, Any], args: argparse
     }
 
 
+def _wall_shell_activation_state(
+    metrics: Dict[str, Any],
+    args: argparse.Namespace,
+    diversification_control: Dict[str, Any],
+) -> Dict[str, Any]:
+    deficits = metrics.get("role_deficits", {})
+    if not isinstance(deficits, dict):
+        deficits = {}
+    wall_deficit = float(deficits.get("wall", 0.0) or 0.0)
+
+    components = metrics.get("components", {})
+    if not isinstance(components, dict):
+        components = {}
+    shape_proxy = float(_shape_proxy(components))
+
+    bbox = metrics.get("bbox", {})
+    if not isinstance(bbox, dict):
+        bbox = {"xmin": 0, "xmax": 0, "ymin": 0, "ymax": 0, "zmin": 0, "zmax": 0}
+    x1 = int(bbox.get("xmin", 0))
+    x2 = int(bbox.get("xmax", 0))
+    y1 = int(bbox.get("ymin", 0)) + 1
+    y2 = max(int(bbox.get("ymin", 0)) + 3, int(bbox.get("ymax", 0)) - 2)
+    z1 = int(bbox.get("zmin", 0))
+    z2 = int(bbox.get("zmax", 0))
+    width = max(0, x2 - x1 + 1)
+    depth = max(0, z2 - z1 + 1)
+    height = max(0, y2 - y1 + 1)
+    shell_cells_est = max(0, (2 * (width + depth) - 4) * height)
+
+    role_counts = metrics.get("role_counts", {})
+    if not isinstance(role_counts, dict):
+        role_counts = {}
+    pred_non_air = 0
+    for role in REQUIRED_PALETTE_ROLES:
+        pred_non_air += max(0, _int(role_counts.get(role, 0), 0))
+    pred_non_air = int(max(1, pred_non_air))
+    target_non_air = _target_non_air_from_metrics(metrics, fallback_non_air=pred_non_air)
+    current_ratio = _pred_target_ratio(pred_non_air, target_non_air)
+
+    min_deficit = float(args.wall_balance_shell_min_deficit)
+    deficit_scale_denom = max(1e-6, min_deficit * 2.5)
+    deficit_scale = min(1.0, max(0.0, wall_deficit / deficit_scale_denom))
+    shell_add_est = int(round(float(shell_cells_est) * float(deficit_scale)))
+    forecast_ratio = _pred_target_ratio(pred_non_air + shell_add_est, target_non_air)
+    overbuild_excess_forecast = max(0.0, forecast_ratio - 1.0)
+    shape_drop_forecast = (
+        overbuild_excess_forecast
+        * float(args.wall_balance_shell_shape_drop_scale)
+        * (0.6 + 0.4 * float(shape_proxy))
+    )
+
+    deficit_ok = wall_deficit >= min_deficit
+    shape_ok = shape_drop_forecast <= float(args.wall_balance_shell_max_shape_drop_forecast)
+    high_risk = bool(diversification_control.get("high_risk", False))
+    high_risk_gate = bool(args.wall_balance_shell_high_risk_only)
+    risk_ok = (not high_risk_gate) or high_risk
+    enabled = bool(deficit_ok and shape_ok and risk_ok)
+
+    if not deficit_ok:
+        reason = "wall_deficit_below_threshold"
+    elif not shape_ok:
+        reason = "shape_drop_forecast_too_high"
+    elif not risk_ok:
+        reason = "risk_gate_not_met"
+    else:
+        reason = "enabled"
+
+    return {
+        "enabled": bool(enabled),
+        "reason": str(reason),
+        "wall_deficit": float(wall_deficit),
+        "min_deficit": float(min_deficit),
+        "shape_proxy": float(shape_proxy),
+        "shape_drop_forecast": float(shape_drop_forecast),
+        "max_shape_drop_forecast": float(args.wall_balance_shell_max_shape_drop_forecast),
+        "shape_drop_scale": float(args.wall_balance_shell_shape_drop_scale),
+        "pred_non_air": int(pred_non_air),
+        "target_non_air": int(target_non_air),
+        "pred_target_ratio": float(current_ratio),
+        "forecast_pred_target_ratio": float(forecast_ratio),
+        "shell_cells_est": int(shell_cells_est),
+        "shell_add_est": int(shell_add_est),
+        "deficit_scale": float(deficit_scale),
+        "high_risk": bool(high_risk),
+        "high_risk_gate": bool(high_risk_gate),
+    }
+
+
 def _effective_growth_control(metrics: Dict[str, Any], args: argparse.Namespace) -> Dict[str, Any]:
     role_counts = metrics.get("role_counts", {})
     base_pred_non_air = 0
@@ -930,7 +1164,7 @@ def _split_strict_issues(issues: Any) -> Tuple[List[str], List[str]]:
         tag = str(issue).strip()
         if not tag:
             continue
-        if tag in NON_FATAL_STRICT_ISSUES:
+        if tag in NON_FATAL_STRICT_ISSUES or any(tag.startswith(prefix) for prefix in NON_FATAL_STRICT_PREFIXES):
             non_fatal.append(tag)
         else:
             fatal.append(tag)
@@ -1268,10 +1502,167 @@ def _trim_perimeter_ops(bbox: Dict[str, int], block: str, band_y: int, purpose: 
     ]
 
 
+def _wall_shell_ops(bbox: Dict[str, int], block: str, y1: int, y2: int, purpose: str) -> List[Dict[str, Any]]:
+    x1, x2 = bbox["xmin"], bbox["xmax"]
+    z1, z2 = bbox["zmin"], bbox["zmax"]
+    if x2 <= x1 or z2 <= z1 or y2 < y1:
+        return []
+    return [
+        {"op": "fill", "x1": x1, "y1": y1, "z1": z1, "x2": x2, "y2": y2, "z2": z1, "block": block, "purpose": f"{purpose}_north"},
+        {"op": "fill", "x1": x1, "y1": y1, "z1": z2, "x2": x2, "y2": y2, "z2": z2, "block": block, "purpose": f"{purpose}_south"},
+        {"op": "fill", "x1": x1, "y1": y1, "z1": z1, "x2": x1, "y2": y2, "z2": z2, "block": block, "purpose": f"{purpose}_west"},
+        {"op": "fill", "x1": x2, "y1": y1, "z1": z1, "x2": x2, "y2": y2, "z2": z2, "block": block, "purpose": f"{purpose}_east"},
+    ]
+
+
+def _op_dedupe_key(op: Dict[str, Any]) -> Tuple[Any, ...]:
+    kind = str(op.get("op", "")).strip().lower()
+    if kind == "set":
+        return (
+            kind,
+            int(_int(op.get("x", 0), 0)),
+            int(_int(op.get("y", 0), 0)),
+            int(_int(op.get("z", 0), 0)),
+            _normalize_block_type(op.get("block", "")),
+            _normalize_role(op.get("role", "")),
+        )
+    if kind in {"fill", "carve", "replace", "outline"}:
+        x1 = _int(op.get("x1", 0), 0)
+        y1 = _int(op.get("y1", 0), 0)
+        z1 = _int(op.get("z1", 0), 0)
+        x2 = _int(op.get("x2", x1), x1)
+        y2 = _int(op.get("y2", y1), y1)
+        z2 = _int(op.get("z2", z1), z1)
+        if x2 < x1:
+            x1, x2 = x2, x1
+        if y2 < y1:
+            y1, y2 = y2, y1
+        if z2 < z1:
+            z1, z2 = z2, z1
+        return (
+            kind,
+            int(x1),
+            int(y1),
+            int(z1),
+            int(x2),
+            int(y2),
+            int(z2),
+            _normalize_block_type(op.get("block", "")),
+            _normalize_role(op.get("role", "")),
+        )
+    return (kind, json.dumps(op, sort_keys=True, ensure_ascii=True, separators=(",", ":")))
+
+
+def _is_decor_op(op: Dict[str, Any]) -> bool:
+    role = _normalize_role(op.get("role", ""))
+    if role in {"trim", "glass", "light"}:
+        return True
+    purpose = str(op.get("purpose", "")).strip().lower()
+    return (
+        "window" in purpose
+        or "glass" in purpose
+        or "trim" in purpose
+        or "light" in purpose
+        or "decor" in purpose
+    )
+
+
+def _looks_like_wall_fill(op: Dict[str, Any]) -> bool:
+    kind = str(op.get("op", "")).strip().lower()
+    if kind != "fill":
+        return False
+    role = _normalize_role(op.get("role", ""))
+    if role == "wall":
+        return True
+    purpose = str(op.get("purpose", "")).strip().lower()
+    if any(k in purpose for k in ("wall", "shell", "facade", "outer_shell")):
+        return True
+    return False
+
+
+def _enforce_wall_fill_shell_policy(ops: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], Dict[str, int]]:
+    out: List[Dict[str, Any]] = []
+    converted = 0
+    preserved = 0
+    for op in ops:
+        if not isinstance(op, dict):
+            continue
+        if not _looks_like_wall_fill(op):
+            out.append(dict(op))
+            preserved += 1
+            continue
+        x1 = _int(op.get("x1", 0), 0)
+        y1 = _int(op.get("y1", 0), 0)
+        z1 = _int(op.get("z1", 0), 0)
+        x2 = _int(op.get("x2", x1), x1)
+        y2 = _int(op.get("y2", y1), y1)
+        z2 = _int(op.get("z2", z1), z1)
+        if x2 < x1:
+            x1, x2 = x2, x1
+        if y2 < y1:
+            y1, y2 = y2, y1
+        if z2 < z1:
+            z1, z2 = z2, z1
+        sx = x2 - x1 + 1
+        sy = y2 - y1 + 1
+        sz = z2 - z1 + 1
+        # Keep already-face-like wall fills untouched.
+        if sx <= 1 or sz <= 1 or sy <= 1:
+            fixed = dict(op)
+            fixed["role"] = "wall"
+            out.append(fixed)
+            preserved += 1
+            continue
+        block = _normalize_block_type(op.get("block", "stonebrick"))
+        base_purpose = str(op.get("purpose", "")).strip() or "wall_shell_enforced"
+        faces = [
+            (x1, y1, z1, x2, y2, z1, "north"),
+            (x1, y1, z2, x2, y2, z2, "south"),
+            (x1, y1, z1, x1, y2, z2, "west"),
+            (x2, y1, z1, x2, y2, z2, "east"),
+        ]
+        for fx1, fy1, fz1, fx2, fy2, fz2, face in faces:
+            out.append(
+                {
+                    "op": "fill",
+                    "x1": int(fx1),
+                    "y1": int(fy1),
+                    "z1": int(fz1),
+                    "x2": int(fx2),
+                    "y2": int(fy2),
+                    "z2": int(fz2),
+                    "block": block,
+                    "role": "wall",
+                    "role_confidence": float(op.get("role_confidence", 0.85) or 0.85),
+                    "role_reason": str(op.get("role_reason", "wall_shell_enforced")),
+                    "purpose": f"{base_purpose}_face_{face}",
+                }
+            )
+        converted += 1
+
+    deduped: List[Dict[str, Any]] = []
+    seen = set()
+    dropped_dupes = 0
+    for op in out:
+        key = _op_dedupe_key(op)
+        if key in seen:
+            dropped_dupes += 1
+            continue
+        seen.add(key)
+        deduped.append(op)
+    return deduped, {
+        "converted_wall_fills": int(converted),
+        "preserved_ops": int(preserved),
+        "dedup_dropped": int(dropped_dupes),
+    }
+
+
 def _propose_base_balance_ops(
     metrics: Dict[str, Any],
     *,
     max_operations: int,
+    enable_wall_shell_balance: bool,
+    wall_min_deficit: float,
 ) -> List[Dict[str, Any]]:
     bbox = metrics["bbox"]
     role_blocks = metrics["role_blocks"]
@@ -1297,25 +1688,19 @@ def _propose_base_balance_ops(
             max_operations,
         )
 
-    if deficits.get("wall", 0.0) > 0.06:
-        _add_op_if_room(
-            ops,
-            {
-                "op": "fill",
-                "x1": bbox["xmin"],
-                "y1": bbox["ymin"] + 1,
-                "z1": bbox["zmin"],
-                "x2": bbox["xmax"],
-                "y2": max(bbox["ymin"] + 3, bbox["ymax"] - 2),
-                "z2": bbox["zmax"],
-                "block": role_blocks["wall"],
-                "role": "wall",
-                "role_confidence": 0.85,
-                "role_reason": "self_refine_wall_balance",
-                "purpose": "self_refine_wall_balance",
-            },
-            max_operations,
+    if enable_wall_shell_balance and deficits.get("wall", 0.0) > float(wall_min_deficit):
+        shell_y1 = bbox["ymin"] + 1
+        shell_y2 = max(bbox["ymin"] + 3, bbox["ymax"] - 2)
+        shell_ops = _wall_shell_ops(
+            bbox,
+            role_blocks["wall"],
+            shell_y1,
+            shell_y2,
+            "self_refine_wall_balance",
         )
+        for op in _tag_ops(shell_ops, role="wall", reason="self_refine_wall_balance", confidence=0.85):
+            if not _add_op_if_room(ops, op, max_operations):
+                break
 
     if deficits.get("floor", 0.0) > 0.04:
         _add_op_if_room(
@@ -1504,6 +1889,9 @@ def _propose_correction_candidates(
     max_search_candidates: int,
     enable_candidate_diversification: bool,
     diversification_mode: str,
+    enable_wall_shell_balance: bool,
+    wall_min_deficit: float,
+    coarse_stage_only: bool,
 ) -> List[List[Dict[str, Any]]]:
     bbox = metrics["bbox"]
     role_blocks = metrics["role_blocks"]
@@ -1535,7 +1923,7 @@ def _propose_correction_candidates(
             roof_ops_list = [[]]
 
     window_ops_list: List[List[Dict[str, Any]]] = [[]]
-    if need_window:
+    if need_window and (not coarse_stage_only):
         window_ops_list = []
         for idx, spec in enumerate(_window_variant_specs(bbox, deficits, max_variants=window_variants)):
             wops = _expand_window_pattern(
@@ -1550,7 +1938,14 @@ def _propose_correction_candidates(
         if not window_ops_list:
             window_ops_list = [[]]
 
-    base_ops = _propose_base_balance_ops(metrics, max_operations=max_operations)
+    base_ops = _propose_base_balance_ops(
+        metrics,
+        max_operations=max_operations,
+        enable_wall_shell_balance=bool(enable_wall_shell_balance),
+        wall_min_deficit=float(wall_min_deficit),
+    )
+    if coarse_stage_only:
+        base_ops = [op for op in base_ops if not _is_decor_op(op)]
 
     bundles: List[List[Dict[str, Any]]] = []
     seen = set()
@@ -1688,6 +2083,20 @@ def _is_better_result(candidate: Dict[str, Any], best: Optional[Dict[str, Any]],
     if c_shape_drop < b_shape_drop - eps:
         return True
     if c_shape_drop > b_shape_drop + eps:
+        return False
+
+    c_fp = float(candidate.get("footprint_profile_l1", 0.0))
+    b_fp = float(best.get("footprint_profile_l1", 0.0))
+    if c_fp < b_fp - eps:
+        return True
+    if c_fp > b_fp + eps:
+        return False
+
+    c_hp = float(candidate.get("height_profile_l1", 0.0))
+    b_hp = float(best.get("height_profile_l1", 0.0))
+    if c_hp < b_hp - eps:
+        return True
+    if c_hp > b_hp + eps:
         return False
 
     c_bv_rel = float(candidate.get("budget_violation_rel_sum", 0.0))
@@ -2015,6 +2424,26 @@ def main() -> None:
             max_operations=int(args.max_operations),
             required_palette_roles=required_roles,
         )
+        initial_wall_shell_report: Dict[str, int] = {"converted_wall_fills": 0, "preserved_ops": 0, "dedup_dropped": 0}
+        init_ops = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+        fixed_init_ops, initial_wall_shell_report = _enforce_wall_fill_shell_policy([dict(op) for op in init_ops if isinstance(op, dict)])
+        if len(fixed_init_ops) != len(init_ops) or initial_wall_shell_report.get("converted_wall_fills", 0) > 0:
+            plan = dict(plan)
+            plan["operations"] = fixed_init_ops[: int(args.max_operations)]
+            plan, validation = _validate_and_repair_plan(
+                plan,
+                desc=desc if isinstance(desc, dict) else {},
+                strict_schema=bool(args.strict_schema),
+                enforce_role_fixed=bool(args.enforce_role_fixed),
+                require_material_budget=bool(args.require_material_budget),
+                material_budget_tolerance=float(args.material_budget_tolerance),
+                role_fix_min_confidence=float(args.role_fix_min_confidence),
+                prefer_description_palette=bool(args.prefer_description_palette),
+                max_operations=int(args.max_operations),
+                required_palette_roles=required_roles,
+            )
+        coerce_report = dict(coerce_report)
+        coerce_report["initial_wall_shell_report"] = initial_wall_shell_report
 
         history: List[Dict[str, Any]] = []
         accepted_iterations = 0
@@ -2023,6 +2452,7 @@ def main() -> None:
         try:
             vox0, bbox0 = _render_plan(plan, max_dim=int(args.max_dim))
             metrics = _self_consistency_score(plan, vox0, bbox0, desc)
+            current_vox = vox0
         except Exception as exc:  # noqa: BLE001
             print(f"[self_refine_no_gt] {bdir.name} render failed: {exc}")
             plan["self_refine_no_gt"] = {
@@ -2056,6 +2486,13 @@ def main() -> None:
             diversification_control = _effective_candidate_diversification(metrics, args)
             iter_enable_candidate_diversification = bool(diversification_control["enabled"])
             iter_diversification_mode = str(diversification_control.get("mode", "normal"))
+            wall_shell_state = _wall_shell_activation_state(metrics, args, diversification_control)
+            iter_enable_wall_shell_balance = bool(wall_shell_state["enabled"])
+            coarse_stage_score = _coarse_stage_score(metrics.get("components", {}))
+            coarse_stage_only = bool(
+                args.enforce_two_stage_generation
+                and coarse_stage_score < float(args.two_stage_coarse_ready_threshold)
+            )
             corr_candidates = _propose_correction_candidates(
                 plan,
                 desc,
@@ -2067,6 +2504,9 @@ def main() -> None:
                 max_search_candidates=int(args.max_search_candidates),
                 enable_candidate_diversification=iter_enable_candidate_diversification,
                 diversification_mode=iter_diversification_mode,
+                enable_wall_shell_balance=bool(iter_enable_wall_shell_balance),
+                wall_min_deficit=float(args.wall_balance_shell_min_deficit),
+                coarse_stage_only=bool(coarse_stage_only),
             )
             if not corr_candidates:
                 history.append(
@@ -2083,6 +2523,11 @@ def main() -> None:
                         "candidate_diversification_underbuild_ratio": float(diversification_control["underbuild_ratio"]),
                         "candidate_diversification_underbuild_threshold": float(diversification_control["underbuild_threshold"]),
                         "candidate_diversification_mode": iter_diversification_mode,
+                        "coarse_stage_score": float(coarse_stage_score),
+                        "coarse_stage_only": bool(coarse_stage_only),
+                        "wall_balance_shell_high_risk_only": bool(args.wall_balance_shell_high_risk_only),
+                        "wall_balance_shell_enabled": bool(iter_enable_wall_shell_balance),
+                        "wall_balance_shell_state": wall_shell_state,
                     }
                 )
                 break
@@ -2104,16 +2549,23 @@ def main() -> None:
             strict_reject_count = 0
             shape_reject_count = 0
             growth_reject_count = 0
+            profile_reject_count = 0
             base_components = metrics.get("components", {})
             if not isinstance(base_components, dict):
                 base_components = {}
             base_shape_proxy = _shape_proxy(base_components)
             base_dim_score = float(base_components.get("dim", 0.0) or 0.0)
+            base_profiles = _spatial_profiles(current_vox)
             growth_control = _effective_growth_control(metrics, args)
             for cand_idx, corr_ops in enumerate(corr_candidates):
                 candidate = dict(plan)
+                corr_decor_ops = int(sum(1 for op in corr_ops if isinstance(op, dict) and _is_decor_op(op)))
+                if coarse_stage_only and corr_decor_ops > 0:
+                    profile_reject_count += 1
+                    continue
                 c_ops = list(plan.get("operations", [])) + list(corr_ops)
                 c_ops = _merge_with_stage_order(c_ops)
+                c_ops, wall_shell_report = _enforce_wall_fill_shell_policy([dict(op) for op in c_ops if isinstance(op, dict)])
                 if len(c_ops) > int(args.max_operations):
                     c_ops = c_ops[: int(args.max_operations)]
                 candidate["operations"] = c_ops
@@ -2142,6 +2594,8 @@ def main() -> None:
                 except Exception:  # noqa: BLE001
                     render_fail_count += 1
                     continue
+                footprint_profile_l1 = 0.0
+                height_profile_l1 = 0.0
 
                 budget_reproject_ops: List[Dict[str, Any]] = []
                 budget_reproject_report: Dict[str, Any] = {}
@@ -2163,6 +2617,7 @@ def main() -> None:
                         c2 = dict(candidate)
                         c2_ops = list(candidate.get("operations", [])) + budget_reproject_ops
                         c2_ops = _merge_with_stage_order(c2_ops)
+                        c2_ops, _ = _enforce_wall_fill_shell_policy([dict(op) for op in c2_ops if isinstance(op, dict)])
                         if len(c2_ops) > int(args.max_operations):
                             c2_ops = c2_ops[: int(args.max_operations)]
                         c2["operations"] = c2_ops
@@ -2207,6 +2662,14 @@ def main() -> None:
                                 pass
 
                 candidate_added_ops = int(len(corr_ops) + len(budget_reproject_ops))
+                cand_profiles = _spatial_profiles(c_vox)
+                footprint_profile_l1, height_profile_l1 = _profile_mismatch(base_profiles, cand_profiles)
+                if bool(args.enable_profile_match_guard) and (
+                    footprint_profile_l1 > float(args.max_footprint_profile_l1)
+                    or height_profile_l1 > float(args.max_height_profile_l1)
+                ):
+                    profile_reject_count += 1
+                    continue
                 pred_non_air = int(np.count_nonzero(c_vox != "air"))
                 target_non_air = _target_non_air_from_metrics(c_metrics, fallback_non_air=pred_non_air)
                 pred_target_ratio = _pred_target_ratio(pred_non_air, target_non_air)
@@ -2243,6 +2706,7 @@ def main() -> None:
                     budget_violation_count = max(1, int(budget_violation_count))
                 result_common = {
                     "candidate": candidate,
+                    "rendered_vox": c_vox,
                     "metrics": c_metrics,
                     "validation": cand_validation,
                     "corr_ops_count": len(corr_ops),
@@ -2271,6 +2735,10 @@ def main() -> None:
                     "base_dim_score": float(base_dim_score),
                     "candidate_dim_score": float(candidate_dim_score),
                     "dim_score_drop": float(dim_score_drop),
+                    "footprint_profile_l1": float(footprint_profile_l1),
+                    "height_profile_l1": float(height_profile_l1),
+                    "corr_decor_ops": int(corr_decor_ops),
+                    "wall_shell_report": wall_shell_report,
                 }
                 for profile_name in selection_profile_order:
                     profile = selection_profiles[profile_name]
@@ -2293,6 +2761,8 @@ def main() -> None:
                         - float(args.selection_shape_drop_penalty) * float(shape_proxy_drop)
                         - float(args.selection_dim_drop_penalty) * float(dim_score_drop)
                         - float(args.selection_growth_excess_penalty) * float(growth_excess)
+                        - float(args.selection_footprint_profile_penalty) * float(footprint_profile_l1)
+                        - float(args.selection_height_profile_penalty) * float(height_profile_l1)
                         - float(budget_violation_penalty)
                     )
                     result = {
@@ -2324,8 +2794,10 @@ def main() -> None:
                     reason = f"all_candidates_rejected_overbuild:{overbuild_reject_count}"
                 elif growth_reject_count > 0 and strict_reject_count == 0 and overbuild_reject_count == 0 and render_fail_count == 0 and shape_reject_count == 0:
                     reason = f"all_candidates_rejected_growth_guard:{growth_reject_count}"
-                elif shape_reject_count > 0 and strict_reject_count == 0 and overbuild_reject_count == 0 and render_fail_count == 0:
+                elif shape_reject_count > 0 and strict_reject_count == 0 and overbuild_reject_count == 0 and render_fail_count == 0 and growth_reject_count == 0:
                     reason = f"all_candidates_rejected_shape_guard:{shape_reject_count}"
+                elif profile_reject_count > 0 and strict_reject_count == 0 and overbuild_reject_count == 0 and render_fail_count == 0 and growth_reject_count == 0 and shape_reject_count == 0:
+                    reason = f"all_candidates_rejected_profile_guard:{profile_reject_count}"
                 else:
                     reason = (
                         f"all_candidates_failed_render:{render_fail_count}"
@@ -2333,6 +2805,7 @@ def main() -> None:
                         f"_or_growth_rejected:{growth_reject_count}"
                         f"_or_strict_rejected:{strict_reject_count}"
                         f"_or_shape_rejected:{shape_reject_count}"
+                        f"_or_profile_rejected:{profile_reject_count}"
                     )
                 history.append(
                     {
@@ -2348,11 +2821,17 @@ def main() -> None:
                         "candidate_diversification_underbuild_ratio": float(diversification_control["underbuild_ratio"]),
                         "candidate_diversification_underbuild_threshold": float(diversification_control["underbuild_threshold"]),
                         "candidate_diversification_mode": iter_diversification_mode,
+                        "coarse_stage_score": float(coarse_stage_score),
+                        "coarse_stage_only": bool(coarse_stage_only),
+                        "wall_balance_shell_high_risk_only": bool(args.wall_balance_shell_high_risk_only),
+                        "wall_balance_shell_enabled": bool(iter_enable_wall_shell_balance),
+                        "wall_balance_shell_state": wall_shell_state,
                         "conditional_precboost": conditional_precboost_meta,
                         "selection_profiles": selection_profile_order,
                         "overbuild_reject_count_by_profile": {k: int(v) for k, v in overbuild_reject_count_by_profile.items()},
                         "growth_control": growth_control,
                         "growth_reject_count": int(growth_reject_count),
+                        "profile_reject_count": int(profile_reject_count),
                         "profile_selection_debug": profile_selection_debug,
                     }
                 )
@@ -2379,6 +2858,11 @@ def main() -> None:
                     "candidate_diversification_underbuild_ratio": float(diversification_control["underbuild_ratio"]),
                     "candidate_diversification_underbuild_threshold": float(diversification_control["underbuild_threshold"]),
                     "candidate_diversification_mode": iter_diversification_mode,
+                    "coarse_stage_score": float(coarse_stage_score),
+                    "coarse_stage_only": bool(coarse_stage_only),
+                    "wall_balance_shell_high_risk_only": bool(args.wall_balance_shell_high_risk_only),
+                    "wall_balance_shell_enabled": bool(iter_enable_wall_shell_balance),
+                    "wall_balance_shell_state": wall_shell_state,
                     "selection_profile": str(selected_profile),
                     "selection_profiles": selection_profile_order,
                     "conditional_precboost": conditional_precboost_meta,
@@ -2389,6 +2873,7 @@ def main() -> None:
                     "strict_reject_count": int(strict_reject_count),
                     "shape_reject_count": int(shape_reject_count),
                     "growth_reject_count": int(growth_reject_count),
+                    "profile_reject_count": int(profile_reject_count),
                     "growth_control": growth_control,
                     "budget_reproject_ops_count": int(best_result["budget_reproject_ops_count"]),
                     "budget_reproject_report": best_result["budget_reproject_report"],
@@ -2417,6 +2902,10 @@ def main() -> None:
                     "base_dim_score": float(best_result["base_dim_score"]),
                     "candidate_dim_score": float(best_result["candidate_dim_score"]),
                     "dim_score_drop": float(best_result["dim_score_drop"]),
+                    "footprint_profile_l1": float(best_result["footprint_profile_l1"]),
+                    "height_profile_l1": float(best_result["height_profile_l1"]),
+                    "corr_decor_ops": int(best_result["corr_decor_ops"]),
+                    "wall_shell_report": best_result["wall_shell_report"],
                     "selection_score": float(best_result["selection_score"]),
                     "validation_report": {
                         "strict_blocking_issues": best_result["validation"].get("strict_blocking_issues", []),
@@ -2430,6 +2919,7 @@ def main() -> None:
             plan = best_result["candidate"]
             validation = best_result["validation"]
             metrics = best_result["metrics"]
+            current_vox = best_result["rendered_vox"]
             accepted_iterations += 1
             total_added_ops += int(best_result["candidate_added_ops"])
 
@@ -2449,6 +2939,10 @@ def main() -> None:
                 "max_search_candidates": int(args.max_search_candidates),
                 "enable_candidate_diversification": bool(args.enable_candidate_diversification),
                 "candidate_diversification_high_risk_only": bool(args.candidate_diversification_high_risk_only),
+                "wall_balance_shell_high_risk_only": bool(args.wall_balance_shell_high_risk_only),
+                "wall_balance_shell_min_deficit": float(args.wall_balance_shell_min_deficit),
+                "wall_balance_shell_max_shape_drop_forecast": float(args.wall_balance_shell_max_shape_drop_forecast),
+                "wall_balance_shell_shape_drop_scale": float(args.wall_balance_shell_shape_drop_scale),
                 "candidate_diversification_risk_threshold": float(args.candidate_diversification_risk_threshold),
                 "candidate_diversification_underbuild_ratio_threshold": float(args.candidate_diversification_underbuild_ratio_threshold),
                 "enable_material_budget_reprojection": bool(args.enable_material_budget_reprojection),
@@ -2464,6 +2958,8 @@ def main() -> None:
                 "selection_shape_drop_penalty": float(args.selection_shape_drop_penalty),
                 "selection_dim_drop_penalty": float(args.selection_dim_drop_penalty),
                 "selection_growth_excess_penalty": float(args.selection_growth_excess_penalty),
+                "selection_footprint_profile_penalty": float(args.selection_footprint_profile_penalty),
+                "selection_height_profile_penalty": float(args.selection_height_profile_penalty),
                 "enable_overbuild_guard": bool(args.enable_overbuild_guard),
                 "max_pred_target_ratio": float(args.max_pred_target_ratio),
                 "enable_adaptive_overbuild_control": bool(args.enable_adaptive_overbuild_control),
@@ -2479,6 +2975,11 @@ def main() -> None:
                 "enable_shape_degradation_guard": bool(args.enable_shape_degradation_guard),
                 "max_shape_proxy_drop": float(args.max_shape_proxy_drop),
                 "max_dim_score_drop": float(args.max_dim_score_drop),
+                "enable_profile_match_guard": bool(args.enable_profile_match_guard),
+                "max_footprint_profile_l1": float(args.max_footprint_profile_l1),
+                "max_height_profile_l1": float(args.max_height_profile_l1),
+                "enforce_two_stage_generation": bool(args.enforce_two_stage_generation),
+                "two_stage_coarse_ready_threshold": float(args.two_stage_coarse_ready_threshold),
                 "reject_strict_blocking_candidates": bool(args.reject_strict_blocking_candidates),
                 "enable_conditional_precboost": bool(args.enable_conditional_precboost),
                 "conditional_precboost_require_keyword_match": bool(args.conditional_precboost_require_keyword_match),
@@ -2507,6 +3008,7 @@ def main() -> None:
                 "material_budget_tolerance": float(args.material_budget_tolerance),
                 "role_fix_min_confidence": float(args.role_fix_min_confidence),
                 "prefer_description_palette": bool(args.prefer_description_palette),
+                "initial_wall_shell_report": initial_wall_shell_report,
             },
         }
         plan["validation_report"] = validation

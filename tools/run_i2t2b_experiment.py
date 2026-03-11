@@ -115,6 +115,33 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--self_refine_candidate_diversification_risk_threshold", type=float, default=-1.0)
     parser.add_argument("--self_refine_candidate_diversification_underbuild_ratio_threshold", type=float, default=0.92)
+    parser.add_argument(
+        "--self_refine_wall_balance_shell_high_risk_only",
+        dest="self_refine_wall_balance_shell_high_risk_only",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_wall_balance_shell_high_risk_only",
+        dest="self_refine_wall_balance_shell_high_risk_only",
+        action="store_false",
+    )
+    parser.add_argument("--self_refine_wall_balance_shell_min_deficit", type=float, default=0.06)
+    parser.add_argument("--self_refine_wall_balance_shell_max_shape_drop_forecast", type=float, default=0.06)
+    parser.add_argument("--self_refine_wall_balance_shell_shape_drop_scale", type=float, default=0.30)
+    parser.add_argument(
+        "--self_refine_wall_shell_model_specific",
+        dest="self_refine_wall_shell_model_specific",
+        action="store_true",
+        help="Use model-specific wall-shell thresholds (Claude-relaxed profile) when self-refine runs.",
+    )
+    parser.add_argument(
+        "--self_refine_no_wall_shell_model_specific",
+        dest="self_refine_wall_shell_model_specific",
+        action="store_false",
+        help="Disable model-specific wall-shell thresholds and always use common values.",
+    )
+    parser.add_argument("--self_refine_wall_shell_claude_min_deficit", type=float, default=0.05)
+    parser.add_argument("--self_refine_wall_shell_claude_max_shape_drop_forecast", type=float, default=0.10)
     parser.add_argument("--self_refine_material_budget_reprojection_strength", type=float, default=0.5)
     parser.add_argument("--self_refine_material_budget_reprojection_min_deficit_ratio", type=float, default=0.03)
     parser.add_argument("--self_refine_material_budget_reprojection_trigger_material_score", type=float, default=0.65)
@@ -124,9 +151,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--self_refine_selection_material_budget_violation_penalty", type=float, default=0.03)
     parser.add_argument("--self_refine_selection_material_budget_count_weight", type=float, default=0.25)
     parser.add_argument("--self_refine_selection_ratio_target_penalty", type=float, default=0.18)
-    parser.add_argument("--self_refine_selection_shape_drop_penalty", type=float, default=0.25)
-    parser.add_argument("--self_refine_selection_dim_drop_penalty", type=float, default=0.30)
+    parser.add_argument("--self_refine_selection_shape_drop_penalty", type=float, default=0.35)
+    parser.add_argument("--self_refine_selection_dim_drop_penalty", type=float, default=0.40)
     parser.add_argument("--self_refine_selection_growth_excess_penalty", type=float, default=0.35)
+    parser.add_argument("--self_refine_selection_footprint_profile_penalty", type=float, default=0.15)
+    parser.add_argument("--self_refine_selection_height_profile_penalty", type=float, default=0.20)
     parser.add_argument("--self_refine_max_pred_target_ratio", type=float, default=1.05)
     parser.add_argument("--self_refine_adaptive_risk_ratio_threshold", type=float, default=1.25)
     parser.add_argument("--self_refine_adaptive_high_risk_max_pred_target_ratio", type=float, default=1.10)
@@ -148,6 +177,29 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--self_refine_candidate_growth_ratio_underbuild_max", type=float, default=1.45)
     parser.add_argument("--self_refine_max_shape_proxy_drop", type=float, default=0.03)
     parser.add_argument("--self_refine_max_dim_score_drop", type=float, default=0.06)
+    parser.add_argument(
+        "--self_refine_enable_profile_match_guard",
+        dest="self_refine_enable_profile_match_guard",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_enable_profile_match_guard",
+        dest="self_refine_enable_profile_match_guard",
+        action="store_false",
+    )
+    parser.add_argument("--self_refine_max_footprint_profile_l1", type=float, default=0.22)
+    parser.add_argument("--self_refine_max_height_profile_l1", type=float, default=0.25)
+    parser.add_argument(
+        "--self_refine_enforce_two_stage_generation",
+        dest="self_refine_enforce_two_stage_generation",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--self_refine_no_enforce_two_stage_generation",
+        dest="self_refine_enforce_two_stage_generation",
+        action="store_false",
+    )
+    parser.add_argument("--self_refine_two_stage_coarse_ready_threshold", type=float, default=0.70)
     parser.add_argument(
         "--self_refine_enable_material_budget_reprojection",
         dest="self_refine_enable_material_budget_reprojection",
@@ -245,9 +297,13 @@ def parse_args() -> argparse.Namespace:
         self_refine_enable_overbuild_guard=True,
         self_refine_enable_adaptive_overbuild_control=True,
         self_refine_enable_shape_degradation_guard=True,
+        self_refine_enable_profile_match_guard=True,
+        self_refine_enforce_two_stage_generation=True,
         self_refine_reject_strict_blocking_candidates=True,
         self_refine_enable_candidate_diversification=False,
         self_refine_candidate_diversification_high_risk_only=True,
+        self_refine_wall_balance_shell_high_risk_only=False,
+        self_refine_wall_shell_model_specific=True,
         self_refine_enable_conditional_precboost=True,
         self_refine_conditional_precboost_require_keyword_match=True,
         self_refine_enable_candidate_growth_guard=True,
@@ -313,6 +369,24 @@ def _resolve_output_names(args: argparse.Namespace) -> Tuple[str, str, str, str,
             rebuild_metrics_out = f"metrics_levels_{tag}.json"
 
     return tag, desc_subdir, plan_subdir, rebuild_subdir, desc_metrics_out, rebuild_metrics_out
+
+
+def _resolve_self_refine_wall_shell_thresholds(args: argparse.Namespace) -> Tuple[float, float, str]:
+    min_def = float(args.self_refine_wall_balance_shell_min_deficit)
+    max_shape = float(args.self_refine_wall_balance_shell_max_shape_drop_forecast)
+    mode = "common"
+    if not bool(args.self_refine_wall_shell_model_specific):
+        return min_def, max_shape, mode
+    provider, model = _resolve_provider_model(args)
+    p = str(provider).strip().lower()
+    m = str(model).strip().lower()
+    if "anthropic" in p or "claude" in m:
+        return (
+            float(args.self_refine_wall_shell_claude_min_deficit),
+            float(args.self_refine_wall_shell_claude_max_shape_drop_forecast),
+            "claude_relaxed",
+        )
+    return min_def, max_shape, mode
 
 
 def main() -> None:
@@ -416,6 +490,13 @@ def main() -> None:
         self_refine_plan_subdir = (args.self_refine_plan_subdir or "").strip()
         if not self_refine_plan_subdir:
             self_refine_plan_subdir = f"{plan_subdir}_self_refine_no_gt"
+        wall_shell_min_deficit, wall_shell_max_shape_drop_forecast, wall_shell_profile = _resolve_self_refine_wall_shell_thresholds(args)
+        print(
+            "[run_i2t2b_experiment] self_refine wall-shell profile:"
+            f" {wall_shell_profile}"
+            f" min_deficit={wall_shell_min_deficit:.4f}"
+            f" max_shape_drop_forecast={wall_shell_max_shape_drop_forecast:.4f}"
+        )
         cmd = [
             py,
             str(root / "tools" / "self_refine_rebuild_plans_no_gt.py"),
@@ -467,6 +548,10 @@ def main() -> None:
             str(args.self_refine_selection_dim_drop_penalty),
             "--selection_growth_excess_penalty",
             str(args.self_refine_selection_growth_excess_penalty),
+            "--selection_footprint_profile_penalty",
+            str(args.self_refine_selection_footprint_profile_penalty),
+            "--selection_height_profile_penalty",
+            str(args.self_refine_selection_height_profile_penalty),
             "--max_pred_target_ratio",
             str(args.self_refine_max_pred_target_ratio),
             "--adaptive_risk_ratio_threshold",
@@ -489,10 +574,22 @@ def main() -> None:
             str(args.self_refine_candidate_diversification_risk_threshold),
             "--candidate_diversification_underbuild_ratio_threshold",
             str(args.self_refine_candidate_diversification_underbuild_ratio_threshold),
+            "--wall_balance_shell_min_deficit",
+            str(wall_shell_min_deficit),
+            "--wall_balance_shell_max_shape_drop_forecast",
+            str(wall_shell_max_shape_drop_forecast),
+            "--wall_balance_shell_shape_drop_scale",
+            str(args.self_refine_wall_balance_shell_shape_drop_scale),
             "--max_shape_proxy_drop",
             str(args.self_refine_max_shape_proxy_drop),
             "--max_dim_score_drop",
             str(args.self_refine_max_dim_score_drop),
+            "--max_footprint_profile_l1",
+            str(args.self_refine_max_footprint_profile_l1),
+            "--max_height_profile_l1",
+            str(args.self_refine_max_height_profile_l1),
+            "--two_stage_coarse_ready_threshold",
+            str(args.self_refine_two_stage_coarse_ready_threshold),
             "--conditional_precboost_allow_keywords",
             str(args.self_refine_conditional_precboost_allow_keywords),
             "--conditional_precboost_block_keywords",
@@ -568,6 +665,10 @@ def main() -> None:
             cmd.append("--candidate_diversification_high_risk_only")
         else:
             cmd.append("--no_candidate_diversification_high_risk_only")
+        if args.self_refine_wall_balance_shell_high_risk_only:
+            cmd.append("--wall_balance_shell_high_risk_only")
+        else:
+            cmd.append("--no_wall_balance_shell_high_risk_only")
         if args.self_refine_enable_overbuild_guard:
             cmd.append("--enable_overbuild_guard")
         else:
@@ -584,6 +685,14 @@ def main() -> None:
             cmd.append("--enable_shape_degradation_guard")
         else:
             cmd.append("--no_enable_shape_degradation_guard")
+        if args.self_refine_enable_profile_match_guard:
+            cmd.append("--enable_profile_match_guard")
+        else:
+            cmd.append("--no_enable_profile_match_guard")
+        if args.self_refine_enforce_two_stage_generation:
+            cmd.append("--enforce_two_stage_generation")
+        else:
+            cmd.append("--no_enforce_two_stage_generation")
         if args.self_refine_reject_strict_blocking_candidates:
             cmd.append("--reject_strict_blocking_candidates")
         else:

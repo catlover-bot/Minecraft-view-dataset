@@ -13,12 +13,16 @@
   - `description_*`
   - `rebuild_plan_*`
   - `rebuild_world_*`
-  - `logs/`
 - `metrics/description/`
 - `metrics/rebuild/`
-- `logs/`（データセット単位ログ）
+
+2026-03-10 時点の整理方針:
+- 中間検証用の `shapefix*`, `*_self_refine_no_gt`（非tuned）, `capture_*`, `logs/` は削除済み
+- 比較に使う本線のみ保持
+  - Main（共通ハイパラ）: `*_common_v8_struct_self_refine_no_gt_tuned`
+  - Supplementary（モデル別最適化）: `*_self_refine_no_gt_tuned`
+  - 基本系: `rebuild_plan_schema_material_v5_repair_*`, `rebuild_world_schema_material_v5_repair_*`
 
 方針:
 - `datasets/` はキャプチャ済みデータ（`images`, `gt`, `meta.json`）のみ保持
 - 生成・評価で増える成果物は `outputs/` にまとめる
-

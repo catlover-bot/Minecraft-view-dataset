@@ -2343,6 +2343,69 @@ def _expand_outline_to_faces(x1: int, y1: int, z1: int, x2: int, y2: int, z2: in
     return dedup
 
 
+def _expand_wall_shell_to_faces(x1: int, y1: int, z1: int, x2: int, y2: int, z2: int) -> List[Tuple[int, int, int, int, int, int]]:
+    faces = [
+        (x1, y1, z1, x2, y2, z1),  # north
+        (x1, y1, z2, x2, y2, z2),  # south
+        (x1, y1, z1, x1, y2, z2),  # west
+        (x2, y1, z1, x2, y2, z2),  # east
+    ]
+    dedup: List[Tuple[int, int, int, int, int, int]] = []
+    seen = set()
+    for face in faces:
+        if face in seen:
+            continue
+        seen.add(face)
+        dedup.append(face)
+    return dedup
+
+
+def _should_coerce_wall_fill_to_shell(
+    role: str,
+    purpose: str,
+    raw_kind: str,
+    x1: int,
+    y1: int,
+    z1: int,
+    x2: int,
+    y2: int,
+    z2: int,
+    mode: str = "all",
+) -> bool:
+    mode_norm = str(mode or "all").strip().lower()
+    if mode_norm in {"none", "off", "disabled"}:
+        return False
+
+    sx = x2 - x1 + 1
+    sy = y2 - y1 + 1
+    sz = z2 - z1 + 1
+    if sx < 3 or sy < 3 or sz < 3:
+        return False
+
+    role_norm = _normalize_role(role) if role else ""
+    purpose_l = str(purpose or "").strip().lower()
+    raw_l = str(raw_kind or "").strip().lower()
+    if mode_norm in {"self_refine_only", "self_refine", "self_refine_wall_balance"}:
+        self_refine_wall_hint = "self_refine_wall_balance" in purpose_l
+        if not self_refine_wall_hint:
+            return False
+        volume = sx * sy * sz
+        return sx >= 5 and sy >= 4 and sz >= 5 and volume >= 200
+
+    wall_hint = (
+        role_norm == "wall"
+        or "wall" in purpose_l
+        or "shell" in purpose_l
+        or "facade" in purpose_l
+        or raw_l in {"wall", "walls", "shell", "hollow", "hollow_box"}
+    )
+    if not wall_hint:
+        return False
+
+    volume = sx * sy * sz
+    return sx >= 5 and sy >= 4 and sz >= 5 and volume >= 200
+
+
 def _ops_bbox(ops: List[Dict[str, Any]]) -> Optional[Dict[str, int]]:
     if not ops:
         return None
@@ -2377,6 +2440,46 @@ def _ops_bbox(ops: List[Dict[str, Any]]) -> Optional[Dict[str, int]]:
     if None in (xmin, xmax, ymin, ymax, zmin, zmax):
         return None
     return {"xmin": xmin, "xmax": xmax, "ymin": ymin, "ymax": ymax, "zmin": zmin, "zmax": zmax}
+
+
+def _op_dedupe_key(op: Dict[str, Any]) -> Tuple[Any, ...]:
+    kind = str(op.get("op", "")).strip().lower()
+    if kind in {"fill", "carve"}:
+        x1 = _int(op.get("x1", 0), 0)
+        y1 = _int(op.get("y1", 0), 0)
+        z1 = _int(op.get("z1", 0), 0)
+        x2 = _int(op.get("x2", x1), x1)
+        y2 = _int(op.get("y2", y1), y1)
+        z2 = _int(op.get("z2", z1), z1)
+        if x2 < x1:
+            x1, x2 = x2, x1
+        if y2 < y1:
+            y1, y2 = y2, y1
+        if z2 < z1:
+            z1, z2 = z2, z1
+        block = str(op.get("block", "")).strip().lower()
+        return (kind, x1, y1, z1, x2, y2, z2, block)
+    if kind == "set":
+        x = _int(op.get("x", 0), 0)
+        y = _int(op.get("y", 0), 0)
+        z = _int(op.get("z", 0), 0)
+        block = str(op.get("block", "")).strip().lower()
+        return (kind, x, y, z, block)
+    return (kind, json.dumps(op, ensure_ascii=True, sort_keys=True))
+
+
+def _dedupe_operations(ops: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    out: List[Dict[str, Any]] = []
+    seen = set()
+    for op in ops:
+        if not isinstance(op, dict):
+            continue
+        key = _op_dedupe_key(op)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(op)
+    return out
 
 
 def _operations_from_structure_spec(plan: Dict[str, Any], bbox: Dict[str, int], palette: Dict[str, str]) -> Tuple[List[Dict[str, Any]], str]:
@@ -2496,7 +2599,7 @@ def _operations_from_structure_spec(plan: Dict[str, Any], bbox: Dict[str, int], 
     return [], "missing"
 
 
-def _coerce_plan(plan: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+def _coerce_plan(plan: Dict[str, Any], *, wall_fill_shell_mode: str = "all") -> Tuple[Dict[str, Any], Dict[str, Any]]:
     out = dict(plan)
     bbox, bbox_source = _extract_bbox(plan)
     palette = _extract_palette(plan)
@@ -2510,6 +2613,7 @@ def _coerce_plan(plan: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     report: Dict[str, Any] = {
         "bbox_source": bbox_source,
         "operations_source": ops_source,
+        "wall_fill_shell_mode": str(wall_fill_shell_mode),
         "input_operations_count": len(raw_ops),
         "accepted_operations_count": 0,
         "repaired_operations_count": 0,
@@ -2600,6 +2704,39 @@ def _coerce_plan(plan: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
                     report["repaired_operations_count"] += 1
                 continue
 
+            if eff_kind == "fill" and _should_coerce_wall_fill_to_shell(
+                role,
+                purpose,
+                raw_kind,
+                x1,
+                y1,
+                z1,
+                x2,
+                y2,
+                z2,
+                mode=wall_fill_shell_mode,
+            ):
+                block = _extract_block(op_obj, "stonebrick")
+                faces = _expand_wall_shell_to_faces(x1, y1, z1, x2, y2, z2)
+                for fi, (fx1, fy1, fz1, fx2, fy2, fz2) in enumerate(faces):
+                    op_fixed = {
+                        "op": "fill",
+                        "x1": fx1,
+                        "y1": fy1,
+                        "z1": fz1,
+                        "x2": fx2,
+                        "y2": fy2,
+                        "z2": fz2,
+                        "block": str(block),
+                        "purpose": f"{purpose}_wall_shell_face_{fi}" if purpose else f"wall_shell_face_{fi}",
+                    }
+                    op_fixed["role"] = role if role else "wall"
+                    fixed_ops.append(op_fixed)
+                report["accepted_operations_count"] += 1
+                report["expanded_operations_count"] += max(0, len(faces) - 1)
+                report["repaired_operations_count"] += 1
+                continue
+
             block = "air" if eff_kind == "carve" else _extract_block(op_obj, "stonebrick")
             op_fixed = {
                 "op": eff_kind,
@@ -2662,6 +2799,11 @@ def _coerce_plan(plan: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
         if len(report["dropped_examples"]) < 5:
             report["dropped_examples"].append({"index": idx, "reason": "unsupported_op_kind", "raw_kind": raw_kind})
 
+    pre_dedupe_count = len(fixed_ops)
+    fixed_ops = _dedupe_operations(fixed_ops)
+    report["pre_dedupe_operations_count"] = pre_dedupe_count
+    report["deduped_operations_count"] = len(fixed_ops)
+    report["duplicate_operations_removed"] = max(0, pre_dedupe_count - len(fixed_ops))
     fixed_ops = fixed_ops[:3000]
     op_bbox = _ops_bbox(fixed_ops)
     if op_bbox is not None:

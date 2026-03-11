@@ -2,6 +2,15 @@
 
 更新日: 2026-03-06
 
+## 0. 2026-03-10 追記（Main結果の固定版）
+
+研究整理のため、Main結果を「共通ハイパラ固定」に切り分けて再集計しました。
+
+- Main（共通ハイパラ固定）:
+  - `reports/final/main_shared_hparams_results_2026-03-10.md`
+  - `reports/final/main_shared_hparams_results_2026-03-10.json`
+- Supplementary（モデル別最適化）は、従来どおり各 `outputs/i2t2b/.../metrics/rebuild/*.json` を参照
+
 ## 1. 何をやったか
 
 今回やったのは、次の一連の流れです。

@@ -37,6 +37,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--role_fix_min_confidence", type=float, default=0.78)
     parser.add_argument("--max_operations", type=int, default=260)
     parser.add_argument(
+        "--coerce_wall_fill_shell_mode",
+        default="all",
+        help="Wall fill->shell coercion mode for _coerce_plan: all|self_refine_only|none",
+    )
+    parser.add_argument(
         "--required_palette_roles",
         nargs="*",
         default=list(REQUIRED_PALETTE_ROLES),
@@ -100,7 +105,10 @@ def main() -> None:
         src_obj = json.loads(src_plan.read_text(encoding="utf-8"))
         desc = json.loads(desc_path.read_text(encoding="utf-8"))
 
-        coerced, coerce_report = _coerce_plan(src_obj)
+        coerced, coerce_report = _coerce_plan(
+            src_obj,
+            wall_fill_shell_mode=str(args.coerce_wall_fill_shell_mode),
+        )
         repaired, validation_report = _validate_and_repair_plan(
             coerced,
             desc=desc if isinstance(desc, dict) else {},
@@ -125,6 +133,7 @@ def main() -> None:
             "material_budget_tolerance": float(args.material_budget_tolerance),
             "role_fix_min_confidence": float(args.role_fix_min_confidence),
             "max_operations": int(args.max_operations),
+            "coerce_wall_fill_shell_mode": str(args.coerce_wall_fill_shell_mode),
             "required_palette_roles": list(required_roles),
         }
         if isinstance(src_obj.get("provider"), str):
