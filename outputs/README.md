@@ -13,8 +13,12 @@
   - `description_*`
   - `rebuild_plan_*`
   - `rebuild_world_*`
+  - `rebuild_world_agentexec_*`（proxy）
+  - `rebuild_world_agentexec_real_*`（real placement）
+  - `rebuild_world_agentexec_hand_*`（creative手置き placement）
 - `metrics/description/`
 - `metrics/rebuild/`
+  - `execution_gap*.json`（renderer上限 vs agent実運用の差分）
 
 2026-03-10 時点の整理方針:
 - 中間検証用の `shapefix*`, `*_self_refine_no_gt`（非tuned）, `capture_*`, `logs/` は削除済み

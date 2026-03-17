@@ -11,6 +11,31 @@
   - `reports/final/main_shared_hparams_results_2026-03-10.json`
 - Supplementary（モデル別最適化）は、従来どおり各 `outputs/i2t2b/.../metrics/rebuild/*.json` を参照
 
+## 0.1 2026-03-11 追記（Renderer上限 vs Agent実運用のexecution gap）
+
+`rebuild_world_*`（Renderer上限）と `rebuild_world_agentexec_*`（Agent実運用側）を分けて再集計しました。  
+今回はまず高速検証として、Agent側は `proxy_sanitize_only`（Malmo実行時のブロック正規化を反映）です。
+
+4条件平均（v1/v4 × OpenAI/Claude）:
+
+- IoU: `24.56% -> 24.56%`（gap `0.00pt`, 保持率 `100.00%`）
+- F1: `38.66% -> 38.66%`（gap `0.00pt`, 保持率 `100.00%`）
+- material_match: `24.26% -> 25.46%`（gap `-1.20pt`, 保持率 `105.25%`）
+- correct_placement_rate: `9.44% -> 10.03%`（gap `-0.60pt`, 保持率 `106.21%`）
+
+ここでマイナスgap（Agent > Renderer）になっているのは、proxyでID揺れが吸収される分が効いているためです。  
+このため、実際の「行動失敗込みの実運用ギャップ」を見るには、次段で `real agent placement` に切り替える必要があります。
+
+参照:
+
+- レポート: `reports/final/execution_gap_summary_ja.md`
+- 図:
+  - `reports/figures/execution_gap_iou_f1_ja.svg`
+  - `reports/figures/execution_gap_material_placement_ja.svg`
+  - `reports/figures/execution_gap_retention_ja.svg`
+  - `reports/figures/execution_gap_absolute_ja.svg`
+- データ: `reports/figures/execution_gap_data_2026-03-11.json`
+
 ## 1. 何をやったか
 
 今回やったのは、次の一連の流れです。

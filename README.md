@@ -152,6 +152,80 @@ python3 tools/evaluate_rebuild_metrics.py \
 `--pred_source rebuild_world` がデフォルトです。  
 出力を `outputs/` に分離している場合は、上の例のように `--pred_root` と `--pred_subdir` を明示指定してください。
 
+## Renderer上限とAgent実運用を分けて評価（execution gap）
+研究の本線は次の3つを分離して管理します。
+
+- Rendererスコア（上限）: `rebuild_world_*` をそのまま評価
+- Agent実行スコア（実運用）: 実エージェント建築結果 `rebuild_world_agentexec_*` を評価
+- Execution gap: `renderer - agent`
+
+実行例:
+```bash
+scripts/evaluate_renderer_agent_gap.sh \
+  --dataset_root datasets/buildings_100_v1 \
+  --pred_root outputs/i2t2b/buildings_100_v1 \
+  --renderer_subdir rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned \
+  --agent_subdir rebuild_world_agentexec_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned \
+  --out outputs/i2t2b/buildings_100_v1/metrics/rebuild/execution_gap_openai_tuned.json
+```
+
+`agent` 側がまだ未生成の段階で配線確認だけしたい場合は `--allow_missing_agent_pred` を付けます。
+
+直接Pythonで実行する場合:
+```bash
+python3 tools/evaluate_execution_gap.py \
+  --gt_root datasets/buildings_100_v1 \
+  --pred_root outputs/i2t2b/buildings_100_v1 \
+  --renderer_pred_subdir rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned \
+  --agent_pred_subdir rebuild_world_agentexec_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned \
+  --out outputs/i2t2b/buildings_100_v1/metrics/rebuild/execution_gap_openai_tuned.json
+```
+
+`execution_gap.json` には以下が入ります。
+
+- `aggregate.renderer.metrics`: 上限スコア
+- `aggregate.agent.metrics`: 実運用スコア
+- `aggregate.execution_gap.metrics`: 指標ごとの差分
+- `aggregate.execution_gap.metrics_retention_ratio`: 保持率（`agent / renderer`）
+- `items[]`: 建物ごとの差分（どこで落ちたか）
+
+v1/v4 × GPT/Claude を一括で回す場合:
+```bash
+scripts/run_execution_gap_suite.sh --overwrite_agentexec
+```
+
+real agent placement（Malmoで `/setblock` `/fill` 実行）に切り替える場合:
+```bash
+scripts/run_execution_gap_suite.sh \
+  --agentexec_mode real \
+  --overwrite_agentexec \
+  --port 10000
+```
+
+creative手置き（`use`）での実行に切り替える場合:
+```bash
+scripts/run_execution_gap_suite.sh \
+  --agentexec_mode hand \
+  --overwrite_agentexec \
+  --port 10000
+```
+
+LLM追加コストなしで「別系統の手置き介入比較（limit=10）」だけ回す場合:
+```bash
+scripts/run_hand_intervention_no_llm.sh
+```
+このスクリプトは既存の `rebuild_world_*` を入力に使うため、Description/Planの再生成は行いません。
+
+出力:
+- `outputs/i2t2b/<dataset>/building_xxx/rebuild_world_agentexec_*`
+- `outputs/i2t2b/<dataset>/metrics/rebuild/execution_gap_*_proxy_agentexec.json`
+- `outputs/i2t2b/<dataset>/metrics/rebuild/execution_gap_*_real_agentexec.json`
+- `outputs/i2t2b/<dataset>/metrics/rebuild/execution_gap_*_hand_agentexec.json`
+- `reports/figures/execution_gap_*.svg`
+- `reports/final/execution_gap_summary_ja.md`
+
+`--agentexec_mode` は `proxy` / `real` / `hand` の3種類で、それぞれ別名のmetricsに保存されます。
+
 ## LLM APIキー設定
 `GPT` / `Claude` / `Gemini` のキーは `.env` に置けます。
 
