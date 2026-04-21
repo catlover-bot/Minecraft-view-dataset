@@ -1,0 +1,51 @@
+{
+  "case_id": "llm_case_009",
+  "difficulty": "complex",
+  "title": "Plus-Shaped Market Hall",
+  "images": [
+    "images/rgb_view00_yaw+000.00_pitch+022.00.png",
+    "images/rgb_view01_yaw+045.00_pitch+022.00.png",
+    "images/rgb_view02_yaw+090.00_pitch+022.00.png",
+    "images/rgb_view03_yaw+135.00_pitch+022.00.png",
+    "images/rgb_view04_yaw+180.00_pitch+022.00.png",
+    "images/rgb_view05_yaw+225.00_pitch+022.00.png",
+    "images/rgb_view06_yaw+270.00_pitch+022.00.png",
+    "images/rgb_view07_yaw+315.00_pitch+022.00.png",
+    "images/rgb_view08_yaw+045.00_pitch+058.00.png",
+    "images/rgb_view09_yaw+225.00_pitch+062.00.png"
+  ],
+  "allowed_blocks": [
+    "cobblestone",
+    "glass",
+    "glowstone",
+    "log",
+    "oak_stairs",
+    "planks",
+    "stone_slab",
+    "stonebrick",
+    "air"
+  ],
+  "build_area": {
+    "xmin": 0,
+    "xmax": 17,
+    "ymin": 3,
+    "ymax": 15,
+    "zmin": -1,
+    "zmax": 17,
+    "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+    "voxel_axis_order": "Y,X,Z"
+  },
+  "submission_format": {
+    "required": [
+      "bbox.json",
+      "voxels.npy"
+    ],
+    "path_template": "submissions/<participant_id>/<condition>/<case_id>/"
+  },
+  "conditions": [
+    "image_only",
+    "image_plus_description",
+    "image_plus_description_plus_structured_ir"
+  ],
+  "recommended_time_limit_min": 25
+}

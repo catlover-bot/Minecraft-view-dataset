@@ -208,6 +208,7 @@ def main() -> None:
         out_raw = out_dir / "description.raw.txt"
         out_req = out_dir / "description.request.json"
         out_usage = out_dir / "llm_usage.json"
+        out_resp = out_dir / "description.response.json"
 
         if out_json.is_file() and not args.overwrite:
             print(f"[generate_building_descriptions] skip {bdir.name} (exists)")
@@ -220,6 +221,8 @@ def main() -> None:
             continue
 
         user_prompt = USER_PROMPT_TEMPLATE
+        response_text = ""
+        completion = None
         try:
             completion = complete_multimodal_with_meta(
                 cfg=cfg,
@@ -266,7 +269,32 @@ def main() -> None:
                 },
             )
         except Exception as exc:  # noqa: BLE001
+            if response_text:
+                out_raw.write_text(response_text, encoding="utf-8")
+            usage_payload = {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
             model_name = model_for_provider(cfg)
+            endpoint_name = "unknown"
+            if completion is not None:
+                model_name = completion.model
+                endpoint_name = completion.endpoint
+                usage_payload = completion.usage
+                out_resp.write_text(
+                    json.dumps(completion.raw_response, ensure_ascii=False, indent=2),
+                    encoding="utf-8",
+                )
+                cost_payload = estimate_usage_cost(completion.provider, completion.model, completion.usage)
+            else:
+                cost_payload = {
+                    "input_tokens": 0,
+                    "output_tokens": 0,
+                    "total_tokens": 0,
+                    "input_price_per_mtok": None,
+                    "output_price_per_mtok": None,
+                    "input_cost_usd": None,
+                    "output_cost_usd": None,
+                    "estimated_cost_usd": None,
+                    "pricing_source": "unknown",
+                }
             append_cost_event(
                 dataset_root=dataset_root,
                 event={
@@ -274,19 +302,9 @@ def main() -> None:
                     "stage": "description",
                     "provider": cfg.provider,
                     "model": model_name,
-                    "endpoint": "unknown",
-                    "usage": {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0},
-                    "cost": {
-                        "input_tokens": 0,
-                        "output_tokens": 0,
-                        "total_tokens": 0,
-                        "input_price_per_mtok": None,
-                        "output_price_per_mtok": None,
-                        "input_cost_usd": None,
-                        "output_cost_usd": None,
-                        "estimated_cost_usd": None,
-                        "pricing_source": "unknown",
-                    },
+                    "endpoint": endpoint_name,
+                    "usage": usage_payload,
+                    "cost": cost_payload,
                     "status": "error",
                     "error": str(exc),
                 },

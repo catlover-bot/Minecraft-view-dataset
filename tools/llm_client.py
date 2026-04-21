@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import base64
+import ast
 import json
 import mimetypes
+import re
 import ssl
 import urllib.error
 import urllib.parse
@@ -143,7 +145,7 @@ def _extract_gemini_text(payload: Dict[str, Any]) -> Optional[str]:
     candidates = payload.get("candidates")
     if not isinstance(candidates, list):
         return None
-    chunks: List[str] = []
+    candidate_texts: List[str] = []
     for cand in candidates:
         if not isinstance(cand, dict):
             continue
@@ -153,14 +155,117 @@ def _extract_gemini_text(payload: Dict[str, Any]) -> Optional[str]:
         parts = content.get("parts")
         if not isinstance(parts, list):
             continue
+        chunks: List[str] = []
         for part in parts:
             if not isinstance(part, dict):
                 continue
             txt = part.get("text")
             if isinstance(txt, str) and txt.strip():
                 chunks.append(txt.strip())
-    if chunks:
-        return "\n".join(chunks)
+        if chunks:
+            candidate_texts.append("\n".join(chunks))
+    if candidate_texts:
+        # Prefer the richest candidate text if multiple are returned.
+        candidate_texts.sort(key=len, reverse=True)
+        return candidate_texts[0]
+    return None
+
+
+def _strip_markdown_fence(text: str) -> str:
+    raw = text.strip()
+    if raw.startswith("```"):
+        lines = raw.splitlines()
+        if len(lines) >= 3 and lines[-1].strip().startswith("```"):
+            return "\n".join(lines[1:-1]).strip()
+    return raw
+
+
+def _strip_json_comments(text: str) -> str:
+    out: List[str] = []
+    i = 0
+    n = len(text)
+    in_str = False
+    esc = False
+    while i < n:
+        ch = text[i]
+        if in_str:
+            out.append(ch)
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+            i += 1
+            continue
+        if ch == '"':
+            in_str = True
+            out.append(ch)
+            i += 1
+            continue
+        if ch == "/" and i + 1 < n and text[i + 1] == "/":
+            i += 2
+            while i < n and text[i] not in "\r\n":
+                i += 1
+            continue
+        if ch == "/" and i + 1 < n and text[i + 1] == "*":
+            i += 2
+            while i + 1 < n and not (text[i] == "*" and text[i + 1] == "/"):
+                i += 1
+            i = min(n, i + 2)
+            continue
+        out.append(ch)
+        i += 1
+    return "".join(out)
+
+
+def _remove_trailing_commas(text: str) -> str:
+    prev = text
+    while True:
+        curr = re.sub(r",(\s*[}\]])", r"\1", prev)
+        if curr == prev:
+            return curr
+        prev = curr
+
+
+def _to_python_literal_jsonish(text: str) -> str:
+    out = text
+    out = re.sub(r"\btrue\b", "True", out, flags=re.IGNORECASE)
+    out = re.sub(r"\bfalse\b", "False", out, flags=re.IGNORECASE)
+    out = re.sub(r"\bnull\b", "None", out, flags=re.IGNORECASE)
+    return out
+
+
+def _try_load_jsonish(text: str) -> Optional[Any]:
+    raw = _strip_markdown_fence(text.strip())
+    if not raw:
+        return None
+
+    candidates = [raw, _strip_json_comments(raw)]
+    candidates.append(_remove_trailing_commas(candidates[-1]))
+    candidates.append(candidates[-1].replace("“", '"').replace("”", '"').replace("’", "'"))
+
+    seen = set()
+    uniq: List[str] = []
+    for cand in candidates:
+        if cand not in seen:
+            seen.add(cand)
+            uniq.append(cand)
+
+    for cand in uniq:
+        try:
+            return json.loads(cand)
+        except Exception:
+            continue
+
+    for cand in uniq:
+        try:
+            obj = ast.literal_eval(_to_python_literal_jsonish(cand))
+        except Exception:
+            continue
+        if isinstance(obj, (dict, list)):
+            return obj
+
     return None
 
 
@@ -416,7 +521,8 @@ def _gemini_generate_content(
         "contents": [{"role": "user", "parts": user_parts}],
         "generationConfig": {
             "temperature": float(temperature),
-            "maxOutputTokens": int(max_tokens),
+            "max_output_tokens": int(max_tokens),
+            "response_mime_type": "application/json",
         },
     }
     if system_prompt.strip():
@@ -541,6 +647,10 @@ def extract_json_object(text: str) -> Dict[str, Any]:
     except json.JSONDecodeError:
         pass
 
+    relaxed = _try_load_jsonish(src)
+    if isinstance(relaxed, dict):
+        return relaxed
+
     start = src.find("{")
     while start >= 0:
         depth = 0
@@ -568,6 +678,9 @@ def extract_json_object(text: str) -> Dict[str, Any]:
                     try:
                         obj = json.loads(cand)
                     except json.JSONDecodeError:
+                        loaded = _try_load_jsonish(cand)
+                        if isinstance(loaded, dict):
+                            return loaded
                         break
                     if isinstance(obj, dict):
                         return obj

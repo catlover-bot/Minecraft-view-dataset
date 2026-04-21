@@ -1,0 +1,76 @@
+{
+  "case_id": "v4_building_086",
+  "dataset_split": "v4",
+  "building_id": "building_086",
+  "difficulty": "hard",
+  "selection_reason": "v4の大規模（高block数）ケース。高複雑・高修復負荷を想定して採用。",
+  "images": [
+    "source_images/rgb_view00_yaw+090.00_pitch+000.69.png",
+    "source_images/rgb_view01_yaw+126.00_pitch+008.27.png",
+    "source_images/rgb_view02_yaw+162.00_pitch+000.69.png",
+    "source_images/rgb_view03_yaw-162.00_pitch+008.27.png",
+    "source_images/rgb_view04_yaw-126.00_pitch+000.69.png",
+    "source_images/rgb_view05_yaw-090.00_pitch+008.27.png",
+    "source_images/rgb_view06_yaw-054.00_pitch+000.69.png",
+    "source_images/rgb_view07_yaw-018.00_pitch+008.27.png",
+    "source_images/rgb_view08_yaw+018.00_pitch+000.69.png",
+    "source_images/rgb_view09_yaw+054.00_pitch+008.27.png",
+    "source_images/rgb_view10_yaw+090.00_pitch+073.83.png",
+    "source_images/rgb_view11_yaw-090.00_pitch+074.30.png"
+  ],
+  "conditions_supported": [
+    "image_only",
+    "image_plus_description",
+    "image_plus_description_plus_structured_ir"
+  ],
+  "recommended_time_limit_min": 40,
+  "allowed_blocks_file": "allowed_blocks.txt",
+  "build_constraints_file": "build_constraints.json",
+  "submission_format": {
+    "primary_required": [
+      "bbox.json",
+      "voxels.npy"
+    ],
+    "secondary_optional": [
+      "plan.json"
+    ],
+    "path_template": "outputs/human_image_rebuild/submissions/<participant_id>/<condition>/v4_building_086/"
+  },
+  "default_condition_assets": {
+    "image_plus_description": "condition_assets/description/description_openai_gpt_5_mini.json",
+    "image_plus_description_plus_structured_ir": {
+      "description": "condition_assets/description/description_openai_gpt_5_mini.json",
+      "structured_intermediate": "condition_assets/structured_intermediate/intermediate_openai_main.json"
+    }
+  },
+  "llm_baselines_main": {
+    "openai_main": {
+      "direct_iou": 0.11540818410839518,
+      "structured_iou": 0.15104166666666666,
+      "direct_f1": 0.20693444023928703,
+      "structured_f1": 0.26244343891402716,
+      "direct_material_match": 0.18584070796460178,
+      "structured_material_match": 0.5781459919390954,
+      "direct_correct_placement_rate": 0.12430939226519337,
+      "structured_correct_placement_rate": 0.4073840328179236,
+      "direct_edit_distance_over_gt": 1.037839399191219,
+      "structured_edit_distance_over_gt": 0.9743645291738879,
+      "delta_iou": 0.03563348255827148,
+      "delta_edit_distance_over_gt": -0.06347487001733099
+    },
+    "claude_main": {
+      "direct_iou": 0.07500475918522749,
+      "structured_iou": 0.09498207885304659,
+      "direct_f1": 0.13954312024083584,
+      "structured_f1": 0.1734860883797054,
+      "direct_material_match": 0.19373942470389172,
+      "structured_material_match": 0.5761973875181422,
+      "direct_correct_placement_rate": 0.07403815066278693,
+      "structured_correct_placement_rate": 0.38959764474975467,
+      "direct_edit_distance_over_gt": 1.1214615829000578,
+      "structured_edit_distance_over_gt": 0.9903235124205662,
+      "delta_iou": 0.0199773196678191,
+      "delta_edit_distance_over_gt": -0.13113807047949166
+    }
+  }
+}

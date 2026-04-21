@@ -1,0 +1,79 @@
+{
+  "building": "llm_case_004",
+  "stage": "plan",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "calls": [
+    {
+      "stage": "plan_draft",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "endpoint": "/v1/responses",
+      "usage": {
+        "input_tokens": 1199,
+        "output_tokens": 1800,
+        "total_tokens": 2999,
+        "raw": {
+          "input_tokens": 1199,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 1800,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2999
+        }
+      },
+      "cost": {
+        "input_tokens": 1199,
+        "output_tokens": 1800,
+        "total_tokens": 2999,
+        "input_price_per_mtok": 0.25,
+        "output_price_per_mtok": 2.0,
+        "input_cost_usd": 0.00029975,
+        "output_cost_usd": 0.0036,
+        "estimated_cost_usd": 0.00389975,
+        "pricing_source": "default_openai_gpt5mini"
+      },
+      "parse_report": {
+        "method": "operation_object_scan",
+        "candidate_count": 27,
+        "selected_candidate_score": 20,
+        "used_ops_array_repair": false,
+        "used_op_objects_repair": true,
+        "jsonish_loader_used": false
+      }
+    }
+  ],
+  "totals": {
+    "input_tokens": 1199,
+    "output_tokens": 1800,
+    "total_tokens": 2999,
+    "known_cost_calls": 1,
+    "estimated_cost_usd": 0.00389975
+  },
+  "prompt_profile": {
+    "name": "baseline_v1",
+    "version": "1",
+    "path": "",
+    "critic_revise_enabled": false,
+    "few_shots_count": 0,
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "created_at": "2026-04-18T07:22:33.875456+00:00"
+}

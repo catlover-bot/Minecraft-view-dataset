@@ -1,0 +1,667 @@
+{
+  "created_at": "2026-04-18T08:19:17.423698+00:00",
+  "study": "llm_authored_10_minecraft_grounded_diagnostic",
+  "separation_note": "Diagnostic set only. Not a replacement for the 200-building main benchmark.",
+  "openai": {
+    "provider_tag": "openai_gpt_5_mini",
+    "source_dataset_root": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft",
+    "description_summary": {
+      "evaluated": 10,
+      "auto_score_pct": 80.6199915935109,
+      "strict_material_f1_pct": 72.51936951936952,
+      "coarse_material_f1_pct": 88.95238095238093,
+      "dimension_score_pct": 66.50434199841928
+    },
+    "direct_rebuild_summary": {
+      "evaluated": 10,
+      "iou_pct": 29.16467203340713,
+      "f1_pct": 44.5613975423817,
+      "material_match_pct": 23.78591945658642,
+      "correct_placement_pct": 13.237148819057085,
+      "repair_edit_distance": 1.3345716567433679
+    },
+    "structured_rebuild_summary": {
+      "evaluated": 10,
+      "iou_pct": 32.68977947045564,
+      "f1_pct": 48.817100550449986,
+      "material_match_pct": 51.39987598632507,
+      "correct_placement_pct": 33.07808746507336,
+      "repair_edit_distance": 1.126141975915872
+    },
+    "difficulty_breakdown": {
+      "simple": {
+        "n_cases": 3,
+        "direct": {
+          "iou": 39.750505385667076,
+          "f1": 56.49079871301757,
+          "material_match": 34.067685897380564,
+          "correct_placement_rate": 18.963062997299073,
+          "normalized_edit_distance": 1.4170669356332393
+        },
+        "structured": {
+          "iou": 39.491769614021436,
+          "f1": 56.608097407829746,
+          "material_match": 44.40418591679096,
+          "correct_placement_rate": 22.22817876487139,
+          "normalized_edit_distance": 1.3777398352378423
+        }
+      },
+      "medium": {
+        "n_cases": 4,
+        "direct": {
+          "iou": 23.549624461794007,
+          "f1": 38.05192376773569,
+          "material_match": 24.28092032518705,
+          "correct_placement_rate": 13.915282194719847,
+          "normalized_edit_distance": 1.1961017804276795
+        },
+        "structured": {
+          "iou": 29.298785015750628,
+          "f1": 44.70496995310418,
+          "material_match": 53.54177581672328,
+          "correct_placement_rate": 36.34128335580576,
+          "normalized_edit_distance": 1.0016740781323146
+        }
+      },
+      "complex": {
+        "n_cases": 3,
+        "direct": {
+          "iou": 26.06556877663136,
+          "f1": 41.3112947379405,
+          "material_match": 12.844151857658112,
+          "correct_placement_rate": 6.6070568065980915,
+          "normalized_edit_distance": 1.4367028796077477
+        },
+        "structured": {
+          "iou": 30.409115266496535,
+          "f1": 46.508944489531295,
+          "material_match": 55.53969961532825,
+          "correct_placement_rate": 39.57706831096548,
+          "normalized_edit_distance": 1.0405013136386445
+        }
+      }
+    },
+    "delta_structured_minus_direct": {
+      "iou_pct_point": 3.5251074370485136,
+      "f1_pct_point": 4.25570300806829,
+      "material_match_pct_point": 27.613956529738648,
+      "correct_placement_pct_point": 19.840938646016273,
+      "repair_edit_distance_delta": -0.2084296808274959
+    }
+  },
+  "claude": {
+    "provider_tag": "anthropic_claude_haiku_4_5_20251001",
+    "source_dataset_root": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft_claude",
+    "description_summary": {
+      "evaluated": 10,
+      "auto_score_pct": 75.61189821468123,
+      "strict_material_f1_pct": 60.81818181818181,
+      "coarse_material_f1_pct": 77.53174603174602,
+      "dimension_score_pct": 71.9340286451607
+    },
+    "direct_rebuild_summary": {
+      "evaluated": 10,
+      "iou_pct": 25.55842786211287,
+      "f1_pct": 39.8759483121956,
+      "material_match_pct": 11.062967142808873,
+      "correct_placement_pct": 6.363474344562634,
+      "repair_edit_distance": 1.4617060585577326
+    },
+    "structured_rebuild_summary": {
+      "evaluated": 10,
+      "iou_pct": 27.863192568747642,
+      "f1_pct": 42.45149789355825,
+      "material_match_pct": 44.19149269194271,
+      "correct_placement_pct": 25.624805432677878,
+      "repair_edit_distance": 1.301421544320635
+    },
+    "difficulty_breakdown": {
+      "simple": {
+        "n_cases": 3,
+        "direct": {
+          "iou": 30.25574211663267,
+          "f1": 46.155077136988524,
+          "material_match": 5.2664959985239514,
+          "correct_placement_rate": 2.5869469213173164,
+          "normalized_edit_distance": 2.1807876398854344
+        },
+        "structured": {
+          "iou": 29.8660292723897,
+          "f1": 45.84824632125957,
+          "material_match": 36.87432277478542,
+          "correct_placement_rate": 15.648891445057188,
+          "normalized_edit_distance": 1.9344161385312064
+        }
+      },
+      "medium": {
+        "n_cases": 4,
+        "direct": {
+          "iou": 27.301978318685382,
+          "f1": 42.21325402477597,
+          "material_match": 21.443340592593245,
+          "correct_placement_rate": 12.395684042225303,
+          "normalized_edit_distance": 1.1936387016872108
+        },
+        "structured": {
+          "iou": 33.405152378790945,
+          "f1": 48.704438510308925,
+          "material_match": 49.58649115267737,
+          "correct_placement_rate": 32.33212715217495,
+          "normalized_edit_distance": 0.9966251945160383
+        }
+      },
+      "complex": {
+        "n_cases": 3,
+        "direct": {
+          "iou": 18.536379665496383,
+          "f1": 30.48041187062885,
+          "material_match": 3.018940354047968,
+          "correct_placement_rate": 2.0970555042577206,
+          "normalized_edit_distance": 1.1000476197240596
+        },
+        "structured": {
+          "iou": 18.471076118381177,
+          "f1": 30.717495310189353,
+          "material_match": 44.315331328120486,
+          "correct_placement_rate": 26.65762379430248,
+          "normalized_edit_distance": 1.0748220831828592
+        }
+      }
+    },
+    "delta_structured_minus_direct": {
+      "iou_pct_point": 2.3047647066347707,
+      "f1_pct_point": 2.575549581362652,
+      "material_match_pct_point": 33.12852554913384,
+      "correct_placement_pct_point": 19.261331088115245,
+      "repair_edit_distance_delta": -0.16028451423709766
+    }
+  },
+  "provenance_verification": {
+    "openai_dataset": {
+      "dataset_root": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft",
+      "total_cases": 10,
+      "valid_minecraft_grounded_cases": 10,
+      "invalid_or_missing_cases": 0,
+      "cases": [
+        {
+          "case_id": "llm_case_001",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T16:59:26.876271+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T07:49:24.811887+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T07:56:41.037849+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_002",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T16:59:58.425636+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T07:49:59.540617+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T07:57:16.556182+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_003",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:00:29.968963+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T07:50:33.199257+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T07:57:50.415870+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_004",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:01:01.718983+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T07:51:07.196720+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T07:58:23.968949+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_005",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:01:33.081370+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T07:51:40.995482+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T07:58:57.980749+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_006",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:02:04.233533+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T07:52:14.384783+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T07:59:32.427200+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_007",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:02:36.039464+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T07:52:48.210124+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:00:05.625296+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_008",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:03:07.467119+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T07:53:21.126286+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:00:39.884726+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_009",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:03:40.211786+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T07:53:55.104635+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:01:13.900979+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_010",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:04:12.373942+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T07:54:40.241226+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:01:47.274537+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        }
+      ]
+    },
+    "claude_dataset": {
+      "dataset_root": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft_claude",
+      "total_cases": 10,
+      "valid_minecraft_grounded_cases": 10,
+      "invalid_or_missing_cases": 0,
+      "cases": [
+        {
+          "case_id": "llm_case_001",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T16:59:26.876271+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T08:06:44.850095+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:14:24.686052+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_002",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T16:59:58.425636+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T08:07:21.500459+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:15:00.647563+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_003",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:00:29.968963+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T08:07:53.239774+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:15:31.491276+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_004",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:01:01.718983+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T08:08:37.703476+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:16:03.458984+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_005",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:01:33.081370+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T08:09:10.430891+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:16:34.826773+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_006",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:02:04.233533+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T08:09:53.699485+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:17:06.384415+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_007",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:02:36.039464+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T08:10:37.114282+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:17:38.957819+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_008",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:03:07.467119+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T08:11:09.600949+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:18:10.499368+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_009",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:03:40.211786+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T08:11:42.610703+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:18:39.829597+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        },
+        {
+          "case_id": "llm_case_010",
+          "source_build_origin": "minecraft_instantiated",
+          "source_image_origin": "minecraft_capture",
+          "direct_rebuild_build_origin": "minecraft_instantiated",
+          "direct_rebuild_image_origin": "minecraft_capture",
+          "structured_rebuild_build_origin": "minecraft_instantiated",
+          "structured_rebuild_image_origin": "minecraft_capture",
+          "source_capture_script": "tools/capture_one_building.py",
+          "source_capture_timestamp": "2026-04-17T17:04:12.373942+00:00",
+          "direct_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "direct_rebuild_capture_timestamp": "2026-04-18T08:12:25.619001+00:00",
+          "structured_rebuild_capture_script": "tools/capture_rebuild_world.py",
+          "structured_rebuild_capture_timestamp": "2026-04-18T08:19:08.573786+00:00",
+          "active_python_interpreter": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+          "active_python_version": "3.13.5",
+          "malmo_python_path": "/Users/hirotaka-m/Minecraft-view-dataset/MalmoPlatform/build/install/Python_Examples/MalmoPython.so",
+          "fallback_used": false,
+          "valid_minecraft_grounded": true
+        }
+      ]
+    }
+  },
+  "prior_ambiguous_or_synthetic_reference": {
+    "openai": {
+      "provider_tag": "openai_gpt_5_mini",
+      "source_dataset_root": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10",
+      "description_summary": {
+        "evaluated": 10,
+        "auto_score_pct": 72.70506338203705,
+        "strict_material_f1_pct": 58.62626262626263,
+        "coarse_material_f1_pct": 83.11904761904762,
+        "dimension_score_pct": 57.349690757585506
+      },
+      "direct_rebuild_summary": {
+        "evaluated": 10,
+        "iou_pct": 22.46635566489185,
+        "f1_pct": 36.221553234829464,
+        "material_match_pct": 17.99923510213229,
+        "correct_placement_pct": 4.7668222528452775,
+        "repair_edit_distance": 3.0427007552337484
+      },
+      "structured_rebuild_summary": {
+        "evaluated": 10,
+        "iou_pct": 20.489561020762174,
+        "f1_pct": 33.46930874235656,
+        "material_match_pct": 30.48581270248484,
+        "correct_placement_pct": 7.712307296655293,
+        "repair_edit_distance": 3.0045325245544867
+      },
+      "delta_structured_minus_direct": {
+        "iou_pct_point": -1.9767946441296758,
+        "f1_pct_point": -2.7522444924729053,
+        "material_match_pct_point": 12.48657760035255,
+        "correct_placement_pct_point": 2.9454850438100157,
+        "repair_edit_distance_delta": -0.03816823067926167
+      }
+    },
+    "claude": {
+      "provider_tag": "anthropic_claude_haiku_4_5_20251001",
+      "source_dataset_root": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10",
+      "description_summary": {
+        "evaluated": 10,
+        "auto_score_pct": 66.97380016020367,
+        "strict_material_f1_pct": 37.61904761904762,
+        "coarse_material_f1_pct": 59.285714285714285,
+        "dimension_score_pct": 83.46662921224323
+      },
+      "direct_rebuild_summary": {
+        "evaluated": 10,
+        "iou_pct": 32.06523913039813,
+        "f1_pct": 47.90347560424039,
+        "material_match_pct": 17.83823733198914,
+        "correct_placement_pct": 7.291353512606351,
+        "repair_edit_distance": 1.9803549792474073
+      },
+      "structured_rebuild_summary": {
+        "evaluated": 10,
+        "iou_pct": 29.231531251679886,
+        "f1_pct": 44.36689234831907,
+        "material_match_pct": 34.645760689012775,
+        "correct_placement_pct": 11.844296781316363,
+        "repair_edit_distance": 2.126333744501207
+      },
+      "delta_structured_minus_direct": {
+        "iou_pct_point": -2.8337078787182444,
+        "f1_pct_point": -3.5365832559213217,
+        "material_match_pct_point": 16.807523357023637,
+        "correct_placement_pct_point": 4.552943268710012,
+        "repair_edit_distance_delta": 0.14597876525379982
+      }
+    }
+  }
+}

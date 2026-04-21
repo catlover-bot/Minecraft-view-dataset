@@ -1,0 +1,194 @@
+{
+  "building": "llm_case_003",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "description_path": "description_direct/description.json",
+  "mode": "llm",
+  "llm_attempted": true,
+  "llm_failed": false,
+  "prompt_profile": {
+    "name": "baseline_v1",
+    "version": "1",
+    "path": "",
+    "critic_revise_enabled": false,
+    "few_shots_count": 0,
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "system_prompt": "You are a Minecraft reconstruction planner. Return only one strict JSON object with a compact build plan.",
+  "prompt": "You are given a textual building description.\nCreate an executable build plan using ONLY these operation types:\n- fill: axis-aligned cuboid fill\n- carve: axis-aligned cuboid set to air\n- set: single block placement\n\nOutput STRICT JSON with this schema:\n{\n  \"plan_version\": \"v1\",\n  \"bbox\": {\"xmin\": 0, \"xmax\": 0, \"ymin\": 0, \"ymax\": 0, \"zmin\": 0, \"zmax\": 0},\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"operations\": [\n    {\"op\": \"fill\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 1, \"y2\": 1, \"z2\": 1, \"block\": \"stonebrick\", \"purpose\": \"base\"},\n    {\"op\": \"carve\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 0, \"y2\": 0, \"z2\": 0, \"purpose\": \"hollow\"},\n    {\"op\": \"set\", \"x\": 0, \"y\": 0, \"z\": 0, \"block\": \"glowstone\", \"purpose\": \"light\"}\n  ],\n  \"notes\": [\"optional\"]\n}\n\nRules:\n- Coordinates must be integers.\n- Keep bbox anchored near origin and positive when possible.\n- operations count <= 260.\n- Create a complete, coherent building: floor, walls, roof, windows, entrance.\n- Use normalized material IDs when possible.\n\nDescription JSON:\n{\n  \"summary\": \"Small single-story cross-shaped stone outcrop with a layered stone slab roof, short cobblestone base, glass window band and glowstone corner lights; sits centered on a flat cleared plot. Visible structure is compact (cross footprint) and appears decorative or a small shelter.\",\n  \"building_type\": \"small shelter / decorative outcrop\",\n  \"shape\": {\n    \"overall_form\": \"cross-shaped single-mass with a stepped layered slab roof\",\n    \"footprint_hint\": \"l_shape\",\n    \"symmetry\": \"approximate four-way (cross) symmetry on the top slabs; lower walls are roughly symmetric front-to-back and side-to-side\",\n    \"floors_estimate\": 1,\n    \"roof_type\": \"other\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 7,\n    \"depth\": 7,\n    \"height\": 4\n  },\n  \"materials\": [\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"roof slabs / top surface (stone slabs)\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"cobblestone\",\n      \"role\": \"lower base / foundation\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"stone\",\n      \"role\": \"wall / middle wall blocks (smooth grey block visible)\",\n      \"confidence\": 0.5\n    },\n    {\n      \"name\": \"glass\",\n      \"role\": \"window band\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"glowstone\",\n      \"role\": \"corner lighting blocks\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"elements\": [\n    \"layered stone slab roof (stacked slabs creating a stepped canopy)\",\n    \"glass window strip around upper wall\",\n    \"glowstone blocks placed at corners of the window band\",\n    \"cobblestone foundation and small protruding front block (possible entrance step)\"\n  ],\n  \"rebuild_hints\": [\n    \"Build a central cross-shaped footprint 5x5 with one-block extensions on each side (top-down shows a plus/cross of slabs).\",\n    \"Raise a 2-3 block high wall around the cross using a medium grey block (stone or stone bricks), place a band of glass in the upper row and put glowstone blocks at the window corners.\",\n    \"Add a cobblestone base layer one block thick under the walls and a small cobblestone step/protrusion at the front center.\",\n    \"Create a stepped canopy by placing stone slab layers stacked above the cross: one central slab layer, then slabs offset outward on each side to form three staggered tiers.\"\n  ],\n  \"uncertainties\": [\n    \"Exact block ID of the smooth grey wall blocks: looks like stone or stonebrick but not certain.\",\n    \"Whether roof slabs are stone slabs or smooth stone slabs (I normalized to stonebrick/stone slab ambiguity).\",\n    \"Precise footprint dimensions: top-down shows a cross roughly 5x5 with extensions; overall surrounding cleared plot dimensions are visible but building may be off by ±1 block.\",\n    \"Possible interior details or floor material are not visible in the images.\"\n  ],\n  \"provider\": \"openai\",\n  \"model\": \"gpt-5-mini\",\n  \"building\": \"llm_case_003\",\n  \"created_at\": \"2026-04-18T07:17:37.674804+00:00\",\n  \"llm_seed\": -1\n}",
+  "planner_system_prompt": "You are a Minecraft reconstruction planner. Return only one strict JSON object with a compact build plan.",
+  "planner_prompt": "You are given a textual building description.\nCreate an executable build plan using ONLY these operation types:\n- fill: axis-aligned cuboid fill\n- carve: axis-aligned cuboid set to air\n- set: single block placement\n\nOutput STRICT JSON with this schema:\n{\n  \"plan_version\": \"v1\",\n  \"bbox\": {\"xmin\": 0, \"xmax\": 0, \"ymin\": 0, \"ymax\": 0, \"zmin\": 0, \"zmax\": 0},\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"operations\": [\n    {\"op\": \"fill\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 1, \"y2\": 1, \"z2\": 1, \"block\": \"stonebrick\", \"purpose\": \"base\"},\n    {\"op\": \"carve\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 0, \"y2\": 0, \"z2\": 0, \"purpose\": \"hollow\"},\n    {\"op\": \"set\", \"x\": 0, \"y\": 0, \"z\": 0, \"block\": \"glowstone\", \"purpose\": \"light\"}\n  ],\n  \"notes\": [\"optional\"]\n}\n\nRules:\n- Coordinates must be integers.\n- Keep bbox anchored near origin and positive when possible.\n- operations count <= 260.\n- Create a complete, coherent building: floor, walls, roof, windows, entrance.\n- Use normalized material IDs when possible.\n\nDescription JSON:\n{\n  \"summary\": \"Small single-story cross-shaped stone outcrop with a layered stone slab roof, short cobblestone base, glass window band and glowstone corner lights; sits centered on a flat cleared plot. Visible structure is compact (cross footprint) and appears decorative or a small shelter.\",\n  \"building_type\": \"small shelter / decorative outcrop\",\n  \"shape\": {\n    \"overall_form\": \"cross-shaped single-mass with a stepped layered slab roof\",\n    \"footprint_hint\": \"l_shape\",\n    \"symmetry\": \"approximate four-way (cross) symmetry on the top slabs; lower walls are roughly symmetric front-to-back and side-to-side\",\n    \"floors_estimate\": 1,\n    \"roof_type\": \"other\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 7,\n    \"depth\": 7,\n    \"height\": 4\n  },\n  \"materials\": [\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"roof slabs / top surface (stone slabs)\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"cobblestone\",\n      \"role\": \"lower base / foundation\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"stone\",\n      \"role\": \"wall / middle wall blocks (smooth grey block visible)\",\n      \"confidence\": 0.5\n    },\n    {\n      \"name\": \"glass\",\n      \"role\": \"window band\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"glowstone\",\n      \"role\": \"corner lighting blocks\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"elements\": [\n    \"layered stone slab roof (stacked slabs creating a stepped canopy)\",\n    \"glass window strip around upper wall\",\n    \"glowstone blocks placed at corners of the window band\",\n    \"cobblestone foundation and small protruding front block (possible entrance step)\"\n  ],\n  \"rebuild_hints\": [\n    \"Build a central cross-shaped footprint 5x5 with one-block extensions on each side (top-down shows a plus/cross of slabs).\",\n    \"Raise a 2-3 block high wall around the cross using a medium grey block (stone or stone bricks), place a band of glass in the upper row and put glowstone blocks at the window corners.\",\n    \"Add a cobblestone base layer one block thick under the walls and a small cobblestone step/protrusion at the front center.\",\n    \"Create a stepped canopy by placing stone slab layers stacked above the cross: one central slab layer, then slabs offset outward on each side to form three staggered tiers.\"\n  ],\n  \"uncertainties\": [\n    \"Exact block ID of the smooth grey wall blocks: looks like stone or stonebrick but not certain.\",\n    \"Whether roof slabs are stone slabs or smooth stone slabs (I normalized to stonebrick/stone slab ambiguity).\",\n    \"Precise footprint dimensions: top-down shows a cross roughly 5x5 with extensions; overall surrounding cleared plot dimensions are visible but building may be off by ±1 block.\",\n    \"Possible interior details or floor material are not visible in the images.\"\n  ],\n  \"provider\": \"openai\",\n  \"model\": \"gpt-5-mini\",\n  \"building\": \"llm_case_003\",\n  \"created_at\": \"2026-04-18T07:17:37.674804+00:00\",\n  \"llm_seed\": -1\n}",
+  "critic_system_prompt": "",
+  "critic_prompt": "",
+  "draft_parse_report": {
+    "method": "operation_object_scan",
+    "candidate_count": 27,
+    "selected_candidate_score": 20,
+    "used_ops_array_repair": false,
+    "used_op_objects_repair": true,
+    "jsonish_loader_used": false
+  },
+  "revise_parse_report": {},
+  "temperature": 0.2,
+  "max_tokens": 1800,
+  "llm_seed": -1,
+  "fallback_triggered": false,
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "wall_fill_shell_mode": "all",
+    "input_operations_count": 25,
+    "accepted_operations_count": 25,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": [],
+    "pre_dedupe_operations_count": 25,
+    "deduped_operations_count": 25,
+    "duplicate_operations_removed": 0
+  },
+  "fallback_coerce_report": null,
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "roof": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "roof slabs / top surface (stone slabs)"
+      },
+      "floor": {
+        "block": "cobblestone",
+        "score": 0.9,
+        "source_role": "lower base / foundation"
+      },
+      "wall": {
+        "block": "stone",
+        "score": 0.5,
+        "source_role": "wall / middle wall blocks (smooth grey block visible)"
+      },
+      "trim": {
+        "block": "glass",
+        "score": 0.95,
+        "source_role": "window band"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.95,
+        "source_role": "window band"
+      },
+      "light": {
+        "block": "glowstone",
+        "score": 0.95,
+        "source_role": "corner lighting blocks"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "stone",
+          "score": 0.5,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "glass",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "light",
+          "from": "<missing>",
+          "to": "glowstone",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "cobblestone",
+          "score": 0.9,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": []
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 22,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 7,
+    "role_fixed_skipped_low_conf_count": 0,
+    "fallback_wall_min_confidence": 0.55,
+    "fallback_wall_suppressed_count": 0,
+    "role_infer_confidence_mean": 0.8119999999999998,
+    "role_infer_reasons": {
+      "purpose_hint": 21,
+      "unknown": 2,
+      "carve_entrance": 1,
+      "set_block_family": 1
+    },
+    "self_repair_report": {
+      "added_operations": 0,
+      "added_tags": [],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "created_at": "2026-04-18T07:22:18.650914+00:00"
+}

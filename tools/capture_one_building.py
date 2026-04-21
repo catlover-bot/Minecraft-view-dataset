@@ -22,10 +22,85 @@ if str(ROOT_DIR) not in sys.path:
 
 from building.generator import BuildingSpec, generate_building
 from building.gt_export import export_ground_truth
+from building.llm_authored import LLMAuthoredCase, build_spec_to_building
+
+KNOWN_MALMO_BLOCKS = {
+    "air", "stone", "cobblestone", "stonebrick", "planks", "log", "sandstone",
+    "brick_block", "nether_brick", "quartz_block", "glass", "stained_glass",
+    "glowstone", "sea_lantern", "stone_slab", "wooden_slab", "double_stone_slab",
+    "double_wooden_slab", "oak_stairs", "spruce_stairs", "birch_stairs",
+    "jungle_stairs", "acacia_stairs", "dark_oak_stairs", "stone_stairs",
+    "brick_stairs", "nether_brick_stairs", "sandstone_stairs", "quartz_stairs",
+    "fence", "spruce_fence", "birch_fence", "jungle_fence", "acacia_fence",
+    "dark_oak_fence", "torch", "redstone_lamp",
+}
+
+MALMO_BLOCK_ALIASES = {
+    "stone_bricks": "stonebrick",
+    "stone_brick": "stonebrick",
+    "stone brick": "stonebrick",
+    "minecraft:stone_bricks": "stonebrick",
+    "netherbrick": "nether_brick",
+    "nether_bricks": "nether_brick",
+    "wood": "planks",
+    "oak_planks": "planks",
+    "spruce_planks": "planks",
+    "birch_planks": "planks",
+    "jungle_planks": "planks",
+    "acacia_planks": "planks",
+    "dark_oak_planks": "planks",
+    "wooden_fence": "fence",
+    "oak_fence": "fence",
+    "window": "glass",
+    "light": "glowstone",
+    "slab": "stone_slab",
+    "slab_stone": "stone_slab",
+    "stone_slab2": "stone_slab",
+    "stone_brick_stairs": "stone_stairs",
+    "brick": "brick_block",
+}
 
 
 class CaptureError(RuntimeError):
     pass
+
+
+def sanitize_malmo_block_name(raw: Any) -> str:
+    name = str(raw).strip().lower()
+    if not name or name == "air":
+        return "air"
+    if ":" in name:
+        name = name.split(":", 1)[1]
+    name = name.replace("-", "_").replace(" ", "_")
+    name = MALMO_BLOCK_ALIASES.get(name, name)
+    if name.endswith("_planks"):
+        name = "planks"
+    elif name.endswith("_slab") or name.startswith("stone_slab"):
+        name = "stone_slab"
+    elif name == "oak_fence":
+        name = "fence"
+
+    if name in KNOWN_MALMO_BLOCKS:
+        return name
+    if "glass" in name:
+        return "glass"
+    if "brick" in name and "nether" in name:
+        return "nether_brick"
+    if "brick" in name:
+        return "brick_block"
+    if "fence" in name:
+        return "fence"
+    if "slab" in name:
+        return "stone_slab"
+    if "stair" in name:
+        return "stone_stairs"
+    if "wood" in name or "plank" in name:
+        return "planks"
+    if "light" in name or "glow" in name:
+        return "glowstone"
+    if "stone" in name:
+        return "stonebrick"
+    return "stone"
 
 
 class Logger:
@@ -73,6 +148,15 @@ def parse_args() -> argparse.Namespace:
         default="complex",
         help="Building profile. Use 'simple' for lightweight/basic architecture.",
     )
+    parser.add_argument("--images_subdir", default="images", help="Image output subdir name under --out.")
+    parser.add_argument("--source_spec_json", default="", help="Optional llm_authored source_specs.json path.")
+    parser.add_argument("--source_case_id", default="", help="Optional case_id in source_specs.json.")
+    parser.add_argument(
+        "--source_case_index",
+        type=int,
+        default=-1,
+        help="Optional 0-based case index in source_specs.json when case_id is omitted.",
+    )
     return parser.parse_args()
 
 
@@ -99,6 +183,27 @@ def cleanup_previous_outputs(out_images_dir: Path, out_gt_dir: Path, logger: Log
 
     if removed > 0:
         logger.log(f"cleaned previous outputs: removed {removed} files")
+
+
+def load_source_spec_case(source_spec_json: Path, source_case_id: str, source_case_index: int) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+    payload = json.loads(source_spec_json.read_text(encoding="utf-8"))
+    cases = payload.get("cases", []) if isinstance(payload.get("cases"), list) else []
+    if not cases:
+        raise CaptureError(f"No cases found in source_spec_json: {source_spec_json}")
+    if source_case_id:
+        for c in cases:
+            if isinstance(c, dict) and str(c.get("case_id", "")).strip() == source_case_id:
+                return payload, c
+        raise CaptureError(f"case_id not found in source_spec_json: {source_case_id}")
+    if 0 <= source_case_index < len(cases):
+        c = cases[source_case_index]
+        if not isinstance(c, dict):
+            raise CaptureError(f"Invalid case entry at index {source_case_index} in {source_spec_json}")
+        return payload, c
+    first = cases[0]
+    if not isinstance(first, dict):
+        raise CaptureError(f"Invalid first case entry in {source_spec_json}")
+    return payload, first
 
 
 def load_malmo():
@@ -261,7 +366,9 @@ def build_mission_xml(
         )
     ]
     for x, y, z, block in blocks:
-        draw_lines.append(f'<DrawBlock x="{x}" y="{y}" z="{z}" type="{block}"/>')
+        draw_lines.append(
+            f'<DrawBlock x="{x}" y="{y}" z="{z}" type="{sanitize_malmo_block_name(block)}"/>'
+        )
     drawing_xml = "\n        ".join(draw_lines)
 
     gx0, gy0, gz0 = grid_min
@@ -677,6 +784,7 @@ def capture_views(
     image_w: int,
     image_h: int,
     logger: Logger,
+    images_subdir: str = "images",
 ) -> List[Dict[str, Any]]:
     records: List[Dict[str, Any]] = []
     out_images_dir.mkdir(parents=True, exist_ok=True)
@@ -750,7 +858,7 @@ def capture_views(
         image.save(output_path)
 
         record = {
-            "path": str(Path("images") / filename),
+            "path": str(Path(images_subdir) / filename),
             "x": round(pose.x, 4),
             "y": round(pose.y, 4),
             "z": round(pose.z, 4),
@@ -792,8 +900,10 @@ def build_meta(
     stable_non_air_count: int,
     target: Tuple[float, float, float],
     views: List[Dict[str, Any]],
+    images_subdir: str,
+    provenance: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
-    return {
+    meta = {
         "seed": seed,
         "profile": profile,
         "style_id": spec.style_id,
@@ -812,15 +922,26 @@ def build_meta(
             "num_blocks": len(spec.blocks),
             "stable_non_air_count": stable_non_air_count,
         },
+        "source_capture": {
+            "source_build_origin": "minecraft_instantiated",
+            "source_image_origin": "minecraft_capture",
+            "source_capture_script": "tools/capture_one_building.py",
+            "source_capture_timestamp": datetime.now(timezone.utc).isoformat(),
+            "image_subdir": images_subdir,
+        },
         "views": views,
     }
+    if provenance:
+        meta["source_capture"]["provenance"] = provenance
+    return meta
 
 
 def run() -> int:
     args = parse_args()
     out_dir = Path(args.out).expanduser().resolve()
     image_w, image_h = int(args.image_size[0]), int(args.image_size[1])
-    out_images_dir = out_dir / "images"
+    images_subdir = (args.images_subdir or "images").strip()
+    out_images_dir = out_dir / images_subdir
     out_gt_dir = out_dir / "gt"
     out_logs_dir = out_dir / "logs"
     out_logs_dir.mkdir(parents=True, exist_ok=True)
@@ -832,12 +953,62 @@ def run() -> int:
         cleanup_previous_outputs(out_images_dir=out_images_dir, out_gt_dir=out_gt_dir, logger=logger)
         rng = random.Random(args.seed)
         logger.log(f"seed={args.seed}")
-        spec = generate_building(rng, origin=(0, 4, 0), style_id=args.style_id, profile=args.profile)
+        provenance: Dict[str, Any] = {}
+        if args.source_spec_json:
+            source_spec_json = Path(args.source_spec_json).expanduser().resolve()
+            if not source_spec_json.is_file():
+                raise CaptureError(f"source_spec_json not found: {source_spec_json}")
+            payload, case = load_source_spec_case(
+                source_spec_json=source_spec_json,
+                source_case_id=(args.source_case_id or "").strip(),
+                source_case_index=int(args.source_case_index),
+            )
+            case_id = str(case.get("case_id", "")).strip() or f"llm_case_{int(args.source_case_index):03d}"
+            authored_case = LLMAuthoredCase(
+                case_id=case_id,
+                title=str(case.get("title", case_id)).strip() or case_id,
+                difficulty=str(case.get("difficulty", "medium")).strip().lower(),
+                author_provider=str(payload.get("author_provider", "")).strip(),
+                author_model=str(payload.get("author_model", "")).strip(),
+                source_condition=str(payload.get("source_condition", "shared_source")).strip() or "shared_source",
+                spec=case,
+            )
+            style_id = int(args.style_id) if args.style_id is not None else max(0, int(args.source_case_index))
+            spec = build_spec_to_building(authored_case, origin=(0, 4, 0), style_id=style_id)
+            provenance = {
+                "source_spec_json": str(source_spec_json),
+                "source_case_id": case_id,
+                "source_spec_provider": authored_case.author_provider,
+                "source_spec_model": authored_case.author_model,
+                "source_condition": authored_case.source_condition,
+                "fallback_used": False,
+            }
+            (out_dir / "source_spec.json").write_text(json.dumps(case, ensure_ascii=False, indent=2), encoding="utf-8")
+        else:
+            spec = generate_building(rng, origin=(0, 4, 0), style_id=args.style_id, profile=args.profile)
         logger.log(
             "building generated: "
             f"profile={args.profile}, style={spec.style}, style_id={spec.style_id}, palette={spec.palette_name}, "
             f"blocks={len(spec.blocks)}, bbox={spec.bbox}"
         )
+        if args.source_spec_json:
+            block_items = [
+                {"x": int(x), "y": int(y), "z": int(z), "block": block}
+                for x, y, z, block in spec.blocks
+            ]
+            (out_dir / "source_blocks.json").write_text(
+                json.dumps(
+                    {
+                        "bbox": spec.bbox,
+                        "count": len(block_items),
+                        "blocks": block_items,
+                        "generated_by": "tools/capture_one_building.py",
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
         export_ground_truth(out_gt_dir, spec.bbox, spec.blocks)
         logger.log(f"ground truth exported to {out_gt_dir}")
 
@@ -925,6 +1096,7 @@ def run() -> int:
             image_w=image_w,
             image_h=image_h,
             logger=logger,
+            images_subdir=images_subdir,
         )
 
         meta = build_meta(
@@ -938,6 +1110,8 @@ def run() -> int:
             stable_non_air_count=stable_count,
             target=target,
             views=view_records,
+            images_subdir=images_subdir,
+            provenance=provenance,
         )
         meta_path = out_dir / "meta.json"
         meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")

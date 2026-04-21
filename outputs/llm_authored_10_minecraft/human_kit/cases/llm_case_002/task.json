@@ -1,0 +1,40 @@
+{
+  "case_id": "llm_case_002",
+  "difficulty": "unknown",
+  "title": "Suburban Bungalow",
+  "images": [],
+  "allowed_blocks": [
+    "brick",
+    "glass_pane",
+    "glowstone",
+    "planks",
+    "spruce_slab",
+    "stone_slab",
+    "stonebrick",
+    "white_wool",
+    "air"
+  ],
+  "build_area": {
+    "xmin": 0,
+    "xmax": 9,
+    "ymin": 3,
+    "ymax": 9,
+    "zmin": -2,
+    "zmax": 8,
+    "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+    "voxel_axis_order": "Y,X,Z"
+  },
+  "submission_format": {
+    "required": [
+      "bbox.json",
+      "voxels.npy"
+    ],
+    "path_template": "submissions/<participant_id>/<condition>/<case_id>/"
+  },
+  "conditions": [
+    "image_only",
+    "image_plus_description",
+    "image_plus_description_plus_structured_ir"
+  ],
+  "recommended_time_limit_min": 25
+}

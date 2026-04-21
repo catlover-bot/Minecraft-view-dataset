@@ -1,0 +1,104 @@
+{
+  "case_id": "v4_building_007",
+  "dataset_split": "v4",
+  "building_id": "building_007",
+  "difficulty": "medium",
+  "selection_reason": "H-shape + tower要素を持つ中位難度。構造複雑性の中間代表。",
+  "images": [
+    "source_images/rgb_view00_yaw+090.00_pitch-004.14.png",
+    "source_images/rgb_view01_yaw+126.00_pitch+002.76.png",
+    "source_images/rgb_view02_yaw+162.00_pitch-004.14.png",
+    "source_images/rgb_view03_yaw-162.00_pitch+002.76.png",
+    "source_images/rgb_view04_yaw-126.00_pitch-004.14.png",
+    "source_images/rgb_view05_yaw-090.00_pitch+002.76.png",
+    "source_images/rgb_view06_yaw-054.00_pitch-004.14.png",
+    "source_images/rgb_view07_yaw-018.00_pitch+002.76.png",
+    "source_images/rgb_view08_yaw+018.00_pitch-004.14.png",
+    "source_images/rgb_view09_yaw+054.00_pitch+002.76.png",
+    "source_images/rgb_view10_yaw+090.00_pitch+080.00.png",
+    "source_images/rgb_view11_yaw-090.00_pitch+080.00.png"
+  ],
+  "conditions_supported": [
+    "image_only",
+    "image_plus_description",
+    "image_plus_description_plus_structured_ir"
+  ],
+  "recommended_time_limit_min": 30,
+  "allowed_blocks_file": "allowed_blocks.txt",
+  "build_constraints_file": "build_constraints.json",
+  "submission_format": {
+    "primary_required": [
+      "bbox.json",
+      "voxels.npy"
+    ],
+    "secondary_optional": [
+      "plan.json"
+    ],
+    "path_template": "outputs/human_image_rebuild/submissions/<participant_id>/<condition>/v4_building_007/"
+  },
+  "default_condition_assets": {
+    "image_plus_description": "condition_assets/description/description_openai_gpt_5_mini.json",
+    "image_plus_description_plus_structured_ir": {
+      "description": "condition_assets/description/description_openai_gpt_5_mini.json",
+      "structured_intermediate": "condition_assets/structured_intermediate/intermediate_openai_main.json"
+    }
+  },
+  "llm_baselines_main": {
+    "openai_main": {
+      "direct_iou": 0.1536928988188416,
+      "structured_iou": 0.1547164042195383,
+      "direct_f1": 0.2664364129764401,
+      "structured_f1": 0.26797299086455717,
+      "direct_material_match": 0.3425925925925926,
+      "structured_material_match": 0.6304347826086957,
+      "direct_correct_placement_rate": 0.11171497584541062,
+      "structured_correct_placement_rate": 0.23132704858593184,
+      "direct_edit_distance_over_gt": 1.3883211678832117,
+      "structured_edit_distance_over_gt": 1.2310740354535974,
+      "delta_iou": 0.001023505400696706,
+      "delta_edit_distance_over_gt": -0.1572471324296143
+    },
+    "claude_main": {
+      "direct_iou": 0.19756458404461136,
+      "structured_iou": 0.20065189048239895,
+      "direct_f1": 0.32994393233868674,
+      "structured_f1": 0.334238245194918,
+      "direct_material_match": 0.14112903225806453,
+      "structured_material_match": 0.705003248862898,
+      "direct_correct_placement_rate": 0.04277234636871508,
+      "structured_correct_placement_rate": 0.24580879021295876,
+      "direct_edit_distance_over_gt": 1.7814389989572472,
+      "structured_edit_distance_over_gt": 1.3733055265901981,
+      "delta_iou": 0.003087306437787596,
+      "delta_edit_distance_over_gt": -0.4081334723670491
+    }
+  },
+  "submission_format_minecraft": {
+    "primary": {
+      "type": "minecraft_structure_nbt",
+      "required_files": [
+        "structure.nbt",
+        "submission_meta.json"
+      ]
+    },
+    "secondary": {
+      "type": "zip_with_structure_nbt",
+      "required_files": [
+        "structure.zip",
+        "submission_meta.json"
+      ]
+    },
+    "path_template": "outputs/human_minecraft_rebuild/submissions/<participant_id>/<condition>/v4_building_007/",
+    "expected_local_bbox": {
+      "xmin": 0,
+      "xmax": 40,
+      "ymin": 0,
+      "ymax": 26,
+      "zmin": 0,
+      "zmax": 31,
+      "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+      "voxel_axis_order": "Y,X,Z"
+    },
+    "expected_voxel_axis_order": "Y,X,Z"
+  }
+}

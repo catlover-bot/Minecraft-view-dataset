@@ -1,0 +1,158 @@
+{
+  "building": "llm_case_001",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "description_path": "description_direct/description.json",
+  "mode": "llm",
+  "llm_attempted": true,
+  "llm_failed": false,
+  "prompt_profile": {
+    "name": "baseline_v1",
+    "version": "1",
+    "path": "",
+    "critic_revise_enabled": false,
+    "few_shots_count": 0,
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "system_prompt": "You are a Minecraft reconstruction planner. Return only one strict JSON object with a compact build plan.",
+  "prompt": "You are given a textual building description.\nCreate an executable build plan using ONLY these operation types:\n- fill: axis-aligned cuboid fill\n- carve: axis-aligned cuboid set to air\n- set: single block placement\n\nOutput STRICT JSON with this schema:\n{\n  \"plan_version\": \"v1\",\n  \"bbox\": {\"xmin\": 0, \"xmax\": 0, \"ymin\": 0, \"ymax\": 0, \"zmin\": 0, \"zmax\": 0},\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"operations\": [\n    {\"op\": \"fill\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 1, \"y2\": 1, \"z2\": 1, \"block\": \"stonebrick\", \"purpose\": \"base\"},\n    {\"op\": \"carve\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 0, \"y2\": 0, \"z2\": 0, \"purpose\": \"hollow\"},\n    {\"op\": \"set\", \"x\": 0, \"y\": 0, \"z\": 0, \"block\": \"glowstone\", \"purpose\": \"light\"}\n  ],\n  \"notes\": [\"optional\"]\n}\n\nRules:\n- Coordinates must be integers.\n- Keep bbox anchored near origin and positive when possible.\n- operations count <= 260.\n- Create a complete, coherent building: floor, walls, roof, windows, entrance.\n- Use normalized material IDs when possible.\n\nDescription JSON:\n{\n  \"summary\": \"Small rectangular single-storey structure with a raised stone brick (smooth stone slab) framed roof and inset central floor area. Walls are a layered band of stone-like blocks at base, a horizontal wooden plank band, and corner/vertical supports in a rougher stone. Roof uses stacked stone slabs forming an overhanging frame and an inner recessed slab floor. Building sits in a shallow excavated dirt perimeter.\",\n  \"building_type\": \"small_house_or_shed\",\n  \"shape\": {\n    \"overall_form\": \"simple rectangular box with recessed central roof opening\",\n    \"footprint_hint\": \"rectangle\",\n    \"symmetry\": \"bilaterally symmetric across the front centerline\",\n    \"floors_estimate\": 1,\n    \"roof_type\": \"flat\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 7,\n    \"depth\": 9,\n    \"height\": 4\n  },\n  \"materials\": [\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"roof slab/frame and inner floor slabs\",\n      \"confidence\": 0.8\n    },\n    {\n      \"name\": \"cobblestone_or_andesite\",\n      \"role\": \"vertical corner supports / lower wall posts\",\n      \"confidence\": 0.6\n    },\n    {\n      \"name\": \"wood\",\n      \"role\": \"horizontal plank wall band (cladding)\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"stone\",\n      \"role\": \"base wall course\",\n      \"confidence\": 0.5\n    },\n    {\n      \"name\": \"dirt\",\n      \"role\": \"surrounding excavated ground\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"elements\": [\n    \"stone slab roof with two-tier overhang\",\n    \"wooden plank horizontal siding band\",\n    \"stone vertical corner pillars\",\n    \"raised central slab floor (open-top recessed area)\",\n    \"excavated dirt perimeter\"\n  ],\n  \"rebuild_hints\": [\n    \"Footprint: center inner slab area is roughly 5x5 within an outer rectangular shell (outer shell visible from top view).\",\n    \"Walls: start with a 7x9 rectangular base one block high of a darker stone, add 2-3 rows of horizontal wood planks above, place rough stone pillars at front corners extending full wall height.\",\n    \"Roof: place a continuous rim of stone slabs one block out from inner floor to create a framed overhang; add a second inner ring of slabs at a lower step to form the recessed central slab floor.\",\n    \"Position: build within a 11x13 excavated dirt pit with a 1-block-high dirt border visible around the structure (uncertain exact pit size).\"\n  ],\n  \"uncertainties\": [\n    \"Exact block types: roof slabs appear as smooth stone slabs or stonebrick slabs — could be stonebrick or smooth_stone (confidence 0.8).\",\n    \"Corner vertical material could be cobblestone or andesite or stone bricks with rough texture (confidence 0.6).\",\n    \"Precise footprint and dimensions: top-down shows inner slab 5x5 but outer shell size inferred; width/depth integers are estimates based on visible block counts (uncertain).\",\n    \"Height layering: number of wood plank rows and slab tiers estimated from front views; could be off by one block.\"\n  ],\n  \"provider\": \"openai\",\n  \"model\": \"gpt-5-mini\",\n  \"building\": \"llm_case_001\",\n  \"created_at\": \"2026-04-18T07:17:08.291209+00:00\",\n  \"llm_seed\": -1\n}",
+  "planner_system_prompt": "You are a Minecraft reconstruction planner. Return only one strict JSON object with a compact build plan.",
+  "planner_prompt": "You are given a textual building description.\nCreate an executable build plan using ONLY these operation types:\n- fill: axis-aligned cuboid fill\n- carve: axis-aligned cuboid set to air\n- set: single block placement\n\nOutput STRICT JSON with this schema:\n{\n  \"plan_version\": \"v1\",\n  \"bbox\": {\"xmin\": 0, \"xmax\": 0, \"ymin\": 0, \"ymax\": 0, \"zmin\": 0, \"zmax\": 0},\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"operations\": [\n    {\"op\": \"fill\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 1, \"y2\": 1, \"z2\": 1, \"block\": \"stonebrick\", \"purpose\": \"base\"},\n    {\"op\": \"carve\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 0, \"y2\": 0, \"z2\": 0, \"purpose\": \"hollow\"},\n    {\"op\": \"set\", \"x\": 0, \"y\": 0, \"z\": 0, \"block\": \"glowstone\", \"purpose\": \"light\"}\n  ],\n  \"notes\": [\"optional\"]\n}\n\nRules:\n- Coordinates must be integers.\n- Keep bbox anchored near origin and positive when possible.\n- operations count <= 260.\n- Create a complete, coherent building: floor, walls, roof, windows, entrance.\n- Use normalized material IDs when possible.\n\nDescription JSON:\n{\n  \"summary\": \"Small rectangular single-storey structure with a raised stone brick (smooth stone slab) framed roof and inset central floor area. Walls are a layered band of stone-like blocks at base, a horizontal wooden plank band, and corner/vertical supports in a rougher stone. Roof uses stacked stone slabs forming an overhanging frame and an inner recessed slab floor. Building sits in a shallow excavated dirt perimeter.\",\n  \"building_type\": \"small_house_or_shed\",\n  \"shape\": {\n    \"overall_form\": \"simple rectangular box with recessed central roof opening\",\n    \"footprint_hint\": \"rectangle\",\n    \"symmetry\": \"bilaterally symmetric across the front centerline\",\n    \"floors_estimate\": 1,\n    \"roof_type\": \"flat\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 7,\n    \"depth\": 9,\n    \"height\": 4\n  },\n  \"materials\": [\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"roof slab/frame and inner floor slabs\",\n      \"confidence\": 0.8\n    },\n    {\n      \"name\": \"cobblestone_or_andesite\",\n      \"role\": \"vertical corner supports / lower wall posts\",\n      \"confidence\": 0.6\n    },\n    {\n      \"name\": \"wood\",\n      \"role\": \"horizontal plank wall band (cladding)\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"stone\",\n      \"role\": \"base wall course\",\n      \"confidence\": 0.5\n    },\n    {\n      \"name\": \"dirt\",\n      \"role\": \"surrounding excavated ground\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"elements\": [\n    \"stone slab roof with two-tier overhang\",\n    \"wooden plank horizontal siding band\",\n    \"stone vertical corner pillars\",\n    \"raised central slab floor (open-top recessed area)\",\n    \"excavated dirt perimeter\"\n  ],\n  \"rebuild_hints\": [\n    \"Footprint: center inner slab area is roughly 5x5 within an outer rectangular shell (outer shell visible from top view).\",\n    \"Walls: start with a 7x9 rectangular base one block high of a darker stone, add 2-3 rows of horizontal wood planks above, place rough stone pillars at front corners extending full wall height.\",\n    \"Roof: place a continuous rim of stone slabs one block out from inner floor to create a framed overhang; add a second inner ring of slabs at a lower step to form the recessed central slab floor.\",\n    \"Position: build within a 11x13 excavated dirt pit with a 1-block-high dirt border visible around the structure (uncertain exact pit size).\"\n  ],\n  \"uncertainties\": [\n    \"Exact block types: roof slabs appear as smooth stone slabs or stonebrick slabs — could be stonebrick or smooth_stone (confidence 0.8).\",\n    \"Corner vertical material could be cobblestone or andesite or stone bricks with rough texture (confidence 0.6).\",\n    \"Precise footprint and dimensions: top-down shows inner slab 5x5 but outer shell size inferred; width/depth integers are estimates based on visible block counts (uncertain).\",\n    \"Height layering: number of wood plank rows and slab tiers estimated from front views; could be off by one block.\"\n  ],\n  \"provider\": \"openai\",\n  \"model\": \"gpt-5-mini\",\n  \"building\": \"llm_case_001\",\n  \"created_at\": \"2026-04-18T07:17:08.291209+00:00\",\n  \"llm_seed\": -1\n}",
+  "critic_system_prompt": "",
+  "critic_prompt": "",
+  "draft_parse_report": {
+    "method": "extract_json_object",
+    "candidate_count": 32,
+    "selected_candidate_score": 164,
+    "used_ops_array_repair": false,
+    "used_op_objects_repair": false,
+    "jsonish_loader_used": true
+  },
+  "revise_parse_report": {},
+  "temperature": 0.2,
+  "max_tokens": 1800,
+  "llm_seed": -1,
+  "fallback_triggered": false,
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "wall_fill_shell_mode": "all",
+    "input_operations_count": 29,
+    "accepted_operations_count": 29,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": [],
+    "pre_dedupe_operations_count": 29,
+    "deduped_operations_count": 29,
+    "duplicate_operations_removed": 0
+  },
+  "fallback_coerce_report": null,
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "roof": {
+        "block": "stonebrick",
+        "score": 0.8,
+        "source_role": "roof slab/frame and inner floor slabs"
+      },
+      "trim": {
+        "block": "wood",
+        "score": 0.9,
+        "source_role": "horizontal plank wall band (cladding)"
+      },
+      "floor": {
+        "block": "dirt",
+        "score": 1.0,
+        "source_role": "surrounding excavated ground"
+      },
+      "wall": {
+        "block": "wood",
+        "score": 0.9,
+        "source_role": "horizontal plank wall band (cladding)"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "trim",
+          "from": "brick",
+          "to": "wood",
+          "score": 0.9,
+          "reason": "description_preferred"
+        },
+        {
+          "role": "floor",
+          "from": "wood",
+          "to": "dirt",
+          "score": 1.0,
+          "reason": "description_preferred"
+        }
+      ],
+      "coherence_repairs": []
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 24,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 14,
+    "role_fixed_skipped_low_conf_count": 0,
+    "fallback_wall_min_confidence": 0.55,
+    "fallback_wall_suppressed_count": 0,
+    "role_infer_confidence_mean": 0.8403448275862067,
+    "role_infer_reasons": {
+      "ground_flat_layer": 4,
+      "purpose_hint": 21,
+      "carve_entrance": 1,
+      "set_block_family": 1,
+      "unknown": 1,
+      "fallback_infer": 1
+    },
+    "self_repair_report": {
+      "added_operations": 0,
+      "added_tags": [],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "created_at": "2026-04-18T07:21:23.122920+00:00"
+}

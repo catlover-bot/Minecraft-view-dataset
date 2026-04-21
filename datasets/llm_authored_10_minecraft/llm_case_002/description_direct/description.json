@@ -1,0 +1,74 @@
+{
+  "summary": "A small single-storey rectangular pavilion with tiered flat slab roofs (three visible stepped layers) centered on the footprint. Walls are low (about 3 blocks tall) with a horizontal wooden plank band and glowstone corner accents. Roof uses stone slabs creating concentric recessed layers and a small raised center cap. Entrance is a short stone slab porch aligned on one short side. Surrounded by a shallow excavated dirt moat/bed.",
+  "building_type": "pavilion/small shelter",
+  "shape": {
+    "overall_form": "low rectangular box with stepped/stacked flat roof layers centered",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric along the long axis (front/back mirrored); approximate front-center entrance",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 11,
+    "depth": 9,
+    "height": 5
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "lower wall course / foundation",
+      "confidence": 0.9
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof slabs / stepped layers / porch slabs",
+      "confidence": 0.95
+    },
+    {
+      "name": "wood",
+      "role": "horizontal plank decorative band and small porch edge (likely oak planks or planks variant)",
+      "confidence": 0.9
+    },
+    {
+      "name": "glowstone",
+      "role": "corner lighting blocks",
+      "confidence": 0.95
+    },
+    {
+      "name": "stone",
+      "role": "upper wall / secondary wall texture (could be regular stone or stone brick variant)",
+      "confidence": 0.5
+    },
+    {
+      "name": "air",
+      "role": "roof recess/open interior openings",
+      "confidence": 0.8
+    }
+  ],
+  "elements": [
+    "tiered flat slab roof (three stepped layers + small center cap)",
+    "short front porch made of stone slabs and wooden plank edge",
+    "glowstone corner lights at front face",
+    "horizontal wooden plank decorative band around mid-wall",
+    "stonebrick lower course and upper stone/stonebrick walls",
+    "central recessed opening(s) in roof layers"
+  ],
+  "rebuild_hints": [
+    "Use a rectangular footprint (~11x9) with walls 3 blocks tall: bottom row stonebrick, middle row wooden planks band (3-4 blocks tall total), top row stone/stonebrick.",
+    "Create three concentric roof layers using stone slabs: largest outer slab layer overhangs walls by 1 block, next layer inset by 1 block, then another inset layer, finishing with a 1x1 or 3x1 raised slab cap at center.",
+    "Place glowstone blocks at the two front corners embedded in the top wall row aligned under the outer slab overhang.",
+    "Add a short central entrance on one short side with a small slab porch projecting one block, flanked by recessed 1-block alcoves under the roof overhang.",
+    "Surround the building by a shallow excavated dirt border as seen; this is external landscaping rather than foundation."
+  ],
+  "uncertainties": [
+    "Exact footprint dimensions: estimated from aerial views; could be off by a few blocks in width/depth.",
+    "Precise block types for upper wall (regular stone vs stonebrick variation) — textures look similar; confidence low for that role.",
+    "Wood type for horizontal band and porch edge assumed oak planks; could be another plank variant.",
+    "Interior layout and whether roof recesses are open to interior or covered with slabs/air is not fully visible."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "llm_case_002",
+  "created_at": "2026-04-18T07:17:22.665247+00:00",
+  "llm_seed": -1
+}

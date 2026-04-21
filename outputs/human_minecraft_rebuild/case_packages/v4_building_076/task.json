@@ -1,0 +1,104 @@
+{
+  "case_id": "v4_building_076",
+  "dataset_split": "v4",
+  "building_id": "building_076",
+  "difficulty": "hard",
+  "selection_reason": "v4低IoU帯の複雑形状。困難ケース代表として採用。",
+  "images": [
+    "source_images/rgb_view00_yaw+090.00_pitch+000.70.png",
+    "source_images/rgb_view01_yaw+126.00_pitch+008.32.png",
+    "source_images/rgb_view02_yaw+162.00_pitch+000.70.png",
+    "source_images/rgb_view03_yaw-162.00_pitch+008.32.png",
+    "source_images/rgb_view04_yaw-126.00_pitch+000.70.png",
+    "source_images/rgb_view05_yaw-090.00_pitch+008.32.png",
+    "source_images/rgb_view06_yaw-054.00_pitch+000.70.png",
+    "source_images/rgb_view07_yaw-018.00_pitch+008.32.png",
+    "source_images/rgb_view08_yaw+018.00_pitch+000.70.png",
+    "source_images/rgb_view09_yaw+054.00_pitch+008.32.png",
+    "source_images/rgb_view10_yaw+090.00_pitch+077.27.png",
+    "source_images/rgb_view11_yaw-090.00_pitch+077.62.png"
+  ],
+  "conditions_supported": [
+    "image_only",
+    "image_plus_description",
+    "image_plus_description_plus_structured_ir"
+  ],
+  "recommended_time_limit_min": 40,
+  "allowed_blocks_file": "allowed_blocks.txt",
+  "build_constraints_file": "build_constraints.json",
+  "submission_format": {
+    "primary_required": [
+      "bbox.json",
+      "voxels.npy"
+    ],
+    "secondary_optional": [
+      "plan.json"
+    ],
+    "path_template": "outputs/human_image_rebuild/submissions/<participant_id>/<condition>/v4_building_076/"
+  },
+  "default_condition_assets": {
+    "image_plus_description": "condition_assets/description/description_openai_gpt_5_mini.json",
+    "image_plus_description_plus_structured_ir": {
+      "description": "condition_assets/description/description_openai_gpt_5_mini.json",
+      "structured_intermediate": "condition_assets/structured_intermediate/intermediate_openai_main.json"
+    }
+  },
+  "llm_baselines_main": {
+    "openai_main": {
+      "direct_iou": 0.026147506039505473,
+      "structured_iou": 0.10877373011800924,
+      "direct_f1": 0.05096247057194295,
+      "structured_f1": 0.19620546043498377,
+      "direct_material_match": 0.358695652173913,
+      "structured_material_match": 0.0037735849056603774,
+      "direct_correct_placement_rate": 0.28085106382978725,
+      "structured_correct_placement_rate": 0.0010473946059177796,
+      "direct_edit_distance_over_gt": 0.9978528485542514,
+      "structured_edit_distance_over_gt": 1.3943601488691668,
+      "delta_iou": 0.08262622407850377,
+      "delta_edit_distance_over_gt": 0.39650730031491543
+    },
+    "claude_main": {
+      "direct_iou": 0.10550239234449761,
+      "structured_iou": 0.10476669601308011,
+      "direct_f1": 0.19086777753732956,
+      "structured_f1": 0.1896630236794171,
+      "direct_material_match": 0.21315192743764172,
+      "structured_material_match": 0.0,
+      "direct_correct_placement_rate": 0.08333333333333333,
+      "structured_correct_placement_rate": 0.0,
+      "direct_edit_distance_over_gt": 1.169768107643859,
+      "structured_edit_distance_over_gt": 1.138133409676496,
+      "delta_iou": -0.0007356963314174986,
+      "delta_edit_distance_over_gt": -0.03163469796736318
+    }
+  },
+  "submission_format_minecraft": {
+    "primary": {
+      "type": "minecraft_structure_nbt",
+      "required_files": [
+        "structure.nbt",
+        "submission_meta.json"
+      ]
+    },
+    "secondary": {
+      "type": "zip_with_structure_nbt",
+      "required_files": [
+        "structure.zip",
+        "submission_meta.json"
+      ]
+    },
+    "path_template": "outputs/human_minecraft_rebuild/submissions/<participant_id>/<condition>/v4_building_076/",
+    "expected_local_bbox": {
+      "xmin": 0,
+      "xmax": 38,
+      "ymin": 0,
+      "ymax": 31,
+      "zmin": 0,
+      "zmax": 35,
+      "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+      "voxel_axis_order": "Y,X,Z"
+    },
+    "expected_voxel_axis_order": "Y,X,Z"
+  }
+}

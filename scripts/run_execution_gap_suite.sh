@@ -20,6 +20,7 @@ Usage:
 Examples:
   scripts/run_execution_gap_suite.sh
   scripts/run_execution_gap_suite.sh --limit 10 --overwrite_agentexec
+  scripts/run_execution_gap_suite.sh --include_gemini_cases --dotenv .env
 EOF
 fi
 

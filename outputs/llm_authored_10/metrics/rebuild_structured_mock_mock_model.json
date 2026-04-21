@@ -1,0 +1,911 @@
+{
+  "created_at": "2026-04-17T14:11:02.718796+00:00",
+  "gt_root": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10",
+  "pred_root": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10",
+  "pred_source": "rebuild_world",
+  "thresholds": {
+    "level0_min_intersection": 32,
+    "level1_min_iou": 0.35,
+    "level1_min_f1": 0.5,
+    "level2_min_coarse_material_match": 0.55,
+    "level3_min_material_match": 0.4,
+    "level4_min_component_f1": 0.45,
+    "component_iou_match_threshold": 0.3
+  },
+  "settings": {
+    "max_shift_xy": 48,
+    "max_shift_y": 8,
+    "top_shift_candidates": 24,
+    "pred_subdir": "rebuild_world_structured",
+    "allow_gt_fallback": false
+  },
+  "summary": {
+    "evaluated_buildings": 10,
+    "missing_predictions": []
+  },
+  "aggregate": {
+    "metrics": {
+      "intersection": 213.7,
+      "union": 1289.8,
+      "precision": 0.707615894039735,
+      "recall": 0.20978153784972556,
+      "f1": 0.3146084161098134,
+      "iou": 0.19261785743947274,
+      "intersection_count": 213.7,
+      "strict_match_count": 151.4,
+      "relaxed_match_count": 151.4,
+      "coarse_match_count": 152.5,
+      "material_match": 0.7034740539236557,
+      "material_match_relaxed_id": 0.7034740539236557,
+      "coarse_material_match": 0.7088995703722626,
+      "correct_placement_rate": 0.5013245033112582,
+      "correct_placement_coverage": 0.14979418643458847,
+      "correct_placement_rate_relaxed_id": 0.5013245033112582,
+      "correct_placement_coverage_relaxed_id": 0.14979418643458847,
+      "component_f1": 0.7,
+      "component_precision": 0.7,
+      "component_recall": 0.7,
+      "component_mean_iou": 0.2762532314275697
+    },
+    "pass_rates": {
+      "level0_shift_pass_rate": 1.0,
+      "level1_shape_pass_rate": 0.1,
+      "level2_coarse_material_pass_rate": 1.0,
+      "level3_strict_material_pass_rate": 1.0,
+      "level4_structure_components_pass_rate": 0.7,
+      "all_levels_pass_rate": 0.1
+    }
+  },
+  "items": [
+    {
+      "building": "llm_case_001",
+      "gt_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_001/gt/voxels.npy",
+      "pred_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_001/rebuild_world_structured/voxels.npy",
+      "pred_source_used": "rebuild_world_structured",
+      "counts": {
+        "gt_non_air": 530,
+        "pred_non_air": 302,
+        "pred_non_air_after_shift": 302,
+        "strict_correct_blocks": 145,
+        "relaxed_correct_blocks": 145
+      },
+      "shift": {
+        "dx": 0,
+        "dy": 4,
+        "dz": 2,
+        "intersection_at_shift": 216,
+        "footprint_intersection": 64
+      },
+      "metrics": {
+        "intersection": 216.0,
+        "union": 616.0,
+        "precision": 0.7152317880794702,
+        "recall": 0.4075471698113208,
+        "f1": 0.5192307692307693,
+        "iou": 0.35064935064935066,
+        "intersection_count": 216.0,
+        "strict_match_count": 145.0,
+        "relaxed_match_count": 145.0,
+        "coarse_match_count": 145.0,
+        "material_match": 0.6712962962962963,
+        "material_match_relaxed_id": 0.6712962962962963,
+        "coarse_material_match": 0.6712962962962963,
+        "gt_components": 1.0,
+        "pred_components": 1.0,
+        "matched_components": 1.0,
+        "component_precision": 1.0,
+        "component_recall": 1.0,
+        "component_f1": 1.0,
+        "component_mean_iou": 0.5079365079365079,
+        "correct_placement_rate": 0.48013245033112584,
+        "correct_placement_coverage": 0.27358490566037735,
+        "correct_placement_rate_relaxed_id": 0.48013245033112584,
+        "correct_placement_coverage_relaxed_id": 0.27358490566037735
+      },
+      "levels": {
+        "level0_shift": {
+          "metric": "intersection",
+          "value": 216.0,
+          "threshold": 32,
+          "pass": true
+        },
+        "level1_shape": {
+          "metrics": {
+            "iou": 0.35064935064935066,
+            "f1": 0.5192307692307693
+          },
+          "thresholds": {
+            "iou": 0.35,
+            "f1": 0.5
+          },
+          "pass": true
+        },
+        "level2_coarse_material": {
+          "metric": "coarse_material_match",
+          "value": 0.6712962962962963,
+          "threshold": 0.55,
+          "pass": true
+        },
+        "level3_strict_material": {
+          "metric": "material_match",
+          "value": 0.6712962962962963,
+          "threshold": 0.4,
+          "pass": true
+        },
+        "level4_structure_components": {
+          "metric": "component_f1",
+          "value": 1.0,
+          "threshold": 0.45,
+          "component_iou_match_threshold": 0.3,
+          "pass": true
+        },
+        "all_levels_pass": true
+      }
+    },
+    {
+      "building": "llm_case_002",
+      "gt_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_002/gt/voxels.npy",
+      "pred_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_002/rebuild_world_structured/voxels.npy",
+      "pred_source_used": "rebuild_world_structured",
+      "counts": {
+        "gt_non_air": 791,
+        "pred_non_air": 302,
+        "pred_non_air_after_shift": 302,
+        "strict_correct_blocks": 201,
+        "relaxed_correct_blocks": 201
+      },
+      "shift": {
+        "dx": 0,
+        "dy": 4,
+        "dz": 3,
+        "intersection_at_shift": 257,
+        "footprint_intersection": 64
+      },
+      "metrics": {
+        "intersection": 257.0,
+        "union": 836.0,
+        "precision": 0.8509933774834437,
+        "recall": 0.324905183312263,
+        "f1": 0.47026532479414457,
+        "iou": 0.30741626794258375,
+        "intersection_count": 257.0,
+        "strict_match_count": 201.0,
+        "relaxed_match_count": 201.0,
+        "coarse_match_count": 201.0,
+        "material_match": 0.7821011673151751,
+        "material_match_relaxed_id": 0.7821011673151751,
+        "coarse_material_match": 0.7821011673151751,
+        "gt_components": 1.0,
+        "pred_components": 1.0,
+        "matched_components": 1.0,
+        "component_precision": 1.0,
+        "component_recall": 1.0,
+        "component_f1": 1.0,
+        "component_mean_iou": 0.4444444444444444,
+        "correct_placement_rate": 0.6655629139072847,
+        "correct_placement_coverage": 0.25410872313527183,
+        "correct_placement_rate_relaxed_id": 0.6655629139072847,
+        "correct_placement_coverage_relaxed_id": 0.25410872313527183
+      },
+      "levels": {
+        "level0_shift": {
+          "metric": "intersection",
+          "value": 257.0,
+          "threshold": 32,
+          "pass": true
+        },
+        "level1_shape": {
+          "metrics": {
+            "iou": 0.30741626794258375,
+            "f1": 0.47026532479414457
+          },
+          "thresholds": {
+            "iou": 0.35,
+            "f1": 0.5
+          },
+          "pass": false
+        },
+        "level2_coarse_material": {
+          "metric": "coarse_material_match",
+          "value": 0.7821011673151751,
+          "threshold": 0.55,
+          "pass": true
+        },
+        "level3_strict_material": {
+          "metric": "material_match",
+          "value": 0.7821011673151751,
+          "threshold": 0.4,
+          "pass": true
+        },
+        "level4_structure_components": {
+          "metric": "component_f1",
+          "value": 1.0,
+          "threshold": 0.45,
+          "component_iou_match_threshold": 0.3,
+          "pass": true
+        },
+        "all_levels_pass": false
+      }
+    },
+    {
+      "building": "llm_case_003",
+      "gt_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_003/gt/voxels.npy",
+      "pred_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_003/rebuild_world_structured/voxels.npy",
+      "pred_source_used": "rebuild_world_structured",
+      "counts": {
+        "gt_non_air": 793,
+        "pred_non_air": 302,
+        "pred_non_air_after_shift": 302,
+        "strict_correct_blocks": 197,
+        "relaxed_correct_blocks": 197
+      },
+      "shift": {
+        "dx": 0,
+        "dy": 4,
+        "dz": 4,
+        "intersection_at_shift": 249,
+        "footprint_intersection": 64
+      },
+      "metrics": {
+        "intersection": 249.0,
+        "union": 846.0,
+        "precision": 0.8245033112582781,
+        "recall": 0.31399747793190413,
+        "f1": 0.45479452054794517,
+        "iou": 0.29432624113475175,
+        "intersection_count": 249.0,
+        "strict_match_count": 197.0,
+        "relaxed_match_count": 197.0,
+        "coarse_match_count": 197.0,
+        "material_match": 0.7911646586345381,
+        "material_match_relaxed_id": 0.7911646586345381,
+        "coarse_material_match": 0.7911646586345381,
+        "gt_components": 1.0,
+        "pred_components": 1.0,
+        "matched_components": 1.0,
+        "component_precision": 1.0,
+        "component_recall": 1.0,
+        "component_f1": 1.0,
+        "component_mean_iou": 0.3878787878787879,
+        "correct_placement_rate": 0.652317880794702,
+        "correct_placement_coverage": 0.2484237074401009,
+        "correct_placement_rate_relaxed_id": 0.652317880794702,
+        "correct_placement_coverage_relaxed_id": 0.2484237074401009
+      },
+      "levels": {
+        "level0_shift": {
+          "metric": "intersection",
+          "value": 249.0,
+          "threshold": 32,
+          "pass": true
+        },
+        "level1_shape": {
+          "metrics": {
+            "iou": 0.29432624113475175,
+            "f1": 0.45479452054794517
+          },
+          "thresholds": {
+            "iou": 0.35,
+            "f1": 0.5
+          },
+          "pass": false
+        },
+        "level2_coarse_material": {
+          "metric": "coarse_material_match",
+          "value": 0.7911646586345381,
+          "threshold": 0.55,
+          "pass": true
+        },
+        "level3_strict_material": {
+          "metric": "material_match",
+          "value": 0.7911646586345381,
+          "threshold": 0.4,
+          "pass": true
+        },
+        "level4_structure_components": {
+          "metric": "component_f1",
+          "value": 1.0,
+          "threshold": 0.45,
+          "component_iou_match_threshold": 0.3,
+          "pass": true
+        },
+        "all_levels_pass": false
+      }
+    },
+    {
+      "building": "llm_case_004",
+      "gt_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_004/gt/voxels.npy",
+      "pred_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_004/rebuild_world_structured/voxels.npy",
+      "pred_source_used": "rebuild_world_structured",
+      "counts": {
+        "gt_non_air": 1121,
+        "pred_non_air": 302,
+        "pred_non_air_after_shift": 302,
+        "strict_correct_blocks": 128,
+        "relaxed_correct_blocks": 128
+      },
+      "shift": {
+        "dx": 7,
+        "dy": 4,
+        "dz": 5,
+        "intersection_at_shift": 191,
+        "footprint_intersection": 49
+      },
+      "metrics": {
+        "intersection": 191.0,
+        "union": 1232.0,
+        "precision": 0.6324503311258278,
+        "recall": 0.1703835860838537,
+        "f1": 0.2684469430780042,
+        "iou": 0.15503246753246752,
+        "intersection_count": 191.0,
+        "strict_match_count": 128.0,
+        "relaxed_match_count": 128.0,
+        "coarse_match_count": 129.0,
+        "material_match": 0.6701570680628273,
+        "material_match_relaxed_id": 0.6701570680628273,
+        "coarse_material_match": 0.675392670157068,
+        "gt_components": 1.0,
+        "pred_components": 1.0,
+        "matched_components": 1.0,
+        "component_precision": 1.0,
+        "component_recall": 1.0,
+        "component_f1": 1.0,
+        "component_mean_iou": 0.32450331125827814,
+        "correct_placement_rate": 0.423841059602649,
+        "correct_placement_coverage": 0.11418376449598573,
+        "correct_placement_rate_relaxed_id": 0.423841059602649,
+        "correct_placement_coverage_relaxed_id": 0.11418376449598573
+      },
+      "levels": {
+        "level0_shift": {
+          "metric": "intersection",
+          "value": 191.0,
+          "threshold": 32,
+          "pass": true
+        },
+        "level1_shape": {
+          "metrics": {
+            "iou": 0.15503246753246752,
+            "f1": 0.2684469430780042
+          },
+          "thresholds": {
+            "iou": 0.35,
+            "f1": 0.5
+          },
+          "pass": false
+        },
+        "level2_coarse_material": {
+          "metric": "coarse_material_match",
+          "value": 0.675392670157068,
+          "threshold": 0.55,
+          "pass": true
+        },
+        "level3_strict_material": {
+          "metric": "material_match",
+          "value": 0.6701570680628273,
+          "threshold": 0.4,
+          "pass": true
+        },
+        "level4_structure_components": {
+          "metric": "component_f1",
+          "value": 1.0,
+          "threshold": 0.45,
+          "component_iou_match_threshold": 0.3,
+          "pass": true
+        },
+        "all_levels_pass": false
+      }
+    },
+    {
+      "building": "llm_case_005",
+      "gt_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_005/gt/voxels.npy",
+      "pred_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_005/rebuild_world_structured/voxels.npy",
+      "pred_source_used": "rebuild_world_structured",
+      "counts": {
+        "gt_non_air": 957,
+        "pred_non_air": 302,
+        "pred_non_air_after_shift": 302,
+        "strict_correct_blocks": 145,
+        "relaxed_correct_blocks": 145
+      },
+      "shift": {
+        "dx": 0,
+        "dy": 4,
+        "dz": 0,
+        "intersection_at_shift": 203,
+        "footprint_intersection": 60
+      },
+      "metrics": {
+        "intersection": 203.0,
+        "union": 1056.0,
+        "precision": 0.6721854304635762,
+        "recall": 0.21212121212121213,
+        "f1": 0.32247815726767276,
+        "iou": 0.19223484848484848,
+        "intersection_count": 203.0,
+        "strict_match_count": 145.0,
+        "relaxed_match_count": 145.0,
+        "coarse_match_count": 148.0,
+        "material_match": 0.7142857142857143,
+        "material_match_relaxed_id": 0.7142857142857143,
+        "coarse_material_match": 0.729064039408867,
+        "gt_components": 1.0,
+        "pred_components": 1.0,
+        "matched_components": 1.0,
+        "component_precision": 1.0,
+        "component_recall": 1.0,
+        "component_f1": 1.0,
+        "component_mean_iou": 0.4166666666666667,
+        "correct_placement_rate": 0.48013245033112584,
+        "correct_placement_coverage": 0.15151515151515152,
+        "correct_placement_rate_relaxed_id": 0.48013245033112584,
+        "correct_placement_coverage_relaxed_id": 0.15151515151515152
+      },
+      "levels": {
+        "level0_shift": {
+          "metric": "intersection",
+          "value": 203.0,
+          "threshold": 32,
+          "pass": true
+        },
+        "level1_shape": {
+          "metrics": {
+            "iou": 0.19223484848484848,
+            "f1": 0.32247815726767276
+          },
+          "thresholds": {
+            "iou": 0.35,
+            "f1": 0.5
+          },
+          "pass": false
+        },
+        "level2_coarse_material": {
+          "metric": "coarse_material_match",
+          "value": 0.729064039408867,
+          "threshold": 0.55,
+          "pass": true
+        },
+        "level3_strict_material": {
+          "metric": "material_match",
+          "value": 0.7142857142857143,
+          "threshold": 0.4,
+          "pass": true
+        },
+        "level4_structure_components": {
+          "metric": "component_f1",
+          "value": 1.0,
+          "threshold": 0.45,
+          "component_iou_match_threshold": 0.3,
+          "pass": true
+        },
+        "all_levels_pass": false
+      }
+    },
+    {
+      "building": "llm_case_006",
+      "gt_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_006/gt/voxels.npy",
+      "pred_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_006/rebuild_world_structured/voxels.npy",
+      "pred_source_used": "rebuild_world_structured",
+      "counts": {
+        "gt_non_air": 1153,
+        "pred_non_air": 302,
+        "pred_non_air_after_shift": 302,
+        "strict_correct_blocks": 106,
+        "relaxed_correct_blocks": 106
+      },
+      "shift": {
+        "dx": 0,
+        "dy": 4,
+        "dz": 3,
+        "intersection_at_shift": 173,
+        "footprint_intersection": 39
+      },
+      "metrics": {
+        "intersection": 173.0,
+        "union": 1282.0,
+        "precision": 0.5728476821192053,
+        "recall": 0.15004336513443192,
+        "f1": 0.23780068728522336,
+        "iou": 0.13494539781591264,
+        "intersection_count": 173.0,
+        "strict_match_count": 106.0,
+        "relaxed_match_count": 106.0,
+        "coarse_match_count": 107.0,
+        "material_match": 0.6127167630057804,
+        "material_match_relaxed_id": 0.6127167630057804,
+        "coarse_material_match": 0.6184971098265896,
+        "gt_components": 1.0,
+        "pred_components": 1.0,
+        "matched_components": 0.0,
+        "component_precision": 0.0,
+        "component_recall": 0.0,
+        "component_f1": 0.0,
+        "component_mean_iou": 0.0,
+        "correct_placement_rate": 0.3509933774834437,
+        "correct_placement_coverage": 0.09193408499566348,
+        "correct_placement_rate_relaxed_id": 0.3509933774834437,
+        "correct_placement_coverage_relaxed_id": 0.09193408499566348
+      },
+      "levels": {
+        "level0_shift": {
+          "metric": "intersection",
+          "value": 173.0,
+          "threshold": 32,
+          "pass": true
+        },
+        "level1_shape": {
+          "metrics": {
+            "iou": 0.13494539781591264,
+            "f1": 0.23780068728522336
+          },
+          "thresholds": {
+            "iou": 0.35,
+            "f1": 0.5
+          },
+          "pass": false
+        },
+        "level2_coarse_material": {
+          "metric": "coarse_material_match",
+          "value": 0.6184971098265896,
+          "threshold": 0.55,
+          "pass": true
+        },
+        "level3_strict_material": {
+          "metric": "material_match",
+          "value": 0.6127167630057804,
+          "threshold": 0.4,
+          "pass": true
+        },
+        "level4_structure_components": {
+          "metric": "component_f1",
+          "value": 0.0,
+          "threshold": 0.45,
+          "component_iou_match_threshold": 0.3,
+          "pass": false
+        },
+        "all_levels_pass": false
+      }
+    },
+    {
+      "building": "llm_case_007",
+      "gt_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_007/gt/voxels.npy",
+      "pred_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_007/rebuild_world_structured/voxels.npy",
+      "pred_source_used": "rebuild_world_structured",
+      "counts": {
+        "gt_non_air": 1294,
+        "pred_non_air": 302,
+        "pred_non_air_after_shift": 302,
+        "strict_correct_blocks": 161,
+        "relaxed_correct_blocks": 161
+      },
+      "shift": {
+        "dx": 0,
+        "dy": 4,
+        "dz": 4,
+        "intersection_at_shift": 216,
+        "footprint_intersection": 64
+      },
+      "metrics": {
+        "intersection": 216.0,
+        "union": 1380.0,
+        "precision": 0.7152317880794702,
+        "recall": 0.16692426584234932,
+        "f1": 0.27067669172932335,
+        "iou": 0.1565217391304348,
+        "intersection_count": 216.0,
+        "strict_match_count": 161.0,
+        "relaxed_match_count": 161.0,
+        "coarse_match_count": 162.0,
+        "material_match": 0.7453703703703703,
+        "material_match_relaxed_id": 0.7453703703703703,
+        "coarse_material_match": 0.75,
+        "gt_components": 1.0,
+        "pred_components": 1.0,
+        "matched_components": 0.0,
+        "component_precision": 0.0,
+        "component_recall": 0.0,
+        "component_f1": 0.0,
+        "component_mean_iou": 0.0,
+        "correct_placement_rate": 0.5331125827814569,
+        "correct_placement_coverage": 0.12442040185471406,
+        "correct_placement_rate_relaxed_id": 0.5331125827814569,
+        "correct_placement_coverage_relaxed_id": 0.12442040185471406
+      },
+      "levels": {
+        "level0_shift": {
+          "metric": "intersection",
+          "value": 216.0,
+          "threshold": 32,
+          "pass": true
+        },
+        "level1_shape": {
+          "metrics": {
+            "iou": 0.1565217391304348,
+            "f1": 0.27067669172932335
+          },
+          "thresholds": {
+            "iou": 0.35,
+            "f1": 0.5
+          },
+          "pass": false
+        },
+        "level2_coarse_material": {
+          "metric": "coarse_material_match",
+          "value": 0.75,
+          "threshold": 0.55,
+          "pass": true
+        },
+        "level3_strict_material": {
+          "metric": "material_match",
+          "value": 0.7453703703703703,
+          "threshold": 0.4,
+          "pass": true
+        },
+        "level4_structure_components": {
+          "metric": "component_f1",
+          "value": 0.0,
+          "threshold": 0.45,
+          "component_iou_match_threshold": 0.3,
+          "pass": false
+        },
+        "all_levels_pass": false
+      }
+    },
+    {
+      "building": "llm_case_008",
+      "gt_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_008/gt/voxels.npy",
+      "pred_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_008/rebuild_world_structured/voxels.npy",
+      "pred_source_used": "rebuild_world_structured",
+      "counts": {
+        "gt_non_air": 1751,
+        "pred_non_air": 302,
+        "pred_non_air_after_shift": 302,
+        "strict_correct_blocks": 145,
+        "relaxed_correct_blocks": 145
+      },
+      "shift": {
+        "dx": 5,
+        "dy": 4,
+        "dz": 5,
+        "intersection_at_shift": 189,
+        "footprint_intersection": 61
+      },
+      "metrics": {
+        "intersection": 189.0,
+        "union": 1864.0,
+        "precision": 0.6258278145695364,
+        "recall": 0.10793832095945174,
+        "f1": 0.18412079883097904,
+        "iou": 0.10139484978540772,
+        "intersection_count": 189.0,
+        "strict_match_count": 145.0,
+        "relaxed_match_count": 145.0,
+        "coarse_match_count": 147.0,
+        "material_match": 0.7671957671957672,
+        "material_match_relaxed_id": 0.7671957671957672,
+        "coarse_material_match": 0.7777777777777778,
+        "gt_components": 1.0,
+        "pred_components": 1.0,
+        "matched_components": 1.0,
+        "component_precision": 1.0,
+        "component_recall": 1.0,
+        "component_f1": 1.0,
+        "component_mean_iou": 0.3370165745856354,
+        "correct_placement_rate": 0.48013245033112584,
+        "correct_placement_coverage": 0.08280982295830953,
+        "correct_placement_rate_relaxed_id": 0.48013245033112584,
+        "correct_placement_coverage_relaxed_id": 0.08280982295830953
+      },
+      "levels": {
+        "level0_shift": {
+          "metric": "intersection",
+          "value": 189.0,
+          "threshold": 32,
+          "pass": true
+        },
+        "level1_shape": {
+          "metrics": {
+            "iou": 0.10139484978540772,
+            "f1": 0.18412079883097904
+          },
+          "thresholds": {
+            "iou": 0.35,
+            "f1": 0.5
+          },
+          "pass": false
+        },
+        "level2_coarse_material": {
+          "metric": "coarse_material_match",
+          "value": 0.7777777777777778,
+          "threshold": 0.55,
+          "pass": true
+        },
+        "level3_strict_material": {
+          "metric": "material_match",
+          "value": 0.7671957671957672,
+          "threshold": 0.4,
+          "pass": true
+        },
+        "level4_structure_components": {
+          "metric": "component_f1",
+          "value": 1.0,
+          "threshold": 0.45,
+          "component_iou_match_threshold": 0.3,
+          "pass": true
+        },
+        "all_levels_pass": false
+      }
+    },
+    {
+      "building": "llm_case_009",
+      "gt_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_009/gt/voxels.npy",
+      "pred_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_009/rebuild_world_structured/voxels.npy",
+      "pred_source_used": "rebuild_world_structured",
+      "counts": {
+        "gt_non_air": 1747,
+        "pred_non_air": 302,
+        "pred_non_air_after_shift": 302,
+        "strict_correct_blocks": 117,
+        "relaxed_correct_blocks": 117
+      },
+      "shift": {
+        "dx": 0,
+        "dy": 4,
+        "dz": 0,
+        "intersection_at_shift": 202,
+        "footprint_intersection": 44
+      },
+      "metrics": {
+        "intersection": 202.0,
+        "union": 1847.0,
+        "precision": 0.6688741721854304,
+        "recall": 0.11562678878076703,
+        "f1": 0.19716935090287946,
+        "iou": 0.10936654033567948,
+        "intersection_count": 202.0,
+        "strict_match_count": 117.0,
+        "relaxed_match_count": 117.0,
+        "coarse_match_count": 118.0,
+        "material_match": 0.5792079207920792,
+        "material_match_relaxed_id": 0.5792079207920792,
+        "coarse_material_match": 0.5841584158415841,
+        "gt_components": 1.0,
+        "pred_components": 1.0,
+        "matched_components": 0.0,
+        "component_precision": 0.0,
+        "component_recall": 0.0,
+        "component_f1": 0.0,
+        "component_mean_iou": 0.0,
+        "correct_placement_rate": 0.38741721854304634,
+        "correct_placement_coverage": 0.06697195191757298,
+        "correct_placement_rate_relaxed_id": 0.38741721854304634,
+        "correct_placement_coverage_relaxed_id": 0.06697195191757298
+      },
+      "levels": {
+        "level0_shift": {
+          "metric": "intersection",
+          "value": 202.0,
+          "threshold": 32,
+          "pass": true
+        },
+        "level1_shape": {
+          "metrics": {
+            "iou": 0.10936654033567948,
+            "f1": 0.19716935090287946
+          },
+          "thresholds": {
+            "iou": 0.35,
+            "f1": 0.5
+          },
+          "pass": false
+        },
+        "level2_coarse_material": {
+          "metric": "coarse_material_match",
+          "value": 0.5841584158415841,
+          "threshold": 0.55,
+          "pass": true
+        },
+        "level3_strict_material": {
+          "metric": "material_match",
+          "value": 0.5792079207920792,
+          "threshold": 0.4,
+          "pass": true
+        },
+        "level4_structure_components": {
+          "metric": "component_f1",
+          "value": 0.0,
+          "threshold": 0.45,
+          "component_iou_match_threshold": 0.3,
+          "pass": false
+        },
+        "all_levels_pass": false
+      }
+    },
+    {
+      "building": "llm_case_010",
+      "gt_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_010/gt/voxels.npy",
+      "pred_voxels": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10/llm_case_010/rebuild_world_structured/voxels.npy",
+      "pred_source_used": "rebuild_world_structured",
+      "counts": {
+        "gt_non_air": 1878,
+        "pred_non_air": 302,
+        "pred_non_air_after_shift": 302,
+        "strict_correct_blocks": 169,
+        "relaxed_correct_blocks": 169
+      },
+      "shift": {
+        "dx": 13,
+        "dy": 4,
+        "dz": 0,
+        "intersection_at_shift": 241,
+        "footprint_intersection": 64
+      },
+      "metrics": {
+        "intersection": 241.0,
+        "union": 1939.0,
+        "precision": 0.7980132450331126,
+        "recall": 0.1283280085197018,
+        "f1": 0.22110091743119265,
+        "iou": 0.12429087158329036,
+        "intersection_count": 241.0,
+        "strict_match_count": 169.0,
+        "relaxed_match_count": 169.0,
+        "coarse_match_count": 171.0,
+        "material_match": 0.7012448132780082,
+        "material_match_relaxed_id": 0.7012448132780082,
+        "coarse_material_match": 0.7095435684647303,
+        "gt_components": 1.0,
+        "pred_components": 1.0,
+        "matched_components": 1.0,
+        "component_precision": 1.0,
+        "component_recall": 1.0,
+        "component_f1": 1.0,
+        "component_mean_iou": 0.34408602150537637,
+        "correct_placement_rate": 0.5596026490066225,
+        "correct_placement_coverage": 0.08998935037273695,
+        "correct_placement_rate_relaxed_id": 0.5596026490066225,
+        "correct_placement_coverage_relaxed_id": 0.08998935037273695
+      },
+      "levels": {
+        "level0_shift": {
+          "metric": "intersection",
+          "value": 241.0,
+          "threshold": 32,
+          "pass": true
+        },
+        "level1_shape": {
+          "metrics": {
+            "iou": 0.12429087158329036,
+            "f1": 0.22110091743119265
+          },
+          "thresholds": {
+            "iou": 0.35,
+            "f1": 0.5
+          },
+          "pass": false
+        },
+        "level2_coarse_material": {
+          "metric": "coarse_material_match",
+          "value": 0.7095435684647303,
+          "threshold": 0.55,
+          "pass": true
+        },
+        "level3_strict_material": {
+          "metric": "material_match",
+          "value": 0.7012448132780082,
+          "threshold": 0.4,
+          "pass": true
+        },
+        "level4_structure_components": {
+          "metric": "component_f1",
+          "value": 1.0,
+          "threshold": 0.45,
+          "component_iou_match_threshold": 0.3,
+          "pass": true
+        },
+        "all_levels_pass": false
+      }
+    }
+  ]
+}

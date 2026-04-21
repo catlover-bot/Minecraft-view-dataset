@@ -1,0 +1,72 @@
+{
+  "summary": "A partially underground bunker or storage structure with a flat roof. The building features a rectangular footprint with stepped concrete/stone exterior walls, wooden interior framing, and a single centered glass window on the roof. The structure is sunken into terrain with dirt/gravel surrounding it.",
+  "building_type": "bunker|storage|underground_shelter",
+  "shape": {
+    "overall_form": "rectangular box, partially submerged",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilateral symmetry along both axes",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 10,
+    "depth": 10,
+    "height": 6
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "exterior_walls",
+      "confidence": 0.85
+    },
+    {
+      "name": "wood",
+      "role": "interior_framing_and_support",
+      "confidence": 0.9
+    },
+    {
+      "name": "glass",
+      "role": "roof_window",
+      "confidence": 0.95
+    },
+    {
+      "name": "gravel",
+      "role": "ground_fill",
+      "confidence": 0.8
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof_cap",
+      "confidence": 0.75
+    }
+  ],
+  "elements": [
+    "flat_roof",
+    "centered_glass_window",
+    "stepped_exterior_walls",
+    "wooden_interior_supports",
+    "sunken_foundation",
+    "gravel_surround"
+  ],
+  "rebuild_hints": [
+    "Create a 10x10 rectangular pit approximately 6 blocks deep",
+    "Build outer walls with stonebrick in stepped layers (3-4 layers visible)",
+    "Add wooden log/plank interior framing horizontally across middle section",
+    "Top the structure with stone slabs forming a flat roof",
+    "Place a centered 4x4 glass window on the roof surface",
+    "Surround exterior with gravel/dirt at ground level",
+    "Ensure symmetrical appearance from all cardinal directions"
+  ],
+  "uncertainties": [
+    "Exact block count for depth due to perspective; estimated 6 blocks but could be 5-7",
+    "Precise material of outer walls (could be stone, stonebrick, or concrete variants)",
+    "Whether interior is hollow or partially filled; appears to have wooden supports suggesting hollow interior",
+    "Exact dimensions of glass window; appears to be 4x4 or 5x5 blocks",
+    "Whether structure extends below visible ground level"
+  ],
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "building": "llm_case_001",
+  "created_at": "2026-04-17T18:09:45.404303+00:00",
+  "llm_seed": -1
+}

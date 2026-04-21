@@ -1,0 +1,76 @@
+{
+  "case_id": "v4_building_012",
+  "dataset_split": "v4",
+  "building_id": "building_012",
+  "difficulty": "easy",
+  "selection_reason": "v4内で相対的に高IoU。複雑側データでも再建築しやすい基準ケース。",
+  "images": [
+    "source_images/rgb_view00_yaw+090.00_pitch-004.10.png",
+    "source_images/rgb_view01_yaw+126.00_pitch+002.73.png",
+    "source_images/rgb_view02_yaw+162.00_pitch-004.10.png",
+    "source_images/rgb_view03_yaw-162.00_pitch+002.73.png",
+    "source_images/rgb_view04_yaw-126.00_pitch-004.10.png",
+    "source_images/rgb_view05_yaw-090.00_pitch+002.73.png",
+    "source_images/rgb_view06_yaw-054.00_pitch-004.10.png",
+    "source_images/rgb_view07_yaw-018.00_pitch+002.73.png",
+    "source_images/rgb_view08_yaw+018.00_pitch-004.10.png",
+    "source_images/rgb_view09_yaw+054.00_pitch+002.73.png",
+    "source_images/rgb_view10_yaw+090.00_pitch+080.00.png",
+    "source_images/rgb_view11_yaw-090.00_pitch+080.00.png"
+  ],
+  "conditions_supported": [
+    "image_only",
+    "image_plus_description",
+    "image_plus_description_plus_structured_ir"
+  ],
+  "recommended_time_limit_min": 20,
+  "allowed_blocks_file": "allowed_blocks.txt",
+  "build_constraints_file": "build_constraints.json",
+  "submission_format": {
+    "primary_required": [
+      "bbox.json",
+      "voxels.npy"
+    ],
+    "secondary_optional": [
+      "plan.json"
+    ],
+    "path_template": "outputs/human_image_rebuild/submissions/<participant_id>/<condition>/v4_building_012/"
+  },
+  "default_condition_assets": {
+    "image_plus_description": "condition_assets/description/description_openai_gpt_5_mini.json",
+    "image_plus_description_plus_structured_ir": {
+      "description": "condition_assets/description/description_openai_gpt_5_mini.json",
+      "structured_intermediate": "condition_assets/structured_intermediate/intermediate_openai_main.json"
+    }
+  },
+  "llm_baselines_main": {
+    "openai_main": {
+      "direct_iou": 0.3488425925925926,
+      "structured_iou": 0.16505625413633354,
+      "direct_f1": 0.5172472970653852,
+      "structured_f1": 0.2833446943876392,
+      "direct_material_match": 0.36562707365627073,
+      "structured_material_match": 0.6423416198877305,
+      "direct_correct_placement_rate": 0.18449690272894692,
+      "structured_correct_placement_rate": 0.25664851009291895,
+      "direct_edit_distance_over_gt": 1.3268790705861644,
+      "structured_edit_distance_over_gt": 1.1888751980285162,
+      "delta_iou": -0.18378633845625905,
+      "delta_edit_distance_over_gt": -0.13800387255764823
+    },
+    "claude_main": {
+      "direct_iou": 0.34965877157767966,
+      "structured_iou": 0.16829934157700338,
+      "direct_f1": 0.5181439619274242,
+      "structured_f1": 0.2881099656357388,
+      "direct_material_match": 0.05884041331802526,
+      "structured_material_match": 0.6555343511450382,
+      "direct_correct_placement_rate": 0.02639371700785374,
+      "structured_correct_placement_rate": 0.43099121706398996,
+      "direct_edit_distance_over_gt": 1.7178313677169512,
+      "structured_edit_distance_over_gt": 0.9751804259813414,
+      "delta_iou": -0.18135943000067628,
+      "delta_edit_distance_over_gt": -0.7426509417356099
+    }
+  }
+}

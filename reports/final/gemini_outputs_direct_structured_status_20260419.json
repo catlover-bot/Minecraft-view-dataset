@@ -1,0 +1,57 @@
+{
+  "note": "Gemini outputs-root experiment status. v1 complete for direct+structured+repair; v4 running.",
+  "artifacts": {
+    "v1_direct_rebuild": "outputs/i2t2b/buildings_100_v1/metrics/rebuild/schema_v5_repair_gemini_gemini_3_1_pro_preview_self_refine_common_v8_struct_full.json",
+    "v1_direct_repair": "outputs/i2t2b/buildings_100_v1/metrics/repair/gemini_main_direct_common_v8_struct.json",
+    "v1_struct_rebuild": "outputs/i2t2b/buildings_100_v1/metrics/rebuild/structured_ir_gemini_main_orig_20260419.json",
+    "v1_struct_repair": "outputs/i2t2b/buildings_100_v1/metrics/repair/structured_ir_gemini_main_orig_20260419.json"
+  },
+  "metrics": {
+    "v1_direct_rebuild": {
+      "iou": 0.2609815036104136,
+      "f1": 0.4085426015492206,
+      "material_match": 0.2873287583110297,
+      "coarse_material_match": 0.455430181822603,
+      "correct_placement_rate": 0.13566689006418525,
+      "evaluated_buildings": 100,
+      "missing_predictions": 0
+    },
+    "v1_direct_repair": {
+      "mean_edit_distance_over_gt": 1.4514980541556957,
+      "mean_additions_over_gt": 0.604866609705626,
+      "mean_deletions_over_gt": 0.5685741359187307,
+      "mean_replacements_over_gt": 0.27805730853133914,
+      "evaluated_buildings": 100,
+      "missing_predictions": 0
+    },
+    "v1_struct_rebuild": {
+      "iou": 0.27553549590565213,
+      "f1": 0.4252818427588205,
+      "material_match": 0.41972122303098475,
+      "coarse_material_match": 0.44669456281123915,
+      "correct_placement_rate": 0.18679019038179306,
+      "evaluated_buildings": 100,
+      "missing_predictions": 0
+    },
+    "v1_struct_repair": {
+      "mean_edit_distance_over_gt": 1.4838837599266603,
+      "mean_additions_over_gt": 0.5524520631935991,
+      "mean_deletions_over_gt": 0.6776905285344114,
+      "mean_replacements_over_gt": 0.2537411681986499,
+      "evaluated_buildings": 100,
+      "missing_predictions": 0
+    }
+  },
+  "comparison": {
+    "delta_structured_minus_direct": {
+      "iou": 0.014553992295238516,
+      "f1": 0.01673924120959991,
+      "material_match": 0.13239246471995503,
+      "correct_placement_rate": 0.05112330031760781,
+      "edit_distance_over_gt": 0.03238570577096467,
+      "additions_over_gt": -0.05241454651202693,
+      "deletions_over_gt": 0.10911639261568062,
+      "replacements_over_gt": -0.02431614033268925
+    }
+  }
+}

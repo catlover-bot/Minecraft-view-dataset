@@ -1,0 +1,201 @@
+[DRAFT_RESPONSE]
+```json
+{
+  "plan_version": "v1",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 10,
+    "ymin": 0,
+    "ymax": 6,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "stone_slab",
+    "wood": "oak_log",
+    "glass": "glass",
+    "floor": "oak_planks",
+    "ground": "gravel"
+  },
+  "operations": [
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 10,
+      "y2": 1,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "foundation_base"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 1,
+      "z1": 0,
+      "x2": 10,
+      "y2": 5,
+      "z2": 10,
+      "block": "stonebrick",
+      "purpose": "exterior_walls"
+    },
+    {
+      "op": "carve",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 4,
+      "z2": 9,
+      "purpose": "hollow_interior"
+    },
+    {
+      "op": "fill",
+      "x1": 1,
+      "y1": 1,
+      "z1": 1,
+      "x2": 9,
+      "y2": 2,
+      "z2": 9,
+      "block": "oak_planks",
+      "purpose": "interior_floor"
+    },
+    {
+      "op": "set",
+      "x": 3,
+      "y": 3,
+      "z": 5,
+      "block": "oak_log",
+      "purpose": "interior_support_column"
+    },
+    {
+      "op": "set",
+      "x": 7,
+      "y": 3,
+      "z": 5,
+      "block": "oak_log",
+      "purpose": "interior_support_column"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 3,
+      "z": 3,
+      "block": "oak_log",
+      "purpose": "interior_support_column"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 3,
+      "z": 7,
+      "block": "oak_log",
+      "purpose": "interior_support_column"
+    },
+    {
+      "op": "fill",
+      "x1": 0,
+      "y1": 5,
+      "z1": 0,
+      "x2": 10,
+      "y2": 6,
+      "z2": 10,
+      "block": "stone_slab",
+      "purpose": "flat_roof"
+    },
+    {
+      "op": "set",
+      "x": 4,
+      "y": 6,
+      "z": 4,
+      "block": "glass",
+      "purpose": "roof_window"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 6,
+      "z": 4,
+      "block": "glass",
+      "purpose": "roof_window"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 6,
+      "z": 4,
+      "block": "glass",
+      "purpose": "roof_window"
+    },
+    {
+      "op": "set",
+      "x": 4,
+      "y": 6,
+      "z": 5,
+      "block": "glass",
+      "purpose": "roof_window"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 6,
+      "z": 5,
+      "block": "glass",
+      "purpose": "roof_window"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 6,
+      "z": 5,
+      "block": "glass",
+      "purpose": "roof_window"
+    },
+    {
+      "op": "set",
+      "x": 4,
+      "y": 6,
+      "z": 6,
+      "block": "glass",
+      "purpose": "roof_window"
+    },
+    {
+      "op": "set",
+      "x": 5,
+      "y": 6,
+      "z": 6,
+      "block": "glass",
+      "purpose": "roof_window"
+    },
+    {
+      "op": "set",
+      "x": 6,
+      "y": 6,
+      "z": 6,
+      "block": "glass",
+      "purpose": "roof_window"
+    },
+    {
+      "op": "fill",
+      "x1": -2,
+      "y1": 0,
+      "z1": -2,
+      "x2": 12,
+      "y2": 1,
+      "z2": 12,
+      "block": "gravel",
+      "purpose": "ground_surround"
+    }
+  ],
+  "notes": [
+    "10x10 rectangular bunker structure with 6-block height",
+    "Stonebrick exterior walls with hollow interior",
+    "Wooden support columns at cardinal positions",
+    "Flat stone slab roof with centered 3x3 glass window",
+    "Gravel ground surround for terrain integration",
+    "Symmetrical design along both axes"
+  ]
+}
+```

@@ -1,0 +1,162 @@
+{
+  "created_at": "2026-04-19T12:56:17.728454+00:00",
+  "cases_manifest": "/Users/hirotaka-m/Minecraft-view-dataset/reports/final/original_benchmark_human_image_rebuild_cases.json",
+  "submission_root": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_image_rebuild/submissions",
+  "note": "Scoring infrastructure output. May include placeholder/validation submissions; not a human study result claim.",
+  "coverage": {
+    "participants_detected": 1,
+    "scored_submissions": 1,
+    "invalid_submissions": 0
+  },
+  "aggregates": {
+    "by_participant_condition": {
+      "validation_placeholder::image_only": {
+        "n": 1.0,
+        "iou": 1.0,
+        "f1": 1.0,
+        "material_match": 1.0,
+        "coarse_material_match": 1.0,
+        "correct_placement_rate": 1.0,
+        "edit_distance_over_gt": 0.0,
+        "additions_over_gt": 0.0,
+        "deletions_over_gt": 0.0,
+        "replacements_over_gt": 0.0
+      }
+    },
+    "by_condition": {
+      "image_only": {
+        "n": 1.0,
+        "iou": 1.0,
+        "f1": 1.0,
+        "material_match": 1.0,
+        "coarse_material_match": 1.0,
+        "correct_placement_rate": 1.0,
+        "edit_distance_over_gt": 0.0,
+        "additions_over_gt": 0.0,
+        "deletions_over_gt": 0.0,
+        "replacements_over_gt": 0.0
+      }
+    },
+    "by_case": {
+      "v1_building_087": {
+        "n": 1.0,
+        "iou": 1.0,
+        "f1": 1.0,
+        "material_match": 1.0,
+        "coarse_material_match": 1.0,
+        "correct_placement_rate": 1.0,
+        "edit_distance_over_gt": 0.0,
+        "additions_over_gt": 0.0,
+        "deletions_over_gt": 0.0,
+        "replacements_over_gt": 0.0
+      }
+    }
+  },
+  "items": [
+    {
+      "participant_id": "validation_placeholder",
+      "condition": "image_only",
+      "case_id": "v1_building_087",
+      "dataset_split": "v1",
+      "building_id": "building_087",
+      "difficulty": "easy",
+      "submission_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_image_rebuild/submissions/validation_placeholder/image_only/v1_building_087",
+      "submission_mode": "voxels_npy",
+      "derived_paths": {
+        "voxels": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_image_rebuild/submissions/validation_placeholder/image_only/v1_building_087/voxels.npy",
+        "bbox": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_image_rebuild/submissions/validation_placeholder/image_only/v1_building_087/bbox.json"
+      },
+      "shift": {
+        "dx": 0,
+        "dy": 0,
+        "dz": 0
+      },
+      "metrics": {
+        "intersection": 621.0,
+        "union": 621.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "iou": 1.0,
+        "intersection_count": 621.0,
+        "strict_match_count": 621.0,
+        "relaxed_match_count": 621.0,
+        "coarse_match_count": 621.0,
+        "material_match": 1.0,
+        "material_match_relaxed_id": 1.0,
+        "coarse_material_match": 1.0,
+        "correct_placement_rate": 1.0,
+        "correct_placement_coverage": 1.0,
+        "correct_placement_rate_relaxed_id": 1.0,
+        "correct_placement_coverage_relaxed_id": 1.0,
+        "gt_components": 1.0,
+        "pred_components": 1.0,
+        "matched_components": 1.0,
+        "component_precision": 1.0,
+        "component_recall": 1.0,
+        "component_f1": 1.0,
+        "component_mean_iou": 1.0
+      },
+      "repair": {
+        "counts": {
+          "gt_non_air": 621,
+          "pred_non_air": 621,
+          "correct_after_shift": 621,
+          "additions_needed": 0,
+          "deletions_needed": 0,
+          "replacements_needed": 0,
+          "total_edit_operations": 0
+        },
+        "normalized": {
+          "edit_distance_over_gt": 0.0,
+          "additions_over_gt": 0.0,
+          "deletions_over_gt": 0.0,
+          "replacements_over_gt": 0.0
+        },
+        "completion_after_k_edits": {
+          "50": 1.0,
+          "100": 1.0,
+          "200": 1.0,
+          "500": 1.0
+        },
+        "approx_cuboid_repair_count": {
+          "additions_components": 0,
+          "deletions_components": 0,
+          "replacements_components": 0
+        }
+      },
+      "llm_baselines_main": {
+        "openai_main": {
+          "direct_iou": 0.6369426751592356,
+          "structured_iou": 0.5433962264150943,
+          "direct_f1": 0.7782101167315175,
+          "structured_f1": 0.7041564792176038,
+          "direct_material_match": 0.0,
+          "structured_material_match": 0.006944444444444444,
+          "direct_correct_placement_rate": 0.0,
+          "structured_correct_placement_rate": 0.0049504950495049506,
+          "direct_edit_distance_over_gt": 1.2640901771336555,
+          "structured_edit_distance_over_gt": 1.2753623188405796,
+          "delta_iou": -0.09354644874414131,
+          "delta_edit_distance_over_gt": 0.011272141706924144
+        },
+        "claude_main": {
+          "direct_iou": 0.47387173396674587,
+          "structured_iou": 0.3738562091503268,
+          "direct_f1": 0.6430298146655922,
+          "structured_f1": 0.544243577545195,
+          "direct_material_match": 0.3007518796992481,
+          "structured_material_match": 0.02097902097902098,
+          "direct_correct_placement_rate": 0.1935483870967742,
+          "structured_correct_placement_rate": 0.013953488372093023,
+          "direct_edit_distance_over_gt": 1.1626409017713366,
+          "structured_edit_distance_over_gt": 1.2222222222222223,
+          "delta_iou": -0.10001552481641907,
+          "delta_edit_distance_over_gt": 0.05958132045088571
+        }
+      },
+      "status": "ok"
+    }
+  ],
+  "invalid_items": []
+}

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import shlex
 import subprocess
 import sys
@@ -11,6 +12,8 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
+
+from tools.llm_config import load_llm_config
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -58,6 +61,15 @@ def parse_args() -> argparse.Namespace:
         help="Agent execution mode for generate_agentexec_world_real.py",
     )
     parser.add_argument("--thresholds_json", default="tools/thresholds_levels.example.json")
+    parser.add_argument("--dotenv", default="", help="Optional .env path used to resolve default Gemini model tag.")
+    parser.add_argument(
+        "--gemini_model_tag",
+        default="",
+        help=(
+            "Model tag used in directory names for Gemini cases. "
+            "Example: gemini_gemini_3_1_pro_preview"
+        ),
+    )
     parser.add_argument(
         "--cases",
         default="v1_openai,v1_claude,v4_openai,v4_claude",
@@ -100,10 +112,25 @@ def _load_json(path: Path) -> Dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _case_specs() -> Dict[str, CaseSpec]:
+def _slugify(text: str) -> str:
+    s = re.sub(r"[^a-z0-9]+", "_", (text or "").strip().lower())
+    s = re.sub(r"_+", "_", s).strip("_")
+    return s or "unknown"
+
+
+def _resolve_gemini_model_tag(explicit_tag: str, dotenv: str) -> str:
+    if explicit_tag.strip():
+        tag = _slugify(explicit_tag)
+        return tag if tag.startswith("gemini_") else f"gemini_{tag}"
+    cfg = load_llm_config(dotenv or None)
+    model = cfg.gemini_model or "gemini_model"
+    return f"gemini_{_slugify(model)}"
+
+
+def _case_specs(gemini_model_tag: str) -> Dict[str, CaseSpec]:
     out_root = ROOT / "outputs" / "i2t2b"
     gt_root = ROOT / "datasets"
-    return {
+    specs = {
         "v1_openai": CaseSpec(
             key="v1_openai",
             label="v1/OpenAI",
@@ -161,6 +188,36 @@ def _case_specs() -> Dict[str, CaseSpec]:
             baseline_agent_subdir="rebuild_world_agentexec_real_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_self_refine_no_gt_tuned",
         ),
     }
+    gemini_short = _slugify(gemini_model_tag).replace("gemini_", "gm_", 1)
+    specs["v1_gemini"] = CaseSpec(
+        key="v1_gemini",
+        label="v1/Gemini",
+        dataset_name="buildings_100_v1",
+        provider="gemini",
+        model_tag=gemini_model_tag,
+        model_short_tag=gemini_short,
+        outputs_root=out_root / "buildings_100_v1",
+        gt_root=gt_root / "buildings_100_v1",
+        description_subdir=f"description_{gemini_model_tag}",
+        base_plan_subdir=f"rebuild_plan_schema_material_v5_repair_{gemini_model_tag}",
+        baseline_renderer_subdir=f"rebuild_world_schema_material_v5_repair_{gemini_model_tag}_self_refine_no_gt_tuned",
+        baseline_agent_subdir=f"rebuild_world_agentexec_real_schema_material_v5_repair_{gemini_model_tag}_self_refine_no_gt_tuned",
+    )
+    specs["v4_gemini"] = CaseSpec(
+        key="v4_gemini",
+        label="v4/Gemini",
+        dataset_name="buildings_100_v4",
+        provider="gemini",
+        model_tag=gemini_model_tag,
+        model_short_tag=gemini_short,
+        outputs_root=out_root / "buildings_100_v4",
+        gt_root=gt_root / "buildings_100_v4",
+        description_subdir=f"description_{gemini_model_tag}",
+        base_plan_subdir=f"rebuild_plan_schema_material_v5_repair_{gemini_model_tag}",
+        baseline_renderer_subdir=f"rebuild_world_schema_material_v5_repair_{gemini_model_tag}_self_refine_no_gt_tuned",
+        baseline_agent_subdir=f"rebuild_world_agentexec_real_schema_material_v5_repair_{gemini_model_tag}_self_refine_no_gt_tuned",
+    )
+    return specs
 
 
 def _list_buildings(root: Path, pattern: str, limit: int) -> List[Path]:
@@ -626,7 +683,8 @@ def main() -> None:
     args = parse_args()
     py = sys.executable
 
-    all_cases = _case_specs()
+    gemini_model_tag = _resolve_gemini_model_tag(str(args.gemini_model_tag), str(args.dotenv))
+    all_cases = _case_specs(gemini_model_tag)
     all_variants = _variant_specs()
     selected_cases = [c.strip() for c in str(args.cases).split(",") if c.strip()]
     selected_variants = [v.strip() for v in str(args.variants).split(",") if v.strip()]

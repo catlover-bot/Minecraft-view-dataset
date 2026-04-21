@@ -1,0 +1,233 @@
+{
+  "created_at": "2026-04-17T15:17:05.850527+00:00",
+  "study": "llm_authored_10_diagnostic",
+  "provider_tag": "openai_gpt_5_mini",
+  "separation_note": "Diagnostic set only. Do not mix with main/supplementary/execution-gap benchmark claims.",
+  "source_dataset_root": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10",
+  "outputs_root": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/llm_authored_10",
+  "description_summary": {
+    "evaluated": 10,
+    "auto_score_pct": 72.70506338203705,
+    "strict_material_f1_pct": 58.62626262626263,
+    "coarse_material_f1_pct": 83.11904761904762,
+    "dimension_score_pct": 57.349690757585506
+  },
+  "direct_rebuild_summary": {
+    "evaluated": 10,
+    "iou_pct": 22.46635566489185,
+    "f1_pct": 36.221553234829464,
+    "material_match_pct": 17.99923510213229,
+    "correct_placement_pct": 4.7668222528452775,
+    "repair_edit_distance": 3.0427007552337484
+  },
+  "structured_rebuild_summary": {
+    "evaluated": 10,
+    "iou_pct": 20.489561020762174,
+    "f1_pct": 33.46930874235656,
+    "material_match_pct": 30.48581270248484,
+    "correct_placement_pct": 7.712307296655293,
+    "repair_edit_distance": 3.0045325245544867
+  },
+  "comparison_delta_structured_minus_direct": {
+    "iou_pct_point": -1.9767946441296758,
+    "f1_pct_point": -2.7522444924729053,
+    "material_match_pct_point": 12.48657760035255,
+    "correct_placement_pct_point": 2.9454850438100157,
+    "repair_edit_distance_delta": -0.03816823067926167
+  },
+  "difficulty_breakdown": {
+    "simple": {
+      "n_cases": 3,
+      "direct": {
+        "iou": 22.405148630791935,
+        "f1": 36.35281239861321,
+        "material_match": 23.698909449098345,
+        "correct_placement_rate": 6.510304685534001,
+        "normalized_edit_distance": 3.4585898692184203
+      },
+      "structured": {
+        "iou": 17.64422029919562,
+        "f1": 29.988416212960047,
+        "material_match": 41.26329346205731,
+        "correct_placement_rate": 8.09082081861714,
+        "normalized_edit_distance": 3.7438655986425005
+      }
+    },
+    "medium": {
+      "n_cases": 4,
+      "direct": {
+        "iou": 20.990072956469643,
+        "f1": 34.00914583780803,
+        "material_match": 13.917629466216885,
+        "correct_placement_rate": 2.6209706151843166,
+        "normalized_edit_distance": 2.9318742941481606
+      },
+      "structured": {
+        "iou": 19.359852555998447,
+        "f1": 32.05748249217773,
+        "material_match": 20.903194573640658,
+        "correct_placement_rate": 5.8605033477114725,
+        "normalized_edit_distance": 2.8954970700976688
+      }
+    },
+    "complex": {
+      "n_cases": 3,
+      "direct": {
+        "iou": 24.495939643554724,
+        "f1": 39.04017060040768,
+        "material_match": 17.74170160305344,
+        "correct_placement_rate": 5.884475337037834,
+        "normalized_edit_distance": 2.7745802560298602
+      },
+      "structured": {
+        "iou": 24.84117969534704,
+        "f1": 38.83263627199152,
+        "material_match": 32.4851561147046,
+        "correct_placement_rate": 9.802865706618547,
+        "normalized_edit_distance": 2.410580056408897
+      }
+    }
+  },
+  "case_table": [
+    {
+      "case_id": "llm_case_001",
+      "difficulty": "simple",
+      "direct_iou_pct": 15.989717223650384,
+      "structured_iou_pct": 18.633034987794954,
+      "direct_f1_pct": 27.5709219858156,
+      "structured_f1_pct": 31.41289437585734,
+      "direct_material_pct": 18.006430868167204,
+      "structured_material_pct": 32.751091703056765,
+      "direct_correct_placement_pct": 2.879177377892031,
+      "structured_correct_placement_pct": 6.538796861377507,
+      "direct_edit_distance": 6.07395498392283,
+      "structured_edit_distance": 3.710610932475884
+    },
+    {
+      "case_id": "llm_case_002",
+      "difficulty": "simple",
+      "direct_iou_pct": 23.7012987012987,
+      "structured_iou_pct": 17.575368826170624,
+      "direct_f1_pct": 38.320209973753286,
+      "structured_f1_pct": 29.89634478996181,
+      "direct_material_pct": 27.054794520547947,
+      "structured_material_pct": 58.3941605839416,
+      "direct_correct_placement_pct": 7.7986179664363275,
+      "structured_correct_placement_pct": 12.102874432677762,
+      "direct_edit_distance": 2.2563600782778863,
+      "structured_edit_distance": 2.7377690802348336
+    },
+    {
+      "case_id": "llm_case_003",
+      "difficulty": "simple",
+      "direct_iou_pct": 27.524429967426713,
+      "structured_iou_pct": 16.724257083621286,
+      "direct_f1_pct": 43.16730523627076,
+      "structured_f1_pct": 28.656009473060983,
+      "direct_material_pct": 26.035502958579883,
+      "structured_material_pct": 32.64462809917356,
+      "direct_correct_placement_pct": 8.853118712273641,
+      "structured_correct_placement_pct": 5.630791161796151,
+      "direct_edit_distance": 2.0454545454545454,
+      "structured_edit_distance": 4.783216783216783
+    },
+    {
+      "case_id": "llm_case_004",
+      "difficulty": "medium",
+      "direct_iou_pct": 21.51829601310759,
+      "structured_iou_pct": 25.58430717863105,
+      "direct_f1_pct": 35.41573033707865,
+      "structured_f1_pct": 40.74443336656696,
+      "direct_material_pct": 2.284263959390863,
+      "structured_material_pct": 64.11092985318108,
+      "direct_correct_placement_pct": 0.6189821182943603,
+      "structured_correct_placement_pct": 17.560321715817693,
+      "direct_edit_distance": 2.363164721141375,
+      "structured_edit_distance": 2.5979247730220494
+    },
+    {
+      "case_id": "llm_case_005",
+      "difficulty": "medium",
+      "direct_iou_pct": 33.76623376623377,
+      "structured_iou_pct": 23.06338028169014,
+      "direct_f1_pct": 50.48543689320388,
+      "structured_f1_pct": 37.48211731044349,
+      "direct_material_pct": 4.532967032967033,
+      "structured_material_pct": 15.648854961832063,
+      "direct_correct_placement_pct": 1.9526627218934909,
+      "structured_correct_placement_pct": 5.118601747815231,
+      "direct_edit_distance": 1.7780569514237856,
+      "structured_edit_distance": 1.8341708542713568
+    },
+    {
+      "case_id": "llm_case_006",
+      "difficulty": "medium",
+      "direct_iou_pct": 15.290215588723052,
+      "structured_iou_pct": 10.86398631308811,
+      "direct_f1_pct": 26.524741081703105,
+      "structured_f1_pct": 19.598765432098766,
+      "direct_material_pct": 5.856832971800434,
+      "structured_material_pct": 0.0,
+      "direct_correct_placement_pct": 0.9598293636686812,
+      "structured_correct_placement_pct": 0.0,
+      "direct_edit_distance": 4.506787330316742,
+      "structured_edit_distance": 3.526395173453997
+    },
+    {
+      "case_id": "llm_case_007",
+      "difficulty": "medium",
+      "direct_iou_pct": 13.385546457814169,
+      "structured_iou_pct": 17.927736450584483,
+      "direct_f1_pct": 23.61067503924647,
+      "structured_f1_pct": 30.4046138596017,
+      "direct_material_pct": 42.99645390070922,
+      "structured_material_pct": 3.8529934795494962,
+      "direct_correct_placement_pct": 6.952408256880734,
+      "structured_correct_placement_pct": 0.7630899272129608,
+      "direct_edit_distance": 3.0794881737107405,
+      "structured_edit_distance": 3.6234974796432726
+    },
+    {
+      "case_id": "llm_case_008",
+      "difficulty": "complex",
+      "direct_iou_pct": 29.905992949471212,
+      "structured_iou_pct": 30.170428374021192,
+      "direct_f1_pct": 46.04251469923112,
+      "structured_f1_pct": 46.35527246992215,
+      "direct_material_pct": 19.90831696136215,
+      "structured_material_pct": 21.323155216284988,
+      "direct_correct_placement_pct": 8.896693005560433,
+      "structured_correct_placement_pct": 7.962751805397188,
+      "direct_edit_distance": 1.4931592039800996,
+      "structured_edit_distance": 1.8949004975124377
+    },
+    {
+      "case_id": "llm_case_009",
+      "difficulty": "complex",
+      "direct_iou_pct": 17.088851742317086,
+      "structured_iou_pct": 11.620635747785304,
+      "direct_f1_pct": 29.189545354711182,
+      "structured_f1_pct": 20.821661998132587,
+      "direct_material_pct": 18.510158013544018,
+      "structured_material_pct": 36.62182361733931,
+      "direct_correct_placement_pct": 3.2241153342070774,
+      "structured_correct_placement_pct": 4.94949494949495,
+      "direct_edit_distance": 5.10230352303523,
+      "structured_edit_distance": 3.734417344173442
+    },
+    {
+      "case_id": "llm_case_010",
+      "difficulty": "complex",
+      "direct_iou_pct": 26.492974238875878,
+      "structured_iou_pct": 32.73247496423462,
+      "direct_f1_pct": 41.88845174728072,
+      "structured_f1_pct": 49.32097434791981,
+      "direct_material_pct": 14.806629834254142,
+      "structured_material_pct": 39.51048951048951,
+      "direct_correct_placement_pct": 5.532617671345995,
+      "structured_correct_placement_pct": 16.4963503649635,
+      "direct_edit_distance": 1.7282780410742495,
+      "structured_edit_distance": 1.602422327540811
+    }
+  ]
+}

@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import socket
 import subprocess
 import sys
@@ -11,6 +12,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List
 
+from tools.llm_config import load_llm_config
 from tools.plot_experiment_figures import _draw_grouped_bars_svg
 
 
@@ -51,29 +53,69 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--skip_eval", action="store_true")
     parser.add_argument("--skip_figures", action="store_true")
     parser.add_argument("--skip_report", action="store_true")
+    parser.add_argument("--dotenv", default="", help="Optional .env path used to resolve Gemini model tag.")
+    parser.add_argument(
+        "--include_gemini_cases",
+        action="store_true",
+        help="Also run v1/v4 Gemini cases using schema_material_v5_repair directories.",
+    )
+    parser.add_argument(
+        "--gemini_model_tag",
+        default="",
+        help=(
+            "Model tag used in output directory names for Gemini. "
+            "Example: gemini_gemini_3_1_pro_preview"
+        ),
+    )
     parser.add_argument("--date_tag", default=date.today().isoformat(), help="Date tag for figure data filename.")
     parser.set_defaults(start_malmo_if_needed=True)
     return parser.parse_args()
 
 
-def _cases(agentexec_mode: str) -> List[Dict[str, str]]:
+def _slugify(text: str) -> str:
+    s = re.sub(r"[^a-z0-9]+", "_", (text or "").strip().lower())
+    s = re.sub(r"_+", "_", s).strip("_")
+    return s or "unknown"
+
+
+def _resolve_gemini_model_tag(explicit_tag: str, dotenv: str) -> str:
+    if explicit_tag.strip():
+        tag = _slugify(explicit_tag)
+        return tag if tag.startswith("gemini_") else f"gemini_{tag}"
+    cfg = load_llm_config(dotenv or None)
+    model = cfg.gemini_model or "gemini_model"
+    return f"gemini_{_slugify(model)}"
+
+
+def _cases(
+    agentexec_mode: str,
+    *,
+    include_gemini_cases: bool,
+    gemini_model_tag: str,
+) -> List[Dict[str, str]]:
     if agentexec_mode == "real":
         agent_openai = "rebuild_world_agentexec_real_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned"
         agent_claude = "rebuild_world_agentexec_real_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_self_refine_no_gt_tuned"
+        agent_gemini = f"rebuild_world_agentexec_real_schema_material_v5_repair_{gemini_model_tag}_self_refine_no_gt_tuned"
         metrics_openai = "execution_gap_openai_tuned_real_agentexec.json"
         metrics_claude = "execution_gap_claude_tuned_real_agentexec.json"
+        metrics_gemini = "execution_gap_gemini_tuned_real_agentexec.json"
     elif agentexec_mode == "hand":
         agent_openai = "rebuild_world_agentexec_hand_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned"
         agent_claude = "rebuild_world_agentexec_hand_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_self_refine_no_gt_tuned"
+        agent_gemini = f"rebuild_world_agentexec_hand_schema_material_v5_repair_{gemini_model_tag}_self_refine_no_gt_tuned"
         metrics_openai = "execution_gap_openai_tuned_hand_agentexec.json"
         metrics_claude = "execution_gap_claude_tuned_hand_agentexec.json"
+        metrics_gemini = "execution_gap_gemini_tuned_hand_agentexec.json"
     else:
         agent_openai = "rebuild_world_agentexec_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned"
         agent_claude = "rebuild_world_agentexec_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_self_refine_no_gt_tuned"
+        agent_gemini = f"rebuild_world_agentexec_schema_material_v5_repair_{gemini_model_tag}_self_refine_no_gt_tuned"
         metrics_openai = "execution_gap_openai_tuned_proxy_agentexec.json"
         metrics_claude = "execution_gap_claude_tuned_proxy_agentexec.json"
+        metrics_gemini = "execution_gap_gemini_tuned_proxy_agentexec.json"
 
-    return [
+    rows = [
         {
             "case_key": "v1_openai",
             "label": "v1/OpenAI",
@@ -111,6 +153,30 @@ def _cases(agentexec_mode: str) -> List[Dict[str, str]]:
             "metrics_name": metrics_claude,
         },
     ]
+    if include_gemini_cases:
+        rows.extend(
+            [
+                {
+                    "case_key": "v1_gemini",
+                    "label": "v1/Gemini",
+                    "dataset_name": "buildings_100_v1",
+                    "model_tag": gemini_model_tag,
+                    "renderer_subdir": f"rebuild_world_schema_material_v5_repair_{gemini_model_tag}_self_refine_no_gt_tuned",
+                    "agent_subdir": agent_gemini,
+                    "metrics_name": metrics_gemini,
+                },
+                {
+                    "case_key": "v4_gemini",
+                    "label": "v4/Gemini",
+                    "dataset_name": "buildings_100_v4",
+                    "model_tag": gemini_model_tag,
+                    "renderer_subdir": f"rebuild_world_schema_material_v5_repair_{gemini_model_tag}_self_refine_no_gt_tuned",
+                    "agent_subdir": agent_gemini,
+                    "metrics_name": metrics_gemini,
+                },
+            ]
+        )
+    return rows
 
 
 def _run(cmd: List[str], env: Dict[str, str] | None = None) -> None:
@@ -296,7 +362,7 @@ def _write_report(
     else:
         lines.append("※ 今回の `agentexec` は、Malmo実行時のブロック正規化を反映した proxy です。")
     lines.append("")
-    lines.append("## 全体（4条件平均）")
+    lines.append(f"## 全体（{len(rows)}条件平均）")
     lines.append("")
     lines.append(f"- IoU: Renderer `{_pct(mean_renderer_iou)}` -> Agent `{_pct(mean_agent_iou)}`（gap `{_pct(mean_renderer_iou - mean_agent_iou)}`）")
     lines.append(f"- F1: Renderer `{_pct(mean_renderer_f1)}` -> Agent `{_pct(mean_agent_f1)}`（gap `{_pct(mean_renderer_f1 - mean_agent_f1)}`）")
@@ -340,7 +406,12 @@ def _write_report(
 def main() -> None:
     args = parse_args()
     py = sys.executable
-    cases = _cases(args.agentexec_mode)
+    gemini_model_tag = _resolve_gemini_model_tag(str(args.gemini_model_tag), str(args.dotenv))
+    cases = _cases(
+        args.agentexec_mode,
+        include_gemini_cases=bool(args.include_gemini_cases),
+        gemini_model_tag=gemini_model_tag,
+    )
     malmo_env = _prepare_malmo_env()
     rows: List[Dict[str, Any]] = []
 

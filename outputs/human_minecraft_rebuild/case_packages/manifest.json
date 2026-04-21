@@ -1,0 +1,1065 @@
+{
+  "created_at": "2026-04-19T15:21:47.366158+00:00",
+  "study_type": "human_minecraft_rebuild_pilot_infrastructure",
+  "scope": "original benchmark only (buildings_100_v1 / buildings_100_v4)",
+  "note": "Protocol/setup only. No human performance claims included.",
+  "source_manifest": "/Users/hirotaka-m/Minecraft-view-dataset/reports/final/original_benchmark_human_image_rebuild_cases.json",
+  "outputs_root": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_minecraft_rebuild",
+  "conditions": [
+    "image_only",
+    "image_plus_description",
+    "image_plus_description_plus_structured_ir"
+  ],
+  "cases": [
+    {
+      "case_id": "v1_building_087",
+      "dataset_split": "v1",
+      "building_id": "building_087",
+      "difficulty": "easy",
+      "selection_reason": "v1でdirect IoUが高い単純構造（flat/1F）をeasy代表として採用。",
+      "style": "simple_house_flat_f1_v087",
+      "profile": "simple",
+      "num_blocks": 621,
+      "bbox": {
+        "xmin": -2,
+        "xmax": 12,
+        "ymin": 3,
+        "ymax": 9,
+        "zmin": -2,
+        "zmax": 13,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "dimensions": {
+        "width": 15,
+        "height": 7,
+        "depth": 16
+      },
+      "local_bbox_template": {
+        "xmin": 0,
+        "xmax": 14,
+        "ymin": 0,
+        "ymax": 6,
+        "zmin": 0,
+        "zmax": 15,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "images_dir": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_087/images",
+      "gt_bbox_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_087/gt/bbox.json",
+      "gt_voxels_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_087/gt/voxels.npy",
+      "description_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_087/description_openai_gpt_5_mini/description.json",
+      "description_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_087/description_anthropic_claude_haiku_4_5_20251001/description.json",
+      "structured_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_087/structured_intermediate_structured_ir_openai_main_orig_20260418/intermediate.json",
+      "structured_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_087/structured_intermediate_structured_ir_claude_main_orig_20260418/intermediate.json",
+      "conditions_supported": [
+        "image_only",
+        "image_plus_description",
+        "image_plus_description_plus_structured_ir"
+      ],
+      "recommended_time_limit_min": 20,
+      "llm_baselines": {
+        "openai_main": {
+          "direct_iou": 0.6369426751592356,
+          "structured_iou": 0.5433962264150943,
+          "direct_f1": 0.7782101167315175,
+          "structured_f1": 0.7041564792176038,
+          "direct_material_match": 0.0,
+          "structured_material_match": 0.006944444444444444,
+          "direct_correct_placement_rate": 0.0,
+          "structured_correct_placement_rate": 0.0049504950495049506,
+          "direct_edit_distance_over_gt": 1.2640901771336555,
+          "structured_edit_distance_over_gt": 1.2753623188405796,
+          "delta_iou": -0.09354644874414131,
+          "delta_edit_distance_over_gt": 0.011272141706924144
+        },
+        "claude_main": {
+          "direct_iou": 0.47387173396674587,
+          "structured_iou": 0.3738562091503268,
+          "direct_f1": 0.6430298146655922,
+          "structured_f1": 0.544243577545195,
+          "direct_material_match": 0.3007518796992481,
+          "structured_material_match": 0.02097902097902098,
+          "direct_correct_placement_rate": 0.1935483870967742,
+          "structured_correct_placement_rate": 0.013953488372093023,
+          "direct_edit_distance_over_gt": 1.1626409017713366,
+          "structured_edit_distance_over_gt": 1.2222222222222223,
+          "delta_iou": -0.10001552481641907,
+          "delta_edit_distance_over_gt": 0.05958132045088571
+        }
+      },
+      "images": [
+        "source_images/rgb_view00_yaw+090.00_pitch+009.10.png",
+        "source_images/rgb_view01_yaw+126.00_pitch+022.62.png",
+        "source_images/rgb_view02_yaw+162.00_pitch+009.10.png",
+        "source_images/rgb_view03_yaw-162.00_pitch+022.62.png",
+        "source_images/rgb_view04_yaw-126.00_pitch+009.10.png",
+        "source_images/rgb_view05_yaw-090.00_pitch+022.62.png",
+        "source_images/rgb_view06_yaw-054.00_pitch+009.10.png",
+        "source_images/rgb_view07_yaw-018.00_pitch+022.62.png",
+        "source_images/rgb_view08_yaw+018.00_pitch+009.10.png",
+        "source_images/rgb_view09_yaw+054.00_pitch+022.62.png",
+        "source_images/rgb_view10_yaw+090.00_pitch+080.00.png",
+        "source_images/rgb_view11_yaw-090.00_pitch+080.00.png"
+      ],
+      "allowed_blocks": [
+        "cobblestone",
+        "glass",
+        "glowstone",
+        "nether_brick",
+        "slab_stone",
+        "stone",
+        "stonebrick",
+        "air"
+      ],
+      "package_dir": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_minecraft_rebuild/case_packages/v1_building_087",
+      "minecraft_submission": {
+        "primary_format": "minecraft_structure_nbt",
+        "secondary_format": "zip_with_structure_nbt",
+        "path_template": "outputs/human_minecraft_rebuild/submissions/<participant_id>/<condition>/v1_building_087/",
+        "required_files_primary": [
+          "structure.nbt",
+          "submission_meta.json"
+        ],
+        "required_files_secondary": [
+          "structure.zip",
+          "submission_meta.json"
+        ],
+        "expected_local_bbox": {
+          "xmin": 0,
+          "xmax": 14,
+          "ymin": 0,
+          "ymax": 6,
+          "zmin": 0,
+          "zmax": 15,
+          "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+          "voxel_axis_order": "Y,X,Z"
+        },
+        "conversion_target": {
+          "bbox": "bbox.json",
+          "voxels": "voxels.npy",
+          "voxel_axis_order": "Y,X,Z"
+        }
+      }
+    },
+    {
+      "case_id": "v1_building_029",
+      "dataset_split": "v1",
+      "building_id": "building_029",
+      "difficulty": "medium",
+      "selection_reason": "v1の中位帯で2階建てgable系。easy/hardの中間難度を代表。",
+      "style": "simple_house_gable_x_f2_v029",
+      "profile": "simple",
+      "num_blocks": 1289,
+      "bbox": {
+        "xmin": -2,
+        "xmax": 14,
+        "ymin": 3,
+        "ymax": 14,
+        "zmin": -2,
+        "zmax": 15,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "dimensions": {
+        "width": 17,
+        "height": 12,
+        "depth": 18
+      },
+      "local_bbox_template": {
+        "xmin": 0,
+        "xmax": 16,
+        "ymin": 0,
+        "ymax": 11,
+        "zmin": 0,
+        "zmax": 17,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "images_dir": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_029/images",
+      "gt_bbox_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_029/gt/bbox.json",
+      "gt_voxels_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_029/gt/voxels.npy",
+      "description_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_029/description_openai_gpt_5_mini/description.json",
+      "description_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_029/description_anthropic_claude_haiku_4_5_20251001/description.json",
+      "structured_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_029/structured_intermediate_structured_ir_openai_main_orig_20260418/intermediate.json",
+      "structured_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_029/structured_intermediate_structured_ir_claude_main_orig_20260418/intermediate.json",
+      "conditions_supported": [
+        "image_only",
+        "image_plus_description",
+        "image_plus_description_plus_structured_ir"
+      ],
+      "recommended_time_limit_min": 30,
+      "llm_baselines": {
+        "openai_main": {
+          "direct_iou": 0.27584689837219534,
+          "structured_iou": 0.367170626349892,
+          "direct_f1": 0.4324137931034483,
+          "structured_f1": 0.5371248025276462,
+          "direct_material_match": 0.18181818181818182,
+          "structured_material_match": 0.4843137254901961,
+          "direct_correct_placement_rate": 0.07076350093109869,
+          "structured_correct_placement_rate": 0.40491803278688526,
+          "direct_edit_distance_over_gt": 1.6749418153607447,
+          "structured_edit_distance_over_gt": 0.8859581070597362,
+          "delta_iou": 0.09132372797769667,
+          "delta_edit_distance_over_gt": -0.7889837083010085
+        },
+        "claude_main": {
+          "direct_iou": 0.23742227247032222,
+          "structured_iou": 0.43577004968062455,
+          "direct_f1": 0.3837368661489265,
+          "structured_f1": 0.6070192782995552,
+          "direct_material_match": 0.3380952380952381,
+          "structured_material_match": 0.7247557003257329,
+          "direct_correct_placement_rate": 0.15777777777777777,
+          "structured_correct_placement_rate": 0.6062670299727521,
+          "direct_edit_distance_over_gt": 1.2622187742435997,
+          "structured_edit_distance_over_gt": 0.747866563227308,
+          "delta_iou": 0.19834777721030233,
+          "delta_edit_distance_over_gt": -0.5143522110162917
+        }
+      },
+      "images": [
+        "source_images/rgb_view00_yaw+090.00_pitch+000.64.png",
+        "source_images/rgb_view01_yaw+126.00_pitch+010.56.png",
+        "source_images/rgb_view02_yaw+162.00_pitch+000.64.png",
+        "source_images/rgb_view03_yaw-162.00_pitch+010.56.png",
+        "source_images/rgb_view04_yaw-126.00_pitch+000.64.png",
+        "source_images/rgb_view05_yaw-090.00_pitch+010.56.png",
+        "source_images/rgb_view06_yaw-054.00_pitch+000.64.png",
+        "source_images/rgb_view07_yaw-018.00_pitch+010.56.png",
+        "source_images/rgb_view08_yaw+018.00_pitch+000.64.png",
+        "source_images/rgb_view09_yaw+054.00_pitch+010.56.png",
+        "source_images/rgb_view10_yaw+090.00_pitch+080.00.png",
+        "source_images/rgb_view11_yaw-090.00_pitch+080.00.png"
+      ],
+      "allowed_blocks": [
+        "glass",
+        "glowstone",
+        "log",
+        "nether_brick",
+        "slab_stone",
+        "stonebrick",
+        "wood",
+        "air"
+      ],
+      "package_dir": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_minecraft_rebuild/case_packages/v1_building_029",
+      "minecraft_submission": {
+        "primary_format": "minecraft_structure_nbt",
+        "secondary_format": "zip_with_structure_nbt",
+        "path_template": "outputs/human_minecraft_rebuild/submissions/<participant_id>/<condition>/v1_building_029/",
+        "required_files_primary": [
+          "structure.nbt",
+          "submission_meta.json"
+        ],
+        "required_files_secondary": [
+          "structure.zip",
+          "submission_meta.json"
+        ],
+        "expected_local_bbox": {
+          "xmin": 0,
+          "xmax": 16,
+          "ymin": 0,
+          "ymax": 11,
+          "zmin": 0,
+          "zmax": 17,
+          "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+          "voxel_axis_order": "Y,X,Z"
+        },
+        "conversion_target": {
+          "bbox": "bbox.json",
+          "voxels": "voxels.npy",
+          "voxel_axis_order": "Y,X,Z"
+        }
+      }
+    },
+    {
+      "case_id": "v1_building_014",
+      "dataset_split": "v1",
+      "building_id": "building_014",
+      "difficulty": "medium",
+      "selection_reason": "v1の中位帯でroof向きが異なるケース。v1内の形状バリエーション確保。",
+      "style": "simple_house_gable_z_f1_v014",
+      "profile": "simple",
+      "num_blocks": 903,
+      "bbox": {
+        "xmin": -2,
+        "xmax": 13,
+        "ymin": 3,
+        "ymax": 10,
+        "zmin": -2,
+        "zmax": 15,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "dimensions": {
+        "width": 16,
+        "height": 8,
+        "depth": 18
+      },
+      "local_bbox_template": {
+        "xmin": 0,
+        "xmax": 15,
+        "ymin": 0,
+        "ymax": 7,
+        "zmin": 0,
+        "zmax": 17,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "images_dir": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_014/images",
+      "gt_bbox_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_014/gt/bbox.json",
+      "gt_voxels_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_014/gt/voxels.npy",
+      "description_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_014/description_openai_gpt_5_mini/description.json",
+      "description_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_014/description_anthropic_claude_haiku_4_5_20251001/description.json",
+      "structured_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_014/structured_intermediate_structured_ir_openai_main_orig_20260418/intermediate.json",
+      "structured_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_014/structured_intermediate_structured_ir_claude_main_orig_20260418/intermediate.json",
+      "conditions_supported": [
+        "image_only",
+        "image_plus_description",
+        "image_plus_description_plus_structured_ir"
+      ],
+      "recommended_time_limit_min": 30,
+      "llm_baselines": {
+        "openai_main": {
+          "direct_iou": 0.24504950495049505,
+          "structured_iou": 0.4269005847953216,
+          "direct_f1": 0.3936381709741551,
+          "structured_f1": 0.5983606557377049,
+          "direct_material_match": 0.6323232323232323,
+          "structured_material_match": 0.7031963470319634,
+          "direct_correct_placement_rate": 0.19416873449131514,
+          "structured_correct_placement_rate": 0.5490196078431373,
+          "direct_edit_distance_over_gt": 1.8903654485049834,
+          "structured_edit_distance_over_gt": 0.7951273532668881,
+          "delta_iou": 0.18185107984482657,
+          "delta_edit_distance_over_gt": -1.0952380952380953
+        },
+        "claude_main": {
+          "direct_iou": 0.275974025974026,
+          "structured_iou": 0.44345503116651824,
+          "direct_f1": 0.43256997455470736,
+          "structured_f1": 0.6144355336212214,
+          "direct_material_match": 0.6029411764705882,
+          "structured_material_match": 0.5,
+          "direct_correct_placement_rate": 0.3064275037369208,
+          "structured_correct_placement_rate": 0.3467966573816156,
+          "direct_edit_distance_over_gt": 1.1373200442967886,
+          "structured_edit_distance_over_gt": 0.9678848283499446,
+          "delta_iou": 0.16748100519249226,
+          "delta_edit_distance_over_gt": -0.16943521594684396
+        }
+      },
+      "images": [
+        "source_images/rgb_view00_yaw+090.00_pitch+006.59.png",
+        "source_images/rgb_view01_yaw+126.00_pitch+019.13.png",
+        "source_images/rgb_view02_yaw+162.00_pitch+006.59.png",
+        "source_images/rgb_view03_yaw-162.00_pitch+019.13.png",
+        "source_images/rgb_view04_yaw-126.00_pitch+006.59.png",
+        "source_images/rgb_view05_yaw-090.00_pitch+019.13.png",
+        "source_images/rgb_view06_yaw-054.00_pitch+006.59.png",
+        "source_images/rgb_view07_yaw-018.00_pitch+019.13.png",
+        "source_images/rgb_view08_yaw+018.00_pitch+006.59.png",
+        "source_images/rgb_view09_yaw+054.00_pitch+019.13.png",
+        "source_images/rgb_view10_yaw+090.00_pitch+080.00.png",
+        "source_images/rgb_view11_yaw-090.00_pitch+080.00.png"
+      ],
+      "allowed_blocks": [
+        "brick",
+        "glass",
+        "glowstone",
+        "quartz_block",
+        "sandstone",
+        "slab_stone",
+        "stonebrick",
+        "wood",
+        "air"
+      ],
+      "package_dir": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_minecraft_rebuild/case_packages/v1_building_014",
+      "minecraft_submission": {
+        "primary_format": "minecraft_structure_nbt",
+        "secondary_format": "zip_with_structure_nbt",
+        "path_template": "outputs/human_minecraft_rebuild/submissions/<participant_id>/<condition>/v1_building_014/",
+        "required_files_primary": [
+          "structure.nbt",
+          "submission_meta.json"
+        ],
+        "required_files_secondary": [
+          "structure.zip",
+          "submission_meta.json"
+        ],
+        "expected_local_bbox": {
+          "xmin": 0,
+          "xmax": 15,
+          "ymin": 0,
+          "ymax": 7,
+          "zmin": 0,
+          "zmax": 17,
+          "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+          "voxel_axis_order": "Y,X,Z"
+        },
+        "conversion_target": {
+          "bbox": "bbox.json",
+          "voxels": "voxels.npy",
+          "voxel_axis_order": "Y,X,Z"
+        }
+      }
+    },
+    {
+      "case_id": "v1_building_017",
+      "dataset_split": "v1",
+      "building_id": "building_017",
+      "difficulty": "hard",
+      "selection_reason": "v1の低IoU帯。簡素カテゴリでも失敗しやすいケースをhard代表として採用。",
+      "style": "simple_house_gable_x_f2_v017",
+      "profile": "simple",
+      "num_blocks": 1220,
+      "bbox": {
+        "xmin": -2,
+        "xmax": 16,
+        "ymin": 3,
+        "ymax": 15,
+        "zmin": -2,
+        "zmax": 12,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "dimensions": {
+        "width": 19,
+        "height": 13,
+        "depth": 15
+      },
+      "local_bbox_template": {
+        "xmin": 0,
+        "xmax": 18,
+        "ymin": 0,
+        "ymax": 12,
+        "zmin": 0,
+        "zmax": 14,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "images_dir": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_017/images",
+      "gt_bbox_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_017/gt/bbox.json",
+      "gt_voxels_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v1/building_017/gt/voxels.npy",
+      "description_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_017/description_openai_gpt_5_mini/description.json",
+      "description_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_017/description_anthropic_claude_haiku_4_5_20251001/description.json",
+      "structured_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_017/structured_intermediate_structured_ir_openai_main_orig_20260418/intermediate.json",
+      "structured_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v1/building_017/structured_intermediate_structured_ir_claude_main_orig_20260418/intermediate.json",
+      "conditions_supported": [
+        "image_only",
+        "image_plus_description",
+        "image_plus_description_plus_structured_ir"
+      ],
+      "recommended_time_limit_min": 40,
+      "llm_baselines": {
+        "openai_main": {
+          "direct_iou": 0.22736842105263158,
+          "structured_iou": 0.34182908545727136,
+          "direct_f1": 0.3704974271012007,
+          "structured_f1": 0.5094972067039106,
+          "direct_material_match": 0.7129629629629629,
+          "structured_material_match": 0.7017543859649122,
+          "direct_correct_placement_rate": 0.22713864306784662,
+          "structured_correct_placement_rate": 0.5614035087719298,
+          "direct_edit_distance_over_gt": 1.6311475409836065,
+          "structured_edit_distance_over_gt": 0.8311475409836065,
+          "delta_iou": 0.11446066440463978,
+          "delta_edit_distance_over_gt": -0.7999999999999999
+        },
+        "claude_main": {
+          "direct_iou": 0.12116564417177914,
+          "structured_iou": 0.30454545454545456,
+          "direct_f1": 0.2161422708618331,
+          "structured_f1": 0.46689895470383275,
+          "direct_material_match": 0.22784810126582278,
+          "structured_material_match": 0.6915422885572139,
+          "direct_correct_placement_rate": 0.1487603305785124,
+          "structured_correct_placement_rate": 0.5537848605577689,
+          "direct_edit_distance_over_gt": 1.039344262295082,
+          "structured_edit_distance_over_gt": 0.8540983606557377,
+          "delta_iou": 0.18337981037367543,
+          "delta_edit_distance_over_gt": -0.18524590163934418
+        }
+      },
+      "images": [
+        "source_images/rgb_view00_yaw+090.00_pitch+000.65.png",
+        "source_images/rgb_view01_yaw+126.00_pitch+008.65.png",
+        "source_images/rgb_view02_yaw+162.00_pitch+000.65.png",
+        "source_images/rgb_view03_yaw-162.00_pitch+008.65.png",
+        "source_images/rgb_view04_yaw-126.00_pitch+000.65.png",
+        "source_images/rgb_view05_yaw-090.00_pitch+008.65.png",
+        "source_images/rgb_view06_yaw-054.00_pitch+000.65.png",
+        "source_images/rgb_view07_yaw-018.00_pitch+008.65.png",
+        "source_images/rgb_view08_yaw+018.00_pitch+000.65.png",
+        "source_images/rgb_view09_yaw+054.00_pitch+008.65.png",
+        "source_images/rgb_view10_yaw+090.00_pitch+080.00.png",
+        "source_images/rgb_view11_yaw-090.00_pitch+080.00.png"
+      ],
+      "allowed_blocks": [
+        "glass",
+        "glowstone",
+        "log",
+        "nether_brick",
+        "slab_stone",
+        "stonebrick",
+        "wood",
+        "air"
+      ],
+      "package_dir": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_minecraft_rebuild/case_packages/v1_building_017",
+      "minecraft_submission": {
+        "primary_format": "minecraft_structure_nbt",
+        "secondary_format": "zip_with_structure_nbt",
+        "path_template": "outputs/human_minecraft_rebuild/submissions/<participant_id>/<condition>/v1_building_017/",
+        "required_files_primary": [
+          "structure.nbt",
+          "submission_meta.json"
+        ],
+        "required_files_secondary": [
+          "structure.zip",
+          "submission_meta.json"
+        ],
+        "expected_local_bbox": {
+          "xmin": 0,
+          "xmax": 18,
+          "ymin": 0,
+          "ymax": 12,
+          "zmin": 0,
+          "zmax": 14,
+          "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+          "voxel_axis_order": "Y,X,Z"
+        },
+        "conversion_target": {
+          "bbox": "bbox.json",
+          "voxels": "voxels.npy",
+          "voxel_axis_order": "Y,X,Z"
+        }
+      }
+    },
+    {
+      "case_id": "v4_building_012",
+      "dataset_split": "v4",
+      "building_id": "building_012",
+      "difficulty": "easy",
+      "selection_reason": "v4内で相対的に高IoU。複雑側データでも再建築しやすい基準ケース。",
+      "style": "civic_rectangle_dome_corner_towers_v012",
+      "profile": "",
+      "num_blocks": 5681,
+      "bbox": {
+        "xmin": -4,
+        "xmax": 31,
+        "ymin": 3,
+        "ymax": 25,
+        "zmin": -4,
+        "zmax": 26,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "dimensions": {
+        "width": 36,
+        "height": 23,
+        "depth": 31
+      },
+      "local_bbox_template": {
+        "xmin": 0,
+        "xmax": 35,
+        "ymin": 0,
+        "ymax": 22,
+        "zmin": 0,
+        "zmax": 30,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "images_dir": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_012/images",
+      "gt_bbox_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_012/gt/bbox.json",
+      "gt_voxels_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_012/gt/voxels.npy",
+      "description_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_012/description_openai_gpt_5_mini/description.json",
+      "description_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_012/description_anthropic_claude_haiku_4_5_20251001/description.json",
+      "structured_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_012/structured_intermediate_structured_ir_openai_main_orig_20260418/intermediate.json",
+      "structured_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_012/structured_intermediate_structured_ir_claude_main_orig_20260418/intermediate.json",
+      "conditions_supported": [
+        "image_only",
+        "image_plus_description",
+        "image_plus_description_plus_structured_ir"
+      ],
+      "recommended_time_limit_min": 20,
+      "llm_baselines": {
+        "openai_main": {
+          "direct_iou": 0.3488425925925926,
+          "structured_iou": 0.16505625413633354,
+          "direct_f1": 0.5172472970653852,
+          "structured_f1": 0.2833446943876392,
+          "direct_material_match": 0.36562707365627073,
+          "structured_material_match": 0.6423416198877305,
+          "direct_correct_placement_rate": 0.18449690272894692,
+          "structured_correct_placement_rate": 0.25664851009291895,
+          "direct_edit_distance_over_gt": 1.3268790705861644,
+          "structured_edit_distance_over_gt": 1.1888751980285162,
+          "delta_iou": -0.18378633845625905,
+          "delta_edit_distance_over_gt": -0.13800387255764823
+        },
+        "claude_main": {
+          "direct_iou": 0.34965877157767966,
+          "structured_iou": 0.16829934157700338,
+          "direct_f1": 0.5181439619274242,
+          "structured_f1": 0.2881099656357388,
+          "direct_material_match": 0.05884041331802526,
+          "structured_material_match": 0.6555343511450382,
+          "direct_correct_placement_rate": 0.02639371700785374,
+          "structured_correct_placement_rate": 0.43099121706398996,
+          "direct_edit_distance_over_gt": 1.7178313677169512,
+          "structured_edit_distance_over_gt": 0.9751804259813414,
+          "delta_iou": -0.18135943000067628,
+          "delta_edit_distance_over_gt": -0.7426509417356099
+        }
+      },
+      "images": [
+        "source_images/rgb_view00_yaw+090.00_pitch-004.10.png",
+        "source_images/rgb_view01_yaw+126.00_pitch+002.73.png",
+        "source_images/rgb_view02_yaw+162.00_pitch-004.10.png",
+        "source_images/rgb_view03_yaw-162.00_pitch+002.73.png",
+        "source_images/rgb_view04_yaw-126.00_pitch-004.10.png",
+        "source_images/rgb_view05_yaw-090.00_pitch+002.73.png",
+        "source_images/rgb_view06_yaw-054.00_pitch-004.10.png",
+        "source_images/rgb_view07_yaw-018.00_pitch+002.73.png",
+        "source_images/rgb_view08_yaw+018.00_pitch-004.10.png",
+        "source_images/rgb_view09_yaw+054.00_pitch+002.73.png",
+        "source_images/rgb_view10_yaw+090.00_pitch+080.00.png",
+        "source_images/rgb_view11_yaw-090.00_pitch+080.00.png"
+      ],
+      "allowed_blocks": [
+        "brick",
+        "glass",
+        "glowstone",
+        "nether_brick",
+        "quartz_block",
+        "slab_stone",
+        "stonebrick",
+        "wood",
+        "air"
+      ],
+      "package_dir": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_minecraft_rebuild/case_packages/v4_building_012",
+      "minecraft_submission": {
+        "primary_format": "minecraft_structure_nbt",
+        "secondary_format": "zip_with_structure_nbt",
+        "path_template": "outputs/human_minecraft_rebuild/submissions/<participant_id>/<condition>/v4_building_012/",
+        "required_files_primary": [
+          "structure.nbt",
+          "submission_meta.json"
+        ],
+        "required_files_secondary": [
+          "structure.zip",
+          "submission_meta.json"
+        ],
+        "expected_local_bbox": {
+          "xmin": 0,
+          "xmax": 35,
+          "ymin": 0,
+          "ymax": 22,
+          "zmin": 0,
+          "zmax": 30,
+          "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+          "voxel_axis_order": "Y,X,Z"
+        },
+        "conversion_target": {
+          "bbox": "bbox.json",
+          "voxels": "voxels.npy",
+          "voxel_axis_order": "Y,X,Z"
+        }
+      }
+    },
+    {
+      "case_id": "v4_building_007",
+      "dataset_split": "v4",
+      "building_id": "building_007",
+      "difficulty": "medium",
+      "selection_reason": "H-shape + tower要素を持つ中位難度。構造複雑性の中間代表。",
+      "style": "market_h_shape_sawtooth_triple_tower_v007",
+      "profile": "",
+      "num_blocks": 4795,
+      "bbox": {
+        "xmin": -4,
+        "xmax": 36,
+        "ymin": 3,
+        "ymax": 29,
+        "zmin": -4,
+        "zmax": 27,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "dimensions": {
+        "width": 41,
+        "height": 27,
+        "depth": 32
+      },
+      "local_bbox_template": {
+        "xmin": 0,
+        "xmax": 40,
+        "ymin": 0,
+        "ymax": 26,
+        "zmin": 0,
+        "zmax": 31,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "images_dir": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_007/images",
+      "gt_bbox_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_007/gt/bbox.json",
+      "gt_voxels_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_007/gt/voxels.npy",
+      "description_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_007/description_openai_gpt_5_mini/description.json",
+      "description_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_007/description_anthropic_claude_haiku_4_5_20251001/description.json",
+      "structured_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_007/structured_intermediate_structured_ir_openai_main_orig_20260418/intermediate.json",
+      "structured_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_007/structured_intermediate_structured_ir_claude_main_orig_20260418/intermediate.json",
+      "conditions_supported": [
+        "image_only",
+        "image_plus_description",
+        "image_plus_description_plus_structured_ir"
+      ],
+      "recommended_time_limit_min": 30,
+      "llm_baselines": {
+        "openai_main": {
+          "direct_iou": 0.1536928988188416,
+          "structured_iou": 0.1547164042195383,
+          "direct_f1": 0.2664364129764401,
+          "structured_f1": 0.26797299086455717,
+          "direct_material_match": 0.3425925925925926,
+          "structured_material_match": 0.6304347826086957,
+          "direct_correct_placement_rate": 0.11171497584541062,
+          "structured_correct_placement_rate": 0.23132704858593184,
+          "direct_edit_distance_over_gt": 1.3883211678832117,
+          "structured_edit_distance_over_gt": 1.2310740354535974,
+          "delta_iou": 0.001023505400696706,
+          "delta_edit_distance_over_gt": -0.1572471324296143
+        },
+        "claude_main": {
+          "direct_iou": 0.19756458404461136,
+          "structured_iou": 0.20065189048239895,
+          "direct_f1": 0.32994393233868674,
+          "structured_f1": 0.334238245194918,
+          "direct_material_match": 0.14112903225806453,
+          "structured_material_match": 0.705003248862898,
+          "direct_correct_placement_rate": 0.04277234636871508,
+          "structured_correct_placement_rate": 0.24580879021295876,
+          "direct_edit_distance_over_gt": 1.7814389989572472,
+          "structured_edit_distance_over_gt": 1.3733055265901981,
+          "delta_iou": 0.003087306437787596,
+          "delta_edit_distance_over_gt": -0.4081334723670491
+        }
+      },
+      "images": [
+        "source_images/rgb_view00_yaw+090.00_pitch-004.14.png",
+        "source_images/rgb_view01_yaw+126.00_pitch+002.76.png",
+        "source_images/rgb_view02_yaw+162.00_pitch-004.14.png",
+        "source_images/rgb_view03_yaw-162.00_pitch+002.76.png",
+        "source_images/rgb_view04_yaw-126.00_pitch-004.14.png",
+        "source_images/rgb_view05_yaw-090.00_pitch+002.76.png",
+        "source_images/rgb_view06_yaw-054.00_pitch-004.14.png",
+        "source_images/rgb_view07_yaw-018.00_pitch+002.76.png",
+        "source_images/rgb_view08_yaw+018.00_pitch-004.14.png",
+        "source_images/rgb_view09_yaw+054.00_pitch+002.76.png",
+        "source_images/rgb_view10_yaw+090.00_pitch+080.00.png",
+        "source_images/rgb_view11_yaw-090.00_pitch+080.00.png"
+      ],
+      "allowed_blocks": [
+        "cobblestone",
+        "glass",
+        "quartz_block",
+        "sea_lantern",
+        "slab_stone",
+        "stonebrick",
+        "wood",
+        "air"
+      ],
+      "package_dir": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_minecraft_rebuild/case_packages/v4_building_007",
+      "minecraft_submission": {
+        "primary_format": "minecraft_structure_nbt",
+        "secondary_format": "zip_with_structure_nbt",
+        "path_template": "outputs/human_minecraft_rebuild/submissions/<participant_id>/<condition>/v4_building_007/",
+        "required_files_primary": [
+          "structure.nbt",
+          "submission_meta.json"
+        ],
+        "required_files_secondary": [
+          "structure.zip",
+          "submission_meta.json"
+        ],
+        "expected_local_bbox": {
+          "xmin": 0,
+          "xmax": 40,
+          "ymin": 0,
+          "ymax": 26,
+          "zmin": 0,
+          "zmax": 31,
+          "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+          "voxel_axis_order": "Y,X,Z"
+        },
+        "conversion_target": {
+          "bbox": "bbox.json",
+          "voxels": "voxels.npy",
+          "voxel_axis_order": "Y,X,Z"
+        }
+      }
+    },
+    {
+      "case_id": "v4_building_076",
+      "dataset_split": "v4",
+      "building_id": "building_076",
+      "difficulty": "hard",
+      "selection_reason": "v4低IoU帯の複雑形状。困難ケース代表として採用。",
+      "style": "library_h_shape_ridge_corner_mid_mix_v076",
+      "profile": "",
+      "num_blocks": 6986,
+      "bbox": {
+        "xmin": -4,
+        "xmax": 34,
+        "ymin": 3,
+        "ymax": 34,
+        "zmin": -3,
+        "zmax": 32,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "dimensions": {
+        "width": 39,
+        "height": 32,
+        "depth": 36
+      },
+      "local_bbox_template": {
+        "xmin": 0,
+        "xmax": 38,
+        "ymin": 0,
+        "ymax": 31,
+        "zmin": 0,
+        "zmax": 35,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "images_dir": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_076/images",
+      "gt_bbox_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_076/gt/bbox.json",
+      "gt_voxels_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_076/gt/voxels.npy",
+      "description_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_076/description_openai_gpt_5_mini/description.json",
+      "description_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_076/description_anthropic_claude_haiku_4_5_20251001/description.json",
+      "structured_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_076/structured_intermediate_structured_ir_openai_main_orig_20260418/intermediate.json",
+      "structured_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_076/structured_intermediate_structured_ir_claude_main_orig_20260418/intermediate.json",
+      "conditions_supported": [
+        "image_only",
+        "image_plus_description",
+        "image_plus_description_plus_structured_ir"
+      ],
+      "recommended_time_limit_min": 40,
+      "llm_baselines": {
+        "openai_main": {
+          "direct_iou": 0.026147506039505473,
+          "structured_iou": 0.10877373011800924,
+          "direct_f1": 0.05096247057194295,
+          "structured_f1": 0.19620546043498377,
+          "direct_material_match": 0.358695652173913,
+          "structured_material_match": 0.0037735849056603774,
+          "direct_correct_placement_rate": 0.28085106382978725,
+          "structured_correct_placement_rate": 0.0010473946059177796,
+          "direct_edit_distance_over_gt": 0.9978528485542514,
+          "structured_edit_distance_over_gt": 1.3943601488691668,
+          "delta_iou": 0.08262622407850377,
+          "delta_edit_distance_over_gt": 0.39650730031491543
+        },
+        "claude_main": {
+          "direct_iou": 0.10550239234449761,
+          "structured_iou": 0.10476669601308011,
+          "direct_f1": 0.19086777753732956,
+          "structured_f1": 0.1896630236794171,
+          "direct_material_match": 0.21315192743764172,
+          "structured_material_match": 0.0,
+          "direct_correct_placement_rate": 0.08333333333333333,
+          "structured_correct_placement_rate": 0.0,
+          "direct_edit_distance_over_gt": 1.169768107643859,
+          "structured_edit_distance_over_gt": 1.138133409676496,
+          "delta_iou": -0.0007356963314174986,
+          "delta_edit_distance_over_gt": -0.03163469796736318
+        }
+      },
+      "images": [
+        "source_images/rgb_view00_yaw+090.00_pitch+000.70.png",
+        "source_images/rgb_view01_yaw+126.00_pitch+008.32.png",
+        "source_images/rgb_view02_yaw+162.00_pitch+000.70.png",
+        "source_images/rgb_view03_yaw-162.00_pitch+008.32.png",
+        "source_images/rgb_view04_yaw-126.00_pitch+000.70.png",
+        "source_images/rgb_view05_yaw-090.00_pitch+008.32.png",
+        "source_images/rgb_view06_yaw-054.00_pitch+000.70.png",
+        "source_images/rgb_view07_yaw-018.00_pitch+008.32.png",
+        "source_images/rgb_view08_yaw+018.00_pitch+000.70.png",
+        "source_images/rgb_view09_yaw+054.00_pitch+008.32.png",
+        "source_images/rgb_view10_yaw+090.00_pitch+077.27.png",
+        "source_images/rgb_view11_yaw-090.00_pitch+077.62.png"
+      ],
+      "allowed_blocks": [
+        "brick",
+        "glass",
+        "quartz_block",
+        "sandstone",
+        "sea_lantern",
+        "slab_stone",
+        "air"
+      ],
+      "package_dir": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_minecraft_rebuild/case_packages/v4_building_076",
+      "minecraft_submission": {
+        "primary_format": "minecraft_structure_nbt",
+        "secondary_format": "zip_with_structure_nbt",
+        "path_template": "outputs/human_minecraft_rebuild/submissions/<participant_id>/<condition>/v4_building_076/",
+        "required_files_primary": [
+          "structure.nbt",
+          "submission_meta.json"
+        ],
+        "required_files_secondary": [
+          "structure.zip",
+          "submission_meta.json"
+        ],
+        "expected_local_bbox": {
+          "xmin": 0,
+          "xmax": 38,
+          "ymin": 0,
+          "ymax": 31,
+          "zmin": 0,
+          "zmax": 35,
+          "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+          "voxel_axis_order": "Y,X,Z"
+        },
+        "conversion_target": {
+          "bbox": "bbox.json",
+          "voxels": "voxels.npy",
+          "voxel_axis_order": "Y,X,Z"
+        }
+      }
+    },
+    {
+      "case_id": "v4_building_086",
+      "dataset_split": "v4",
+      "building_id": "building_086",
+      "difficulty": "hard",
+      "selection_reason": "v4の大規模（高block数）ケース。高複雑・高修復負荷を想定して採用。",
+      "style": "sanctum_octagon_stepped_triple_tower_v086",
+      "profile": "",
+      "num_blocks": 13848,
+      "bbox": {
+        "xmin": -4,
+        "xmax": 38,
+        "ymin": 3,
+        "ymax": 31,
+        "zmin": -3,
+        "zmax": 42,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "dimensions": {
+        "width": 43,
+        "height": 29,
+        "depth": 46
+      },
+      "local_bbox_template": {
+        "xmin": 0,
+        "xmax": 42,
+        "ymin": 0,
+        "ymax": 28,
+        "zmin": 0,
+        "zmax": 45,
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "voxel_axis_order": "Y,X,Z"
+      },
+      "images_dir": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_086/images",
+      "gt_bbox_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_086/gt/bbox.json",
+      "gt_voxels_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/buildings_100_v4/building_086/gt/voxels.npy",
+      "description_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_086/description_openai_gpt_5_mini/description.json",
+      "description_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_086/description_anthropic_claude_haiku_4_5_20251001/description.json",
+      "structured_primary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_086/structured_intermediate_structured_ir_openai_main_orig_20260418/intermediate.json",
+      "structured_secondary_path": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_086/structured_intermediate_structured_ir_claude_main_orig_20260418/intermediate.json",
+      "conditions_supported": [
+        "image_only",
+        "image_plus_description",
+        "image_plus_description_plus_structured_ir"
+      ],
+      "recommended_time_limit_min": 40,
+      "llm_baselines": {
+        "openai_main": {
+          "direct_iou": 0.11540818410839518,
+          "structured_iou": 0.15104166666666666,
+          "direct_f1": 0.20693444023928703,
+          "structured_f1": 0.26244343891402716,
+          "direct_material_match": 0.18584070796460178,
+          "structured_material_match": 0.5781459919390954,
+          "direct_correct_placement_rate": 0.12430939226519337,
+          "structured_correct_placement_rate": 0.4073840328179236,
+          "direct_edit_distance_over_gt": 1.037839399191219,
+          "structured_edit_distance_over_gt": 0.9743645291738879,
+          "delta_iou": 0.03563348255827148,
+          "delta_edit_distance_over_gt": -0.06347487001733099
+        },
+        "claude_main": {
+          "direct_iou": 0.07500475918522749,
+          "structured_iou": 0.09498207885304659,
+          "direct_f1": 0.13954312024083584,
+          "structured_f1": 0.1734860883797054,
+          "direct_material_match": 0.19373942470389172,
+          "structured_material_match": 0.5761973875181422,
+          "direct_correct_placement_rate": 0.07403815066278693,
+          "structured_correct_placement_rate": 0.38959764474975467,
+          "direct_edit_distance_over_gt": 1.1214615829000578,
+          "structured_edit_distance_over_gt": 0.9903235124205662,
+          "delta_iou": 0.0199773196678191,
+          "delta_edit_distance_over_gt": -0.13113807047949166
+        }
+      },
+      "images": [
+        "source_images/rgb_view00_yaw+090.00_pitch+000.69.png",
+        "source_images/rgb_view01_yaw+126.00_pitch+008.27.png",
+        "source_images/rgb_view02_yaw+162.00_pitch+000.69.png",
+        "source_images/rgb_view03_yaw-162.00_pitch+008.27.png",
+        "source_images/rgb_view04_yaw-126.00_pitch+000.69.png",
+        "source_images/rgb_view05_yaw-090.00_pitch+008.27.png",
+        "source_images/rgb_view06_yaw-054.00_pitch+000.69.png",
+        "source_images/rgb_view07_yaw-018.00_pitch+008.27.png",
+        "source_images/rgb_view08_yaw+018.00_pitch+000.69.png",
+        "source_images/rgb_view09_yaw+054.00_pitch+008.27.png",
+        "source_images/rgb_view10_yaw+090.00_pitch+073.83.png",
+        "source_images/rgb_view11_yaw-090.00_pitch+074.30.png"
+      ],
+      "allowed_blocks": [
+        "brick",
+        "glass",
+        "glowstone",
+        "quartz_block",
+        "sandstone",
+        "slab_stone",
+        "stonebrick",
+        "wood",
+        "air"
+      ],
+      "package_dir": "/Users/hirotaka-m/Minecraft-view-dataset/outputs/human_minecraft_rebuild/case_packages/v4_building_086",
+      "minecraft_submission": {
+        "primary_format": "minecraft_structure_nbt",
+        "secondary_format": "zip_with_structure_nbt",
+        "path_template": "outputs/human_minecraft_rebuild/submissions/<participant_id>/<condition>/v4_building_086/",
+        "required_files_primary": [
+          "structure.nbt",
+          "submission_meta.json"
+        ],
+        "required_files_secondary": [
+          "structure.zip",
+          "submission_meta.json"
+        ],
+        "expected_local_bbox": {
+          "xmin": 0,
+          "xmax": 42,
+          "ymin": 0,
+          "ymax": 28,
+          "zmin": 0,
+          "zmax": 45,
+          "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+          "voxel_axis_order": "Y,X,Z"
+        },
+        "conversion_target": {
+          "bbox": "bbox.json",
+          "voxels": "voxels.npy",
+          "voxel_axis_order": "Y,X,Z"
+        }
+      }
+    }
+  ]
+}

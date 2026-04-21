@@ -21,6 +21,7 @@ EXTRA_ARGS=("$@")
 echo "[run_real_failure_intervention_ab.sh] python: $PYTHON_BIN"
 echo "[run_real_failure_intervention_ab.sh] limit: $LIMIT port: $PORT placement_mode: $PLACEMENT_MODE"
 echo "[run_real_failure_intervention_ab.sh] cases: $CASES"
+echo "[run_real_failure_intervention_ab.sh] available cases: v1_openai,v1_claude,v1_gemini,v4_openai,v4_claude,v4_gemini"
 echo "[run_real_failure_intervention_ab.sh] variants: $VARIANTS"
 
 "$PYTHON_BIN" tools/run_real_failure_intervention_ab.py \

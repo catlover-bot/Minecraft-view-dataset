@@ -1,0 +1,176 @@
+{
+  "building": "llm_case_008",
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "description_path": "description_direct/description.json",
+  "mode": "llm",
+  "llm_attempted": true,
+  "llm_failed": false,
+  "prompt_profile": {
+    "name": "baseline_v1",
+    "version": "1",
+    "path": "",
+    "critic_revise_enabled": false,
+    "few_shots_count": 0,
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "system_prompt": "You are a Minecraft reconstruction planner. Return only one strict JSON object with a compact build plan.",
+  "prompt": "You are given a textual building description.\nCreate an executable build plan using ONLY these operation types:\n- fill: axis-aligned cuboid fill\n- carve: axis-aligned cuboid set to air\n- set: single block placement\n\nOutput STRICT JSON with this schema:\n{\n  \"plan_version\": \"v1\",\n  \"bbox\": {\"xmin\": 0, \"xmax\": 0, \"ymin\": 0, \"ymax\": 0, \"zmin\": 0, \"zmax\": 0},\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"operations\": [\n    {\"op\": \"fill\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 1, \"y2\": 1, \"z2\": 1, \"block\": \"stonebrick\", \"purpose\": \"base\"},\n    {\"op\": \"carve\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 0, \"y2\": 0, \"z2\": 0, \"purpose\": \"hollow\"},\n    {\"op\": \"set\", \"x\": 0, \"y\": 0, \"z\": 0, \"block\": \"glowstone\", \"purpose\": \"light\"}\n  ],\n  \"notes\": [\"optional\"]\n}\n\nRules:\n- Coordinates must be integers.\n- Keep bbox anchored near origin and positive when possible.\n- operations count <= 260.\n- Create a complete, coherent building: floor, walls, roof, windows, entrance.\n- Use normalized material IDs when possible.\n\nDescription JSON:\n{\n  \"summary\": \"A tiered pagoda-style tower structure with 2 main floors and a distinctive stepped roof crown. The building features wood plank walls with decorative glass windows, a stone foundation base, and ornamental corner details. The roof consists of multiple receding horizontal slabs creating a pyramid-like silhouette.\",\n  \"building_type\": \"pagoda tower\",\n  \"shape\": {\n    \"overall_form\": \"rectangular tower with stepped pyramidal roof\",\n    \"footprint_hint\": \"rectangle\",\n    \"symmetry\": \"bilateral symmetry along front-back and left-right axes\",\n    \"floors_estimate\": 2,\n    \"roof_type\": \"other\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 12,\n    \"depth\": 10,\n    \"height\": 14\n  },\n  \"materials\": [\n    {\n      \"name\": \"wood\",\n      \"role\": \"wall cladding\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"foundation and trim\",\n      \"confidence\": 0.85\n    },\n    {\n      \"name\": \"glass\",\n      \"role\": \"windows\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"slab_stone\",\n      \"role\": \"roof layers\",\n      \"confidence\": 0.8\n    },\n    {\n      \"name\": \"brick\",\n      \"role\": \"decorative corner blocks\",\n      \"confidence\": 0.7\n    }\n  ],\n  \"elements\": [\n    \"tiered roof with multiple receding slabs\",\n    \"glass windows on both floors\",\n    \"decorative corner ornaments (gold/yellow blocks)\",\n    \"stone foundation base\",\n    \"wooden plank walls\",\n    \"central tower structure\"\n  ],\n  \"rebuild_hints\": [\n    \"Build rectangular base foundation with stonebrick approximately 12×10 blocks\",\n    \"Construct two main floor levels with wood plank walls, each approximately 4-5 blocks tall\",\n    \"Place glass windows symmetrically: 3 windows on upper floor, 2 on lower floor with corner ornaments\",\n    \"Create stepped roof by stacking horizontal stone slabs in receding layers (5-6 layers total)\",\n    \"Ensure each roof layer is progressively smaller, centered on the structure\",\n    \"Add decorative corner blocks (brick/gold) at window corners on lower floor\",\n    \"Maintain bilateral symmetry throughout construction\"\n  ],\n  \"uncertainties\": [\n    \"Exact block dimensions uncertain; estimates based on visual proportions\",\n    \"Interior layout not visible from exterior views\",\n    \"Precise material of decorative corner blocks (appears gold/yellow, could be brick or ore)\",\n    \"Exact number of roof layers and their thickness unclear from angles shown\",\n    \"Door/entrance location not clearly visible in provided views\",\n    \"Whether structure has a basement or extends below visible foundation\"\n  ],\n  \"provider\": \"anthropic\",\n  \"model\": \"claude-haiku-4-5-20251001\",\n  \"building\": \"llm_case_008\",\n  \"created_at\": \"2026-04-17T18:10:44.509595+00:00\",\n  \"llm_seed\": -1\n}",
+  "planner_system_prompt": "You are a Minecraft reconstruction planner. Return only one strict JSON object with a compact build plan.",
+  "planner_prompt": "You are given a textual building description.\nCreate an executable build plan using ONLY these operation types:\n- fill: axis-aligned cuboid fill\n- carve: axis-aligned cuboid set to air\n- set: single block placement\n\nOutput STRICT JSON with this schema:\n{\n  \"plan_version\": \"v1\",\n  \"bbox\": {\"xmin\": 0, \"xmax\": 0, \"ymin\": 0, \"ymax\": 0, \"zmin\": 0, \"zmax\": 0},\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"operations\": [\n    {\"op\": \"fill\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 1, \"y2\": 1, \"z2\": 1, \"block\": \"stonebrick\", \"purpose\": \"base\"},\n    {\"op\": \"carve\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 0, \"y2\": 0, \"z2\": 0, \"purpose\": \"hollow\"},\n    {\"op\": \"set\", \"x\": 0, \"y\": 0, \"z\": 0, \"block\": \"glowstone\", \"purpose\": \"light\"}\n  ],\n  \"notes\": [\"optional\"]\n}\n\nRules:\n- Coordinates must be integers.\n- Keep bbox anchored near origin and positive when possible.\n- operations count <= 260.\n- Create a complete, coherent building: floor, walls, roof, windows, entrance.\n- Use normalized material IDs when possible.\n\nDescription JSON:\n{\n  \"summary\": \"A tiered pagoda-style tower structure with 2 main floors and a distinctive stepped roof crown. The building features wood plank walls with decorative glass windows, a stone foundation base, and ornamental corner details. The roof consists of multiple receding horizontal slabs creating a pyramid-like silhouette.\",\n  \"building_type\": \"pagoda tower\",\n  \"shape\": {\n    \"overall_form\": \"rectangular tower with stepped pyramidal roof\",\n    \"footprint_hint\": \"rectangle\",\n    \"symmetry\": \"bilateral symmetry along front-back and left-right axes\",\n    \"floors_estimate\": 2,\n    \"roof_type\": \"other\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 12,\n    \"depth\": 10,\n    \"height\": 14\n  },\n  \"materials\": [\n    {\n      \"name\": \"wood\",\n      \"role\": \"wall cladding\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"foundation and trim\",\n      \"confidence\": 0.85\n    },\n    {\n      \"name\": \"glass\",\n      \"role\": \"windows\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"slab_stone\",\n      \"role\": \"roof layers\",\n      \"confidence\": 0.8\n    },\n    {\n      \"name\": \"brick\",\n      \"role\": \"decorative corner blocks\",\n      \"confidence\": 0.7\n    }\n  ],\n  \"elements\": [\n    \"tiered roof with multiple receding slabs\",\n    \"glass windows on both floors\",\n    \"decorative corner ornaments (gold/yellow blocks)\",\n    \"stone foundation base\",\n    \"wooden plank walls\",\n    \"central tower structure\"\n  ],\n  \"rebuild_hints\": [\n    \"Build rectangular base foundation with stonebrick approximately 12×10 blocks\",\n    \"Construct two main floor levels with wood plank walls, each approximately 4-5 blocks tall\",\n    \"Place glass windows symmetrically: 3 windows on upper floor, 2 on lower floor with corner ornaments\",\n    \"Create stepped roof by stacking horizontal stone slabs in receding layers (5-6 layers total)\",\n    \"Ensure each roof layer is progressively smaller, centered on the structure\",\n    \"Add decorative corner blocks (brick/gold) at window corners on lower floor\",\n    \"Maintain bilateral symmetry throughout construction\"\n  ],\n  \"uncertainties\": [\n    \"Exact block dimensions uncertain; estimates based on visual proportions\",\n    \"Interior layout not visible from exterior views\",\n    \"Precise material of decorative corner blocks (appears gold/yellow, could be brick or ore)\",\n    \"Exact number of roof layers and their thickness unclear from angles shown\",\n    \"Door/entrance location not clearly visible in provided views\",\n    \"Whether structure has a basement or extends below visible foundation\"\n  ],\n  \"provider\": \"anthropic\",\n  \"model\": \"claude-haiku-4-5-20251001\",\n  \"building\": \"llm_case_008\",\n  \"created_at\": \"2026-04-17T18:10:44.509595+00:00\",\n  \"llm_seed\": -1\n}",
+  "critic_system_prompt": "",
+  "critic_prompt": "",
+  "draft_parse_report": {
+    "method": "extract_json_object",
+    "candidate_count": 23,
+    "selected_candidate_score": 155,
+    "used_ops_array_repair": false,
+    "used_op_objects_repair": false,
+    "jsonish_loader_used": true
+  },
+  "revise_parse_report": {},
+  "temperature": 0.2,
+  "max_tokens": 1800,
+  "llm_seed": -1,
+  "fallback_triggered": false,
+  "coerce_report": {
+    "bbox_source": "root.bbox",
+    "operations_source": "root.operations",
+    "wall_fill_shell_mode": "all",
+    "input_operations_count": 20,
+    "accepted_operations_count": 20,
+    "repaired_operations_count": 2,
+    "expanded_operations_count": 6,
+    "dropped_operations_count": 0,
+    "dropped_examples": [],
+    "pre_dedupe_operations_count": 26,
+    "deduped_operations_count": 26,
+    "duplicate_operations_removed": 0
+  },
+  "fallback_coerce_report": null,
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "wood",
+        "score": 0.95,
+        "source_role": "wall cladding"
+      },
+      "trim": {
+        "block": "stonebrick",
+        "score": 0.85,
+        "source_role": "foundation and trim"
+      },
+      "floor": {
+        "block": "stonebrick",
+        "score": 0.85,
+        "source_role": "foundation and trim"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.9,
+        "source_role": "windows"
+      },
+      "roof": {
+        "block": "slab_stone",
+        "score": 0.8,
+        "source_role": "roof layers"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "light"
+      ],
+      "dropped_unknown_roles": [
+        "ornament"
+      ],
+      "description_overrides": [
+        {
+          "role": "trim",
+          "from": "brick",
+          "to": "stonebrick",
+          "score": 0.85,
+          "reason": "description_preferred"
+        },
+        {
+          "role": "floor",
+          "from": "wood",
+          "to": "stonebrick",
+          "score": 0.85,
+          "reason": "description_preferred"
+        }
+      ],
+      "coherence_repairs": [
+        {
+          "role": "trim",
+          "from": "stonebrick",
+          "to": "stonebrick"
+        }
+      ]
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 28,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 5,
+    "role_fixed_skipped_low_conf_count": 0,
+    "fallback_wall_min_confidence": 0.55,
+    "fallback_wall_suppressed_count": 0,
+    "role_infer_confidence_mean": 0.915384615384615,
+    "role_infer_reasons": {
+      "purpose_hint": 16,
+      "explicit_role": 8,
+      "set_block_family": 2
+    },
+    "self_repair_report": {
+      "added_operations": 5,
+      "added_tags": [
+        "entrance",
+        "light",
+        "light",
+        "light",
+        "light"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 1
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "created_at": "2026-04-17T18:12:07.744452+00:00"
+}

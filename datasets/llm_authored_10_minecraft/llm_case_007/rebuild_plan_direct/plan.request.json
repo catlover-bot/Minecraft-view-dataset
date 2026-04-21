@@ -1,0 +1,198 @@
+{
+  "building": "llm_case_007",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "description_path": "description_direct/description.json",
+  "mode": "llm",
+  "llm_attempted": true,
+  "llm_failed": false,
+  "prompt_profile": {
+    "name": "baseline_v1",
+    "version": "1",
+    "path": "",
+    "critic_revise_enabled": false,
+    "few_shots_count": 0,
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "system_prompt": "You are a Minecraft reconstruction planner. Return only one strict JSON object with a compact build plan.",
+  "prompt": "You are given a textual building description.\nCreate an executable build plan using ONLY these operation types:\n- fill: axis-aligned cuboid fill\n- carve: axis-aligned cuboid set to air\n- set: single block placement\n\nOutput STRICT JSON with this schema:\n{\n  \"plan_version\": \"v1\",\n  \"bbox\": {\"xmin\": 0, \"xmax\": 0, \"ymin\": 0, \"ymax\": 0, \"zmin\": 0, \"zmax\": 0},\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"operations\": [\n    {\"op\": \"fill\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 1, \"y2\": 1, \"z2\": 1, \"block\": \"stonebrick\", \"purpose\": \"base\"},\n    {\"op\": \"carve\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 0, \"y2\": 0, \"z2\": 0, \"purpose\": \"hollow\"},\n    {\"op\": \"set\", \"x\": 0, \"y\": 0, \"z\": 0, \"block\": \"glowstone\", \"purpose\": \"light\"}\n  ],\n  \"notes\": [\"optional\"]\n}\n\nRules:\n- Coordinates must be integers.\n- Keep bbox anchored near origin and positive when possible.\n- operations count <= 260.\n- Create a complete, coherent building: floor, walls, roof, windows, entrance.\n- Use normalized material IDs when possible.\n\nDescription JSON:\n{\n  \"summary\": \"A three-story rectangular stone building with a recessed central courtyard, continuous horizontal bands of windows on each floor, a dark sloped hip-like roof wrapping around the courtyard, and a small raised chimney/tower on one corner. The ground around the building is a shallow dirt moat inside a grass boundary.\",\n  \"building_type\": \"residential_or_apartment_like\",\n  \"shape\": {\n    \"overall_form\": \"rectangular block with central open courtyard (hollow core) and a small corner tower\",\n    \"footprint_hint\": \"rectangle\",\n    \"symmetry\": \"largely symmetric on the long facades; asymmetry introduced by corner tower\",\n    \"floors_estimate\": 3,\n    \"roof_type\": \"hip\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 13,\n    \"depth\": 13,\n    \"height\": 12\n  },\n  \"materials\": [\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"primary_wall\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"glass\",\n      \"role\": \"windows\",\n      \"confidence\": 0.98\n    },\n    {\n      \"name\": \"slab_stone\",\n      \"role\": \"floor_trim/balcony_shelf\",\n      \"confidence\": 0.85\n    },\n    {\n      \"name\": \"brick\",\n      \"role\": \"roof (dark brick, likely netherbrick)\",\n      \"confidence\": 0.8\n    },\n    {\n      \"name\": \"fence\",\n      \"role\": \"uncertain - possibly used for inner courtyard railing\",\n      \"confidence\": 0.25\n    }\n  ],\n  \"elements\": [\n    \"continuous horizontal window strips on each floor (three strips visible on the facade)\",\n    \"stone slab horizontal ledges between floors\",\n    \"stonebrick corner tower/chimney rising above roof on one side\",\n    \"inner open courtyard visible from top-down\",\n    \"single centered entrance projection on one facade (small recessed stair/door area)\",\n    \"glowstone or light blocks beside ground-floor windows (corner accents)\"\n  ],\n  \"rebuild_hints\": [\n    \"Build a hollow rectangular box of stonebrick roughly 13x13 footprint with inner courtyard ~5x5 open to sky.\",\n    \"Divide the exterior into three equal vertical bands for floors; add continuous 1-2 block high glass strips centered in each band across long facades.\",\n    \"Place stone slab ledges between floor bands projecting one block outward.\",\n    \"Construct a dark-slate (netherbrick-like) stepped hip roof that slopes inward around the courtyard; add a 3-4 block high stonebrick tower on one corner that extends above roof with matching dark roof cap.\",\n    \"Add small recessed centered entrance with 2-block high opening and subtle stair; add glowstone blocks at lower corners as light accents.\"\n  ],\n  \"uncertainties\": [\n    \"Exact footprint and courtyard inner dimensions are estimated from top-down images; inner courtyard could be a different size.\",\n    \"Roof material appears dark (netherbrick) but could be another dark wood/brick; roof slope exact profile is estimated.\",\n    \"Ground material around building looks like coarse dirt or podzol; identification is uncertain.\",\n    \"Some small decorative elements (railings, exact light blocks) are not fully visible and are inferred.\"\n  ],\n  \"provider\": \"openai\",\n  \"model\": \"gpt-5-mini\",\n  \"building\": \"llm_case_007\",\n  \"created_at\": \"2026-04-18T07:20:26.955003+00:00\",\n  \"llm_seed\": -1\n}",
+  "planner_system_prompt": "You are a Minecraft reconstruction planner. Return only one strict JSON object with a compact build plan.",
+  "planner_prompt": "You are given a textual building description.\nCreate an executable build plan using ONLY these operation types:\n- fill: axis-aligned cuboid fill\n- carve: axis-aligned cuboid set to air\n- set: single block placement\n\nOutput STRICT JSON with this schema:\n{\n  \"plan_version\": \"v1\",\n  \"bbox\": {\"xmin\": 0, \"xmax\": 0, \"ymin\": 0, \"ymax\": 0, \"zmin\": 0, \"zmax\": 0},\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"operations\": [\n    {\"op\": \"fill\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 1, \"y2\": 1, \"z2\": 1, \"block\": \"stonebrick\", \"purpose\": \"base\"},\n    {\"op\": \"carve\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 0, \"y2\": 0, \"z2\": 0, \"purpose\": \"hollow\"},\n    {\"op\": \"set\", \"x\": 0, \"y\": 0, \"z\": 0, \"block\": \"glowstone\", \"purpose\": \"light\"}\n  ],\n  \"notes\": [\"optional\"]\n}\n\nRules:\n- Coordinates must be integers.\n- Keep bbox anchored near origin and positive when possible.\n- operations count <= 260.\n- Create a complete, coherent building: floor, walls, roof, windows, entrance.\n- Use normalized material IDs when possible.\n\nDescription JSON:\n{\n  \"summary\": \"A three-story rectangular stone building with a recessed central courtyard, continuous horizontal bands of windows on each floor, a dark sloped hip-like roof wrapping around the courtyard, and a small raised chimney/tower on one corner. The ground around the building is a shallow dirt moat inside a grass boundary.\",\n  \"building_type\": \"residential_or_apartment_like\",\n  \"shape\": {\n    \"overall_form\": \"rectangular block with central open courtyard (hollow core) and a small corner tower\",\n    \"footprint_hint\": \"rectangle\",\n    \"symmetry\": \"largely symmetric on the long facades; asymmetry introduced by corner tower\",\n    \"floors_estimate\": 3,\n    \"roof_type\": \"hip\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 13,\n    \"depth\": 13,\n    \"height\": 12\n  },\n  \"materials\": [\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"primary_wall\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"glass\",\n      \"role\": \"windows\",\n      \"confidence\": 0.98\n    },\n    {\n      \"name\": \"slab_stone\",\n      \"role\": \"floor_trim/balcony_shelf\",\n      \"confidence\": 0.85\n    },\n    {\n      \"name\": \"brick\",\n      \"role\": \"roof (dark brick, likely netherbrick)\",\n      \"confidence\": 0.8\n    },\n    {\n      \"name\": \"fence\",\n      \"role\": \"uncertain - possibly used for inner courtyard railing\",\n      \"confidence\": 0.25\n    }\n  ],\n  \"elements\": [\n    \"continuous horizontal window strips on each floor (three strips visible on the facade)\",\n    \"stone slab horizontal ledges between floors\",\n    \"stonebrick corner tower/chimney rising above roof on one side\",\n    \"inner open courtyard visible from top-down\",\n    \"single centered entrance projection on one facade (small recessed stair/door area)\",\n    \"glowstone or light blocks beside ground-floor windows (corner accents)\"\n  ],\n  \"rebuild_hints\": [\n    \"Build a hollow rectangular box of stonebrick roughly 13x13 footprint with inner courtyard ~5x5 open to sky.\",\n    \"Divide the exterior into three equal vertical bands for floors; add continuous 1-2 block high glass strips centered in each band across long facades.\",\n    \"Place stone slab ledges between floor bands projecting one block outward.\",\n    \"Construct a dark-slate (netherbrick-like) stepped hip roof that slopes inward around the courtyard; add a 3-4 block high stonebrick tower on one corner that extends above roof with matching dark roof cap.\",\n    \"Add small recessed centered entrance with 2-block high opening and subtle stair; add glowstone blocks at lower corners as light accents.\"\n  ],\n  \"uncertainties\": [\n    \"Exact footprint and courtyard inner dimensions are estimated from top-down images; inner courtyard could be a different size.\",\n    \"Roof material appears dark (netherbrick) but could be another dark wood/brick; roof slope exact profile is estimated.\",\n    \"Ground material around building looks like coarse dirt or podzol; identification is uncertain.\",\n    \"Some small decorative elements (railings, exact light blocks) are not fully visible and are inferred.\"\n  ],\n  \"provider\": \"openai\",\n  \"model\": \"gpt-5-mini\",\n  \"building\": \"llm_case_007\",\n  \"created_at\": \"2026-04-18T07:20:26.955003+00:00\",\n  \"llm_seed\": -1\n}",
+  "critic_system_prompt": "",
+  "critic_prompt": "",
+  "draft_parse_report": {
+    "method": "operation_object_scan",
+    "candidate_count": 24,
+    "selected_candidate_score": 20,
+    "used_ops_array_repair": false,
+    "used_op_objects_repair": true,
+    "jsonish_loader_used": false
+  },
+  "revise_parse_report": {},
+  "temperature": 0.2,
+  "max_tokens": 1800,
+  "llm_seed": -1,
+  "fallback_triggered": false,
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "wall_fill_shell_mode": "all",
+    "input_operations_count": 22,
+    "accepted_operations_count": 22,
+    "repaired_operations_count": 1,
+    "expanded_operations_count": 3,
+    "dropped_operations_count": 0,
+    "dropped_examples": [],
+    "pre_dedupe_operations_count": 25,
+    "deduped_operations_count": 25,
+    "duplicate_operations_removed": 0
+  },
+  "fallback_coerce_report": null,
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "wall": {
+        "block": "stonebrick",
+        "score": 0.95,
+        "source_role": "primary_wall"
+      },
+      "glass": {
+        "block": "glass",
+        "score": 0.98,
+        "source_role": "windows"
+      },
+      "trim": {
+        "block": "slab_stone",
+        "score": 0.85,
+        "source_role": "floor_trim/balcony_shelf"
+      },
+      "floor": {
+        "block": "slab_stone",
+        "score": 0.85,
+        "source_role": "floor_trim/balcony_shelf"
+      },
+      "roof": {
+        "block": "brick",
+        "score": 0.8,
+        "source_role": "roof (dark brick, likely netherbrick)"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "light"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "brick",
+          "score": 0.8,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "slab_stone",
+          "score": 0.85,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "glass",
+          "from": "<missing>",
+          "to": "glass",
+          "score": 0.98,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "slab_stone",
+          "score": 0.85,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": [
+        {
+          "role": "trim",
+          "from": "slab_stone",
+          "to": "slab_stone"
+        }
+      ]
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 22,
+    "operations_unknown_role_count": 1,
+    "role_fixed_block_count": 5,
+    "role_fixed_skipped_low_conf_count": 1,
+    "fallback_wall_min_confidence": 0.55,
+    "fallback_wall_suppressed_count": 1,
+    "role_infer_confidence_mean": 0.8175999999999998,
+    "role_infer_reasons": {
+      "ground_flat_layer": 2,
+      "explicit_role": 4,
+      "unknown": 1,
+      "purpose_hint": 14,
+      "carve_entrance": 2,
+      "thin_outer_detail": 1,
+      "fallback_wall_suppressed_low_conf": 1
+    },
+    "self_repair_report": {
+      "added_operations": 4,
+      "added_tags": [
+        "light",
+        "light",
+        "light",
+        "light"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "created_at": "2026-04-18T07:23:21.339745+00:00"
+}

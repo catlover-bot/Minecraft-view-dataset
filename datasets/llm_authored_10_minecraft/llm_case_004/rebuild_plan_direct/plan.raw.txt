@@ -1,0 +1,52 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v1",
+  "bbox": { "xmin": 0, "xmax": 10, "ymin": 0, "ymax": 7, "zmin": 0, "zmax": 6 },
+  "palette": {
+    "wall": "brick",
+    "roof": "stone_slab",
+    "trim": "oak_planks",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "oak_planks",
+    "corner": "stonebrick",
+    "slab": "stone_slab"
+  },
+  "operations": [
+    { "op": "fill", "x1": 1, "y1": 0, "z1": 1, "x2": 9, "y2": 0, "z2": 5, "block": "oak_planks", "purpose": "floor" },
+
+    { "op": "fill", "x1": 1, "y1": 0, "z1": 1, "x2": 9, "y2": 0, "z2": 5, "block": "stonebrick", "purpose": "foundation_base (under floor) - visual base layer" },
+
+    { "op": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 1, "y2": 3, "z2": 5, "block": "stonebrick", "purpose": "left front corner pillar" },
+    { "op": "fill", "x1": 9, "y1": 1, "z1": 1, "x2": 9, "y2": 3, "z2": 5, "block": "stonebrick", "purpose": "right front corner pillar" },
+    { "op": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 1, "y2": 3, "z2": 5, "block": "stonebrick", "purpose": "duplicate left (keeps symmetry)" },
+    { "op": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 9, "y2": 3, "z2": 1, "block": "stonebrick", "purpose": "back left/right corner pillars across depth (back row)"},
+    { "op": "fill", "x1": 1, "y1": 1, "z1": 5, "x2": 9, "y2": 3, "z2": 5, "block": "stonebrick", "purpose": "front/back pillars row (framing)"},
+    
+    { "op": "fill", "x1": 2, "y1": 1, "z1": 2, "x2": 8, "y2": 2, "z2": 4, "block": "brick", "purpose": "brick wall infill lower" },
+    { "op": "fill", "x1": 2, "y1": 3, "z1": 2, "x2": 8, "y2": 3, "z2": 4, "block": "brick", "purpose": "brick wall infill upper" },
+
+    { "op": "fill", "x1": 2, "y1": 2, "z1": 1, "x2": 8, "y2": 2, "z2": 1, "block": "oak_planks", "purpose": "front horizontal wood band (mid) - lower" },
+    { "op": "fill", "x1": 2, "y1": 2, "z1": 5, "x2": 8, "y2": 2, "z2": 5, "block": "oak_planks", "purpose": "back horizontal wood band (mid) - lower" },
+    { "op": "fill", "x1": 2, "y1": 3, "z1": 1, "x2": 8, "y2": 3, "z2": 1, "block": "oak_planks", "purpose": "front horizontal wood band (upper)" },
+    { "op": "fill", "x1": 2, "y1": 3, "z1": 5, "x2": 8, "y2": 3, "z2": 5, "block": "oak_planks", "purpose": "back horizontal wood band (upper)" },
+
+    { "op": "carve", "x1": 5, "y1": 1, "z1": 1, "x2": 5, "y2": 1, "z2": 1, "purpose": "entry recessed doorway (remove front brick at floor level)" },
+    { "op": "carve", "x1": 5, "y1": 2, "z1": 1, "x2": 5, "y2": 2, "z2": 1, "purpose": "entry recessed doorway (remove mid wall)" },
+
+    { "op": "set", "x": 5, "y": 0, "z": 0, "block": "stone_slab", "purpose": "front entry platform slab (protruding 2-block platform centered)"},
+    { "op": "set", "x": 5, "y": 1, "z": 0, "block": "stone_slab", "purpose": "front entry step (second slab for 2-block protrusion)"},
+    { "op": "set", "x": 4, "y": 1, "z": 0, "block": "stone_slab", "purpose": "entry platform left slab"},
+    { "op": "set", "x": 6, "y": 1, "z": 0, "block": "stone_slab", "purpose": "entry platform right slab" },
+
+    { "op": "carve", "x1": 3, "y1": 2, "z1": 1, "x2": 3, "y2": 2, "z2": 1, "purpose": "left front window opening (recess)"},
+    { "op": "carve", "x1": 7, "y1": 2, "z1": 1, "x2": 7, "y2": 2, "z2": 1, "purpose": "right front window opening (recess)" },
+
+    { "op": "set", "x": 3, "y": 2, "z": 1, "block": "glass", "purpose": "left front window glass" },
+    { "op": "set", "x": 7, "y": 2, "z": 1, "block": "glass", "purpose": "right front window glass" },
+
+    { "op": "fill", "x1": 2, "y1": 4, "z1": 0, "x2": 8, "y2": 4, "z2": 6, "block": "stone_slab", "purpose": "roof tier 1 - outer slab ring (overhang 1)" },
+
+    { "op": "fill", "x1": 3, "y1": 5, "z1": 1, "x2": 7, "y2": 5, "z2": 5, "block": "stone_slab", "purpose": "roof tier 2" },
+
+    { "op": "fill", "x1": 4, "y1": 6, "z1": 2, "x2": 6, "y2": 6, "z2": 4, "block": "stone_slab", "purpose": "

@@ -1,0 +1,40 @@
+{
+  "case_id": "llm_case_010",
+  "difficulty": "unknown",
+  "title": "Multi-Wing Estate",
+  "images": [],
+  "allowed_blocks": [
+    "brick",
+    "dark_oak_slab",
+    "glass_pane",
+    "glowstone",
+    "planks",
+    "quartz_block",
+    "stone_slab",
+    "stonebrick",
+    "air"
+  ],
+  "build_area": {
+    "xmin": 0,
+    "xmax": 23,
+    "ymin": 3,
+    "ymax": 18,
+    "zmin": -3,
+    "zmax": 19,
+    "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+    "voxel_axis_order": "Y,X,Z"
+  },
+  "submission_format": {
+    "required": [
+      "bbox.json",
+      "voxels.npy"
+    ],
+    "path_template": "submissions/<participant_id>/<condition>/<case_id>/"
+  },
+  "conditions": [
+    "image_only",
+    "image_plus_description",
+    "image_plus_description_plus_structured_ir"
+  ],
+  "recommended_time_limit_min": 25
+}

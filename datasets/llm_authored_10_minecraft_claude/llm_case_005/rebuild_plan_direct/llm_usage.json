@@ -1,0 +1,80 @@
+{
+  "building": "llm_case_005",
+  "stage": "plan",
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "calls": [
+    {
+      "stage": "plan_draft",
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "endpoint": "/v1/messages",
+      "usage": {
+        "input_tokens": 1231,
+        "output_tokens": 1362,
+        "total_tokens": 2593,
+        "raw": {
+          "input_tokens": 1231,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 1362,
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        }
+      },
+      "cost": {
+        "input_tokens": 1231,
+        "output_tokens": 1362,
+        "total_tokens": 2593,
+        "input_price_per_mtok": 0.8,
+        "output_price_per_mtok": 4.0,
+        "input_cost_usd": 0.0009848,
+        "output_cost_usd": 0.005448,
+        "estimated_cost_usd": 0.0064328,
+        "pricing_source": "heuristic_anthropic_haiku"
+      },
+      "parse_report": {
+        "method": "extract_json_object",
+        "candidate_count": 17,
+        "selected_candidate_score": 149,
+        "used_ops_array_repair": false,
+        "used_op_objects_repair": false,
+        "jsonish_loader_used": true
+      }
+    }
+  ],
+  "totals": {
+    "input_tokens": 1231,
+    "output_tokens": 1362,
+    "total_tokens": 2593,
+    "known_cost_calls": 1,
+    "estimated_cost_usd": 0.0064328
+  },
+  "prompt_profile": {
+    "name": "baseline_v1",
+    "version": "1",
+    "path": "",
+    "critic_revise_enabled": false,
+    "few_shots_count": 0,
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "created_at": "2026-04-17T18:11:42.342032+00:00"
+}

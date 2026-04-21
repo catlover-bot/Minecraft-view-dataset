@@ -1,0 +1,207 @@
+{
+  "building": "llm_case_005",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "description_path": "description_direct/description.json",
+  "mode": "llm",
+  "llm_attempted": true,
+  "llm_failed": false,
+  "prompt_profile": {
+    "name": "baseline_v1",
+    "version": "1",
+    "path": "",
+    "critic_revise_enabled": false,
+    "few_shots_count": 0,
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ]
+  },
+  "system_prompt": "You are a Minecraft reconstruction planner. Return only one strict JSON object with a compact build plan.",
+  "prompt": "You are given a textual building description.\nCreate an executable build plan using ONLY these operation types:\n- fill: axis-aligned cuboid fill\n- carve: axis-aligned cuboid set to air\n- set: single block placement\n\nOutput STRICT JSON with this schema:\n{\n  \"plan_version\": \"v1\",\n  \"bbox\": {\"xmin\": 0, \"xmax\": 0, \"ymin\": 0, \"ymax\": 0, \"zmin\": 0, \"zmax\": 0},\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"operations\": [\n    {\"op\": \"fill\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 1, \"y2\": 1, \"z2\": 1, \"block\": \"stonebrick\", \"purpose\": \"base\"},\n    {\"op\": \"carve\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 0, \"y2\": 0, \"z2\": 0, \"purpose\": \"hollow\"},\n    {\"op\": \"set\", \"x\": 0, \"y\": 0, \"z\": 0, \"block\": \"glowstone\", \"purpose\": \"light\"}\n  ],\n  \"notes\": [\"optional\"]\n}\n\nRules:\n- Coordinates must be integers.\n- Keep bbox anchored near origin and positive when possible.\n- operations count <= 260.\n- Create a complete, coherent building: floor, walls, roof, windows, entrance.\n- Use normalized material IDs when possible.\n\nDescription JSON:\n{\n  \"summary\": \"A small symmetrical, single-story rectangular structure with layered offset stone slabs forming a stepped flat/terraced roof. Walls are horizontal planks with stonebrick base and corner/ledge stone accents; glowstone is used as a recessed light/detail. The roof is composed of several concentric rectangular slab tiers with an open central void. Top-down views show a U-shaped roof footprint with an open center corridor.\",\n  \"building_type\": \"small pavilion / temple-like structure\",\n  \"shape\": {\n    \"overall_form\": \"rectangular block with a central open courtyard/void and stepped slab roof tiers\",\n    \"footprint_hint\": \"u_shape\",\n    \"symmetry\": \"bilaterally symmetric along the central front-back axis\",\n    \"floors_estimate\": 1,\n    \"roof_type\": \"other\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 13,\n    \"depth\": 9,\n    \"height\": 6\n  },\n  \"materials\": [\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"foundation / corner blocks / lower trim\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"slab_stone\",\n      \"role\": \"roof tiers and horizontal ledges\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"wood\",\n      \"role\": \"primary wall cladding (horizontal planks)\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"glowstone\",\n      \"role\": \"decorative light inset\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"air\",\n      \"role\": \"open central courtyard and roof void\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"elements\": [\n    \"layered slab roof (multiple concentric rectangular tiers)\",\n    \"horizontal plank walls with stonebrick base\",\n    \"corner stonebrick pillars\",\n    \"glowstone inset lights on front face\",\n    \"central open void / recessed corridor visible from top\"\n  ],\n  \"rebuild_hints\": [\n    \"Use stonebrick for a 1-block high base around the perimeter and stonebrick corner pillars rising 2 blocks high at the front corners.\",\n    \"Build walls 3 blocks high from horizontal wood planks above the stone base; add a 1-block deep stone slab ledge around mid-height on the front facade aligned with glowstone insets.\",\n    \"Create a stepped roof of stone slabs: several progressively smaller rectangular slabs stacked with 1-block vertical spacing to form the tiers, leaving the center open (U-shaped/top-down void).\",\n    \"Place glowstone recessed one block into the front face between the stone corner pillar and the central section on both sides.\",\n    \"Ensure bilateral symmetry across the central front-back axis; the roof tiers overhang slightly on both sides equally.\"\n  ],\n  \"uncertainties\": [\n    \"Exact internal layout and presence of doors/windows are not visible; assumed no full glass windows.\",\n    \"Depth and width measured from images are estimated; actual block counts could differ by a few blocks.\",\n    \"Material identification for the planks assumed to be generic wood planks (wood); could be specific variant (oak, spruce) not distinguishable.\",\n    \"The roof slab material appears to be smooth stone slab but could be another grey slab type; labeled slab_stone with high confidence but not certain.\"\n  ],\n  \"provider\": \"openai\",\n  \"model\": \"gpt-5-mini\",\n  \"building\": \"llm_case_005\",\n  \"created_at\": \"2026-04-18T07:20:03.356459+00:00\",\n  \"llm_seed\": -1\n}",
+  "planner_system_prompt": "You are a Minecraft reconstruction planner. Return only one strict JSON object with a compact build plan.",
+  "planner_prompt": "You are given a textual building description.\nCreate an executable build plan using ONLY these operation types:\n- fill: axis-aligned cuboid fill\n- carve: axis-aligned cuboid set to air\n- set: single block placement\n\nOutput STRICT JSON with this schema:\n{\n  \"plan_version\": \"v1\",\n  \"bbox\": {\"xmin\": 0, \"xmax\": 0, \"ymin\": 0, \"ymax\": 0, \"zmin\": 0, \"zmax\": 0},\n  \"palette\": {\n    \"wall\": \"stonebrick\",\n    \"roof\": \"wood\",\n    \"trim\": \"brick\",\n    \"glass\": \"glass\",\n    \"light\": \"glowstone\",\n    \"floor\": \"wood\"\n  },\n  \"operations\": [\n    {\"op\": \"fill\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 1, \"y2\": 1, \"z2\": 1, \"block\": \"stonebrick\", \"purpose\": \"base\"},\n    {\"op\": \"carve\", \"x1\": 0, \"y1\": 0, \"z1\": 0, \"x2\": 0, \"y2\": 0, \"z2\": 0, \"purpose\": \"hollow\"},\n    {\"op\": \"set\", \"x\": 0, \"y\": 0, \"z\": 0, \"block\": \"glowstone\", \"purpose\": \"light\"}\n  ],\n  \"notes\": [\"optional\"]\n}\n\nRules:\n- Coordinates must be integers.\n- Keep bbox anchored near origin and positive when possible.\n- operations count <= 260.\n- Create a complete, coherent building: floor, walls, roof, windows, entrance.\n- Use normalized material IDs when possible.\n\nDescription JSON:\n{\n  \"summary\": \"A small symmetrical, single-story rectangular structure with layered offset stone slabs forming a stepped flat/terraced roof. Walls are horizontal planks with stonebrick base and corner/ledge stone accents; glowstone is used as a recessed light/detail. The roof is composed of several concentric rectangular slab tiers with an open central void. Top-down views show a U-shaped roof footprint with an open center corridor.\",\n  \"building_type\": \"small pavilion / temple-like structure\",\n  \"shape\": {\n    \"overall_form\": \"rectangular block with a central open courtyard/void and stepped slab roof tiers\",\n    \"footprint_hint\": \"u_shape\",\n    \"symmetry\": \"bilaterally symmetric along the central front-back axis\",\n    \"floors_estimate\": 1,\n    \"roof_type\": \"other\"\n  },\n  \"dimensions_estimate\": {\n    \"width\": 13,\n    \"depth\": 9,\n    \"height\": 6\n  },\n  \"materials\": [\n    {\n      \"name\": \"stonebrick\",\n      \"role\": \"foundation / corner blocks / lower trim\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"slab_stone\",\n      \"role\": \"roof tiers and horizontal ledges\",\n      \"confidence\": 0.95\n    },\n    {\n      \"name\": \"wood\",\n      \"role\": \"primary wall cladding (horizontal planks)\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"glowstone\",\n      \"role\": \"decorative light inset\",\n      \"confidence\": 0.9\n    },\n    {\n      \"name\": \"air\",\n      \"role\": \"open central courtyard and roof void\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"elements\": [\n    \"layered slab roof (multiple concentric rectangular tiers)\",\n    \"horizontal plank walls with stonebrick base\",\n    \"corner stonebrick pillars\",\n    \"glowstone inset lights on front face\",\n    \"central open void / recessed corridor visible from top\"\n  ],\n  \"rebuild_hints\": [\n    \"Use stonebrick for a 1-block high base around the perimeter and stonebrick corner pillars rising 2 blocks high at the front corners.\",\n    \"Build walls 3 blocks high from horizontal wood planks above the stone base; add a 1-block deep stone slab ledge around mid-height on the front facade aligned with glowstone insets.\",\n    \"Create a stepped roof of stone slabs: several progressively smaller rectangular slabs stacked with 1-block vertical spacing to form the tiers, leaving the center open (U-shaped/top-down void).\",\n    \"Place glowstone recessed one block into the front face between the stone corner pillar and the central section on both sides.\",\n    \"Ensure bilateral symmetry across the central front-back axis; the roof tiers overhang slightly on both sides equally.\"\n  ],\n  \"uncertainties\": [\n    \"Exact internal layout and presence of doors/windows are not visible; assumed no full glass windows.\",\n    \"Depth and width measured from images are estimated; actual block counts could differ by a few blocks.\",\n    \"Material identification for the planks assumed to be generic wood planks (wood); could be specific variant (oak, spruce) not distinguishable.\",\n    \"The roof slab material appears to be smooth stone slab but could be another grey slab type; labeled slab_stone with high confidence but not certain.\"\n  ],\n  \"provider\": \"openai\",\n  \"model\": \"gpt-5-mini\",\n  \"building\": \"llm_case_005\",\n  \"created_at\": \"2026-04-18T07:20:03.356459+00:00\",\n  \"llm_seed\": -1\n}",
+  "critic_system_prompt": "",
+  "critic_prompt": "",
+  "draft_parse_report": {
+    "method": "operation_object_scan",
+    "candidate_count": 36,
+    "selected_candidate_score": 20,
+    "used_ops_array_repair": false,
+    "used_op_objects_repair": true,
+    "jsonish_loader_used": false
+  },
+  "revise_parse_report": {},
+  "temperature": 0.2,
+  "max_tokens": 1800,
+  "llm_seed": -1,
+  "fallback_triggered": false,
+  "coerce_report": {
+    "bbox_source": "root.inline_bbox",
+    "operations_source": "root.operations",
+    "wall_fill_shell_mode": "all",
+    "input_operations_count": 34,
+    "accepted_operations_count": 34,
+    "repaired_operations_count": 0,
+    "expanded_operations_count": 0,
+    "dropped_operations_count": 0,
+    "dropped_examples": [],
+    "pre_dedupe_operations_count": 34,
+    "deduped_operations_count": 34,
+    "duplicate_operations_removed": 0
+  },
+  "fallback_coerce_report": null,
+  "validation_report": {
+    "strict_schema": true,
+    "enforce_role_fixed": true,
+    "require_material_budget": true,
+    "material_budget_tolerance": 0.25,
+    "role_fix_min_confidence": 0.7,
+    "prefer_description_palette": true,
+    "max_operations": 260,
+    "required_palette_roles": [
+      "wall",
+      "roof",
+      "trim",
+      "glass",
+      "light",
+      "floor"
+    ],
+    "description_material_hints": {
+      "trim": {
+        "block": "slab_stone",
+        "score": 0.95,
+        "source_role": "roof tiers and horizontal ledges"
+      },
+      "floor": {
+        "block": "stonebrick",
+        "score": 0.9,
+        "source_role": "foundation / corner blocks / lower trim"
+      },
+      "roof": {
+        "block": "slab_stone",
+        "score": 0.95,
+        "source_role": "roof tiers and horizontal ledges"
+      },
+      "wall": {
+        "block": "wood",
+        "score": 0.9,
+        "source_role": "primary wall cladding (horizontal planks)"
+      },
+      "light": {
+        "block": "glowstone",
+        "score": 0.9,
+        "source_role": "decorative light inset"
+      }
+    },
+    "palette_report": {
+      "missing_roles_before_fill": [
+        "glass"
+      ],
+      "dropped_unknown_roles": [],
+      "description_overrides": [
+        {
+          "role": "wall",
+          "from": "<missing>",
+          "to": "wood",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "roof",
+          "from": "<missing>",
+          "to": "slab_stone",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "trim",
+          "from": "<missing>",
+          "to": "slab_stone",
+          "score": 0.95,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "light",
+          "from": "<missing>",
+          "to": "glowstone",
+          "score": 0.9,
+          "reason": "fill_missing"
+        },
+        {
+          "role": "floor",
+          "from": "<missing>",
+          "to": "stonebrick",
+          "score": 0.9,
+          "reason": "fill_missing"
+        }
+      ],
+      "coherence_repairs": [
+        {
+          "role": "trim",
+          "from": "slab_stone",
+          "to": "slab_stone"
+        }
+      ]
+    },
+    "budget_source": "missing",
+    "budget_present_in_input": false,
+    "operations_trimmed": false,
+    "operations_assigned_role_count": 41,
+    "operations_unknown_role_count": 0,
+    "role_fixed_block_count": 9,
+    "role_fixed_skipped_low_conf_count": 0,
+    "fallback_wall_min_confidence": 0.55,
+    "fallback_wall_suppressed_count": 0,
+    "role_infer_confidence_mean": 0.8199999999999996,
+    "role_infer_reasons": {
+      "purpose_hint": 26,
+      "carve_entrance": 2,
+      "unknown": 2,
+      "set_block_family": 1,
+      "block_family": 1,
+      "ground_flat_layer": 2
+    },
+    "self_repair_report": {
+      "added_operations": 14,
+      "added_tags": [
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window",
+        "window"
+      ],
+      "reordered_two_stage": true,
+      "window_block_fixes": 0,
+      "entrance_fixes": 0
+    },
+    "bbox_outside_operation_count": 0,
+    "budget_violations": [],
+    "schema_violations": [
+      "material_budget_missing_in_input_repaired"
+    ],
+    "strict_blocking_issues": [],
+    "valid_strict": true
+  },
+  "created_at": "2026-04-18T07:22:49.188364+00:00"
+}

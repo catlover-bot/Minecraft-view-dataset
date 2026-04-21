@@ -1,0 +1,79 @@
+{
+  "summary": "A low, tiered rectangular two-floor building with stepped stone-slab roof layers, brick mid-walls, wooden trim, glass windows in continuous rows, and a stone-brick tower at one corner. The plan is mostly a hollow rectangle (courtyard/open central channel visible from top) with symmetric stepped roof slabs over two parallel blocks connected by a central corridor/bridge.",
+  "building_type": "residential/commercial low-rise",
+  "shape": {
+    "overall_form": "two parallel rectangular volumes with a central open channel and a corner vertical tower; stepped roof slabs stacked above each volume",
+    "footprint_hint": "l_shape",
+    "symmetry": "bilaterally symmetric along the central corridor axis (front-back symmetry; left-right mirrored volumes)",
+    "floors_estimate": 2,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 21,
+    "depth": 13,
+    "height": 9
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "foundation/column/tower",
+      "confidence": 0.95
+    },
+    {
+      "name": "brick",
+      "role": "wall (middle)",
+      "confidence": 0.9
+    },
+    {
+      "name": "wood",
+      "role": "trim/boards between brick bands (likely oak planks)",
+      "confidence": 0.85
+    },
+    {
+      "name": "glass",
+      "role": "windows (continuous panes)",
+      "confidence": 0.98
+    },
+    {
+      "name": "slab_stone",
+      "role": "stepped roof slabs and top caps",
+      "confidence": 0.95
+    },
+    {
+      "name": "fence",
+      "role": "uncertain - possibly no fence visible; used here as candidate for small vertical accents",
+      "confidence": 0.2
+    },
+    {
+      "name": "slab_wood",
+      "role": "possible wooden slab trim under stone caps",
+      "confidence": 0.3
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows spanning each face at two levels",
+    "stone-slab stepped roof in multiple tiers (overhanging slabs)",
+    "brick walls with wooden horizontal banding",
+    "stonebrick corner tower rising above main roof",
+    "glowstone or light blocks placed at facade corners (lighting accents)",
+    "central open channel/courtyard visible from top; small bridge/entrance on front"
+  ],
+  "rebuild_hints": [
+    "Create a rectangular base of stonebrick foundation 1-2 blocks high around footprint.",
+    "Build two stacked brick wall bands with a one-block wooden plank band between them; place continuous glass panes in a row above the wooden band on both long sides.",
+    "Add a row of stone slabs as a narrow roof cap above the glass band, then stack multiple overhanging stone slab tiers centered over each rectangular half to form stepped roofs.",
+    "Place a vertical stonebrick tower at the rear-left corner rising ~6 blocks above the roof for the chimney/tower element.",
+    "Leave a central open channel/courtyard between the two halves and add a small bridge/entry walkway across the front into that channel."
+  ],
+  "uncertainties": [
+    "Exact internal floor plan and whether the central channel is open to sky or covered (top views show an open centre but interior detail is unknown).",
+    "Precise block counts for width/depth/height; estimates based on visible blocks and may be off by a few units.",
+    "Some small decorative blocks (glowstone vs other light blocks; exact wood type for trim; fence presence) are uncertain from images.",
+    "Whether roof slabs are stone slab block type (smooth stone) or another similar slab variant is inferred but not guaranteed."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "llm_case_010",
+  "created_at": "2026-04-18T07:21:06.581857+00:00",
+  "llm_seed": -1
+}

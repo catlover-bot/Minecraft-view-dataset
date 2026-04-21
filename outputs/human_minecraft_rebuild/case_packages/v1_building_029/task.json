@@ -1,0 +1,104 @@
+{
+  "case_id": "v1_building_029",
+  "dataset_split": "v1",
+  "building_id": "building_029",
+  "difficulty": "medium",
+  "selection_reason": "v1の中位帯で2階建てgable系。easy/hardの中間難度を代表。",
+  "images": [
+    "source_images/rgb_view00_yaw+090.00_pitch+000.64.png",
+    "source_images/rgb_view01_yaw+126.00_pitch+010.56.png",
+    "source_images/rgb_view02_yaw+162.00_pitch+000.64.png",
+    "source_images/rgb_view03_yaw-162.00_pitch+010.56.png",
+    "source_images/rgb_view04_yaw-126.00_pitch+000.64.png",
+    "source_images/rgb_view05_yaw-090.00_pitch+010.56.png",
+    "source_images/rgb_view06_yaw-054.00_pitch+000.64.png",
+    "source_images/rgb_view07_yaw-018.00_pitch+010.56.png",
+    "source_images/rgb_view08_yaw+018.00_pitch+000.64.png",
+    "source_images/rgb_view09_yaw+054.00_pitch+010.56.png",
+    "source_images/rgb_view10_yaw+090.00_pitch+080.00.png",
+    "source_images/rgb_view11_yaw-090.00_pitch+080.00.png"
+  ],
+  "conditions_supported": [
+    "image_only",
+    "image_plus_description",
+    "image_plus_description_plus_structured_ir"
+  ],
+  "recommended_time_limit_min": 30,
+  "allowed_blocks_file": "allowed_blocks.txt",
+  "build_constraints_file": "build_constraints.json",
+  "submission_format": {
+    "primary_required": [
+      "bbox.json",
+      "voxels.npy"
+    ],
+    "secondary_optional": [
+      "plan.json"
+    ],
+    "path_template": "outputs/human_image_rebuild/submissions/<participant_id>/<condition>/v1_building_029/"
+  },
+  "default_condition_assets": {
+    "image_plus_description": "condition_assets/description/description_openai_gpt_5_mini.json",
+    "image_plus_description_plus_structured_ir": {
+      "description": "condition_assets/description/description_openai_gpt_5_mini.json",
+      "structured_intermediate": "condition_assets/structured_intermediate/intermediate_openai_main.json"
+    }
+  },
+  "llm_baselines_main": {
+    "openai_main": {
+      "direct_iou": 0.27584689837219534,
+      "structured_iou": 0.367170626349892,
+      "direct_f1": 0.4324137931034483,
+      "structured_f1": 0.5371248025276462,
+      "direct_material_match": 0.18181818181818182,
+      "structured_material_match": 0.4843137254901961,
+      "direct_correct_placement_rate": 0.07076350093109869,
+      "structured_correct_placement_rate": 0.40491803278688526,
+      "direct_edit_distance_over_gt": 1.6749418153607447,
+      "structured_edit_distance_over_gt": 0.8859581070597362,
+      "delta_iou": 0.09132372797769667,
+      "delta_edit_distance_over_gt": -0.7889837083010085
+    },
+    "claude_main": {
+      "direct_iou": 0.23742227247032222,
+      "structured_iou": 0.43577004968062455,
+      "direct_f1": 0.3837368661489265,
+      "structured_f1": 0.6070192782995552,
+      "direct_material_match": 0.3380952380952381,
+      "structured_material_match": 0.7247557003257329,
+      "direct_correct_placement_rate": 0.15777777777777777,
+      "structured_correct_placement_rate": 0.6062670299727521,
+      "direct_edit_distance_over_gt": 1.2622187742435997,
+      "structured_edit_distance_over_gt": 0.747866563227308,
+      "delta_iou": 0.19834777721030233,
+      "delta_edit_distance_over_gt": -0.5143522110162917
+    }
+  },
+  "submission_format_minecraft": {
+    "primary": {
+      "type": "minecraft_structure_nbt",
+      "required_files": [
+        "structure.nbt",
+        "submission_meta.json"
+      ]
+    },
+    "secondary": {
+      "type": "zip_with_structure_nbt",
+      "required_files": [
+        "structure.zip",
+        "submission_meta.json"
+      ]
+    },
+    "path_template": "outputs/human_minecraft_rebuild/submissions/<participant_id>/<condition>/v1_building_029/",
+    "expected_local_bbox": {
+      "xmin": 0,
+      "xmax": 16,
+      "ymin": 0,
+      "ymax": 11,
+      "zmin": 0,
+      "zmax": 17,
+      "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+      "voxel_axis_order": "Y,X,Z"
+    },
+    "expected_voxel_axis_order": "Y,X,Z"
+  }
+}

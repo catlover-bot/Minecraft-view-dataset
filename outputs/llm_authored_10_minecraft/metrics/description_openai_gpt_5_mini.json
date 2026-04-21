@@ -1,0 +1,743 @@
+{
+  "created_at": "2026-04-18T08:03:22.368880+00:00",
+  "dataset_root": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft",
+  "description_subdir": "description_direct",
+  "settings": {
+    "gt_material_top_k": 6,
+    "gt_material_min_ratio": 0.03
+  },
+  "summary": {
+    "evaluated_buildings": 10,
+    "missing_descriptions": []
+  },
+  "aggregate": {
+    "auto_score_mean": 0.8061999159351091,
+    "strict_material_f1_mean": 0.7251936951936953,
+    "coarse_material_f1_mean": 0.8895238095238094,
+    "dimension_score_mean": 0.6650434199841928,
+    "completeness_score_mean": 1.0
+  },
+  "items": [
+    {
+      "building": "llm_case_001",
+      "description_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft/llm_case_001/description_direct/description.json",
+      "gt_materials": [
+        "slab_stone",
+        "slab_wood",
+        "stone",
+        "wood"
+      ],
+      "pred_materials": [
+        "cobblestone_or_andesite",
+        "dirt",
+        "stone",
+        "stonebrick",
+        "wood"
+      ],
+      "gt_coarse_materials": [
+        "STONE",
+        "WOOD"
+      ],
+      "pred_coarse_materials": [
+        "BRICK",
+        "OTHER",
+        "STONE",
+        "WOOD"
+      ],
+      "strict_material_metrics": {
+        "precision": 0.4,
+        "recall": 0.5,
+        "f1": 0.4444444444444445,
+        "jaccard": 0.2857142857142857,
+        "intersection": 2.0,
+        "pred_count": 5.0,
+        "gt_count": 4.0
+      },
+      "coarse_material_metrics": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "jaccard": 0.5,
+        "intersection": 2.0,
+        "pred_count": 4.0,
+        "gt_count": 2.0
+      },
+      "dimension_metrics": {
+        "gt_width": 8.0,
+        "gt_depth": 9.0,
+        "gt_height": 6.0,
+        "pred_width": 7.0,
+        "pred_depth": 9.0,
+        "pred_height": 4.0,
+        "abs_err_width": 1.0,
+        "abs_err_depth": 0.0,
+        "abs_err_height": 2.0,
+        "rel_err_width": 0.125,
+        "rel_err_depth": 0.0,
+        "rel_err_height": 0.3333333333333333,
+        "rel_err_mean": 0.15277777777777776,
+        "dim_score": 0.8472222222222222
+      },
+      "completeness": {
+        "has_summary": 1.0,
+        "has_materials": 1.0,
+        "has_dimensions": 1.0,
+        "has_elements": 1.0,
+        "has_rebuild_hints": 1.0,
+        "completeness_score": 1.0
+      },
+      "auto_score": 0.7118055555555556
+    },
+    {
+      "building": "llm_case_002",
+      "description_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft/llm_case_002/description_direct/description.json",
+      "gt_materials": [
+        "slab_stone",
+        "slab_wood",
+        "stonebrick",
+        "white_wool",
+        "wood"
+      ],
+      "pred_materials": [
+        "glowstone",
+        "slab_stone",
+        "stone",
+        "stonebrick",
+        "wood"
+      ],
+      "gt_coarse_materials": [
+        "BRICK",
+        "STONE",
+        "TEXTILE",
+        "WOOD"
+      ],
+      "pred_coarse_materials": [
+        "BRICK",
+        "STONE",
+        "WOOD"
+      ],
+      "strict_material_metrics": {
+        "precision": 0.6,
+        "recall": 0.6,
+        "f1": 0.6,
+        "jaccard": 0.42857142857142855,
+        "intersection": 3.0,
+        "pred_count": 5.0,
+        "gt_count": 5.0
+      },
+      "coarse_material_metrics": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
+        "jaccard": 0.75,
+        "intersection": 3.0,
+        "pred_count": 3.0,
+        "gt_count": 4.0
+      },
+      "dimension_metrics": {
+        "gt_width": 10.0,
+        "gt_depth": 11.0,
+        "gt_height": 7.0,
+        "pred_width": 11.0,
+        "pred_depth": 9.0,
+        "pred_height": 5.0,
+        "abs_err_width": 1.0,
+        "abs_err_depth": 2.0,
+        "abs_err_height": 2.0,
+        "rel_err_width": 0.1,
+        "rel_err_depth": 0.18181818181818182,
+        "rel_err_height": 0.2857142857142857,
+        "rel_err_mean": 0.1891774891774892,
+        "dim_score": 0.8108225108225108
+      },
+      "completeness": {
+        "has_summary": 1.0,
+        "has_materials": 1.0,
+        "has_dimensions": 1.0,
+        "has_elements": 1.0,
+        "has_rebuild_hints": 1.0,
+        "completeness_score": 1.0
+      },
+      "auto_score": 0.7969913419913419
+    },
+    {
+      "building": "llm_case_003",
+      "description_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft/llm_case_003/description_direct/description.json",
+      "gt_materials": [
+        "cobblestone",
+        "glass",
+        "glowstone",
+        "slab_stone",
+        "stone"
+      ],
+      "pred_materials": [
+        "cobblestone",
+        "glass",
+        "glowstone",
+        "stone",
+        "stonebrick"
+      ],
+      "gt_coarse_materials": [
+        "GLASS",
+        "STONE"
+      ],
+      "pred_coarse_materials": [
+        "BRICK",
+        "GLASS",
+        "STONE"
+      ],
+      "strict_material_metrics": {
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8000000000000002,
+        "jaccard": 0.6666666666666666,
+        "intersection": 4.0,
+        "pred_count": 5.0,
+        "gt_count": 5.0
+      },
+      "coarse_material_metrics": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "jaccard": 0.6666666666666666,
+        "intersection": 2.0,
+        "pred_count": 3.0,
+        "gt_count": 2.0
+      },
+      "dimension_metrics": {
+        "gt_width": 9.0,
+        "gt_depth": 8.0,
+        "gt_height": 7.0,
+        "pred_width": 7.0,
+        "pred_depth": 7.0,
+        "pred_height": 4.0,
+        "abs_err_width": 2.0,
+        "abs_err_depth": 1.0,
+        "abs_err_height": 3.0,
+        "rel_err_width": 0.2222222222222222,
+        "rel_err_depth": 0.125,
+        "rel_err_height": 0.42857142857142855,
+        "rel_err_mean": 0.25859788359788355,
+        "dim_score": 0.7414021164021165
+      },
+      "completeness": {
+        "has_summary": 1.0,
+        "has_materials": 1.0,
+        "has_dimensions": 1.0,
+        "has_elements": 1.0,
+        "has_rebuild_hints": 1.0,
+        "completeness_score": 1.0
+      },
+      "auto_score": 0.8253505291005292
+    },
+    {
+      "building": "llm_case_004",
+      "description_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft/llm_case_004/description_direct/description.json",
+      "gt_materials": [
+        "brick",
+        "slab_stone",
+        "slab_wood",
+        "stonebrick",
+        "wood"
+      ],
+      "pred_materials": [
+        "brick",
+        "glass",
+        "slab_stone",
+        "stonebrick",
+        "wood"
+      ],
+      "gt_coarse_materials": [
+        "BRICK",
+        "STONE",
+        "WOOD"
+      ],
+      "pred_coarse_materials": [
+        "BRICK",
+        "GLASS",
+        "STONE",
+        "WOOD"
+      ],
+      "strict_material_metrics": {
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8000000000000002,
+        "jaccard": 0.6666666666666666,
+        "intersection": 4.0,
+        "pred_count": 5.0,
+        "gt_count": 5.0
+      },
+      "coarse_material_metrics": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571428571428571,
+        "jaccard": 0.75,
+        "intersection": 3.0,
+        "pred_count": 4.0,
+        "gt_count": 3.0
+      },
+      "dimension_metrics": {
+        "gt_width": 12.0,
+        "gt_depth": 11.0,
+        "gt_height": 11.0,
+        "pred_width": 9.0,
+        "pred_depth": 5.0,
+        "pred_height": 6.0,
+        "abs_err_width": 3.0,
+        "abs_err_depth": 6.0,
+        "abs_err_height": 5.0,
+        "rel_err_width": 0.25,
+        "rel_err_depth": 0.5454545454545454,
+        "rel_err_height": 0.45454545454545453,
+        "rel_err_mean": 0.4166666666666667,
+        "dim_score": 0.5833333333333333
+      },
+      "completeness": {
+        "has_summary": 1.0,
+        "has_materials": 1.0,
+        "has_dimensions": 1.0,
+        "has_elements": 1.0,
+        "has_rebuild_hints": 1.0,
+        "completeness_score": 1.0
+      },
+      "auto_score": 0.8001190476190476
+    },
+    {
+      "building": "llm_case_005",
+      "description_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft/llm_case_005/description_direct/description.json",
+      "gt_materials": [
+        "slab_stone",
+        "stonebrick",
+        "wood"
+      ],
+      "pred_materials": [
+        "glowstone",
+        "slab_stone",
+        "stonebrick",
+        "wood"
+      ],
+      "gt_coarse_materials": [
+        "BRICK",
+        "STONE",
+        "WOOD"
+      ],
+      "pred_coarse_materials": [
+        "BRICK",
+        "STONE",
+        "WOOD"
+      ],
+      "strict_material_metrics": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571428571428571,
+        "jaccard": 0.75,
+        "intersection": 3.0,
+        "pred_count": 4.0,
+        "gt_count": 3.0
+      },
+      "coarse_material_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "jaccard": 1.0,
+        "intersection": 3.0,
+        "pred_count": 3.0,
+        "gt_count": 3.0
+      },
+      "dimension_metrics": {
+        "gt_width": 16.0,
+        "gt_depth": 14.0,
+        "gt_height": 11.0,
+        "pred_width": 13.0,
+        "pred_depth": 9.0,
+        "pred_height": 6.0,
+        "abs_err_width": 3.0,
+        "abs_err_depth": 5.0,
+        "abs_err_height": 5.0,
+        "rel_err_width": 0.1875,
+        "rel_err_depth": 0.35714285714285715,
+        "rel_err_height": 0.45454545454545453,
+        "rel_err_mean": 0.3330627705627706,
+        "dim_score": 0.6669372294372293
+      },
+      "completeness": {
+        "has_summary": 1.0,
+        "has_materials": 1.0,
+        "has_dimensions": 1.0,
+        "has_elements": 1.0,
+        "has_rebuild_hints": 1.0,
+        "completeness_score": 1.0
+      },
+      "auto_score": 0.8738771645021643
+    },
+    {
+      "building": "llm_case_006",
+      "description_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft/llm_case_006/description_direct/description.json",
+      "gt_materials": [
+        "glass",
+        "slab_stone",
+        "slab_wood",
+        "stone",
+        "stonebrick",
+        "wood"
+      ],
+      "pred_materials": [
+        "glass",
+        "glowstone",
+        "slab_stone",
+        "slab_wood",
+        "stonebrick",
+        "wood"
+      ],
+      "gt_coarse_materials": [
+        "BRICK",
+        "GLASS",
+        "STONE",
+        "WOOD"
+      ],
+      "pred_coarse_materials": [
+        "BRICK",
+        "GLASS",
+        "STONE",
+        "WOOD"
+      ],
+      "strict_material_metrics": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "f1": 0.8333333333333334,
+        "jaccard": 0.7142857142857143,
+        "intersection": 5.0,
+        "pred_count": 6.0,
+        "gt_count": 6.0
+      },
+      "coarse_material_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "jaccard": 1.0,
+        "intersection": 4.0,
+        "pred_count": 4.0,
+        "gt_count": 4.0
+      },
+      "dimension_metrics": {
+        "gt_width": 17.0,
+        "gt_depth": 10.0,
+        "gt_height": 13.0,
+        "pred_width": 9.0,
+        "pred_depth": 13.0,
+        "pred_height": 8.0,
+        "abs_err_width": 8.0,
+        "abs_err_depth": 3.0,
+        "abs_err_height": 5.0,
+        "rel_err_width": 0.47058823529411764,
+        "rel_err_depth": 0.3,
+        "rel_err_height": 0.38461538461538464,
+        "rel_err_mean": 0.3850678733031674,
+        "dim_score": 0.6149321266968326
+      },
+      "completeness": {
+        "has_summary": 1.0,
+        "has_materials": 1.0,
+        "has_dimensions": 1.0,
+        "has_elements": 1.0,
+        "has_rebuild_hints": 1.0,
+        "completeness_score": 1.0
+      },
+      "auto_score": 0.8537330316742082
+    },
+    {
+      "building": "llm_case_007",
+      "description_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft/llm_case_007/description_direct/description.json",
+      "gt_materials": [
+        "glass",
+        "nether_brick",
+        "slab_stone",
+        "stone",
+        "stonebrick"
+      ],
+      "pred_materials": [
+        "brick",
+        "fence",
+        "glass",
+        "slab_stone",
+        "stonebrick"
+      ],
+      "gt_coarse_materials": [
+        "BRICK",
+        "GLASS",
+        "STONE"
+      ],
+      "pred_coarse_materials": [
+        "BRICK",
+        "GLASS",
+        "STONE",
+        "WOOD"
+      ],
+      "strict_material_metrics": {
+        "precision": 0.6,
+        "recall": 0.6,
+        "f1": 0.6,
+        "jaccard": 0.42857142857142855,
+        "intersection": 3.0,
+        "pred_count": 5.0,
+        "gt_count": 5.0
+      },
+      "coarse_material_metrics": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571428571428571,
+        "jaccard": 0.75,
+        "intersection": 3.0,
+        "pred_count": 4.0,
+        "gt_count": 3.0
+      },
+      "dimension_metrics": {
+        "gt_width": 20.0,
+        "gt_depth": 21.0,
+        "gt_height": 20.0,
+        "pred_width": 13.0,
+        "pred_depth": 13.0,
+        "pred_height": 12.0,
+        "abs_err_width": 7.0,
+        "abs_err_depth": 8.0,
+        "abs_err_height": 8.0,
+        "rel_err_width": 0.35,
+        "rel_err_depth": 0.38095238095238093,
+        "rel_err_height": 0.4,
+        "rel_err_mean": 0.376984126984127,
+        "dim_score": 0.623015873015873
+      },
+      "completeness": {
+        "has_summary": 1.0,
+        "has_materials": 1.0,
+        "has_dimensions": 1.0,
+        "has_elements": 1.0,
+        "has_rebuild_hints": 1.0,
+        "completeness_score": 1.0
+      },
+      "auto_score": 0.7500396825396825
+    },
+    {
+      "building": "llm_case_008",
+      "description_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft/llm_case_008/description_direct/description.json",
+      "gt_materials": [
+        "cobblestone",
+        "glass",
+        "slab_stone",
+        "slab_wood",
+        "wood"
+      ],
+      "pred_materials": [
+        "cobblestone",
+        "glass",
+        "glowstone",
+        "slab_stone",
+        "stonebrick",
+        "wood"
+      ],
+      "gt_coarse_materials": [
+        "GLASS",
+        "STONE",
+        "WOOD"
+      ],
+      "pred_coarse_materials": [
+        "BRICK",
+        "GLASS",
+        "STONE",
+        "WOOD"
+      ],
+      "strict_material_metrics": {
+        "precision": 0.6666666666666666,
+        "recall": 0.8,
+        "f1": 0.7272727272727272,
+        "jaccard": 0.5714285714285714,
+        "intersection": 4.0,
+        "pred_count": 6.0,
+        "gt_count": 5.0
+      },
+      "coarse_material_metrics": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571428571428571,
+        "jaccard": 0.75,
+        "intersection": 3.0,
+        "pred_count": 4.0,
+        "gt_count": 3.0
+      },
+      "dimension_metrics": {
+        "gt_width": 21.0,
+        "gt_depth": 14.0,
+        "gt_height": 14.0,
+        "pred_width": 13.0,
+        "pred_depth": 21.0,
+        "pred_height": 9.0,
+        "abs_err_width": 8.0,
+        "abs_err_depth": 7.0,
+        "abs_err_height": 5.0,
+        "rel_err_width": 0.38095238095238093,
+        "rel_err_depth": 0.5,
+        "rel_err_height": 0.35714285714285715,
+        "rel_err_mean": 0.41269841269841273,
+        "dim_score": 0.5873015873015872
+      },
+      "completeness": {
+        "has_summary": 1.0,
+        "has_materials": 1.0,
+        "has_dimensions": 1.0,
+        "has_elements": 1.0,
+        "has_rebuild_hints": 1.0,
+        "completeness_score": 1.0
+      },
+      "auto_score": 0.7792929292929291
+    },
+    {
+      "building": "llm_case_009",
+      "description_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft/llm_case_009/description_direct/description.json",
+      "gt_materials": [
+        "glass",
+        "nether_brick",
+        "polished_andesite",
+        "slab_stone",
+        "stone",
+        "stonebrick"
+      ],
+      "pred_materials": [
+        "brick",
+        "glass",
+        "glowstone",
+        "slab_stone",
+        "stone",
+        "stonebrick"
+      ],
+      "gt_coarse_materials": [
+        "BRICK",
+        "GLASS",
+        "STONE"
+      ],
+      "pred_coarse_materials": [
+        "BRICK",
+        "GLASS",
+        "STONE"
+      ],
+      "strict_material_metrics": {
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "f1": 0.6666666666666666,
+        "jaccard": 0.5,
+        "intersection": 4.0,
+        "pred_count": 6.0,
+        "gt_count": 6.0
+      },
+      "coarse_material_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "jaccard": 1.0,
+        "intersection": 3.0,
+        "pred_count": 3.0,
+        "gt_count": 3.0
+      },
+      "dimension_metrics": {
+        "gt_width": 22.0,
+        "gt_depth": 19.0,
+        "gt_height": 20.0,
+        "pred_width": 11.0,
+        "pred_depth": 9.0,
+        "pred_height": 11.0,
+        "abs_err_width": 11.0,
+        "abs_err_depth": 10.0,
+        "abs_err_height": 9.0,
+        "rel_err_width": 0.5,
+        "rel_err_depth": 0.5263157894736842,
+        "rel_err_height": 0.45,
+        "rel_err_mean": 0.49210526315789466,
+        "dim_score": 0.5078947368421054
+      },
+      "completeness": {
+        "has_summary": 1.0,
+        "has_materials": 1.0,
+        "has_dimensions": 1.0,
+        "has_elements": 1.0,
+        "has_rebuild_hints": 1.0,
+        "completeness_score": 1.0
+      },
+      "auto_score": 0.7769736842105264
+    },
+    {
+      "building": "llm_case_010",
+      "description_path": "/Users/hirotaka-m/Minecraft-view-dataset/datasets/llm_authored_10_minecraft/llm_case_010/description_direct/description.json",
+      "gt_materials": [
+        "brick",
+        "glass",
+        "slab_stone",
+        "slab_wood",
+        "stonebrick",
+        "wood"
+      ],
+      "pred_materials": [
+        "brick",
+        "fence",
+        "glass",
+        "slab_stone",
+        "slab_wood",
+        "stonebrick",
+        "wood"
+      ],
+      "gt_coarse_materials": [
+        "BRICK",
+        "GLASS",
+        "STONE",
+        "WOOD"
+      ],
+      "pred_coarse_materials": [
+        "BRICK",
+        "GLASS",
+        "STONE",
+        "WOOD"
+      ],
+      "strict_material_metrics": {
+        "precision": 0.8571428571428571,
+        "recall": 1.0,
+        "f1": 0.923076923076923,
+        "jaccard": 0.8571428571428571,
+        "intersection": 6.0,
+        "pred_count": 7.0,
+        "gt_count": 6.0
+      },
+      "coarse_material_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "jaccard": 1.0,
+        "intersection": 4.0,
+        "pred_count": 4.0,
+        "gt_count": 4.0
+      },
+      "dimension_metrics": {
+        "gt_width": 24.0,
+        "gt_depth": 23.0,
+        "gt_height": 16.0,
+        "pred_width": 21.0,
+        "pred_depth": 13.0,
+        "pred_height": 9.0,
+        "abs_err_width": 3.0,
+        "abs_err_depth": 10.0,
+        "abs_err_height": 7.0,
+        "rel_err_width": 0.125,
+        "rel_err_depth": 0.43478260869565216,
+        "rel_err_height": 0.4375,
+        "rel_err_mean": 0.33242753623188404,
+        "dim_score": 0.667572463768116
+      },
+      "completeness": {
+        "has_summary": 1.0,
+        "has_materials": 1.0,
+        "has_dimensions": 1.0,
+        "has_elements": 1.0,
+        "has_rebuild_hints": 1.0,
+        "completeness_score": 1.0
+      },
+      "auto_score": 0.8938161928651058
+    }
+  ]
+}

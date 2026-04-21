@@ -1,0 +1,66 @@
+{
+  "summary": "Small single-story cross-shaped stone outcrop with a layered stone slab roof, short cobblestone base, glass window band and glowstone corner lights; sits centered on a flat cleared plot. Visible structure is compact (cross footprint) and appears decorative or a small shelter.",
+  "building_type": "small shelter / decorative outcrop",
+  "shape": {
+    "overall_form": "cross-shaped single-mass with a stepped layered slab roof",
+    "footprint_hint": "l_shape",
+    "symmetry": "approximate four-way (cross) symmetry on the top slabs; lower walls are roughly symmetric front-to-back and side-to-side",
+    "floors_estimate": 1,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 7,
+    "depth": 7,
+    "height": 4
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "roof slabs / top surface (stone slabs)",
+      "confidence": 0.9
+    },
+    {
+      "name": "cobblestone",
+      "role": "lower base / foundation",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone",
+      "role": "wall / middle wall blocks (smooth grey block visible)",
+      "confidence": 0.5
+    },
+    {
+      "name": "glass",
+      "role": "window band",
+      "confidence": 0.95
+    },
+    {
+      "name": "glowstone",
+      "role": "corner lighting blocks",
+      "confidence": 0.95
+    }
+  ],
+  "elements": [
+    "layered stone slab roof (stacked slabs creating a stepped canopy)",
+    "glass window strip around upper wall",
+    "glowstone blocks placed at corners of the window band",
+    "cobblestone foundation and small protruding front block (possible entrance step)"
+  ],
+  "rebuild_hints": [
+    "Build a central cross-shaped footprint 5x5 with one-block extensions on each side (top-down shows a plus/cross of slabs).",
+    "Raise a 2-3 block high wall around the cross using a medium grey block (stone or stone bricks), place a band of glass in the upper row and put glowstone blocks at the window corners.",
+    "Add a cobblestone base layer one block thick under the walls and a small cobblestone step/protrusion at the front center.",
+    "Create a stepped canopy by placing stone slab layers stacked above the cross: one central slab layer, then slabs offset outward on each side to form three staggered tiers."
+  ],
+  "uncertainties": [
+    "Exact block ID of the smooth grey wall blocks: looks like stone or stonebrick but not certain.",
+    "Whether roof slabs are stone slabs or smooth stone slabs (I normalized to stonebrick/stone slab ambiguity).",
+    "Precise footprint dimensions: top-down shows a cross roughly 5x5 with extensions; overall surrounding cleared plot dimensions are visible but building may be off by ±1 block.",
+    "Possible interior details or floor material are not visible in the images."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "llm_case_003",
+  "created_at": "2026-04-18T07:17:37.674804+00:00",
+  "llm_seed": -1
+}

@@ -210,6 +210,13 @@ scripts/run_execution_gap_suite.sh \
   --port 10000
 ```
 
+Gemini を execution gap 比較に追加する場合:
+```bash
+scripts/run_execution_gap_suite.sh \
+  --include_gemini_cases \
+  --dotenv .env
+```
+
 LLM追加コストなしで「別系統の手置き介入比較（limit=10）」だけ回す場合:
 ```bash
 scripts/run_hand_intervention_no_llm.sh
@@ -257,6 +264,36 @@ scripts/run_i2t2b_experiment.sh \
   --provider gemini \
   --dotenv .env
 ```
+
+## Gemini実験前の固め（smoke + gate）
+Geminiを200件フルで回す前に、まず `limit=10` で失敗を先に落とす運用を追加しました。
+
+```bash
+scripts/run_gemini_smoke_preflight.sh \
+  --limit 10 \
+  --datasets buildings_100_v1,buildings_100_v4 \
+  --dotenv .env
+```
+
+このスクリプトは以下をまとめて実行します。
+- `description_* / rebuild_plan_* / rebuild_world_*` を Gemini で生成
+- `outputs/i2t2b/<dataset>/...` へ自動整理
+- 品質ゲート判定（欠損率 / fallback率 / empty-ops率 / IoU / F1 / material）
+
+ゲート結果はここに出ます。
+- `reports/final/gemini_preflight/<dataset>_gate_<gemini_tag>_l010.json`
+
+調整したい時の主な閾値:
+- `--max_empty_ops_rate`
+- `--max_fallback_rate`
+- `--max_strict_blocking_rate`
+- `--min_iou`
+- `--min_f1`
+- `--min_material_match`
+
+補助CLI:
+- `tools/check_i2t2b_smoke_gate.py`  
+  単体でゲート判定だけ再実行できます。
 
 ## image-to-text-to-build 実験
 追加したCLI:

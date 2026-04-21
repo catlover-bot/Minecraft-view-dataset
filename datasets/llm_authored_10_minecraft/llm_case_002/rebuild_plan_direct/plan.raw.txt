@@ -1,0 +1,46 @@
+[DRAFT_RESPONSE]
+{
+  "plan_version": "v1",
+  "bbox": {
+    "xmin": 0,
+    "xmax": 12,
+    "ymin": 0,
+    "ymax": 7,
+    "zmin": 0,
+    "zmax": 10
+  },
+  "palette": {
+    "wall": "stonebrick",
+    "roof": "slab_stone",
+    "trim": "wood",
+    "glass": "glass",
+    "light": "glowstone",
+    "floor": "wood"
+  },
+  "operations": [
+    {"op": "fill", "x1": 1, "y1": 0, "z1": 1, "x2": 11, "y2": 0, "z2": 9, "block": "dirt", "purpose": "surrounding shallow ground (base layer)"},
+    {"op": "carve", "x1": 0, "y1": 0, "z1": 0, "x2": 12, "y2": 0, "z2": 10, "purpose": "ensure empty space at ground origin (cleanup)"},
+    {"op": "fill", "x1": 2, "y1": 1, "z1": 2, "x2": 10, "y2": 1, "z2": 8, "block": "wood", "purpose": "floor (wood planks)"},
+    {"op": "fill", "x1": 2, "y1": 0, "z1": 2, "x2": 10, "y2": 0, "z2": 8, "block": "stonebrick", "purpose": "foundation base under floor"},
+    {"op": "fill", "x1": 1, "y1": 1, "z1": 1, "x2": 11, "y2": 1, "z2": 9, "block": "dirt", "purpose": "ground around building footprint (landscaping bed)"},
+    {"op": "fill", "x1": 2, "y1": 2, "z1": 2, "x2": 10, "y2": 2, "z2": 8, "block": "stonebrick", "purpose": "lower wall course (1st wall layer)"},
+    {"op": "fill", "x1": 2, "y1": 3, "z1": 2, "x2": 10, "y2": 3, "z2": 8, "block": "trim", "purpose": "wooden plank decorative band (mid wall)"},
+    {"op": "fill", "x1": 2, "y1": 4, "z1": 2, "x2": 10, "y2": 4, "z2": 8, "block": "stone", "purpose": "upper wall course"},
+    {"op": "carve", "x1": 5, "y1": 2, "z1": 2, "x2": 7, "y2": 3, "z2": 2, "purpose": "front entrance opening (doorway)"},
+    {"op": "fill", "x1": 5, "y1": 1, "z1": 1, "x2": 7, "y2": 1, "z2": 1, "block": "roof", "purpose": "small stone slab porch projecting one block at entrance"},
+    {"op": "fill", "x1": 2, "y1": 3, "z1": 2, "x2": 2, "y2": 4, "z2": 2, "block": "light", "purpose": "front-left glowstone corner embedded in top wall row"},
+    {"op": "fill", "x1": 10, "y1": 3, "z1": 2, "x2": 10, "y2": 4, "z2": 2, "block": "light", "purpose": "front-right glowstone corner embedded in top wall row"},
+    {"op": "carve", "x1": 3, "y1": 2, "z1": 3, "x2": 3, "y2": 3, "z2": 3, "purpose": "small recessed side alcove left under overhang"},
+    {"op": "carve", "x1": 9, "y1": 2, "z1": 3, "x2": 9, "y2": 3, "z2": 3, "purpose": "small recessed side alcove right under overhang"},
+    {"op": "fill", "x1": 3, "y1": 2, "z1": 4, "x2": 9, "y2": 2, "z2": 6, "block": "air", "purpose": "interior space (clear)"},
+    {"op": "fill", "x1": 1, "y1": 5, "z1": 0, "x2": 11, "y2": 5, "z2": 10, "block": "roof", "purpose": "outer roof slab layer (largest) creating 1-block overhang around)"},
+    {"op": "fill", "x1": 2, "y1": 6, "z1": 1, "x2": 10, "y2": 6, "z2": 9, "block": "roof", "purpose": "second inset roof slab layer"},
+    {"op": "fill", "x1": 3, "y1": 6, "z1": 2, "x2": 9, "y2": 6, "z2": 8, "block": "roof", "purpose": "third inset roof slab layer (more inset)"},
+    {"op": "fill", "x1": 6, "y1": 7, "z1": 4, "x2": 6, "y2": 7, "z2": 4, "block": "roof", "purpose": "small center cap slab (1x1)"},
+    {"op": "fill", "x1": 1, "y1": 1, "z1": 0, "x2": 11, "y2": 1, "z2": 0, "block": "dirt", "purpose": "front shallow moat/bed line (front edge)"},
+    {"op": "fill", "x1": 1, "y1": 1, "z1": 9, "x2": 11, "y2": 1, "z2": 9, "block": "dirt", "purpose": "rear shallow moat/bed line (rear edge)"},
+    {"op": "fill", "x1": 0, "y1": 1, "z1": 1, "x2": 0, "y2": 1, "z2": 9, "block": "dirt", "purpose": "left shallow moat/bed line"},
+    {"op": "fill", "x1": 12, "y1": 1, "z1": 1, "x2": 12, "y2": 1, "z2": 9, "block": "dirt", "purpose": "right shallow moat/bed line"},
+    {"op": "set", "x": 6, "y": 2, "z": 2, "block": "air", "purpose": "clear doorway interior block"},
+    {"op": "set", "x": 6, "y": 2, "z": 3, "block": "glass", "purpose": "small central window inside under overhang (decorative)"},
+    {"op": "set", "x": 4, "y

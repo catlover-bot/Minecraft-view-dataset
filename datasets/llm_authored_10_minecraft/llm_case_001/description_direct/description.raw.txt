@@ -1,0 +1,62 @@
+{
+  "summary": "Small rectangular single-storey structure with a raised stone brick (smooth stone slab) framed roof and inset central floor area. Walls are a layered band of stone-like blocks at base, a horizontal wooden plank band, and corner/vertical supports in a rougher stone. Roof uses stacked stone slabs forming an overhanging frame and an inner recessed slab floor. Building sits in a shallow excavated dirt perimeter.",
+  "building_type": "small_house_or_shed",
+  "shape": {
+    "overall_form": "simple rectangular box with recessed central roof opening",
+    "footprint_hint": "rectangle",
+    "symmetry": "bilaterally symmetric across the front centerline",
+    "floors_estimate": 1,
+    "roof_type": "flat"
+  },
+  "dimensions_estimate": {
+    "width": 7,
+    "depth": 9,
+    "height": 4
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "roof slab/frame and inner floor slabs",
+      "confidence": 0.8
+    },
+    {
+      "name": "cobblestone_or_andesite",
+      "role": "vertical corner supports / lower wall posts",
+      "confidence": 0.6
+    },
+    {
+      "name": "wood",
+      "role": "horizontal plank wall band (cladding)",
+      "confidence": 0.9
+    },
+    {
+      "name": "stone",
+      "role": "base wall course",
+      "confidence": 0.5
+    },
+    {
+      "name": "dirt",
+      "role": "surrounding excavated ground",
+      "confidence": 1.0
+    }
+  ],
+  "elements": [
+    "stone slab roof with two-tier overhang",
+    "wooden plank horizontal siding band",
+    "stone vertical corner pillars",
+    "raised central slab floor (open-top recessed area)",
+    "excavated dirt perimeter"
+  ],
+  "rebuild_hints": [
+    "Footprint: center inner slab area is roughly 5x5 within an outer rectangular shell (outer shell visible from top view).",
+    "Walls: start with a 7x9 rectangular base one block high of a darker stone, add 2-3 rows of horizontal wood planks above, place rough stone pillars at front corners extending full wall height.",
+    "Roof: place a continuous rim of stone slabs one block out from inner floor to create a framed overhang; add a second inner ring of slabs at a lower step to form the recessed central slab floor.",
+    "Position: build within a 11x13 excavated dirt pit with a 1-block-high dirt border visible around the structure (uncertain exact pit size)."
+  ],
+  "uncertainties": [
+    "Exact block types: roof slabs appear as smooth stone slabs or stonebrick slabs — could be stonebrick or smooth_stone (confidence 0.8).",
+    "Corner vertical material could be cobblestone or andesite or stone bricks with rough texture (confidence 0.6).",
+    "Precise footprint and dimensions: top-down shows inner slab 5x5 but outer shell size inferred; width/depth integers are estimates based on visible block counts (uncertain).",
+    "Height layering: number of wood plank rows and slab tiers estimated from front views; could be off by one block."
+  ]
+}

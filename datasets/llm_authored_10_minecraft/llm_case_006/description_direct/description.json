@@ -1,0 +1,74 @@
+{
+  "summary": "A small, symmetrical two-story rectangular/symmetric Minecraft house with a stepped slab roof. Visible materials include stone brick blocks for the lower walls and foundation, smooth stone slabs for the layered roof, wooden planks as a mid-level horizontal band and accents, glass panes for continuous windows, glowstone lighting blocks at corners, and stone brick slabs/stone slabs for trims. The footprint is a centered cross-like rectangle (main rectangle with a centered front bay and rear narrower extension) visible from top-down.",
+  "building_type": "small residential / test house",
+  "shape": {
+    "overall_form": "rectangular main volume with a centered protruding front bay and a narrower rear extension; stacked two main levels with layered slab roof",
+    "footprint_hint": "l_shape",
+    "symmetry": "bilateral symmetry across front-back axis (mirrored left-right)",
+    "floors_estimate": 2,
+    "roof_type": "other"
+  },
+  "dimensions_estimate": {
+    "width": 9,
+    "depth": 13,
+    "height": 8
+  },
+  "materials": [
+    {
+      "name": "stonebrick",
+      "role": "wall / foundation",
+      "confidence": 0.9
+    },
+    {
+      "name": "slab_stone",
+      "role": "roof / horizontal trim",
+      "confidence": 0.95
+    },
+    {
+      "name": "wood",
+      "role": "mid-level horizontal band and small accents (planks)",
+      "confidence": 0.8
+    },
+    {
+      "name": "glass",
+      "role": "windows (glass panes)",
+      "confidence": 0.95
+    },
+    {
+      "name": "glowstone",
+      "role": "lighting accents at corners",
+      "confidence": 0.9
+    },
+    {
+      "name": "slab_wood",
+      "role": "possible stair/step accent at entrance",
+      "confidence": 0.4
+    }
+  ],
+  "elements": [
+    "continuous horizontal windows (glass panes) on both visible floors",
+    "central front entrance bay with small landing/step",
+    "layered stepped slab roof (multiple concentric slab layers)",
+    "glowstone corner lights on middle level",
+    "wooden plank band between first and second levels",
+    "stonebrick foundation and lower trim"
+  ],
+  "rebuild_hints": [
+    "Lay a stonebrick rectangular base ~9x13 with a centered front 3-block protrusion and a centered 1-block rear extension (see top-down cross-like layout).",
+    "Build two stacked volumes: first-floor height ~3 blocks, second-floor height ~3 blocks; separate floors with a horizontal wood plank band across the facade.",
+    "Place continuous 3-4 block long horizontal glass pane windows on both floors centered on the facade, with glowstone at the second-floor window corners.",
+    "Construct roof from concentric offset layers of stone slabs (each layer inset from the one below) culminating in a small slab cap.",
+    "Use stone slabs and possibly wood slabs for the small entrance steps/ledge."
+  ],
+  "uncertainties": [
+    "Exact block types for wooden elements (could be oak planks or another wood) are not certain.",
+    "Some trim pieces may be stonebrick stairs or slabs instead of full blocks; slab vs stair usage uncertain.",
+    "Top-down footprint shows a cruciform-ish shape; exact rear extension depth and internal partitioning are uncertain.",
+    "Presence and location of an interior floor/ceiling and internal stairs are not visible."
+  ],
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "building": "llm_case_006",
+  "created_at": "2026-04-18T07:20:16.283160+00:00",
+  "llm_seed": -1
+}
