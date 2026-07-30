@@ -1,0 +1,22 @@
+experiment_id: arr_followup_v1
+parent_experiment: offline_evaluation/experiments/fixed_builder_v1
+output_root: offline_evaluation/experiments/arr_followup_v1
+seed: 20260730
+direct_image_to_build:
+  model_id: gpt-5-mini
+  prompt_version: direct-image-to-build-v1
+  subset_size: 100
+  max_images: 6
+  temperature: 0
+  max_tokens: 12000
+  max_actions: 2000
+  max_coordinate: 64
+  concurrency: 8
+stochastic_repeat:
+  sample_size: 30
+  additional_runs: [2, 3]
+  model_id: gpt-5-mini
+alignment:
+  xz: 48
+  y: 8
+  diagnostic: 10
