@@ -96,10 +96,12 @@ def validate_pricing(pricing: dict, *, fresh: bool = False) -> None:
             raise GenerationError("invalid fixed model pricing")
         if fresh:
             # Same UTC-day official verification required before a paid start.
+            if record.get("verified_on") != utc_now()[:10]:
+                raise GenerationError("pricing_documentation_requires_today_verification_and_replan")
             GenerationConfig(provider=provider, model=model, api_allowed=True,
                 max_calls=16, max_tokens=budgets(pricing)["max_tokens"], max_cost_usd=5,
                 max_output_tokens=OUTPUT_CAP, max_attempts_per_input=1,
-                pricing=record, pricing_max_age_days=0).require_generation(True)
+                pricing=record, pricing_max_age_days=1).require_generation(True)
 
 
 def make_inputs(old_records: list[dict], grids: dict) -> list[dict]:

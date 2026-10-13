@@ -44,6 +44,20 @@ def test_original_paid_campaign_still_readable():
         assert len(state["attempts"]) == (11 if provider == "openai" else 3)
 
 
+def test_fresh_pricing_uses_existing_validator_without_zero_age_configuration():
+    import datetime
+    from offline_evaluation.server_v2.generation import read_json
+    source = read_json(plan.PRICING_PATH)
+    pricing = {p: source[p] for p in plan.MODELS}
+    today = datetime.datetime.now(datetime.timezone.utc).date()
+    for record in pricing.values():
+        record["verified_on"] = today.isoformat()
+    plan.validate_pricing(pricing, fresh=True)
+    pricing["openai"]["verified_on"] = (today - datetime.timedelta(days=1)).isoformat()
+    with pytest.raises(RuntimeError, match="today_verification"):
+        plan.validate_pricing(pricing, fresh=True)
+
+
 @pytest.mark.parametrize("field", ["voxels_sha256", "bbox_sha256"])
 def test_new_plan_rejects_gt_drift_from_original_smoke(field):
     record = {"scene_id": "fixed", "condition": "E", "source_sha256": "v", "source_GT_bbox_sha256": "b"}
