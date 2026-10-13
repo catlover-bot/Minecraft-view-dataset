@@ -36,4 +36,4 @@ APPROVE GOAL004 b522f5bbc1d1 16 SENDS 0 RETRIES USD5 TOTAL
 
 確認前にはenabled・authority・送信予約を作らない。承認後は固定16件だけを生成し、CPU評価・集計する。本評価960への自動進行や追加retryはない。残る運用上の制約はGoal004と同じで、公式確認日の翌日以降は送信前に停止し、未知usageや送信不明は予約を保持して自動再送しない。既に有効化した台帳を別planへ移して初期化する機能はない。
 
-旧69証拠ファイル＋4制御ファイル、元plan、親ledger/stateの不変を確認した。[事前状態](preflight.json)、[最終照合](final_validation.json)。GitHub保存は専用ブランチと新規未公開Draftだけを使用し、小さい後継planとTTY関連証跡を保存する。保存・再取得の確定情報はcheckpoint索引に記録する。
+旧69証拠ファイル＋4制御ファイル、元plan、親ledger/stateの不変を確認した。[事前状態](preflight.json)、[最終照合](final_validation.json)。GitHubへ専用ブランチのsnapshot commit `8d7478805f8f2a33ad3d01f5fb73b25901972359` と、新規[未公開Draft Release](https://github.com/catlover-bot/Minecraft-view-dataset/releases/tag/untagged-c0650f4bb87b15edb952)（ID `412053409`）を保存した。約31KBのarchiveに後継disabled planとTTY関連証跡11ファイルを収め、全7 assetsのGitHub digest・再取得SHA256を照合し、別ディレクトリへの安全な復元とplanのbyte一致を確認した。旧source・14応答は重複アップロードしていない。archive SHA256は `80ef684cfb91ade8f6af968f912df3b658cc9bc907e12bdf88625fc8e44fbde9`。[保存索引](checkpoint_index.json)、[GitHub再取得・復元証跡](github_verification.json)、[保存後の最終照合](completion_audit.json)。
