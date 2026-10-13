@@ -27,7 +27,7 @@
 
 OpenAIのE条件2入力は、それぞれ初回とretryの計4応答が `status=incomplete`、`incomplete_reason=max_output_tokens` だった。各output token数は16,384、記録されたreasoning token数は順に832・640・576・1,088。切詰めはrawの終了理由で確認したもので、token数だけからreasoning枯渇を推測していない。`non_reasoning_output_tokens` は記録値の差分であり、可視textを独立に再tokenizeした数ではない。
 
-OpenAI/building075/Jの初回はstrict JSONを通るが、operation index3の`carve`に余分な`block`があり、`operation 3 fields do not match carve schema` でvalidation失敗した。2回目は成功した。その他のO/J成功出力はrawからparsed・voxelまでCPUで再実行して保存物と照合した。全応答でrefusal blockは0だった。
+OpenAI/building075/Jの初回はstrict JSONを通るが、operation index3の`carve`に余分な`block`があり、`operation 3 fields do not match carve schema` でvalidation失敗した。2回目は成功した。その他のO/J成功出力はrawからparsed・voxelまでCPUで再実行して保存物と照合した。全14応答に識別済みresponse・既知usage・抽出可能なtextがあり、観測された失敗は返却textの形式/schema違反と明示的切詰めだった。transport失敗・text抽出失敗・refusal blockは観測されなかった。
 
 Anthropicの3応答はすべて `stop_reason=end_turn` で自然終了していたが、JSON全体をMarkdownフェンスで囲んでおり、主評価のstrict JSONに失敗した。building060/Oの初回とretryは、一意な外側フェンスだけを除く感度分析で32/37操作、1,411/2,334 voxelsまで実行可能だった。building060/Jにはさらに2つのobjectで重複`z1`キーがあり、フェンス除去後もstrict JSONに失敗する。感度分析は主評価のstatusや指標を変更していない。JSON補完・括弧修復・値推測・GTによる補修は行っていない。
 
@@ -56,7 +56,9 @@ Anthropicの3応答はすべて `stop_reason=end_turn` で自然終了してい�
 
 全server_v2スイートは **307 passed、failure/error/skip 0**。既存242件＋新規65件で、実モデル完全一致・承認/未承認snapshot・retry/最終失敗/NOT_RUN混在・実際のidentity/hash改変・retry上限の早期return・診断transport禁止・forensic保存境界を含む。[結果](test_results.json)、[ログ](tests.log)、[JUnit](tests.junit.xml)。初回の対象テストはpytest既定の`/tmp`がアプリの既存許可root外だったため失敗し、コードやskipを変更せずrepository内basetempを指定して成功した。その履歴も結果JSONに残した。旧6 collection errorsは[元ログとSHA参照](legacy_suite_reference.json)およびコピーを保存し、一括skipやダミー実装で消していない。
 
-保存は原本のfreeze/identityを変更しない **読取り専用forensic snapshot** とする。原本・診断・報告・コードをallowlistで取り込み、既存大容量source assetはrelease `411682582` / asset `637059866` / SHA `97b5d9f0862449c881cd5804485f1a27cc5164baf3f51df09c66c2658ac3d6da` の参照を再利用する。archive完全性COMPLETEと実験PARTIALを区別する。復元した原本はcanonical ledger directoryの拘束を保ち、生成再開用の複製にはしない。新Draft・asset・再取得SHA・保存commitの確定値は[保存索引](checkpoint_index.json)に記録する。snapshot自身のhashを含むGitHub検証記録は後続sidecarとして保存する。
+修正・診断コードと報告をcommit `044ae34349892caa2d6399c394a2d7464efa8961` として専用ブランチへpushした。[新Draft Release 411921452](https://github.com/catlover-bot/Minecraft-view-dataset/releases/tag/untagged-3cf52059b9f2d7f1b715)に原本のfreeze/identityを変更しない **読取り専用forensic snapshot** を保存した。archiveは147ファイル、SHA256は `8f60b4df66f11cec77093d04c8f077652bc65cf42219ffbcf2161d117481ec8e`。既存大容量source assetはrelease `411682582` / asset `637059866` / SHA `97b5d9f0862449c881cd5804485f1a27cc5164baf3f51df09c66c2658ac3d6da` の参照を再利用し、現在のGitHub digestも一致した。
+
+archiveと6 sidecarをサーバーの別ディレクトリへ再取得し、全assetのSHAと復元した147ファイルすべてを照合した。原本69ファイルも一致し、復元したcampaignは `campaign_ledger_directory_mismatch` で受理されないことを確認した。archive完全性COMPLETEと実験PARTIALは別であり、復元物は生成再開用の複製ではない。[再取得検証](github_verification.json)は新しい8番目のassetとして保存・再取得照合済み。[保存索引](checkpoint_index.json)、[最終の原本・台帳照合](final_validation.json)に確定値を記録した。archive自身のhashを検証する後続記録は、自己参照を避けてsidecarと後続報告commitに保存する。
 
 次は、JSON出力形式とE条件の出力量を見直し、P条件の空出力の原因を点検したうえで、**変更したprotocolの再smokeを明示承認する提案**が必要と判断する。未実行6件の初回送信だけでは、既に観測した形式違反・切詰め・空出力の問題を解消できない。また現在のループは未実行6件の前でretry拒否によりreturnする。旧campaignはPARTIALの原本として保持し、変更案では旧ledgerの累積calls14・retry4・173,509 tokens・USD上限0.25857425を引き継いで、新規calls/retryの許容量を別途明示する。残額や残り6 callsを新retry枠の承認と扱わない。今回、有料生成の開始・再試行・モデル照会は実行していない。
 
