@@ -29,4 +29,4 @@ Eは同材質・非重複cuboidによる完全な離散仕様。最初の残存�
 
 開始コマンドと全承認範囲は[OPERATIONS.md](OPERATIONS.md)。実ランチャーのpreviewを別cwd・通信禁止で検証した。公式確認日は2026-10-13 UTCで、日付が変われば送信前に停止する。旧smokeとの改善差の因果解釈、smokeの有意差、本評価960の自動実行はない。
 
-GitHub保存・新Draft・再取得照合の確定値は、保存完了後のcheckpoint索引に記録する。新規準備物だけを小さなarchiveへ保存し、旧14応答・大容量sourceは既存不変asset参照を再利用する。
+[新Draft Release 411963971](https://github.com/catlover-bot/Minecraft-view-dataset/releases/tag/untagged-0ac98cc3c92ab7b062b0)を未公開のまま保存した。対象Git commitは `104f87f13eff4c23489c598a26f4770f2e5c005b`。新準備物4ファイルだけのarchiveは19694bytes、asset `637834075`、SHA `faf2997e90d9b20fb3444615d80e65e2cc8e094ae9450049f7000115bcf8d8c5`。8assetすべてを別ディレクトリへ再取得し、GitHub digest・元・取得物のSHAを照合した。安全展開したplanは元と完全一致し、コピー先からの有効化は拒否された。旧14応答は再アーカイブせず、大容量sourceも既存assetのdigestを確認して参照を再利用した。[保存索引](checkpoint_index.json)、[7assetと展開の実測証跡](github_verification.json)、[8番目の証跡asset照合](verification_sidecar.json)。保存の完全性と新実験NOT_RUN、旧smoke PARTIALは別である。
