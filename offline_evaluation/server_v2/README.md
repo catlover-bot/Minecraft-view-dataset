@@ -18,8 +18,8 @@ Create a dedicated venv and install `requirements.lock`; no system pip installat
 P=.venv-server-v2-20261013/bin/python
 R=/root/minecraft-runs/server-only-20261013-001
 $P -m offline_evaluation.server_v2.cli --help
-$P -m offline_evaluation.server_v2.cli dry-run --run-dir "$R/builder_smoke_verified"
-$P -m offline_evaluation.server_v2.cli evaluate --run-dir "$R/builder_smoke_verified" --alignment-radius 1
+$P -m offline_evaluation.server_v2.cli dry-run --run-dir "$R/builder_smoke_final"
+$P -m offline_evaluation.server_v2.cli evaluate --run-dir "$R/builder_smoke_final" --alignment-radius 1
 $P -m offline_evaluation.server_v2.cli summarize --run-dir "$R"
 ```
 
@@ -29,7 +29,7 @@ Generation is NOT_RUN in this Goal: zero research requests. OpenAI Responses and
 
 A future, separately authorized generation needs OPENAI_API_KEY or ANTHROPIC_API_KEY in its environment (never put keys into configs/artifacts), an explicit model and provider, api_allowed=true, `--allow-api`, positive max_calls/max_tokens/max_cost_usd, max_output_tokens, max_attempts_per_input, and a dated verified pricing/context record. Required pricing fields: verified=true, provider, model, verified_on, billing_mode=`standard_text_no_tools_no_cache_writes`, rate_scope=`upper_bound_full_context_window`, context_window_tokens, input_usd_per_million, output_usd_per_million, pricing_source_url and context_source_url. Official HTTPS sources, model identity, age (default7days), context ceiling and surcharge-covering upper rates are checked. Unknown pricing stops generation. Every request reserves the full context ceiling plus output ceiling, conservatively covering billing; unknown usage/timeouts preserve that reservation and halt. Costs round upward rather than undercount. Reservations and attempts persist across restart, including retry budgets. Budget limits can therefore stop earlier than simple average-token estimates.
 
-Changing config, prompt, code commit or inputs requires a **new Builder directory**; existing manifests are immutable. For a future operator, after creating an authorized enabled configuration at a scoped path:
+Changing config, prompt, implementation source or inputs requires a **new Builder directory**; existing manifests are immutable. For a future operator, after creating an authorized enabled configuration at a scoped path:
 
 ```bash
 $P -m offline_evaluation.server_v2.cli prepare-builder --run-dir "$R" --config /root/minecraft-runs/FUTURE_ID/enabled.json --split smoke --builder-name builder_future_smoke
@@ -40,6 +40,8 @@ $P -m offline_evaluation.server_v2.cli evaluate --run-dir "$R/builder_future_smo
 $P -m offline_evaluation.server_v2.cli summarize --run-dir "$R"
 ```
 
-Raw/parsed/voxel/metric files are separate. Atomic fsynced writes, flock, UUID attempts, UTC timestamps, full input/config/prompt/commit/model identities, response ID/usage and output hashes support resume. Tests inject mock HTTP only with fixture_only provenance. No mock output is claimed as a real API success.
+Prepared runs also bind the generation.py/providers.py/core.py source hashes; changed or missing implementation hashes block resume before transport. Older hashless preparations are preserved as superseded NOT_RUN artifacts; final Builder directories use the bound implementation. Report-only commits can change HEAD while these source hashes remain identical.
+
+Raw/parsed/voxel/metric files are separate. Atomic fsynced writes, flock, UUID attempts, UTC timestamps, full input/config/prompt/commit/model identities and executing generation/provider/core source SHA256, response ID/usage and output hashes support resume. Tests inject mock HTTP only with fixture_only provenance. No mock output is claimed as a real API success.
 
 Checkpoint creation requires a completed-task freeze, original source SHA checks, no active Builder lock, a path allowlist, and secret scans of actual files. Original source is archived once and later snapshots reference its immutable SHA. Archives reject links and unsafe paths; restore verifies every file hash in a new directory. The authorized GitHub scope is this dedicated branch and new draft releases only. Release upload/download is performed with the authenticated gh CLI; connected GitHub tools do not offer this complete asset lifecycle. Never publish, clobber assets, move tags or push main.

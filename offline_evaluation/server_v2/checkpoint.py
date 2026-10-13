@@ -120,15 +120,13 @@ def _create_checkpoint(destination, run_dir, source_paths, commit, checkpoint_id
         assets.append(source)
         source_reference = {'sha256': source['sha256'], 'name': source['name'], 'source_id': 'sha256:' + source['sha256']}
     snapshot = []
-    allowed_run_dirs = {'oracle','reevaluation','builder_smoke','builder_evaluation',
-                        'builder_smoke_verified','builder_evaluation_verified'}
-    for path in sorted(run_dir.rglob('*')):
-        if path.is_file():
-            relative = path.relative_to(run_dir).as_posix()
-            parts = path.relative_to(run_dir).parts
-            selected = parts[0] in allowed_run_dirs or (len(parts)==1 and path.suffix in {'.json','.log','.xml','.txt','.time','.sh'})
-            if selected and not any(part.startswith('.pending-') for part in path.parts):
-                snapshot.append(('run/' + relative, path))
+    # Enumerate only the frozen completed-task allowlist. Packaging logs and
+    # other files created after the freeze must never enter their own archive.
+    if not isinstance(completed.get('files'), dict) or not completed['files']:
+        raise ValueError('A nonempty completed-file allowlist is required')
+    for relative in sorted(completed['files']):
+        snapshot.append(('run/' + relative, run_dir / relative))
+    snapshot.append(('run/completed.json', run_dir/'completed.json'))
     for folder in (ROOT / 'offline_evaluation/server_v2', ROOT / 'reports/server_only'):
         for path in sorted(folder.rglob('*')):
             if path.is_file() and not any(part in FORBIDDEN for part in path.parts):
@@ -143,7 +141,7 @@ def _create_checkpoint(destination, run_dir, source_paths, commit, checkpoint_id
         'Download assets with gh release download TAG --repo catlover-bot/Minecraft-view-dataset --dir NEW_DIRECTORY.\n'
         'Verify SHA256SUMS, then use python -m offline_evaluation.server_v2.cli restore --archive ARCHIVE --sha256 HASH --destination EMPTY_DIRECTORY.\n'
         'Extract sources and snapshot to separate new directories. The extractor rejects traversal and links and checks every file hash.\n'
-        'For runnable reconstruction create another NEW directory under /root/minecraft-checkpoints/. Copy originals/datasets and originals/outputs from the sources extraction into that directory, and copy code/offline_evaluation from the snapshot extraction beside them. Copy run/ into a new directory under /root/minecraft-runs/. Run Python from the reconstruction directory so its offline_evaluation package resolves there. All copies are regular files; do not overwrite any existing checkout or run.\n'
+        'For runnable reconstruction create another NEW directory under /root/minecraft-checkpoints/. Copy originals/datasets and originals/outputs from the sources extraction into that directory, and copy code/offline_evaluation and code/reports from the snapshot extraction beside them. Copy run/ into a new directory under /root/minecraft-runs/. Run Python from the reconstruction directory so its offline_evaluation package resolves there. All copies are regular files; do not overwrite any existing checkout or run.\n'
         'Recreate a dedicated venv with code/offline_evaluation/server_v2/requirements.lock; never install into system Python.\n'
         'Historical ARR replay remains BLOCKED; this snapshot preserves the available source cohort and new implementation CPU results.\n')
     result = dict(metadata, assets=assets, sources=source_reference, status='LOCAL_VERIFIED_PENDING_UPLOAD')

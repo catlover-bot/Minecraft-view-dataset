@@ -7,6 +7,7 @@ from dataclasses import replace
 import pytest
 
 from offline_evaluation.server_v2 import core, providers
+from offline_evaluation.server_v2 import generation
 from offline_evaluation.server_v2.generation import (
     GenerationConfig, GenerationError, dry_run_generation, evaluate_generation,
     generate, prepare_generation, read_json, run_lock, write_json,
@@ -329,3 +330,27 @@ def test_normal_metadata_never_enters_provider_request(tmp_path):
         assert "123456" not in request.data.decode()
         return fixture_raw()
     assert generate(directory, permission=True, transport=transport)["success_count"] == 1
+
+
+def test_preparation_records_implementation_and_rejects_altered_hashes_before_transport(tmp_path):
+    directory = fixture_run(tmp_path)
+    manifest = read_json(directory / "manifest.json")
+    assert manifest["identity"]["implementation_hashes"] == generation._implementation_hashes()
+    assert set(manifest["identity"]["implementation_hashes"]) == {"generation.py", "providers.py", "core.py"}
+    manifest["identity"]["implementation_hashes"]["providers.py"] = "0" * 64
+    write_json(directory / "manifest.json", manifest)
+    with pytest.raises(GenerationError, match="implementation_mismatch"):
+        generate(directory, permission=True, transport=lambda *_: pytest.fail("request sent"))
+    assert read_json(directory / "state.json")["attempts"] == []
+
+
+def test_resume_rejects_changed_executing_implementation_before_transport(tmp_path, monkeypatch):
+    directory = fixture_run(tmp_path)
+    hashes = generation._implementation_hashes()
+    changed = {**hashes, "generation.py": "f" * 64}
+    monkeypatch.setattr(generation, "_implementation_hashes", lambda: changed)
+    with pytest.raises(GenerationError, match="implementation_mismatch"):
+        generate(directory, permission=True, transport=lambda *_: pytest.fail("request sent"))
+    with pytest.raises(GenerationError, match="implementation_mismatch"):
+        dry_run_generation(directory)
+    assert read_json(directory / "state.json")["attempts"] == []

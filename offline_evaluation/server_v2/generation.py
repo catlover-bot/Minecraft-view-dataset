@@ -47,6 +47,19 @@ def object_hash(value) -> str:
     return digest(json_bytes(value))
 
 
+def _implementation_hashes() -> dict[str, str]:
+    """Bind preparation to the Python files that implement the generation path.
+
+    Repository HEAD may change for reports or checkpoint indexes. Source-file
+    hashes detect changes to the executable pipeline without requiring a new
+    generation run for unrelated commits. Earlier preparations without these
+    hashes are preserved, but cannot be resumed by this implementation.
+    """
+    directory = Path(__file__).parent
+    return {name: digest((directory / name).read_bytes())
+            for name in ("generation.py", "providers.py", "core.py")}
+
+
 def atomic_write(path: Path, data: bytes) -> None:
     path = writable(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -233,6 +246,7 @@ def prepare_generation(records, config: GenerationConfig | dict, output_dir, *, 
         "version": 1,
         "provenance": config.provenance,
         "commit": commit,
+        "implementation_hashes": _implementation_hashes(),
         "provider": config.provider,
         "model": config.model,
         "config_hash": object_hash(config_dict),
@@ -277,6 +291,8 @@ def _verify_artifact(directory: Path, descriptor: dict) -> Path:
 def _load_run(directory: Path):
     manifest = read_json(directory / "manifest.json")
     identity = manifest["identity"]
+    if identity.get("implementation_hashes") != _implementation_hashes():
+        raise GenerationError("resume_implementation_mismatch")
     config_dict = read_json(directory / "config.json")
     records = read_json(directory / "inputs.json")
     prompt = (directory / "prompt.txt").read_text("utf-8")

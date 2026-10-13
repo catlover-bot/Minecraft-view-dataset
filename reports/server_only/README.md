@@ -10,7 +10,7 @@ GitHubのmain、到達可能な全25コミット、remote branch、タグ、Rele
 
 全GT200でExact-spec→voxelの完全一致200/200、GT→actions→executor完全一致200/200、既知shift(1,-1,1)の厳密探索による回復200/200。これらはLLM成功率に含めない。CPU34.432秒、最大RSS58384KiB。再評価1200中1168成功、32不適合。32件は13建築の曖昧な材質ラベルで、2件にはU32切詰めを確認した。原本を補修せずnull指標とし、履歴上のMinecraft実行失敗とは断定しない。再評価112.001秒、最大RSS64328KiB。
 
-新テスト88pass / 0fail / 0skip / 0error（pytest0.80秒、実時間1.10秒、最大RSS52880KiB）。旧テストは0pass / 0fail / 0skip / 6collection error（欠落import、pytest0.64秒）。専用venvを新規作成し、全依存をrequirements.lockへ固定、pip check成功。worker2、BLAS/OpenMP1。空き容量はGT検証時91721351168bytes。
+新テスト91pass / 0fail / 0skip / 0error（pytest1.88秒、実時間と最大RSSはnew_tests_summary.jsonの/usr/bin/time実測）。旧テストは0pass / 0fail / 0skip / 6collection error（欠落import、pytest0.64秒）。専用venvを新規作成し、全依存をrequirements.lockへ固定、pip check成功。worker2、BLAS/OpenMP1。空き容量はGT検証時91721351168bytes。
 
 固定subsetはseed20261013、v1/v4×GT規模五分位からsmoke10/evaluation60、互いに重複なし。通常評価予定はOriginal150+新しいlossless Canonicalized150=300件（当初360から欠損60を除外）。Partial Oracle60、Exact-spec Oracle60は建築ごとに一度。smoke通常50+Oracle20=70、評価通常300+Oracle120=420。既存データの部分集合であり未見データではない。欠落説明の新規生成には別途承認した新コホートが必要。
 
