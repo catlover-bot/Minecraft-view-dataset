@@ -18,7 +18,7 @@ import os
 import re
 import tempfile
 import uuid
-from contextlib import contextmanager
+from contextlib import ExitStack, contextmanager
 from decimal import Decimal
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -57,7 +57,9 @@ def _implementation_hashes() -> dict[str, str]:
     """
     directory = Path(__file__).parent
     return {name: digest((directory / name).read_bytes())
-            for name in ("generation.py", "providers.py", "core.py")}
+            for name in ("generation.py", "providers.py", "core.py", "shared_budget.py", "smoke.py",
+                         "io_utils.py", "cohort_v4.py", "oracle.py", "data.py", "alignment.py",
+                         "geometry_data.py") if (directory / name).is_file()}
 
 
 def atomic_write(path: Path, data: bytes) -> None:
@@ -122,6 +124,7 @@ class GenerationConfig:
     pricing_max_age_days: int = 7
     limits: dict = dataclasses.field(default_factory=dict)
     provenance: str = "new_implementation"
+    budget_campaign_id: str | None = None
 
     @classmethod
     def from_dict(cls, value: dict) -> "GenerationConfig":
@@ -165,6 +168,8 @@ class GenerationConfig:
             raise GenerationError("invalid shared validator limits") from None
         if self.provenance not in ("new_implementation", "fixture_only"):
             raise GenerationError("invalid provenance")
+        if self.budget_campaign_id is not None and (not isinstance(self.budget_campaign_id, str) or not re.fullmatch(r"[0-9a-f]{32}", self.budget_campaign_id)):
+            raise GenerationError("invalid budget campaign ID")
 
     def require_generation(self, permission: bool) -> dict:
         self.validate()
@@ -208,6 +213,10 @@ class GenerationConfig:
                     raise ValueError
         except (KeyError, TypeError, ValueError):
             raise GenerationError("invalid, stale or incomplete verified pricing/context record") from None
+        try:
+            providers.accepted_response_model_ids(self.provider, self.model, pricing)
+        except ValueError:
+            raise GenerationError("invalid or undocumented accepted response model IDs") from None
         return pricing
 
 
@@ -338,6 +347,12 @@ def _load_run(directory: Path):
         charge = attempt.get("charged_cost_usd")
         if type(charge) not in (int, float) or not math.isfinite(charge) or charge < 0:
             raise GenerationError("invalid_budget_ledger")
+        if attempt.get("usage") is None:
+            pricing = config.pricing
+            if (not isinstance(pricing, dict) or attempt["charged_input_tokens"] < pricing["context_window_tokens"]
+                or attempt["charged_output_tokens"] < config.max_output_tokens
+                or charge < providers.cost_ceiling(pricing["context_window_tokens"], config.max_output_tokens, pricing)):
+                raise GenerationError("local_unknown_usage_reservation_below_verified_ceiling")
         if attempt.get("usage") is None and attempt["status"] != "reserved" and not state["halt_reason"]:
             raise GenerationError("unknown_usage_halt_missing")
         for descriptor in attempt.get("artifacts", {}).values():
@@ -420,7 +435,7 @@ def _complete_attempt(directory: Path, state: dict, attempt: dict) -> None:
     write_json(directory / "state.json", state)
 
 
-def generate(output_dir, *, permission: bool = False, transport=None) -> dict:
+def generate(output_dir, *, permission: bool = False, transport=None, campaign_dir=None) -> dict:
     """Opt-in POSTs, bounded retries, and full-identity resume under one flock.
 
 There is no automatic retry after unknown usage, timeout or transport ambiguity.
@@ -430,7 +445,7 @@ run can continue. Known-usage parsing/validation/execution failures can retry.
     from .core import Limits, ValidationError, execute, grid_to_payload, parse_actions, validate_actions
 
     directory = writable(output_dir)
-    with run_lock(directory):
+    with run_lock(directory), ExitStack() as stack:
         manifest, config, records, prompt, state = _load_run(directory)
         pricing = config.require_generation(permission)
         if transport is not None and config.provenance != "fixture_only":
@@ -448,6 +463,19 @@ run can continue. Known-usage parsing/validation/execution failures can retry.
         except (TypeError, ValueError):
             raise GenerationError("invalid shared validator limits") from None
         identity = manifest["identity"]
+        shared = None
+        if config.budget_campaign_id:
+            if campaign_dir is None:
+                raise GenerationError("shared budget campaign required; direct generation bypass forbidden")
+            from .shared_budget import SharedBudget, load_campaign
+            campaign_manifest, _ = load_campaign(campaign_dir)
+            approved_path = writable(campaign_dir) / campaign_manifest["identity"]["runs"][config.provider]["path"]
+            if directory != approved_path:
+                raise GenerationError("unapproved_run_directory; resume the canonical campaign run")
+            shared = stack.enter_context(SharedBudget(campaign_dir).locked(
+                run_identity=identity, campaign_id=config.budget_campaign_id))
+        elif campaign_dir is not None:
+            raise GenerationError("run is not bound to a shared campaign")
         for record in records:
             while True:
                 prior = [attempt for attempt in state["attempts"] if attempt["input_id"] == record["input_id"]]
@@ -482,6 +510,15 @@ run can continue. Known-usage parsing/validation/execution failures can retry.
                     "charged_cost_usd": reserve_cost, "billing": "worst_case_reservation",
                     "artifacts": {},
                 }
+                if shared is not None:
+                    from .shared_budget import BudgetStop
+                    try:
+                        shared.reserve(run_identity_hash=object_hash(identity), provider=config.provider,
+                                       input_id=record["input_id"], attempt_id=attempt["attempt_id"],
+                                       input_tokens=reserve_input, output_tokens=reserve_output, cost_usd=reserve_cost,
+                                       request_payload_hash=attempt["identity"]["request_payload_hash"])
+                    except BudgetStop as exc:
+                        return {**_summary(manifest, state), "generation_stop_reason": str(exc)}
                 state["attempts"].append(attempt)
                 # This reservation survives a crash before, during or after POST.
                 write_json(directory / "state.json", state)
@@ -501,10 +538,10 @@ run can continue. Known-usage parsing/validation/execution failures can retry.
                     if input_tokens > reserve_input or output_tokens > reserve_output or cost > reserve_cost:
                         state["halt_reason"] = "usage_exceeded_verified_reservation"
                         raise providers.ProviderError("budget_violation")
-                    if response.model != config.model or not response.response_id:
+                    if response.model not in providers.accepted_response_model_ids(config.provider, config.model, pricing) or not response.response_id:
                         raise providers.ProviderError("response_identity_failure")
                     if not response.complete:
-                        raise providers.ProviderError("incomplete_response")
+                        raise providers.ProviderError(response.failure_kind or "incomplete_response")
                     if response.text is None:
                         raise providers.ProviderError("parse_failure")
                     try:
@@ -535,18 +572,23 @@ run can continue. Known-usage parsing/validation/execution failures can retry.
                     if attempt["usage"] is None:
                         state["halt_reason"] = "unknown_usage"
                 _complete_attempt(directory, state, attempt)
+                if shared is not None:
+                    shared.settle(attempt)
+                    if shared.ledger["halt_reason"]:
+                        return {**_summary(manifest, state), "shared_halt_reason": shared.ledger["halt_reason"]}
                 if state["halt_reason"]:
                     return _summary(manifest, state)
         return _summary(manifest, state)
 
 
-def evaluate_generation(output_dir, gt_by_scene, *, alignment_radius: int = 2) -> list[dict]:
+def evaluate_generation(output_dir, gt_by_scene, *, alignment_radius: int = 2, alignment_mode: str = "bounded") -> list[dict]:
     """CPU-only stage. Failed attempts keep null metrics rather than favorable 0s."""
+    from .alignment import AlignmentResourceLimit
     from .core import evaluate_pair, grid_to_payload, payload_to_grid
 
     directory = writable(output_dir)
     with run_lock(directory):
-        manifest, _, records, _, state = _load_run(directory)
+        manifest, config, records, _, state = _load_run(directory)
         rows = []
         for record in records:
             attempts = [attempt for attempt in state["attempts"] if attempt["input_id"] == record["input_id"]]
@@ -554,8 +596,14 @@ def evaluate_generation(output_dir, gt_by_scene, *, alignment_radius: int = 2) -
             last = success or (attempts[-1] if attempts else None)
             row = {"input_id": record["input_id"], "scene_id": record["scene_id"], "condition": record["condition"],
                    "description_model": record.get("description_model"), "provenance": manifest["identity"]["provenance"],
+                   "provider": manifest["identity"]["provider"],
                    "attempt_id": last["attempt_id"] if last else None, "status": last["status"] if last else "NOT_RUN",
                    "failure_kind": last["failure_kind"] if last else None, "metrics": None}
+            row["attempted"] = bool(last)
+            row["completed_request_outcome"] = bool(last and last.get("response_id")
+                and last.get("response_model") in providers.accepted_response_model_ids(config.provider, config.model, config.pricing)
+                and last.get("usage") is not None
+                and "raw.json" in last.get("artifacts", {}))
             if success:
                 gt = gt_by_scene.get(record["scene_id"])
                 if gt is None:
@@ -563,14 +611,28 @@ def evaluate_generation(output_dir, gt_by_scene, *, alignment_radius: int = 2) -
                 else:
                     voxel_path = _verify_artifact(directory, success["artifacts"]["voxels.json"])
                     grid = payload_to_grid(read_json(voxel_path))
-                    row["metrics"] = evaluate_pair(gt, grid, alignment_radius=alignment_radius)
-                    evaluation_identity = {"alignment_radius": alignment_radius, "gt_hash": object_hash(grid_to_payload(gt))}
-                    _save_artifact(directory, success, f"metrics.{object_hash(evaluation_identity)}.json", json_bytes({
+                    try:
+                        row["metrics"] = evaluate_pair(gt, grid, alignment_radius=alignment_radius, alignment_mode=alignment_mode)
+                    except AlignmentResourceLimit as exc:
+                        row["status"] = "ALIGNMENT_RESOURCE_LIMIT"
+                        row["evaluation_failure"] = {"kind": "ALIGNMENT_RESOURCE_LIMIT", "reason": str(exc),
+                                                     "metadata": exc.metadata}
+                    evaluation_identity = {"alignment_radius": alignment_radius, "alignment_mode": alignment_mode,
+                                           "gt_hash": object_hash(grid_to_payload(gt)), "attempt_id": success["attempt_id"],
+                                           "run_identity_hash": object_hash(manifest["identity"])}
+                    data = json_bytes({
                         **evaluation_identity,
-                        "metrics": row["metrics"],
-                    }))
-                    _complete_attempt(directory, state, success)
+                        "metrics": row["metrics"], "evaluation_failure": row.get("evaluation_failure"),
+                    })
+                    relative = Path("evaluations") / object_hash(evaluation_identity) / "metrics.json"
+                    target = directory / relative
+                    if target.exists():
+                        if target.read_bytes() != data:
+                            raise GenerationError("refusing to replace an existing evaluation artifact")
+                    else:
+                        atomic_write(target, data)
+                    row["metrics_artifact"] = {"path": relative.as_posix(), "sha256": digest(data), "bytes": len(data)}
             rows.append(row)
         write_json(directory / "evaluation.json", {"identity_hash": object_hash(manifest["identity"]),
-                                                   "alignment_radius": alignment_radius, "rows": rows})
+                                                   "alignment_radius": alignment_radius, "alignment_mode": alignment_mode, "rows": rows})
         return rows

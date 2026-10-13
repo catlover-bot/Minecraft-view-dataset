@@ -13,6 +13,7 @@ model-specific verified pricing/context-window record before generation.
 from __future__ import annotations
 
 import json
+import http.client
 import os
 import socket
 import urllib.error
@@ -28,6 +29,29 @@ ENDPOINTS = {
     "anthropic": "https://api.anthropic.com/v1/messages",
 }
 KEY_NAMES = {"openai": "OPENAI_API_KEY", "anthropic": "ANTHROPIC_API_KEY"}
+
+# Official gpt-5-mini model documentation, checked 2026-10-13 by Goal002:
+# https://developers.openai.com/api/docs/models/gpt-5-mini
+# A response snapshot is accepted only when explicitly listed in the dated,
+# verified pricing/model record. The outgoing requested model never changes.
+DOCUMENTED_RESPONSE_SNAPSHOTS = {("openai", "gpt-5-mini"): {"gpt-5-mini-2025-08-07"}}
+
+
+def accepted_response_model_ids(provider: str, model: str | None, pricing: dict | None) -> tuple[str, ...]:
+    if model is None:
+        return ()
+    configured = (pricing or {}).get("accepted_response_model_ids", [model])
+    allowed = {model} | DOCUMENTED_RESPONSE_SNAPSHOTS.get((provider, model), set())
+    if (not isinstance(configured, list) or not configured or model not in configured
+        or any(not isinstance(value, str) or value not in allowed for value in configured)
+        or len(set(configured)) != len(configured)):
+        raise ValueError("invalid or undocumented accepted response model IDs")
+    # The same verified_on, context_source_url and immutable pricing/config hash
+    # bind the documented alias mapping, its source, and its verification date.
+    if configured != [model] and (not isinstance(pricing, dict) or pricing.get("verified") is not True
+                                 or pricing.get("provider") != provider or pricing.get("model") != model):
+        raise ValueError("accepted response snapshots require verified model evidence")
+    return tuple(configured)
 
 
 class ProviderError(RuntimeError):
@@ -45,6 +69,27 @@ class _NoRedirect(urllib.request.HTTPRedirectHandler):
         raise ProviderError("http_failure", code)
 
 
+def classify_http_error(status_code: int, raw: bytes = b"") -> str:
+    """Inspect error identifiers for classification, never return server text."""
+    code, message = "", ""
+    try:
+        error = json.loads(raw.decode("utf-8")).get("error", {})
+        if isinstance(error, dict):
+            code = str(error.get("code") or error.get("type") or "").lower()
+            message = str(error.get("message") or "").lower()
+    except (ValueError, UnicodeError, AttributeError):
+        pass
+    if status_code == 402 or code in {"insufficient_quota", "billing_hard_limit_reached", "credit_balance_too_low"} or "credit balance" in message:
+        return "billing_failure"
+    if status_code in {401, 403}:
+        return "auth_failure"
+    if status_code == 404 or code in {"model_not_found", "model_unavailable"}:
+        return "model_unavailable"
+    if code in {"context_length_exceeded", "prompt_too_long"} or any(text in message for text in ("context window", "prompt is too long", "maximum context length")):
+        return "context_failure"
+    return "rate_limit" if status_code == 429 else "http_failure"
+
+
 def http_transport(request: urllib.request.Request, timeout: float) -> bytes:
     """Perform exactly one POST. urllib has no automatic retry loop."""
     opener = urllib.request.build_opener(_NoRedirect())
@@ -54,13 +99,17 @@ def http_transport(request: urllib.request.Request, timeout: float) -> bytes:
     except ProviderError:
         raise
     except urllib.error.HTTPError as exc:
-        raise ProviderError("rate_limit" if exc.code == 429 else "http_failure", exc.code) from None
+        try:
+            error_body = exc.read(16_384)
+        except (OSError, http.client.HTTPException):
+            error_body = b""
+        raise ProviderError(classify_http_error(exc.code, error_body), exc.code) from None
     except (TimeoutError, socket.timeout):
         raise ProviderError("timeout") from None
     except urllib.error.URLError as exc:
         kind = "timeout" if isinstance(exc.reason, (TimeoutError, socket.timeout)) else "transport_failure"
         raise ProviderError(kind) from None
-    except (OSError, ConnectionError):
+    except (OSError, ConnectionError, http.client.HTTPException):
         raise ProviderError("transport_failure") from None
     if len(body) > MAX_RESPONSE_BYTES:
         raise ProviderError("response_too_large")
@@ -136,6 +185,7 @@ class ProviderResponse:
     model: str | None
     usage: dict | None
     complete: bool
+    failure_kind: str | None = None
 
 
 def cost_ceiling(input_tokens: int, output_tokens: int, pricing: dict) -> float:
@@ -160,9 +210,13 @@ def parse_response(provider: str, raw: bytes) -> ProviderResponse:
                 for block in item.get("content", []) if block.get("type") == "output_text"
             ]
             complete = data.get("status") == "completed"
+            stop_reason = (data.get("incomplete_details") or {}).get("reason")
+            failure_kind = "truncation" if stop_reason == "max_output_tokens" else None
         elif provider == "anthropic":
             parts = [block["text"] for block in content if block.get("type") == "text"]
             complete = data.get("stop_reason") == "end_turn"
+            failure_kind = "truncation" if data.get("stop_reason") == "max_tokens" else (
+                "context_failure" if data.get("stop_reason") == "model_context_window_exceeded" else None)
         else:
             raise ValueError
         if any(not isinstance(part, str) for part in parts):
@@ -175,8 +229,9 @@ def parse_response(provider: str, raw: bytes) -> ProviderResponse:
             model if isinstance(model, str) else None,
             usage if isinstance(usage, dict) else None,
             complete,
+            failure_kind,
         )
-    except (UnicodeError, ValueError, KeyError, TypeError, AttributeError):
+    except (UnicodeError, ValueError, KeyError, TypeError, AttributeError, RecursionError):
         raise ProviderError("response_parse_failure") from None
 
 

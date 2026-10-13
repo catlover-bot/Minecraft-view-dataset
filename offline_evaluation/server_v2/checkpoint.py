@@ -76,13 +76,57 @@ def create_checkpoint(destination, run_dir, source_paths, commit, checkpoint_id,
     """Freeze all cooperative Builder writers for the duration of the snapshot."""
     run_dir = writable(run_dir)
     with ExitStack() as stack:
-        for lock in [run_dir/'checkpoint.lock'] + sorted(run_dir.glob('builder_*/run.lock')):
+        for lock in sorted(set([run_dir/'checkpoint.lock',run_dir/'run.lock'] + list(run_dir.rglob('run.lock')) + list(run_dir.rglob('budget.lock')))):
+            if lock.is_symlink():raise ValueError('Symlink lock rejected')
             stream = stack.enter_context(lock.open('a+b'))
             try:
                 fcntl.flock(stream, fcntl.LOCK_EX | fcntl.LOCK_NB)
             except BlockingIOError:
                 raise ValueError('Run task is active; checkpoint refused') from None
         return _create_checkpoint(destination,run_dir,source_paths,commit,checkpoint_id,source_reference)
+
+
+def freeze_completed(run_dir):
+    """Snapshot terminal, cooperative writers in one immutable completed list.
+
+    NOT_RUN preparations are completed CPU artifacts, not completed experiments.
+    Uncertain reservations can be preserved after their process released locks;
+    they never authorize a fresh request or a budget reset.
+    """
+    run_dir = writable(run_dir)
+    if not run_dir.is_dir():raise ValueError('Run directory must exist')
+    with ExitStack() as stack:
+        locks=sorted(set([run_dir/'checkpoint.lock',run_dir/'run.lock'] + list(run_dir.rglob('run.lock')) + list(run_dir.rglob('budget.lock'))))
+        for lock in locks:
+            if lock.is_symlink():raise ValueError('Symlink lock rejected')
+            stream=stack.enter_context(lock.open('a+b'))
+            try:fcntl.flock(stream,fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except BlockingIOError:raise ValueError('Run task is active; freeze refused') from None
+        completed_path=run_dir/'completed.json'
+        if completed_path.exists():
+            completed=read_json(completed_path)
+            if completed.get('status')!='COMPLETE' or completed.get('active_tasks')!=0:
+                raise ValueError('Completed task freeze invalid')
+            for relative,digest in completed['files'].items():
+                safe_relative(relative)
+                if sha256(run_dir/relative)!=digest:raise ValueError('Completed task changed after freeze')
+            return {'status':'ALREADY_FROZEN','files':len(completed['files'])}
+        files={}
+        for path in sorted(run_dir.rglob('*')):
+            if path.is_dir():continue
+            name=path.relative_to(run_dir).as_posix()
+            if path.name.endswith('.lock') or path.name.startswith('.pending-'):continue
+            safe_relative(name)
+            scan_file(path)
+            files[name]=sha256(path)
+        if not files:raise ValueError('Nonempty completed-file allowlist required')
+        experiment_status='NOT_RUN'
+        if any(read_json(path).get('attempts') for path in run_dir.rglob('state.json')):
+            experiment_status='PARTIAL'
+        atomic_json(completed_path,{'status':'COMPLETE','active_tasks':0,'files':files,
+                    'experiment_completion':experiment_status,
+                    'completion_scope':'CPU/preparation artifacts frozen; experiment state reported separately'})
+        return {'status':'COMPLETE','files':len(files),'experiment_completion':experiment_status}
 
 def _create_checkpoint(destination, run_dir, source_paths, commit, checkpoint_id, source_reference=None):
     destination = writable(destination)
@@ -113,7 +157,17 @@ def _create_checkpoint(destination, run_dir, source_paths, commit, checkpoint_id
                 'commit': commit, 'source_repo': 'catlover-bot/Minecraft-view-dataset', 'source_refs': source_refs,
                 'original_manifest_sha256': sha256(ROOT/'reports/server_only/originals_manifest.jsonl'), 'completeness': 'PARTIAL',
                 'reason': 'ARR/fixed_builder originals absent in reachable repository; available source and completed CPU tasks preserved',
-                'research_generation_requests': 0}
+                'research_generation_requests': None}
+    states = [read_json(path) for path in run_dir.rglob('state.json')]
+    attempts = [attempt for state in states for attempt in state.get('attempts', [])]
+    metadata['research_generation_requests'] = 0 if not attempts else None
+    metadata['research_generation_attempts_reserved'] = len(attempts)
+    metadata['research_generation_requests_accounting'] = (
+        'ZERO_NO_ATTEMPTS' if not attempts else 'UNKNOWN: reservations include uncertain sends; no false zero')
+    if (run_dir/'goal002_status.json').is_file():
+        metadata['goal002_status']=read_json(run_dir/'goal002_status.json')
+    if 'experiment_completion' in completed:
+        metadata['experiment_completion']=completed['experiment_completion']
     assets = []
     if source_reference is None:
         source = _archive(destination / 'sources.tar.gz', source_entries, dict(metadata, kind='immutable_originals'))

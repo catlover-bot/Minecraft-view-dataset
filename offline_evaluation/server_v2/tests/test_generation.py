@@ -122,7 +122,7 @@ def test_fixture_only_generation_shared_executor_and_resume(tmp_path, provider):
     assert rows[0]["metrics"]["absolute"]["occupancy_iou"] == 1
     attempt = read_json(directory / "state.json")["attempts"][0]
     assert {"raw.json", "parsed.json", "voxels.json"}.issubset(attempt["artifacts"])
-    assert any(name.startswith("metrics.") for name in attempt["artifacts"])
+    assert rows[0]["metrics_artifact"]["path"].startswith("evaluations/")
     assert attempt["response_id"] == "fixture-response-id"
     assert attempt["identity"]["commit"] == COMMIT
     assert attempt["started_at_utc"].endswith("Z")
@@ -336,7 +336,7 @@ def test_preparation_records_implementation_and_rejects_altered_hashes_before_tr
     directory = fixture_run(tmp_path)
     manifest = read_json(directory / "manifest.json")
     assert manifest["identity"]["implementation_hashes"] == generation._implementation_hashes()
-    assert set(manifest["identity"]["implementation_hashes"]) == {"generation.py", "providers.py", "core.py"}
+    assert {"generation.py", "providers.py", "core.py", "shared_budget.py", "smoke.py"}.issubset(manifest["identity"]["implementation_hashes"])
     manifest["identity"]["implementation_hashes"]["providers.py"] = "0" * 64
     write_json(directory / "manifest.json", manifest)
     with pytest.raises(GenerationError, match="implementation_mismatch"):
@@ -353,4 +353,73 @@ def test_resume_rejects_changed_executing_implementation_before_transport(tmp_pa
         generate(directory, permission=True, transport=lambda *_: pytest.fail("request sent"))
     with pytest.raises(GenerationError, match="implementation_mismatch"):
         dry_run_generation(directory)
+    assert read_json(directory / "state.json")["attempts"] == []
+
+
+def test_strict_evaluation_records_mode_and_definitive_attempt_outcome(tmp_path):
+    directory = fixture_run(tmp_path)
+    generate(directory, permission=True, transport=lambda *_: fixture_raw())
+    rows = evaluate_generation(directory, {"fixture_only:building_0": core.Grid({(20, -3, -17): "stone"})},
+                               alignment_mode="strict_translation")
+    assert rows[0]["provider"] == "anthropic"
+    assert rows[0]["completed_request_outcome"] is True and rows[0]["attempted"] is True
+    assert rows[0]["metrics"]["aligned"]["occupancy_iou"] == 1
+    assert rows[0]["metrics"]["alignment"]["mode"] == "strict_translation"
+
+
+def test_alignment_resource_limit_is_evaluation_null_not_model_failure(tmp_path, monkeypatch):
+    from offline_evaluation.server_v2.alignment import AlignmentResourceLimit
+    directory = fixture_run(tmp_path)
+    generate(directory, permission=True, transport=lambda *_: fixture_raw())
+    def limited(*args, **kwargs):
+        raise AlignmentResourceLimit("fixture_only resource limit", {"fixture_only": True})
+    monkeypatch.setattr(core, "evaluate_pair", limited)
+    rows = evaluate_generation(directory, {"fixture_only:building_0": core.Grid({(0, 0, 0): "stone"})},
+                               alignment_mode="strict_translation")
+    assert rows[0]["status"] == "ALIGNMENT_RESOURCE_LIMIT" and rows[0]["metrics"] is None
+    assert rows[0]["failure_kind"] is None and rows[0]["completed_request_outcome"] is True
+    metadata = rows[0]["evaluation_failure"]["metadata"]
+    assert metadata["fixture_only"] is True and metadata["search_complete"] is False
+    assert metadata["resource_limit_reached"] is True
+
+
+def fixture_openai_alias_config(*, accept_snapshot):
+    config = fixture_config("openai")
+    pricing = {**config.pricing, "model": "gpt-5-mini"}
+    if accept_snapshot:
+        pricing["accepted_response_model_ids"] = ["gpt-5-mini", "gpt-5-mini-2025-08-07"]
+    return replace(config, model="gpt-5-mini", pricing=pricing)
+
+
+def test_documented_explicit_snapshot_response_accepted_without_request_fallback(tmp_path):
+    directory = fixture_run(tmp_path, fixture_openai_alias_config(accept_snapshot=True))
+    sent = []
+    def transport(request, _timeout):
+        sent.append(json.loads(request.data)["model"])
+        return fixture_raw("openai", model="gpt-5-mini-2025-08-07")
+    assert generate(directory, permission=True, transport=transport)["success_count"] == 1
+    assert sent == ["gpt-5-mini"]
+    rows = evaluate_generation(directory, {"fixture_only:building_0": core.Grid({(0, 0, 0): "stone"})})
+    assert rows[0]["completed_request_outcome"] is True
+
+
+@pytest.mark.parametrize("accept_snapshot,response_model", [(False, "gpt-5-mini-2025-08-07"), (True, "gpt-5")])
+def test_no_implicit_snapshot_acceptance_or_other_model_fallback(tmp_path, accept_snapshot, response_model):
+    directory = fixture_run(tmp_path, fixture_openai_alias_config(accept_snapshot=accept_snapshot))
+    sent = []
+    def transport(request, _timeout):
+        sent.append(json.loads(request.data)["model"])
+        return fixture_raw("openai", model=response_model)
+    assert generate(directory, permission=True, transport=transport)["success_count"] == 0
+    attempt = read_json(directory / "state.json")["attempts"][0]
+    assert attempt["failure_kind"] == "response_identity_failure" and sent == ["gpt-5-mini"]
+    assert evaluate_generation(directory, {})[0]["completed_request_outcome"] is False
+
+
+def test_undocumented_accepted_snapshot_rejected_before_transport(tmp_path):
+    config = fixture_openai_alias_config(accept_snapshot=True)
+    config = replace(config, pricing={**config.pricing, "accepted_response_model_ids": ["gpt-5-mini", "gpt-5-mini-2099-01-01"]})
+    directory = fixture_run(tmp_path, config)
+    with pytest.raises(GenerationError, match="undocumented"):
+        generate(directory, permission=True, transport=lambda *_: pytest.fail("request sent"))
     assert read_json(directory / "state.json")["attempts"] == []

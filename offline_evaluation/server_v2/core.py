@@ -38,6 +38,10 @@ class Limits:
     max_numpy_bytes: int = 128_000_000
     max_alignment_radius: int = 8
     max_alignment_work: int = 50_000_000
+    max_alignment_sparse_pairs: int = 100_000
+    max_alignment_transform_cells: int = 2_097_152
+    max_alignment_transform_work: int = 150_000_000
+    max_alignment_memory_bytes: int = 268_435_456
 
     def __post_init__(self):
         for name, value in vars(self).items():
@@ -297,36 +301,23 @@ def metrics(gt: Grid, pred: Grid) -> dict:
 
 
 def evaluate_pair(gt: Grid, pred: Grid, alignment_radius: int = 2,
-                  limits: Limits = Limits()) -> dict:
-    """Exact exhaustive XYZ translation in [-radius,+radius]^3.
+                  limits: Limits = Limits(), *, alignment_mode: str = "bounded") -> dict:
+    """Evaluate with explicitly bounded or globally exact XYZ translation.
 
     Select the shift maximizing occupancy intersection (and hence occupancy
     IoU). Ties use smallest L1 shift magnitude, then lexicographic XYZ. All
     aligned material and repair metrics use this same single selected shift.
     No coordinate truncation occurs when prediction extends outside GT bounds.
+    The historical default remains bounded; strict_translation is a separately
+    versioned primary evaluation over all integer translations.
     """
-    radius = _integer(alignment_radius, "alignment_radius")
-    if not 0 <= radius <= limits.max_alignment_radius:
-        raise ValidationError("alignment radius outside configured bounds")
+    from .alignment import select_translation
+
     gt, pred = gt.as_world(), pred.as_world()
-    candidates = (2 * radius + 1) ** 3
-    if candidates * min(len(gt.voxels), len(pred.voxels)) > limits.max_alignment_work:
-        raise ValidationError("exact alignment exceeds comparison work limit")
-    shifts = sorted(itertools.product(range(-radius, radius + 1), repeat=3),
-                    key=lambda s: (sum(abs(v) for v in s), s))
-    best_shift, best_count = (0, 0, 0), -1
-    g, p = gt.voxels, pred.voxels
-    for dx, dy, dz in shifts:
-        if len(p) <= len(g):
-            count = sum((x + dx, y + dy, z + dz) in g for x, y, z in p)
-        else:
-            count = sum((x - dx, y - dy, z - dz) in p for x, y, z in g)
-        if count > best_count:
-            best_shift, best_count = (dx, dy, dz), count
-    return {"provenance": "new_implementation", "metric_version": "server_v2.1",
-            "absolute": metrics(gt, pred), "aligned": metrics(gt, pred.shifted(best_shift)),
-            "alignment": {"method": "exact_exhaustive_translation", "radius": radius,
-                          "candidates_evaluated": candidates, "shift_xyz": list(best_shift),
-                          "objective": "maximum_occupancy_intersection",
-                          "tie_break": "minimum_L1_then_lexicographic_XYZ",
-                          "all_aligned_metrics_share_shift": True}}
+    alignment = select_translation(gt.voxels, pred.voxels, mode=alignment_mode,
+                                   radius=alignment_radius, limits=limits)
+    version = "server_v2.1" if alignment_mode == "bounded" else "server_v2.2_strict_translation"
+    return {"provenance": "new_implementation", "metric_version": version,
+            "absolute": metrics(gt, pred),
+            "aligned": metrics(gt, pred.shifted(tuple(alignment["shift_xyz"]))),
+            "alignment": alignment}

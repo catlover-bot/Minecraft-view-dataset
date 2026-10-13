@@ -1,0 +1,480 @@
+{
+  "schema": "goal002_v4_protocol_v1",
+  "cohort_id": "goal002_complete_v4_two_builder_20261013",
+  "seed": 20261013,
+  "population": "existing complete-description buildings_100_v4, 100 buildings; not unseen data",
+  "rng": "sha256-counter-rejection-fisher-yates-v1",
+  "strata": "occupied GT count rank quintiles; ties by scene_id; 20 per stratum",
+  "splits": {
+    "smoke": 10,
+    "evaluation": 60,
+    "rest": 30
+  },
+  "per_stratum": {
+    "smoke": 2,
+    "evaluation": 12,
+    "rest": 6
+  },
+  "initial_smoke": {
+    "buildings": 2,
+    "selection": "min scene_id in smoke quintiles0/4",
+    "description_models": [
+      "openai"
+    ],
+    "inputs_per_builder": 8,
+    "combined_inputs": 16
+  },
+  "conditions": {
+    "O": "Original saved description record",
+    "J": "Lossless JSON reserialization",
+    "P": "Partial GT attributes Oracle",
+    "E": "Exact-spec Oracle"
+  },
+  "evaluation_inputs_per_builder": {
+    "O": 180,
+    "J": 180,
+    "P": 60,
+    "E": 60
+  },
+  "evaluation_inputs_combined": 960,
+  "executor_control": "CPU only; once/building; never counted as model success",
+  "normal_input_rule": "saved record text only; retain original metadata including original building filename; no extra GT/path/image/scene-specific information",
+  "J_rule": "duplicate keys rejected; exact decimal/integer types, null, array order, all fields and uncertainty strings preserved; typed-tree equality and source SHA recorded",
+  "evaluation_version": "server_v2.2_strict_translation",
+  "alignment": "strict integer sparse/NTT maximum occupancy overlap across all XYZ translations; shared occupancy-selected shift for material and repair; tie L1 minimum then XYZ lexicographic; no rotation/scale/clamp; resource-limit cases are unmeasurable",
+  "comparison_families": [
+    {
+      "id": "primary_builder_valid_pair",
+      "size": 8,
+      "comparisons": [
+        {
+          "id": "anthropic-minus-openai:O:aligned_occupancy_iou",
+          "a_provider": "openai",
+          "b_provider": "anthropic",
+          "a_condition": "O",
+          "b_condition": "O",
+          "metric": "aligned_occupancy_iou"
+        },
+        {
+          "id": "anthropic-minus-openai:O:aligned_dimension_mae",
+          "a_provider": "openai",
+          "b_provider": "anthropic",
+          "a_condition": "O",
+          "b_condition": "O",
+          "metric": "aligned_dimension_mae"
+        },
+        {
+          "id": "anthropic-minus-openai:J:aligned_occupancy_iou",
+          "a_provider": "openai",
+          "b_provider": "anthropic",
+          "a_condition": "J",
+          "b_condition": "J",
+          "metric": "aligned_occupancy_iou"
+        },
+        {
+          "id": "anthropic-minus-openai:J:aligned_dimension_mae",
+          "a_provider": "openai",
+          "b_provider": "anthropic",
+          "a_condition": "J",
+          "b_condition": "J",
+          "metric": "aligned_dimension_mae"
+        },
+        {
+          "id": "anthropic-minus-openai:P:aligned_occupancy_iou",
+          "a_provider": "openai",
+          "b_provider": "anthropic",
+          "a_condition": "P",
+          "b_condition": "P",
+          "metric": "aligned_occupancy_iou"
+        },
+        {
+          "id": "anthropic-minus-openai:P:aligned_dimension_mae",
+          "a_provider": "openai",
+          "b_provider": "anthropic",
+          "a_condition": "P",
+          "b_condition": "P",
+          "metric": "aligned_dimension_mae"
+        },
+        {
+          "id": "anthropic-minus-openai:E:aligned_occupancy_iou",
+          "a_provider": "openai",
+          "b_provider": "anthropic",
+          "a_condition": "E",
+          "b_condition": "E",
+          "metric": "aligned_occupancy_iou"
+        },
+        {
+          "id": "anthropic-minus-openai:E:aligned_dimension_mae",
+          "a_provider": "openai",
+          "b_provider": "anthropic",
+          "a_condition": "E",
+          "b_condition": "E",
+          "metric": "aligned_dimension_mae"
+        }
+      ],
+      "Holm_scope": "all eight predeclared provider contrasts; nonestimable p-values retained as null, counted as1 for correction"
+    },
+    {
+      "id": "secondary_lossless_J_minus_O",
+      "size": 4,
+      "comparisons": [
+        {
+          "id": "J-minus-O:openai:aligned_occupancy_iou",
+          "a_provider": "openai",
+          "b_provider": "openai",
+          "a_condition": "O",
+          "b_condition": "J",
+          "metric": "aligned_occupancy_iou"
+        },
+        {
+          "id": "J-minus-O:openai:aligned_dimension_mae",
+          "a_provider": "openai",
+          "b_provider": "openai",
+          "a_condition": "O",
+          "b_condition": "J",
+          "metric": "aligned_dimension_mae"
+        },
+        {
+          "id": "J-minus-O:anthropic:aligned_occupancy_iou",
+          "a_provider": "anthropic",
+          "b_provider": "anthropic",
+          "a_condition": "O",
+          "b_condition": "J",
+          "metric": "aligned_occupancy_iou"
+        },
+        {
+          "id": "J-minus-O:anthropic:aligned_dimension_mae",
+          "a_provider": "anthropic",
+          "b_provider": "anthropic",
+          "a_condition": "O",
+          "b_condition": "J",
+          "metric": "aligned_dimension_mae"
+        }
+      ],
+      "Holm_scope": "all four predeclared within-provider serialization contrasts"
+    },
+    {
+      "id": "diagnostic_oracle_minus_original",
+      "size": 8,
+      "comparisons": [
+        {
+          "id": "P-minus-O:openai:aligned_occupancy_iou",
+          "a_provider": "openai",
+          "b_provider": "openai",
+          "a_condition": "O",
+          "b_condition": "P",
+          "metric": "aligned_occupancy_iou"
+        },
+        {
+          "id": "P-minus-O:openai:aligned_dimension_mae",
+          "a_provider": "openai",
+          "b_provider": "openai",
+          "a_condition": "O",
+          "b_condition": "P",
+          "metric": "aligned_dimension_mae"
+        },
+        {
+          "id": "E-minus-O:openai:aligned_occupancy_iou",
+          "a_provider": "openai",
+          "b_provider": "openai",
+          "a_condition": "O",
+          "b_condition": "E",
+          "metric": "aligned_occupancy_iou"
+        },
+        {
+          "id": "E-minus-O:openai:aligned_dimension_mae",
+          "a_provider": "openai",
+          "b_provider": "openai",
+          "a_condition": "O",
+          "b_condition": "E",
+          "metric": "aligned_dimension_mae"
+        },
+        {
+          "id": "P-minus-O:anthropic:aligned_occupancy_iou",
+          "a_provider": "anthropic",
+          "b_provider": "anthropic",
+          "a_condition": "O",
+          "b_condition": "P",
+          "metric": "aligned_occupancy_iou"
+        },
+        {
+          "id": "P-minus-O:anthropic:aligned_dimension_mae",
+          "a_provider": "anthropic",
+          "b_provider": "anthropic",
+          "a_condition": "O",
+          "b_condition": "P",
+          "metric": "aligned_dimension_mae"
+        },
+        {
+          "id": "E-minus-O:anthropic:aligned_occupancy_iou",
+          "a_provider": "anthropic",
+          "b_provider": "anthropic",
+          "a_condition": "O",
+          "b_condition": "E",
+          "metric": "aligned_occupancy_iou"
+        },
+        {
+          "id": "E-minus-O:anthropic:aligned_dimension_mae",
+          "a_provider": "anthropic",
+          "b_provider": "anthropic",
+          "a_condition": "O",
+          "b_condition": "E",
+          "metric": "aligned_dimension_mae"
+        }
+      ],
+      "Holm_scope": "all eight GT-diagnostic contrasts; no pure language-information-loss interpretation"
+    }
+  ],
+  "inference": "equal-weight building paired means; building-cluster percentile bootstrap2000 and seeded two-sided sign-flip10000 (exact at n<=16); sign-flip requires paired-difference exchangeability/symmetry under its null; predeclared family Holm; no smoke significance/generalization claims",
+  "failure_policy": "valid-only conditional accuracy plus completed-request all-attempted failure0 for bounded IoU scores in[0,1]; eligible only identified completed request with known usage and parse/validation/execution/truncation failure; auth/billing/model unavailable/context/missing key/transport/unknown usage remain operational or unmeasurable and separate rates; NOT_RUN/budget stop/missing input/GT or alignment-resource failure excluded; MAE/repair failures null and metric-specific common-valid pairs",
+  "failure0_requires": {
+    "completed_request_outcome": true,
+    "failure_kind": [
+      "parse_failure",
+      "validation_failure",
+      "execution_failure",
+      "truncation"
+    ],
+    "note": "attempt_id alone and generic failed status do not prove a model output; failure0 bounds the score, not the translation search radius"
+  },
+  "smoke_caps_proposed_not_approved": {
+    "global_calls": 20,
+    "global_retries": 4,
+    "attempts_per_input": 2,
+    "global_cost_usd": 5,
+    "max_output_tokens_per_provider": 16384,
+    "global_tokens": 8327680,
+    "concurrency": 1,
+    "hidden_retries": 0
+  },
+  "model_ids": {
+    "openai": "gpt-5-mini",
+    "anthropic": "claude-haiku-4-5-20251001"
+  },
+  "model_availability": "NOT_RUN; no fallback; first model deprecated, second exact ID legacy Active per root official-doc check",
+  "reasoning_policy": "OpenAI reasoning and visible output share output cap/billing; Anthropic adapter does not enable extended thinking; provider defaults differ",
+  "budgets": {
+    "input_bytes": 2000000,
+    "output_tokens": 16384,
+    "context_tokens": {
+      "openai": 400000,
+      "anthropic": 200000
+    },
+    "executor": {
+      "max_operations": 50000,
+      "max_coordinate_abs": 100000,
+      "max_touched_voxels": 2000000,
+      "max_voxels": 1000000,
+      "max_json_bytes": 8000000,
+      "max_numpy_bytes": 128000000,
+      "max_alignment_radius": 8,
+      "max_alignment_work": 50000000,
+      "max_alignment_sparse_pairs": 100000,
+      "max_alignment_transform_cells": 2097152,
+      "max_alignment_transform_work": 150000000,
+      "max_alignment_memory_bytes": 268435456
+    },
+    "token_counts": "not measured; conservative UTF8-byte input upper plus prompt and framing1024; wrapper/tokenizer certification remains explicit"
+  },
+  "limitations": [
+    "Original descriptions/images may not identify world origin; absolute errors are not solely description ability.",
+    "P/E expose nonvisible openings/interiors and exact GT attributes; advantages are diagnostic, not pure language information loss.",
+    "E additionally tests palette/Z-run decoding and expansion; output completion at16384 is not guaranteed; reference sizes and uncertified tokenization are reported.",
+    "J is a new lossless serialization contrast, not historical Structured IR or a general claim about structuring.",
+    "No previous i2t2b-v5 predictions are reused as new first Builder outputs; both providers require fresh matched-period generation.",
+    "No target replacement, silent truncation, v1 Gemini generation, automated full960 launch or paid request is authorized by Goal002."
+  ],
+  "experiment_completion": "NOT_RUN",
+  "research_requests_sent": 0,
+  "budget_approval": "AWAITING_EXPLICIT_USER_APPROVAL",
+  "frozen_cohort": {
+    "run_id": "goal002-20261013-141854",
+    "manifest_restore_path": "run/cohort.v4.json",
+    "manifest_file_sha256": "4015da18a189b597365d412fe21686139c62c809e4349e917b9ee4b971548ff0",
+    "cohort_sha256": "eeed4b62047106f4ce75d853c4e33dc22cac812224282ceca9d6b84f6b696f63",
+    "source_manifest_sha256": "90fd3d329669cd9bcb70164747f6fa8c7cf2fb4d47622e0b982065575de2281c",
+    "status": "CPU_READY",
+    "source_files": 1800,
+    "all_sources_original_reference_verified": true,
+    "gt_exact_executor_controls_pass": 100,
+    "initial_smoke_scene_ids": [
+      "buildings_100_v4_building_060",
+      "buildings_100_v4_building_075"
+    ],
+    "splits": {
+      "smoke": [
+        "buildings_100_v4_building_002",
+        "buildings_100_v4_building_022",
+        "buildings_100_v4_building_036",
+        "buildings_100_v4_building_058",
+        "buildings_100_v4_building_060",
+        "buildings_100_v4_building_067",
+        "buildings_100_v4_building_072",
+        "buildings_100_v4_building_074",
+        "buildings_100_v4_building_075",
+        "buildings_100_v4_building_081"
+      ],
+      "evaluation": [
+        "buildings_100_v4_building_001",
+        "buildings_100_v4_building_003",
+        "buildings_100_v4_building_005",
+        "buildings_100_v4_building_006",
+        "buildings_100_v4_building_007",
+        "buildings_100_v4_building_011",
+        "buildings_100_v4_building_013",
+        "buildings_100_v4_building_015",
+        "buildings_100_v4_building_016",
+        "buildings_100_v4_building_021",
+        "buildings_100_v4_building_023",
+        "buildings_100_v4_building_024",
+        "buildings_100_v4_building_025",
+        "buildings_100_v4_building_026",
+        "buildings_100_v4_building_027",
+        "buildings_100_v4_building_028",
+        "buildings_100_v4_building_031",
+        "buildings_100_v4_building_032",
+        "buildings_100_v4_building_033",
+        "buildings_100_v4_building_034",
+        "buildings_100_v4_building_037",
+        "buildings_100_v4_building_039",
+        "buildings_100_v4_building_040",
+        "buildings_100_v4_building_041",
+        "buildings_100_v4_building_042",
+        "buildings_100_v4_building_045",
+        "buildings_100_v4_building_046",
+        "buildings_100_v4_building_047",
+        "buildings_100_v4_building_048",
+        "buildings_100_v4_building_049",
+        "buildings_100_v4_building_050",
+        "buildings_100_v4_building_051",
+        "buildings_100_v4_building_052",
+        "buildings_100_v4_building_053",
+        "buildings_100_v4_building_054",
+        "buildings_100_v4_building_055",
+        "buildings_100_v4_building_057",
+        "buildings_100_v4_building_059",
+        "buildings_100_v4_building_061",
+        "buildings_100_v4_building_062",
+        "buildings_100_v4_building_063",
+        "buildings_100_v4_building_064",
+        "buildings_100_v4_building_065",
+        "buildings_100_v4_building_070",
+        "buildings_100_v4_building_077",
+        "buildings_100_v4_building_078",
+        "buildings_100_v4_building_082",
+        "buildings_100_v4_building_083",
+        "buildings_100_v4_building_085",
+        "buildings_100_v4_building_087",
+        "buildings_100_v4_building_088",
+        "buildings_100_v4_building_089",
+        "buildings_100_v4_building_090",
+        "buildings_100_v4_building_091",
+        "buildings_100_v4_building_092",
+        "buildings_100_v4_building_093",
+        "buildings_100_v4_building_094",
+        "buildings_100_v4_building_095",
+        "buildings_100_v4_building_096",
+        "buildings_100_v4_building_099"
+      ],
+      "rest": [
+        "buildings_100_v4_building_000",
+        "buildings_100_v4_building_004",
+        "buildings_100_v4_building_008",
+        "buildings_100_v4_building_009",
+        "buildings_100_v4_building_010",
+        "buildings_100_v4_building_012",
+        "buildings_100_v4_building_014",
+        "buildings_100_v4_building_017",
+        "buildings_100_v4_building_018",
+        "buildings_100_v4_building_019",
+        "buildings_100_v4_building_020",
+        "buildings_100_v4_building_029",
+        "buildings_100_v4_building_030",
+        "buildings_100_v4_building_035",
+        "buildings_100_v4_building_038",
+        "buildings_100_v4_building_043",
+        "buildings_100_v4_building_044",
+        "buildings_100_v4_building_056",
+        "buildings_100_v4_building_066",
+        "buildings_100_v4_building_068",
+        "buildings_100_v4_building_069",
+        "buildings_100_v4_building_071",
+        "buildings_100_v4_building_073",
+        "buildings_100_v4_building_076",
+        "buildings_100_v4_building_079",
+        "buildings_100_v4_building_080",
+        "buildings_100_v4_building_084",
+        "buildings_100_v4_building_086",
+        "buildings_100_v4_building_097",
+        "buildings_100_v4_building_098"
+      ]
+    },
+    "initial_smoke_GT_rank_metadata": [
+      {
+        "scene_id": "buildings_100_v4_building_060",
+        "gt_occupied": 2554,
+        "rank": 5,
+        "size_rank_stratum": 0
+      },
+      {
+        "scene_id": "buildings_100_v4_building_075",
+        "gt_occupied": 8018,
+        "rank": 96,
+        "size_rank_stratum": 4
+      }
+    ],
+    "input_manifests": {
+      "initial_smoke": {
+        "restore_path": "run/inputs.initial_smoke.json",
+        "sha256": "7a228f8c801b42a70c741f67530b1a2892834d1a74ebe87f395bef49457d208b",
+        "counts_per_builder": {
+          "records": 8,
+          "prepared": 8,
+          "infeasible": 0,
+          "conditions": {
+            "O": 2,
+            "J": 2,
+            "P": 2,
+            "E": 2
+          },
+          "independent_buildings": 2,
+          "research_requests_sent": 0
+        }
+      },
+      "smoke": {
+        "restore_path": "run/inputs.smoke.json",
+        "sha256": "323056ddb0296b9a6016e80b32a2ae28da9c161352935252efeb4715c788433d",
+        "counts_per_builder": {
+          "records": 80,
+          "prepared": 80,
+          "infeasible": 0,
+          "conditions": {
+            "O": 30,
+            "J": 30,
+            "P": 10,
+            "E": 10
+          },
+          "independent_buildings": 10,
+          "research_requests_sent": 0
+        }
+      },
+      "evaluation": {
+        "restore_path": "run/inputs.evaluation.json",
+        "sha256": "6b4d7ce9e08289940f0dd6b7d95cc396e6f11219e9c8bd63b306d99d845cc846",
+        "counts_per_builder": {
+          "records": 480,
+          "prepared": 480,
+          "infeasible": 0,
+          "conditions": {
+            "O": 180,
+            "J": 180,
+            "P": 60,
+            "E": 60
+          },
+          "independent_buildings": 60,
+          "research_requests_sent": 0
+        }
+      }
+    }
+  }
+}
