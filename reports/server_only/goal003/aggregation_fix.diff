@@ -1,0 +1,22 @@
+diff --git a/offline_evaluation/server_v2/analysis_v4.py b/offline_evaluation/server_v2/analysis_v4.py
+index 271f03bc..89b5c694 100644
+--- a/offline_evaluation/server_v2/analysis_v4.py
++++ b/offline_evaluation/server_v2/analysis_v4.py
+@@ -212,6 +212,7 @@ def collect_planned_outcomes(directories, *, expected_identities=None):
+     cohort and planned-input file; enabled smoke copies bind their eight inputs
+     directly through the approved generation identity.
+     """
++    from . import providers
+     from .cohort_v4 import digest, json_text
+     from .generation import _load_run, _verify_artifact, object_hash, read_json, run_lock
+     from .io_utils import sha256
+@@ -277,7 +278,8 @@ def collect_planned_outcomes(directories, *, expected_identities=None):
+                 attempts = [a for a in state["attempts"] if a["input_id"] == input_id]
+                 success = next((a for a in attempts if a["status"] == "success"), None)
+                 last = success or (attempts[-1] if attempts else None)
+-                completed = bool(last and last.get("response_id") and last.get("response_model") == identity["model"]
++                completed = bool(last and last.get("response_id")
++                                 and last.get("response_model") in providers.accepted_response_model_ids(config.provider, config.model, config.pricing)
+                                  and last.get("usage") is not None and "raw.json" in last.get("artifacts", {}))
+                 status = "infeasible" if record["status"] == "infeasible" else "NOT_RUN"
+                 if last:

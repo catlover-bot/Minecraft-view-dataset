@@ -1,0 +1,48 @@
+{
+  "command": [
+    "/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "offline_evaluation/server_v2/tests",
+    "--basetemp=/root/workspace/Minecraft-view-dataset/.pytest_cache/goal003-fullsuite-20261013T165339Z",
+    "--junitxml=/root/workspace/Minecraft-view-dataset/reports/server_only/goal003/tests.junit.xml"
+  ],
+  "errors": 0,
+  "exit_code": 0,
+  "failures": 0,
+  "legacy_suite": {
+    "errors": 6,
+    "reference": "legacy_suite_reference.json",
+    "status": "previous logs retained; not rerun or skipped"
+  },
+  "max_rss_kib": 88960,
+  "passed": 307,
+  "research_api_additional_sends": 0,
+  "scope": "existing server_v2 suite plus Goal003 regression tests",
+  "skipped": 0,
+  "started_utc": "2026-10-13T17:02:37.146590+00:00",
+  "targeted_test_history": [
+    {
+      "cause": "Default pytest /tmp basetemp outside existing application writable roots",
+      "implementation_change_for_failure": false,
+      "result": "60 failed / 39 passed"
+    },
+    {
+      "basetemp": "repository .pytest_cache",
+      "new_analysis_and_retry_regressions": 22,
+      "result": "99 passed in 7.18s"
+    },
+    {
+      "result": "26 passed in 1.25s",
+      "scope": "diagnosis tests"
+    },
+    {
+      "result": "17 passed in 0.30s",
+      "scope": "forensic tests"
+    }
+  ],
+  "tests": 307,
+  "wall_seconds": 14.640471046997845
+}

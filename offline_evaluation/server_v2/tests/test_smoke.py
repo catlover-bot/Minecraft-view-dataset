@@ -139,6 +139,45 @@ def test_shared_retry_count_survives_provider_and_restart(tmp_path):
     assert sum(entry["retry"] for entry in read_json(enabled / "ledger.json")["entries"]) == 4
 
 
+def test_goal003_retry_rejection_returns_before_six_later_first_attempts(tmp_path):
+    """Mock the observed 11 + 3 call shape; no paid run or transport is used."""
+    from offline_evaluation.server_v2.generation import evaluate_generation
+
+    enabled, _, _ = fixture_enabled(tmp_path)
+    calls = {"openai": 0, "anthropic": 0}
+    # First input recovers on retry; the next two fail both attempts; five succeed.
+    openai_success = iter((False, True, False, False, False, False, True, True, True, True, True))
+
+    def openai_transport(_request, _timeout):
+        calls["openai"] += 1
+        return fixture_response("openai", text=None if next(openai_success) else "bad fixture JSON")
+
+    def anthropic_transport(_request, _timeout):
+        calls["anthropic"] += 1
+        return fixture_response("anthropic", text="bad fixture JSON")
+
+    result = run_smoke_campaign(enabled, permission=True, transports={
+        "openai": openai_transport, "anthropic": anthropic_transport})
+    assert calls == {"openai": 11, "anthropic": 3}
+    assert result["used"]["calls"] == 14 and result["used"]["retries"] == 4
+    assert result["used"]["unknown_usage_attempts"] == 0 and result["halt_reason"] is None
+    assert result["providers"]["openai"]["success_count"] == 6
+    assert result["providers"]["anthropic"]["success_count"] == 0
+    assert result["providers"]["anthropic"]["generation_stop_reason"] == "shared_retry_limit"
+    assert result["full_experiment"] == "NOT_RUN"
+    records = read_json(enabled / "runs/anthropic/inputs.json")
+    state = read_json(enabled / "runs/anthropic/state.json")
+    assert [attempt["input_id"] for attempt in state["attempts"]] == [
+        records[0]["input_id"], records[0]["input_id"], records[1]["input_id"]]
+    assert all(attempt["input_id"] not in {row["input_id"] for row in records[2:]} for attempt in state["attempts"])
+    # The nonexceptional return / null halt does not mean all planned inputs ran.
+    rows = evaluate_generation(enabled / "runs/anthropic", {}, alignment_mode="strict_translation")
+    assert len(rows) == 8 and sum(row["status"] == "failed" for row in rows) == 2
+    assert sum(row["status"] == "NOT_RUN" for row in rows) == 6
+    # Historical responses exist, while this display still records no availability query.
+    assert dry_run_smoke_campaign(enabled)["account_model_availability"] == "NOT_RUN"
+
+
 @pytest.mark.parametrize("kind", ["timeout", "rate_limit", "auth_failure", "billing_failure", "model_unavailable", "context_failure"])
 def test_uncertain_usage_globally_stops_both_providers(tmp_path, kind):
     enabled, _, _ = fixture_enabled(tmp_path)
