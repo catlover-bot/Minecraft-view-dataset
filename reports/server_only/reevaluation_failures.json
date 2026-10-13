@@ -1,0 +1,3133 @@
+{
+  "all_failed_headers_and_shapes_valid": true,
+  "binary_safety": "All32 NPY headers checked before np.load(...,allow_pickle=False,mmap_mode=r); no object dtype/pickle loading.",
+  "cause_evidence_sources": [
+    {
+      "blob_hash": "0456313375e2d8737a054c5dc11d4173fa5dbd5d",
+      "path": "tools/render_rebuild_from_plan.py",
+      "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+      "repo": "catlover-bot/Minecraft-view-dataset",
+      "sha256": "ed3b97162473604c1f1cb8dc14adf52a99db0a7f682842e001a1e82d40eae942"
+    },
+    {
+      "blob_hash": "8a904e74cb62d65e2370b6fde6956c6aac4b9a3a",
+      "path": "tools/evaluate_rebuild_metrics.py",
+      "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+      "repo": "catlover-bot/Minecraft-view-dataset",
+      "sha256": "d67bd07007c9db56c532859763a41dbc26ced3d9c00e0905c24d38e6c5fb807c"
+    }
+  ],
+  "confirmed_storage_truncation_artifact_count": 2,
+  "failure_only_revalidation_count": 32,
+  "failures": [
+    {
+      "bbox": {
+        "created_at": "2026-03-01T09:43:43.196070+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 8,
+        "xmin": 0,
+        "ymax": 6,
+        "ymin": 0,
+        "zmax": 16,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        7,
+        9,
+        17
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            0,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            0,
+            0
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_block)",
+          "voxel_count": 34
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 137216,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          7,
+          9,
+          17
+        ],
+        "storage_cells": 1071,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "ff13863d05ab031f6adca8de57532c874865ad0d",
+          "path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "9f8b65ca7879d0b7913d6be51e340eb0a3b87a99532cfbb359fb5b0802ff5228",
+          "size_bytes": 137216,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "1475944e3c305438beb40a9a0a60287c6c55afca",
+          "path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "196e2486fd3527860956852567513b7d92e052dab1ffa37b982bd94112ae539f",
+          "size_bytes": 290,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "58502c84ebe40a968e6e5863091206124b8d273e",
+          "path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "8a27e82b54fe386fb55b137e120973b9ab7f63125c2c03638bb3129a2a6953f5",
+          "size_bytes": 5356,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+      "scene_id": "buildings_100_v1_building_043"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:04:49.602988+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 8,
+        "xmin": 0,
+        "ymax": 6,
+        "ymin": 0,
+        "zmax": 16,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        7,
+        9,
+        17
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            0,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            0,
+            0
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_block)",
+          "voxel_count": 34
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 137216,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          7,
+          9,
+          17
+        ],
+        "storage_cells": 1071,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "230d86bd6f63260862ac27a1fc76da31744ab0ca",
+          "path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "44af7fd8656cb858f39a9031d2f4dfa5ffcaad97fd74fac06e58e383083c0714",
+          "size_bytes": 137216,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "77be3af9f86cfa2737910ef87685e64a90f53fbb",
+          "path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "a4937688ea22dedd05df4666ff75f5ecba3a7c500003c82292d69f25ae513f9a",
+          "size_bytes": 331,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "6119f14d674aa3e1476c2c27aba28c43a5f875a3",
+          "path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "4f122da8719d499918fd7eccf53b6c99585b9336d47160120463a88e3efe9c41",
+          "size_bytes": 13577,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v1_building_043"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:45.020630+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 8,
+        "xmin": 0,
+        "ymax": 6,
+        "ymin": 0,
+        "zmax": 16,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        7,
+        9,
+        17
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            0,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            0,
+            0
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_block)",
+          "voxel_count": 34
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 137216,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          7,
+          9,
+          17
+        ],
+        "storage_cells": 1071,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "ee02f78975874b4219cccdfd2ab79cde7b4878e4",
+          "path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "5f00c319b5e489bd736086c65aa8d330d56c788e0e7e6d6839bbb9aca763a9aa",
+          "size_bytes": 137216,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "0f03925930cf3dcbf04fa4e33746a01fb1cba34f",
+          "path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "0f197d62b51ea58e8c75a380063f6d5a3a50fa8ad02fdabaeb651dd0d5805565",
+          "size_bytes": 314,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "82f3534730cb8052cf598952b4d7256850e00c51",
+          "path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "5a32376be2ae9152344a07f0809580af74fb23fdc694b15440375d568bcda614",
+          "size_bytes": 12364,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_043/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v1_building_043"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T09:43:43.416949+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 10,
+        "xmin": 0,
+        "ymax": 10,
+        "ymin": 0,
+        "zmax": 8,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        11,
+        11,
+        9
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            4,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            4,
+            0
+          ],
+          "stored_character_count": 32,
+          "stored_label": "dark_prismarine?_(nether_brick?)",
+          "voxel_count": 311
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 139520,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          11,
+          11,
+          9
+        ],
+        "storage_cells": 1089,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "3b10aad2fbf8577683c1a969953c9ef4bea8125f",
+          "path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "28083a6254ba48f35f7098dd7da00fedd1e53e1346b113dc5fc15916a2bb5dc3",
+          "size_bytes": 139520,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "27a5c42e8a57a720e8eb501f226b2aefd1ee165d",
+          "path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "7e28e81c6e150468f70282c20fcd270a295073f6ef2bd48e86f54c55bbd4ed38",
+          "size_bytes": 291,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "f78b51c0c66d1d2e1fe0e5ea296299080410efed",
+          "path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "7ff5a9b568ae2192b2aed3aa76f8823c2346c97c4d31193ec88dcf07024bf4d6",
+          "size_bytes": 7312,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+      "scene_id": "buildings_100_v1_building_054"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:04:49.623342+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 10,
+        "xmin": 0,
+        "ymax": 10,
+        "ymin": 0,
+        "zmax": 8,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        11,
+        11,
+        9
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            4,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            4,
+            0
+          ],
+          "stored_character_count": 32,
+          "stored_label": "dark_prismarine?_(nether_brick?)",
+          "voxel_count": 303
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 139520,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          11,
+          11,
+          9
+        ],
+        "storage_cells": 1089,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "87dceb2cdc8b90f23bb87ea244737c3336d5f7c4",
+          "path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "442b742b59fe82019936823374854a0508c76f7c83cd8a8f9c75b7dc8d055054",
+          "size_bytes": 139520,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "4e5aa1d77fb21c577ba5e8362a6c9ad0a559173f",
+          "path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "b67fb8e28c0bedb06a0335713312c04082919881ee688ef98ead2732a39be7b7",
+          "size_bytes": 332,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "faafc8049908f397489837650c44218d841a562b",
+          "path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "e3875da732b1e5b896eeb5bed800351227ad6df4eae07bd9403ab09805a07577",
+          "size_bytes": 11791,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v1_building_054"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:45.109213+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 10,
+        "xmin": 0,
+        "ymax": 10,
+        "ymin": 0,
+        "zmax": 8,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        11,
+        11,
+        9
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            4,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            4,
+            0
+          ],
+          "stored_character_count": 32,
+          "stored_label": "dark_prismarine?_(nether_brick?)",
+          "voxel_count": 364
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 139520,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          11,
+          11,
+          9
+        ],
+        "storage_cells": 1089,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "e8d79b09f601fec20fcb47c48ba9e89b78088924",
+          "path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "b10d7593567ffaa7a321c31f4094019cfd3a90a88c367b76394154fc41ba894f",
+          "size_bytes": 139520,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "67741fe5c1f5c1c9ce78412ffe8004ec5ba47f17",
+          "path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "8e792de83bdd49067a016b61bf903d10c348cdb6285b05d40862a288d123cfef",
+          "size_bytes": 315,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "fde1039ba93059128b727a70f95557402bbf402f",
+          "path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "5ba2e781f7f19edde04f46d68ccdb2f90b257346d7fcfb5bacec14d1ce43a1d2",
+          "size_bytes": 10247,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_054/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v1_building_054"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T09:43:44.001757+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 9,
+        "xmin": -1,
+        "ymax": 6,
+        "ymin": -1,
+        "zmax": 17,
+        "zmin": -1
+      },
+      "bbox_expected_shape_yxz": [
+        8,
+        11,
+        19
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            1,
+            1,
+            1
+          ],
+          "example_world_xyz": [
+            0,
+            0,
+            0
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_stone)",
+          "voxel_count": 241
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 214144,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          8,
+          11,
+          19
+        ],
+        "storage_cells": 1672,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "fb00c5bd969bdf0b3df1ad27f09b2722da61705b",
+          "path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "35b6850de3ccff2aee180286050be6162a4c4acaf253b715887d05b2ede046b7",
+          "size_bytes": 214144,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "f80514286e781401584d51bad6ecdc4f64d14e7e",
+          "path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "f6837ebe2ebeadfd003ce07682a46393826ea581820b62d2aedaca0793d4804d",
+          "size_bytes": 293,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "eab215f742f5d197c44a4621461e086519b348de",
+          "path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "89178f96a4d2257b194c0c39f5d65d10cfa96cb0ce7088b0b19b388006381682",
+          "size_bytes": 5006,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+      "scene_id": "buildings_100_v1_building_088"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:04:49.692843+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 9,
+        "xmin": -1,
+        "ymax": 6,
+        "ymin": -1,
+        "zmax": 17,
+        "zmin": -1
+      },
+      "bbox_expected_shape_yxz": [
+        8,
+        11,
+        19
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            1,
+            1,
+            1
+          ],
+          "example_world_xyz": [
+            0,
+            0,
+            0
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_stone)",
+          "voxel_count": 306
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 214144,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          8,
+          11,
+          19
+        ],
+        "storage_cells": 1672,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "efbba3a6402c17f43ca302d1e3b3b733622f9da9",
+          "path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "dee1cc6df829c5fdf22abfa62ca0f4afa4129a923605bc3e2e8773f92ca35c9a",
+          "size_bytes": 214144,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "487acee29ce185f975b984ca8bb12e79659dfad6",
+          "path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "893fb1ab263fc575e8fe06005cf618a84c36dca9996f73bb26f4ee3db4cde59a",
+          "size_bytes": 334,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "b9f7b8f7d56d87221a2a82d83d1207bba1aac7ec",
+          "path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "e50d8f757790c6aeebdcb52420b30488b582ecacdbc1b2eeb66833a530da04bc",
+          "size_bytes": 5568,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v1_building_088"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:45.687531+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 9,
+        "xmin": -1,
+        "ymax": 8,
+        "ymin": -1,
+        "zmax": 17,
+        "zmin": -1
+      },
+      "bbox_expected_shape_yxz": [
+        10,
+        11,
+        19
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            1,
+            1,
+            1
+          ],
+          "example_world_xyz": [
+            0,
+            0,
+            0
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_stone)",
+          "voxel_count": 362
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 267648,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          10,
+          11,
+          19
+        ],
+        "storage_cells": 2090,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "7493ca24871024e0b3886a33dae3eaef0054daf0",
+          "path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "7d6edf2e5bac11f788550bbf0b0d872d3214fc0110cd6a19729376d5072d27b4",
+          "size_bytes": 267648,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "e5aaae1e4d8130d03578bebdec70924dc666f7e7",
+          "path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "fc419018986950c3040102d2200665248fbc9f17105a26f1f1a347b4cabd55bc",
+          "size_bytes": 317,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "94ff1a2a767baeaf5511a06df887ec755d05a912",
+          "path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "f91c298012c15e9ed54ce858149d78d1a74403948355133629d433046c8d723b",
+          "size_bytes": 13343,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_088/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v1_building_088"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:04:49.700164+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 15,
+        "xmin": 0,
+        "ymax": 13,
+        "ymin": 0,
+        "zmax": 15,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        14,
+        16,
+        16
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            0,
+            1,
+            1
+          ],
+          "example_world_xyz": [
+            1,
+            0,
+            1
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_stone)",
+          "voxel_count": 196
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 458880,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          14,
+          16,
+          16
+        ],
+        "storage_cells": 3584,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "5a98450e3abf320a2113588b6ffcf07235c6cf5c",
+          "path": "outputs/i2t2b/buildings_100_v1/building_092/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "6afe94c53f3a4ef87eca4dd923659ade2287cd9c8804b062d86bd179e7139ecd",
+          "size_bytes": 458880,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "0bb6d7e22aa262e3e21117271110d31e14e13674",
+          "path": "outputs/i2t2b/buildings_100_v1/building_092/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "7c44b164695169db00bdd9df53389829d4a3fb19744cc82df9a723ccfe3d3331",
+          "size_bytes": 333,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "3b7da59619de7093c9f92d4b6892b2ec7f8b8e96",
+          "path": "outputs/i2t2b/buildings_100_v1/building_092/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "8c15708e5488b444a45f70e306b96d098451ee7257930572a48894be0cfcb31c",
+          "size_bytes": 6222,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_092/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v1_building_092"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T09:43:44.056246+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 8,
+        "xmin": 0,
+        "ymax": 5,
+        "ymin": 0,
+        "zmax": 10,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        6,
+        9,
+        11
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            3,
+            1,
+            1
+          ],
+          "example_world_xyz": [
+            1,
+            3,
+            1
+          ],
+          "stored_character_count": 20,
+          "stored_label": "quartz_(white_block)",
+          "voxel_count": 63
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 76160,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          6,
+          9,
+          11
+        ],
+        "storage_cells": 594,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "c9c592ce4c783467dc6271f3c563056fc89f464d",
+          "path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "258750874b908a47795db9723c9e8eb6257aedc26140e428e63133c6218b6249",
+          "size_bytes": 76160,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "195c59bafd9bdb31831fc96dbde8f2758a734fd4",
+          "path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "6cb06a951adf61912e995054f731f1adde6cbf735c1f416a2bc85a5e2f203184",
+          "size_bytes": 290,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "fb59fe8e7bdc35e350ea2a51deaf8b233db6cde9",
+          "path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "2f201be15a316021228f9ee0d4ad26f6a3bb4af4ea91d1836e6c3dd5af5b7cc1",
+          "size_bytes": 6685,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+      "scene_id": "buildings_100_v1_building_097"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:04:49.706870+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 8,
+        "xmin": 0,
+        "ymax": 5,
+        "ymin": 0,
+        "zmax": 10,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        6,
+        9,
+        11
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            0,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            0,
+            0
+          ],
+          "stored_character_count": 20,
+          "stored_label": "quartz_(white_block)",
+          "voxel_count": 203
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 76160,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          6,
+          9,
+          11
+        ],
+        "storage_cells": 594,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "b580c83c7d44735edafa14a9ffa8622e9eaa32aa",
+          "path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "acf9ae243eadbd6b7678b77521fbfdf486e3957b9e76af6b7da5af4a784fe9cf",
+          "size_bytes": 76160,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "ec27c955e88e1000e8746bf9e9a5a65ff884b520",
+          "path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "f72ad2dabe29717da523af9db54dcd314e6734edae945607c9e6de13f1215f0a",
+          "size_bytes": 331,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "6faaab605d2579a3f089e591fecb81b27aa0f75f",
+          "path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "c8fd9e8e428803a3678a3b006efa9c6c8798f74ba43332dbfc1c5bdb540c6139",
+          "size_bytes": 14217,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v1_building_097"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:45.780294+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 8,
+        "xmin": 0,
+        "ymax": 7,
+        "ymin": 0,
+        "zmax": 10,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        8,
+        9,
+        11
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            0,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            0,
+            0
+          ],
+          "stored_character_count": 20,
+          "stored_label": "quartz_(white_block)",
+          "voxel_count": 307
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 101504,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          8,
+          9,
+          11
+        ],
+        "storage_cells": 792,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "8d860693f8c62e72144737c9380ffa627fad9cc8",
+          "path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "26f53fa986d09eb2b96d773d2f538745b1f72d4ec394dff5c2a91c7fc0a11080",
+          "size_bytes": 101504,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "2419a31a2684f4a6be54bf7965cb0303858ed7ce",
+          "path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "5ef8c372c52b0d274167a92eb8557a418391dc9d0b0f8d891c5b4d7f3420b37b",
+          "size_bytes": 314,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "6a8a37f76884251d9103611d118f1eb160993959",
+          "path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "aadf96a4b4410d78487fa46031143c87b0cdd2851269af75b17c9117443c8072",
+          "size_bytes": 8816,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v1/building_097/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v1_building_097"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:08:38.765591+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 21,
+        "xmin": 0,
+        "ymax": 12,
+        "ymin": 0,
+        "zmax": 13,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        13,
+        22,
+        14
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            2,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            2,
+            0
+          ],
+          "stored_character_count": 30,
+          "stored_label": "polished_andesite|smooth_stone",
+          "voxel_count": 4
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 512640,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          13,
+          22,
+          14
+        ],
+        "storage_cells": 4004,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "4d3c1d4a4e6d2a972e0e3ab6792c5f6da08999d2",
+          "path": "outputs/i2t2b/buildings_100_v4/building_009/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "1437b884ea3f1e3765cf3df38471f7f23ad132c177abfcabc249799ab106be15",
+          "size_bytes": 512640,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "66c4f4b83a1e87c99e4ace086ec1c418c7db96d8",
+          "path": "outputs/i2t2b/buildings_100_v4/building_009/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "d136741c4eac618b124a327cda86759338152a0250d029124ff3e4f7a33b7c8f",
+          "size_bytes": 333,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "5e24fd871b1dcba2ec1ffe9102947dbe71227600",
+          "path": "outputs/i2t2b/buildings_100_v4/building_009/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "5d9256136ed04030284d50f0bdcd88e514db9a7c8c2d7805bca5a3c1f45f6fb9",
+          "size_bytes": 11895,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_009/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_009"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:44.729509+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 21,
+        "xmin": 0,
+        "ymax": 12,
+        "ymin": 0,
+        "zmax": 13,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        13,
+        22,
+        14
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            2,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            2,
+            0
+          ],
+          "stored_character_count": 30,
+          "stored_label": "polished_andesite|smooth_stone",
+          "voxel_count": 4
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 512640,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          13,
+          22,
+          14
+        ],
+        "storage_cells": 4004,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "e65f48809941669d9230428309937797a5c4cabf",
+          "path": "outputs/i2t2b/buildings_100_v4/building_009/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "8808d31874cbed84964bd941c6fd00e1b9febb4576faf4e1ae7dea52ff0a829b",
+          "size_bytes": 512640,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "3e4a5ac13202ec1472c366db31eb456891d26b53",
+          "path": "outputs/i2t2b/buildings_100_v4/building_009/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "d735bee544d62b4e888782265c6b0d230787e11478f2ead3a584c7ae5dc83b43",
+          "size_bytes": 316,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "a4c41cbfb7f418c8978dd60e082883081a961795",
+          "path": "outputs/i2t2b/buildings_100_v4/building_009/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "7c7c57c66618c973ae6fe5d1cbed0110866c7c7378acdc75ea5624b2d727e2d5",
+          "size_bytes": 8872,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_009/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_009"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:08:38.827012+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 21,
+        "xmin": 0,
+        "ymax": 11,
+        "ymin": 0,
+        "zmax": 37,
+        "zmin": -1
+      },
+      "bbox_expected_shape_yxz": [
+        12,
+        22,
+        39
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            3,
+            8,
+            1
+          ],
+          "example_world_xyz": [
+            8,
+            3,
+            0
+          ],
+          "stored_character_count": 26,
+          "stored_label": "quartz_(or_white_concrete)",
+          "voxel_count": 12
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 1318016,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          12,
+          22,
+          39
+        ],
+        "storage_cells": 10296,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "96428e7f2fb278fa3650414999fbb88da40fe130",
+          "path": "outputs/i2t2b/buildings_100_v4/building_034/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "9150a25127f47a8560f17626b72b0d837b8f4ac1e2c74144b4a8c455b1d437ad",
+          "size_bytes": 1318016,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "496ed9e57e01732cafd2dc77372896ad30e7d493",
+          "path": "outputs/i2t2b/buildings_100_v4/building_034/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "461e407a3a9299104a02f2368dce69ad91690f14ef1867c9fe4e9c142c025eac",
+          "size_bytes": 334,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "bd3d411041f6970b9b4a8659dd9ce88e5388f14b",
+          "path": "outputs/i2t2b/buildings_100_v4/building_034/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "685a0d5c6a1d63a93a1a84298598acdd1750303d2b98d5233d99d1a5f174795e",
+          "size_bytes": 17907,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_034/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_034"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:44.995252+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 21,
+        "xmin": 0,
+        "ymax": 11,
+        "ymin": 0,
+        "zmax": 37,
+        "zmin": -1
+      },
+      "bbox_expected_shape_yxz": [
+        12,
+        22,
+        39
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            3,
+            8,
+            1
+          ],
+          "example_world_xyz": [
+            8,
+            3,
+            0
+          ],
+          "stored_character_count": 26,
+          "stored_label": "quartz_(or_white_concrete)",
+          "voxel_count": 12
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 1318016,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          12,
+          22,
+          39
+        ],
+        "storage_cells": 10296,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "0e4b3ac691128fa626fdbb1204c484d277895786",
+          "path": "outputs/i2t2b/buildings_100_v4/building_034/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "94a8a656b241ef619b401bdd9a295c1b10d5f3fcea0227cdd006aaa83811d1d7",
+          "size_bytes": 1318016,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "cc803245ab24f142e75667a590972d7650209461",
+          "path": "outputs/i2t2b/buildings_100_v4/building_034/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "bb955dfbcc7d2ec781653903c6800d4fcb23be5589c2a4e53ceb270e1575bd3d",
+          "size_bytes": 317,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "e1e7e36bdcc903945859ca3ca7aa8fcc6b1a28e8",
+          "path": "outputs/i2t2b/buildings_100_v4/building_034/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "418526cbdeb3e81acacb17919b2d21b0ff85b7097806a768297b5f57c9aac6d5",
+          "size_bytes": 15877,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_034/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_034"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:08:38.884447+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 30,
+        "xmin": 0,
+        "ymax": 17,
+        "ymin": 0,
+        "zmax": 20,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        18,
+        31,
+        21
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            6,
+            5,
+            2
+          ],
+          "example_world_xyz": [
+            5,
+            6,
+            2
+          ],
+          "stored_character_count": 20,
+          "stored_label": "wood_(dark_oak_logs)",
+          "voxel_count": 729
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 1500032,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          18,
+          31,
+          21
+        ],
+        "storage_cells": 11718,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "6a70d28f232fa32717f6fa934593db0214163ea4",
+          "path": "outputs/i2t2b/buildings_100_v4/building_053/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "c819e36945592ac8267880742a20ec2e085161cda822bba977d7240e934773c3",
+          "size_bytes": 1500032,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "b8a9fe32934d2e84b937ff78c60c8738365c83bf",
+          "path": "outputs/i2t2b/buildings_100_v4/building_053/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "0ef8b058dc1d26ef114b525a5456d74de9593825c9be1319fef385086b08792d",
+          "size_bytes": 333,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "ec701dc73891b05534bb37581e47065b9ae82339",
+          "path": "outputs/i2t2b/buildings_100_v4/building_053/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "721971880bb223d13eae1323126f61335e79a130f5490a36166b92e8232d70cd",
+          "size_bytes": 19346,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_053/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_053"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:45.276509+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 30,
+        "xmin": 0,
+        "ymax": 17,
+        "ymin": 0,
+        "zmax": 20,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        18,
+        31,
+        21
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            6,
+            5,
+            2
+          ],
+          "example_world_xyz": [
+            5,
+            6,
+            2
+          ],
+          "stored_character_count": 20,
+          "stored_label": "wood_(dark_oak_logs)",
+          "voxel_count": 729
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 1500032,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          18,
+          31,
+          21
+        ],
+        "storage_cells": 11718,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "351240e1dcbb94650729620b759bc63157bb5f90",
+          "path": "outputs/i2t2b/buildings_100_v4/building_053/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "568d150432bb9990a7c7d937423b6bc5fc938bd468abe0252bb6a79e8cb3baf3",
+          "size_bytes": 1500032,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "447e64dddd0f23e8b97bf34952c7fee394750c49",
+          "path": "outputs/i2t2b/buildings_100_v4/building_053/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "f0e0e623054acf4b1b06e21eafb87e452c0399527c4a9fe14d17b35ae2226c2c",
+          "size_bytes": 316,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "c02674de256e7457d39c45041a25ab9ca21dc5b9",
+          "path": "outputs/i2t2b/buildings_100_v4/building_053/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "5bbd26e9309aefbbf18a6c98f105c67b783d463ba3467efe15d91adbfaa3859a",
+          "size_bytes": 17233,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_053/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_053"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:08:38.897703+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 16,
+        "xmin": 0,
+        "ymax": 9,
+        "ymin": 0,
+        "zmax": 16,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        10,
+        17,
+        17
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            1,
+            0,
+            5
+          ],
+          "example_world_xyz": [
+            0,
+            1,
+            5
+          ],
+          "stored_character_count": 14,
+          "stored_label": "quartz_(white)",
+          "voxel_count": 592
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 370048,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          10,
+          17,
+          17
+        ],
+        "storage_cells": 2890,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "8c383500f3ad94a60b579e3dd82a8482b8f02413",
+          "path": "outputs/i2t2b/buildings_100_v4/building_060/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "2e9d85d500ac3eae038c7f09ea2add9f0def08d5789496b46290001271b0cfee",
+          "size_bytes": 370048,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "8cb812f602c4515a22a570a747dea842ca08e87f",
+          "path": "outputs/i2t2b/buildings_100_v4/building_060/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "7805dc093074c8a1d9703fc1a78c39e0a48d918de6f21d9685a96a1411c0c8d3",
+          "size_bytes": 332,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "676ede928a5b6e2ba98827f64d7ca032056b98dd",
+          "path": "outputs/i2t2b/buildings_100_v4/building_060/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "4d287381259707ebc04e517614e943c3ac77fa9163908d209199af7f23c35129",
+          "size_bytes": 9966,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_060/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_060"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:45.352732+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 16,
+        "xmin": 0,
+        "ymax": 9,
+        "ymin": 0,
+        "zmax": 16,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        10,
+        17,
+        17
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            1,
+            0,
+            5
+          ],
+          "example_world_xyz": [
+            0,
+            1,
+            5
+          ],
+          "stored_character_count": 14,
+          "stored_label": "quartz_(white)",
+          "voxel_count": 588
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 370048,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          10,
+          17,
+          17
+        ],
+        "storage_cells": 2890,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "949955a9e094f1bf993eec3f686ebf4cca26053d",
+          "path": "outputs/i2t2b/buildings_100_v4/building_060/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "3e92bb833f403f1394fa0839f0e18f982aa6060701442523343150d4cbbcfeb8",
+          "size_bytes": 370048,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "3fa524a10f8f0894b7c4e65f90aeeafc075ed946",
+          "path": "outputs/i2t2b/buildings_100_v4/building_060/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "41bc80dc14fc08f22594ddebc97309d6dbdef69914ce9f40a8bf7d346a99509b",
+          "size_bytes": 315,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "ae02f4ab41bfa825c6023154810638f7b0eb98fe",
+          "path": "outputs/i2t2b/buildings_100_v4/building_060/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "fccd2ea9dc9d7f9550755980b8efbc990061bffb6d4b69115de955bce8265dbc",
+          "size_bytes": 10290,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_060/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_060"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T09:43:44.011937+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 27,
+        "xmin": 0,
+        "ymax": 13,
+        "ymin": 0,
+        "zmax": 19,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        14,
+        28,
+        20
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            4,
+            0,
+            1
+          ],
+          "example_world_xyz": [
+            0,
+            4,
+            1
+          ],
+          "stored_character_count": 14,
+          "stored_label": "quartz_(white)",
+          "voxel_count": 532
+        },
+        {
+          "example_index_yxz": [
+            1,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            1,
+            0
+          ],
+          "stored_character_count": 26,
+          "stored_label": "sandstone_(or_smooth_sand)",
+          "voxel_count": 2912
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 1003648,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          14,
+          28,
+          20
+        ],
+        "storage_cells": 7840,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "6f36123ee60d682ed59ff7ac510aa6e628f56ff7",
+          "path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "ab02a9aafc2c3af478175dcd9c80b6948376c8b1921cbc8b08c282b38bb5dd09",
+          "size_bytes": 1003648,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "1018e8a1e64eeff7d673aba833e8c58e360f6659",
+          "path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "41f3a42517927856e76c62d538d093821a14c1b965627e6bc69ee64f2c6a9b77",
+          "size_bytes": 292,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "744d208d5f79e9b6020a50846620e5cc24229b0b",
+          "path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "8b20cea6eb28fc2ae0191715da55d68c2c53f88336d7a6f087d43dfc253ecdd0",
+          "size_bytes": 2484,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+      "scene_id": "buildings_100_v4_building_062"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:08:38.903117+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 27,
+        "xmin": 0,
+        "ymax": 14,
+        "ymin": 0,
+        "zmax": 19,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        15,
+        28,
+        20
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            1,
+            12,
+            0
+          ],
+          "example_world_xyz": [
+            12,
+            1,
+            0
+          ],
+          "stored_character_count": 14,
+          "stored_label": "quartz_(white)",
+          "voxel_count": 2193
+        },
+        {
+          "example_index_yxz": [
+            1,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            1,
+            0
+          ],
+          "stored_character_count": 26,
+          "stored_label": "sandstone_(or_smooth_sand)",
+          "voxel_count": 537
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 1075328,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          15,
+          28,
+          20
+        ],
+        "storage_cells": 8400,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "80167a5eac8c0c89d44f0180ae22480689415f61",
+          "path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "873e52415919973b8db529e28553eca170516074d9019a708d18f7d5dc939ca3",
+          "size_bytes": 1075328,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "59bcb1c743f012df9f289d4d0c7d89d08aff34ee",
+          "path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "4a9550b67e6046dafe6dfd7fdfe158fdb2d8d018c6c2e35d1555269debf2d3f1",
+          "size_bytes": 333,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "1fcce3326060983482c92edc6b8973539b466f49",
+          "path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "7f02cf0bcde579a93018c36defcae65e0a1d2558ccf644665ad5bc639eb408e6",
+          "size_bytes": 21193,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_062"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:45.377656+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 27,
+        "xmin": 0,
+        "ymax": 14,
+        "ymin": 0,
+        "zmax": 19,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        15,
+        28,
+        20
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            1,
+            12,
+            0
+          ],
+          "example_world_xyz": [
+            12,
+            1,
+            0
+          ],
+          "stored_character_count": 14,
+          "stored_label": "quartz_(white)",
+          "voxel_count": 2193
+        },
+        {
+          "example_index_yxz": [
+            1,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            1,
+            0
+          ],
+          "stored_character_count": 26,
+          "stored_label": "sandstone_(or_smooth_sand)",
+          "voxel_count": 3345
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 1075328,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          15,
+          28,
+          20
+        ],
+        "storage_cells": 8400,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "308a2a701587fe20ab18624e3da947cf332d4148",
+          "path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "4222f28112d75f0c0ceaf591c2880fc5aa860be931ceddbd2ef7280e0be0258a",
+          "size_bytes": 1075328,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "178c2749ee3834bf379a99483347f89b7ba95f77",
+          "path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "7fe899b23794eded369c281693a8bd88ac384b177d8684ed6c862cddd83c6aec",
+          "size_bytes": 316,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "201829b976cc0e8d5c0f4350443e59863af975ae",
+          "path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "5132b25e1351cdeee6bb0909d3107cc9d16f10db0e713376b35c2b162f44ae7f",
+          "size_bytes": 19539,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_062/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_062"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T09:43:44.072435+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 25,
+        "xmin": -1,
+        "ymax": 11,
+        "ymin": 0,
+        "zmax": 25,
+        "zmin": -1
+      },
+      "bbox_expected_shape_yxz": [
+        12,
+        27,
+        27
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            0,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            -1,
+            0,
+            -1
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_block)",
+          "voxel_count": 1305
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 1119872,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          12,
+          27,
+          27
+        ],
+        "storage_cells": 8748,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "543bdd65409f62ec4b0c84f2445c9fd96770d679",
+          "path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "57a15cf5bcad5c56f4895813e3fbd658102ea379cf5e41661a356989edc1e4dd",
+          "size_bytes": 1119872,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "35b3d966ead65a875e1f338bd03e9374c462da68",
+          "path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "d090b21ec5da8cad3465a5a346a0c21f3cecca4e284e7b7890cb7b0714761940",
+          "size_bytes": 294,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "c3ed8aa499950295b57a6c53dfec77fc520f08ce",
+          "path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "d8fc26a1eee0881f2d9ee807c8518422bc1be17eafc1716327bf11fb3eeb6700",
+          "size_bytes": 4022,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+      "scene_id": "buildings_100_v4_building_068"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:08:38.916162+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 25,
+        "xmin": -1,
+        "ymax": 11,
+        "ymin": 0,
+        "zmax": 25,
+        "zmin": -1
+      },
+      "bbox_expected_shape_yxz": [
+        12,
+        27,
+        27
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [
+        {
+          "evidence": "U32 storage retains at most32 Unicode characters; saved action label has identical first32 characters",
+          "saved_action_labels": [
+            "sandstone_(or_light_yellow_block)"
+          ],
+          "stored_label": "sandstone_(or_light_yellow_block"
+        }
+      ],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            0,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            -1,
+            0,
+            -1
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_block)",
+          "voxel_count": 1618
+        },
+        {
+          "example_index_yxz": [
+            1,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            -1,
+            1,
+            -1
+          ],
+          "stored_character_count": 32,
+          "stored_label": "sandstone_(or_light_yellow_block",
+          "voxel_count": 2639
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 1119872,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          12,
+          27,
+          27
+        ],
+        "storage_cells": 8748,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "7fda4180c339a1e3a732fe3b9719224c90b1db38",
+          "path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "7054361452059f6c21b4a79138aa9b0a4b3f3d6616265618074657c47fd40631",
+          "size_bytes": 1119872,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "ece8758418e20e896180aecf8e05722e8ef752f0",
+          "path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "fa99b39db1da4d0978f6dc23c3bbaeaaf2f89ec117ca5b458882378184425b5a",
+          "size_bytes": 335,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "7671bdbf10121aa9e1df15da3d6c69d53e8d54db",
+          "path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "0a31f78d24f6c5915c53a67870ad2f2f37adb16a4606e9f8d0e1cf2475c6be26",
+          "size_bytes": 12975,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_068"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:45.438049+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 25,
+        "xmin": -1,
+        "ymax": 12,
+        "ymin": 0,
+        "zmax": 25,
+        "zmin": -1
+      },
+      "bbox_expected_shape_yxz": [
+        13,
+        27,
+        27
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [
+        {
+          "evidence": "U32 storage retains at most32 Unicode characters; saved action label has identical first32 characters",
+          "saved_action_labels": [
+            "sandstone_(or_light_yellow_block)"
+          ],
+          "stored_label": "sandstone_(or_light_yellow_block"
+        }
+      ],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            0,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            -1,
+            0,
+            -1
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_block)",
+          "voxel_count": 1184
+        },
+        {
+          "example_index_yxz": [
+            1,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            -1,
+            1,
+            -1
+          ],
+          "stored_character_count": 32,
+          "stored_label": "sandstone_(or_light_yellow_block",
+          "voxel_count": 4339
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 1213184,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          13,
+          27,
+          27
+        ],
+        "storage_cells": 9477,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "0f62d0035079199b70cde26a2db24c14458dbd3f",
+          "path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "90e1c4404943b8d44bcd04aa634b3036077075cf719b03ba7641b4b62d70bfe0",
+          "size_bytes": 1213184,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "e558049d28faeba16886639cb82dfb9beb9eee2d",
+          "path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "c95b379e62b8273800d16fc6e72c366b54930188abde5a139de75f1c862868f4",
+          "size_bytes": 318,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "8f314577af9a2adcb4ebf17e802c08713ab8b101",
+          "path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "27986757cde4914d73773adedcd816cf211408eb8aced3bb9dbec4a1848608b1",
+          "size_bytes": 12475,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_068/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_068"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:08:38.935228+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 12,
+        "xmin": 0,
+        "ymax": 10,
+        "ymin": 0,
+        "zmax": 24,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        11,
+        13,
+        25
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            1,
+            0,
+            12
+          ],
+          "example_world_xyz": [
+            0,
+            1,
+            12
+          ],
+          "stored_character_count": 14,
+          "stored_label": "quartz_(white)",
+          "voxel_count": 333
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 457728,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          11,
+          13,
+          25
+        ],
+        "storage_cells": 3575,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "bf847b9ba1977294c6f39a556b178ade96daad8f",
+          "path": "outputs/i2t2b/buildings_100_v4/building_078/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "4932a8c815406ba49bd1e0a2bc27b9352a04f835371dff3f452b86258bc60494",
+          "size_bytes": 457728,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "fbd824e94f48ff3fee4821aa9889036c9ff92b52",
+          "path": "outputs/i2t2b/buildings_100_v4/building_078/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "5d49e65de386884eaf4427f09f41f2388fa9f4831b2e79eed547665e962de8fd",
+          "size_bytes": 333,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "48afd3634c1ed85e3f8f8689d9126efacd27e812",
+          "path": "outputs/i2t2b/buildings_100_v4/building_078/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "332e23b7e913330c3fee66efa9fb588d4a1a0558f4dd7719550a25a3569fdd9f",
+          "size_bytes": 5328,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_078/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_078"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:45.667998+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 12,
+        "xmin": 0,
+        "ymax": 10,
+        "ymin": 0,
+        "zmax": 24,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        11,
+        13,
+        25
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            1,
+            0,
+            12
+          ],
+          "example_world_xyz": [
+            0,
+            1,
+            12
+          ],
+          "stored_character_count": 14,
+          "stored_label": "quartz_(white)",
+          "voxel_count": 333
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 457728,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          11,
+          13,
+          25
+        ],
+        "storage_cells": 3575,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "9230af82a466f54ba633474461c033d9ef8006fd",
+          "path": "outputs/i2t2b/buildings_100_v4/building_078/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "fa84f44bc009722dc62e79baf9ecd1b7052418043ac27640664078c01ad72123",
+          "size_bytes": 457728,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "3357d2a38f8c7e01eb2bcd0998c5add65969dbc7",
+          "path": "outputs/i2t2b/buildings_100_v4/building_078/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "8a57f860809827d1fca7ed393ee6cd1f42340bb684e8d54cefaa1bb68098d0d8",
+          "size_bytes": 316,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "f591eb8e4e09e7ffa68d7c8a436f6291c6162b37",
+          "path": "outputs/i2t2b/buildings_100_v4/building_078/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "c890377f298f6fff03bbb694f85208fc2e13bed41b584e033c6af8ddd8fdbff4",
+          "size_bytes": 15398,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_078/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_078"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T09:43:44.297976+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 29,
+        "xmin": 0,
+        "ymax": 11,
+        "ymin": 0,
+        "zmax": 6,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        12,
+        30,
+        7
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            11,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            11,
+            0
+          ],
+          "stored_character_count": 19,
+          "stored_label": "nether_brick_(dark)",
+          "voxel_count": 27
+        },
+        {
+          "example_index_yxz": [
+            0,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            0,
+            0
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_block)",
+          "voxel_count": 1744
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 322688,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          12,
+          30,
+          7
+        ],
+        "storage_cells": 2520,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "bc54c38da0d0a003eed3b9470da9a7f6473b2f28",
+          "path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "bbabdd72d8c2ad95054136fde48973e03e9f8b932f97e98c20670512dae8a38f",
+          "size_bytes": 322688,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "4e18ab5eada3052a596f95d836f9e8e553f7f16b",
+          "path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "d5addbce5037d385b8dc759e372c397c91ad8187f1e9a534a7005ac79964d3f6",
+          "size_bytes": 291,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "6e16d62fe5a94fe3eb3f392854cc3c9e4fe31ac7",
+          "path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "fcd65198c1477f3b1d146fadade42bfad349387538c6ae0faa0d96f3bbac1908",
+          "size_bytes": 5342,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini/voxels.npy",
+      "scene_id": "buildings_100_v4_building_084"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-10T14:08:38.947615+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 29,
+        "xmin": 0,
+        "ymax": 11,
+        "ymin": 0,
+        "zmax": 6,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        12,
+        30,
+        7
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            11,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            11,
+            0
+          ],
+          "stored_character_count": 19,
+          "stored_label": "nether_brick_(dark)",
+          "voxel_count": 27
+        },
+        {
+          "example_index_yxz": [
+            0,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            0,
+            0
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_block)",
+          "voxel_count": 1907
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 322688,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          12,
+          30,
+          7
+        ],
+        "storage_cells": 2520,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "c8d84cb5ffc9cb63e3cd5e99f8e79b58a8d39744",
+          "path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "801e8a28265d8aca194dc98ba425a706337387af7a7a14b9e17cbe38872ba175",
+          "size_bytes": 322688,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "36b7cf78800e45788fd4c9cf961943bda519e836",
+          "path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "b243887dc628a56f1c6713de64fe8ea54f77b28c8648858516f45759870b9786",
+          "size_bytes": 332,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "cd79c76f2dc138ebd1b50064793cc81629cec0f3",
+          "path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "6c8cfcac3d1c6b27e4d6a1caa7d7ea79169637c3b06120e56bb7d8db928198ae",
+          "size_bytes": 7802,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_084"
+    },
+    {
+      "bbox": {
+        "created_at": "2026-03-01T12:23:45.726197+00:00",
+        "order": "xmin,xmax,ymin,ymax,zmin,zmax",
+        "source": "rebuild_plan_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/plan.json",
+        "voxel_axis_order": "Y,X,Z",
+        "xmax": 29,
+        "xmin": 0,
+        "ymax": 11,
+        "ymin": 0,
+        "zmax": 6,
+        "zmin": 0
+      },
+      "bbox_expected_shape_yxz": [
+        12,
+        30,
+        7
+      ],
+      "bbox_shape_matches": true,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "confirmed_storage_truncation": [],
+      "disposition": "preserve_original_and_mark_incompatible_no_guessing_no_clamping_no_material_remap",
+      "error_message": "block must be a lower-case Minecraft material identifier",
+      "error_type": "ValidationError",
+      "failure_reason": "saved_material_label_not_executable_identifier",
+      "invalid_materials": [
+        {
+          "example_index_yxz": [
+            9,
+            0,
+            3
+          ],
+          "example_world_xyz": [
+            0,
+            9,
+            3
+          ],
+          "stored_character_count": 19,
+          "stored_label": "nether_brick_(dark)",
+          "voxel_count": 365
+        },
+        {
+          "example_index_yxz": [
+            0,
+            0,
+            0
+          ],
+          "example_world_xyz": [
+            0,
+            0,
+            0
+          ],
+          "stored_character_count": 23,
+          "stored_label": "quartz_(or_white_block)",
+          "voxel_count": 1135
+        }
+      ],
+      "metrics": null,
+      "npy_header": {
+        "allow_pickle": false,
+        "dtype": "<U32",
+        "file_bytes": 322688,
+        "fortran_order": false,
+        "header_bytes": 128,
+        "shape_yxz": [
+          12,
+          30,
+          7
+        ],
+        "storage_cells": 2520,
+        "version": [
+          1,
+          0
+        ]
+      },
+      "original_sources": [
+        {
+          "blob_hash": "038c8ad7234984ab1aaec456412c597dba3aff8c",
+          "path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "678188c14d7917c8c2934394429ef4aaa8b4c19061e78c2e11570279a53a9be7",
+          "size_bytes": 322688,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "26514377439029b46bd86901063d9835a1a1e3f2",
+          "path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/bbox.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "d888c06ca5b571ec817c21e7354a4ed5cd5384e37d9300fb1f75721613be0708",
+          "size_bytes": 315,
+          "worktree_matches_git_blob": true
+        },
+        {
+          "blob_hash": "27176bdf4c854e895717e1c2f93d4f81e74adeee",
+          "path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/actions.json",
+          "ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+          "repo": "catlover-bot/Minecraft-view-dataset",
+          "sha256": "0d4383be5ea1531c5955ef420f1add4cbb42c3607db1de776f3eb5e10009b7dd",
+          "size_bytes": 8242,
+          "worktree_matches_git_blob": true
+        }
+      ],
+      "prediction_path": "outputs/i2t2b/buildings_100_v4/building_084/rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned/voxels.npy",
+      "scene_id": "buildings_100_v4_building_084"
+    }
+  ],
+  "historical_arr_replay": false,
+  "interpretation": "The historical renderer saved normalized descriptive strings into U32 arrays. New strict reader rejects punctuation/alternatives as invalid executable IDs. This does not prove historical Minecraft execution failure; no Minecraft runtime was run. Occupancy/material/repair metrics are null for these incompatible records. Material guesses or silent token truncation repairs are prohibited.",
+  "invalid_label_voxel_occurrences_total": 34096,
+  "invalid_material_label_totals": {
+    "dark_prismarine?_(nether_brick?)": 978,
+    "nether_brick_(dark)": 419,
+    "polished_andesite|smooth_stone": 8,
+    "quartz_(or_white_block)": 8995,
+    "quartz_(or_white_concrete)": 24,
+    "quartz_(or_white_stone)": 1105,
+    "quartz_(white)": 6764,
+    "quartz_(white_block)": 573,
+    "sandstone_(or_light_yellow_block": 6978,
+    "sandstone_(or_smooth_sand)": 6794,
+    "wood_(dark_oak_logs)": 1458
+  },
+  "provenance": "new_implementation_reader_validation_of_historical_artifacts",
+  "reader_changed": false,
+  "reader_version": "server_v2.1",
+  "reevaluation_count": 1200,
+  "reevaluation_incompatible_count": 32,
+  "reevaluation_success_count": 1168,
+  "research_api_requests_sent": 0,
+  "schema_version": 1,
+  "source_ref": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+  "source_repo": "catlover-bot/Minecraft-view-dataset",
+  "timestamp_utc": "2026-10-13T12:45:46.177898+00:00",
+  "unique_invalid_material_labels": 11,
+  "unique_scenes_affected": 13
+}

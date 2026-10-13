@@ -1,0 +1,193 @@
+{
+  "builder_summaries": [
+    {
+      "conditions": [
+        {
+          "condition": "Canonicalized",
+          "rows": 25,
+          "status": "NOT_RUN"
+        },
+        {
+          "condition": "Exact-spec Oracle",
+          "rows": 10,
+          "status": "NOT_RUN"
+        },
+        {
+          "condition": "Original",
+          "rows": 25,
+          "status": "NOT_RUN"
+        },
+        {
+          "condition": "Partial Oracle",
+          "rows": 10,
+          "status": "NOT_RUN"
+        }
+      ],
+      "directory": "builder_smoke",
+      "original_vs_canonicalized": {
+        "buildings": 0,
+        "ci95": null,
+        "estimand": "mean within-building paired difference B-A, equal building weight",
+        "excluded_pairs": 25,
+        "mean_delta": null,
+        "metric": "canonicalized_minus_original_absolute_iou",
+        "paired_rows": 0,
+        "replicates": 2000,
+        "seed": 20261013,
+        "status": "INSUFFICIENT_CLUSTERS"
+      }
+    }
+  ],
+  "groups": [
+    {
+      "absolute_iou_mean": 0.1232342695195417,
+      "aligned_iou_mean": 0.1438787106030655,
+      "condition": "rebuild_world_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001",
+      "failures": 0,
+      "success": 200
+    },
+    {
+      "absolute_iou_mean": 0.1304827759814723,
+      "aligned_iou_mean": 0.15007111163146228,
+      "condition": "rebuild_world_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_common_v8_struct_self_refine_no_gt_tuned",
+      "failures": 0,
+      "success": 200
+    },
+    {
+      "absolute_iou_mean": 0.1544149930723918,
+      "aligned_iou_mean": 0.17836741078073995,
+      "condition": "rebuild_world_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_self_refine_no_gt_tuned",
+      "failures": 0,
+      "success": 200
+    },
+    {
+      "absolute_iou_mean": 0.12488480651401267,
+      "aligned_iou_mean": 0.1492743855145433,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini",
+      "failures": 7,
+      "success": 193
+    },
+    {
+      "absolute_iou_mean": 0.12214252065127952,
+      "aligned_iou_mean": 0.1509530880894645,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "failures": 13,
+      "success": 187
+    },
+    {
+      "absolute_iou_mean": 0.15709264600165657,
+      "aligned_iou_mean": 0.18420558386509187,
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "failures": 12,
+      "success": 188
+    }
+  ],
+  "multiple_comparisons": "Descriptive CIs only; no significance claims or unadjusted p-values. Holm utility tested for future registered hypothesis family.",
+  "oracle_difference_interpretation": "Diagnostic condition differences; not pure language information loss",
+  "paired_building_cluster_ci": [
+    {
+      "buildings": 200,
+      "ci95": [
+        0.017662911413208214,
+        0.023750793064221537
+      ],
+      "condition": "rebuild_world_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001",
+      "estimand": "mean within-building paired difference B-A, equal building weight",
+      "excluded_pairs": 0,
+      "mean_delta": 0.02064444108352379,
+      "method": "percentile building-cluster bootstrap",
+      "metric": "aligned_minus_absolute_occupancy_iou",
+      "paired_rows": 200,
+      "replicates": 2000,
+      "seed": 20261013,
+      "status": "success"
+    },
+    {
+      "buildings": 200,
+      "ci95": [
+        0.01647851232578866,
+        0.022931054922847804
+      ],
+      "condition": "rebuild_world_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_common_v8_struct_self_refine_no_gt_tuned",
+      "estimand": "mean within-building paired difference B-A, equal building weight",
+      "excluded_pairs": 0,
+      "mean_delta": 0.01958833564998998,
+      "method": "percentile building-cluster bootstrap",
+      "metric": "aligned_minus_absolute_occupancy_iou",
+      "paired_rows": 200,
+      "replicates": 2000,
+      "seed": 20261013,
+      "status": "success"
+    },
+    {
+      "buildings": 200,
+      "ci95": [
+        0.020359746724035538,
+        0.02767973545913185
+      ],
+      "condition": "rebuild_world_schema_material_v5_repair_anthropic_claude_haiku_4_5_20251001_self_refine_no_gt_tuned",
+      "estimand": "mean within-building paired difference B-A, equal building weight",
+      "excluded_pairs": 0,
+      "mean_delta": 0.023952417708348158,
+      "method": "percentile building-cluster bootstrap",
+      "metric": "aligned_minus_absolute_occupancy_iou",
+      "paired_rows": 200,
+      "replicates": 2000,
+      "seed": 20261013,
+      "status": "success"
+    },
+    {
+      "buildings": 193,
+      "ci95": [
+        0.020484700116354136,
+        0.028379750431283164
+      ],
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini",
+      "estimand": "mean within-building paired difference B-A, equal building weight",
+      "excluded_pairs": 7,
+      "mean_delta": 0.024389579000530633,
+      "method": "percentile building-cluster bootstrap",
+      "metric": "aligned_minus_absolute_occupancy_iou",
+      "paired_rows": 193,
+      "replicates": 2000,
+      "seed": 20261013,
+      "status": "success"
+    },
+    {
+      "buildings": 187,
+      "ci95": [
+        0.024844883790075156,
+        0.03368005731042395
+      ],
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_common_v8_struct_self_refine_no_gt_tuned",
+      "estimand": "mean within-building paired difference B-A, equal building weight",
+      "excluded_pairs": 13,
+      "mean_delta": 0.028810567438184997,
+      "method": "percentile building-cluster bootstrap",
+      "metric": "aligned_minus_absolute_occupancy_iou",
+      "paired_rows": 187,
+      "replicates": 2000,
+      "seed": 20261013,
+      "status": "success"
+    },
+    {
+      "buildings": 188,
+      "ci95": [
+        0.023380441331862994,
+        0.03142795720381109
+      ],
+      "condition": "rebuild_world_schema_material_v5_repair_openai_gpt_5_mini_self_refine_no_gt_tuned",
+      "estimand": "mean within-building paired difference B-A, equal building weight",
+      "excluded_pairs": 12,
+      "mean_delta": 0.027112937863435282,
+      "method": "percentile building-cluster bootstrap",
+      "metric": "aligned_minus_absolute_occupancy_iou",
+      "paired_rows": 188,
+      "replicates": 2000,
+      "seed": 20261013,
+      "status": "success"
+    }
+  ],
+  "requests_sent": 0,
+  "research_api": "NOT_RUN"
+}

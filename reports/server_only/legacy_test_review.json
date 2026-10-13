@@ -1,0 +1,74 @@
+{
+  "test_modules": [
+    {
+      "path": "offline_evaluation/tests/test_arr_followup.py",
+      "test_count": 25,
+      "external_dependencies": [
+        "numpy",
+        "statsmodels"
+      ],
+      "static_api_safety": "API-free tests; legacy imports contain no top-level network calls in existing modules",
+      "execution_status": "NOT_RUN_BY_AUDITOR; root records actual collection result separately"
+    },
+    {
+      "path": "offline_evaluation/tests/test_arr_v2.py",
+      "test_count": 8,
+      "external_dependencies": [
+        "numpy",
+        "pytest"
+      ],
+      "static_api_safety": "API-free tests; legacy imports contain no top-level network calls in existing modules",
+      "execution_status": "NOT_RUN_BY_AUDITOR; root records actual collection result separately"
+    },
+    {
+      "path": "offline_evaluation/tests/test_canonical.py",
+      "test_count": 2,
+      "external_dependencies": [],
+      "static_api_safety": "API-free tests; legacy imports contain no top-level network calls in existing modules",
+      "execution_status": "NOT_RUN_BY_AUDITOR; root records actual collection result separately"
+    },
+    {
+      "path": "offline_evaluation/tests/test_executor.py",
+      "test_count": 8,
+      "external_dependencies": [],
+      "static_api_safety": "API-free tests; legacy imports contain no top-level network calls in existing modules",
+      "execution_status": "NOT_RUN_BY_AUDITOR; root records actual collection result separately"
+    },
+    {
+      "path": "offline_evaluation/tests/test_fixed_builder_v1.py",
+      "test_count": 7,
+      "external_dependencies": [
+        "numpy"
+      ],
+      "static_api_safety": "API-free tests; legacy imports contain no top-level network calls in existing modules",
+      "execution_status": "NOT_RUN_BY_AUDITOR; root records actual collection result separately"
+    },
+    {
+      "path": "offline_evaluation/tests/test_metrics.py",
+      "test_count": 3,
+      "external_dependencies": [],
+      "static_api_safety": "API-free tests; legacy imports contain no top-level network calls in existing modules",
+      "execution_status": "NOT_RUN_BY_AUDITOR; root records actual collection result separately"
+    }
+  ],
+  "total_test_functions": 53,
+  "safe_to_collect_without_research_api": true,
+  "required_dependencies": [
+    "numpy",
+    "pandas",
+    "statsmodels",
+    "pytest"
+  ],
+  "existing_requirements_complete": false,
+  "missing_legacy_imports": [
+    "offline_evaluation/fixed_builder/",
+    "offline_evaluation/executor/",
+    "offline_evaluation/metrics.py",
+    "offline_evaluation/metrics/",
+    "offline_evaluation/experiments/fixed_builder_v1/",
+    "offline_evaluation/analyze_correlations_v2.py",
+    "offline_evaluation/analyze_materials_v2.py",
+    "offline_evaluation/data_coverage.py"
+  ],
+  "caution": "Some existing tests are tautological or test filesystem presence only. Their pass would not verify resume, budget, provider execution, or oracle semantics."
+}
