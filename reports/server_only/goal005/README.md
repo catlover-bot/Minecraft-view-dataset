@@ -52,10 +52,12 @@ Canonical planは `/root/minecraft-runs/goal005-batch1-20261013T213420Z/plan.jso
 
 利用者のキーのあるターミナルで使う1本の開始コマンド、実確認文字列、同一ledger再開、翌UTC日の公式再確認を追記sidecarとして保存する手順は [OPERATIONS.md](OPERATIONS.md)。Codexは実確認語を入力せず、previewだけをsocket接続禁止・キー不要で実行しexit0を確認した。未知usage/重大運用障害では停止し、自動retry・fallback・予算初期化はしない。
 
-未承認計画のGitHub保存は実測結果Draftとは別のcheckpoint索引に記録する。
+未承認計画は別の[未公開準備Draft412133442](https://github.com/catlover-bot/Minecraft-view-dataset/releases/tag/untagged-91b63f2474552cffbd38)へ保存した。準備archive asset **638334591**、1163923 bytes、SHA256 **e68f9039fa0661dcdb5b35bc5726d417c77b0fc2ff03519a7c0964bdb2a0bed0**。全6assetsのGitHub digest・再取得SHAが一致し、20ファイルの安全展開と、復元plan/manifestのcanonical原本とのbyte一致を確認した。コピー先のplanは起動拒否され、元planのenabled/authorityは未作成のままである。[準備の再取得証跡](pending_github_verification.json)、[実測結果と未承認計画を分けた保存索引](checkpoint_index.json)。
 
 ## 検証と残る範囲
 
 関連既存229、診断14、入力14、バッチ25の合計**282個の異なるテストがPASS**。fail/error/skip0。新規ガード修正に関係する3ケースだけを追加実行し、テスト件数を増やすための全再実行はしていない。[テスト集計](test_summary.json)。旧6 collection errorsは [既存証跡](../goal003/legacy_suite_reference.json) を保持し、一括skipやダミー修正を行っていない。200GT/旧1200の全再評価・環境再構築・新依存取得は0。
 
 本Goalを妨げる重大な測定BLOCKEDはない。残るモデル失敗、9件の参照出力長超過、将来の有料実行承認は結果・制約・承認待ちとして明示している。本評価はNOT_RUNであり、未承認計画の完成を実験完了とは呼ばない。
+
+[最終ローカル監査](completion_audit.json) は原本・制御ファイル、旧hash-boundコード、固定source/plan、テスト証跡、両Draftの再取得検証を照合した。報告だけの最終commit前HEADを記録し、最終push後のremote SHA一致とmain不変は完了報告に示す。
