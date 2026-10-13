@@ -87,19 +87,26 @@ class Terminal:
 @pytest.mark.parametrize("answer", ["", "\n", "yes\n", "APPROVE SOMETHING ELSE\n"])
 def test_tty_enter_eof_mismatch_never_approve(monkeypatch, answer):
     terminal = Terminal(answer)
+    modes = []
     def opener(path, mode, **kwargs):
-        assert path == "/dev/tty" and mode == "r+"
+        assert path == "/dev/tty" and mode in {"r", "w"}
+        modes.append(mode)
+        if mode == "w":
+            assert kwargs["buffering"] == 1
         return terminal
     monkeypatch.setattr("builtins.open", opener)
     assert cli._confirm_from_tty("EXACT_REQUIRED_STRING") is False
     assert "EXACT_REQUIRED_STRING" in terminal.output
+    assert modes == ["r", "w"]
 
 
 def test_missing_tty_refuses(monkeypatch):
     def absent(*args, **kwargs):
         raise OSError("no terminal")
     monkeypatch.setattr("builtins.open", absent)
-    assert cli._confirm_from_tty("EXACT_REQUIRED_STRING") is False
+    with pytest.raises(cli.TTYConfirmationError, match="TTY_UNAVAILABLE") as raised:
+        cli._confirm_from_tty("EXACT_REQUIRED_STRING")
+    assert "no terminal" not in str(raised.value)
 
 
 @pytest.mark.parametrize("preview_only,keys,answer,expected", [
@@ -124,6 +131,31 @@ def test_launcher_non_send_paths(monkeypatch, tmp_path, capsys, preview_only, ke
     monkeypatch.setattr(runner, "run", forbidden)
     assert cli.launch("unused", preview_only=preview_only) == expected
     assert calls == ([] if preview_only or not keys else ["tty"])
+    assert not (tmp_path / "never_enabled").exists()
+
+
+@pytest.mark.parametrize("reason", ["TTY_UNAVAILABLE", "TTY_IO_ERROR"])
+def test_launcher_tty_failure_stops_before_any_activation(monkeypatch, tmp_path, capsys, reason):
+    import errno
+    from offline_evaluation.resmoke_v2 import runner
+    fake = {"identity_hash": "b" * 64, "identity": {
+        "parent": {}, "pricing": {}, "enabled_directory": str(tmp_path / "never_enabled")}}
+    monkeypatch.setattr(plan, "load_plan", lambda _: fake)
+    monkeypatch.setattr(plan, "verify_parent", lambda _: None)
+    monkeypatch.setattr(plan, "validate_pricing", lambda *args, **kwargs: None)
+    monkeypatch.setattr(cli, "preview", lambda _: {"api_key_present": {"openai": True, "anthropic": True}})
+    def broken_tty(_):
+        raise cli.TTYConfirmationError(reason, OSError(errno.EIO, "PRIVATE_FIXTURE_INPUT"))
+    monkeypatch.setattr(cli, "_confirm_from_tty", broken_tty)
+    def forbidden(*args, **kwargs):
+        pytest.fail("TTY failure reached activation, reservation or research transport")
+    monkeypatch.setattr(runner, "initialize_enabled", forbidden)
+    monkeypatch.setattr(runner, "run", forbidden)
+    assert cli.main(["launch", "--plan", "fixture-only-unused"]) == 5
+    captured = capsys.readouterr()
+    assert f"STOPPED: {reason}:" in captured.err
+    assert "NOT_APPROVED" not in captured.out + captured.err
+    assert "PRIVATE_FIXTURE_INPUT" not in captured.out + captured.err
     assert not (tmp_path / "never_enabled").exists()
 
 

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import ExitStack
 import json
 import os
 from pathlib import Path
@@ -39,15 +40,34 @@ def preview(plan: dict) -> dict:
         "cost_semantics": "application conservative stopping limits; not an invoice or guaranteed completion cost"}
 
 
+class TTYConfirmationError(GenerationError):
+    """Report terminal failure without echoing OS messages or user input."""
+
+    def __init__(self, reason: str, error: Exception):
+        number = getattr(error, "errno", None)
+        safe_errno = number if type(number) is int and 0 <= number <= 4095 else None
+        super().__init__(f"{reason}: error_type={type(error).__name__}; errno={safe_errno}")
+
+
 def _confirm_from_tty(expected: str) -> bool:
     """Never accept stdin, environment variables, command flags, or default Enter."""
     try:
-        with open("/dev/tty", "r+", encoding="utf-8") as terminal:
-            terminal.write("\nThis starts paid research requests for the displayed scope.\n")
-            terminal.write(f"Type exactly: {expected}\n> ")
-            terminal.flush()
-            return terminal.readline().rstrip("\r\n") == expected
-    except (OSError, EOFError):
+        with ExitStack() as handles:
+            try:
+                reader = handles.enter_context(open("/dev/tty", "r", encoding="utf-8"))
+                writer = handles.enter_context(open("/dev/tty", "w", encoding="utf-8", buffering=1))
+            except OSError as exc:
+                raise TTYConfirmationError("TTY_UNAVAILABLE", exc) from None
+            writer.write("\nThis starts paid research requests for the displayed scope.\n")
+            writer.write(f"Type exactly: {expected}\n> ")
+            writer.flush()
+            answer = reader.readline()
+            return bool(expected) and answer.endswith("\n") and answer[:-1] == expected
+    except TTYConfirmationError:
+        raise
+    except (OSError, UnicodeError) as exc:
+        raise TTYConfirmationError("TTY_IO_ERROR", exc) from None
+    except (EOFError, KeyboardInterrupt):
         return False
 
 
