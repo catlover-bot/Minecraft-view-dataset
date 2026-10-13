@@ -44,3 +44,5 @@ O/Jのrequestは保存済み説明と公開共通promptのみ。Jは重複キー
 初回smokeの提案上限は両provider合算20送信、再試行4、入力あたり2attempt、5USD、token8327680、output16384、concurrency1、隠れたretry0。永続ledgerとlockで予約を送信前に保存し、unknown usageは予約保持＋停止。承認はtargets/config/input/prompt/source/予算と将来の新enabledディレクトリに固定する。現在はdisabledとmanual_confirmed=falseのみ。実際のキー存在bool、準備identity、保存SHAは後続索引に記録する。
 
 実在CLIに基づく [操作手順](OPERATIONS.md) を参照。有料生成コマンドは今回未実行で、別途利用者の対象・費用・上限の明示承認が必要。本評価960件へ自動で進む機能はない。
+
+保存・復元を完了した。[新checkpoint索引](checkpoint_index.md) にDraft411807868、全assetのhash、source再取得、復元範囲を記録した。API送信0回、キー存在boolは両provider false。新v4準備物の完全性と旧研究全体のPARTIALを区別する。CPU wall/RSSは並行実行した各worker2/BLAS1プロセスの検証値であり、単独実行の速度比較ではない。
