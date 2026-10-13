@@ -1,0 +1,230 @@
+{
+  "account_structured_output_acceptance": "NOT_RUN",
+  "api_allowed": false,
+  "approval_exists": false,
+  "budgets": {
+    "concurrency": 1,
+    "max_attempts_per_input": 1,
+    "max_cost_usd": 5.0,
+    "max_new_calls": 16,
+    "max_new_retries": 0,
+    "max_output_tokens": 32768,
+    "max_tokens": 5324288,
+    "max_total_calls": 30,
+    "max_total_retries": 4,
+    "max_total_tokens": 5497797
+  },
+  "code_commit": "d5d3e750423b9f900654097a65bde62bf230bf4f",
+  "common_prompt_change": "One plausible building consistent with supplied constraints; incomplete attributes do not request empty target. No GT-based output repair.",
+  "condition_semantics": {
+    "E": "new complete deterministic nonoverlap same-material cuboid specification",
+    "J": "unchanged lossless JSON serialization body",
+    "O": "unchanged saved OpenAI description body",
+    "P": "unchanged GT attributes only; no O shape or component details added"
+  },
+  "enabled_run_exists": false,
+  "known_operational_limits": [
+    "Official pricing/model verification must be same UTC date; stale plans halt before approval.",
+    "Once activated, only the original canonical ledger may resume; stale-date documentation refresh requires scope-preserving maintenance, never minting a new budget.",
+    "Interrupted activation after lineage claim is fail-closed and requires inspection; no new plan can replace it.",
+    "CPU reference length does not guarantee either model output fits, especially unknown Anthropic tokenizer and OpenAI reasoning."
+  ],
+  "launcher_preview": {
+    "exit_code": 0,
+    "network_blocked": true,
+    "working_directory": "/tmp"
+  },
+  "no_automatic_full960": true,
+  "no_smoke_significance": true,
+  "output_cap_cpu_evidence_sha256": "ab696a5876554bd8ea1bf93c47c60787905900a0f2af0b486247b0c36be3adf6",
+  "parent": {
+    "approval_sha256": "87f3891fe45d4f8e5c26c89797de8e99ece59398fa2ced4a7b790f18f034035f",
+    "campaign_directory": "/root/minecraft-runs/goal002-approved-smoke-001",
+    "campaign_id": "665b1c3eb41a45e3b5de95f6143f7eaa",
+    "campaign_sha256": "bd4d6b81d80de10d68506e41f4708bdf59ab82bbbd117be15b2c652b70d942da",
+    "identity_hash": "d3c920dbaaa72b407f6eaede558d333e77d961fedeb33bf36bfbf3a6f1b25964",
+    "ledger_sha256": "6aaca585baf7a8dac2c66284f23eb110b2913ce0bad7119f1aaf5cd7044468c0",
+    "state_sha256": {
+      "anthropic": "e6ce73578273fddc702c520af379720aecc114b61ed881d18df27b95f28d6c3c",
+      "openai": "b22cf118b8187febb43194c88e3241bca53bd1a479d7141fc4607e625fd27c76"
+    },
+    "usage": {
+      "calls": 14,
+      "cost_usd_upper_bound": 0.25857425,
+      "retries": 4,
+      "tokens": 173509,
+      "unknown_usage_attempts": 0
+    }
+  },
+  "plan_file_sha256": "d13b406df1bdd5f2fee5ca5821691b4fcb9c06875da4d2120d24104f45d2b74a",
+  "plan_identity_hash": "047028e5645a90a94de70137d4b9ab579c9e56a08e583d723654276d2ac2cd77",
+  "plan_path": "/root/minecraft-runs/goal004-resmoke-20261013T175539Z/plan.json",
+  "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+  "protocol_id": "goal004_native_cuboids_best_effort_fixed16_v1",
+  "research_api_additional_sends": 0,
+  "schedule_sha256": "02247b2fc118875f161c3a7d9bc602ae5a263b02372933b40765f28e38c09e4e",
+  "schema_sha256": "41a28cf6044541d67f794b5705b934749f94ef882732becb325d8cd1af2fdf83",
+  "status": "PROTOCOL_READY_AWAITING_EXPLICIT_RESMOKE_APPROVAL",
+  "targets": [
+    {
+      "condition": "O",
+      "input_id": "58823699ec90f8c3919c65a1dd03d517de90e3631049c22e8f38c5047ac6fb4f",
+      "input_sha256": "621906b7ac2c019da58c708d505cf1b7efa7cc7bb33aa8793807b311fa92bd4e",
+      "model": "gpt-5-mini",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_060",
+      "schedule_index": 0,
+      "source_input_sha256": "621906b7ac2c019da58c708d505cf1b7efa7cc7bb33aa8793807b311fa92bd4e"
+    },
+    {
+      "condition": "O",
+      "input_id": "58823699ec90f8c3919c65a1dd03d517de90e3631049c22e8f38c5047ac6fb4f",
+      "input_sha256": "621906b7ac2c019da58c708d505cf1b7efa7cc7bb33aa8793807b311fa92bd4e",
+      "model": "claude-haiku-4-5-20251001",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_060",
+      "schedule_index": 1,
+      "source_input_sha256": "621906b7ac2c019da58c708d505cf1b7efa7cc7bb33aa8793807b311fa92bd4e"
+    },
+    {
+      "condition": "J",
+      "input_id": "b6f2c878222cb7bc2781317276603feebe64bd77baaf821ead8a5ce762f53c84",
+      "input_sha256": "81d2b4ffd0729813c9d6309144344548954e07b39805014257b8b59fd2dbeb09",
+      "model": "gpt-5-mini",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_060",
+      "schedule_index": 2,
+      "source_input_sha256": "81d2b4ffd0729813c9d6309144344548954e07b39805014257b8b59fd2dbeb09"
+    },
+    {
+      "condition": "J",
+      "input_id": "b6f2c878222cb7bc2781317276603feebe64bd77baaf821ead8a5ce762f53c84",
+      "input_sha256": "81d2b4ffd0729813c9d6309144344548954e07b39805014257b8b59fd2dbeb09",
+      "model": "claude-haiku-4-5-20251001",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_060",
+      "schedule_index": 3,
+      "source_input_sha256": "81d2b4ffd0729813c9d6309144344548954e07b39805014257b8b59fd2dbeb09"
+    },
+    {
+      "condition": "P",
+      "input_id": "67a6e0b1c56a5727b03c455117be4121e98080db20e2e2ac2bd14695ac7fddc2",
+      "input_sha256": "19c4390646d97a41577f8eb029a6f7d926e3c234eaaf26cf7afeae1c47137622",
+      "model": "gpt-5-mini",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_060",
+      "schedule_index": 4,
+      "source_input_sha256": "19c4390646d97a41577f8eb029a6f7d926e3c234eaaf26cf7afeae1c47137622"
+    },
+    {
+      "condition": "P",
+      "input_id": "67a6e0b1c56a5727b03c455117be4121e98080db20e2e2ac2bd14695ac7fddc2",
+      "input_sha256": "19c4390646d97a41577f8eb029a6f7d926e3c234eaaf26cf7afeae1c47137622",
+      "model": "claude-haiku-4-5-20251001",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_060",
+      "schedule_index": 5,
+      "source_input_sha256": "19c4390646d97a41577f8eb029a6f7d926e3c234eaaf26cf7afeae1c47137622"
+    },
+    {
+      "condition": "E",
+      "input_id": "da96a8b8f9dd63a8a119319319ef4fe22fd9944ac62461bb2d3d7ab62584e9aa",
+      "input_sha256": "b3274c1f0975625970164be3632b296cce94744a029f244eda5b9d5a3ce5a48e",
+      "model": "gpt-5-mini",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_060",
+      "schedule_index": 6,
+      "source_input_sha256": "fbebeff1f0e3f5ce9396f4b94cc64af076ba7d9e13730b5b869bc3e26fbffe7d"
+    },
+    {
+      "condition": "E",
+      "input_id": "da96a8b8f9dd63a8a119319319ef4fe22fd9944ac62461bb2d3d7ab62584e9aa",
+      "input_sha256": "b3274c1f0975625970164be3632b296cce94744a029f244eda5b9d5a3ce5a48e",
+      "model": "claude-haiku-4-5-20251001",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_060",
+      "schedule_index": 7,
+      "source_input_sha256": "fbebeff1f0e3f5ce9396f4b94cc64af076ba7d9e13730b5b869bc3e26fbffe7d"
+    },
+    {
+      "condition": "O",
+      "input_id": "a03517328bb06a7505ff4ca907e8cdc63c975e339f7e9136643931d13da931e9",
+      "input_sha256": "8d2c26c46c21119b4d28d55519130a263dbdd69ec17d08f6fbb1d0ea8662b177",
+      "model": "gpt-5-mini",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_075",
+      "schedule_index": 8,
+      "source_input_sha256": "8d2c26c46c21119b4d28d55519130a263dbdd69ec17d08f6fbb1d0ea8662b177"
+    },
+    {
+      "condition": "O",
+      "input_id": "a03517328bb06a7505ff4ca907e8cdc63c975e339f7e9136643931d13da931e9",
+      "input_sha256": "8d2c26c46c21119b4d28d55519130a263dbdd69ec17d08f6fbb1d0ea8662b177",
+      "model": "claude-haiku-4-5-20251001",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_075",
+      "schedule_index": 9,
+      "source_input_sha256": "8d2c26c46c21119b4d28d55519130a263dbdd69ec17d08f6fbb1d0ea8662b177"
+    },
+    {
+      "condition": "J",
+      "input_id": "ff98bcce3dd6fb574e4d52356e3b4d2df31943eef220af70d9e93d800fbe8607",
+      "input_sha256": "0f9d29ef6c1050d3440c7f61ae7b095ddeb127bd10aa0c0e5d8401d81f914570",
+      "model": "gpt-5-mini",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_075",
+      "schedule_index": 10,
+      "source_input_sha256": "0f9d29ef6c1050d3440c7f61ae7b095ddeb127bd10aa0c0e5d8401d81f914570"
+    },
+    {
+      "condition": "J",
+      "input_id": "ff98bcce3dd6fb574e4d52356e3b4d2df31943eef220af70d9e93d800fbe8607",
+      "input_sha256": "0f9d29ef6c1050d3440c7f61ae7b095ddeb127bd10aa0c0e5d8401d81f914570",
+      "model": "claude-haiku-4-5-20251001",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_075",
+      "schedule_index": 11,
+      "source_input_sha256": "0f9d29ef6c1050d3440c7f61ae7b095ddeb127bd10aa0c0e5d8401d81f914570"
+    },
+    {
+      "condition": "P",
+      "input_id": "d7f9a5063d5062cca15de2e4b2b22ed662a3d835e25a7735001e364ba4395308",
+      "input_sha256": "53eff4a4b839e7e25791804abbc4f1d43ea7a1079953ceb06f4ad442dd4bb5ec",
+      "model": "gpt-5-mini",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_075",
+      "schedule_index": 12,
+      "source_input_sha256": "53eff4a4b839e7e25791804abbc4f1d43ea7a1079953ceb06f4ad442dd4bb5ec"
+    },
+    {
+      "condition": "P",
+      "input_id": "d7f9a5063d5062cca15de2e4b2b22ed662a3d835e25a7735001e364ba4395308",
+      "input_sha256": "53eff4a4b839e7e25791804abbc4f1d43ea7a1079953ceb06f4ad442dd4bb5ec",
+      "model": "claude-haiku-4-5-20251001",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_075",
+      "schedule_index": 13,
+      "source_input_sha256": "53eff4a4b839e7e25791804abbc4f1d43ea7a1079953ceb06f4ad442dd4bb5ec"
+    },
+    {
+      "condition": "E",
+      "input_id": "c474d647121a80cc5a5e10635ff0dddd637d49ec8211cb63d1457ec9ea64fbf1",
+      "input_sha256": "12fc2b7b7f6505e2d91cf0af1bf6a845bdd0aeba38cd5d3a5f94c266aeeed478",
+      "model": "gpt-5-mini",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_075",
+      "schedule_index": 14,
+      "source_input_sha256": "f8b4573e0a77c306a98b5d59dd5fa3ea9d778e1fc131a7db94d9412e8e19d482"
+    },
+    {
+      "condition": "E",
+      "input_id": "c474d647121a80cc5a5e10635ff0dddd637d49ec8211cb63d1457ec9ea64fbf1",
+      "input_sha256": "12fc2b7b7f6505e2d91cf0af1bf6a845bdd0aeba38cd5d3a5f94c266aeeed478",
+      "model": "claude-haiku-4-5-20251001",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_075",
+      "schedule_index": 15,
+      "source_input_sha256": "f8b4573e0a77c306a98b5d59dd5fa3ea9d778e1fc131a7db94d9412e8e19d482"
+    }
+  ]
+}
