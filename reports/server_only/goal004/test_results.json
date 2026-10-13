@@ -1,0 +1,55 @@
+{
+  "existing_suite": {
+    "command": [
+      ".venv-server-v2-20261013/bin/python",
+      "-B",
+      "-c",
+      "import socket; socket.socket.connect=lambda *a,**k: (_ for _ in ()).throw(RuntimeError('CPU validation network forbidden')); import pytest; raise SystemExit(pytest.main(['-q','offline_evaluation/server_v2/tests','--basetemp=.pytest_cache/goal004-old307','--junitxml=reports/server_only/goal004/legacy_regression.junit.xml']))"
+    ],
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "legacy_six_errors": "preserved reports/server_only/goal003/legacy_suite_reference.json; not repaired or skipped",
+    "max_rss_kib": 88684,
+    "network": "socket.connect blocked",
+    "passed": 307,
+    "research_api_additional_sends": 0,
+    "skipped": 0,
+    "started_utc": "2026-10-13T17:50:55.848835+00:00",
+    "tests": 307,
+    "wall_seconds": 15.838732036001602
+  },
+  "first_new_pass": {
+    "passed": 86,
+    "report": "new_regression.json"
+  },
+  "launcher_absolute_path_help_from_tmp": "PASS; no approval or API",
+  "legacy_collection_errors": {
+    "errors": 6,
+    "unchanged_reference": "reports/server_only/goal003/legacy_suite_reference.json"
+  },
+  "new_suite": {
+    "command": [
+      ".venv-server-v2-20261013/bin/python",
+      "-B",
+      "-c",
+      "import socket; socket.socket.connect=lambda *a,**k: (_ for _ in ()).throw(RuntimeError('CPU validation network forbidden')); import pytest; raise SystemExit(pytest.main(['-q','offline_evaluation/resmoke_v2/tests','--basetemp=.pytest_cache/goal004-new-suite-final','--junitxml=reports/server_only/goal004/new_regression_final.junit.xml']))"
+    ],
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "max_rss_kib": 50168,
+    "network": "socket.connect blocked",
+    "passed": 104,
+    "rerun_reason": "independent review added canonical destination symlink rejection and frozen GT source checks",
+    "research_api_additional_sends": 0,
+    "skipped": 0,
+    "started_utc": "2026-10-13T17:55:11.375495+00:00",
+    "tests": 104,
+    "wall_seconds": 6.398522799001512
+  },
+  "prior_targeted_checks": "adapter19, cuboids24, plan11 then19, runner32 then42; all final checks included in new suite",
+  "research_api_additional_sends": 0,
+  "total_passed": 411,
+  "verified_at_utc": "2026-10-13T17:56:20.229281Z"
+}

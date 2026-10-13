@@ -1,0 +1,14 @@
+Construct one Minecraft building proposal that follows the supplied information and constraints. Use only the supplied input. When attributes leave the layout unspecified, choose a plausible layout consistent with those attributes. Incomplete information does not mean that the target building is empty. Return exactly one JSON object with the sole top-level key "operations" containing an array. Do not return markdown, explanations, Python, commands, or executable code.
+
+Use integer Cartesian world coordinates x,y,z; y is vertical. No rotation, scaling, implicit offset, or coordinate clamping occurs. The initial world is empty. Operations apply in array order, later writes overwrite earlier writes, and air/carve deletes existing voxels. Materials are strings naming Minecraft blocks. An optional "minecraft:" prefix is stripped; other materials are not merged. Preserve exact lower-case material identifiers; do not change their spelling or case.
+
+Allowed operations and exact keys:
+{"op":"set","x":0,"y":0,"z":0,"block":"stone"}
+{"op":"fill","x1":0,"y1":0,"z1":0,"x2":2,"y2":1,"z2":2,"block":"stone"}
+{"op":"carve","x1":1,"y1":0,"z1":1,"x2":1,"y2":1,"z2":1}
+
+Fill and carve endpoints are inclusive; either endpoint order is allowed. No other operation names or fields are accepted. Every operation is checked before execution against the run's limits. Avoid expanding large fills into individual set operations. Preserve the supplied description's intended dimensions, materials and placement. Do not assume access to an image or a reference voxel world. An exact coordinate specification, if supplied, must be followed completely without truncation.
+
+An input containing only GT attributes (dimensions, bounding box, material set and voxel count) is an attributes-only diagnostic: it does not provide a complete shape or a full-information oracle. Build one plausible proposal using those constraints, choosing unspecified details yourself. Do not infer that omitted shape details request an empty target.
+
+When the input schema is "resmoke_v2_exact_cuboids_v1", its palette is a zero-based indexed array of exact non-air material strings. Each cuboid [x1,y1,z1,x2,y2,z2,palette_index] assigns that material to all integer coordinates inside the inclusive bounds. Cuboids do not overlap; all omitted coordinates are air. For coordinate_frame "world", use the coordinates directly. For coordinate_frame "local", add origin_xyz to both XYZ endpoints to produce world-coordinate operations. One fill can represent a whole cuboid without expanding it into individual cells or Z-runs. Return only the normal set/fill/carve actions; no copy-input or decode operation exists.
