@@ -1,0 +1,97 @@
+{
+  "failures": [
+    {
+      "attempt_id": "e67d1ed9d5624911901b9673da5d857b",
+      "condition": "O",
+      "executor_success": "NOT_RUN",
+      "first_violation": {
+        "actual_value": "quartz (white)",
+        "cause": "block must be a lower-case Minecraft material identifier",
+        "classification": "model_output_violates_predeclared_specification",
+        "exception_type": "ValidationError",
+        "excerpt_max_bytes": 1024,
+        "expected_rule": "(?:minecraft:)?[a-z0-9_][a-z0-9_./-]{0,127}\\Z; optional minecraft: namespace only; no spaces or parentheses",
+        "field": "block",
+        "operation_index_zero_based": 5,
+        "operation_number_one_based": 6,
+        "rule_category": "material_identifier_syntax",
+        "safe_operation_excerpt": {
+          "block": "quartz (white)",
+          "op": "fill",
+          "x1": 0,
+          "x2": 16,
+          "y1": 6,
+          "y2": 6,
+          "z1": 0,
+          "z2": 16
+        },
+        "spec_validator_mismatch_found": false,
+        "validator_bug_found": false
+      },
+      "input_id": "58823699ec90f8c3919c65a1dd03d517de90e3631049c22e8f38c5047ac6fb4f",
+      "input_prompt_schema_match_frozen_plan": true,
+      "json_success": true,
+      "local_validator_success": false,
+      "natural_stop": true,
+      "payload_hash_matches_ledger": true,
+      "provider": "openai",
+      "raw_sha256": "ec74926ba21150c9081f904973d3a2a03e74ff0e0f11948d3492e59d9a038fb1",
+      "response_id": "resp_045c67f372e60984016ace8e11898487d08abce00e1aa75bd5",
+      "response_model": "gpt-5-mini-2025-08-07",
+      "rule_evidence": {
+        "prompt": "Preserve exact lower-case material identifiers; do not change their spelling or case.",
+        "schema_contract": "Shape-only schema permits strings; semantic checks deliberately remain local.",
+        "validator": "offline_evaluation/server_v2/core.py:material_id"
+      },
+      "scene_id": "buildings_100_v4_building_060",
+      "schema_success": true
+    },
+    {
+      "attempt_id": "b2b737cc167f476785e8812767cfd451",
+      "condition": "J",
+      "executor_success": "NOT_RUN",
+      "first_violation": {
+        "actual_value": "quartz (white)",
+        "cause": "block must be a lower-case Minecraft material identifier",
+        "classification": "model_output_violates_predeclared_specification",
+        "exception_type": "ValidationError",
+        "excerpt_max_bytes": 1024,
+        "expected_rule": "(?:minecraft:)?[a-z0-9_][a-z0-9_./-]{0,127}\\Z; optional minecraft: namespace only; no spaces or parentheses",
+        "field": "block",
+        "operation_index_zero_based": 2,
+        "operation_number_one_based": 3,
+        "rule_category": "material_identifier_syntax",
+        "safe_operation_excerpt": {
+          "block": "quartz (white)",
+          "op": "fill",
+          "x1": 0,
+          "x2": 16,
+          "y1": 3,
+          "y2": 3,
+          "z1": 0,
+          "z2": 16
+        },
+        "spec_validator_mismatch_found": false,
+        "validator_bug_found": false
+      },
+      "input_id": "b6f2c878222cb7bc2781317276603feebe64bd77baaf821ead8a5ce762f53c84",
+      "input_prompt_schema_match_frozen_plan": true,
+      "json_success": true,
+      "local_validator_success": false,
+      "natural_stop": true,
+      "payload_hash_matches_ledger": true,
+      "provider": "openai",
+      "raw_sha256": "fcecfa7b7bf62f911c072bcd9d309798c15e0cd517ddd24342ceb5b00c3ee1d3",
+      "response_id": "resp_0297c572195f363d016ace8e4e8e8c87d0a8d0f7f3d0329ca0",
+      "response_model": "gpt-5-mini-2025-08-07",
+      "rule_evidence": {
+        "prompt": "Preserve exact lower-case material identifiers; do not change their spelling or case.",
+        "schema_contract": "Shape-only schema permits strings; semantic checks deliberately remain local.",
+        "validator": "offline_evaluation/server_v2/core.py:material_id"
+      },
+      "scene_id": "buildings_100_v4_building_060",
+      "schema_success": true
+    }
+  ],
+  "measurement_bug_found": false
+}

@@ -1,0 +1,119 @@
+{
+  "verified_on": "2026-10-13",
+  "verified_at_utc": "2026-10-13T21:24:22.644662Z",
+  "retrieval": "Official public model, pricing, structured-output and reasoning documentation searched and opened with web tool in Goal005; no research/model/token-count API probe",
+  "research_api_requests_sent": 0,
+  "account_model_availability": "NOT_PROBED_IN_GOAL005; prior sixteen saved responses were observed",
+  "account_native_schema_acceptance": "Prior frozen smoke: sixteen saved schema-valid responses; future acceptance not guaranteed",
+  "openai": {
+    "provider": "openai",
+    "model": "gpt-5-mini",
+    "verified": true,
+    "verified_on": "2026-10-13",
+    "documentation_status": "Deprecated",
+    "account_available": "NOT_PROBED_IN_GOAL005",
+    "account_native_schema_acceptance": "Prior saved smoke responses only; no new probe",
+    "accepted_response_model_ids": [
+      "gpt-5-mini",
+      "gpt-5-mini-2025-08-07"
+    ],
+    "response_model_ids_source_url": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+    "context_window_tokens": 400000,
+    "model_max_output_tokens": 128000,
+    "max_output_tokens": 128000,
+    "input_usd_per_million": 0.25,
+    "output_usd_per_million": 2.0,
+    "pricing_source_url": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+    "context_source_url": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+    "structured_output_source_url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+    "structured_output_payload": "Responses text.format = {type: json_schema, name, strict: true, schema}",
+    "structured_output_documented": true,
+    "reasoning_source_url": "https://developers.openai.com/api/docs/guides/reasoning",
+    "output_accounting": "max_output_tokens includes hidden reasoning and visible output; reasoning billed as output",
+    "billing_mode": "standard_text_no_tools_no_cache_writes",
+    "billing_route": "first-party default service tier; no regional, priority, tools or cache writes",
+    "rate_scope": "upper_bound_full_context_window",
+    "reservation_input_tokens": 400000,
+    "reservation_output_tokens": 32768,
+    "reservation_tokens": 432768,
+    "reservation_cost_usd": 0.165536,
+    "reservation_rationale": "Full documented context reserved as input, covering prompt, input and schema, plus the output cap separately; conservative double-count, not measured usage"
+  },
+  "anthropic": {
+    "provider": "anthropic",
+    "model": "claude-haiku-4-5-20251001",
+    "verified": true,
+    "verified_on": "2026-10-13",
+    "documentation_status": "Legacy, documented available; no model substitution",
+    "account_available": "NOT_PROBED_IN_GOAL005",
+    "account_native_schema_acceptance": "Prior saved smoke responses only; no new probe",
+    "accepted_response_model_ids": [
+      "claude-haiku-4-5-20251001"
+    ],
+    "response_model_ids_source_url": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
+    "context_window_tokens": 200000,
+    "model_max_output_tokens": 64000,
+    "max_output_tokens": 64000,
+    "input_usd_per_million": 1.0,
+    "output_usd_per_million": 5.0,
+    "pricing_source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "context_source_url": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
+    "structured_output_source_url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+    "structured_output_payload": "Messages output_config.format = {type: json_schema, schema}; no beta header",
+    "structured_output_documented": true,
+    "structured_output_input_overhead": "Additional billable system prompt; numeric overhead ceiling not published in fetched documentation",
+    "output_accounting": "max_tokens output ceiling; extended thinking not enabled",
+    "billing_mode": "standard_text_no_tools_no_cache_writes",
+    "billing_route": "first-party global standard_only; no regional, priority, tools or cache writes",
+    "rate_scope": "upper_bound_full_context_window",
+    "reservation_input_tokens": 200000,
+    "reservation_output_tokens": 32768,
+    "reservation_tokens": 232768,
+    "reservation_cost_usd": 0.36384,
+    "reservation_rationale": "Full documented context reserved as input, including billable injected schema prompt, plus output cap separately; conservative bound for accepted context, not measured overhead"
+  },
+  "official_pages_opened": [
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+      "retrieved_at_utc": "2026-10-13T21:24:22.644662Z"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+      "retrieved_at_utc": "2026-10-13T21:24:22.644662Z"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/reasoning",
+      "retrieved_at_utc": "2026-10-13T21:24:22.644662Z"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
+      "retrieved_at_utc": "2026-10-13T21:24:22.644662Z"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "retrieved_at_utc": "2026-10-13T21:24:22.644662Z"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+      "retrieved_at_utc": "2026-10-13T21:24:22.644662Z"
+    }
+  ],
+  "pending_batch_proposal": {
+    "api_allowed": false,
+    "additional_max_calls": 160,
+    "additional_retries": 0,
+    "prior_calls": 30,
+    "prior_retries": 4,
+    "prior_tokens": 354088,
+    "prior_usd_upper_bound": 0.68679325,
+    "max_total_calls": 190,
+    "max_total_retries": 4,
+    "max_total_cost_usd": 10.0,
+    "max_output_tokens": 32768,
+    "max_new_tokens": 53242880,
+    "max_total_tokens": 53596968,
+    "all_160_context_plus_output_reservations_usd": 42.35008,
+    "all_960_context_plus_output_reservations_usd": 254.10048,
+    "semantics": "Unapproved application cumulative stopping limit, not expected completion cost or invoice; unsent request stops if full reservation cannot fit"
+  }
+}
