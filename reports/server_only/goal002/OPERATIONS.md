@@ -21,7 +21,7 @@ disabled準備物は次の新規ディレクトリに保存する。既存準備
 | `builder_anthropic_evaluation` | 480 | 同じ内訳、本評価準備のみ |
 | `smoke_proposal` | 16 | 両provider合算の承認待ち提案 |
 
-次のdry-runはAPIを送信しない。モデル・アカウントの実可用性を確認するものではない。
+次のdry-runはAPIを送信しない。今回すでに実行した、freeze前の確認コマンドである。凍結後は保存済みdry-runログを参照する。キー設定後の再確認は新enabled runで行う。モデル・アカウントの実可用性を確認するものではない。
 
 ```bash
 $P -B -m offline_evaluation.server_v2.cli dry-run --run-dir "$R/builder_openai_initial_smoke"
@@ -41,7 +41,9 @@ OpenAIの出力上限にはreasoning tokensも含まれ、出力料金を適用�
 
 ```bash
 E=/root/minecraft-runs/goal002-approved-smoke-FUTURE_UNIQUE_ID
-A="$R/approval.future-FUTURE_UNIQUE_ID.json"
+M=/root/minecraft-runs/goal002-manual-review-FUTURE_UNIQUE_ID
+mkdir "$M"
+A="$M/approval.json"
 (
   set -o noclobber
   $P -B -m offline_evaluation.server_v2.cli smoke-approval-template \
@@ -71,7 +73,7 @@ $P -B -m offline_evaluation.server_v2.cli summarize-v4 --run-dir "$E" --smoke
 
 停止後は保存されたledger・attempt・raw・出力を保持し、同じcanonical `$E` を使う。認証・課金・モデル不在・context・不明usage等の停止理由を確認する。ledgerを初期化したり、別run/providerへ移して予算をリセットしない。smoke集計は通信・実行確認で、有意差や一般化の結論を付けない。smokeから計画960件の本評価へ進む処理はない。
 
-全CPU・生成処理が終了し、active taskがない状態でだけfreezeする。凍結後にrunを書き換えない。新checkpointは前回のsource assetを参照し、source一式を再圧縮・再アップロードしない。
+全CPU・生成処理が終了し、active taskがない状態でだけfreezeする。凍結したcompleted allowlistのファイルを書き換えない。将来の承認操作は提案に新しいactivation記録を追加し、実行状態は新enabled runへ保存する。新checkpointは前回のsource assetを参照し、source一式を再圧縮・再アップロードしない。
 
 ```bash
 C=goal002-smoke-FUTURE_UNIQUE_ID
