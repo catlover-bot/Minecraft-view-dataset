@@ -1,0 +1,399 @@
+{
+  "approved": false,
+  "groups": [
+    {
+      "condition": "O",
+      "inputs_per_evaluation_building": 3,
+      "means": {
+        "cost_usd_upper_bound": 0.014783000000000001,
+        "elapsed_seconds": 59.159161,
+        "input_tokens": 1676,
+        "output_tokens": 7182
+      },
+      "measured_n": 2,
+      "provider": "openai"
+    },
+    {
+      "condition": "J",
+      "inputs_per_evaluation_building": 3,
+      "means": {
+        "cost_usd_upper_bound": 0.016497125,
+        "elapsed_seconds": 65.0057305,
+        "input_tokens": 1496.5,
+        "output_tokens": 8061.5
+      },
+      "measured_n": 2,
+      "provider": "openai"
+    },
+    {
+      "condition": "P",
+      "inputs_per_evaluation_building": 1,
+      "means": {
+        "cost_usd_upper_bound": 0.009670875,
+        "elapsed_seconds": 44.2214775,
+        "input_tokens": 931.5,
+        "output_tokens": 4719
+      },
+      "measured_n": 2,
+      "provider": "openai"
+    },
+    {
+      "condition": "E",
+      "inputs_per_evaluation_building": 1,
+      "means": {
+        "cost_usd_upper_bound": 0.041809,
+        "elapsed_seconds": 168.8856235,
+        "input_tokens": 8056,
+        "output_tokens": 19897.5
+      },
+      "measured_n": 2,
+      "provider": "openai"
+    },
+    {
+      "condition": "O",
+      "inputs_per_evaluation_building": 3,
+      "means": {
+        "cost_usd_upper_bound": 0.0095475,
+        "elapsed_seconds": 11.005354,
+        "input_tokens": 2432.5,
+        "output_tokens": 1423
+      },
+      "measured_n": 2,
+      "provider": "anthropic"
+    },
+    {
+      "condition": "J",
+      "inputs_per_evaluation_building": 3,
+      "means": {
+        "cost_usd_upper_bound": 0.01073,
+        "elapsed_seconds": 9.522503,
+        "input_tokens": 2207.5,
+        "output_tokens": 1704.5
+      },
+      "measured_n": 2,
+      "provider": "anthropic"
+    },
+    {
+      "condition": "P",
+      "inputs_per_evaluation_building": 1,
+      "means": {
+        "cost_usd_upper_bound": 0.0036119999999999998,
+        "elapsed_seconds": 4.235462,
+        "input_tokens": 1602,
+        "output_tokens": 402
+      },
+      "measured_n": 2,
+      "provider": "anthropic"
+    },
+    {
+      "condition": "E",
+      "inputs_per_evaluation_building": 1,
+      "means": {
+        "cost_usd_upper_bound": 0.10746,
+        "elapsed_seconds": 134.0913735,
+        "input_tokens": 8757.5,
+        "output_tokens": 19740.5
+      },
+      "measured_n": 2,
+      "provider": "anthropic"
+    }
+  ],
+  "limitations": [
+    "Only two smoke buildings; measured O/J use OpenAI descriptions, while evaluation also uses Anthropic/Gemini descriptions.",
+    "Building sizes, descriptions, response lengths, reasoning and latency differ; these are extrapolations without calibrated prediction intervals.",
+    "Elapsed time includes local post-response handling within each attempt; excludes pauses, CPU metric aggregation and checkpoint work.",
+    "Cost figures use conservative ledger accounting, not finalized bills. Measured model failures remain included.",
+    "Reservation totals sum complete documented input contexts plus full output caps; they are not completion cost forecasts.",
+    "USD10 cumulative cap is unapproved and may stop batch1 before160. Remaining800 are separately unauthorized."
+  ],
+  "observations": [
+    {
+      "attempt_id": "e67d1ed9d5624911901b9673da5d857b",
+      "condition": "O",
+      "cost_usd_upper_bound": 0.013438,
+      "elapsed_seconds": 54.118836,
+      "input_tokens": 1656,
+      "outcome": "failed",
+      "output_tokens": 6512,
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_060"
+    },
+    {
+      "attempt_id": "5cb9bdc2eb4a473e93b61910910e4ad1",
+      "condition": "O",
+      "cost_usd_upper_bound": 0.007177,
+      "elapsed_seconds": 7.375389,
+      "input_tokens": 2407,
+      "outcome": "success",
+      "output_tokens": 954,
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_060"
+    },
+    {
+      "attempt_id": "b2b737cc167f476785e8812767cfd451",
+      "condition": "J",
+      "cost_usd_upper_bound": 0.0154625,
+      "elapsed_seconds": 60.280777,
+      "input_tokens": 1482,
+      "outcome": "failed",
+      "output_tokens": 7546,
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_060"
+    },
+    {
+      "attempt_id": "6a19cb356cc34310812a70453ac46b38",
+      "condition": "J",
+      "cost_usd_upper_bound": 0.010838,
+      "elapsed_seconds": 9.629694,
+      "input_tokens": 2188,
+      "outcome": "success",
+      "output_tokens": 1730,
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_060"
+    },
+    {
+      "attempt_id": "44563f1a530d47aeb7fb1984d5e7f034",
+      "condition": "P",
+      "cost_usd_upper_bound": 0.00734325,
+      "elapsed_seconds": 29.594106,
+      "input_tokens": 933,
+      "outcome": "success",
+      "output_tokens": 3555,
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_060"
+    },
+    {
+      "attempt_id": "e2d365e6f6904ed68ac21b72194fb6ca",
+      "condition": "P",
+      "cost_usd_upper_bound": 0.003315,
+      "elapsed_seconds": 3.988547,
+      "input_tokens": 1605,
+      "outcome": "success",
+      "output_tokens": 342,
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_060"
+    },
+    {
+      "attempt_id": "84d71fce207f4078ba63f148ef4c84cc",
+      "condition": "E",
+      "cost_usd_upper_bound": 0.02843875,
+      "elapsed_seconds": 107.530875,
+      "input_tokens": 5795,
+      "outcome": "success",
+      "output_tokens": 13495,
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_060"
+    },
+    {
+      "attempt_id": "4c53b81acb954655a80c26059d0d903f",
+      "condition": "E",
+      "cost_usd_upper_bound": 0.070723,
+      "elapsed_seconds": 89.727529,
+      "input_tokens": 6498,
+      "outcome": "success",
+      "output_tokens": 12845,
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_060"
+    },
+    {
+      "attempt_id": "6afe325ed55d457abfbbe19bc62da029",
+      "condition": "O",
+      "cost_usd_upper_bound": 0.016128,
+      "elapsed_seconds": 64.199486,
+      "input_tokens": 1696,
+      "outcome": "success",
+      "output_tokens": 7852,
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_075"
+    },
+    {
+      "attempt_id": "7d2425f79e7c4fe383a5bb97ca014e2b",
+      "condition": "O",
+      "cost_usd_upper_bound": 0.011918,
+      "elapsed_seconds": 14.635319,
+      "input_tokens": 2458,
+      "outcome": "success",
+      "output_tokens": 1892,
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_075"
+    },
+    {
+      "attempt_id": "c24f79e2d84b483d899fdcea0531a881",
+      "condition": "J",
+      "cost_usd_upper_bound": 0.01753175,
+      "elapsed_seconds": 69.730684,
+      "input_tokens": 1511,
+      "outcome": "success",
+      "output_tokens": 8577,
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_075"
+    },
+    {
+      "attempt_id": "073846d5ee884a11ba65a52e695e5c57",
+      "condition": "J",
+      "cost_usd_upper_bound": 0.010622,
+      "elapsed_seconds": 9.415312,
+      "input_tokens": 2227,
+      "outcome": "success",
+      "output_tokens": 1679,
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_075"
+    },
+    {
+      "attempt_id": "5c0d01918f04402fa38a9040ab258e03",
+      "condition": "P",
+      "cost_usd_upper_bound": 0.0119985,
+      "elapsed_seconds": 58.848849,
+      "input_tokens": 930,
+      "outcome": "success",
+      "output_tokens": 5883,
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_075"
+    },
+    {
+      "attempt_id": "4b303313b53141cebb0d132d76d4219d",
+      "condition": "P",
+      "cost_usd_upper_bound": 0.003909,
+      "elapsed_seconds": 4.482377,
+      "input_tokens": 1599,
+      "outcome": "success",
+      "output_tokens": 462,
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_075"
+    },
+    {
+      "attempt_id": "59206c3eb6354cbe9a1f26cc2ef0682e",
+      "condition": "E",
+      "cost_usd_upper_bound": 0.05517925,
+      "elapsed_seconds": 230.240372,
+      "input_tokens": 10317,
+      "outcome": "success",
+      "output_tokens": 26300,
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_075"
+    },
+    {
+      "attempt_id": "3f2fde7bd0f14d6faab8bda52a125533",
+      "condition": "E",
+      "cost_usd_upper_bound": 0.144197,
+      "elapsed_seconds": 178.455218,
+      "input_tokens": 11017,
+      "outcome": "success",
+      "output_tokens": 26636,
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_075"
+    }
+  ],
+  "projections": [
+    {
+      "buildings": 10,
+      "empirical_extrapolation": {
+        "cost_usd_upper_bound": 3.1722475,
+        "elapsed_seconds": 7855.121820000001,
+        "input_tokens": 427845.0,
+        "output_tokens": 998720.0
+      },
+      "full_context_plus_cap_reservation": {
+        "cost_usd": 42.35008,
+        "input_tokens": 48000000,
+        "output_tokens": 5242880,
+        "tokens": 53242880
+      },
+      "planned_calls": 160,
+      "providers": {
+        "anthropic": {
+          "empirical_extrapolation": {
+            "cost_usd_upper_bound": 1.719045,
+            "elapsed_seconds": 1999.1040650000002,
+            "input_tokens": 242795.0,
+            "output_tokens": 295250.0
+          },
+          "full_context_plus_cap_reservation": {
+            "cost_usd": 29.1072,
+            "input_tokens": 16000000,
+            "output_tokens": 2621440,
+            "tokens": 18621440
+          },
+          "planned_calls": 80
+        },
+        "openai": {
+          "empirical_extrapolation": {
+            "cost_usd_upper_bound": 1.4532025000000002,
+            "elapsed_seconds": 5856.017755000001,
+            "input_tokens": 185050.0,
+            "output_tokens": 703470.0
+          },
+          "full_context_plus_cap_reservation": {
+            "cost_usd": 13.24288,
+            "input_tokens": 32000000,
+            "output_tokens": 2621440,
+            "tokens": 34621440
+          },
+          "planned_calls": 80
+        }
+      }
+    },
+    {
+      "buildings": 60,
+      "empirical_extrapolation": {
+        "cost_usd_upper_bound": 19.033485,
+        "elapsed_seconds": 47130.73092,
+        "input_tokens": 2567070.0,
+        "output_tokens": 5992320.0
+      },
+      "full_context_plus_cap_reservation": {
+        "cost_usd": 254.10048,
+        "input_tokens": 288000000,
+        "output_tokens": 31457280,
+        "tokens": 319457280
+      },
+      "planned_calls": 960,
+      "providers": {
+        "anthropic": {
+          "empirical_extrapolation": {
+            "cost_usd_upper_bound": 10.314269999999999,
+            "elapsed_seconds": 11994.62439,
+            "input_tokens": 1456770.0,
+            "output_tokens": 1771500.0
+          },
+          "full_context_plus_cap_reservation": {
+            "cost_usd": 174.6432,
+            "input_tokens": 96000000,
+            "output_tokens": 15728640,
+            "tokens": 111728640
+          },
+          "planned_calls": 480
+        },
+        "openai": {
+          "empirical_extrapolation": {
+            "cost_usd_upper_bound": 8.719215,
+            "elapsed_seconds": 35136.106530000005,
+            "input_tokens": 1110300.0,
+            "output_tokens": 4220820.0
+          },
+          "full_context_plus_cap_reservation": {
+            "cost_usd": 79.45728,
+            "input_tokens": 192000000,
+            "output_tokens": 15728640,
+            "tokens": 207728640
+          },
+          "planned_calls": 480
+        }
+      }
+    }
+  ],
+  "proposed_cumulative_usd_cap": 10.0,
+  "research_api_additional_sends": 0,
+  "schema": "goal005_provider_condition_weighted_extrapolation_v1",
+  "source_sha256": {
+    "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/ledger.json": "10222aad7e3156f0cbd4603f650a7fd3bc85bf65b8a3fd30b42dda895809edb1",
+    "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/plan.json": "c1fbd060b0d7459ad26d74b27994f9f2b891264a21d4835bf81bec32679c1030",
+    "reports/server_only/goal005/official_pricing.json": "e6d1e8344927c23588de7794f0afda16777764e92e46e213dc0d963b8bee7f68"
+  },
+  "weights_per_provider_per_building": {
+    "E": 1,
+    "J": 3,
+    "O": 3,
+    "P": 1
+  }
+}

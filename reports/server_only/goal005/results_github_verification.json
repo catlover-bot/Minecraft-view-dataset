@@ -1,0 +1,137 @@
+{
+  "status": "GITHUB_VERIFIED_DRAFT",
+  "release_id": 412128399,
+  "release_url": "https://github.com/catlover-bot/Minecraft-view-dataset/releases/tag/untagged-af589f3f57d96f8f8c3a",
+  "draft": true,
+  "tag": "checkpoint-goal005-results-20261013T212202Z",
+  "target_commit": "da2be613a820f6261739d7b05af6e9b4801ce823",
+  "assets": [
+    {
+      "id": 638311329,
+      "name": "FILES.json",
+      "bytes": 19495,
+      "sha256": "295521e5c1b31fa9ea6e353e070d8e6b5e9ad53e5cee4092c93a55e1bab01d3f",
+      "github_digest_matches": true,
+      "redownload_matches": true
+    },
+    {
+      "id": 638311333,
+      "name": "RESTORE.md",
+      "bytes": 1650,
+      "sha256": "07c066b49bca3e0e9222d523a2921fe93bb24e0400775c5198aed5e9e7e9bbf2",
+      "github_digest_matches": true,
+      "redownload_matches": true
+    },
+    {
+      "id": 638311371,
+      "name": "SHA256SUMS",
+      "bytes": 424,
+      "sha256": "d75c33b1b6104e00adee28a7bf7080a03768ba69c9e8e76e02362976552be86f",
+      "github_digest_matches": true,
+      "redownload_matches": true
+    },
+    {
+      "id": 638311328,
+      "name": "SOURCE_REFERENCE.json",
+      "bytes": 575,
+      "sha256": "c3ee909b2ee606492d8915eb8af10eae091b65f129fd5c76ac6c02e242c3801e",
+      "github_digest_matches": true,
+      "redownload_matches": true
+    },
+    {
+      "id": 638311327,
+      "name": "goal005-completed16-forensic.tar.gz",
+      "bytes": 805523,
+      "sha256": "b1a615cb1390cbf3e62579f2f4a6ea76ae1be8a2a5df019b8726ae69439f5422",
+      "github_digest_matches": true,
+      "redownload_matches": true
+    },
+    {
+      "id": 638311330,
+      "name": "snapshot.json",
+      "bytes": 1214,
+      "sha256": "22dc9a6061c859306145dd479541163c244942102b9344ced380d7e6d6ecdb3a",
+      "github_digest_matches": true,
+      "redownload_matches": true
+    }
+  ],
+  "download_directory": "/root/minecraft-checkpoints/goal005-results-redownload-20261013T212202Z",
+  "restore_directory": "/root/minecraft-checkpoints/goal005-results-restored-20261013T212202Z",
+  "archive_restoration": {
+    "status": "VERIFIED",
+    "archive_sha256": "b1a615cb1390cbf3e62579f2f4a6ea76ae1be8a2a5df019b8726ae69439f5422",
+    "files": 93
+  },
+  "diagnostic_verification": {
+    "archive_root": "/root/minecraft-checkpoints/goal005-results-restored-20261013T212202Z",
+    "diagnostic_only": true,
+    "canonical_original_plan_paths_preserved": true,
+    "archive_activation_performed": false,
+    "raw_responses_verified": 16,
+    "successful_execution_chains": 14,
+    "reproduced_failures": [
+      {
+        "attempt_id": "e67d1ed9d5624911901b9673da5d857b",
+        "first_violation": {
+          "operation_index_zero_based": 5,
+          "operation_number_one_based": 6,
+          "field": "block",
+          "actual_value": "quartz (white)",
+          "expected_rule": "(?:minecraft:)?[a-z0-9_][a-z0-9_./-]{0,127}\\Z; optional minecraft: namespace only; no spaces or parentheses",
+          "rule_category": "material_identifier_syntax",
+          "exception_type": "ValidationError",
+          "cause": "block must be a lower-case Minecraft material identifier",
+          "safe_operation_excerpt": {
+            "op": "fill",
+            "x1": 0,
+            "y1": 6,
+            "z1": 0,
+            "x2": 16,
+            "y2": 6,
+            "z2": 16,
+            "block": "quartz (white)"
+          },
+          "excerpt_max_bytes": 1024,
+          "classification": "model_output_violates_predeclared_specification",
+          "validator_bug_found": false,
+          "spec_validator_mismatch_found": false
+        }
+      },
+      {
+        "attempt_id": "b2b737cc167f476785e8812767cfd451",
+        "first_violation": {
+          "operation_index_zero_based": 2,
+          "operation_number_one_based": 3,
+          "field": "block",
+          "actual_value": "quartz (white)",
+          "expected_rule": "(?:minecraft:)?[a-z0-9_][a-z0-9_./-]{0,127}\\Z; optional minecraft: namespace only; no spaces or parentheses",
+          "rule_category": "material_identifier_syntax",
+          "exception_type": "ValidationError",
+          "cause": "block must be a lower-case Minecraft material identifier",
+          "safe_operation_excerpt": {
+            "op": "fill",
+            "x1": 0,
+            "y1": 3,
+            "z1": 0,
+            "x2": 16,
+            "y2": 3,
+            "z2": 16,
+            "block": "quartz (white)"
+          },
+          "excerpt_max_bytes": 1024,
+          "classification": "model_output_violates_predeclared_specification",
+          "validator_bug_found": false,
+          "spec_validator_mismatch_found": false
+        }
+      }
+    ],
+    "metric_searches_repeated": 0,
+    "research_api_sends": 0
+  },
+  "copied_live_plan_activation_rejected": "canonical production plan must remain in /root/minecraft-runs",
+  "old_and_new_originals_unchanged": true,
+  "research_api_additional_sends": 0,
+  "scope": "completed16 measured results only, not pending evaluation plan",
+  "verified_at_utc": "2026-10-13T21:33:20.569913Z",
+  "wall_seconds": 7.199053263000678
+}

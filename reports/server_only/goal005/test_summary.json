@@ -1,0 +1,50 @@
+{
+  "junit_runs": [
+    {
+      "junit": "existing_tests.junit.xml",
+      "tests": 229,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "junit": "results/tests.junit.xml",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "junit": "batch-tests.junit.xml",
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "junit": "batch-disabled-guard-tests.junit.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "unique_cases_in_junit": 268,
+  "input_tests": {
+    "command": ".venv-server-v2-20261013/bin/python -B -m pytest -q offline_evaluation/batch_v1/tests/test_inputs.py --basetemp=.pytest_cache/goal005-inputs-unit-001",
+    "exit_code": 0,
+    "passed": 14,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "pytest_seconds": 0.21,
+    "stdout": ".............. [100%]\n14 passed in 0.21s\n",
+    "research_api_additional_sends": 0
+  },
+  "total_unique_passed": 282,
+  "legacy_collection_errors_preserved": 6,
+  "legacy_reference": "reports/server_only/goal003/legacy_suite_reference.json",
+  "paid_api_calls": 0,
+  "full200GT_or1200_reevaluation": "NOT_RUN",
+  "review_fix": "New batch CPU evaluate now checks canonical enabled directory existence before run_lock; fixture absence/symlink tests prove zero creation. No old hash-bound executable changed."
+}
