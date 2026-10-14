@@ -1,0 +1,3387 @@
+{
+  "observed_at_utc": "2026-10-14T08:48:31.997537Z",
+  "uid": 0,
+  "mode": "before",
+  "research_api_additional_sends_in_this_task": 0,
+  "network_blocked": true,
+  "presence": {
+    "plan": {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/plan.json",
+      "exists": true,
+      "symlink": false
+    },
+    "enabled": {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled",
+      "exists": true,
+      "symlink": false
+    },
+    "enabled_config": {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/enabled.json",
+      "exists": true,
+      "symlink": false
+    },
+    "authority": {
+      "path": "/root/minecraft-runs/.batch-v1-b522f5bbc1d17526b4366cd27a8f1968379f007a73f38c2a471b840bb6a549f2-batch1.json",
+      "exists": true,
+      "symlink": false
+    },
+    "approval": {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/approval.json",
+      "exists": true,
+      "symlink": false
+    },
+    "ledger": {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/ledger.json",
+      "exists": true,
+      "symlink": false
+    },
+    "revisions": {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/pricing-revisions",
+      "exists": false,
+      "symlink": false
+    }
+  },
+  "generation_processes": [],
+  "read_only_nonblocking_locks_acquired": [
+    "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/run.lock",
+    "/root/minecraft-runs/.batch-v1-b522f5bbc1d17526b4366cd27a8f1968379f007a73f38c2a471b840bb6a549f2-batch1.json.lock",
+    "/root/minecraft-runs/goal002-approved-smoke-001/run.lock",
+    "/root/minecraft-runs/goal002-approved-smoke-001/budget.lock",
+    "/root/minecraft-runs/goal002-approved-smoke-001/runs/anthropic/run.lock",
+    "/root/minecraft-runs/goal002-approved-smoke-001/runs/openai/run.lock",
+    "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/run.lock",
+    "/root/minecraft-runs/.resmoke-v2-665b1c3eb41a45e3b5de95f6143f7eaa.json.lock"
+  ],
+  "existing_validators": {
+    "load_plan": "PASS",
+    "verify_parent": "PASS",
+    "load_enabled": "PASS",
+    "seconds": 15.540001344998018
+  },
+  "execution_summary": {
+    "protocol_id": "goal005_fixed_v4_evaluation_batch1_160_v1",
+    "plan_identity_hash": "f54ebfaa041a18cbbfb60d2d27f9e9c4a50d436545c7ed1175c60751be58816f",
+    "experiment_complete": false,
+    "all_inputs_attempted": false,
+    "status": "PARTIAL",
+    "planned_inputs": 160,
+    "attempted_inputs": 143,
+    "not_run_inputs": 17,
+    "halt_reason": null,
+    "used": {
+      "prior": {
+        "calls": 30,
+        "cost_usd_upper_bound": 0.68679325,
+        "retries": 4,
+        "tokens": 354088,
+        "unknown_usage_attempts": 0
+      },
+      "new": {
+        "calls": 143,
+        "retries": 0,
+        "tokens": 1312860,
+        "cost_usd_upper_bound": 2.95260025,
+        "unknown_usage_attempts": 0
+      },
+      "combined": {
+        "calls": 173,
+        "retries": 4,
+        "tokens": 1666948,
+        "cost_usd_upper_bound": 3.6393935
+      }
+    },
+    "full_experiment_960": "PARTIAL_FIRST_BATCH_ONLY",
+    "remaining_800_authorized": false,
+    "additional_retries": 0
+  },
+  "entry_status_counts": {
+    "success": 139,
+    "failed": 4
+  },
+  "failure_kind_counts": {
+    "truncation": 3,
+    "validation_failure": 1
+  },
+  "pending_reservations": 0,
+  "unknown_usage_attempts": 0,
+  "raw_responses": 143,
+  "reservation_claim_files": 143,
+  "approval": {
+    "approved_at_utc": "2026-10-13T22:11:20.929000Z",
+    "confirmation_channel": "/dev/tty",
+    "enabled_directory": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled",
+    "manual_confirmed": true,
+    "plan_identity_hash": "f54ebfaa041a18cbbfb60d2d27f9e9c4a50d436545c7ed1175c60751be58816f",
+    "scope": "goal005_first_evaluation_batch160_only"
+  },
+  "last_attempt": {
+    "attempt_id": "36bf8e9fffae4dc7b27756bfb6bc6031",
+    "schedule_index": 142,
+    "provider": "openai",
+    "started_at_utc": "2026-10-13T23:58:00.973612Z",
+    "finished_at_utc": "2026-10-14T00:00:48.713661Z",
+    "status": "success"
+  },
+  "freshness": {
+    "status": "FAIL",
+    "error_type": "GenerationError",
+    "error": "pricing_documentation_requires_today_verification_and_replan"
+  },
+  "next_unattempted": {
+    "schedule_index": 143,
+    "scene_id": "buildings_100_v4_building_055",
+    "provider": "anthropic",
+    "model": "claude-haiku-4-5-20251001",
+    "condition": "E",
+    "description_model": null,
+    "input_id": "7edf9808c4dbb794e36bfdf830b5819f0b60d415230b98bab32296b6a007c370",
+    "reservation_tokens": 232768,
+    "reservation_cost_usd": 0.36384,
+    "can_reserve": true
+  },
+  "pricing_revisions": [],
+  "preserved_files": [
+    {
+      "path": "/root/minecraft-runs/.batch-v1-b522f5bbc1d17526b4366cd27a8f1968379f007a73f38c2a471b840bb6a549f2-batch1.json",
+      "sha256": "a33dfcda300c83e4aa468fec4f7920a77a98f5faa83b8bd7cb6c418ae3034f60",
+      "bytes": 307
+    },
+    {
+      "path": "/root/minecraft-runs/.batch-v1-b522f5bbc1d17526b4366cd27a8f1968379f007a73f38c2a471b840bb6a549f2-batch1.json.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/root/minecraft-runs/.resmoke-v2-665b1c3eb41a45e3b5de95f6143f7eaa.json",
+      "sha256": "862e0289dbc6b256752b18c36c504306eb985c5c9efc339265a4f45b07d20a5b",
+      "bytes": 310
+    },
+    {
+      "path": "/root/minecraft-runs/.resmoke-v2-665b1c3eb41a45e3b5de95f6143f7eaa.json.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/approval.json",
+      "sha256": "51c9ee23b11d062b7086a9baac6b61d915915114673cd8ab5f48028d358edb41",
+      "bytes": 344
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/073846d5ee884a11ba65a52e695e5c57/parsed.json",
+      "sha256": "c88ef03da105cf61941f841ddca24e662031f751958f22783205967b4ab9e7c1",
+      "bytes": 6255
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/073846d5ee884a11ba65a52e695e5c57/raw.json",
+      "sha256": "182fa0d8f842e39b793b7ad262b73c6d9011967b4f67bbd346b25772f099925d",
+      "bytes": 4549
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/073846d5ee884a11ba65a52e695e5c57/voxels.json",
+      "sha256": "79a2f3a9810e0166d6889d215cb5957bb8126c20a9a8bd4ca1c2570f510f7001",
+      "bytes": 518301
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/3f2fde7bd0f14d6faab8bda52a125533/parsed.json",
+      "sha256": "314ea5d5df8bb7aef09b587a70e0581ffca4f243fdc4e4e1dbd374a2e93dd376",
+      "bytes": 100803
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/3f2fde7bd0f14d6faab8bda52a125533/raw.json",
+      "sha256": "0345e8e8887732121e603e61be8d91e76a4a2a161c7b2ded2fd257431374e95e",
+      "bytes": 65817
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/3f2fde7bd0f14d6faab8bda52a125533/voxels.json",
+      "sha256": "264ff5490e5315f099ea5339f7faf0245dd5a46e8a0385e4fe5e7a6095c4661f",
+      "bytes": 477299
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/44563f1a530d47aeb7fb1984d5e7f034/parsed.json",
+      "sha256": "3f73b82887f27f39d61888c19892d64ce8c6c2256035818a75fffc05fa68f8ac",
+      "bytes": 1319
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/44563f1a530d47aeb7fb1984d5e7f034/raw.json",
+      "sha256": "c6953b350297d475a3aeec842014a03f0f7abb7a15d1dfe2c0237c93fff62cf6",
+      "bytes": 45238
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/44563f1a530d47aeb7fb1984d5e7f034/voxels.json",
+      "sha256": "8a0bbdb14a30f6fef0c0e86fff508cf5516885da8bb53bc2351d1d2b4a31a4ec",
+      "bytes": 160709
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/4b303313b53141cebb0d132d76d4219d/parsed.json",
+      "sha256": "bac9e216ffe617387715e359e5cf8a594566f3cb88165c125f90be7f88a395b2",
+      "bytes": 1849
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/4b303313b53141cebb0d132d76d4219d/raw.json",
+      "sha256": "b236be2be3d620c2e16f6ba91a39e6eb5caa98137221de4131063e7997cb7978",
+      "bytes": 1690
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/4b303313b53141cebb0d132d76d4219d/voxels.json",
+      "sha256": "da652d84b871d7752b666719b180334f184a494c869144355895eaa36b93b403",
+      "bytes": 1613625
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/4c53b81acb954655a80c26059d0d903f/parsed.json",
+      "sha256": "da5119165f45acf918ff95ef614d48e7382edb3046fdb2c676c5d0c57fcd879f",
+      "bytes": 48996
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/4c53b81acb954655a80c26059d0d903f/raw.json",
+      "sha256": "0de2f0617e00c9038626127e1477e48fda6576cab5feadcc92a62d28378f4cf7",
+      "bytes": 32387
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/4c53b81acb954655a80c26059d0d903f/voxels.json",
+      "sha256": "1a2dfd60c77610e6e2e846134b3df5c64a68b6c93d14ff7e7691b0b0f3c898b4",
+      "bytes": 151665
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/59206c3eb6354cbe9a1f26cc2ef0682e/parsed.json",
+      "sha256": "9bce9b702dbd0f72995293f1d147f350f00c991f6276ec705d5b97ff080dc1d2",
+      "bytes": 100888
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/59206c3eb6354cbe9a1f26cc2ef0682e/raw.json",
+      "sha256": "4d2f1fdc269742391dec0239ef67dff52ff8d6c45a70d4e54de219cca2f33bcf",
+      "bytes": 81100
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/59206c3eb6354cbe9a1f26cc2ef0682e/voxels.json",
+      "sha256": "af9bb4006fc85bdeb9c33585585f70270f7544fc72a73cc122e5ba55f08f1e53",
+      "bytes": 495047
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/5c0d01918f04402fa38a9040ab258e03/parsed.json",
+      "sha256": "21909db4ecd20439dd6ec1e7d385b0dbf4bf19d79de769009581f2ed2c49d966",
+      "bytes": 3686
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/5c0d01918f04402fa38a9040ab258e03/raw.json",
+      "sha256": "ff3a0f3dc0023ab80ec58c01133b00adb7c598b3cee1f544f416e17b7a6d59e4",
+      "bytes": 67365
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/5c0d01918f04402fa38a9040ab258e03/voxels.json",
+      "sha256": "6cb4fa679ce82b65d6c85278eb851001a7824f8f166e3c449b45af3f8d94f690",
+      "bytes": 481989
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/5cb9bdc2eb4a473e93b61910910e4ad1/parsed.json",
+      "sha256": "20cb10f0c18da9f930b0ad78c4ec8aa08b11c074588dd1e80968002c066eb8c9",
+      "bytes": 3569
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/5cb9bdc2eb4a473e93b61910910e4ad1/raw.json",
+      "sha256": "e611ebe70d3d155fbcd108e3a0a532cb5d735a94512249c60cb8f7ee13d6dc21",
+      "bytes": 2816
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/5cb9bdc2eb4a473e93b61910910e4ad1/voxels.json",
+      "sha256": "a524aada794a6754f8218bedae130ce2c77bb860951492378f84b37c406c3e22",
+      "bytes": 95343
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/6a19cb356cc34310812a70453ac46b38/parsed.json",
+      "sha256": "a8f803020efb34801c12f496fbe93f1aecbc2734140f4381c89fd656284efb3e",
+      "bytes": 6783
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/6a19cb356cc34310812a70453ac46b38/raw.json",
+      "sha256": "4a2322ca465931ffaea6c6cb411224804dfff2a097edb65e621515c8cf4142e2",
+      "bytes": 4897
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/6a19cb356cc34310812a70453ac46b38/voxels.json",
+      "sha256": "c561ec341b5e5e8d215ae12dc90aba022e932d2ef5acbf7e2ded9dbceed9280d",
+      "bytes": 114410
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/6afe325ed55d457abfbbe19bc62da029/parsed.json",
+      "sha256": "83c4619402fb4a6fdce93b34e0ec89548cb4aefba552e98e5107dacb1ac33140",
+      "bytes": 7361
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/6afe325ed55d457abfbbe19bc62da029/raw.json",
+      "sha256": "45d30df305edaf35b38b13d344ca1742ed8c8ebcb6db7e116167ac5f17516563",
+      "bytes": 80099
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/6afe325ed55d457abfbbe19bc62da029/voxels.json",
+      "sha256": "c290dabcc86a3fac1f043e7e909970a609085f3d96ca8ac9d3a3c2cc8979b83b",
+      "bytes": 244608
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/7d2425f79e7c4fe383a5bb97ca014e2b/parsed.json",
+      "sha256": "dcc2bcde6f8436095b276ca617c804ee450ad8f70db0d16850618f0085cf1da3",
+      "bytes": 5512
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/7d2425f79e7c4fe383a5bb97ca014e2b/raw.json",
+      "sha256": "caf54ddcc54c7d66d765e4308c3bb77c91987a1a70dddff591766f24f81cada7",
+      "bytes": 4604
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/7d2425f79e7c4fe383a5bb97ca014e2b/voxels.json",
+      "sha256": "1eb98596e8af21c4859e8660d3b55b63eb9d08845c81a92af6bd0000edbf5321",
+      "bytes": 381809
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/84d71fce207f4078ba63f148ef4c84cc/parsed.json",
+      "sha256": "5cee02a36e124297249e68493c7abef2c8057f550b58c3f9df98c0a3905141c1",
+      "bytes": 51593
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/84d71fce207f4078ba63f148ef4c84cc/raw.json",
+      "sha256": "f9f6dbf7b4e5fb538382333b3789abe350f6a424798459e138ad3fdbe0d45dfe",
+      "bytes": 47794
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/84d71fce207f4078ba63f148ef4c84cc/voxels.json",
+      "sha256": "94b7c798786153bbc4eab64a2246e5012cbdd417ebabc20b70751d747f0f6fe3",
+      "bytes": 152391
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/b2b737cc167f476785e8812767cfd451/raw.json",
+      "sha256": "fcecfa7b7bf62f911c072bcd9d309798c15e0cd517ddd24342ceb5b00c3ee1d3",
+      "bytes": 79602
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/c24f79e2d84b483d899fdcea0531a881/parsed.json",
+      "sha256": "7eb61959dd4be9e3be0cc7a88199f9dd62ece6e67eaf4282996e31088ea341ea",
+      "bytes": 11113
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/c24f79e2d84b483d899fdcea0531a881/raw.json",
+      "sha256": "c0d0166d614f0ae5cd29a1e201170e7bbad8b5c97aa34ef89f23cd67152d8128",
+      "bytes": 78608
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/c24f79e2d84b483d899fdcea0531a881/voxels.json",
+      "sha256": "d06fc861d14a42d17c850ff3897c392f92fdd79478bdf6d964dcb7b4d27ac16c",
+      "bytes": 316617
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/e2d365e6f6904ed68ac21b72194fb6ca/parsed.json",
+      "sha256": "da6bda3ff6f237e836416b858866653b6c6ae971ea1f933635d1078367cce6c3",
+      "bytes": 1259
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/e2d365e6f6904ed68ac21b72194fb6ca/raw.json",
+      "sha256": "015036f234b12482df20031f97961549c968c49fb96020122d3cd1d7baa72b06",
+      "bytes": 1316
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/e2d365e6f6904ed68ac21b72194fb6ca/voxels.json",
+      "sha256": "2e67e926b8785c35f7af6336c3ad6e89040d10d81698675bd8a65cd3b0b619fb",
+      "bytes": 710534
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/e67d1ed9d5624911901b9673da5d857b/raw.json",
+      "sha256": "ec74926ba21150c9081f904973d3a2a03e74ff0e0f11948d3492e59d9a038fb1",
+      "bytes": 69375
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/enabled.json",
+      "sha256": "cbd1ad996acf91858950401270b24f1e0caf37fc4dfc2a926b3e2f411b451ea0",
+      "bytes": 359
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/evaluation.json",
+      "sha256": "3f1b372e7680afaee7518158f6dfc65f9b4e8915795c6dc54151d3b7a839b7bb",
+      "bytes": 68427
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/ledger.json",
+      "sha256": "10222aad7e3156f0cbd4603f650a7fd3bc85bf65b8a3fd30b42dda895809edb1",
+      "bytes": 33633
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/073846d5ee884a11ba65a52e695e5c57.json",
+      "sha256": "153e715c23db1f61e9da4357e4f1e9d742a23e21e5a28711f046109163927b69",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/3f2fde7bd0f14d6faab8bda52a125533.json",
+      "sha256": "0198d2fac8f327a03bcc4f06cd5165dc5dfd6e3e7c30aff3f6c448c8ea909b15",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/44563f1a530d47aeb7fb1984d5e7f034.json",
+      "sha256": "89c61e4087366f890f999e133566e1d8d7c6fe67a747219bf5373f81028ada7f",
+      "bytes": 370
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/4b303313b53141cebb0d132d76d4219d.json",
+      "sha256": "705be52c4e3d397fd0a41e7982beb7f3eb3bd48f2f6c193b5445c96bd83726de",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/4c53b81acb954655a80c26059d0d903f.json",
+      "sha256": "858f4bc3d63a2517cc34ed5e1ab7f09a1c882e9ab97c266bc8f77b52ddd1b856",
+      "bytes": 373
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/59206c3eb6354cbe9a1f26cc2ef0682e.json",
+      "sha256": "44ed507c80be00370ce5d0cb58f9d03253ca6228338e2fb3c9d14db3cfbb30e2",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/5c0d01918f04402fa38a9040ab258e03.json",
+      "sha256": "8d3a42f4ac5c5ba62a65643477737ffe2818e7f6edd37709173427b8a88baae6",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/5cb9bdc2eb4a473e93b61910910e4ad1.json",
+      "sha256": "05bdf611930f7a2347bf03f36ef7a99604d4df30c4d5243c6018c45ce40f9138",
+      "bytes": 373
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/6a19cb356cc34310812a70453ac46b38.json",
+      "sha256": "ad9cb9c6039f7990375080b930483755e75c28784f0f80cae7e52a7100786b66",
+      "bytes": 373
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/6afe325ed55d457abfbbe19bc62da029.json",
+      "sha256": "b4806a1d04e727210227746a265335c5982581bf0d060aec3d72e68841a1c8ae",
+      "bytes": 370
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/7d2425f79e7c4fe383a5bb97ca014e2b.json",
+      "sha256": "d8b2128d5122c1e49a402da2f0486ab4a2144065a96bc851c29c99b8d3a94026",
+      "bytes": 373
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/84d71fce207f4078ba63f148ef4c84cc.json",
+      "sha256": "5e2032e26d38718a0d46dbe60a877ecf13b76e9f651509c8242f797faabcade0",
+      "bytes": 370
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/b2b737cc167f476785e8812767cfd451.json",
+      "sha256": "7f099ca148ed082d23b0784ff70781ae401c5f5ac4994047ef4fd2598019ed99",
+      "bytes": 370
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/c24f79e2d84b483d899fdcea0531a881.json",
+      "sha256": "0e66a6950765dae424f6cb458e7bacbb5a929eab08e06dd7a369d1735b9150c4",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/e2d365e6f6904ed68ac21b72194fb6ca.json",
+      "sha256": "43e4f4e9141eca4d8b50156c1ed5a55dca2776f8ca09e1d5b0a2f7bbca03c9a5",
+      "bytes": 373
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/reservations/e67d1ed9d5624911901b9673da5d857b.json",
+      "sha256": "365192a41d7611c934b0d7eb36f6a284129e6800169b3c7cb451d77072463fbe",
+      "bytes": 370
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/run.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/summary.json",
+      "sha256": "fc6a8358630e1b1469b0686e37244284c62f99093d761131cf5a51e3303f7ce9",
+      "bytes": 25522
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/plan.json",
+      "sha256": "c1fbd060b0d7459ad26d74b27994f9f2b891264a21d4835bf81bec32679c1030",
+      "bytes": 111018
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/approval.json",
+      "sha256": "f482512aae4cfb882e27b3b51b46172a2a3dc3e6cda7104b33123491e9e903ef",
+      "bytes": 353
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/00aadf9d931f4b9595c481a943b61c09/parsed.json",
+      "sha256": "81f8926563ac2dab6239be207d35ea7b85fda8140828e7725421464c8b0eaeaf",
+      "bytes": 1257
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/00aadf9d931f4b9595c481a943b61c09/raw.json",
+      "sha256": "6e0f6e9bfd87873d09aab31454617b4ee08d43445abf6c38e13f49eb79d6d359",
+      "bytes": 1314
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/00aadf9d931f4b9595c481a943b61c09/voxels.json",
+      "sha256": "2fcabb331484eb7929ea5479b70e7c5b6461a640cef52a00629771acb4e7482c",
+      "bytes": 1655633
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/01a93508ce104bd6aebb2011e77614a6/parsed.json",
+      "sha256": "7b516ff19ed44091438b5e171012f0467da873f22d35b1c40afd57fc075905a3",
+      "bytes": 4131
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/01a93508ce104bd6aebb2011e77614a6/raw.json",
+      "sha256": "ce86bf8c25be64ebc020cbc005bd6aa192625f233b7fdae898253aca06108feb",
+      "bytes": 63069
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/01a93508ce104bd6aebb2011e77614a6/voxels.json",
+      "sha256": "8312832608162100473f880a7f056ad159a1d7044526e22758ece3bf6d25a354",
+      "bytes": 88627
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/02395914491646c98f5283ab31dad54e/parsed.json",
+      "sha256": "e857d0a59976ac5fea89eaed785226e3946a022acf17add12c4883f9b91ddf12",
+      "bytes": 9520
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/02395914491646c98f5283ab31dad54e/raw.json",
+      "sha256": "55a7ccb9ae542e49e02da32b0d06ac52073baa7e75a374d67a75a68c421715c5",
+      "bytes": 94877
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/02395914491646c98f5283ab31dad54e/voxels.json",
+      "sha256": "fc32edbe09e620e10c6b84201c2f8302a8847ed15407a1549d92b6153a5009a9",
+      "bytes": 100047
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/06c08319d7504851bca729f0b616f54d/parsed.json",
+      "sha256": "3373c418a583004516937641a9ee5ff76a9b1eff0eca8cf54ba17ba7a75c3a01",
+      "bytes": 1626
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/06c08319d7504851bca729f0b616f54d/raw.json",
+      "sha256": "e6679440106cae15a77f4d903161b3195657145df23821cc1f2870923dd25c01",
+      "bytes": 1543
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/06c08319d7504851bca729f0b616f54d/voxels.json",
+      "sha256": "165e3cce676863d68b6af4dab4ab9cad4482300c8c3accddc00f894fe4cff905",
+      "bytes": 579372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0896b56be70146788801e0612e3bd089/parsed.json",
+      "sha256": "5c3c792c872a9fbc91fd6ce894accf0b29587c56eb181dc641f26903557e997a",
+      "bytes": 7058
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0896b56be70146788801e0612e3bd089/raw.json",
+      "sha256": "e6d3354c618a37b110766d3b1a9649aa76366058960c761b443c554ff532f98f",
+      "bytes": 64122
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0896b56be70146788801e0612e3bd089/voxels.json",
+      "sha256": "49c4062a9518021b2317659a01df312d28c65bc76d386b40fe5aa3e51b9e7487",
+      "bytes": 134020
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0b6d8b40b6bf431e842e6d8af10ff113/parsed.json",
+      "sha256": "adc3b1f4da34c940300b458eae6bd1d5629f7bc1b72dea7149fb5821e7ab74a1",
+      "bytes": 6738
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0b6d8b40b6bf431e842e6d8af10ff113/raw.json",
+      "sha256": "f4ac6389e89e407dc8511a57a7e5f70320582e0c5ebc61d4e200ae15cc198b83",
+      "bytes": 79970
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0b6d8b40b6bf431e842e6d8af10ff113/voxels.json",
+      "sha256": "bba402f296599095867a05c1a9230d169f7fd6f80645ae7fbca85e328f329efc",
+      "bytes": 298771
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0e7da53eee1549c8a1aa8e1c724b603e/parsed.json",
+      "sha256": "f1a731e2a5b220621756396dda97246664001fd62731d65736485a8f01fd447e",
+      "bytes": 5509
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0e7da53eee1549c8a1aa8e1c724b603e/raw.json",
+      "sha256": "2429897c7139e4437cb5f310d07538fd1c07cd5bd2b83f698f91232c53311b07",
+      "bytes": 56553
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0e7da53eee1549c8a1aa8e1c724b603e/voxels.json",
+      "sha256": "180d8c3fe16d82d81faf6fc68860e718b7ccfdb09b9394ee64b6b64edc64bb00",
+      "bytes": 414476
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0fdc3cf0bbca41438019eaf6578be088/parsed.json",
+      "sha256": "9ccea322fad4fae56e3e6a23fca61f1c3108bf1f9fc3d6e6a06237d5d6b36db5",
+      "bytes": 98989
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0fdc3cf0bbca41438019eaf6578be088/raw.json",
+      "sha256": "f3db07edce8dee460c38ca00401acce10eed8763f0663085716ac360077f0988",
+      "bytes": 65101
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/0fdc3cf0bbca41438019eaf6578be088/voxels.json",
+      "sha256": "4378284891acc5c300b6b182ad94d9aeb0f13d7c25c38d3fec4270203e15ee4a",
+      "bytes": 201031
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1357449ff35a40cea94f9064816e9704/parsed.json",
+      "sha256": "7c4c30650dcb4b9b86749690f23e1e9571bc277748e2f26b6fe074c14b71d62e",
+      "bytes": 7067
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1357449ff35a40cea94f9064816e9704/raw.json",
+      "sha256": "f8da282736a83114c963ed009a382e2209e9faeb1c9fc19a2e982295d06b0660",
+      "bytes": 84186
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1357449ff35a40cea94f9064816e9704/voxels.json",
+      "sha256": "61cbc217cc096ad0240bcb96f730f6298c87935933c607976d0dacd63b76bac8",
+      "bytes": 221263
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/14004cd864364cb3abad26c8bc721606/parsed.json",
+      "sha256": "10e042f529def3891c0885c5b539d0d2f582774eb6eec41dd361f2d5bbce6f54",
+      "bytes": 85661
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/14004cd864364cb3abad26c8bc721606/raw.json",
+      "sha256": "49541009deef9c797bf5913411ac14a7af2a16f989b0bf427046b6912558178e",
+      "bytes": 70962
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/14004cd864364cb3abad26c8bc721606/voxels.json",
+      "sha256": "a74148aa4f802db7783ade015d61126d855891edaa33485cfaaa1c59a4ca3cb3",
+      "bytes": 253584
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1a6bc2472fa84cb6a4c4ba6f874d10e6/parsed.json",
+      "sha256": "c891b470cd1b2cef47ed4f1be80525705b430217759c8e10a01045415ddb2a7c",
+      "bytes": 956
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1a6bc2472fa84cb6a4c4ba6f874d10e6/raw.json",
+      "sha256": "22c4e06025bda70274ec02ea7836bb98ccfbc489ba1d51904b9dabdcfa9295b3",
+      "bytes": 1121
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1a6bc2472fa84cb6a4c4ba6f874d10e6/voxels.json",
+      "sha256": "ba7ec425563a64284a30c047c1a4db8e9cf391e6816fbdd802d05c41a2aad072",
+      "bytes": 762595
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1affa3d035034978b0d3b1555185e24a/parsed.json",
+      "sha256": "9c4a263df4e8890e60b50978f2b3ea40fa4705599ae2a54d8ed5c76fddf1770c",
+      "bytes": 3044
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1affa3d035034978b0d3b1555185e24a/raw.json",
+      "sha256": "8e8ebceb8280c3927d20d368249decf50cb2b2aa5a1eac2fe2d8f07c53a67761",
+      "bytes": 60776
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1affa3d035034978b0d3b1555185e24a/voxels.json",
+      "sha256": "cf430c98ae9c234f718e80e5fb376a1f049b51dfd326fa8fc566738850db0243",
+      "bytes": 48238
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1bad5dcf3c2846b4bbe0ea66f3f4c2fc/parsed.json",
+      "sha256": "fb04070c84ce372bb7e5da0eb848621f312bfcd3d2a8f14e9106e39166b59ef3",
+      "bytes": 6482
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1bad5dcf3c2846b4bbe0ea66f3f4c2fc/raw.json",
+      "sha256": "cf571560112be90b2d77b0b8819ef2e1b4be1f744ed2f1f13190dc22764b3881",
+      "bytes": 82840
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1bad5dcf3c2846b4bbe0ea66f3f4c2fc/voxels.json",
+      "sha256": "a25b661ca35cc62ae0fcf9177fc7f7c59c360e5bc59625c49547722d06adab05",
+      "bytes": 156295
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1d22053cbfbf4dc2aeaf791528885780/parsed.json",
+      "sha256": "6b804e8524b197abec792aec1ab5fb211201ed35da3b1cbfb8d5663beeaf99bd",
+      "bytes": 11915
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1d22053cbfbf4dc2aeaf791528885780/raw.json",
+      "sha256": "c21a9c1bf725218244ffacf3d3b334cc9b16c2f4e848e4fc4878c75786197d7b",
+      "bytes": 82440
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1d22053cbfbf4dc2aeaf791528885780/voxels.json",
+      "sha256": "29bac8158e9276b39787537343017a10d8842f1703f6cc432425982f8a4462c0",
+      "bytes": 379912
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/204e3a9466264f42aedd03d692c401e6/parsed.json",
+      "sha256": "feeb18ef7652b39c393be645a5cab3d91d52df291cf125b3797e591a714bdcc9",
+      "bytes": 8126
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/204e3a9466264f42aedd03d692c401e6/raw.json",
+      "sha256": "967beaa4bab318ae7fc1494fc2dd520312a92b252a973ec0320246ef653ad9b7",
+      "bytes": 80984
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/204e3a9466264f42aedd03d692c401e6/voxels.json",
+      "sha256": "ee058a25b46cb148e3770e680f2f9b591d534e8e0352ff3a8cc8f81b357d3b30",
+      "bytes": 89277
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/212497cbe352402184eb03021a65c264/parsed.json",
+      "sha256": "3d58a419caa3cdcf3dc70d062f4fbf7f642d9f54c89cd53cf04018794ac4a7e0",
+      "bytes": 1266
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/212497cbe352402184eb03021a65c264/raw.json",
+      "sha256": "4d6d1d0ad450ee27c48ccc5ce41528470275118e547a9d56bd679f866e2e7dd5",
+      "bytes": 1323
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/212497cbe352402184eb03021a65c264/voxels.json",
+      "sha256": "be6467bf82ac6ddf43a825696b213f0d9febb2c3fe7617042c642930ac4b4b44",
+      "bytes": 2871231
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/239bcaab137842498fcb05f759b5b2f8/parsed.json",
+      "sha256": "93aff495a4b979e3486ba08da7dc9af4206eeff527178d71869338467d5eba96",
+      "bytes": 7387
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/239bcaab137842498fcb05f759b5b2f8/raw.json",
+      "sha256": "3e2a93a678fb16ed0bca27d25c3f919314d9a6f9ce81437a4d52fd4f916e4a26",
+      "bytes": 71559
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/239bcaab137842498fcb05f759b5b2f8/voxels.json",
+      "sha256": "55d22fb4034acdda3d8f70bdc98db03ca550e692a99a087aa7d319a09d62b9f7",
+      "bytes": 336525
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/243bc03951b341be8acca5bb9e87ceaa/parsed.json",
+      "sha256": "03e48c71354a7d72b967f29200d359af967f51754b7973b8d9e1e3dd890b9ab5",
+      "bytes": 6129
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/243bc03951b341be8acca5bb9e87ceaa/raw.json",
+      "sha256": "a498a7d5b6ac0866509d59c8988d36d42481385d245b5508c1d86359a4fcc720",
+      "bytes": 4459
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/243bc03951b341be8acca5bb9e87ceaa/voxels.json",
+      "sha256": "1f8a5adf35226500687e81edca17533f11eb3c6a31f5d2035b5c934234cbb85a",
+      "bytes": 1388791
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/257449ad14f347248e65b786f489027f/parsed.json",
+      "sha256": "fe97005857b0d3fa69fc23665ba4535c07a4584a08ae72c46373e4564ef85352",
+      "bytes": 5310
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/257449ad14f347248e65b786f489027f/raw.json",
+      "sha256": "8831b39871672532c654d849026945eddd991288db3704c9e906a569ddc78c94",
+      "bytes": 77494
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/257449ad14f347248e65b786f489027f/voxels.json",
+      "sha256": "0a0bf69aca05e750858e2c2198366db2ebd6edb9ec9db1765e8b4464d39191ee",
+      "bytes": 176591
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/27f9ae17a9244400bf110a18eab273a1/parsed.json",
+      "sha256": "f968928620c041c502ac420a179b8ec7be79be642e07af63825e587431d352d1",
+      "bytes": 4948
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/27f9ae17a9244400bf110a18eab273a1/raw.json",
+      "sha256": "eef9dd1b03c0257be69faed91f358fb4cbe692ef71ebe76f25b9b018dbcf6145",
+      "bytes": 61422
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/27f9ae17a9244400bf110a18eab273a1/voxels.json",
+      "sha256": "ecc7dea59ee3f2833b437e2cba025ffb383906bb22547e9ab11fffd51ffa3b81",
+      "bytes": 215591
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/280a467574e247358663b9e94b7534bb/parsed.json",
+      "sha256": "500cf8720eee8cc8736712d04e876e1cc69da1c0add2fa1268bab48c6cceae8c",
+      "bytes": 6001
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/280a467574e247358663b9e94b7534bb/raw.json",
+      "sha256": "cab9e6703c3aea9bf5d32287ed39449c419ec50688708c81b984c5712f6b209e",
+      "bytes": 68021
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/280a467574e247358663b9e94b7534bb/voxels.json",
+      "sha256": "85264892c435dc8b368d0181778fdba309c041f31d49bc12456cf4000896c1c5",
+      "bytes": 253703
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2935d98649c34902a7c6cf8eeedfc1f2/parsed.json",
+      "sha256": "f0668336b53962fb19cfbd8ca1aa347461bf9630910975f92a2a148c377c36ef",
+      "bytes": 1263
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2935d98649c34902a7c6cf8eeedfc1f2/raw.json",
+      "sha256": "f865b5d6caa2d9c73fafb03a246ee6bbf3197b40ffbecdf0d9919f48b13b37c8",
+      "bytes": 1320
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2935d98649c34902a7c6cf8eeedfc1f2/voxels.json",
+      "sha256": "e90ded1ec81294fb43f1f5805da94e0596920a0d34a573f740af7f59255f3e1b",
+      "bytes": 917332
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2949eb18475b42f8887f7277e86936e4/parsed.json",
+      "sha256": "a2241d9d1bab7483c9a074bc2bf39561eb573f9eef5f13213b2375ae34eeda72",
+      "bytes": 3642
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2949eb18475b42f8887f7277e86936e4/raw.json",
+      "sha256": "40941f5f669fda6c0ed5d513122d6614b25c0a3facb28ccf0c109e71ca6581b7",
+      "bytes": 67769
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2949eb18475b42f8887f7277e86936e4/voxels.json",
+      "sha256": "20891cbfc49013da18fb07d6f0dd71b6e57ed4bdc560c078addbc257020c5d12",
+      "bytes": 289136
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2aaa3eb383034dd0a883873be04889fe/parsed.json",
+      "sha256": "eb38d6dc70825c4bf3d9d673640d79923fb3fc4503b3c7b6665831eb94a965be",
+      "bytes": 2274
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2aaa3eb383034dd0a883873be04889fe/raw.json",
+      "sha256": "468ca5cc88e557c3cf7d35c3e27bb94f6e06684477abc977798b3ae600113a5e",
+      "bytes": 55253
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2aaa3eb383034dd0a883873be04889fe/voxels.json",
+      "sha256": "794eda08ed020b9492f05da110485a6a74581a1371d0ea5aeaa19894530d9580",
+      "bytes": 94873
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2af39aa9b5ef4032adc74cc4b999ac33/parsed.json",
+      "sha256": "5cd39a6a9197a1b7be4e85c50a875c4d3d2289fe3823489e8933288971d6b094",
+      "bytes": 1810
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2af39aa9b5ef4032adc74cc4b999ac33/raw.json",
+      "sha256": "4f1bc2bbbad005419609ae3470a4e5ec0a4f4db8ae3957574422330edcbefce2",
+      "bytes": 1669
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2af39aa9b5ef4032adc74cc4b999ac33/voxels.json",
+      "sha256": "b54734adc62a8ba76b63ad7d18d76d376941981c8e5c0c815148a16107c361ac",
+      "bytes": 943623
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2c38e20df03749b39096dc4f034de1b5/parsed.json",
+      "sha256": "53eb6a3ec7227f2fc5303018ac3a8fde93798dff9c583e0bb0f3bf7d4eb1c4bf",
+      "bytes": 4677
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2c38e20df03749b39096dc4f034de1b5/raw.json",
+      "sha256": "8b37d6a17d675c07ee7b8addf1c54c41b1f9e2b14079651c62ac2bf6f2c90602",
+      "bytes": 60831
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2c38e20df03749b39096dc4f034de1b5/voxels.json",
+      "sha256": "a63f68e8b146952e2370f3f740e814a6e0ac07bf7bbcdd5cb56041920cef162a",
+      "bytes": 271637
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2d00f5eef6344d0ea27e6836cf1eea7c/parsed.json",
+      "sha256": "95ea3ab4c36721d098874fb06391a2f688d9a1bb23a76093ffa6b8daf8e6e145",
+      "bytes": 4986
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2d00f5eef6344d0ea27e6836cf1eea7c/raw.json",
+      "sha256": "414b694163d40a4fe6b16763999b33ca9c45e93190961a409c62a7a96d7bf278",
+      "bytes": 3676
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2d00f5eef6344d0ea27e6836cf1eea7c/voxels.json",
+      "sha256": "4f6fc51ee05f39c2d174d99fe068c916c6191598c3b12856913ff700c2e4a2b9",
+      "bytes": 63183
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2eb7441765a44fc489256393a182844e/parsed.json",
+      "sha256": "e8e3c9d0515de9abc41615cd420723f3e1ed80054666bd8514ab46c48d17d99d",
+      "bytes": 4405
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2eb7441765a44fc489256393a182844e/raw.json",
+      "sha256": "0d0bcd94c96837042b1536b900153dfa12e9883477b48bcf39e42d8a19b61f7b",
+      "bytes": 78141
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/2eb7441765a44fc489256393a182844e/voxels.json",
+      "sha256": "f74c7f6ba4cbaeadd27db1964be158961327ed4bd70fa0b155cf74327d7516c4",
+      "bytes": 123751
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/301ae27e3d8246abb460415563808bb1/parsed.json",
+      "sha256": "c59792d00804a4ffacd3fac92c6b82e7a559554ebaa8269c22a155cd74e56f4e",
+      "bytes": 8064
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/301ae27e3d8246abb460415563808bb1/raw.json",
+      "sha256": "4d6df9f02c6bb57975a8974180eb8cfb28462d348c526fe77290ef18aff4561a",
+      "bytes": 91691
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/301ae27e3d8246abb460415563808bb1/voxels.json",
+      "sha256": "ed72fa83d9588b0daf507f3bbc01ba4c419e36cdbc1febb487018290d20cb50d",
+      "bytes": 72835
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/306efda2a9ba478097fd864873f8645a/parsed.json",
+      "sha256": "527662486a12152a50fa7af7362e5e533c1c012569b528647832b198c3cd9273",
+      "bytes": 11111
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/306efda2a9ba478097fd864873f8645a/raw.json",
+      "sha256": "0d7ec678132196e654ce2406f1c442a0b1d14e096ae5e4b2a736fda07612ef3a",
+      "bytes": 71517
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/306efda2a9ba478097fd864873f8645a/voxels.json",
+      "sha256": "e6b8fff060abe96c153d7ee88764252c0d74faca26ec95f2dce82e7655d91c33",
+      "bytes": 169007
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/30c5919d4f194c73aaaa264da831e908/parsed.json",
+      "sha256": "3c052c7306581f8e44c5b0e0fffb61c9f924e4879b7fb84ba2f0162024681e11",
+      "bytes": 9791
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/30c5919d4f194c73aaaa264da831e908/raw.json",
+      "sha256": "e41586a24c318a55eda6d4ca1c4672e9e25c9184ad49f36223b9fe721b91d014",
+      "bytes": 6879
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/30c5919d4f194c73aaaa264da831e908/voxels.json",
+      "sha256": "b59d97c149e52142513b3c39d3cc31abf4a5bd48b6d904fc4b51522e12b445b4",
+      "bytes": 221810
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3171eb46a1d0483e8a59afc35946ca52/parsed.json",
+      "sha256": "4bbc44cb4d25973c0d98bddb61cd65165065b1a57cf1027d99c072a28d5772fb",
+      "bytes": 13209
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3171eb46a1d0483e8a59afc35946ca52/raw.json",
+      "sha256": "29947f6ee46e07f7f92c46cd4b2b7416250f358b4c8eaaa98ecf369002fb3a2f",
+      "bytes": 89435
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3171eb46a1d0483e8a59afc35946ca52/voxels.json",
+      "sha256": "06bd33036d5349607fb1698e804fbe89d852cec338bb196cacfab9bcddf34818",
+      "bytes": 417771
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3504849c419a439687fbe945f9d51c36/parsed.json",
+      "sha256": "870324e459b93efb09e32c42bee2b1f9df03e3837f00aba646bc089facc4588a",
+      "bytes": 4070
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3504849c419a439687fbe945f9d51c36/raw.json",
+      "sha256": "c98f4bd120178676b2a8cf505e202873afe05a14416802fb6af27d9fba9001ec",
+      "bytes": 3119
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3504849c419a439687fbe945f9d51c36/voxels.json",
+      "sha256": "afdbfa148f01570628693748adc3338d22e80f095fb5b6074268a4a536054922",
+      "bytes": 74624
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/36bf8e9fffae4dc7b27756bfb6bc6031/parsed.json",
+      "sha256": "baa0037955b9605f17fc33413dff18fbeff44bd54ba13ff678112997cc7cd7fe",
+      "bytes": 98549
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/36bf8e9fffae4dc7b27756bfb6bc6031/raw.json",
+      "sha256": "04ebd10ce634d05bcdf9de7c29edd257eaf4c1dce639c3ca2c6325742734d71e",
+      "bytes": 81899
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/36bf8e9fffae4dc7b27756bfb6bc6031/voxels.json",
+      "sha256": "23b34bd8074a3f2b9d540960dba566b99532882ac868cfe455def28a62b6916d",
+      "bytes": 363972
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3afb0cfe40fd4f66baa63d1008ef5570/parsed.json",
+      "sha256": "a8d2a8a65293f4a267d4e3cd2fb91370f62747dd2c09a6ee34e255ea11160467",
+      "bytes": 8801
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3afb0cfe40fd4f66baa63d1008ef5570/raw.json",
+      "sha256": "a845396a013ed848419750451b9ae3763451ee81ee5de2de8dde9b969d618553",
+      "bytes": 7131
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3afb0cfe40fd4f66baa63d1008ef5570/voxels.json",
+      "sha256": "4998c2906a586b15f991fb566cde1ad500d22772aeffaf1ed09cb114b7239c5d",
+      "bytes": 609024
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3b84887441a74014a139ffb62935e53d/parsed.json",
+      "sha256": "97af5c8aa073f4b01cb7185eeb6e9a18e93a3a794063afeb08309d7599067261",
+      "bytes": 8503
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3b84887441a74014a139ffb62935e53d/raw.json",
+      "sha256": "a407222e566eab1019c46eb731128184aaec077f241483e08d0e087952d163c0",
+      "bytes": 6013
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3b84887441a74014a139ffb62935e53d/voxels.json",
+      "sha256": "67539db4ad082bb543754a9559fa8299955a4dbf40a25522095e66ab51794ea6",
+      "bytes": 94558
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3c36588eb12646fdae79b02d5df87eee/raw.json",
+      "sha256": "cef2d8f2a979506766ed070e9fe0e7b19c0df3959ecb473131348979391f55eb",
+      "bytes": 80855
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3d4d2efbc20543ab8a1128f1d48c3259/parsed.json",
+      "sha256": "f3f59c9c1db9cd9c16b547bf9ebca215aafcd6cb93758676b63776882661e844",
+      "bytes": 7343
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3d4d2efbc20543ab8a1128f1d48c3259/raw.json",
+      "sha256": "81613a3fb22e7417334560232f0a9876847ad682f96af618d5aed70ef4d5e59f",
+      "bytes": 5191
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3d4d2efbc20543ab8a1128f1d48c3259/voxels.json",
+      "sha256": "a5b2c047adc24ab18905806d2fda6344bc395176c219cf5d985537220f7e8472",
+      "bytes": 191911
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/4028eac2ba0d40c3b5296e0a5b92842f/parsed.json",
+      "sha256": "a5c193220e4dd755e3a06f94ed4dd6287f7f734b3a829cc0f469ffec12acaa07",
+      "bytes": 9238
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/4028eac2ba0d40c3b5296e0a5b92842f/raw.json",
+      "sha256": "567dd00c0f296a20f61ffc86b0b3be3d6cbfc1ff90fae0bdc738e00c4393458a",
+      "bytes": 6434
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/4028eac2ba0d40c3b5296e0a5b92842f/voxels.json",
+      "sha256": "62c36a3eedf40bd59ca15416fafa44eb8b7c55af0e2eb9d08eb6d99d282f59a7",
+      "bytes": 238182
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/4045dbb25c884a61876fcfd3342bc9f6/parsed.json",
+      "sha256": "3e82420e9f686eb3e866cb7ffadc570619e05566f622004c2c37efc5e0c9d207",
+      "bytes": 12878
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/4045dbb25c884a61876fcfd3342bc9f6/raw.json",
+      "sha256": "02b16b4b5faae115bf7b73e632af750a4c22363052f8b3d0fa40d275ccd355af",
+      "bytes": 72130
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/4045dbb25c884a61876fcfd3342bc9f6/voxels.json",
+      "sha256": "f470082c46393af05aa3b23776ba9f78e43da7dd5d0df16c6efd6ca1b910e8c0",
+      "bytes": 382692
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/413c581b957a4caa8f080b19065bed02/parsed.json",
+      "sha256": "c7cc9428a9478a9bbdb404f3aae44ec681c3cf8794544ef0ea7b4a5da7fb7545",
+      "bytes": 1110
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/413c581b957a4caa8f080b19065bed02/raw.json",
+      "sha256": "bcd3f06a45461f48149d6caea525b1ff6f29635fdc3d92f197c5af85d5e62ebb",
+      "bytes": 1221
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/413c581b957a4caa8f080b19065bed02/voxels.json",
+      "sha256": "51ee67f9ce2125ad12c6c799845f5c0c08719b02a1b2ee90dc75dd907485b563",
+      "bytes": 2317816
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/448654c780ed4da6b8d84bb441d9e391/parsed.json",
+      "sha256": "ca34b3a5348c2d26c2e76fcc14f50124dfb6b25edc83aae30f17c4e8179d991d",
+      "bytes": 7295
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/448654c780ed4da6b8d84bb441d9e391/raw.json",
+      "sha256": "7c967ada18adcc47df2bfc1ab73be9edc886817d7cbbf134408c5d5b62d19b92",
+      "bytes": 5971
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/448654c780ed4da6b8d84bb441d9e391/voxels.json",
+      "sha256": "78c69c9cc3a307ebf28d6f692557da60ef71788ef661a8fd6b9f84ba83b55491",
+      "bytes": 427627
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/44885623a4604f12be1b2643f6e4f46f/parsed.json",
+      "sha256": "f8f519323e14c048a9518fb7dd124dbea3b46109efacd2d3fb7f0d9f663cc7cf",
+      "bytes": 5367
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/44885623a4604f12be1b2643f6e4f46f/raw.json",
+      "sha256": "10deda5f509911342595e76eab4e24cba418f9145c15141271707c584a764eda",
+      "bytes": 94176
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/44885623a4604f12be1b2643f6e4f46f/voxels.json",
+      "sha256": "4bb76997080b18b9e1011c11d9531735b397e0217a6242204fc675fe8b0baa8c",
+      "bytes": 312357
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/48feeb6bbe4b49ddb904d7b0c43b956f/parsed.json",
+      "sha256": "0787d088c2622476983418b6528ae40e42672bcc9d6694deb581a34c9e926996",
+      "bytes": 5750
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/48feeb6bbe4b49ddb904d7b0c43b956f/raw.json",
+      "sha256": "ce9089fbab27e2a8e4402a5df2fafb98d46e238b8c20244f62ad11e2a88d2f49",
+      "bytes": 73348
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/48feeb6bbe4b49ddb904d7b0c43b956f/voxels.json",
+      "sha256": "83e6ffeb5131cb8161f9b3ff72075c997715a69362c268b4301eb046170535ef",
+      "bytes": 241513
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/494b783ed6eb4b7599a04c454c43cbaa/parsed.json",
+      "sha256": "ca236fe0f1af8ccfc4777623fdde77cbce88b0c2dd285bf43d5f284a4d27ce7f",
+      "bytes": 8866
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/494b783ed6eb4b7599a04c454c43cbaa/raw.json",
+      "sha256": "fd0d2938b7e0fc607ed3c4961fb173a3da19cdc0b1201709ad19972a294b79a0",
+      "bytes": 6102
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/494b783ed6eb4b7599a04c454c43cbaa/voxels.json",
+      "sha256": "b5cb6f8eed29181796edbb80ed5f252f9aa3f09ae998309bc3bc18fc97af5396",
+      "bytes": 101946
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/4c6d2726d4e548358d1e1955ccae0694/parsed.json",
+      "sha256": "bbd00a6cf79b76bcabfbe43a75990825cad9144db480451973399f5e80f8c2ac",
+      "bytes": 4048
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/4c6d2726d4e548358d1e1955ccae0694/raw.json",
+      "sha256": "0171cd5f219d1d29c205026691876d0d0d65298f13f99ae19acc89c7670ac831",
+      "bytes": 68761
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/4c6d2726d4e548358d1e1955ccae0694/voxels.json",
+      "sha256": "4d636dd7a30c9b849c19df67efed189587146f0dc05726c514399f5fc68e75b4",
+      "bytes": 343673
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/533fe75a67ee43bea2a52de61d9c1389/parsed.json",
+      "sha256": "dd9e33866d6ed263a0d936d791bb1984f6f3664cb7d6b3c490868aea949cec2d",
+      "bytes": 5247
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/533fe75a67ee43bea2a52de61d9c1389/raw.json",
+      "sha256": "57f6105a72a1a76a40f86b6380e24d327d941dea12380edf591c8778d3223624",
+      "bytes": 3901
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/533fe75a67ee43bea2a52de61d9c1389/voxels.json",
+      "sha256": "79ed4e52899716b5392ff232bb415c9f15835ffc5fea91cd719b46b355656bbc",
+      "bytes": 362352
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/53e684c09fde46449d86d7b24ce0efc7/parsed.json",
+      "sha256": "4e698bdd63759c1adface9201b151b4eae6b32640f235d1983d3c075a6f8be08",
+      "bytes": 5152
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/53e684c09fde46449d86d7b24ce0efc7/raw.json",
+      "sha256": "e050669ef82954132b1100ce246ce6100ae4fda5ea0fb0bfce789a4f77d409a5",
+      "bytes": 4352
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/53e684c09fde46449d86d7b24ce0efc7/voxels.json",
+      "sha256": "440db7a8f0dc475725068597ee5fb5d5eb43dbf0fc08ee49eb9eb4bd0f7bc0c3",
+      "bytes": 301927
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/55dcf4db06bc4d5cacfa0a12fc6d93df/parsed.json",
+      "sha256": "f39a1b2834e0a354723b66f2a61702307dcee9d9d4b49a19012b0faed6526b04",
+      "bytes": 63697
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/55dcf4db06bc4d5cacfa0a12fc6d93df/raw.json",
+      "sha256": "aea71cc170c3a94db5190d066dc28efcacfcd660a672ffd63964e025329f67c5",
+      "bytes": 41616
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/55dcf4db06bc4d5cacfa0a12fc6d93df/voxels.json",
+      "sha256": "e4c0d7343dce248efa6f21a84ea26c4475b981be322cb534c8f209bcf405e14f",
+      "bytes": 207137
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5640626b6aec49eda650829e214bd7b9/parsed.json",
+      "sha256": "29f306213ad58ef3b17f77fd629293eeb4a4cd97af915c5e9c1e3ab215718caa",
+      "bytes": 6198
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5640626b6aec49eda650829e214bd7b9/raw.json",
+      "sha256": "b12ba0af7cde399a40d5cf73d495ed0289b79709d4afdfb0c5716ed3199a86df",
+      "bytes": 4468
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5640626b6aec49eda650829e214bd7b9/voxels.json",
+      "sha256": "42d5fa7ad2344d9ae50ef6b5eed73d8e48c05b92b73c91bc6e924248e7c070a7",
+      "bytes": 183779
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/56f0c34fa655487b93f996bc92de864a/parsed.json",
+      "sha256": "0205695f5fa724a627e589eb0175b4f6fdadc3e9dd9ca9f5786ae94e9fbd1b91",
+      "bytes": 9559
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/56f0c34fa655487b93f996bc92de864a/raw.json",
+      "sha256": "62db8925b7798bc835aeecdf27324bc81c76005a4b689a9c012d9ea5a4961f68",
+      "bytes": 64249
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/56f0c34fa655487b93f996bc92de864a/voxels.json",
+      "sha256": "44f4368dca2babdabd8aff1d401d2cdeb5d07348d138e9b46568e5fe2b855f5c",
+      "bytes": 343226
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/57e0c67e68a342a39b3ca48c87dc8ec7/parsed.json",
+      "sha256": "2fc90a147323d234e397353debdb1df672f03232edd7947390affb3881a7b21f",
+      "bytes": 2019
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/57e0c67e68a342a39b3ca48c87dc8ec7/raw.json",
+      "sha256": "a0f8134faf9fe31c92b43aa2cb3e794cbc7b371ed1da92c8b9152b8935776ad6",
+      "bytes": 1806
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/57e0c67e68a342a39b3ca48c87dc8ec7/voxels.json",
+      "sha256": "65e30b5eadbfb376960a5148037217fedd98c244b0ce55e4a96bbd5f4914084f",
+      "bytes": 2362214
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5a8b49f10609450e995796ac5d19dc44/parsed.json",
+      "sha256": "cf97c7c874c9d206c6c07a59612a1cebb5b8031b5cedb0a7f53d856adf8cbf99",
+      "bytes": 2888
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5a8b49f10609450e995796ac5d19dc44/raw.json",
+      "sha256": "24fff95f5f2cf9aac8650228d084bd3895ad61e16b5f049617c3ee051dfcedbc",
+      "bytes": 2351
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5a8b49f10609450e995796ac5d19dc44/voxels.json",
+      "sha256": "228b8bba8d0b2f7b12121921d202bce41711051c067973f02fbcaa7114678223",
+      "bytes": 1300156
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5d7dfa2a7c7e4589aedb7ece8af7296b/parsed.json",
+      "sha256": "a4b7a7d15deb2aaa4ce26149273a71a73383c4ad866e8320e4aef148635bfe56",
+      "bytes": 5070
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5d7dfa2a7c7e4589aedb7ece8af7296b/raw.json",
+      "sha256": "c3cf7b90a461d32372bac5a83d44db545c2a85f0eb66ca311a292a55a1eb17f0",
+      "bytes": 3724
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5d7dfa2a7c7e4589aedb7ece8af7296b/voxels.json",
+      "sha256": "0dd2af363b21da1dde0d44675362c1b1c8352df2aa8e10872f1b272ea3da3702",
+      "bytes": 365753
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5da462082b2c4ad7855d72304272efa9/parsed.json",
+      "sha256": "9d4421c0e384d8ef5396fe7c545bebcaf9d3e397acdb941b0d89522cfc402d3a",
+      "bytes": 6731
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5da462082b2c4ad7855d72304272efa9/raw.json",
+      "sha256": "dcef986c1335924796d1991dae415c7859ada80877d1b84f4dfb925c848de049",
+      "bytes": 67919
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5da462082b2c4ad7855d72304272efa9/voxels.json",
+      "sha256": "aa37975bcc9e0c0f5d33076f1e583f159508351fcda26d5f97499a6c27f99de6",
+      "bytes": 321337
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5dca0e77ff4c49c98ee96c8e3045d01e/parsed.json",
+      "sha256": "1c3994419383789d570d908b86b85f97ac0bafb3732c3fa6a98ac0c7eba84fc4",
+      "bytes": 8029
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5dca0e77ff4c49c98ee96c8e3045d01e/raw.json",
+      "sha256": "21c9f988202184a14e44c0494eda979c899df2b0478262bd5504989a8741c150",
+      "bytes": 5675
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5dca0e77ff4c49c98ee96c8e3045d01e/voxels.json",
+      "sha256": "67b2bf02c74b86523eabb7b8b485e4554e206e7d4dbf49940dc3b884c5616eee",
+      "bytes": 442315
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5e40c0db47064316b42b16e2b93b65f4/parsed.json",
+      "sha256": "11498b7f2403ad67146c735dc2b4ecd6eaaee69d741352fb22fa1e6b4e5e82a3",
+      "bytes": 6753
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5e40c0db47064316b42b16e2b93b65f4/raw.json",
+      "sha256": "5520a156b02da6c5a83412db2b5093de411b4be373435dd521edda286e81a21f",
+      "bytes": 4867
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5e40c0db47064316b42b16e2b93b65f4/voxels.json",
+      "sha256": "2b9163d9f5a52df965c2ea422434a93075860f084e7526cd3bb5fc7c0aa0781c",
+      "bytes": 348109
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/60000222ece447d79da4de89575a96a8/parsed.json",
+      "sha256": "77c178ded9194306264e527d851059933f729cc5fe71a0bcedc96e9db8ba62ec",
+      "bytes": 5264
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/60000222ece447d79da4de89575a96a8/raw.json",
+      "sha256": "fb39ec77a6e319d1ef80f79929b8fefaaf9900efa951c1e7a92789f3b88e1df1",
+      "bytes": 82272
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/60000222ece447d79da4de89575a96a8/voxels.json",
+      "sha256": "3c05e1809b7a44656867441ebdf9b2a05af23e2c697c05cc0375ea401f4a0654",
+      "bytes": 192439
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/61a853728d6b4b888dc1d92df3ba2757/parsed.json",
+      "sha256": "d643b3954f2fec4a894834abe51f6a7d3b8e29337fe6c9ae9f76bde1c0e0092e",
+      "bytes": 2248
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/61a853728d6b4b888dc1d92df3ba2757/raw.json",
+      "sha256": "bfbceaeff542d8c24439b80d01525160897766ec4782e211bb13a7b5ca806210",
+      "bytes": 58802
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/61a853728d6b4b888dc1d92df3ba2757/voxels.json",
+      "sha256": "5e02843a94eae67d9c2e448b97c0854397df3ad059df51bd8a24cd39bbb5f786",
+      "bytes": 106843
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/62773da39b9a47c3aaa1541ba35a0706/parsed.json",
+      "sha256": "b0977e2ac333ad0ff15cf4b2e2d2aa919a13e7f536db3d739c5ab88c34379083",
+      "bytes": 6798
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/62773da39b9a47c3aaa1541ba35a0706/raw.json",
+      "sha256": "1fd2f96e5b03c207b88bbf58b296f2fddd9676823ee9b735bf5b182ca9212727",
+      "bytes": 4916
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/62773da39b9a47c3aaa1541ba35a0706/voxels.json",
+      "sha256": "cbafeda80ae3d4880d9163a3708ff40202d466b77fa5985929833e0a68c4fbc8",
+      "bytes": 193172
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/640b658eb86547269708647227b8d4b2/parsed.json",
+      "sha256": "de42df6ae32fe00edc2dbbd233f01fb4146724cf0d2c9eed49e754105baa8011",
+      "bytes": 4986
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/640b658eb86547269708647227b8d4b2/raw.json",
+      "sha256": "b1ab09583d62e3d067e01bbe4888a3ffbfc25c057239bccca260bd138d501a63",
+      "bytes": 3694
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/640b658eb86547269708647227b8d4b2/voxels.json",
+      "sha256": "5a6ff073f02c6a88174f0a411a64843c76f22981e289079c530416d90c789778",
+      "bytes": 108397
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/6b863e137e17438baffee15024850c7e/parsed.json",
+      "sha256": "58a3225ebe412d3a8ed0b4e701b9d397e9ff58ebab32da12aa906748b4866350",
+      "bytes": 1108
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/6b863e137e17438baffee15024850c7e/raw.json",
+      "sha256": "c0d6573270782b5947afea91e0e017039ee015915f65fdc65fb934683865e4b1",
+      "bytes": 1219
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/6b863e137e17438baffee15024850c7e/voxels.json",
+      "sha256": "703e328f86f43b45748c745e804c55a57ab7583a25b255764c447c9c2325dea3",
+      "bytes": 1386204
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/701baa0231544d02ab6ba9fbf02dc416/parsed.json",
+      "sha256": "bd16ca5f344df0c57f165d73844a7c3a3e36f0681b89e75470be83b5d31bac53",
+      "bytes": 4062
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/701baa0231544d02ab6ba9fbf02dc416/raw.json",
+      "sha256": "50a036fc4a983cd628e187405e7b660752b3df6966a5758a15a30f6a9dac855e",
+      "bytes": 3098
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/701baa0231544d02ab6ba9fbf02dc416/voxels.json",
+      "sha256": "225be62fbce795fed2f93b1661ac93c68f6b1f8758dbf4730528ffe5f54f04ca",
+      "bytes": 38987
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/71c80a79a25540b4b3f00726aed7b6ee/parsed.json",
+      "sha256": "179361746b6f70314253b14aa073f137a9b56675ee6ceb68b2d068c4842d789e",
+      "bytes": 97078
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/71c80a79a25540b4b3f00726aed7b6ee/raw.json",
+      "sha256": "e2b08f75ba8d6261c077b2bcedaae204ea23fced6613c0c02ec8daad84cfea58",
+      "bytes": 80526
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/71c80a79a25540b4b3f00726aed7b6ee/voxels.json",
+      "sha256": "377022ccf9b82c2d19880166af95d831598d19d05a5b828f134ecf9316565258",
+      "bytes": 283765
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/721642785c8f48b2a904162c6fcd68e3/parsed.json",
+      "sha256": "b920e27b96d27c9d538a697093ac9a9befcd5edb128ace89ae99ed3d41cf9bb0",
+      "bytes": 5179
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/721642785c8f48b2a904162c6fcd68e3/raw.json",
+      "sha256": "03bcf6beacd204899664f2948c7c8cfa3fccb4fc540840703b896db2875b8635",
+      "bytes": 3869
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/721642785c8f48b2a904162c6fcd68e3/voxels.json",
+      "sha256": "83193b906aff20657cb85b55fc6d4958c530071b894e022bb9e16c9f693e173f",
+      "bytes": 158986
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/73a800a678b24734be07029b9bb236b3/parsed.json",
+      "sha256": "e24259d1c8f1c4fdc3a88ec1269f29e333d6d7295abf7e4c1a0e2a54e99bc07a",
+      "bytes": 7587
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/73a800a678b24734be07029b9bb236b3/raw.json",
+      "sha256": "a4bf351ca68b6942732ead7021f8ee2289002a03d9c19cd2800923326dcd9a42",
+      "bytes": 89894
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/73a800a678b24734be07029b9bb236b3/voxels.json",
+      "sha256": "914f2a824c2ac326d4a2af4f1de43171fb63b7c162fce5bc90e4fa94b53c2a26",
+      "bytes": 150247
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/74b761c764b448dc99a1a8f2b434208a/parsed.json",
+      "sha256": "170cc016db98ef554f48cb8e255d04bced74b330dfc12de07b33bfe7e1fd7432",
+      "bytes": 96288
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/74b761c764b448dc99a1a8f2b434208a/raw.json",
+      "sha256": "36fabb67df77595d40fd4bdc2b77f6950b66cb51c6eed2e5c860dbec8c5d1263",
+      "bytes": 62706
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/74b761c764b448dc99a1a8f2b434208a/voxels.json",
+      "sha256": "94cb5bc09474fdc45cbaa5f0c0222726264331ecc98147755c0a0d053e305c41",
+      "bytes": 279145
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7552a71410f04287bf1699e8e89c87be/parsed.json",
+      "sha256": "5c819676e5075cc98f10406ca96df98e069216eada4f7bbc6fa99c8487e52a64",
+      "bytes": 6173
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7552a71410f04287bf1699e8e89c87be/raw.json",
+      "sha256": "67750dab96f1e06592e7c9663a3f1397cca8da0f627ea419d2578a9278991188",
+      "bytes": 4503
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7552a71410f04287bf1699e8e89c87be/voxels.json",
+      "sha256": "b82d12f7846df3101aab5cca0cacd3c86d893ed891a34fc06d051ffc34b6a47b",
+      "bytes": 626043
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7833f73d5c3447c6b6aa5eaf77e7acac/parsed.json",
+      "sha256": "3d28666def67c62f6feb46a712a3a0e6fb4c09796d9f9cbc5ba8795e22ee1bd0",
+      "bytes": 4399
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7833f73d5c3447c6b6aa5eaf77e7acac/raw.json",
+      "sha256": "55dfd7f40697c065aacf7f7bcde9f62f859eaee63752f4bc6a5d1269622e4ed5",
+      "bytes": 67253
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7833f73d5c3447c6b6aa5eaf77e7acac/voxels.json",
+      "sha256": "c5c5f9fae07f698491e5c5bad9d3307056a5d2e4a3e52b510d92f6e65acaf655",
+      "bytes": 80437
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/78aaade681944e4bb3a51bccebd6ad5a/parsed.json",
+      "sha256": "8217667f8d75322dcd47388b715e74dad5041955b4ad3d84967156bc2c91522a",
+      "bytes": 29522
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/78aaade681944e4bb3a51bccebd6ad5a/raw.json",
+      "sha256": "cb529b85355f54a9e98a697e82760a84ebdb6f01fb2806f0913064dff156e95e",
+      "bytes": 19644
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/78aaade681944e4bb3a51bccebd6ad5a/voxels.json",
+      "sha256": "b40f6692639e39b6d953987e72617f6d2680b86384ee3a5fe27da77cc7962e8c",
+      "bytes": 191130
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/78ace148583f48c3a438a9f9d2b3586e/parsed.json",
+      "sha256": "21b869b9145ba8caf8256239f23a5ca6d5de6d05ad0c7feadc864320252b7ec5",
+      "bytes": 11108
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/78ace148583f48c3a438a9f9d2b3586e/raw.json",
+      "sha256": "f6a4dd30bf04fbea699e400cf4100951f7931ce3ffadc9e651bb0b6f3436b459",
+      "bytes": 95352
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/78ace148583f48c3a438a9f9d2b3586e/voxels.json",
+      "sha256": "3c63dd052856e2cf6d80648b57e28ad5e924bec6f7c9be9adc67a1314c9577f9",
+      "bytes": 119230
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7c8a8b5455294406b684c0a694504106/parsed.json",
+      "sha256": "17a58a538df54ef70775b66219ee5f81a4641133cda7957fee5ca5a8b6b09ce9",
+      "bytes": 300
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7c8a8b5455294406b684c0a694504106/raw.json",
+      "sha256": "8c1d5194d5746ced788317b593b3d9e61ec7c2d9934e61795f5c60c42bc3a5f0",
+      "bytes": 37875
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7c8a8b5455294406b684c0a694504106/voxels.json",
+      "sha256": "da53b073d2790208051722a0f47be26bac025b622215b5703297ef6ba3bc87a0",
+      "bytes": 367737
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7f06624cded44421aa5e92ae0b211538/parsed.json",
+      "sha256": "33483254d1f5bc5afc9d426f9e90be19b4a9e0a4c59d821b09f471fdee423123",
+      "bytes": 64424
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7f06624cded44421aa5e92ae0b211538/raw.json",
+      "sha256": "9185d190f2ac429011ddb5ae827300c05cf71383d42a652aa9190d3e0f298b7c",
+      "bytes": 58127
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/7f06624cded44421aa5e92ae0b211538/voxels.json",
+      "sha256": "e8f9870b6ec99761f8c34a961795f20358d7365a59e38068ec756af9d39c0710",
+      "bytes": 238814
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/82334a1e438f4015a228cf6dd67f66ff/parsed.json",
+      "sha256": "3361bb372a1181e6c8829611cfd106bebf864282f2573ec9102a38f2de8b4f6a",
+      "bytes": 6453
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/82334a1e438f4015a228cf6dd67f66ff/raw.json",
+      "sha256": "46cf535f33a7d8edad83b98684b389f6c038b463f77f92c5f5b56f0905114a64",
+      "bytes": 65037
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/82334a1e438f4015a228cf6dd67f66ff/voxels.json",
+      "sha256": "8635874443d0cf0a7b3b05b9ea3cbe2df6474c659ebbfc6b0ba5c77a2738375c",
+      "bytes": 39364
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/82a47dd290c9405c9278af8704980027/parsed.json",
+      "sha256": "c7a394648d939cf478da49dce4d779c2fecd3dac510c96e2fbce69d509d5c8dd",
+      "bytes": 102660
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/82a47dd290c9405c9278af8704980027/raw.json",
+      "sha256": "9ae51e26169c07ee9fec4c0c98d8daa0f3ebf8560d33f2c648fc0a6081960fcc",
+      "bytes": 88342
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/82a47dd290c9405c9278af8704980027/voxels.json",
+      "sha256": "6a12e1c3373c4c2f9fe28c415a9008d1243fee1b07452248295ca0e5c7ea1dd6",
+      "bytes": 219869
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/84ca9c43b6d145b186c7f8b7cf0e0cf8/raw.json",
+      "sha256": "3106d745f83ce60b12dc41468ff1e62066a31c53a7c1888390c2a66621d57f0e",
+      "bytes": 59288
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/88f6b2cce6994a50940140d7826bd5b2/parsed.json",
+      "sha256": "3d4ab895e70c570f414e092289a10c68d58331cd4f0218ab43ae9c1c86f82323",
+      "bytes": 5782
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/88f6b2cce6994a50940140d7826bd5b2/raw.json",
+      "sha256": "b4390ec165e6cb9303a065ba889031f6420260c158beb752fc6408fc0900bb9d",
+      "bytes": 4238
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/88f6b2cce6994a50940140d7826bd5b2/voxels.json",
+      "sha256": "202b1a3c801968533a683cce79da694234b79a4e50f60824d28ca2a568918e31",
+      "bytes": 154861
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/897b2e50ba8745438261ab1a9e9565d1/parsed.json",
+      "sha256": "df7ed9b0bc48870dc0831e13892b2f224bab964e5e2407e251302d98952de636",
+      "bytes": 6854
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/897b2e50ba8745438261ab1a9e9565d1/raw.json",
+      "sha256": "ccf663167299339310f88f331ec89862b30ee8fd9e498a38db89c98bfb172194",
+      "bytes": 95523
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/897b2e50ba8745438261ab1a9e9565d1/voxels.json",
+      "sha256": "69e4cc690cd509522a5164aa845049ae4bcae2558ca89f434ed6347e713d1f96",
+      "bytes": 140560
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8a8b2a01c4f84f17890ee20691e43efd/parsed.json",
+      "sha256": "50f11cb407d61aafc75ab40376a52af8fbc0bd605bb72deaba8811453ee7059f",
+      "bytes": 6036
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8a8b2a01c4f84f17890ee20691e43efd/raw.json",
+      "sha256": "c4deb5b86c4ddcb95d836af007b0998fe036a25074e2214ecd2b376942840596",
+      "bytes": 4366
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8a8b2a01c4f84f17890ee20691e43efd/voxels.json",
+      "sha256": "f0314bf39c6a04eafaac815e68a2d6ab01a5c918168476ea02d38163aff8759b",
+      "bytes": 1033756
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8c73a9824d4f420cadfac8faebc6be85/parsed.json",
+      "sha256": "ecc7696131b9578828df511c167a5cfdf24c29bd3ae8a44c9961bc44e010b0dd",
+      "bytes": 4766
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8c73a9824d4f420cadfac8faebc6be85/raw.json",
+      "sha256": "65b6348dea25387ea0ae834d29b9fa6a8b7063af62df5fcbfe1d6732ff1d7a69",
+      "bytes": 73018
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8c73a9824d4f420cadfac8faebc6be85/voxels.json",
+      "sha256": "633c4c63049eeb8aa64b2a4bb6c9500677beea115e6811ed2b9097bbdfc60445",
+      "bytes": 660113
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8d8b49e12c464fe58c9432e63377de3e/parsed.json",
+      "sha256": "44544531064287cbf5853cf4e31a7560ff68ee925f146633a69f7769697c5acf",
+      "bytes": 5402
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8d8b49e12c464fe58c9432e63377de3e/raw.json",
+      "sha256": "29ec4c6bbadd014b76aab6b205c2e1d8ddb73bb377c9e8d48ba506860684d6fc",
+      "bytes": 61394
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8d8b49e12c464fe58c9432e63377de3e/voxels.json",
+      "sha256": "c82f36936822897c32e451bb6d7b6d8e3391e04ce0887ef8c6323ac1df007b06",
+      "bytes": 236907
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8dda0145d0ae4d889703114c1ca15891/parsed.json",
+      "sha256": "e621f999e3bc5f183706037e7fe9fc7bd9b8f1256dbc2adf231fca09703a1da5",
+      "bytes": 3755
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8dda0145d0ae4d889703114c1ca15891/raw.json",
+      "sha256": "2c3318c59d98342133679ffb2500e96288e00e308c6e5ae2a047d1eec7d71cb6",
+      "bytes": 2894
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8dda0145d0ae4d889703114c1ca15891/voxels.json",
+      "sha256": "a318063b281654bebe780f06be86ac72a7f64c1a1184a67e65940050fffd4899",
+      "bytes": 355725
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8e0c1dd374dc4c7c88fd03725c0d3904/raw.json",
+      "sha256": "d4723ad8eed9ba360edae789c33ec91923876f95cb182e1f9e78f4151bfc3f50",
+      "bytes": 97820
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8e273ea12987466a9b0c5722c4cb46bb/parsed.json",
+      "sha256": "532bdba3614d6db778ec392197e7c2b839c767267142450ba9fc30ee8786d010",
+      "bytes": 3677
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8e273ea12987466a9b0c5722c4cb46bb/raw.json",
+      "sha256": "b3d8eca00afdda9d86921e42c77a5636e5051681148336784a70688f43381a8c",
+      "bytes": 2906
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/8e273ea12987466a9b0c5722c4cb46bb/voxels.json",
+      "sha256": "a6a972d69b4fec018bb06e4aad5ca8f0d6b8ea4425edba2568f8936c115c7926",
+      "bytes": 89323
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/921444a5fb9c4e868cbd0c8b078269c8/parsed.json",
+      "sha256": "9ef53b924215b9eb1ff1cbb2c976aa31d28f30c853cdaf5b512073f45d400774",
+      "bytes": 6261
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/921444a5fb9c4e868cbd0c8b078269c8/raw.json",
+      "sha256": "aa3c997e9048473ef80cda2ffac2a0f6dd46e7ff856e1d3a8662c40e6dfe5630",
+      "bytes": 4555
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/921444a5fb9c4e868cbd0c8b078269c8/voxels.json",
+      "sha256": "ae154cd00d19a313613035175febd1a1e7059ab22fadb46f8f6d388dbee52746",
+      "bytes": 600116
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/94ff3170cf8f4fe5b5976f7eacb79333/parsed.json",
+      "sha256": "3eefe04586be860d35db62e9d6070c5153569c71514e439125bb63334ff3028c",
+      "bytes": 3623
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/94ff3170cf8f4fe5b5976f7eacb79333/raw.json",
+      "sha256": "cc5fad90e22542cf3e29aa44695440e3b76234ae6222a34bbeeac4c6b731ebff",
+      "bytes": 2852
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/94ff3170cf8f4fe5b5976f7eacb79333/voxels.json",
+      "sha256": "2698b251ff984f37f08a4ebc7813787315142e4c2e307a0a3a10a2d754ba71cd",
+      "bytes": 164719
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/95a4490814d64c87a0b7d616721dc4ab/parsed.json",
+      "sha256": "62a4c977d2a1d852e796954ad64f2c0646a6364547747b855f835fd38c5e9a89",
+      "bytes": 9573
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/95a4490814d64c87a0b7d616721dc4ab/raw.json",
+      "sha256": "8c2c09ef99d00ccca5cd7e7c912dd455983d3c2ab421a857e90041b50ff721cb",
+      "bytes": 6625
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/95a4490814d64c87a0b7d616721dc4ab/voxels.json",
+      "sha256": "67de19572be0303be5059276c70243e93eebf629d366182fba91be0ca59a2bab",
+      "bytes": 767034
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/964bdb97f00d4eba8a5fa605d8720d7c/parsed.json",
+      "sha256": "502d7e35dcf5acaecc7368831030f42807e8ad686c9652362cf29aed66e97e9b",
+      "bytes": 5099
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/964bdb97f00d4eba8a5fa605d8720d7c/raw.json",
+      "sha256": "9542e945c0aac6c912731788ceaf394f7efad4a135c729706550810cee692877",
+      "bytes": 91104
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/964bdb97f00d4eba8a5fa605d8720d7c/voxels.json",
+      "sha256": "8165bea2a2b9c51496a8e4176d1675b84ffdb1c595f35c59dceda7c3532fdf13",
+      "bytes": 112225
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/96cc9cac7b204df1a3e8deab11e50b97/parsed.json",
+      "sha256": "a5e734dcb621e4f789798d0bd4e6add0f971e2c94885a2abe8b3a4db2cdff980",
+      "bytes": 20187
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/96cc9cac7b204df1a3e8deab11e50b97/raw.json",
+      "sha256": "44d39cc802c5b55aa7f3ccf2908cc0debaaf665f92bcd95caf0138c97b3ab51d",
+      "bytes": 74476
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/96cc9cac7b204df1a3e8deab11e50b97/voxels.json",
+      "sha256": "7fd502fef13de78cb3dde36b7cf2bce54466c222db2d16d36db6ea175c241573",
+      "bytes": 438081
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/97e536d8e79c4a75aab63eef17a52b2e/parsed.json",
+      "sha256": "45393bb34c1494b98c5c4f89f01cc517e6da33e7bb96c7e876fefad6f112f771",
+      "bytes": 4753
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/97e536d8e79c4a75aab63eef17a52b2e/raw.json",
+      "sha256": "2591d3a45651c789286671545e1f8532aa086deffa0291996c058c877e2ba5d2",
+      "bytes": 3569
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/97e536d8e79c4a75aab63eef17a52b2e/voxels.json",
+      "sha256": "742afe003439e26ebf462d8dfcde154db12ff580424967d603b95ceaa182e7cf",
+      "bytes": 250159
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/989fb2521b664dbcbd63efa345d83ebf/parsed.json",
+      "sha256": "0b33bce572641fd50fa439b7969ba24423b80f0c0b4cfc95a200a69c015095cf",
+      "bytes": 5133
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/989fb2521b664dbcbd63efa345d83ebf/raw.json",
+      "sha256": "67d8544e9148c3cc9fbe5210ee0bd90a99c5a7d2c2ac71e4cb0edca53c5d97e5",
+      "bytes": 81263
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/989fb2521b664dbcbd63efa345d83ebf/voxels.json",
+      "sha256": "a18ba5479b774353e45706c9a829c1ef7368634162c931e63bdfaa90d8196ee0",
+      "bytes": 80637
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/98efd67e4ea148a592d3e748b0c449f6/parsed.json",
+      "sha256": "1b2122a36dcbc450586590dac33b31d623dafdacefe0429943a89b4edc63dd26",
+      "bytes": 4477
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/98efd67e4ea148a592d3e748b0c449f6/raw.json",
+      "sha256": "32ef9c7030dad7f733473247005a73ef89e2100299505ef9e9a056704ebc5c7f",
+      "bytes": 55105
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/98efd67e4ea148a592d3e748b0c449f6/voxels.json",
+      "sha256": "2a6b5b0b7a4fd1fbdae86fee9062097c4bc7f0aa9058e8a1140fe6ecd5d5b81f",
+      "bytes": 126265
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/9964193a24ff46d5b3133f6d24f41100/parsed.json",
+      "sha256": "3df9a912959ea39a70bde75996494720b51641c4485ae1022fbb0d9436f80d42",
+      "bytes": 6606
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/9964193a24ff46d5b3133f6d24f41100/raw.json",
+      "sha256": "dbf90deb02b184917f4b79a9be402a6847e80fc6761464c26a0db879c4014db1",
+      "bytes": 62546
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/9964193a24ff46d5b3133f6d24f41100/voxels.json",
+      "sha256": "e31d13907e55667a06484115c124461882daef705c5e881536ecfa6534586aa7",
+      "bytes": 359786
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/9ae0768182ca4999baa95bab23f6cc68/parsed.json",
+      "sha256": "8553e3a7e0b7eaee68fcc44b093ad7c1023a953b84246cb60ec9730a490cff2e",
+      "bytes": 6315
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/9ae0768182ca4999baa95bab23f6cc68/raw.json",
+      "sha256": "337f8be8e70cad0b95d35cb304c04f7a57b7d46fef18b62975fe32ddb8302339",
+      "bytes": 4509
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/9ae0768182ca4999baa95bab23f6cc68/voxels.json",
+      "sha256": "775e2ea0b88d3dfe042e3bf27ef61a17f60f7ce5abaeb25f1561cf9e322b9732",
+      "bytes": 96183
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a09536072ab04f27af961aacc2a7c5e1/parsed.json",
+      "sha256": "803a5fce28abf3d8b8e4a280664841858c7fda0183c9e6af12bc54beeecdfcbd",
+      "bytes": 17070
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a09536072ab04f27af961aacc2a7c5e1/raw.json",
+      "sha256": "87065c6f7e8b6bf9d8f4fb525a06826772147e41e02a2745f04831ef65605ffe",
+      "bytes": 64388
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a09536072ab04f27af961aacc2a7c5e1/voxels.json",
+      "sha256": "2f040864e0f00e0a8153d00c744d64f44decc23a60c690312b34deb482a876f0",
+      "bytes": 158532
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a0e3bd24a1fe4b65ad8b9ab83a7549d8/parsed.json",
+      "sha256": "4093edd14b38ef5cfb287d04726ee642f54ffc7602909681ffa1d5dce76a6c43",
+      "bytes": 5696
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a0e3bd24a1fe4b65ad8b9ab83a7549d8/raw.json",
+      "sha256": "66f46f71e53160152aa67715b58a1234b8d5db1860f2f1897e765fbd0711507f",
+      "bytes": 4206
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a0e3bd24a1fe4b65ad8b9ab83a7549d8/voxels.json",
+      "sha256": "f65af5ae3a700f654ee9a038c2dfc6495e2521f7e90ded0748d32491b666a283",
+      "bytes": 269683
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a1cf04c70c824294a19f027e559197e6/parsed.json",
+      "sha256": "8217667f8d75322dcd47388b715e74dad5041955b4ad3d84967156bc2c91522a",
+      "bytes": 29522
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a1cf04c70c824294a19f027e559197e6/raw.json",
+      "sha256": "f6f0c945fe1c9008ea2a9a4b0be10f88a69efc3a95716a6c3b9cc670ac5edc50",
+      "bytes": 37029
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a1cf04c70c824294a19f027e559197e6/voxels.json",
+      "sha256": "b40f6692639e39b6d953987e72617f6d2680b86384ee3a5fe27da77cc7962e8c",
+      "bytes": 191130
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a599430a24d9441f80ebe50054a19091/parsed.json",
+      "sha256": "76527c992bf2f3bee6730a43176dce335c3735db0afd2b92fd419a7f7a8f754e",
+      "bytes": 4029
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a599430a24d9441f80ebe50054a19091/raw.json",
+      "sha256": "185d5c115ffff2b304c5712c92e685e4f0a5c4afbb501253fcd347a5c85cb5fb",
+      "bytes": 61491
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a599430a24d9441f80ebe50054a19091/voxels.json",
+      "sha256": "a310d674f29f35871dedcf0a5368c5764910b01a2460af2416c24dcd37828f79",
+      "bytes": 48823
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a786202796d44b87b9821af814afa032/parsed.json",
+      "sha256": "05e9309ff1298bd31979bad335524b8472080ed0570427bcf50717587ae454c3",
+      "bytes": 69082
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a786202796d44b87b9821af814afa032/raw.json",
+      "sha256": "9dcf438f74b719246923f0d45400d52aca37cb311d64d16fa76c2f9cabfc618c",
+      "bytes": 52343
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a786202796d44b87b9821af814afa032/voxels.json",
+      "sha256": "24654149b364487fdbf9a714fe4ec6ca504406017143f80e04b0e43e45e110bb",
+      "bytes": 290268
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a827d730857049e4865b0a042659951a/parsed.json",
+      "sha256": "4b71163c09c26460e62cc023a3fb19170ec75cd7f9f9803f03ed0bbd1686386a",
+      "bytes": 8065
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a827d730857049e4865b0a042659951a/raw.json",
+      "sha256": "723924ccd68d1cd091e66a86661458116c60b3ea538c41e4933fa0ea4fb938a4",
+      "bytes": 6573
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a827d730857049e4865b0a042659951a/voxels.json",
+      "sha256": "19dca68b82c649bbb354662ba3a68f109c7835b12eb3125525522ba02cbeaf6f",
+      "bytes": 1219632
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a8e4bee456ef47c7934db8f52ac83896/parsed.json",
+      "sha256": "ac0677e4eac1b5892be6bbe7f735e1555e3b13209f0daa7793dd0d2460eaa6b1",
+      "bytes": 4180
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a8e4bee456ef47c7934db8f52ac83896/raw.json",
+      "sha256": "0e533a3c39ee16198966de95e7746ca5648a397b7c2b9f967553c9ebf0c56af4",
+      "bytes": 3158
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a8e4bee456ef47c7934db8f52ac83896/voxels.json",
+      "sha256": "91b307987302c31541fed33f83421dfac9320534f5f67e5a2d28e4ebc409b51b",
+      "bytes": 70037
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/aa55d2a16b3c4959bc60da192f3444a8/parsed.json",
+      "sha256": "12d9c38d298f7f4e39e1f73f79611492126617541565407bd8c2d071c2d45d8f",
+      "bytes": 10195
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/aa55d2a16b3c4959bc60da192f3444a8/raw.json",
+      "sha256": "12762685a6f808835049ee99e96e3f6f38fc3d80994e868027fd8bc1c4a0385f",
+      "bytes": 8143
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/aa55d2a16b3c4959bc60da192f3444a8/voxels.json",
+      "sha256": "5ee4c9e867ce4f67a2cc5578dbe0fff8ba27e11a4e5f675182a1634bdf43a688",
+      "bytes": 138394
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ac9af1d2913f4e9daa73bca5865a8d93/parsed.json",
+      "sha256": "62afd54155a16c5935a9643976ea70336427986a67b52b43559fa4a533178b1c",
+      "bytes": 5578
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ac9af1d2913f4e9daa73bca5865a8d93/raw.json",
+      "sha256": "f91aa68784109b7d52ed09a2d9f67b618a35b65d7ae6e0ec70dbc76faf5f903c",
+      "bytes": 74852
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ac9af1d2913f4e9daa73bca5865a8d93/voxels.json",
+      "sha256": "629ff7785d95be62a1a13d90a0849cdceb7b3ac2780642f70dd450703bd8358d",
+      "bytes": 221786
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ad85c79e9add450b83dcddee44c4c1b1/parsed.json",
+      "sha256": "28a85bc93b7d90a698bf4374d2f76d8af1e2d511ea488f0ef5b7fa8040775b0a",
+      "bytes": 4771
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ad85c79e9add450b83dcddee44c4c1b1/raw.json",
+      "sha256": "ee8d8b5c285cc02afe8de7d7fed0f5e9b0b94a82b8dd2c487e688cab385d764b",
+      "bytes": 76519
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ad85c79e9add450b83dcddee44c4c1b1/voxels.json",
+      "sha256": "48b843f2e07d69171b64361f6cde2e23e32796657552a02caed658bca1fd9743",
+      "bytes": 140065
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/af628cc6c9fd4163847e64b34ea2aa2d/parsed.json",
+      "sha256": "05f06720a10b7df6050b4670185aa94cca9ca5f67c3de3e999c9e6b79a6919ed",
+      "bytes": 6253
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/af628cc6c9fd4163847e64b34ea2aa2d/raw.json",
+      "sha256": "3a40b61d3a459f0e44d5f0adc24e29f41e5ae390e31bb74511e92a27afa57d21",
+      "bytes": 4493
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/af628cc6c9fd4163847e64b34ea2aa2d/voxels.json",
+      "sha256": "34f4ca80135c75d3548ab889074106f0803a249740fe43e11673f4696143ad13",
+      "bytes": 245089
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b0092e529a794782b1082e5a1c5aa286/parsed.json",
+      "sha256": "19d78449908d74aee5da7e541e07f060df8db1357f4c444d172c3872f5964e07",
+      "bytes": 3527
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b0092e529a794782b1082e5a1c5aa286/raw.json",
+      "sha256": "99ad1d6f978db37dc08cb8df3809fc3d8cc2c4b195504a6ff5b01e4a7aada1ff",
+      "bytes": 50108
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b0092e529a794782b1082e5a1c5aa286/voxels.json",
+      "sha256": "588d0ae9cc968f0a7268fc752d7f466ff2383fea6aeebf2effc1de05e747375f",
+      "bytes": 260134
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b239c3e9d8e8496682f15ffcfe75c334/parsed.json",
+      "sha256": "ac2c6e375e488f5230da3fad349d678eab93e0c21c62f76208d2b861fe86cc12",
+      "bytes": 3263
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b239c3e9d8e8496682f15ffcfe75c334/raw.json",
+      "sha256": "50e3cb93abfc551283bc6009331acedd3f1437d08a6ba7205378065a5981ecaf",
+      "bytes": 2604
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b239c3e9d8e8496682f15ffcfe75c334/voxels.json",
+      "sha256": "34445dbb2cd207bab93b4fd912bf2ff4742cd1da2414b63d3fbf8d1a39c80eb2",
+      "bytes": 142709
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b286acd1c6aa484e9366c7e384360889/parsed.json",
+      "sha256": "1e60df300ace1cf3bbdf4a77729a37cb5c27e7aa5a51ffc53b3cc129886ee264",
+      "bytes": 3142
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b286acd1c6aa484e9366c7e384360889/raw.json",
+      "sha256": "b9a82322f15e89a73710865c5d49104afacaf50231c28cf7fdd17f7617bc2350",
+      "bytes": 76254
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b286acd1c6aa484e9366c7e384360889/voxels.json",
+      "sha256": "9c4a83e520df76144e4b2b136a83e056c4013c600bc74cef54d32f218c9c7922",
+      "bytes": 67971
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b3c799f57b3148d9bab58b419630e638/parsed.json",
+      "sha256": "a78cf7628f6e3da187d7bcc647eda34b01439a4aa05d8a803eaaa9d0371dac3f",
+      "bytes": 85736
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b3c799f57b3148d9bab58b419630e638/raw.json",
+      "sha256": "1a471735419d02f5ab5bd1a79b4c710ec24722643057011a083fb072b163ed74",
+      "bytes": 56365
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b3c799f57b3148d9bab58b419630e638/voxels.json",
+      "sha256": "80859f27376a871b4d4ebf5d0414331959bfc3527830891b71bb405d57392368",
+      "bytes": 252176
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b5585ed6dbbc4c77a4a2ad3d753257d5/parsed.json",
+      "sha256": "43ed520068946c376eb41523f5d302068170604102f93f9cb102a2211044ab5c",
+      "bytes": 3839
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b5585ed6dbbc4c77a4a2ad3d753257d5/raw.json",
+      "sha256": "5ef7cebb74a98683e19a17dffe066fbea330ebe8630aec596decf18c90b88f45",
+      "bytes": 49527
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b5585ed6dbbc4c77a4a2ad3d753257d5/voxels.json",
+      "sha256": "f3d26d87d873c0454738737a9ab538973351d5539aceb55866eecc7a65568735",
+      "bytes": 127809
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b75d005ae79c4d9ab1a9b55a4eedc437/raw.json",
+      "sha256": "53faa4da7da9ae6a4c715f0bad7cd1f8f71731d00a31ca74e2ef4672d22a2046",
+      "bytes": 81721
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/bc16d7127173404c85308ab28e31dfcf/parsed.json",
+      "sha256": "e2a8bb7fa32de4fa1cc6034d9e8f4496394a888ce2baa5ca6c88702bfa22dafd",
+      "bytes": 9408
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/bc16d7127173404c85308ab28e31dfcf/raw.json",
+      "sha256": "f77e2e748291e455bac612104a3866bb60a9a76e97e8185dc01acace538d5188",
+      "bytes": 6640
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/bc16d7127173404c85308ab28e31dfcf/voxels.json",
+      "sha256": "f6bc39ed0cb441884779f2feef4cbaeccbbc30685b8d4c93dab51b0d72c5852f",
+      "bytes": 438577
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/c0ee7d3dc63f4d74b8866d185f5742db/parsed.json",
+      "sha256": "03bd33a766c38d498c5d0889b00dada56e040517af537321ee36dfda9fd50f27",
+      "bytes": 97322
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/c0ee7d3dc63f4d74b8866d185f5742db/raw.json",
+      "sha256": "eb6fb5f4ef9fc16a793e4749a5ac329a2be8f56b24c2f820a81ed9c7a7d9359d",
+      "bytes": 79978
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/c0ee7d3dc63f4d74b8866d185f5742db/voxels.json",
+      "sha256": "1e7b0b6585eadd2806e539c44353a87aa9ba4311803dc391d9e36c2e49af4817",
+      "bytes": 195748
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/c81eee5c4bda4ed8ac626eced427e2e7/parsed.json",
+      "sha256": "caa2f0ba73bfc44a7638b1d023561e3bc3c01ea8ed77b20ef2dad0a4a0b14301",
+      "bytes": 9119
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/c81eee5c4bda4ed8ac626eced427e2e7/raw.json",
+      "sha256": "576866908a4c71e90dcfab3dec2e2d8571bda5422aaa4a5339d4491560964d9b",
+      "bytes": 7313
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/c81eee5c4bda4ed8ac626eced427e2e7/voxels.json",
+      "sha256": "5b3f43643c1283b2f6ae65be6862a5432c1b36f0ea36774a2694c635a4d90d90",
+      "bytes": 455733
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ce8c9b2eb27a4530a53c834ffcec107e/parsed.json",
+      "sha256": "a2684f71013031adfe4d658a11508be52d39945227b763e50e85124528472111",
+      "bytes": 5188
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ce8c9b2eb27a4530a53c834ffcec107e/raw.json",
+      "sha256": "a3eee4de66410ce699cfed4ab8e7ef3d928ab73a12e0cef6c5377a0708f32db9",
+      "bytes": 3860
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ce8c9b2eb27a4530a53c834ffcec107e/voxels.json",
+      "sha256": "785ca165c4e9272f07f9ef32f61085bd4172b30443b64d74a1789da8f9f7f2bd",
+      "bytes": 452368
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ce9ab306e0ed4285a16ca8e8867b2737/parsed.json",
+      "sha256": "2b38c2f3bfd8d0822798e45374c4b06a3cef116bd20f3d69913f0fe18d179db1",
+      "bytes": 3646
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ce9ab306e0ed4285a16ca8e8867b2737/raw.json",
+      "sha256": "00ba9f5db7a84d02c09aabaeaf7b09087573834ac2fc866545293c607a7dfcf5",
+      "bytes": 2843
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ce9ab306e0ed4285a16ca8e8867b2737/voxels.json",
+      "sha256": "2a9dda89d0201f37ca98a5ba7a32ef02798cd06a7487d29f41143e6b668c586c",
+      "bytes": 32435
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/cfac65f34072470bb585e47fd9c518c9/parsed.json",
+      "sha256": "82f547f4da6c4e176c3cbd61cae77cf1624536fbb6824465c8bcedee78e6fe4b",
+      "bytes": 3173
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/cfac65f34072470bb585e47fd9c518c9/raw.json",
+      "sha256": "68f769d26b75d8ff5b489ce912660ad07fd136ab469c03ebaaa5a56b09fd6c27",
+      "bytes": 61575
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/cfac65f34072470bb585e47fd9c518c9/voxels.json",
+      "sha256": "e3af50a4963f7618c01a71f76ff65e59062031a925c06986f37787954a760fe9",
+      "bytes": 434173
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/cfc2b9f6d53a48179ed5eb9ed0c980b9/parsed.json",
+      "sha256": "cc1f47635fff00f14e398ba7e40707d5e7aafbfe29c9a15d28ecc06f0d2e01cc",
+      "bytes": 4198
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/cfc2b9f6d53a48179ed5eb9ed0c980b9/raw.json",
+      "sha256": "6b38fa6da402de9691fe74d3a5f10e1d65dc4b6bbc50484fb066fb149789b687",
+      "bytes": 3640
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/cfc2b9f6d53a48179ed5eb9ed0c980b9/voxels.json",
+      "sha256": "84dc8303d483e87b443d4b3b8b0ae56334df4ea9c7253174c12d5f3ce3a8a3cb",
+      "bytes": 119928
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/d30b79f5ab244dc886ca34e5e778f40c/parsed.json",
+      "sha256": "22bcb2e9421bc2d547c7aa1342031a4e39371bb72e2cb75f5549778dccb9c67b",
+      "bytes": 4308
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/d30b79f5ab244dc886ca34e5e778f40c/raw.json",
+      "sha256": "10436f5026678a2eb1295ea3d6f36681037c00f0d6ecb71b92284dc558413837",
+      "bytes": 3250
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/d30b79f5ab244dc886ca34e5e778f40c/voxels.json",
+      "sha256": "5f85b123df43e3a5961a333dcc1b48d5f5d8becb1b009ed40cb073f128b171be",
+      "bytes": 113525
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/d5e6b395715f49a2888baf6de2bfeb53/parsed.json",
+      "sha256": "8eada778e3b972164445425e28531701f8b3da56b802567622a638c90427387f",
+      "bytes": 3631
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/d5e6b395715f49a2888baf6de2bfeb53/raw.json",
+      "sha256": "fa309ee87005c14a3ed7a78840b727d99f8ec86b65743e002136fdcba21e47e7",
+      "bytes": 75441
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/d5e6b395715f49a2888baf6de2bfeb53/voxels.json",
+      "sha256": "70f325a474d295ca349a39cc2fe1f7e94b5e5806e64b9db9b2c8e983c605a733",
+      "bytes": 135118
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/d7fec7ddbe2345b3936ae98e8d66c791/parsed.json",
+      "sha256": "e7417945d4f79a2b253080e2ce0525023cf69c4d82dac2abe5b6d9b175d1b570",
+      "bytes": 6382
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/d7fec7ddbe2345b3936ae98e8d66c791/raw.json",
+      "sha256": "d6ac2f4bf0e8582c21c7520351c23b74c3c1aca103f69c65071536303fda5ee9",
+      "bytes": 4586
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/d7fec7ddbe2345b3936ae98e8d66c791/voxels.json",
+      "sha256": "3faae62e0168c424ca418ada00f0f547cb2ea13b894e75fefcfe9dbf0a4f6aed",
+      "bytes": 821486
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/dc2578f9e1884b42908b61e266e65a4d/parsed.json",
+      "sha256": "ed73bd9f4e8bf5baa26b4695110dbdeba0f8d50f49f9450007fa7c03ddbcd118",
+      "bytes": 6025
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/dc2578f9e1884b42908b61e266e65a4d/raw.json",
+      "sha256": "9fb178a0da8107ef7027cfd4fb4759c44f592593cf2fd51a02dd2908d7f0b11a",
+      "bytes": 4355
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/dc2578f9e1884b42908b61e266e65a4d/voxels.json",
+      "sha256": "a511487772dffbba01590d047a0e58e29693eced678bc64d3caaeefd0545b235",
+      "bytes": 126607
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e0ca5de5e52243be9cb7b96a4f4350bb/parsed.json",
+      "sha256": "06cac7069b44b4238638b2a143135c2802e254f457a7ffca1d5fcc47fe9aa3a2",
+      "bytes": 6997
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e0ca5de5e52243be9cb7b96a4f4350bb/raw.json",
+      "sha256": "9c1049eb2dcae94f22b70fcdd0de594ab77f9c4a41d0a9ad92740313c112551d",
+      "bytes": 4949
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e0ca5de5e52243be9cb7b96a4f4350bb/voxels.json",
+      "sha256": "cf4f3cf9361c5210177133a24cbd701fce43befc4a279bcfe154ddb2cdbcb262",
+      "bytes": 236846
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e13f4977529449a893c1f8cb872e689e/parsed.json",
+      "sha256": "8ba9cc6b376af8c40b04b88fbcea5f663ac74abd5f0d53ee4f857c26210270ec",
+      "bytes": 5869
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e13f4977529449a893c1f8cb872e689e/raw.json",
+      "sha256": "111742b6c6308a81518c04ae2b32f612915bd22f3e68af7c40b17aef829a98b1",
+      "bytes": 79557
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e13f4977529449a893c1f8cb872e689e/voxels.json",
+      "sha256": "6968a32b9703317b8ce1b621cb3af47861d0742935f31383b0ba0ab4e6446be6",
+      "bytes": 162033
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e2aefc50e57f4371aee4902c634b3204/parsed.json",
+      "sha256": "a35676613a7be63fc74b8bfdc91e4e22b41d6b8fe65dbbffbf1eaaf1e0cf0cf8",
+      "bytes": 8346
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e2aefc50e57f4371aee4902c634b3204/raw.json",
+      "sha256": "b67cee191e06f1876c5e8c952e73c366cf1e72029f079337e11e5efcbdfe4452",
+      "bytes": 71682
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e2aefc50e57f4371aee4902c634b3204/voxels.json",
+      "sha256": "5e7ec800da3fb52972c960aa6e1cc0d9e834ac95db685f238610fccd0551cfe0",
+      "bytes": 111081
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e4c7c63e02804ec7a87ccbdea4816b39/parsed.json",
+      "sha256": "40775256d82b6a70743490ac4c483955cb79200d1c1a4b5487c903b246f356b1",
+      "bytes": 4302
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e4c7c63e02804ec7a87ccbdea4816b39/raw.json",
+      "sha256": "cd9c9d28f5741772c337fe9d54b9732c8149e8c3bca10e283bc51aefd4866a93",
+      "bytes": 3280
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e4c7c63e02804ec7a87ccbdea4816b39/voxels.json",
+      "sha256": "506ae409c47a181d6112a7ed56e1ac009304d6e21f0b8bd5361e080a9996eddc",
+      "bytes": 120764
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e546ea90211d4aadbc971ffbff6dbe19/parsed.json",
+      "sha256": "bbe61ba6ccabd61b44827bc652fde64b3fe864a35d5277f36265da3113f6bd01",
+      "bytes": 3966
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e546ea90211d4aadbc971ffbff6dbe19/raw.json",
+      "sha256": "3f07f778a3797cd48083c99c13c78903004977336b342a49fb937159b1535c7e",
+      "bytes": 52093
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e546ea90211d4aadbc971ffbff6dbe19/voxels.json",
+      "sha256": "ecfdeb8d8050a7040a7af172f70ede30f177d1e511cdebd311498de4adb4b4fa",
+      "bytes": 475793
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ea5403bcaef045c1a33422ab48d98067/parsed.json",
+      "sha256": "33d63d3827fbefce6f64570fd28b00c48fe9916c5ac572a40df4301b93ed1c79",
+      "bytes": 6786
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ea5403bcaef045c1a33422ab48d98067/raw.json",
+      "sha256": "82d7d480139c3e485a939ba610cf5241924be228092d5940a74d586edc38620f",
+      "bytes": 4850
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ea5403bcaef045c1a33422ab48d98067/voxels.json",
+      "sha256": "de2c95fd2d081a500489b7a9822c0cf58d465afe124f0635ad1721c642f334e5",
+      "bytes": 272341
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ea8ee7aa9f884b39a720735eea5e47ef/parsed.json",
+      "sha256": "7dddf55cb54964855020d2914ce5a082a911b2327023e6a332ba19eb557440eb",
+      "bytes": 6110
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ea8ee7aa9f884b39a720735eea5e47ef/raw.json",
+      "sha256": "8df9dd0fa5cf58fb5c42ec9fce818d5923497586e5af277e8d7f1901a6658e90",
+      "bytes": 71861
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ea8ee7aa9f884b39a720735eea5e47ef/voxels.json",
+      "sha256": "af3a879856aeeb18b8d42a38056fce914d31a3a8e134be6538ef6302b37b782d",
+      "bytes": 237820
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ea98f048207c469982485b21aae8c51f/parsed.json",
+      "sha256": "bc51f749a4cc83b9300b19dbc5f2bb9609da9316cced6b85181c4ea890575986",
+      "bytes": 5844
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ea98f048207c469982485b21aae8c51f/raw.json",
+      "sha256": "b7822a50311621affc1ebb054e02f378213f19fb1aa959871d481c0719d6240b",
+      "bytes": 81816
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ea98f048207c469982485b21aae8c51f/voxels.json",
+      "sha256": "ac399338de9c9ee178d41d7d744f4cc10de02e78c2a0acaff07697ad443bee28",
+      "bytes": 46683
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ed2bf1f28f2a44fb91a4896a5f1e4873/parsed.json",
+      "sha256": "abbf1a5f6024cfb6d591a1921ff829b38fed64ed6c529df0a03e4cd93c952c1b",
+      "bytes": 15742
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ed2bf1f28f2a44fb91a4896a5f1e4873/raw.json",
+      "sha256": "408245216d0981dc54296b91884b88339b2337c24533f20fdda8badc5b75042b",
+      "bytes": 78809
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ed2bf1f28f2a44fb91a4896a5f1e4873/voxels.json",
+      "sha256": "df5075ffce1ed5df41041a513e76773f59822528c3253520d50ec113b66af78e",
+      "bytes": 654841
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ed89e5bc34134664af1100de42a5d248/parsed.json",
+      "sha256": "7b998f2b1b43e54dac4577fe2c4ffd09ca840b8d0da9a2ec3917188dea8da8f4",
+      "bytes": 433
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ed89e5bc34134664af1100de42a5d248/raw.json",
+      "sha256": "6a45057cca6303ee7bdcf5edfb03825a013a1f7bd63914ade11c018ccc7ce700",
+      "bytes": 30878
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ed89e5bc34134664af1100de42a5d248/voxels.json",
+      "sha256": "3810fc6ca60a5a543b4af6caf4f257e5f72e08aee231e641c82e322b5e5354d3",
+      "bytes": 346329
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ee5ea1a070254cd28a504e7e7eff0ea5/parsed.json",
+      "sha256": "33e6b89344fae405d8f63b938902cea615556b5d5f16f8773316599a14d306b6",
+      "bytes": 4743
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ee5ea1a070254cd28a504e7e7eff0ea5/raw.json",
+      "sha256": "570b6c4942ab3932febd8c0fec97492cce60f3b9fa64f249b56d24cf629c5c79",
+      "bytes": 3559
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ee5ea1a070254cd28a504e7e7eff0ea5/voxels.json",
+      "sha256": "5cf7f56b7f70312f0e3ebce10ec76b61c9b6dc989b3a7ef6d7353425c717778b",
+      "bytes": 278035
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f442c225a0f84eb1859bef9c1cfe7187/parsed.json",
+      "sha256": "f2dd6b233b1ca6edcd25ada18d295923cac3247d6eb97af69c0df9329f0b2531",
+      "bytes": 9612
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f442c225a0f84eb1859bef9c1cfe7187/raw.json",
+      "sha256": "5a4af35f515297c270c2d3e4a37b167e8ae0d0d7589b5fc362468db6e28b8346",
+      "bytes": 6790
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f442c225a0f84eb1859bef9c1cfe7187/voxels.json",
+      "sha256": "5de53eb4e0ec8c1a1b7675b84be06301c0d355dd167f12de3716976b95c9aa94",
+      "bytes": 104731
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f7594841281c4199945d0ca8a575127f/parsed.json",
+      "sha256": "763f1b8d9a7396669924c389540ad3f96356a526a14efb225a50e71d9b71cdff",
+      "bytes": 4037
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f7594841281c4199945d0ca8a575127f/raw.json",
+      "sha256": "6bb76c6e71174f1978aeab6e5b91d2655b7313b033853297026f60a0ac90d077",
+      "bytes": 3087
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f7594841281c4199945d0ca8a575127f/voxels.json",
+      "sha256": "da9e2fac27ef1dc9114d56cfca3c3b7707877196ea2daa8669b7d6849d795145",
+      "bytes": 177567
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f82f6669b450431884957d648d1c7190/parsed.json",
+      "sha256": "050d12965c3361f867d10e7c6bb4b44163d7a53f98bbd0a264e72e8873fb1072",
+      "bytes": 587
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f82f6669b450431884957d648d1c7190/raw.json",
+      "sha256": "db255b8e369cd16fe03aca02619127c91b3eff7bb41746d8c5949e28ace4fa0c",
+      "bytes": 58666
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f82f6669b450431884957d648d1c7190/voxels.json",
+      "sha256": "12228fa8787f97d7bd770098b0e2773b8ed224248dbc8ccfdc71f0b8bd3d3cc5",
+      "bytes": 304263
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f85fef4f8ec14166acb1311e0b37a92b/parsed.json",
+      "sha256": "687adcb36cd566cced87a2c150967371af3c533b16d8db74c5b3b5ad6cea7b75",
+      "bytes": 4842
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f85fef4f8ec14166acb1311e0b37a92b/raw.json",
+      "sha256": "a12c5121b856e47cdb4bfbbd4f1eecfd3e8097f01fd14d9fc3d1ed105a6cdd6d",
+      "bytes": 73150
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f85fef4f8ec14166acb1311e0b37a92b/voxels.json",
+      "sha256": "874c7fc6f84d802d8d3a700a936782ecb97f417626dc6668a8481e51ee57bb22",
+      "bytes": 69419
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f893c9b3993143f0bd738aec4c8e5676/parsed.json",
+      "sha256": "806635dd6312f6f5a329e232a832d8cb670b9aa67c1a5d6b789569073d2e53d2",
+      "bytes": 7370
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f893c9b3993143f0bd738aec4c8e5676/raw.json",
+      "sha256": "ddb8a40fb025a2bb95bcc02f5e72d03423d59da26a0217bbec983178ec5e4eb8",
+      "bytes": 5236
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f893c9b3993143f0bd738aec4c8e5676/voxels.json",
+      "sha256": "1fc4ac8faf45d9428a6b4afa64dcd1bd0f5c41461d4ac6f7f9fe70d35002c10c",
+      "bytes": 357473
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/fb2c9b51486f4df6b16e1fc71c9bf666/parsed.json",
+      "sha256": "acf928e78ff1cd8cf9844ea74c701073dae194c40190ef0975417a1696d6dc5e",
+      "bytes": 3626
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/fb2c9b51486f4df6b16e1fc71c9bf666/raw.json",
+      "sha256": "953daba698de21d81e879106a8dad2568d6e2700fe497e13165dc975aef0551f",
+      "bytes": 58087
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/fb2c9b51486f4df6b16e1fc71c9bf666/voxels.json",
+      "sha256": "55b87e2b27dba93e137616d635506af2e8697f25513eb44efd9e2f8c300b34b1",
+      "bytes": 295251
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/fd1e112e967e4e38b52f4b6cc50a4971/parsed.json",
+      "sha256": "b3b40834c8e4ac765f6a1792c0491264080567ed1f3deaf8425fb558b775152d",
+      "bytes": 4390
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/fd1e112e967e4e38b52f4b6cc50a4971/raw.json",
+      "sha256": "1bc80988e671e93da1c362f00089969e4bcea826cc74589a39ea554b81450704",
+      "bytes": 62512
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/fd1e112e967e4e38b52f4b6cc50a4971/voxels.json",
+      "sha256": "3e94cfea10f6992e96cbdc5f5a53c58bfaeac99a79f475a5014e7726e5818213",
+      "bytes": 775448
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/febcbd3e8633416abb047e5882c07c32/parsed.json",
+      "sha256": "b3082653fa93920f943f69e1ce720ca2fc28664e4eccb415d5e9387308f6d4b4",
+      "bytes": 73305
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/febcbd3e8633416abb047e5882c07c32/raw.json",
+      "sha256": "a6eb789e2b5709d574bbfea2628c496ed937c99e37854b26ff2fb37514833a77",
+      "bytes": 62626
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/febcbd3e8633416abb047e5882c07c32/voxels.json",
+      "sha256": "8a105fb4b662496680b6a48e08a9b64ffdd7eb4da4f047f1012e31361c89543d",
+      "bytes": 292417
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ff6614315f104cf082ac9500a915de7d/parsed.json",
+      "sha256": "e5a21f6d56cb211565cdfe14d32ef4e45e080c586675fdab0fdb5ba8485a443c",
+      "bytes": 4285
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ff6614315f104cf082ac9500a915de7d/raw.json",
+      "sha256": "fcd18f49ebe45a6e35899274658c1e2e45838e8563006ab51a8cfb900dbf1444",
+      "bytes": 3689
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ff6614315f104cf082ac9500a915de7d/voxels.json",
+      "sha256": "de372f7dd138cf20890f1f79247ba2516629230d15473d5a33c4255c04852d97",
+      "bytes": 133941
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ffde09350718484dbade2f36f3ff5401/parsed.json",
+      "sha256": "5aa6468a71e832eb16c9e36551aa733af6562801c82a458cddb7a99ae20273f4",
+      "bytes": 8861
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ffde09350718484dbade2f36f3ff5401/raw.json",
+      "sha256": "d816f7038514e4b44f664401666068ecf29658ac4746bfcb153890b02ae1f42d",
+      "bytes": 6177
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ffde09350718484dbade2f36f3ff5401/voxels.json",
+      "sha256": "5bc514f9227815c9a2d34da402defd6d0b1599e089f000a9df1cb07126d09656",
+      "bytes": 614042
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/enabled.json",
+      "sha256": "27775b8bee77b1b5f59fd0894270d1154590d8368ca532c971317f2aba92ff96",
+      "bytes": 354
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/ledger.json",
+      "sha256": "fe009bee0539feb2651ee1bfbb226e44dc5f9c862ef639f059e627ba5e147126",
+      "bytes": 304965
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/00aadf9d931f4b9595c481a943b61c09.json",
+      "sha256": "336b13cecfac1868582d91e6160cc0388dc8654b8fb8000b15a9491efb96ab74",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/01a93508ce104bd6aebb2011e77614a6.json",
+      "sha256": "27fdc9d16aa131a64f8fe0898c472f2f9c59fc95d5ebe61d47701d3a8b878953",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/02395914491646c98f5283ab31dad54e.json",
+      "sha256": "58a3606ef94872956f858ad214f1ab775d04e501df8c961119c3b095da9a9941",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/06c08319d7504851bca729f0b616f54d.json",
+      "sha256": "bcc4e66641d3e727f015ad9bc15d2ea8bcdb45efe55d2ab063b1975da4733340",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/0896b56be70146788801e0612e3bd089.json",
+      "sha256": "cd0892bca8911a124b233633a4f4be92c583a806d9a45dcd571d4b7e9381bf08",
+      "bytes": 370
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/0b6d8b40b6bf431e842e6d8af10ff113.json",
+      "sha256": "2b1baacaa2802c8258022fe46dda64ce6c36b62c58373757b5d87561bf614072",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/0e7da53eee1549c8a1aa8e1c724b603e.json",
+      "sha256": "2debcd7960bc8486c9e5c7126e3cea709190575ba02f47b297e084b88eef59d6",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/0fdc3cf0bbca41438019eaf6578be088.json",
+      "sha256": "f0764535348d9b62d37f55633581068b4b3558c0c0aa092ffbf4e78dc73c4e4d",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/1357449ff35a40cea94f9064816e9704.json",
+      "sha256": "0f051f0a6a4620d028d2e7c37f874b4d6f85244b864150beb6feb220063f529f",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/14004cd864364cb3abad26c8bc721606.json",
+      "sha256": "82ea108bf09fb6e1ee7d2bbe0c2b516752c0285cc07dd250c5443f4f6d981b22",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/1a6bc2472fa84cb6a4c4ba6f874d10e6.json",
+      "sha256": "408916d83c9ac334ec6b84140a81435107d739d0a78cf3cfea3099dab9ee2595",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/1affa3d035034978b0d3b1555185e24a.json",
+      "sha256": "68adc92f1d722bbc2cdf00d90494b3bae553dfe9c29abde169ce47ffda165f99",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/1bad5dcf3c2846b4bbe0ea66f3f4c2fc.json",
+      "sha256": "8fb6927b81dea9adb4872000a0145d3649e1fb6a48bfdd56e4543898e7c21c1b",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/1d22053cbfbf4dc2aeaf791528885780.json",
+      "sha256": "b2d22e2d6ea19b4837ba594f71b920a80e94afd421fee93d190a6d23e599acc9",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/204e3a9466264f42aedd03d692c401e6.json",
+      "sha256": "3dd7e639aaaf756f53dc56041c416f6eef1acf3f7f6162afb8771a410d8ec923",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/212497cbe352402184eb03021a65c264.json",
+      "sha256": "a911fb09b00ee98d727afd96886566000442890930f8e1cfdc015d13ea07156b",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/239bcaab137842498fcb05f759b5b2f8.json",
+      "sha256": "157b08138fb79f3f8741f46692a70ce4bab4321228dad391ed19e1c7ca1afe97",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/243bc03951b341be8acca5bb9e87ceaa.json",
+      "sha256": "d4d0602d1e4bd24d8409a3d619b1f5dcf11c45d113d055f86b52108b8d3c4e1c",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/257449ad14f347248e65b786f489027f.json",
+      "sha256": "0653d05deb5762ac20d9b0e3a540a3e98fd3bbf532174d73c5896a0997d629dd",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/27f9ae17a9244400bf110a18eab273a1.json",
+      "sha256": "90bf1e86282c55bc7cfab6c597b077ca81ef60c1eb26ac0ebf4f06f60b37fdf0",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/280a467574e247358663b9e94b7534bb.json",
+      "sha256": "d8132df569791fd6942a30501c85afd1b431a4138187b0b88c0682876c2f3141",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/2935d98649c34902a7c6cf8eeedfc1f2.json",
+      "sha256": "bba66d438459064a42b8bdb152c4ebcf6e5a95a5d327405e7c8b2f13e677acbc",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/2949eb18475b42f8887f7277e86936e4.json",
+      "sha256": "3cc7f543e76d3345b4e71d402fbc16d7284a5bcb0afc695bb58961c4bdfbeac1",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/2aaa3eb383034dd0a883873be04889fe.json",
+      "sha256": "b458e060c18b1a3afdbd04862133aa0eac0dd70d6fac8485e2b23b2f3fd7c33b",
+      "bytes": 370
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/2af39aa9b5ef4032adc74cc4b999ac33.json",
+      "sha256": "a9add16ee8a807e2819e5fb2868cf4598bbebae59e2af03386c8a6ac562f0985",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/2c38e20df03749b39096dc4f034de1b5.json",
+      "sha256": "cad5baeac6f0ad871ace234fd2663b5a10170e33049d1e23dffb21b7b97700e8",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/2d00f5eef6344d0ea27e6836cf1eea7c.json",
+      "sha256": "58554e3c1a627d6d06e926eec5d7e92551de5e2c6e607dff95d42e6c4226b000",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/2eb7441765a44fc489256393a182844e.json",
+      "sha256": "fd78820e974dcf76eb8b50bb176e5cc0e87f91441d363b77c1d4af403a8df685",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/301ae27e3d8246abb460415563808bb1.json",
+      "sha256": "9c4bb4f91361c04fd1ec3a4962bfefcd6783b4fe78ffe523b7553ff7f9a8d0ee",
+      "bytes": 370
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/306efda2a9ba478097fd864873f8645a.json",
+      "sha256": "b0b7971ba73e22ca19f9f15e211f236068d703ce77a0ce0a2c80e176a11aa064",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/30c5919d4f194c73aaaa264da831e908.json",
+      "sha256": "c6c74c4c2504e6799314ea2ec392586b9f9584b5fccd46be4dc48461f83cb5cb",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/3171eb46a1d0483e8a59afc35946ca52.json",
+      "sha256": "fb6d85666b21e9bf9125060f971193ece68d243ec68f9777dffef9738ecc1a2c",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/3504849c419a439687fbe945f9d51c36.json",
+      "sha256": "bc778167ffd9619146ebe7ac13090d8e67c25bf3620b1ffaa21e9a0f81144c69",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/36bf8e9fffae4dc7b27756bfb6bc6031.json",
+      "sha256": "354d718a1ea72fccc17a9df38245c9578c2996a295d5f607cb7a02e30774fc29",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/3afb0cfe40fd4f66baa63d1008ef5570.json",
+      "sha256": "36ba27a60ee105adfb4ada29283ed1882149603f01c010952f794ffd26c910bb",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/3b84887441a74014a139ffb62935e53d.json",
+      "sha256": "0c3e052c21f185eff6584c6abd542da8d417c39f37162abea588a33c847e9617",
+      "bytes": 373
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/3c36588eb12646fdae79b02d5df87eee.json",
+      "sha256": "04ad4e59a10e89539d2d769974a046ce827cf7fcfa915017b9a25a318c4becc6",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/3d4d2efbc20543ab8a1128f1d48c3259.json",
+      "sha256": "3eaa6218144a5e07309f3e6b800bf9c8eb25806c7b7b09b9c3e7d2626cfb71bb",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/4028eac2ba0d40c3b5296e0a5b92842f.json",
+      "sha256": "46c9c0d8ee153bcb5cfbb8e7c8192c0a06ed6f4593f9e1e8be6dba31b6230b97",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/4045dbb25c884a61876fcfd3342bc9f6.json",
+      "sha256": "8c52d2067e1678059430a16f555db313b297d407eb2e863268ba778911c23d23",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/413c581b957a4caa8f080b19065bed02.json",
+      "sha256": "bf63426428aeabcd31efd71d8c3f07aeae2db974acf28e98f8027efcc9d4b3e3",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/448654c780ed4da6b8d84bb441d9e391.json",
+      "sha256": "321ec919234d2b58112cae51cd24833a9af1a0075da8ea380788d35dbb2e4e73",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/44885623a4604f12be1b2643f6e4f46f.json",
+      "sha256": "b9de487c69105a34405bef545de4cfe94e341fa74d095a2451d9404702a21bf6",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/48feeb6bbe4b49ddb904d7b0c43b956f.json",
+      "sha256": "152c2d9975a494909cb1365cd259725507f3bda1c21f86c02dccddfc36d83db1",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/494b783ed6eb4b7599a04c454c43cbaa.json",
+      "sha256": "9bd396d1fd71318fa5483d1d4217675dc7472b9c616d5f55b56a704794dfec1b",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/4c6d2726d4e548358d1e1955ccae0694.json",
+      "sha256": "be70dde9d11dc29a2f3d9267c2c368903891e8922786af0e775265aa7b30e7bf",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/533fe75a67ee43bea2a52de61d9c1389.json",
+      "sha256": "df00757dca9f60ca0ce9c9419791e25c701fc67315d9045954b24067aed9a117",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/53e684c09fde46449d86d7b24ce0efc7.json",
+      "sha256": "3635a491ae78ef989d4e6cb86799e27a781df69ebef16308269adce290569a79",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/55dcf4db06bc4d5cacfa0a12fc6d93df.json",
+      "sha256": "ac4470196bd17ad185f9403692fae4bfc67a8e7440897c1ac3231b6ee00ad31a",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/5640626b6aec49eda650829e214bd7b9.json",
+      "sha256": "74a9b0c2af482dd5b116276a719ea72e04bff8d426eee4ef1238c4cc5d540758",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/56f0c34fa655487b93f996bc92de864a.json",
+      "sha256": "8de8dbfdfcb03918f6e8d258583a7084f12e71c9d22a7c57e008b7b528c810bc",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/57e0c67e68a342a39b3ca48c87dc8ec7.json",
+      "sha256": "61073ceb7462b5ceb4eef11a42fb6556f69be517dfde16516f686a9085fd782f",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/5a8b49f10609450e995796ac5d19dc44.json",
+      "sha256": "7bd380a108e9ded3711e50196b218a6686c6a02c9b8e0b5aa64fcf9319534c42",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/5d7dfa2a7c7e4589aedb7ece8af7296b.json",
+      "sha256": "e698bed45470084271c7b19fbada191f24b77a602a591b2bc5fee8b8c1bc15a4",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/5da462082b2c4ad7855d72304272efa9.json",
+      "sha256": "4c42433a2b60623342d2db74ea641ff2b798fc5cc7946f2bdbb57f2e04e8bad5",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/5dca0e77ff4c49c98ee96c8e3045d01e.json",
+      "sha256": "f3c455eeffd9c80d5a8ce57d888759b2b3b8d343bc1d74caf5435445a5a8d46f",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/5e40c0db47064316b42b16e2b93b65f4.json",
+      "sha256": "07bf33ef3812ea84d07f3c874f4d5f4e988ac4f944222ed1cdda69cf2ac5edfb",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/60000222ece447d79da4de89575a96a8.json",
+      "sha256": "501b76180a2995a2fc84a97e4d9285ead4d5e8758ae65f69a3e16c5c53491946",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/61a853728d6b4b888dc1d92df3ba2757.json",
+      "sha256": "d162d6f84e7196a0c48d7f8a32acbeb3996125f32b713ea26fca4a9795493672",
+      "bytes": 370
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/62773da39b9a47c3aaa1541ba35a0706.json",
+      "sha256": "6fd5c3cd4c36ba1c4aa95f5c1759c1247e309066cd5f3682806970e82c777366",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/640b658eb86547269708647227b8d4b2.json",
+      "sha256": "aa4d65c37355d7a6689ef783b53dc7464a9795e6aa0d27469f7cb92c962e1018",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/6b863e137e17438baffee15024850c7e.json",
+      "sha256": "baa9376e127ce4329e6a2efbc05c9ff48f6c1471dd05b2e582c576878d18ded5",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/701baa0231544d02ab6ba9fbf02dc416.json",
+      "sha256": "99e8fde4b62c7efcce666a8c7d6465558168f9acd73fac3b2e2a5012cb9bd3e2",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/71c80a79a25540b4b3f00726aed7b6ee.json",
+      "sha256": "cd17ae6c3e343eae3cdc1bbcb6f15cf79149a2ab18b6a56b1512daf1eee765a5",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/721642785c8f48b2a904162c6fcd68e3.json",
+      "sha256": "6ac8354099da3731a7a0f0895e35be6e8e6f274abf698c64625d5cc3ca9b9116",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/73a800a678b24734be07029b9bb236b3.json",
+      "sha256": "0db256f5595b4c880b5a68f6ca329f88e46dd6f469fcea194507f2c6b8ece90e",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/74b761c764b448dc99a1a8f2b434208a.json",
+      "sha256": "a57e21bf20e77a8000423ef53a4722472499a01532368678b6dc597e7a8a8ea7",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/7552a71410f04287bf1699e8e89c87be.json",
+      "sha256": "e4fbae2aa579d861d752a44a3b823b170d205add8905666968ea8c3a34bacd6d",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/7833f73d5c3447c6b6aa5eaf77e7acac.json",
+      "sha256": "5f06512cb728089e51202431071790f7f86f90892448d9b32fc0d86baeccd636",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/78aaade681944e4bb3a51bccebd6ad5a.json",
+      "sha256": "4697fb348cf133b8de72666a81ddf8cea498d3de3dc14631631e531aef788fa0",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/78ace148583f48c3a438a9f9d2b3586e.json",
+      "sha256": "ff2782cfa2eed26a94f8ad91c9b278e70cf6d9cdc50c0b95d2f78a65faea1bb9",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/7c8a8b5455294406b684c0a694504106.json",
+      "sha256": "281d185124da6d34d0e55f8420e97cdcc4c985484f734d6eb84299e295e6efaf",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/7f06624cded44421aa5e92ae0b211538.json",
+      "sha256": "0ef4c0f139c8f83ebef8ad09255043cd175aa8e267940fc1c69ddc6c666cb564",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/82334a1e438f4015a228cf6dd67f66ff.json",
+      "sha256": "59778b57407e4d19fb6f2475e8a53a98dcd45fd98a52fef3d28526efd4c82f03",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/82a47dd290c9405c9278af8704980027.json",
+      "sha256": "9a1c8edb9aa87be55e30aadb87004d35266f8f55d52f43deed434704c2c08abe",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/84ca9c43b6d145b186c7f8b7cf0e0cf8.json",
+      "sha256": "7b6d851b2dd59f0646d14d093026304abfbf0145a5353657708c65f61653b7e8",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/88f6b2cce6994a50940140d7826bd5b2.json",
+      "sha256": "ddec7d5c89fe593e6bb95a84d2b4fcdfd9b3c0090b4682bbf2bc3d965eedcdb1",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/897b2e50ba8745438261ab1a9e9565d1.json",
+      "sha256": "8d3d2c9d15b83c6b2a380ef7070b0a3cb3949fc4ab325ecf6720c689de904059",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/8a8b2a01c4f84f17890ee20691e43efd.json",
+      "sha256": "4526965648778905fa446d3a4a3a691fa0bbcd1b6868fde28c21a2daaaeca3ce",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/8c73a9824d4f420cadfac8faebc6be85.json",
+      "sha256": "d331156094fc5fed616b04a72157f93cdb7e51bbadf0370b8db32de7b62d4305",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/8d8b49e12c464fe58c9432e63377de3e.json",
+      "sha256": "997e3102dcc897cdd62a12d92550fda29e66848dcd2a491792a68cc0e81597d7",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/8dda0145d0ae4d889703114c1ca15891.json",
+      "sha256": "10453870888e322cb8cbb709f4c6daa6f00916cc8de4ee9e9f77ebc62baf67b3",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/8e0c1dd374dc4c7c88fd03725c0d3904.json",
+      "sha256": "1af1f0f7ae44beb5027da8b1e492a0a19106e65bf47a65ac385bb250e5852364",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/8e273ea12987466a9b0c5722c4cb46bb.json",
+      "sha256": "1b9a9899a6b213d58581215345097ee317b9d0d9df4a6d6c607ea9f031e9e89b",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/921444a5fb9c4e868cbd0c8b078269c8.json",
+      "sha256": "75bb52e03873cb64376d58ff9d7f4dae779e7ffb4b57140063dddc02f867c8f8",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/94ff3170cf8f4fe5b5976f7eacb79333.json",
+      "sha256": "655377e76723836bc026f97e46296ef2a6b82342fdbe6957c82d8dd98a6c646a",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/95a4490814d64c87a0b7d616721dc4ab.json",
+      "sha256": "174631b33715c5f414197cfe9e64abd53477aca315de07e6927bbfb1b246951b",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/964bdb97f00d4eba8a5fa605d8720d7c.json",
+      "sha256": "1bb2bc13e081a5b7984c302d1c812cd8a60445e9a7f9fbd5355281b54a290608",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/96cc9cac7b204df1a3e8deab11e50b97.json",
+      "sha256": "3a7bd30930a474446d957ad0c7c0ba57e0ba827efd29fddcee2b76ae50f737a5",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/97e536d8e79c4a75aab63eef17a52b2e.json",
+      "sha256": "7dca2f97b73b6e1152ba358b394d249623fbfb91315e41688762d1671e1e443d",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/989fb2521b664dbcbd63efa345d83ebf.json",
+      "sha256": "e228b08688051051e6b9b4542cc30a666cfd3c8b1dd1fbde79f9338a841b71b9",
+      "bytes": 370
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/98efd67e4ea148a592d3e748b0c449f6.json",
+      "sha256": "1a12aa673612223362a2b62b98698f2bf4258de6a0aa8f9f2e9222c80324ff5c",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/9964193a24ff46d5b3133f6d24f41100.json",
+      "sha256": "25e99767e7ebc8a88f507dfddc3d15874ebbe73a608e9ad4f1ff13b3e3dd7591",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/9ae0768182ca4999baa95bab23f6cc68.json",
+      "sha256": "6c5f9d79bc425987ff8be6dccf9a1f6e048950c809eef45eb8bc97002486d61e",
+      "bytes": 373
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/a09536072ab04f27af961aacc2a7c5e1.json",
+      "sha256": "3184dfb172a6f3bd965418ed9f5aeae08f205e47ae40f09494aaccd17bdf4aa4",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/a0e3bd24a1fe4b65ad8b9ab83a7549d8.json",
+      "sha256": "1dded14ea9fd586bf160d441dbafaaa82fb9781018a591f739ebc4fb7c493a6e",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/a1cf04c70c824294a19f027e559197e6.json",
+      "sha256": "65dedb179b9520175be925c86ce2cbbf6cbfcfa8ae7fbc711dbcebcab1031467",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/a599430a24d9441f80ebe50054a19091.json",
+      "sha256": "8e99b9699400d971a747c234ff044af02ac92d2f52398cf9cbff79ff4141285a",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/a786202796d44b87b9821af814afa032.json",
+      "sha256": "801ed88fd49ab513795e07cd19ebd6b9501f7a3ba35e4c83f7be8ac2dd2f9e66",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/a827d730857049e4865b0a042659951a.json",
+      "sha256": "eb8cc0d8fa555ec4bd6c71d242a173e2e64a16d6dc3c7402bc869b65b41a505d",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/a8e4bee456ef47c7934db8f52ac83896.json",
+      "sha256": "a590ec51c9f52b275b82a171935afed42ed4c059d4b3e08338955812de99124b",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/aa55d2a16b3c4959bc60da192f3444a8.json",
+      "sha256": "e2f08cbc9483715014c5bd940011e906079ef1c67d11a56c8a348699686b0d9b",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ac9af1d2913f4e9daa73bca5865a8d93.json",
+      "sha256": "a34ce718a78b9f9b2249d572167ba7fad0620be936811b03ea31cc992fb5d7c0",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ad85c79e9add450b83dcddee44c4c1b1.json",
+      "sha256": "834e8eb5fef3e4a71acd311beae2e86ff5853be6226b5a39157ea9924bc90979",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/af628cc6c9fd4163847e64b34ea2aa2d.json",
+      "sha256": "4ce473f1b293dad7e2df6ead84f3d7124c4f007474ed8b8b02835155399e920d",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/b0092e529a794782b1082e5a1c5aa286.json",
+      "sha256": "8ee25c8661722634721f5058692d1bbf9e216269a0bcd3f888c3d538b60f21dc",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/b239c3e9d8e8496682f15ffcfe75c334.json",
+      "sha256": "8d777bcd4446813afec77684b9891e02ff1b0f11b31f6bc19fa705452377ea1d",
+      "bytes": 373
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/b286acd1c6aa484e9366c7e384360889.json",
+      "sha256": "6c1641c83b120ba0a30f11a8f92a50ee2de628fdb65eb81b1b4dd2b8a50567db",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/b3c799f57b3148d9bab58b419630e638.json",
+      "sha256": "69ce86b2d850de0cb5b0b1de035e0d1ba4d2ba4acbfe3ebf27386d8bc1d65770",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/b5585ed6dbbc4c77a4a2ad3d753257d5.json",
+      "sha256": "1de2dbec94830e8e9ce4361378cd109f982fe10eb0acac501ead7b99a16a0aaa",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/b75d005ae79c4d9ab1a9b55a4eedc437.json",
+      "sha256": "f46fcc7fc1fcde9b6cb30459aed12ddf23c924920496639b0d0934efd6b6f369",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/bc16d7127173404c85308ab28e31dfcf.json",
+      "sha256": "d91508186bca5235709f225e5e4e4a26c3b074a966c8b2963ee73e72afa09e9e",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/c0ee7d3dc63f4d74b8866d185f5742db.json",
+      "sha256": "e9b8bfea264cfc5454169530cbdb33e721979ea911f97e039b46c232676dec9b",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/c81eee5c4bda4ed8ac626eced427e2e7.json",
+      "sha256": "153f9655622fafab52c9a74ad16308b605c6d0339936c4039e37953409c4c897",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ce8c9b2eb27a4530a53c834ffcec107e.json",
+      "sha256": "73f08fbc3a352ad9b6a57909d0f9b2c09724b88a96eb247053f26c7a9af465c4",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ce9ab306e0ed4285a16ca8e8867b2737.json",
+      "sha256": "e12f9ee219683057bc2e77bcb148beeab1ac47bc0758dc0baf1c090c2aa28e00",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/cfac65f34072470bb585e47fd9c518c9.json",
+      "sha256": "f6eaa72d130aef5b7187aed5d8623507a772cad34bfbfecd87ce4a1e81892b73",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/cfc2b9f6d53a48179ed5eb9ed0c980b9.json",
+      "sha256": "933b6907a83468787bec3cf19ead0f733293f97a5b4c790ad643e2784bcb7860",
+      "bytes": 373
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/d30b79f5ab244dc886ca34e5e778f40c.json",
+      "sha256": "303d15e697267e839ca3ef5848a23819ced46fc3fa093597630300ff4b9f30e7",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/d5e6b395715f49a2888baf6de2bfeb53.json",
+      "sha256": "09092246d0486f4ed4c94dc13400a2e73f23ab0049b30bdde40bcc900bd47deb",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/d7fec7ddbe2345b3936ae98e8d66c791.json",
+      "sha256": "95b6bb7459b340328be4ad9af9d014d73c9f0cfd489223e39576d915041595ab",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/dc2578f9e1884b42908b61e266e65a4d.json",
+      "sha256": "88c97ca8ac9a7def0cd0482479630e0cbea96c43144cebeb85b51845ac3908df",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/e0ca5de5e52243be9cb7b96a4f4350bb.json",
+      "sha256": "deac565bcc17c4f79dca0658c6fb1911f60a59040ec060e30d617ff414a30f33",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/e13f4977529449a893c1f8cb872e689e.json",
+      "sha256": "825cf9691a1ff6cfc25e8e79e305cf2aa4f6d1cca48d460d41750ff8b75d6239",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/e2aefc50e57f4371aee4902c634b3204.json",
+      "sha256": "2f7ad1c21770ac0e9afc7460d3a16e0548b8d9143acfef2632908e8ebc1a8fcc",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/e4c7c63e02804ec7a87ccbdea4816b39.json",
+      "sha256": "2b4cfbdae65b7b8af168951cea78dd0a6ad5a669f5ec12cdf8248b8a18fbd6d5",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/e546ea90211d4aadbc971ffbff6dbe19.json",
+      "sha256": "1245e62a13da1b41ee3570ec2b6ab0f155f93c072d758d6b0e1cabbd13acfd40",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ea5403bcaef045c1a33422ab48d98067.json",
+      "sha256": "d1cbef831dd4f363ce552deeeb27823e40baaedf5ea4652a74d3bbe842579061",
+      "bytes": 373
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ea8ee7aa9f884b39a720735eea5e47ef.json",
+      "sha256": "c819f286c077ec8380cce79073920037dfd4e7bca4716422976c6ec8666a6fa2",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ea98f048207c469982485b21aae8c51f.json",
+      "sha256": "dacb4f7c3b026fc5fe1949025ca4d1bdafb391c25038848c8c632378598ee3b7",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ed2bf1f28f2a44fb91a4896a5f1e4873.json",
+      "sha256": "325c40007f4bfbe549cc80f09129e4835d496911935ff506bc8f83c6be52766f",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ed89e5bc34134664af1100de42a5d248.json",
+      "sha256": "53b8914e22ca4ab47314e124a272a4ef7e81ffb51a535c485148ab6a70a039ed",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ee5ea1a070254cd28a504e7e7eff0ea5.json",
+      "sha256": "b4e01257bf15f3ce088e2a711837264e44a69f061573390853d3e7cb6f766590",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/f442c225a0f84eb1859bef9c1cfe7187.json",
+      "sha256": "8c8f27ba2f25c02b4206d59133b56943df0886bd6b772dc263d01f753810e826",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/f7594841281c4199945d0ca8a575127f.json",
+      "sha256": "d76cab22144625034ef97ac459bc08b5b70e0e97e47460f3156a6cf845594148",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/f82f6669b450431884957d648d1c7190.json",
+      "sha256": "5b09c9d864847b4ba5910b5fb5d46dcee7c682ccbf9acd0c4b9bfbe269d4db3e",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/f85fef4f8ec14166acb1311e0b37a92b.json",
+      "sha256": "c9ca8016de9b8b0cc4a555fb2b5d8626b2cedf79f605024821c212a15045e7e7",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/f893c9b3993143f0bd738aec4c8e5676.json",
+      "sha256": "ca25728e4b444ab94d3130d304a2218e6adc9f52c9e5dc354dc30969438b0496",
+      "bytes": 374
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/fb2c9b51486f4df6b16e1fc71c9bf666.json",
+      "sha256": "b01a487914a40dbcfa1ed2d06a637d34d2d915cef503516626ad23be10fb96b7",
+      "bytes": 371
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/fd1e112e967e4e38b52f4b6cc50a4971.json",
+      "sha256": "8881b1d611b3e2c80a05de66e4fcbd7ae4e61f8007eaeb7f849b502001ef1ed7",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/febcbd3e8633416abb047e5882c07c32.json",
+      "sha256": "027b17616f7a2041842cdc98a75356b68633d6e4f8e1c4b48952f64e642f7d10",
+      "bytes": 372
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ff6614315f104cf082ac9500a915de7d.json",
+      "sha256": "0bd7db259074d15a216f310f027d41483c26facb2fc84cad40b497e839e2bc3d",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/reservations/ffde09350718484dbade2f36f3ff5401.json",
+      "sha256": "117348f7940c1f4d1cd5c476f9a460cdab571f7b8df39a0db0ef9161010931b6",
+      "bytes": 375
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/run.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/full_manifest.json",
+      "sha256": "ad8f5d130351a1027ea9b3929bec357d3c2fd7ba6f5810993bcbaa0b901b4116",
+      "bytes": 6720284
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/plan.json",
+      "sha256": "231b6daffb671511cd3adc22847d9d72c26a37db14b5c6793520a6f987001b13",
+      "bytes": 908861
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-launch.ANYnNw15.log",
+      "sha256": "8e78c1ef15e48fefb13d3b848e6a687f533006eb4408657cd757bf56b19f648d",
+      "bytes": 66213
+    }
+  ],
+  "implementation_hashes": {
+    "offline_evaluation/batch_v1/__init__.py": "02a16dbfa6bba245d0fbfbc1a8eee2a303c1b4e978bf4e39ee2e98b11d3c2867",
+    "offline_evaluation/batch_v1/cli.py": "8776654c047a3cd0dc49b05e22ea48707077297ef0451e9ee0b00aaa0ccb8bd1",
+    "offline_evaluation/batch_v1/inputs.py": "6f86e5b236415fa13991ba8775882c247b3d072e480f3506a85b41299b2834c7",
+    "offline_evaluation/batch_v1/launch.py": "71f0e50ab409b0189354c3638eb3d221cb58f4cbf8f75294e7210be07fb9f269",
+    "offline_evaluation/batch_v1/plan.py": "82f0382a471d19e2035b5f24bfa9e9d908e63ca610dccaf2223f761ad851c4a2",
+    "offline_evaluation/batch_v1/runner.py": "f6caa6c4b9f04f3725e49e85f7a2fc1348aad94a66f43643fb8e690ab39920c2",
+    "offline_evaluation/resmoke_v2/__init__.py": "69557615b182de06ea05322b01ac81af2ef04e78c5b1c05bd63bdae2518d6793",
+    "offline_evaluation/resmoke_v2/adapter.py": "b0845f0e66a297779fa8456ea71e0780a6760a78be9d0587afec53bdcd3ce646",
+    "offline_evaluation/resmoke_v2/cli.py": "9236415d1016234b4fe1f1f7b8ccdbf7a35bf814422d829a5eccb24a07db52e2",
+    "offline_evaluation/resmoke_v2/cuboid_cpu.py": "66a95c66f34aea8af67e999c8f8c99e2265d9e0c8c209cb7d6dce185af9ef9d6",
+    "offline_evaluation/resmoke_v2/cuboids.py": "ded178ab7c4410b0e0a795963f97ef034973c5e2460f69fccebdc8867bba389c",
+    "offline_evaluation/resmoke_v2/launch.py": "53aa8d1f4385814c9cce6cdfe0ea9dfb8dc79e6810606148a098a829a074138b",
+    "offline_evaluation/resmoke_v2/plan.py": "c7c8e1aa5d00bfc6e4aaffc46ee13ae7341e1a14ecb9fd53ada84a9a452341af",
+    "offline_evaluation/resmoke_v2/runner.py": "ff142bae5a81341d2951b70ec24ec0bf3e2777cc0851bde4b2ff006fbedf3a4a",
+    "offline_evaluation/resmoke_v2/schema.py": "9aed50f05abf4cd4b606aa8cad365c2a8edf645a9409d9df41f0988d86356d79",
+    "offline_evaluation/server_v2/alignment.py": "d64e062fd9ad7ad73cc8a7a3e2a5355cdd0a1c17766876bffd09cb85b02ee446",
+    "offline_evaluation/server_v2/analysis_v4.py": "33b8de23faaa73d884ffa9b88f040ed40eb83383e60f1e42fa3866ef14d553fc",
+    "offline_evaluation/server_v2/checkpoint.py": "eacca01bc2d3ef1e11a562f6aad11189cf9d6ee43eddc2ed911e3129c9f383b5",
+    "offline_evaluation/server_v2/cohort_v4.py": "45f9ed256938f0e9df8ffe0cb88ae81fdcfedf80354da91c6cd4eb0a1d930e88",
+    "offline_evaluation/server_v2/core.py": "3c240becec802957a52e9f23c8d494644cc59fa86498b60527e132ff1a40c268",
+    "offline_evaluation/server_v2/data.py": "fd3cb451f27843bc246e865a26cf53ba77d08f587aac4287956389220c7a4c6f",
+    "offline_evaluation/server_v2/generation.py": "42303106e65c2f7dfc9e9c34c85404f4df09b0953659c8d224e351fcb35cc381",
+    "offline_evaluation/server_v2/geometry_data.py": "e40fef825a68ee84f995dd86f4382a73d8c181658860109892c4bc7df670d7c7",
+    "offline_evaluation/server_v2/io_utils.py": "606f86a801e1741cbe4c7f87cb80fa8c177b4b8d31e9d1b3e8141d28708d9a95",
+    "offline_evaluation/server_v2/oracle.py": "459b7448b38a990bd23595d2b372e2c29593328aa82ced960de439ab47fd690c",
+    "offline_evaluation/server_v2/providers.py": "09096fb7b10a1cb0c84ff0aebf5baf5c335db0ca2b5e0f8f97b2aed57fe07ad8",
+    "offline_evaluation/server_v2/shared_budget.py": "7284172f7293953878cc67eee2d1220cebd7bf19fa4985b8fdcffd591642afd1",
+    "offline_evaluation/server_v2/smoke.py": "faae3546d66643fc0f2470954780e8e3953de7c93b96983f740a33424c3b930f",
+    "offline_evaluation/server_v2/statistics.py": "e139b9b40a7267d7588deebfcb3eb03199e48be986e522e890d756e1d4bd6343"
+  },
+  "head": "d7b8f95d9189e1fdde854d41ee10eec8617346b0"
+}

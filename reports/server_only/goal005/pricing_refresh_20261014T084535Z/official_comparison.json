@@ -1,0 +1,147 @@
+{
+  "verification_at_utc": "2026-10-14T08:48:58Z",
+  "source_acquisition": {
+    "started_at_utc": "2026-10-14T08:45:35Z",
+    "completed_at_utc": "2026-10-14T08:48:58Z",
+    "precision": "Window brackets actual web search/open/find calls; completion timestamp from clock tool; individual page fetch instants not separately measured"
+  },
+  "factual_findings": [
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+      "findings": {
+        "model": "gpt-5-mini",
+        "accepted_snapshot": "gpt-5-mini-2025-08-07",
+        "input_usd_per_million": 0.25,
+        "output_usd_per_million": 2.0,
+        "context_window_tokens": 400000,
+        "model_max_output_tokens": 128000,
+        "structured_outputs_supported": true,
+        "status": "Deprecated"
+      },
+      "sections": [
+        "Pricing",
+        "Features",
+        "Snapshots"
+      ]
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+      "findings": {
+        "route": "Responses text.format",
+        "type": "json_schema",
+        "strict": true,
+        "schema_supported": true
+      },
+      "sections": [
+        "How to use Structured Outputs with text.format"
+      ]
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/reasoning",
+      "findings": {
+        "reasoning_billed_as_output": true,
+        "max_output_tokens_includes_reasoning_visible_and_nonvisible_formatting": true
+      },
+      "sections": [
+        "How reasoning works",
+        "Controlling costs"
+      ]
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
+      "findings": {
+        "model": "claude-haiku-4-5-20251001",
+        "input_usd_per_million": 1.0,
+        "output_usd_per_million": 5.0,
+        "context_window_tokens": 200000,
+        "model_max_output_tokens": 64000,
+        "status": "Legacy, still available"
+      },
+      "sections": [
+        "Specifications",
+        "Pricing",
+        "Capabilities"
+      ]
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "findings": {
+        "model": "Claude Haiku 4.5",
+        "standard_first_party_input_usd_per_million": 1.0,
+        "standard_first_party_output_usd_per_million": 5.0,
+        "first_party_global_default": true,
+        "discounted_batch_rates_not_used": true
+      },
+      "sections": [
+        "Model pricing",
+        "Cloud platform pricing"
+      ]
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+      "findings": {
+        "haiku_4_5_supported": true,
+        "route": "Messages output_config.format",
+        "type": "json_schema",
+        "additional_format_system_prompt_billable": true,
+        "numeric_overhead_ceiling_not_documented": true
+      },
+      "sections": [
+        "How it works",
+        "Using a raw JSON schema",
+        "Prompt modification and token costs",
+        "Compatibility"
+      ]
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/deprecations",
+      "findings": {
+        "model": "gpt-5-mini-2025-08-07",
+        "status": "Deprecated, shutdown date still in future at verification",
+        "announced_shutdown_date": "2026-12-11"
+      },
+      "sections": [
+        "2026-06-11: GPT-5 and o3 model deprecations"
+      ]
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+      "findings": {
+        "model": "claude-haiku-4-5-20251001",
+        "status": "Active",
+        "deprecation_date": null,
+        "earliest_retirement_not_before": "2026-10-15",
+        "this_is_not_a_scheduled_retirement_date": true
+      },
+      "sections": [
+        "Model status"
+      ]
+    }
+  ],
+  "provider_record_differences": {
+    "openai": {
+      "verified_on": {
+        "before": "2026-10-13",
+        "after": "2026-10-14"
+      },
+      "documentation_status": {
+        "before": "Deprecated",
+        "after": "Deprecated; documented snapshot shutdown 2026-12-11, after verification date; no substitution"
+      }
+    },
+    "anthropic": {
+      "verified_on": {
+        "before": "2026-10-13",
+        "after": "2026-10-14"
+      },
+      "documentation_status": {
+        "before": "Legacy, documented available; no model substitution",
+        "after": "Legacy model page still available; lifecycle table Active, retirement not sooner than 2026-10-15 (not an announced shutdown date); no substitution"
+      }
+    }
+  },
+  "immutable_pricing_model_limit_fields_equal": true,
+  "original_record_preserved": true,
+  "research_api_additional_sends": 0,
+  "account_api_availability": "NOT_PROBED"
+}

@@ -1,0 +1,103 @@
+{
+  "status": "SAME_CANONICAL_PLAN_READY_TO_RESUME_NO_GENERATION_PERFORMED",
+  "audited_at_utc": "2026-10-14T08:52:27.443865Z",
+  "official_verification_at_utc": "2026-10-14T08:48:58Z",
+  "canonical_plan": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/plan.json",
+  "scope": {
+    "fixed_buildings": 10,
+    "max_additional_calls": 160,
+    "additional_retries": 0,
+    "output_cap": 32768,
+    "cumulative_cost_limit_usd": 10,
+    "remaining800_authorized": false
+  },
+  "observed_batch_calls": 143,
+  "observed_batch_success": 139,
+  "observed_batch_failures": 4,
+  "unattempted": 17,
+  "last_attempt": {
+    "attempt_id": "36bf8e9fffae4dc7b27756bfb6bc6031",
+    "schedule_index": 142,
+    "provider": "openai",
+    "started_at_utc": "2026-10-13T23:58:00.973612Z",
+    "finished_at_utc": "2026-10-14T00:00:48.713661Z",
+    "status": "success"
+  },
+  "existing_approval_saved": true,
+  "existing_approval_at_utc": "2026-10-13T22:11:20.929000Z",
+  "pending_reservations": 0,
+  "unknown_usage_attempts": 0,
+  "partial_activation": false,
+  "halt_reason": null,
+  "usage": {
+    "prior": {
+      "calls": 30,
+      "cost_usd_upper_bound": 0.68679325,
+      "retries": 4,
+      "tokens": 354088,
+      "unknown_usage_attempts": 0
+    },
+    "new": {
+      "calls": 143,
+      "retries": 0,
+      "tokens": 1312860,
+      "cost_usd_upper_bound": 2.95260025,
+      "unknown_usage_attempts": 0
+    },
+    "combined": {
+      "calls": 173,
+      "retries": 4,
+      "tokens": 1666948,
+      "cost_usd_upper_bound": 3.6393935
+    }
+  },
+  "this_task_research_api_additional_sends": 0,
+  "real_launcher_called": false,
+  "real_confirmation_entered": false,
+  "freshness_check": "planning.current_pricing(plan[\"identity\"], fresh=True): PASS",
+  "all_existing_validators": {
+    "load_plan": "PASS",
+    "verify_parent": "PASS",
+    "load_enabled": "PASS",
+    "seconds": 15.603761136997491
+  },
+  "existing_files_sha_unchanged": 642,
+  "critical_sha256": {
+    "approval.json": "f482512aae4cfb882e27b3b51b46172a2a3dc3e6cda7104b33123491e9e903ef",
+    "ledger.json": "fe009bee0539feb2651ee1bfbb226e44dc5f9c862ef639f059e627ba5e147126",
+    "plan.json": "231b6daffb671511cd3adc22847d9d72c26a37db14b5c6793520a6f987001b13"
+  },
+  "revision_path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/pricing-revisions/0001.json",
+  "revision_sha256": "d84c6a385efc3785399dc088d8cc41c8de56a8465353008079381baf8c57a5a2",
+  "model_price_limit_changes": false,
+  "new_plan_budget_ledger_or_implementation_changes": false,
+  "full_tests_or_metrics_replay": "NOT_RUN_NOT_REQUIRED",
+  "next_unattempted": {
+    "schedule_index": 143,
+    "scene_id": "buildings_100_v4_building_055",
+    "provider": "anthropic",
+    "model": "claude-haiku-4-5-20251001",
+    "condition": "E",
+    "description_model": null,
+    "input_id": "7edf9808c4dbb794e36bfdf830b5819f0b60d415230b98bab32296b6a007c370",
+    "reservation_tokens": 232768,
+    "reservation_cost_usd": 0.36384,
+    "can_reserve": true
+  },
+  "resume": "Same original absolute launcher command; existing approval reused; needs both provider keys in user terminal; resumes schedule_index143 (144th input)",
+  "resume_command": "/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/batch_v1/launch.py --plan /root/minecraft-runs/goal005-batch1-20261013T213420Z/plan.json",
+  "remaining_observed_stop_factors": [],
+  "account_and_key_availability": "NOT_PROBED; no guarantee about future provider responses",
+  "utc_rollover": "Freshness is checked for every future request; another UTC day needs another actual official verification",
+  "stop_interpretation": "Last settled response crossed UTC midnight from 2026-10-13 to2026-10-14; next request checks same-day pricing before any reservation. Log error and saved entries are consistent with that stop; initial preview zero is not post-stop state.",
+  "requirements_evidence": {
+    "1_state_and_preservation": "state_before.json and state_after.json: existing read-only locks, process metadata, validators, inventory, accounting",
+    "2_actual_official_reverification": "official_pricing.json and official_comparison.json:8 official pages, actual retrieval window and factual findings; account APIs not called",
+    "3_existing_refresh_cli": "refresh_execution.json and pricing_revision_0001.json: exact absolute NEW_RECORD and successful exit0",
+    "4_same_day_preflight_and_invariance": "state_after.json: fresh=True PASS, same642 hashes, parent and ledger PASS, next reservation within original budget",
+    "git_save": "Only seven new evidence JSON files under this unique report directory; dedicated branch commit/push with remote SHA verified after commit"
+  },
+  "independent_readonly_review": "No discrepancy in JSON differences,8 source records,baseline counts or acquisition timestamp precision",
+  "start_head": "d7b8f95d9189e1fdde854d41ee10eec8617346b0",
+  "branch": "research/server-only-20261013"
+}
