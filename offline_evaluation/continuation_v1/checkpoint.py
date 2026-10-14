@@ -17,6 +17,7 @@ from urllib.parse import quote
 import platform
 import re
 import shutil
+import shlex
 import subprocess
 import sys
 import tarfile
@@ -25,7 +26,7 @@ import uuid
 from ..server_v2.checkpoint import PATTERNS, safe_relative, scan_file, restore_archive
 from ..server_v2.generation import GenerationError, digest, object_hash, read_json, write_json, utc_now, json_bytes
 from ..server_v2.data import sha256_file
-from ..server_v2.io_utils import writable
+from ..server_v2.io_utils import ROOT, writable
 
 REPOSITORY = 'catlover-bot/Minecraft-view-dataset'
 
@@ -112,6 +113,12 @@ def _archive(path, entries, metadata, raw_scopes):
     return manifest
 
 
+def retry_command(destination):
+    """Executable from any shell cwd even when no unqualified python exists."""
+    return shlex.join([sys.executable, '-B', str(ROOT / 'offline_evaluation/continuation_v1/manage.py'),
+                       'checkpoint-upload', '--checkpoint', str(destination)])
+
+
 def safe_checkpoint(plan, directory, ledger, reason, *, destination=None, github=False):
     """Caller holds parent/run/authority locks and has no active HTTP request."""
     from . import runner
@@ -188,7 +195,7 @@ def safe_checkpoint(plan, directory, ledger, reason, *, destination=None, github
                'archive': archive.name, 'assets': [{'name': n, 'sha256': sha256_file(destination / n),
                                                    'bytes': (destination / n).stat().st_size} for n in assets],
                'status': 'LOCAL_VERIFIED', 'originals_unchanged': True,
-               'upload_retry_command': f'python -B -m offline_evaluation.continuation_v1.cli checkpoint-upload --checkpoint {destination}'}
+               'upload_retry_command': retry_command(destination)}
     write_json(destination / 'checkpoint.json', package); scan_file(destination / 'checkpoint.json')
     if github:
         try:

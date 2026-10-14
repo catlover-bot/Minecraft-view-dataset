@@ -25,6 +25,7 @@ PARENT_PROOF_SHA256 = 'a378835df416a8cd52048ecb114719d5ab23c143126ee5fe0b2748ada
 PROTOCOL_ID = 'goal006_fixed_evaluation_continuation800_v1'
 SCOPE = 'fixed_evaluation60_full_schedule_suffix160_to959_only_800_sends_no_retries'
 AUTHORITY_PATH = Path('/root/minecraft-runs/.continuation-v1-' + PARENT_IDENTITY + '-remaining800.json')
+CANONICAL_ROOT = Path('/root/minecraft-runs')
 safe_path = batch_plan.safe_path
 validate_pricing = batch_plan.validate_pricing
 _pricing_records = batch_plan._pricing_records
@@ -129,7 +130,7 @@ def budgets(pricing):
 
 def prepare(destination, *, pricing_file, commit, checkpoint_sources):
     destination = safe_path(destination)
-    if destination.exists() or not destination.is_relative_to(Path('/root/minecraft-runs')):
+    if destination.exists() or not destination.is_relative_to(CANONICAL_ROOT):
         raise GenerationError('new_unique_canonical_preparation_directory_required')
     if not isinstance(commit, str) or not re.fullmatch('[0-9a-f]{40}', commit):
         raise GenerationError('explicit_forty_digit_commit_required')
@@ -175,7 +176,7 @@ def load_plan(path):
     path = safe_path(path)
     if path.is_dir():
         path /= 'plan.json'
-    if not path.is_relative_to(Path('/root/minecraft-runs')):
+    if not path.is_relative_to(CANONICAL_ROOT):
         raise GenerationError('canonical_production_plan_must_remain_in_minecraft_runs')
     plan = read_json(path)
     identity = plan['identity']
@@ -208,7 +209,7 @@ def load_plan(path):
         raise GenerationError('generation_semantics_mismatch')
     document = identity['pricing_document']
     if (sha256_file(safe_path(identity['pricing_source_file_path'])) != identity['pricing_source_file_sha256']
-            or read_json(identity['pricing_source_file_path']) != document
+            or read_json(safe_path(identity['pricing_source_file_path'])) != document
             or object_hash(document) != identity['pricing_document_hash']
             or _pricing_records(document) != identity['pricing']
             or identity['budgets'] != budgets(identity['pricing'])):
@@ -220,7 +221,7 @@ def load_plan(path):
             or parent.get('verification_proof_sha256') != PARENT_PROOF_SHA256):
         raise GenerationError('parent_scope_mismatch')
     if (sha256_file(safe_path(identity['checkpoint_sources_path'])) != identity['checkpoint_sources_sha256']
-            or read_json(identity['checkpoint_sources_path']) != identity['checkpoint_sources']):
+            or read_json(safe_path(identity['checkpoint_sources_path'])) != identity['checkpoint_sources']):
         raise GenerationError('checkpoint_source_reference_changed')
     current_pricing(identity)
     return plan

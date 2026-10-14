@@ -34,6 +34,8 @@ The absolute launcher, preview, status, evaluation, pricing-refresh, checkpoint-
 
 ## Validation and saved plan
 
-[Tests](test_summary.json): **220unique related cases PASS**, final0fail/error/skip (180existing,11diagnosis,29continuation). Initial failures and their targeted corrections are retained:40existing cases initially used a disallowed/tmp output location;1new case had a fixture-only str/Path mismatch. Only affected cases were rerun, plus3aggregate cases after an actual denominator-table change. The old6collection errors remain referenced in Goal003 evidence.
+[Tests](test_summary.json): **223unique related cases PASS**, final0fail/error/skip (180existing,11diagnosis,32continuation). Initial failures and their targeted corrections are retained:40existing cases initially used a disallowed/tmp output location;1new case had a fixture-only str/Path mismatch. Only affected cases were rerun, plus3aggregate cases after an actual denominator-table change. The old6collection errors remain referenced in Goal003 evidence.
 
 The next report records the actual disabled canonical plan, identity/SHA, preview and independent Draft archive after the bound code commit has been pushed. No enabled directory, authority or reservations are created by preparation. Restored copies cannot activate the paid scope.
+
+Actual preparation exposed four JSON string-path calls to a Path-only reader. The failed disabled plan and its SHA are preserved in [failed_preparation.json](failed_preparation.json); it was never enabled. Production prepare/load/status and disk-based aggregate regressions now pass after Path conversion. The successful canonical plan is created in a separate `-v2` directory; no previous plan is overwritten. The upload-only retry command also uses an absolute Python/CLI entry and is tested from `/tmp`.

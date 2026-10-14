@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/root/workspace/Minecraft-view-dataset/offline_evaluation/continuation_v1/cli.py", line 106, in main
+    result = planning.prepare(args.destination, pricing_file=args.pricing,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/workspace/Minecraft-view-dataset/offline_evaluation/continuation_v1/plan.py", line 171, in prepare
+    return load_plan(destination / 'plan.json')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/workspace/Minecraft-view-dataset/offline_evaluation/continuation_v1/plan.py", line 211, in load_plan
+    or read_json(identity['pricing_source_file_path']) != document
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/generation.py", line 91, in read_json
+    return json.loads(path.read_text("utf-8"))
+                      ^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'read_text'

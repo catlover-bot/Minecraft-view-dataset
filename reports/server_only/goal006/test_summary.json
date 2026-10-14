@@ -1,14 +1,14 @@
 {
-  "unique_tests": 220,
+  "unique_tests": 223,
   "latest_outcome_per_unique_case": {
-    "pass": 220,
+    "pass": 223,
     "fail": 0,
     "error": 0,
     "skip": 0
   },
   "existing_related_unique": 180,
   "new_diagnosis_unique": 11,
-  "new_continuation_unique": 29,
+  "new_continuation_unique": 32,
   "runs": [
     {
       "file": "existing_tests.junit.xml",
@@ -67,6 +67,38 @@
       "skipped": 0
     },
     {
+      "file": "continuation_loader_regression.junit.xml",
+      "cases": 1,
+      "seconds": 4.597,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "planning/retry_command_absolute_tests.junit.xml",
+      "cases": 1,
+      "seconds": 0.518,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "planning/retry_command_tests.junit.xml",
+      "cases": 1,
+      "seconds": 0.521,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "file": "planning/aggregate_path_tests.junit.xml",
+      "cases": 1,
+      "seconds": 0.556,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
       "file": "planning/bounded_IoU_tests.junit.xml",
       "cases": 3,
       "seconds": 1.193,
@@ -79,6 +111,7 @@
     "existing": "15 failures and25 setup errors from forbidden/tmp application output path;140passed. Only40affected reran underworktree andpassed.",
     "continuation": "1 fixture loader str/Path mismatch;10passed. Fixed fixture Path conversion; onlyfailedcase reran andpassed."
   },
+  "actual_preparation_bug": "Production JSON string paths passed to a Path-only loader; failed disabledplan preserved, plan+aggregate paths corrected with actual production-path fixture regressions.",
   "purposeful_regression_after_change": "3 aggregate cases rerun after adding bounded-IoU denominator tables; not counted twice",
   "legacy_collection_errors": "Unchanged6 old errors retained at reports/server_only/goal003/legacy_suite_reference.json",
   "network_blocked": true,

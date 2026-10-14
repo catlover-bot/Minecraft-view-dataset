@@ -195,7 +195,7 @@ def _joined_rows(plan, evaluation, ledger, semantic):
 
 def aggregate_verified(plan, parent_plan, parent_eval, continuation_eval, parent_ledger, ledger, manifest=None):
     """Pure join of already artifact-validated inputs; does no metric replay."""
-    manifest = read_json(plan['identity']['manifest_path']) if manifest is None else manifest
+    manifest = read_json(Path(plan['identity']['manifest_path'])) if manifest is None else manifest
     mi = manifest['identity']; full = mi['full_schedule']; semantic = mi['protocol_id']
     if manifest['identity_hash'] != object_hash(mi) or len(full) != 960 or len(mi['evaluation_scene_ids']) != 60:
         raise GenerationError('aggregate_requires_original_fixed960_manifest')
@@ -270,7 +270,7 @@ def collect(plan_path, destination):
     directory = runner._checked_path(identity['enabled_directory'])
     # Historical parent verification uses immutable hashes, never UTC freshness.
     with runner._parent_locked(identity):
-        parent_plan = read_json(identity['parent']['plan_path'])
+        parent_plan = read_json(Path(identity['parent']['plan_path']))
         parent_dir = Path(identity['parent']['enabled_directory'])
         def join(ledger):
             return aggregate_verified(plan, parent_plan, read_json(parent_dir / 'evaluation.json'),

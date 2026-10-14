@@ -1,0 +1,26 @@
+{
+  "audited_at_utc": "2026-10-14T10:39:50.981807+00:00",
+  "scope": "All generation.read_json calls in new continuation_v1 modules",
+  "fixed_string_descriptor_readers": [
+    "plan.load_plan:pricing_source_file_path via safe_path",
+    "plan.load_plan:checkpoint_sources_path via safe_path",
+    "aggregate.aggregate_verified:manifest_path via Path",
+    "aggregate.collect:parent.plan_path via Path"
+  ],
+  "remaining_readers": "All arguments are Path, checked_path return, explicit Path conversion, or a variable already constructed as Path; runner.read_json additionally reuses original checked-path wrapper",
+  "production_loader_regression": {
+    "test": "test_real_production_loader_accepts_string_descriptors_and_keeps_plan_disabled",
+    "real_load_plan_used": true,
+    "real_prepare_status_used": true,
+    "fixture_only_mutation": "canonical root and authority redirected to workspace fixture; source files copied within fixture; actual parent remains read-only",
+    "result": "PASS",
+    "report": "continuation_loader_regression.json"
+  },
+  "failed_disabled_plan_preserved": {
+    "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z/plan.json",
+    "sha256": "6c9dfdfe5aba0cdb6379e26b257c0bb6a32ba88f5af3427873307158b9eb2437",
+    "enabled_exists": false
+  },
+  "next_canonical_plan": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json",
+  "research_api_additional_sends": 0
+}

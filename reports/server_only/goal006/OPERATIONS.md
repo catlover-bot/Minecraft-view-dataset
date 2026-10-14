@@ -4,7 +4,7 @@
 
 Canonical plan（作成・検査後の実identity/SHAは準備報告で確認）：
 
-`/root/minecraft-runs/goal006-remaining800-20261014T101309Z/plan.json`
+`/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json`
 
 初回起動は利用者が両providerキーを設定した本物の端末で行う。実行範囲は新800送信・retry0、旧消費を含め累積990送信・retry4・USD30、output32768、concurrency1である。旧消費は190送信・1,828,481 tokens・保守的費用計算USD4.048922を一度だけ引き継ぐ。USD30は追加30ドルでも完了予算の保証でもない。サーバー料金は別である。
 
@@ -13,7 +13,7 @@ Canonical plan（作成・検査後の実identity/SHAは準備報告で確認）
 推奨する開始コマンドは次の1本。初回はplan identityの先頭12文字を含む完全一致の確認文字列を実TTYで入力する。Codexは入力しない。既に承認された同じplanの再開では、既存approvalと同じledgerを再利用する。
 
 ```bash
-/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/continuation_v1/launch.py --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z/plan.json --github-checkpoints
+/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/continuation_v1/launch.py --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json --github-checkpoints
 ```
 
 確認文字列の形式は `APPROVE GOAL006 <plan identityの先頭12文字> 800 SENDS 0 RETRIES USD30 TOTAL`。実際の値は作成後の準備報告およびランチャー表示を使用する。この提案への承認は保存されていない。
@@ -28,11 +28,11 @@ Canonical plan（作成・検査後の実identity/SHAは準備報告で確認）
 
 ```bash
 cd /root/workspace/Minecraft-view-dataset
-.venv-server-v2-20261013/bin/python -B -m offline_evaluation.continuation_v1.cli status --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z/plan.json
+.venv-server-v2-20261013/bin/python -B -m offline_evaluation.continuation_v1.cli status --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json
 ```
 
 ```bash
-.venv-server-v2-20261013/bin/python -B -m offline_evaluation.continuation_v1.cli evaluate --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z/plan.json
+.venv-server-v2-20261013/bin/python -B -m offline_evaluation.continuation_v1.cli evaluate --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json
 ```
 
 未承認のevaluateはenabledを作らず停止する。承認後は新しく完了した継続出力だけをCPU評価し、既存の評価行をplan・attempt・GTのhashで確認して再利用する。statusは未試行をNOT_RUNとして保持する。通信不明や未精算予約のhaltを削除したり、ledgerを再初期化したりしない。
@@ -44,7 +44,7 @@ cd /root/workspace/Minecraft-view-dataset
 以下の `NEW_RECORD` は、実際の取得証跡を含む新JSONの絶対パスを利用者が設定するための変数である。
 
 ```bash
-.venv-server-v2-20261013/bin/python -B -m offline_evaluation.continuation_v1.cli refresh-pricing --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z/plan.json --pricing "$NEW_RECORD"
+.venv-server-v2-20261013/bin/python -B -m offline_evaluation.continuation_v1.cli refresh-pricing --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json --pricing "$NEW_RECORD"
 ```
 
 正規CLIはhash付き `pricing-revisions/0001.json` 以降へ追記し、元plan・approval・ledgerを変更しない。料金、context/output上限、モデルID許可、課金条件が変われば停止する。自動fallback、cap拡張、日付偽装、検証の無効化は行わない。確認後は上の同じランチャーで未試行分だけを再開する。
@@ -56,13 +56,13 @@ cd /root/workspace/Minecraft-view-dataset
 保存に失敗しても生成結果・usage・予約はディスクに保持し、生成失敗へ書き換えない。境界で安全に停止する。表示された実際の保存済みcheckpointパスを `SAVED_CHECKPOINT` に指定し、保存だけを再試行する。
 
 ```bash
-.venv-server-v2-20261013/bin/python -B -m offline_evaluation.continuation_v1.cli checkpoint-upload --checkpoint "$SAVED_CHECKPOINT"
+/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/continuation_v1/manage.py checkpoint-upload --checkpoint "$SAVED_CHECKPOINT"
 ```
 
 このコマンドは生成処理や承認を呼ばない。既存assetを上書きせず、同じpackageの保存を再確認・再開する。別途、新しいpoint-in-time保存を明示的に作成する場合は、一意で未作成の保存先を `NEW_CHECKPOINT` に指定する。
 
 ```bash
-.venv-server-v2-20261013/bin/python -B -m offline_evaluation.continuation_v1.cli checkpoint --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z/plan.json --destination "$NEW_CHECKPOINT" --github
+.venv-server-v2-20261013/bin/python -B -m offline_evaluation.continuation_v1.cli checkpoint --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json --destination "$NEW_CHECKPOINT" --github
 ```
 
 コピーは復元・検証用であり、有料再有効化には使用できない。実行はcanonical planと同じledgerだけで継続する。
@@ -72,7 +72,7 @@ cd /root/workspace/Minecraft-view-dataset
 一意で未作成の出力先を `NEW_AGGREGATE` に指定する。
 
 ```bash
-.venv-server-v2-20261013/bin/python -B -m offline_evaluation.continuation_v1.cli aggregate --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z/plan.json --destination "$NEW_AGGREGATE"
+.venv-server-v2-20261013/bin/python -B -m offline_evaluation.continuation_v1.cli aggregate --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json --destination "$NEW_AGGREGATE"
 ```
 
 parent160と継続800を元manifestへ照合し、semantic protocolと各runのprotocolを区別する。未試行を生成失敗0に変換しない。全60建築の結果が揃うまでは記述統計だけであり、現在の途中結果から対象や分析familyを変更しない。完了後は凍結済みanalysis_v4のbuilding単位paired集計・bootstrap・sign-flip・Holmの3 families（8/4/8比較）を使う。このGoalの最終推論検証にはfixtureだけを使用し、未実行800結果を作らない。

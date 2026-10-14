@@ -290,3 +290,38 @@ def test_saved_stage_and_completed_outcome_cannot_override_ledger(joined_fixture
     f['evaluation']['rows'][0]['completed_request_outcome'] = False
     with pytest.raises(GenerationError, match='completed_response'):
         joined(f)
+
+
+def test_disabled_collect_loads_string_manifest_and_parent_paths(joined_fixture, tmp_path, monkeypatch):
+    """Exercise production JSON path types instead of supplying in-memory manifest."""
+    from contextlib import nullcontext
+    from offline_evaluation.continuation_v1 import plan as planning, runner
+    f = joined_fixture
+    manifest_path = tmp_path / 'manifest.json'; write_json(manifest_path, f['manifest'])
+    parent_dir = tmp_path / 'parent'; parent_dir.mkdir()
+    parent_path = parent_dir / 'plan.json'
+    f['parent']['identity']['enabled_directory'] = str(parent_dir)
+    f['parent']['identity_hash'] = object_hash(f['parent']['identity'])
+    f['pe']['plan_identity_hash'] = f['parent']['identity_hash']
+    write_json(parent_path, f['parent']); write_json(parent_dir / 'evaluation.json', f['pe'])
+    write_json(parent_dir / 'ledger.json', f['pl'])
+    enabled = tmp_path / 'not-enabled'
+    f['plan']['identity'].update(manifest_path=str(manifest_path), enabled_directory=str(enabled))
+    f['plan']['identity']['parent'].update(plan_path=str(parent_path), enabled_directory=str(parent_dir),
+                                           plan_identity_hash=f['parent']['identity_hash'])
+    f['plan']['identity_hash'] = object_hash(f['plan']['identity'])
+    monkeypatch.setattr(planning, 'load_plan', lambda _: f['plan'])
+    monkeypatch.setattr(runner, '_parent_locked', lambda _: nullcontext())
+    output = tmp_path / 'aggregate'
+    result = aggregate.collect(tmp_path / 'plan.json', output)
+    assert result['attempted_inputs'] == 160 and result['not_run_inputs'] == 800
+    assert result['families'] == [] and not enabled.exists()
+    assert read_json(output / 'aggregate.json')['manifest_identity_hash'] == f['manifest']['identity_hash']
+
+
+def test_retry_command_uses_actual_python_and_repository_from_any_cwd(tmp_path):
+    result = subprocess.run(checkpoint.retry_command(tmp_path / 'missing checkpoint'), shell=True,
+                            cwd='/tmp', capture_output=True, text=True)
+    assert result.returncode == 5
+    assert 'STOPPED:' in result.stderr and 'command not found' not in result.stderr
+    assert 'No module named' not in result.stderr
