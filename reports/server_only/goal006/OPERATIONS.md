@@ -2,7 +2,7 @@
 
 このGoalでは研究APIの追加送信を行っていない。下記の計画は、完了済み第1バッチ160入力と同じ固定実験の残50建築・800入力だけを扱う。準備完了は、全60建築・960入力の実行完了を意味しない。
 
-Canonical plan（作成・検査後の実identity/SHAは準備報告で確認）：
+Canonical plan（作成・preview・未承認状態の確認済み）：
 
 `/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json`
 
@@ -16,7 +16,9 @@ Canonical plan（作成・検査後の実identity/SHAは準備報告で確認）
 /root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/continuation_v1/launch.py --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json --github-checkpoints
 ```
 
-確認文字列の形式は `APPROVE GOAL006 <plan identityの先頭12文字> 800 SENDS 0 RETRIES USD30 TOTAL`。実際の値は作成後の準備報告およびランチャー表示を使用する。この提案への承認は保存されていない。
+確認文字列は `APPROVE GOAL006 db5533bffb58 800 SENDS 0 RETRIES USD30 TOTAL`。この提案への承認は保存されていない。
+
+Plan SHA256: `db78ec8e59b5921e248af42a7c8390647bd549c09c11e055c144729a247a2dce`。Identity: `db5533bffb583d0b1efcbcdb7c1563edf2ac87606334e6ce6cd766c650075843`。元の`...101309Z/plan.json`は読込み不具合発見時の未承認証跡として保全されており、開始対象は上記`-v2`のみである。
 
 同じコマンドの末尾に `--preview` を付けると、キーや承認入力なしで表示を確認できる。previewはenabled・authority・reservationを作らない。`--github-checkpoints` は将来の区間保存をGitHub Draft Releaseまで行う指定であり、preview中にuploadは行わない。
 
