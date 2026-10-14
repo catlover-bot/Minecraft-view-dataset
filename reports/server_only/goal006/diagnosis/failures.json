@@ -1,0 +1,223 @@
+{
+  "measurement_bug_found": false,
+  "rows": [
+    {
+      "attempt_id": "b75d005ae79c4d9ab1a9b55a4eedc437",
+      "charged_input_tokens": 20170,
+      "charged_output_tokens": 32768,
+      "condition": "E",
+      "description_model": null,
+      "failure_kind": "truncation",
+      "failure_stage": null,
+      "input_id": "863ca9a4eefb8dfa3cab7c5136df0e06cb13b72ca75cdb5bd3b5a1de4e082ad4",
+      "interpretation": "Truncation is established by the actual provider finish reason. The reference is not a shortest representation; its local token count does not itself establish output failure or Anthropic token count.",
+      "provider": "anthropic",
+      "provider_output_tokens": 32768,
+      "provider_reasoning_tokens": null,
+      "provider_status": null,
+      "provider_stop_reason": "max_tokens",
+      "raw_sha256": "53faa4da7da9ae6a4c715f0bad7cd1f8f71731d00a31ca74e2ef4672d22a2046",
+      "reference_action_tokens_local_o200k_base": 51111,
+      "reference_body_within_output_cap_local_openai": false,
+      "reference_count_is_provider_measurement": false,
+      "scene_id": "buildings_100_v4_building_032",
+      "schedule_index": 57,
+      "status": "failed",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "inference_geo": "not_available",
+        "input_tokens": 20170,
+        "output_tokens": 32768,
+        "service_tier": "standard"
+      }
+    },
+    {
+      "attempt_id": "8e0c1dd374dc4c7c88fd03725c0d3904",
+      "charged_input_tokens": 13408,
+      "charged_output_tokens": 32768,
+      "condition": "E",
+      "description_model": null,
+      "failure_kind": "truncation",
+      "failure_stage": null,
+      "input_id": "2c09c62c59aefea15b6278c6fd436c7fd67921e6ed47edaeca069cf0205d1f89",
+      "interpretation": "Truncation is established by the actual provider finish reason. The reference is not a shortest representation; its local token count does not itself establish output failure or Anthropic token count.",
+      "provider": "openai",
+      "provider_output_tokens": 32768,
+      "provider_reasoning_tokens": 384,
+      "provider_status": "incomplete",
+      "provider_stop_reason": {
+        "reason": "max_output_tokens"
+      },
+      "raw_sha256": "d4723ad8eed9ba360edae789c33ec91923876f95cb182e1f9e78f4151bfc3f50",
+      "reference_action_tokens_local_o200k_base": 34574,
+      "reference_body_within_output_cap_local_openai": false,
+      "reference_count_is_provider_measurement": false,
+      "scene_id": "buildings_100_v4_building_092",
+      "schedule_index": 70,
+      "status": "failed",
+      "usage": {
+        "input_tokens": 13408,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 32768,
+        "output_tokens_details": {
+          "reasoning_tokens": 384
+        },
+        "total_tokens": 46176
+      }
+    },
+    {
+      "attempt_id": "3c36588eb12646fdae79b02d5df87eee",
+      "charged_input_tokens": 14111,
+      "charged_output_tokens": 32768,
+      "condition": "E",
+      "description_model": null,
+      "failure_kind": "truncation",
+      "failure_stage": null,
+      "input_id": "2c09c62c59aefea15b6278c6fd436c7fd67921e6ed47edaeca069cf0205d1f89",
+      "interpretation": "Truncation is established by the actual provider finish reason. The reference is not a shortest representation; its local token count does not itself establish output failure or Anthropic token count.",
+      "provider": "anthropic",
+      "provider_output_tokens": 32768,
+      "provider_reasoning_tokens": null,
+      "provider_status": null,
+      "provider_stop_reason": "max_tokens",
+      "raw_sha256": "cef2d8f2a979506766ed070e9fe0e7b19c0df3959ecb473131348979391f55eb",
+      "reference_action_tokens_local_o200k_base": 34574,
+      "reference_body_within_output_cap_local_openai": false,
+      "reference_count_is_provider_measurement": false,
+      "scene_id": "buildings_100_v4_building_092",
+      "schedule_index": 71,
+      "status": "failed",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "inference_geo": "not_available",
+        "input_tokens": 14111,
+        "output_tokens": 32768,
+        "service_tier": "standard"
+      }
+    },
+    {
+      "attempt_id": "84ca9c43b6d145b186c7f8b7cf0e0cf8",
+      "condition": "J",
+      "description_model": "openai",
+      "failure_kind": "validation_failure",
+      "failure_stage": "local_validator",
+      "first_violation": {
+        "actual_value": "wood (plank, oak)",
+        "cause": "block must be a lower-case Minecraft material identifier",
+        "classification": "model_output_violates_predeclared_specification",
+        "exception_type": "ValidationError",
+        "excerpt_max_bytes": 1024,
+        "expected_rule": "(?:minecraft:)?[a-z0-9_][a-z0-9_./-]{0,127}\\Z; optional minecraft: namespace only; no spaces or parentheses",
+        "field": "block",
+        "operation_index_zero_based": 3,
+        "operation_number_one_based": 4,
+        "rule_category": "material_identifier_syntax",
+        "safe_operation_excerpt": {
+          "block": "wood (plank, oak)",
+          "op": "fill",
+          "x1": 0,
+          "x2": 12,
+          "y1": 4,
+          "y2": 4,
+          "z1": 0,
+          "z2": 24
+        },
+        "spec_validator_mismatch_found": false,
+        "validator_bug_found": false
+      },
+      "input_id": "9cd3fad785497f9c5fd4b5322e4a26216171dd99c7eb87f9b543c5036b70b0b1",
+      "provider": "openai",
+      "raw_sha256": "3106d745f83ce60b12dc41468ff1e62066a31c53a7c1888390c2a66621d57f0e",
+      "scene_id": "buildings_100_v4_building_078",
+      "schedule_index": 88,
+      "status": "failed"
+    },
+    {
+      "attempt_id": "22e73aa786534378acab1b1c2e3ba18c",
+      "condition": "J",
+      "description_model": "openai",
+      "failure_kind": "validation_failure",
+      "failure_stage": "local_validator",
+      "first_violation": {
+        "actual_value": "quartz (white)",
+        "cause": "block must be a lower-case Minecraft material identifier",
+        "classification": "model_output_violates_predeclared_specification",
+        "exception_type": "ValidationError",
+        "excerpt_max_bytes": 1024,
+        "expected_rule": "(?:minecraft:)?[a-z0-9_][a-z0-9_./-]{0,127}\\Z; optional minecraft: namespace only; no spaces or parentheses",
+        "field": "block",
+        "operation_index_zero_based": 1,
+        "operation_number_one_based": 2,
+        "rule_category": "material_identifier_syntax",
+        "safe_operation_excerpt": {
+          "block": "quartz (white)",
+          "op": "fill",
+          "x1": -2,
+          "x2": 29,
+          "y1": 1,
+          "y2": 1,
+          "z1": -2,
+          "z2": 21
+        },
+        "spec_validator_mismatch_found": false,
+        "validator_bug_found": false
+      },
+      "input_id": "af0c909a51daf1f57a922451d84bb649b340ad5bc63b739979cfbeb6c1e087bd",
+      "provider": "openai",
+      "raw_sha256": "d730f57c0736b2016fb79ebde348bb35a08cfe3225c5bdd478c7ab97109a3c46",
+      "scene_id": "buildings_100_v4_building_062",
+      "schedule_index": 144,
+      "status": "failed"
+    },
+    {
+      "attempt_id": "b1e4d66adda64ad3b2c970ae3db70d1c",
+      "condition": "O",
+      "description_model": "openai",
+      "failure_kind": "validation_failure",
+      "failure_stage": "local_validator",
+      "first_violation": {
+        "actual_value": "sandstone (or smooth_sand)",
+        "cause": "block must be a lower-case Minecraft material identifier",
+        "classification": "model_output_violates_predeclared_specification",
+        "exception_type": "ValidationError",
+        "excerpt_max_bytes": 1024,
+        "expected_rule": "(?:minecraft:)?[a-z0-9_][a-z0-9_./-]{0,127}\\Z; optional minecraft: namespace only; no spaces or parentheses",
+        "field": "block",
+        "operation_index_zero_based": 1,
+        "operation_number_one_based": 2,
+        "rule_category": "material_identifier_syntax",
+        "safe_operation_excerpt": {
+          "block": "sandstone (or smooth_sand)",
+          "op": "fill",
+          "x1": 0,
+          "x2": 27,
+          "y1": 1,
+          "y2": 2,
+          "z1": 0,
+          "z2": 19
+        },
+        "spec_validator_mismatch_found": false,
+        "validator_bug_found": false
+      },
+      "input_id": "6d31526444faa5ee4b8204d59c9669ab5697f9a41c849e1a8cf01e906e42c4f1",
+      "provider": "openai",
+      "raw_sha256": "f9d9422e3e1802c27e2e0a6be902b0f09fc264ccabad380421c14d5c7013c73f",
+      "scene_id": "buildings_100_v4_building_062",
+      "schedule_index": 158,
+      "status": "failed"
+    }
+  ]
+}

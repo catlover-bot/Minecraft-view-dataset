@@ -1,0 +1,1352 @@
+..............EEEEEEEEEEEEEEEEEEEEEEEEE................................. [ 40%]
+..................................FFFFFFFFFFFFFF..........F............. [ 80%]
+....................................                                     [100%]
+==================================== ERRORS ====================================
+____ ERROR at setup of test_preview_no_keys_no_tty_no_activation_even_stale ____
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_preview_no_keys_no_tty_no0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b84e9ee0>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_preview_no_keys_no_tty_no0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_____ ERROR at setup of test_tty_refusal_or_io_error_cannot_enable[False] ______
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_tty_refusal_or_io_error_c0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b601f710>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_tty_refusal_or_io_error_c0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+____ ERROR at setup of test_tty_refusal_or_io_error_cannot_enable[io_error] ____
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_tty_refusal_or_io_error_c1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b601fa70>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_tty_refusal_or_io_error_c1/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+___ ERROR at setup of test_complete_and_partial_cli_exit_codes_are_distinct ____
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_complete_and_partial_cli_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b6071040>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_complete_and_partial_cli_0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_budget_derivation_and_pricing_changes_require_new_approval _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_budget_derivation_and_pri0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b6072b40>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_budget_derivation_and_pri0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_relocated_plan_rejected_before_preview_or_activation __
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_relocated_plan_rejected_b0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b60737d0>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_relocated_plan_rejected_b0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+____ ERROR at setup of test_permission_disabled_and_bad_approval_send_zero _____
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_permission_disabled_and_b0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b601f380>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_permission_disabled_and_b0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_fixed160_complete_interleaved_persistent_and_no_repeat _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_fixed160_complete_interle0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b6072240>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_fixed160_complete_interle0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_settled_interruption_resume_only_unattempted_and_evaluate_partial _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_settled_interruption_resu0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b6072f60>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_settled_interruption_resu0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+______ ERROR at setup of test_unknown_usage_halts_without_resend[timeout] ______
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_unknown_usage_halts_witho0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b6073dd0>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_unknown_usage_halts_witho0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+___ ERROR at setup of test_unknown_usage_halts_without_resend[auth_failure] ____
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_unknown_usage_halts_witho1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b6073530>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_unknown_usage_halts_witho1/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+__ ERROR at setup of test_unknown_usage_halts_without_resend[billing_failure] __
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_unknown_usage_halts_witho2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b5fa8530>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_unknown_usage_halts_witho2/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_unknown_usage_halts_without_resend[model_unavailable] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_unknown_usage_halts_witho3')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b6072000>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_unknown_usage_halts_witho3/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_unknown_usage_halts_without_resend[schema_unsupported] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_unknown_usage_halts_witho4')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b6073650>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_unknown_usage_halts_witho4/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_______ ERROR at setup of test_crash_uncertain_reservation_never_resends _______
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_crash_uncertain_reservati0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b601e210>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_crash_uncertain_reservati0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+__ ERROR at setup of test_response_identity_failure_known_charge_still_halts ___
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_response_identity_failure0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b5fa9d60>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_response_identity_failure0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+____ ERROR at setup of test_parent_lock_and_parent_change_stop_before_send _____
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_parent_lock_and_parent_ch0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b5fab4d0>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_parent_lock_and_parent_ch0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+____ ERROR at setup of test_new_directory_same_lineage_cannot_reset_budget _____
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_new_directory_same_lineag0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b5fa9400>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_new_directory_same_lineag0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_budget_insufficient_before_post_and_never_automatically_expands _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_budget_insufficient_befor0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b60733e0>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_budget_insufficient_befor0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_crossday_reverification_preserves_approval_and_charge_then_resumes _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_crossday_reverification_p0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b5faaae0>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_crossday_reverification_p0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_known_usage_model_failure_continues_without_retry_and_empty_separate _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_known_usage_model_failure0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b5fab590>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_known_usage_model_failure0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+___ ERROR at setup of test_rolled_back_ledger_cannot_reuse_reserved_schedule ___
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_rolled_back_ledger_cannot0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b5fab6e0>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_rolled_back_ledger_cannot0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_disabled_evaluation_creates_no_enabled_or_other_files[False] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_disabled_evaluation_creat0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b5f2d9a0>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_disabled_evaluation_creat0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_disabled_evaluation_creates_no_enabled_or_other_files[True] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_disabled_evaluation_creat1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b5f2ee70>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_disabled_evaluation_creat1/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ ERROR at setup of test_disabled_pricing_refresh_does_not_activate_or_reserve _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_disabled_pricing_refresh_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77e4b5fa91c0>
+
+    @pytest.fixture
+    def fixture_plan(tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENAI_API_KEY", "fixture_only_never_live")
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "fixture_only_never_live")
+        monkeypatch.setattr(adapter, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        monkeypatch.setattr(providers, "http_transport", lambda *_: pytest.fail("live transport forbidden"))
+        parent = tmp_path / "parent"
+        parent.mkdir()
+>       write_json(parent / "campaign.json", {"identity": {"runs": {
+            p: {"path": "runs/" + p} for p in adapter.MODELS}}})
+
+offline_evaluation/batch_v1/tests/test_runner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_disabled_pricing_refresh_0/parent/campaign.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+=================================== FAILURES ===================================
+_ test_complete_960_planned_outcomes_survive_missing_evaluations_and_infeasible_inputs _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_complete_960_planned_outc0')
+
+    def test_complete_960_planned_outcomes_survive_missing_evaluations_and_infeasible_inputs(tmp_path):
+>       directories = prepared_comparison(tmp_path / "comparison")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:172: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_complete_960_planned_outc0/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_______ test_duplicate_or_missing_provider_preparations_cannot_be_pooled _______
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_duplicate_or_missing_prov0')
+
+    def test_duplicate_or_missing_provider_preparations_cannot_be_pooled(tmp_path):
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:184: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_duplicate_or_missing_prov0/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance[selection] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_summary_requires_matching0')
+tamper = 'selection'
+
+    @pytest.mark.parametrize("tamper", ["selection", "cohort", "planned_inputs", "campaign_identity"])
+    def test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance(tmp_path, tamper):
+        from offline_evaluation.server_v2.generation import read_json, write_json
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_summary_requires_matching0/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance[cohort] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_summary_requires_matching1')
+tamper = 'cohort'
+
+    @pytest.mark.parametrize("tamper", ["selection", "cohort", "planned_inputs", "campaign_identity"])
+    def test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance(tmp_path, tamper):
+        from offline_evaluation.server_v2.generation import read_json, write_json
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_summary_requires_matching1/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance[planned_inputs] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_summary_requires_matching2')
+tamper = 'planned_inputs'
+
+    @pytest.mark.parametrize("tamper", ["selection", "cohort", "planned_inputs", "campaign_identity"])
+    def test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance(tmp_path, tamper):
+        from offline_evaluation.server_v2.generation import read_json, write_json
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_summary_requires_matching2/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance[campaign_identity] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_summary_requires_matching3')
+tamper = 'campaign_identity'
+
+    @pytest.mark.parametrize("tamper", ["selection", "cohort", "planned_inputs", "campaign_identity"])
+    def test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance(tmp_path, tamper):
+        from offline_evaluation.server_v2.generation import read_json, write_json
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_summary_requires_matching3/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ test_evaluated_not_run_inputs_and_missing_rows_are_merged_without_erasing_plan _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluated_not_run_inputs_0')
+
+    def test_evaluated_not_run_inputs_and_missing_rows_are_merged_without_erasing_plan(tmp_path):
+        from offline_evaluation.server_v2.generation import evaluate_generation, read_json, write_json
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:212: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluated_not_run_inputs_0/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[wrong_provider] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov0')
+tamper = 'wrong_provider'
+
+    @pytest.mark.parametrize("tamper", ["wrong_provider", "unknown_input", "duplicate_input", "forged_success", "wrong_identity", "bounded_mode"])
+    def test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity(tmp_path, tamper):
+        from offline_evaluation.server_v2.generation import evaluate_generation, read_json, write_json
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:225: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov0/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[unknown_input] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov1')
+tamper = 'unknown_input'
+
+    @pytest.mark.parametrize("tamper", ["wrong_provider", "unknown_input", "duplicate_input", "forged_success", "wrong_identity", "bounded_mode"])
+    def test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity(tmp_path, tamper):
+        from offline_evaluation.server_v2.generation import evaluate_generation, read_json, write_json
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:225: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov1/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[duplicate_input] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov2')
+tamper = 'duplicate_input'
+
+    @pytest.mark.parametrize("tamper", ["wrong_provider", "unknown_input", "duplicate_input", "forged_success", "wrong_identity", "bounded_mode"])
+    def test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity(tmp_path, tamper):
+        from offline_evaluation.server_v2.generation import evaluate_generation, read_json, write_json
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:225: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov2/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[forged_success] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov3')
+tamper = 'forged_success'
+
+    @pytest.mark.parametrize("tamper", ["wrong_provider", "unknown_input", "duplicate_input", "forged_success", "wrong_identity", "bounded_mode"])
+    def test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity(tmp_path, tamper):
+        from offline_evaluation.server_v2.generation import evaluate_generation, read_json, write_json
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:225: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov3/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[wrong_identity] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov4')
+tamper = 'wrong_identity'
+
+    @pytest.mark.parametrize("tamper", ["wrong_provider", "unknown_input", "duplicate_input", "forged_success", "wrong_identity", "bounded_mode"])
+    def test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity(tmp_path, tamper):
+        from offline_evaluation.server_v2.generation import evaluate_generation, read_json, write_json
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:225: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov4/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+_ test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[bounded_mode] _
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov5')
+tamper = 'bounded_mode'
+
+    @pytest.mark.parametrize("tamper", ["wrong_provider", "unknown_input", "duplicate_input", "forged_success", "wrong_identity", "bounded_mode"])
+    def test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity(tmp_path, tamper):
+        from offline_evaluation.server_v2.generation import evaluate_generation, read_json, write_json
+>       directories = prepared_comparison(tmp_path / "comparison", buildings=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:225: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_evaluation_rows_cannot_ov5/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+____ test_cli_summary_keeps_unexecuted_plan_and_obeys_cooperative_run_lock _____
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_cli_summary_keeps_unexecu0')
+capsys = <_pytest.capture.CaptureFixture object at 0x77e4b5f836b0>
+
+    def test_cli_summary_keeps_unexecuted_plan_and_obeys_cooperative_run_lock(tmp_path, capsys):
+        from offline_evaluation.server_v2.cli import main
+        from offline_evaluation.server_v2.generation import GenerationError, read_json, run_lock
+        root = tmp_path / "comparison"
+>       prepared_comparison(root, buildings=1)
+
+offline_evaluation/server_v2/tests/test_analysis_v4.py:244: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/tests/test_analysis_v4.py:146: in prepared_comparison
+    write_json(root / "cohort.v4.json", cohort)
+offline_evaluation/server_v2/generation.py:86: in write_json
+    atomic_write(path, json_bytes(value))
+offline_evaluation/server_v2/generation.py:66: in atomic_write
+    path = writable(path)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_cli_summary_keeps_unexecu0/comparison/cohort.v4.json')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+__________________ test_snapshot_only_frozen_completed_tasks ___________________
+
+tmp_path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_snapshot_only_frozen_comp0')
+
+    def test_snapshot_only_frozen_completed_tasks(tmp_path):
+        import json
+        run=tmp_path/'run'; run.mkdir()
+        task=run/'task.json'; task.write_text('{"done":true}')
+        (run/'live.log').write_text('-----BEGIN ' + 'PRIVATE KEY-----')
+        (run/'completed.json').write_text(json.dumps({'status':'COMPLETE','active_tasks':0,'files':{'task.json':sha256(task)}}))
+>       result=create_checkpoint(tmp_path/'checkpoint',run,['README.md'],'a'*40,'fixture-completed-only')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/server_v2/tests/test_checkpoint.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/server_v2/checkpoint.py:77: in create_checkpoint
+    run_dir = writable(run_dir)
+              ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/goal006-existing-tests-20261014T101309Z/test_snapshot_only_frozen_comp0/run')
+
+    def writable(path):
+        path = Path(path).resolve()
+        if not any(path == root or path.is_relative_to(root) for root in ALLOWED_ROOTS):
+>           raise ValueError('Output must be inside an authorized research directory')
+E           ValueError: Output must be inside an authorized research directory
+
+offline_evaluation/server_v2/io_utils.py:15: ValueError
+=========================== short test summary info ============================
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_complete_960_planned_outcomes_survive_missing_evaluations_and_infeasible_inputs
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_duplicate_or_missing_provider_preparations_cannot_be_pooled
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance[selection]
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance[cohort]
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance[planned_inputs]
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_summary_requires_matching_selection_cohort_plan_and_campaign_provenance[campaign_identity]
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_evaluated_not_run_inputs_and_missing_rows_are_merged_without_erasing_plan
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[wrong_provider]
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[unknown_input]
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[duplicate_input]
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[forged_success]
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[wrong_identity]
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_evaluation_rows_cannot_override_input_attempt_or_evaluation_identity[bounded_mode]
+FAILED offline_evaluation/server_v2/tests/test_analysis_v4.py::test_cli_summary_keeps_unexecuted_plan_and_obeys_cooperative_run_lock
+FAILED offline_evaluation/server_v2/tests/test_checkpoint.py::test_snapshot_only_frozen_completed_tasks
+ERROR offline_evaluation/batch_v1/tests/test_plan_cli.py::test_preview_no_keys_no_tty_no_activation_even_stale
+ERROR offline_evaluation/batch_v1/tests/test_plan_cli.py::test_tty_refusal_or_io_error_cannot_enable[False]
+ERROR offline_evaluation/batch_v1/tests/test_plan_cli.py::test_tty_refusal_or_io_error_cannot_enable[io_error]
+ERROR offline_evaluation/batch_v1/tests/test_plan_cli.py::test_complete_and_partial_cli_exit_codes_are_distinct
+ERROR offline_evaluation/batch_v1/tests/test_plan_cli.py::test_budget_derivation_and_pricing_changes_require_new_approval
+ERROR offline_evaluation/batch_v1/tests/test_plan_cli.py::test_relocated_plan_rejected_before_preview_or_activation
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_permission_disabled_and_bad_approval_send_zero
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_fixed160_complete_interleaved_persistent_and_no_repeat
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_settled_interruption_resume_only_unattempted_and_evaluate_partial
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_unknown_usage_halts_without_resend[timeout]
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_unknown_usage_halts_without_resend[auth_failure]
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_unknown_usage_halts_without_resend[billing_failure]
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_unknown_usage_halts_without_resend[model_unavailable]
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_unknown_usage_halts_without_resend[schema_unsupported]
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_crash_uncertain_reservation_never_resends
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_response_identity_failure_known_charge_still_halts
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_parent_lock_and_parent_change_stop_before_send
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_new_directory_same_lineage_cannot_reset_budget
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_budget_insufficient_before_post_and_never_automatically_expands
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_crossday_reverification_preserves_approval_and_charge_then_resumes
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_known_usage_model_failure_continues_without_retry_and_empty_separate
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_rolled_back_ledger_cannot_reuse_reserved_schedule
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_disabled_evaluation_creates_no_enabled_or_other_files[False]
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_disabled_evaluation_creates_no_enabled_or_other_files[True]
+ERROR offline_evaluation/batch_v1/tests/test_runner.py::test_disabled_pricing_refresh_does_not_activate_or_reserve
+15 failed, 140 passed, 25 errors in 7.43s

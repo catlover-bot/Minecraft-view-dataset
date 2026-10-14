@@ -1,0 +1,187 @@
+{
+  "checked_at_utc": "2026-10-14T10:24:47.349570Z",
+  "reuse_same_day_official_evidence": true,
+  "verified_at_utc": "2026-10-14T08:48:58Z",
+  "source_path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal005/pricing_refresh_20261014T084535Z/official_pricing.json",
+  "source_sha256": "0949aaf5a2601ae244a3453357da092e96cdda468d05a81a1f781fef472f9b3c",
+  "canonical_revision_path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/pricing-revisions/0001.json",
+  "current_pricing_fresh_true": "PASS",
+  "same_fixed_models": {
+    "openai": {
+      "model": "gpt-5-mini",
+      "input_usd_per_million": 0.25,
+      "output_usd_per_million": 2.0,
+      "context_window_tokens": 400000,
+      "model_max_output_tokens": 128000,
+      "structured_output_documented": true,
+      "documentation_status": "Deprecated; documented snapshot shutdown 2026-12-11, after verification date; no substitution"
+    },
+    "anthropic": {
+      "model": "claude-haiku-4-5-20251001",
+      "input_usd_per_million": 1.0,
+      "output_usd_per_million": 5.0,
+      "context_window_tokens": 200000,
+      "model_max_output_tokens": 64000,
+      "structured_output_documented": true,
+      "documentation_status": "Legacy model page still available; lifecycle table Active, retirement not sooner than 2026-10-15 (not an announced shutdown date); no substitution"
+    }
+  },
+  "official_pages": [
+    {
+      "findings": {
+        "accepted_snapshot": "gpt-5-mini-2025-08-07",
+        "context_window_tokens": 400000,
+        "input_usd_per_million": 0.25,
+        "model": "gpt-5-mini",
+        "model_max_output_tokens": 128000,
+        "output_usd_per_million": 2.0,
+        "status": "Deprecated",
+        "structured_outputs_supported": true
+      },
+      "retrieved_during_utc": {
+        "completed_at_utc": "2026-10-14T08:48:58Z",
+        "precision": "Window brackets actual web search/open/find calls; completion timestamp from clock tool; individual page fetch instants not separately measured",
+        "started_at_utc": "2026-10-14T08:45:35Z"
+      },
+      "sections": [
+        "Pricing",
+        "Features",
+        "Snapshots"
+      ],
+      "url": "https://developers.openai.com/api/docs/models/gpt-5-mini"
+    },
+    {
+      "findings": {
+        "route": "Responses text.format",
+        "schema_supported": true,
+        "strict": true,
+        "type": "json_schema"
+      },
+      "retrieved_during_utc": {
+        "completed_at_utc": "2026-10-14T08:48:58Z",
+        "precision": "Window brackets actual web search/open/find calls; completion timestamp from clock tool; individual page fetch instants not separately measured",
+        "started_at_utc": "2026-10-14T08:45:35Z"
+      },
+      "sections": [
+        "How to use Structured Outputs with text.format"
+      ],
+      "url": "https://developers.openai.com/api/docs/guides/structured-outputs"
+    },
+    {
+      "findings": {
+        "max_output_tokens_includes_reasoning_visible_and_nonvisible_formatting": true,
+        "reasoning_billed_as_output": true
+      },
+      "retrieved_during_utc": {
+        "completed_at_utc": "2026-10-14T08:48:58Z",
+        "precision": "Window brackets actual web search/open/find calls; completion timestamp from clock tool; individual page fetch instants not separately measured",
+        "started_at_utc": "2026-10-14T08:45:35Z"
+      },
+      "sections": [
+        "How reasoning works",
+        "Controlling costs"
+      ],
+      "url": "https://developers.openai.com/api/docs/guides/reasoning"
+    },
+    {
+      "findings": {
+        "context_window_tokens": 200000,
+        "input_usd_per_million": 1.0,
+        "model": "claude-haiku-4-5-20251001",
+        "model_max_output_tokens": 64000,
+        "output_usd_per_million": 5.0,
+        "status": "Legacy, still available"
+      },
+      "retrieved_during_utc": {
+        "completed_at_utc": "2026-10-14T08:48:58Z",
+        "precision": "Window brackets actual web search/open/find calls; completion timestamp from clock tool; individual page fetch instants not separately measured",
+        "started_at_utc": "2026-10-14T08:45:35Z"
+      },
+      "sections": [
+        "Specifications",
+        "Pricing",
+        "Capabilities"
+      ],
+      "url": "https://platform.claude.com/docs/en/models/haiku-4-5/overview"
+    },
+    {
+      "findings": {
+        "discounted_batch_rates_not_used": true,
+        "first_party_global_default": true,
+        "model": "Claude Haiku 4.5",
+        "standard_first_party_input_usd_per_million": 1.0,
+        "standard_first_party_output_usd_per_million": 5.0
+      },
+      "retrieved_during_utc": {
+        "completed_at_utc": "2026-10-14T08:48:58Z",
+        "precision": "Window brackets actual web search/open/find calls; completion timestamp from clock tool; individual page fetch instants not separately measured",
+        "started_at_utc": "2026-10-14T08:45:35Z"
+      },
+      "sections": [
+        "Model pricing",
+        "Cloud platform pricing"
+      ],
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    {
+      "findings": {
+        "additional_format_system_prompt_billable": true,
+        "haiku_4_5_supported": true,
+        "numeric_overhead_ceiling_not_documented": true,
+        "route": "Messages output_config.format",
+        "type": "json_schema"
+      },
+      "retrieved_during_utc": {
+        "completed_at_utc": "2026-10-14T08:48:58Z",
+        "precision": "Window brackets actual web search/open/find calls; completion timestamp from clock tool; individual page fetch instants not separately measured",
+        "started_at_utc": "2026-10-14T08:45:35Z"
+      },
+      "sections": [
+        "How it works",
+        "Using a raw JSON schema",
+        "Prompt modification and token costs",
+        "Compatibility"
+      ],
+      "url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
+    },
+    {
+      "findings": {
+        "announced_shutdown_date": "2026-12-11",
+        "model": "gpt-5-mini-2025-08-07",
+        "status": "Deprecated, shutdown date still in future at verification"
+      },
+      "retrieved_during_utc": {
+        "completed_at_utc": "2026-10-14T08:48:58Z",
+        "precision": "Window brackets actual web search/open/find calls; completion timestamp from clock tool; individual page fetch instants not separately measured",
+        "started_at_utc": "2026-10-14T08:45:35Z"
+      },
+      "sections": [
+        "2026-06-11: GPT-5 and o3 model deprecations"
+      ],
+      "url": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "findings": {
+        "deprecation_date": null,
+        "earliest_retirement_not_before": "2026-10-15",
+        "model": "claude-haiku-4-5-20251001",
+        "status": "Active",
+        "this_is_not_a_scheduled_retirement_date": true
+      },
+      "retrieved_during_utc": {
+        "completed_at_utc": "2026-10-14T08:48:58Z",
+        "precision": "Window brackets actual web search/open/find calls; completion timestamp from clock tool; individual page fetch instants not separately measured",
+        "started_at_utc": "2026-10-14T08:45:35Z"
+      },
+      "sections": [
+        "Model status"
+      ],
+      "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+    }
+  ],
+  "model_or_token_count_api_requests": 0,
+  "pricing_retrieval_repeated": false,
+  "date_changed_without_retrieval": false,
+  "account_availability": "NOT_PROBED; historical actual160 responses observed",
+  "new_scope_budget": "Separate unapproved continuation cumulativeUSD30 proposal; historical pricing record proposal is not execution permission"
+}

@@ -1,0 +1,41 @@
+.......F...                                                              [100%]
+=================================== FAILURES ===================================
+_____ test_disabled_status_preview_evaluate_and_tty_refusal_create_nothing _____
+
+fixture_plan = {'path': PosixPath('/root/workspace/Minecraft-view-dataset/.pytest_cache/goal006-new-20261014T101309Z/test_disabled_st...xture_000Oanthropic', 'scene_id': 'fixture_000', 'condition': 'O', 'description_model': 'anthropic', ...}, ...]}}, ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7a569feea870>
+
+    def test_disabled_status_preview_evaluate_and_tty_refusal_create_nothing(fixture_plan, monkeypatch):
+        before = {str(p): p.read_bytes() for p in fixture_plan['path'].parent.rglob('*') if p.is_file()}
+        monkeypatch.setattr(cli, '_confirm_from_tty', lambda text: False)
+>       assert cli.launch(fixture_plan['path'], preview_only=True) == 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/continuation_v1/tests/test_runner.py:244: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/continuation_v1/cli.py:47: in launch
+    display = preview(plan)
+              ^^^^^^^^^^^^^
+offline_evaluation/continuation_v1/cli.py:23: in preview
+    current = runner.status(identity['plan_path'])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/continuation_v1/runner.py:416: in status
+    plan = _plan(plan_path)
+           ^^^^^^^^^^^^^^^^
+offline_evaluation/continuation_v1/tests/test_runner.py:74: in load
+    value = read_json(candidate)
+            ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/root/workspace/Minecraft-view-dataset/.pytest_cache/goal006-new-20261014T101309Z/test_disabled_status_preview_e0/plan.json'
+
+    def read_json(path: Path):
+        try:
+>           return json.loads(path.read_text("utf-8"))
+                              ^^^^^^^^^^^^^^
+E           AttributeError: 'str' object has no attribute 'read_text'
+
+offline_evaluation/server_v2/generation.py:91: AttributeError
+=========================== short test summary info ============================
+FAILED offline_evaluation/continuation_v1/tests/test_runner.py::test_disabled_status_preview_evaluate_and_tty_refusal_create_nothing
+1 failed, 10 passed in 75.00s (0:01:15)

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="11" time="75.003" timestamp="2026-10-14T13:32:05.185543+03:00" hostname="Minecraft"><testcase classname="offline_evaluation.continuation_v1.tests.test_runner" name="test_exact_suffix_global_local_boundary_and_semantic_duplicate_rules" time="0.136" /><testcase classname="offline_evaluation.continuation_v1.tests.test_runner" name="test_complete800_global_indices_parent_once_payload_same_and_five_checkpoints" time="64.054" /><testcase classname="offline_evaluation.continuation_v1.tests.test_runner" name="test_uncertain_or_critical_halt_never_resends[timeout]" time="0.117" /><testcase classname="offline_evaluation.continuation_v1.tests.test_runner" name="test_uncertain_or_critical_halt_never_resends[auth_failure]" time="0.112" /><testcase classname="offline_evaluation.continuation_v1.tests.test_runner" name="test_uncertain_or_critical_halt_never_resends[response_identity_failure]" time="0.112" /><testcase classname="offline_evaluation.continuation_v1.tests.test_runner" name="test_budget_reserves_before_send_and_cannot_reset" time="0.131" /><testcase classname="offline_evaluation.continuation_v1.tests.test_runner" name="test_pricing_midrun_stop_before_reservation_then_append_refresh_same_approval" time="5.651" /><testcase classname="offline_evaluation.continuation_v1.tests.test_runner" name="test_disabled_status_preview_evaluate_and_tty_refusal_create_nothing" time="0.064"><failure message="AttributeError: 'str' object has no attribute 'read_text'">fixture_plan = {'path': PosixPath('/root/workspace/Minecraft-view-dataset/.pytest_cache/goal006-new-20261014T101309Z/test_disabled_st...xture_000Oanthropic', 'scene_id': 'fixture_000', 'condition': 'O', 'description_model': 'anthropic', ...}, ...]}}, ...}
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x7a569feea870&gt;
+
+    def test_disabled_status_preview_evaluate_and_tty_refusal_create_nothing(fixture_plan, monkeypatch):
+        before = {str(p): p.read_bytes() for p in fixture_plan['path'].parent.rglob('*') if p.is_file()}
+        monkeypatch.setattr(cli, '_confirm_from_tty', lambda text: False)
+&gt;       assert cli.launch(fixture_plan['path'], preview_only=True) == 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/continuation_v1/tests/test_runner.py:244: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/continuation_v1/cli.py:47: in launch
+    display = preview(plan)
+              ^^^^^^^^^^^^^
+offline_evaluation/continuation_v1/cli.py:23: in preview
+    current = runner.status(identity['plan_path'])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/continuation_v1/runner.py:416: in status
+    plan = _plan(plan_path)
+           ^^^^^^^^^^^^^^^^
+offline_evaluation/continuation_v1/tests/test_runner.py:74: in load
+    value = read_json(candidate)
+            ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/root/workspace/Minecraft-view-dataset/.pytest_cache/goal006-new-20261014T101309Z/test_disabled_status_preview_e0/plan.json'
+
+    def read_json(path: Path):
+        try:
+&gt;           return json.loads(path.read_text("utf-8"))
+                              ^^^^^^^^^^^^^^
+E           AttributeError: 'str' object has no attribute 'read_text'
+
+offline_evaluation/server_v2/generation.py:91: AttributeError</failure></testcase><testcase classname="offline_evaluation.continuation_v1.tests.test_runner" name="test_immutable_claim_detects_rollback_and_both_indices" time="0.107" /><testcase classname="offline_evaluation.continuation_v1.tests.test_runner" name="test_interrupted_request_keeps_reservation_and_never_freezes_inflight" time="0.113" /><testcase classname="offline_evaluation.continuation_v1.tests.test_runner" name="test_known_usage_validation_and_truncation_continue_to_next_unattempted" time="4.054" /></testsuite></testsuites>
