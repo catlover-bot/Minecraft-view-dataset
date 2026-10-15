@@ -21,20 +21,34 @@ def confirmation_text(plan):
 
 
 def tty_approval(plan):
+    from contextlib import ExitStack
+
     message = ('Goal006Bは別台帳で最大20回を送信します。未実行19件とHTTP401の明示再試行1件です。\n'
        '元の401・halt・usage不明予約を維持します。予約額は請求額ではありません。\n'
        '累積送信上限991、累積USD30、自動retry0。上限の引上げはこの認証再試行1回だけです。\n'
        'この実行は料金が発生し得ます。承認する場合だけ次の全文を入力してください:\n'
        + confirmation_text(plan) + '\n> ')
     try:
-        with open('/dev/tty', 'r+') as terminal:
-            if not terminal.isatty():
-                raise GenerationError('supplemental_real_tty_required')
-            terminal.write(message); terminal.flush()
-            answer = terminal.readline().strip()
-    except OSError:
-        raise GenerationError('supplemental_real_tty_required_no_activation') from None
-    if answer != confirmation_text(plan):
+        with ExitStack() as handles:
+            try:
+                reader = handles.enter_context(open('/dev/tty', 'r', encoding='utf-8', newline=''))
+                writer = handles.enter_context(open('/dev/tty', 'w', encoding='utf-8', buffering=1))
+            except OSError:
+                raise GenerationError('supplemental_tty_unavailable_no_activation') from None
+            if not reader.isatty() or not writer.isatty():
+                raise GenerationError('supplemental_real_tty_required_no_activation')
+            writer.write(message)
+            writer.flush()
+            answer = reader.readline()
+    except (OSError, UnicodeError):
+        raise GenerationError('supplemental_tty_io_error_no_activation') from None
+    except EOFError:
+        raise GenerationError('supplemental_approval_eof_no_activation') from None
+    except KeyboardInterrupt:
+        raise GenerationError('supplemental_approval_interrupted_no_activation') from None
+    if answer == '':
+        raise GenerationError('supplemental_approval_eof_no_activation')
+    if answer != confirmation_text(plan) + '\n':
         raise GenerationError('supplemental_exact_approval_not_given_no_activation')
     return {'manual_confirmed': True, 'plan_identity_hash': plan['identity_hash'],
             'enabled_directory': plan['identity']['enabled_directory'], 'approved_at_utc': utc_now(),

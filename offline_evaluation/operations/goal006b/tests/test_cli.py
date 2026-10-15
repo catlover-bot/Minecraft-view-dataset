@@ -54,9 +54,10 @@ def test_execute_without_exact_real_tty_consent_never_activates(fixture_plan, mo
         def readline(self, *_args):
             return "APPROVE\n"
 
-    def fake_open(path, mode):
-        assert path == "/dev/tty" and mode == "r+"
-        opened.append(path)
+    def fake_open(path, mode, **kwargs):
+        assert path == "/dev/tty" and mode in {"r", "w"}
+        assert kwargs["encoding"] == "utf-8"
+        opened.append((path, mode))
         if tty_case == "missing":
             raise OSError("fixture has no controlling terminal")
         return Terminal()
@@ -64,11 +65,13 @@ def test_execute_without_exact_real_tty_consent_never_activates(fixture_plan, mo
     before = tree_snapshot(fixture_plan)
     assert cli.main(["--plan", str(fixture_plan["path"]), "--execute"]) == 5
     result = json.loads(capsys.readouterr().err)
-    expected = {"missing": "supplemental_real_tty_required_no_activation",
-                "not_tty": "supplemental_real_tty_required",
+    expected = {"missing": "supplemental_tty_unavailable_no_activation",
+                "not_tty": "supplemental_real_tty_required_no_activation",
                 "wrong_confirmation": "supplemental_exact_approval_not_given_no_activation"}
     assert result == {"status": "STOPPED", "code": expected[tty_case]}
-    assert opened == ["/dev/tty"]
+    expected_opened = [("/dev/tty", "r")] if tty_case == "missing" else [
+        ("/dev/tty", "r"), ("/dev/tty", "w")]
+    assert opened == expected_opened
     assert tree_snapshot(fixture_plan) == before
     assert not Path(fixture_plan["plan"]["identity"]["enabled_directory"]).exists()
 
