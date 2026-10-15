@@ -1,0 +1,91 @@
+{
+  "observed_at_utc": "2026-10-15T19:41:59.243769Z",
+  "status": "CONFIRMED_HTTP401_WITH_UNKNOWN_USAGE",
+  "canonical_plan": {
+    "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json",
+    "sha256": "db78ec8e59b5921e248af42a7c8390647bd549c09c11e055c144729a247a2dce",
+    "bytes": 4493172
+  },
+  "canonical_plan_identity_hash": "db5533bffb583d0b1efcbcdb7c1563edf2ac87606334e6ce6cd766c650075843",
+  "ledger": {
+    "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/ledger.json",
+    "sha256": "6c301ecb572f232bc8464bcbbd42ff229ac588929bb8497601fefc063298ff35",
+    "bytes": 1685880
+  },
+  "halt_reason": "unknown_usage:auth_failure",
+  "attempt": {
+    "attempt_id": "2a912564cd574eeea2f6fa75d1683420",
+    "local_index": 780,
+    "schedule_index": 940,
+    "provider": "openai",
+    "input_id": "2b68b76a990f74d1ea2c075e208c568dbebc5916ba54193c9e1cd372acc0d0c5",
+    "request_payload_hash": "b31b7d3474c6fa5c023a327e555354789fa98809c62f7a3d33a8c581809e0fc0",
+    "started_at_utc": "2026-10-15T18:48:11.928982Z",
+    "finished_at_utc": "2026-10-15T18:48:12.433510Z",
+    "status": "failed",
+    "failure_kind": "auth_failure",
+    "http_status_code": 401,
+    "api_response_received": true,
+    "response_parsed": false,
+    "response_id": null,
+    "response_model": null,
+    "billing": "worst_case_reservation",
+    "scene_id": "buildings_100_v4_building_085",
+    "condition": "O",
+    "description_model": "openai",
+    "model": "gpt-5-mini",
+    "input_sha256": "9ca1509d0f5bcacb5683fb52e9a28d54507971a44f957f1fe897922aff27d697",
+    "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+    "schema_sha256": "41a28cf6044541d67f794b5705b934749f94ef882732becb325d8cd1af2fdf83",
+    "usage_known": false,
+    "raw_artifact_recorded": false,
+    "raw_path_checked": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/2a912564cd574eeea2f6fa75d1683420/raw.json",
+    "raw_sha256": null,
+    "raw_sha256_status": "NOT_RECORDED_BY_FROZEN_HTTP_ERROR_TRANSPORT",
+    "provider_error_code": null,
+    "provider_error_code_status": "NOT_RECORDED",
+    "immutable_claim": {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/reservations/2a912564cd574eeea2f6fa75d1683420.json",
+      "sha256": "5bd91104a3c8732476a864f2d83c778615696b5354ab9cf77d56d395e2f3870f",
+      "bytes": 394
+    },
+    "claim_matches_frozen_runner": true,
+    "payload_hash_matches_frozen_builder": true
+  },
+  "confirmed": [
+    "The saved ledger records an OpenAI HTTP 401 response and auth_failure classification.",
+    "No token usage, response model, response ID or response body is retained for this attempt.",
+    "The immutable claim and saved payload hash match the frozen plan and payload builder.",
+    "Frozen resmoke_v2.adapter.http_transport reads the HTTP error body only for classification and raises ProviderError(kind, status); it does not retain the body or provider error code."
+  ],
+  "unconfirmed": [
+    "Specific rejected credential, organization, project, revoked-key condition or account restriction cannot be diagnosed from the retained evidence.",
+    "Whether this attempt incurred any provider charge is unknown; HTTP401 does not justify replacing missing usage with zero."
+  ],
+  "frozen_source_evidence": [
+    {
+      "path": "offline_evaluation/resmoke_v2/adapter.py",
+      "sha256": "b0845f0e66a297779fa8456ea71e0780a6760a78be9d0587afec53bdcd3ce646",
+      "bytes": 6467
+    },
+    {
+      "path": "offline_evaluation/server_v2/providers.py",
+      "sha256": "09096fb7b10a1cb0c84ff0aebf5baf5c335db0ca2b5e0f8f97b2aed57fe07ad8",
+      "bytes": 11782
+    },
+    {
+      "path": "offline_evaluation/continuation_v1/runner.py",
+      "sha256": "e9a3e324fd5e6e6744059d4c05e5a973700aa39ba72de12103280f96dcd2dcff",
+      "bytes": 24228
+    }
+  ],
+  "research_api_requests_sent_by_audit": 0,
+  "control_file_sha256_before_and_after": {
+    "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json": "db78ec8e59b5921e248af42a7c8390647bd549c09c11e055c144729a247a2dce",
+    "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/ledger.json": "6c301ecb572f232bc8464bcbbd42ff229ac588929bb8497601fefc063298ff35",
+    "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/approval.json": "fdf5878be4122a686313ce926d00ce60a04973038126812f3998f814e446c07a",
+    "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/enabled.json": "424ed78b902ce0832f323c19e8b75a1fa1f6517449fd9b57274d5809c76a5713",
+    "/root/minecraft-runs/.continuation-v1-f54ebfaa041a18cbbfb60d2d27f9e9c4a50d436545c7ed1175c60751be58816f-remaining800.json": "5cd9ffa0c13491be47eb9b0ed36a1a3acc9af41efd730a983a9b6bbe13e0257e",
+    "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/reservations/2a912564cd574eeea2f6fa75d1683420.json": "5bd91104a3c8732476a864f2d83c778615696b5354ab9cf77d56d395e2f3870f"
+  }
+}

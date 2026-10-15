@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="10" time="6.507" timestamp="2026-10-15T22:51:59.159949+03:00" hostname="Minecraft"><testcase classname="offline_evaluation.operations.goal006b.tests.test_runner" name="test_checkpoint_failure_after_generation_never_resends_results" time="1.071" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_runner" name="test_known_model_failure_is_recorded_once_then_next_input_runs" time="0.799" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_runner" name="test_schema_failure_records_frozen_stage_and_continues_once" time="0.890" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_runner" name="test_pricing_expires_after_first_send_refresh_resumes_only_remaining19" time="0.626"><failure message="offline_evaluation.server_v2.generation.GenerationError: invalid, stale or incomplete verified pricing/context record">fixture_plan = {'path': PosixPath('/root/workspace/Minecraft-view-dataset/.pytest_cache/goal006b_finish/test_pricing_expires_after_fi...raft-view-dataset/.pytest_cache/goal006b_finish/test_pricing_expires_after_fir0/minecraft-runs/original/enabled'), ...}
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x73e510a14bf0&gt;
+
+    def test_pricing_expires_after_first_send_refresh_resumes_only_remaining19(fixture_plan, monkeypatch):
+        from offline_evaluation.resmoke_v2 import plan as semantic_plan
+        directory = enable(fixture_plan)
+        calls, checkpoints = [], []
+        document = deepcopy(fixture_plan["plan"]["identity"]["pricing_document"])
+        tomorrow = (datetime.fromisoformat(document["verified_at_utc"].replace("Z", "+00:00"))
+                    + timedelta(days=1)).isoformat().replace("+00:00", "Z")
+        controls = {name: (directory / name).read_bytes() for name in ("approval.json", "enabled.json")}
+        plan_before = fixture_plan["path"].read_bytes()
+        authority = Path(fixture_plan["plan"]["identity"]["authority_path"])
+        authority_before = authority.read_bytes()
+
+        def advance_date(provider, _payload, count):
+            assert count == 1
+            monkeypatch.setattr(semantic_plan, "utc_now", lambda: tomorrow)
+            monkeypatch.setattr(planning, "utc_now", lambda: tomorrow)
+            return response(provider)
+
+        def checkpoint(_plan, _directory, ledger, reason):
+            checkpoints.append((len(ledger["entries"]), reason))
+            return saved()
+
+        stopped = execute(fixture_plan, calls, advance_date, checkpoint_callback=checkpoint)
+        assert stopped["operational_stop"] == "pricing_freshness_stop"
+        assert stopped["halt_reason"] is None
+        assert stopped["supplemental_attempted"] == 1 and stopped["supplemental_not_run"] == 19
+        assert checkpoints == [(1, "pricing_freshness_stop")]
+        assert len(calls) == 1
+        first_entry = deepcopy(read_json(directory / "ledger.json")["entries"][0])
+        assert first_entry["schedule_index"] == 940 and first_entry["status"] == "success"
+        with pytest.raises(GenerationError):
+            execute(fixture_plan, calls)
+        assert len(calls) == 1
+
+        document["verified_at_utc"], document["verified_on"] = tomorrow, tomorrow[:10]
+        for provider in adapter.MODELS:
+            document[provider]["verified_on"] = tomorrow[:10]
+        source = fixture_plan["path"].parent / "next-day-official-fixture.json"
+        write_json(source, document)
+        ledger_before_refresh = (directory / "ledger.json").read_bytes()
+&gt;       planning.refresh_pricing(fixture_plan["path"], pricing_file=source)
+
+offline_evaluation/operations/goal006b/tests/test_runner.py:312:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+offline_evaluation/operations/goal006b/planning.py:302: in refresh_pricing
+    original_plan.validate_pricing(pricing, fresh=True)
+offline_evaluation/batch_v1/plan.py:93: in validate_pricing
+    original_plan.validate_pricing(pricing, fresh=fresh)
+offline_evaluation/resmoke_v2/plan.py:104: in validate_pricing
+    pricing=record, pricing_max_age_days=1).require_generation(True)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = GenerationConfig(provider='openai', model='gpt-5-mini', api_allowed=True, max_calls=16, max_tokens=5324288, max_cost_u...rified_on': '2026-10-16'}, pricing_max_age_days=1, limits={}, provenance='new_implementation', budget_campaign_id=None)
+permission = True
+
+    def require_generation(self, permission: bool) -&gt; dict:
+        self.validate()
+        if not self.api_allowed:
+            raise GenerationError("api_disabled")
+        if permission is not True:
+            raise GenerationError("explicit invocation permission required")
+        if not self.model:
+            raise GenerationError("explicit model required; no fallback is available")
+        if min(self.max_calls, self.max_tokens, self.max_cost_usd) &lt;= 0:
+            raise GenerationError("positive call, token and USD budget limits required")
+        pricing = self.pricing
+        if not isinstance(pricing, dict) or pricing.get("verified") is not True:
+            raise GenerationError("verified dated model pricing required")
+        if pricing.get("provider") != self.provider or pricing.get("model") != self.model:
+            raise GenerationError("pricing provider/model mismatch")
+        if pricing.get("billing_mode") != "standard_text_no_tools_no_cache_writes":
+            raise GenerationError("unsupported billing mode")
+        # Long-context model tiers can cost more than headline token pricing.
+        # Verified rates must bound every request allowed by the context ceiling.
+        if pricing.get("rate_scope") != "upper_bound_full_context_window":
+            raise GenerationError("verified full-context pricing rate upper bounds required")
+        try:
+            verified_date = dt.date.fromisoformat(pricing["verified_on"])
+            age = (dt.datetime.now(dt.timezone.utc).date() - verified_date).days
+            if not 0 &lt;= age &lt;= self.pricing_max_age_days:
+                raise ValueError
+            for name in ("input_usd_per_million", "output_usd_per_million"):
+                value = pricing[name]
+                if type(value) not in (int, float) or not math.isfinite(value) or value &lt;= 0:
+                    raise ValueError
+            if type(pricing["context_window_tokens"]) is not int or pricing["context_window_tokens"] &lt;= 0:
+                raise ValueError
+            official_hosts = {
+                "openai": {"openai.com", "developers.openai.com", "platform.openai.com"},
+                "anthropic": {"anthropic.com", "www.anthropic.com", "docs.anthropic.com", "platform.claude.com"},
+            }[self.provider]
+            for name in ("pricing_source_url", "context_source_url"):
+                url = urlsplit(pricing[name])
+                if url.scheme != "https" or url.hostname not in official_hosts or url.username or url.password:
+                    raise ValueError
+        except (KeyError, TypeError, ValueError):
+&gt;           raise GenerationError("invalid, stale or incomplete verified pricing/context record") from None
+E           offline_evaluation.server_v2.generation.GenerationError: invalid, stale or incomplete verified pricing/context record
+
+offline_evaluation/server_v2/generation.py:215: GenerationError</failure></testcase><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_default_preview_creates_no_files_and_never_activates" time="0.483" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_disabled_checkpoint_creates_no_files_including_locks" time="0.459" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_execute_without_exact_real_tty_consent_never_activates[missing]" time="0.479" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_execute_without_exact_real_tty_consent_never_activates[not_tty]" time="0.475" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_execute_without_exact_real_tty_consent_never_activates[wrong_confirmation]" time="0.500" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_recovery_error_prints_only_safe_structured_diagnostics" time="0.414" /></testsuite></testsuites>
