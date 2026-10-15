@@ -94,31 +94,33 @@ fixtures は合成した 781 件履歴と provider response を使い、live soc
 
 ## 補完を実行する場合の手順と追加承認範囲
 
-**以下の plan path と保存 commit は最終準備後に確定する。PENDING を残したコマンドは実行しない。**
+**下記は実在する未承認planです。今回実行したのはprepareとpreviewだけで、有料生成は未実行です。**
 
-- canonical 補完 plan: `PENDING_CANONICAL_GOAL006B_PLAN_PATH`
-- 実装保存 commit: `PENDING_IMPLEMENTATION_COMMIT`
-- 実際の disabled plan 作成・preview・原本不変の最終証跡: `PENDING_FINAL_CPU_AUDIT`
-- branch push と remote SHA 照合: `PENDING_GITHUB_SAVE_VERIFICATION`
+- canonical 補完 plan: `/root/minecraft-runs/goal006b-supplement20-20261015T195511Z/plan.json`
+- 実装保存 commit: `b71cf3890424f80bc55d65c2ed8fb02b444cadfc`
+- 実際の disabled plan 作成・preview・原本不変の最終証跡: [prepare/preview実行記録](preparation_verification.json)、[preview](preview.json)、[最終不変確認と追加承認範囲](final_integrity.json)
+- branch push と remote SHA 照合: [実装commitのGitHub一致確認](github_save.json)。この記録と未承認plan証跡は後続の文書commitに保存する。
 
 通常の確認は `--preview` を使用する。mode 省略時も preview で、approval・authority・ledger の作成や生成送信を行わない。未有効化 plan に対する `--checkpoint` は拒否し、その操作によって有効化用 directory を先に作らない。
 
 ```bash
-/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal006b/cli.py --plan PENDING_CANONICAL_GOAL006B_PLAN_PATH --preview
+/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal006b/cli.py --plan /root/minecraft-runs/goal006b-supplement20-20261015T195511Z/plan.json --preview
 ```
 
 実行日の公式料金・model・出力上限の証跡が古い場合は、同じ条件の当日確認 JSON を **補完側だけ** に追記する。元 plan の pricing revision は変更しない。取得した公式証跡と frozen terms が異なる場合はこの補完 plan で実行せず、条件を再検討する。
 
 ```bash
-/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal006b/cli.py --plan PENDING_CANONICAL_GOAL006B_PLAN_PATH --refresh-pricing PATH_TO_CURRENT_UTC_OFFICIAL_PRICING_JSON
+/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal006b/cli.py --plan /root/minecraft-runs/goal006b-supplement20-20261015T195511Z/plan.json --refresh-pricing PATH_TO_CURRENT_UTC_OFFICIAL_PRICING_JSON
 ```
 
 将来、有料生成を明示的に承認する場合の実行コマンドは次の 1 本。今回の作業では実行しない。
 
 ```bash
-/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal006b/cli.py --plan PENDING_CANONICAL_GOAL006B_PLAN_PATH --execute
+/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal006b/cli.py --plan /root/minecraft-runs/goal006b-supplement20-20261015T195511Z/plan.json --execute
 ```
 
 `--execute` は両 provider キーの存在だけを確認し、API probe は行わない。新規 activation は `/dev/tty` で plan identity を含む確認文の完全一致を要求する。必要な追加承認は、**未実行 19 件 + 元 HTTP 401 の明示再試行 1 件、最大 20 新規送信、累積 calls 991、履歴 retry 4 + 手動 1、自動 retry 0、元の未解決予約を保持した累積 USD 30、出力 32,768、固定条件**。scope は `goal006b_19_unattempted_plus_1_explicit_auth_retry_cumulative_usd30_calls991`。
 
 既存キーが更新されたという申告だけではこの追加有料範囲は承認されない。サーバー上の別台帳・checkpoint 用ディレクトリへの書込みと GitHub 読取りに sandbox の対象別承認が必要な場合は、それぞれの具体的操作について審査する。補完を開始するために既存原本を編集・reset・再 clone する手順はない。
+
+実データのprepareは31.06秒、previewは7.31秒、最大RSS412,068 KiB。元validatorで781件を確認し、prepare前後3,734ファイルのSHA一致、最終時点ではロックも含む3,740の束縛済みsourceファイルの一致を確認した。元の凍結コード39ファイルは不変。補完planは新しい運用コードを含む44ファイルへ束縛され、承認・台帳・authorityは未作成である。[未承認planの保全コピー](supplement_plan.json)はcanonical path制約によりそのまま起動できない。
