@@ -1,0 +1,66 @@
+{
+  "all_44_bound_hashes_match_current_files": true,
+  "approval_and_reservations_created": 0,
+  "changed_identity_keys": [
+    "commit",
+    "created_at_utc",
+    "enabled_directory",
+    "implementation_hashes",
+    "plan_path"
+  ],
+  "changed_implementation_paths": [
+    "offline_evaluation/operations/goal006b/cli.py"
+  ],
+  "fixed_generation_semantics_preserved_by_complete_identity_comparison": true,
+  "implementation_commit": "28fa9ea2f9bae114cea2be71f352ea6c955a5eaa",
+  "limitations": [
+    "Reviewer independently checked local current files, identity, hashes and JUnit evidence; remote push verification remains the root agent's separate evidence.",
+    "No production --execute or test rerun performed by reviewer."
+  ],
+  "manual_auth_retry_slots": 1,
+  "new_identity_hash": "206dfda6468a90b8d67700e3799571ff0de5aabe1263c15754efe242887f8922",
+  "new_plan_copy_matches_canonical_bytes": true,
+  "new_plan_path": "/root/minecraft-runs/goal006b-ttyfix20-20261015T201419244530Z/plan.json",
+  "new_plan_sha256": "088e7f5253c078ea310a7130e88c23df602a26910a61a0785266fd8af3c4ed21",
+  "new_schedule_exact_original_twenty_rows": true,
+  "old_and_new_plans_disabled_only_plan_file": true,
+  "old_goal006b_report_files_checked_unchanged": 20,
+  "old_plan_sha256_unchanged": "87760792f4b63f887c9f1a2547dd8c8513356a33018978309cb63e4fc0487aa8",
+  "original_39_code_hashes_unchanged": true,
+  "original_attempted": 781,
+  "original_halt_reason": "unknown_usage:auth_failure",
+  "original_source_inventory_files_checked": 3740,
+  "original_source_inventory_unchanged": true,
+  "original_unattempted": 19,
+  "previously_unattempted_slots": 19,
+  "research_api_requests_sent_by_review": 0,
+  "reviewed_at_utc": "2026-10-15T20:16:14.409533+00:00",
+  "schema": "goal006b1_independent_acceptance_review_v1",
+  "shared_authority_and_lock_absent": true,
+  "status": "PASS_NO_BLOCKING_FINDINGS",
+  "tests": {
+    "CLI_cases": 6,
+    "core_cases": 45,
+    "coverage_inspected": [
+      "Real controlling /dev/tty prompt visible; exact line runs 20 fixture calls once, including stdin=/dev/null.",
+      "Wrong/blank/whitespace/second-line/EOF/partial EOF/Ctrl-C input refuses activation.",
+      "Piped stdin/environment text cannot supply consent; missing/disconnected TTY refuses activation.",
+      "Read/write open, write/flush/read/close failures and both isatty checks preserve disabled files; private errors not printed.",
+      "Two pending real TTY prompts cannot create duplicate lineage; second exact consent sends 0 after first fixture run.",
+      "Existing core tests preserve source, exact scope, unknown reserve, checkpoint and no-resend safeguards."
+    ],
+    "evidence_sha256": {
+      "core_tests.junit.xml": "9a8b7f036cdcdb01a5b8324f1c2ffae0068b2c5f719b20b99a39948ff40c36e4",
+      "tty_cli_tests.junit.xml": "bd170bb0b69a6650f2b00cd0269483f23a1f7cd31cd669162b06461bef4194a6",
+      "tty_double_launch.junit.xml": "6ed61cfe6d94ce53cc956cee1358b6b4d91fe675e140ba4df53da6c3a6abb9ac"
+    },
+    "historical_fixture_orchestration_failures": 1,
+    "historical_invocations": 78,
+    "initial_failure_retained_and_corrected_test_passes": true,
+    "latest_errors": 0,
+    "latest_failed": 0,
+    "latest_skipped": 0,
+    "latest_unique_passed": 77,
+    "real_PTY_cases": 26
+  }
+}

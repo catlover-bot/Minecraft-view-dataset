@@ -1,0 +1,48 @@
+{
+  "baseline_commit": "3bbe3c64fe0080b43aa129dc05c909b6b797b1db",
+  "checks": {
+    "EOF_interrupt_and_IO_errors_return_fixed_diagnostics": true,
+    "ExitStack_closes_both_handles_on_read_write_failure": true,
+    "ExitStack_closes_reader_if_writer_open_fails": true,
+    "approval_returned_only_after_exact_line": true,
+    "both_handles_require_isatty": true,
+    "exact_confirmation_and_single_newline_required": true,
+    "explicit_UTF8_encoding": true,
+    "leading_or_trailing_whitespace_rejected": true,
+    "no_key_access_or_provider_calls_in_approval_function": true,
+    "no_stdin_fallback": true,
+    "prompt_flush_before_read": true,
+    "separate_read_write_dev_tty_handles": true
+  },
+  "new_sha256": "370dfe2d5256cd126fdbc9fc030df454318cf3b58cc870335f9756f1831e8efd",
+  "old_goal006b_report_files_checked_unchanged": 20,
+  "old_sha256": "1f3e006d0be8d1c8d2d7632ba6b367f38f3973d0be4369400dca1532d2ef8472",
+  "one_off_successor_preparation_review": {
+    "checks": [
+      "Provider key names are removed without reading or outputting values; Python connect/connect_ex blocked.",
+      "Uses existing --prepare and --preview with unique canonical goal006b- path, without calling --execute.",
+      "Checks old plan exact hash and source snapshot before/after; checks old plan rejects changed code.",
+      "Requires only commit, created_at_utc, enabled_directory, implementation_hashes and plan_path identity keys to change.",
+      "Rebuilds all 20 payload hashes against original source schedule and verifies no budget/schema/model/order change.",
+      "Verifies all new implementation hashes equal the explicit commit; no enabled/authority/lock state may exist."
+    ],
+    "executed_by_reviewer": false,
+    "path": "/tmp/goal006b1_prepare_preview.py",
+    "sha256": "c861838f006cd6841e98ea18cf6463f857094c0977f73204e3007474dfa7d4d6",
+    "status": "PASS_STATIC_REVIEW"
+  },
+  "original_frozen_code_files_checked": 39,
+  "original_frozen_code_hashes_unchanged": true,
+  "other_goal006b_production_files_byte_unchanged": [
+    "offline_evaluation/operations/goal006b/planning.py",
+    "offline_evaluation/operations/goal006b/runner.py",
+    "offline_evaluation/operations/goal006b/checkpoint.py"
+  ],
+  "production_AST_unchanged_outside_tty_approval": true,
+  "research_api_requests_sent_by_review": 0,
+  "reviewed_at_utc": "2026-10-15T20:12:55.908125+00:00",
+  "reviewed_production_file": "offline_evaluation/operations/goal006b/cli.py",
+  "schema": "goal006b1_independent_code_review_v1",
+  "status": "PASS_NO_BLOCKING_FINDINGS",
+  "tests_note": "This file records independent static review; real PTY/fixture test results are reported separately."
+}

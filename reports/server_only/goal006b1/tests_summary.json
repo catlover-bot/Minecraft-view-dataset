@@ -1,0 +1,36 @@
+{
+  "checked_at_utc": "2026-10-15T20:14:55.692427+00:00",
+  "latest_unique_passed": 77,
+  "latest_failed": 0,
+  "latest_errors": 0,
+  "latest_skipped": 0,
+  "core_unique_passed": 45,
+  "tty_and_cli_unique_passed": 32,
+  "real_tty_unique_passed": 26,
+  "total_test_invocations": 78,
+  "historical_fixture_orchestration_failures": 1,
+  "correction": {
+    "test": "test_double_launch_from_disabled_state_does_not_duplicate_fixture_calls",
+    "cause": "Launching both status checks simultaneously could legitimately reject the second on the nonblocking source lock before a prompt. The test incorrectly assumed both would reach prompts.",
+    "correction": "Await the first real prompt before launching the second. Both processes then observe the disabled state and await independent real terminal consent. The first runs 20 fake responses; the second exact consent is rejected as already claimed, preserving every result and sending zero.",
+    "production_change_required": false,
+    "initial_evidence": "reports/server_only/goal006b1/tty_cli_tests.junit.xml",
+    "resolved_evidence": "reports/server_only/goal006b1/tty_double_launch.junit.xml"
+  },
+  "core_pytest_seconds": 25.894,
+  "core_resources": {
+    "wall_seconds": "26.33",
+    "max_rss_kib": "59580",
+    "exit_code": "0"
+  },
+  "research_api_requests": 0,
+  "production_execute_invocations": 0,
+  "evidence": [
+    "core_tests.junit.xml",
+    "core_tests.resources.txt",
+    "tty_cli_tests.json",
+    "tty_cli_tests.junit.xml",
+    "tty_double_launch.junit.xml"
+  ],
+  "note": "Final result for each unique test, combining initial passing cases with the one affected test rerun; initial failure XML retained."
+}

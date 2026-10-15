@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="32" time="18.876" timestamp="2026-10-15T23:12:24.017846+03:00" hostname="Minecraft"><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_tty_exact_line_activates_fixture_once[tty]" time="1.016" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_tty_exact_line_activates_fixture_once[null]" time="0.995" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_tty_rejections_preserve_disabled_fixture[mismatch-supplemental_exact_approval_not_given_no_activation]" time="0.600" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_tty_rejections_preserve_disabled_fixture[leading_space-supplemental_exact_approval_not_given_no_activation]" time="0.605" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_tty_rejections_preserve_disabled_fixture[trailing_space-supplemental_exact_approval_not_given_no_activation]" time="0.617" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_tty_rejections_preserve_disabled_fixture[blank-supplemental_exact_approval_not_given_no_activation]" time="0.600" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_tty_rejections_preserve_disabled_fixture[wrong_then_exact-supplemental_exact_approval_not_given_no_activation]" time="0.628" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_tty_rejections_preserve_disabled_fixture[eof-supplemental_approval_eof_no_activation]" time="0.617" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_tty_rejections_preserve_disabled_fixture[partial_eof-supplemental_exact_approval_not_given_no_activation]" time="0.600" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_tty_rejections_preserve_disabled_fixture[interrupt-supplemental_approval_interrupted_no_activation]" time="0.602" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_stdin_or_environment_exact_text_cannot_approve[pipe]" time="0.611" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_stdin_or_environment_exact_text_cannot_approve[environment]" time="0.608" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_no_controlling_tty_with_piped_approval_cannot_activate" time="0.520" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_invalid_utf8_is_a_safe_io_error" time="0.602" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_disconnected_controlling_tty_cannot_activate" time="0.601" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_handle_faults_never_activate_or_expose_private_errors[open_r-supplemental_tty_unavailable_no_activation]" time="0.500" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_handle_faults_never_activate_or_expose_private_errors[open_w-supplemental_tty_unavailable_no_activation]" time="0.502" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_handle_faults_never_activate_or_expose_private_errors[write-supplemental_tty_io_error_no_activation]" time="0.503" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_handle_faults_never_activate_or_expose_private_errors[flush-supplemental_tty_io_error_no_activation]" time="0.525" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_handle_faults_never_activate_or_expose_private_errors[read-supplemental_tty_io_error_no_activation]" time="0.519" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_handle_faults_never_activate_or_expose_private_errors[close_r-supplemental_tty_io_error_no_activation]" time="0.603" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_handle_faults_never_activate_or_expose_private_errors[close_w-supplemental_tty_io_error_no_activation]" time="0.611" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_handle_faults_never_activate_or_expose_private_errors[read_eof-supplemental_approval_eof_no_activation]" time="0.503" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_handle_faults_never_activate_or_expose_private_errors[not_tty_r-supplemental_real_tty_required_no_activation]" time="0.503" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_real_handle_faults_never_activate_or_expose_private_errors[not_tty_w-supplemental_real_tty_required_no_activation]" time="0.526" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_tty" name="test_double_launch_from_disabled_state_does_not_duplicate_fixture_calls" time="0.487"><failure message="Failed: child exited before its real PTY prompt">self = &lt;test_tty.Child object at 0x7a543e172c90&gt;
+
+    def await_prompt(self):
+        deadline = time.monotonic() + TIMEOUT
+        marker = (cli.confirmation_text(self.fixture["plan"]) + "\n&gt; ").encode()
+        while marker not in self.output.replace(b"\r\n", b"\n"):
+            left = deadline - time.monotonic()
+            assert left &gt; 0, "approval prompt did not appear"
+            ready, _, _ = select.select([self.terminal_fd], [], [], left)
+            assert ready, "approval prompt timed out"
+            try:
+&gt;               chunk = os.read(self.terminal_fd, 8192)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               OSError: [Errno 5] Input/output error
+
+offline_evaluation/operations/goal006b/tests/test_tty.py:127: OSError
+
+During handling of the above exception, another exception occurred:
+
+fixture_plan = {'path': PosixPath('/root/workspace/Minecraft-view-dataset/.pytest_cache/goal006b1_tty/test_double_launch_from_disabl0...ecraft-view-dataset/.pytest_cache/goal006b1_tty/test_double_launch_from_disabl0/minecraft-runs/original/enabled'), ...}
+
+    def test_double_launch_from_disabled_state_does_not_duplicate_fixture_calls(fixture_plan):
+        exact = cli.confirmation_text(fixture_plan["plan"]).encode() + b"\n"
+        with terminal_child(fixture_plan) as first, terminal_child(fixture_plan) as second:
+&gt;           first.await_prompt(); second.await_prompt()
+                                  ^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/operations/goal006b/tests/test_tty.py:330: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;test_tty.Child object at 0x7a543e172c90&gt;
+
+    def await_prompt(self):
+        deadline = time.monotonic() + TIMEOUT
+        marker = (cli.confirmation_text(self.fixture["plan"]) + "\n&gt; ").encode()
+        while marker not in self.output.replace(b"\r\n", b"\n"):
+            left = deadline - time.monotonic()
+            assert left &gt; 0, "approval prompt did not appear"
+            ready, _, _ = select.select([self.terminal_fd], [], [], left)
+            assert ready, "approval prompt timed out"
+            try:
+                chunk = os.read(self.terminal_fd, 8192)
+            except OSError as exc:
+                if exc.errno == errno.EIO:
+&gt;                   pytest.fail("child exited before its real PTY prompt")
+E                   Failed: child exited before its real PTY prompt
+
+offline_evaluation/operations/goal006b/tests/test_tty.py:130: Failed</failure></testcase><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_default_preview_creates_no_files_and_never_activates" time="0.488" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_disabled_checkpoint_creates_no_files_including_locks" time="0.428" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_execute_without_exact_real_tty_consent_never_activates[missing]" time="0.473" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_execute_without_exact_real_tty_consent_never_activates[not_tty]" time="0.479" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_execute_without_exact_real_tty_consent_never_activates[wrong_confirmation]" time="0.562" /><testcase classname="offline_evaluation.operations.goal006b.tests.test_cli" name="test_recovery_error_prints_only_safe_structured_diagnostics" time="0.404" /></testsuite></testsuites>
