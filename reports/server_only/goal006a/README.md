@@ -60,7 +60,7 @@ archive SHA256は`bb643bcd59872fbc4d869b0ba5628e585d54a4cc5827794aa8bfc42eba98b9
 /root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python -B /root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal006a/resume.py --plan /root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json --resume
 ```
 
-ローカル状態だけの確認は末尾の`--resume`を`--preview`に置き換える。保存だけの再検証は同じスクリプトの`--verify-checkpoint`と`--release-id`を利用し、将来の未完成Draftを保存する場合だけ`--allow-create`を明示する。後者も有料生成を呼ばない。
+ローカル状態だけの確認は末尾の`--resume`を`--preview`に置き換える。このpreviewを`/tmp`から絶対パスで実行し、終了コード0・320件試行済み・当日料金確認済み・原本不変を確認した。[preview結果](preview.json)、[実行記録](preview_cli_execution.json)。保存だけの再検証は同じスクリプトの`--verify-checkpoint`と`--release-id`を利用し、将来の未完成Draftを保存する場合だけ`--allow-create`を明示する。後者も有料生成を呼ばない。
 
 **当日料金確認と不変条件**
 
@@ -68,7 +68,7 @@ UTC日付を実測し、2026-10-15 11:13:29–11:14:51 UTCに8件の公式文書
 
 既存`continuation_v1.plan.refresh_pricing`で同じplanの`pricing-revisions/0001.json`へ追記した。元plan・承認・authority・台帳のhashは変えていない。追記後は両providerとも`verified_on=2026-10-15`となり、当日の料金確認を通過した。日付が変われば既存の送信直前チェックが再び確認を要求する。[追記と原本不変の証拠](pricing_append.json)
 
-canonical plan SHA256は`db78ec8e59b5921e248af42a7c8390647bd549c09c11e055c144729a247a2dce`、identityは`db5533bffb583d0b1efcbcdb7c1563edf2ac87606334e6ce6cd766c650075843`を維持している。既存原本1,275ファイルと凍結コード39ファイルのhash不変を確認した。固定順、モデル、prompt、schema、出力32768、retry0、累積USD30、親消費の扱いは変更していない。完了済み160件の全再評価や200GT・旧1200出力の再評価は行っていない。
+canonical plan SHA256は`db78ec8e59b5921e248af42a7c8390647bd549c09c11e055c144729a247a2dce`、identityは`db5533bffb583d0b1efcbcdb7c1563edf2ac87606334e6ce6cd766c650075843`を維持している。既存原本1,275ファイル、先行160件の641ファイル、凍結コード39ファイルのhash不変を確認した。[最終不変確認](final_integrity.json)固定順、モデル、prompt、schema、出力32768、retry0、累積USD30、親消費の扱いは変更していない。完了済み160件の全再評価や200GT・旧1200出力の再評価は行っていない。
 
 **CPUテストと保存**
 
@@ -85,4 +85,10 @@ canonical plan SHA256は`db78ec8e59b5921e248af42a7c8390647bd549c09c11e055c144729
 
 実装ファイルは`archive.py`、`resume.py`、`tests/test_archive.py`、`test_resume.py`。実際の研究APIへ送信せず、fixture transportで再開・保存経路を検証した。
 
-専用ブランチへの修正・証跡commitとremote一致の最終記録：**PENDING（rootが実際のpush後に更新）**。main・OS・SSH・ユーザー・Codex権限設定は変更しない。
+実装と検証証跡は専用ブランチ`research/server-only-20261013`のcommit [`5ac9e0f18eab75b2ea7629a48338ae99b0a4afed`](https://github.com/catlover-bot/Minecraft-view-dataset/commit/5ac9e0f18eab75b2ea7629a48338ae99b0a4afed)へ保存し、GitHub側のSHA一致を確認した。この確認記録自体は後続の文書commitに含まれる。[GitHub保存の確認記録](github_code_save.json)
+
+開始HEADは`f4dbea44a76ae4cccf922bda17b8a3cae2f02884`。mainはローカル・remoteとも`7309327efd1c19dda793b19e8d8e6ce0b5868db9`を維持した。OS・SSH・ユーザー・Codex権限設定は変更していない。現在のセッション指定は`workspace-write` / `auto_review`で、通常コマンドの動作と対象を限定した承認審査を経た操作の成功を確認した。これをOSレベルの隔離保証とはしていない。
+
+[テスト・公開前検査の集約](validation_summary.json)。伏字検証用の合成fixture文字列を実行時構成へ変えた後の[関連1件再テスト](archive_redaction_fixture_tests.junit.xml)もPASS。実データ復元29.50秒・最大RSS396,100 KiB、preview12.48秒・最大RSS97,480 KiB、最終空き容量76,396,097,536 bytes。
+
+将来の新規asset保存ではRelease IDに対応するupload URLと明示Content-Lengthを使用する。現在の既存assetsにはuploadせず、リクエスト構成をfixtureで検証した。実装確認に使用した公式CLI source: [gh 2.102.0 API request construction](https://github.com/cli/cli/blob/v2.102.0/pkg/cmd/api/http.go)、[authentication header handling](https://github.com/cli/cli/blob/v2.102.0/api/http_client.go)。
