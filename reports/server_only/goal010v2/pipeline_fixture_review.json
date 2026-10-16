@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "observed_at_utc": "2026-10-16T23:30:22.825499+00:00",
+  "scope": "SYNTHETIC_ONLY_NO_ACTUAL_SOURCE_SCORING",
+  "tests": 43,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "junit_seconds": 1.294,
+  "pytest_reported_seconds": 1.3,
+  "artifacts": {
+    "offline_evaluation/analysis/goal010v2/pipeline.py": {
+      "sha256": "130de9f29ddfd2da5ff16699eea3b02defe762bb5ae7f6b0e3f7f7fddcac03cc",
+      "bytes": 32168
+    },
+    "offline_evaluation/analysis/goal010v2/independent.py": {
+      "sha256": "b10aaef73725b8b5e099182c5e03aecd961c972614964c16cc0bd90368a5d35e",
+      "bytes": 4655
+    },
+    "offline_evaluation/analysis/goal010v2/tests/test_pipeline.py": {
+      "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe",
+      "bytes": 24052
+    },
+    "reports/server_only/goal010v2/pipeline_fixture_initial.junit.xml": {
+      "sha256": "4c8aec1936322c6f1dfba4f286fb4b2fd73085cb6b47ca2c67779d3872d7b283",
+      "bytes": 10046
+    },
+    "reports/server_only/goal010v2/pipeline_fixture_final.junit.xml": {
+      "sha256": "97e27cc471dc4bdc778abf12ac178ff08995091bf441b44760c4d1a259afb132",
+      "bytes": 7678
+    }
+  },
+  "command": ".venv-server-v2-20261013/bin/python -B -m pytest -q offline_evaluation/analysis/goal010v2/tests/test_pipeline.py --junitxml=reports/server_only/goal010v2/pipeline_fixture_final.junit.xml",
+  "initial_execution": {
+    "tests": 34,
+    "passed": 32,
+    "failed": 2,
+    "cause": "Fixture expectations used ValueError/FileNotFoundError, while the frozen readers correctly raised GenerationError for missing receipt and AuditError for symlinks. Corrected fixture exception types; no source or production changes were needed for these failures."
+  },
+  "production_review_findings_resolved": [
+    "Evaluation scene order must use the fixed 60-scene full-manifest subset, not the 100-row cohort.",
+    "Resource-limited metrics must retain NULL and report checked/skipped counts instead of unconditional full-verification claims.",
+    "Prior stage receipts must bind stage number and exact 1/10/60 building scope.",
+    "Independent verification includes all displacement metrics.",
+    "Accumulation of prior receipt hashes must not be shadowed by the stage result dictionary."
+  ],
+  "coverage": [
+    "Fixed scene subset and source-set disagreement",
+    "Strict original metrics and fixed shift, scalar/displacement corruption checks",
+    "Optional resource NULL without failure-zero imputation",
+    "Artifact traversal, symlink, byte/hash and provenance binding",
+    "Synthetic complete 16-slot/8-baseline stage, YXZ loading and world XYZ, unchanged source inputs",
+    "Artificial baseline material metrics remain NULL",
+    "Resource-limited stage truthful QA counts",
+    "Capacity plot 120 outcomes/32768 cap and malformed source rejection",
+    "Stage order and all prior receipt hashes",
+    "Network denial and source locks across computation; exit-audit failure cannot emit PASS",
+    "Source-hash mismatch creates no output; partial stages preserved",
+    "Nested CPU/wall timer restoration on exception"
+  ],
+  "limitations": [
+    "These are fixture checks and code review, not execution of new metrics on research data.",
+    "Python socket blocking is tested; no assertion of OS-level isolation."
+  ],
+  "research_api_requests_sent": 0,
+  "key_reads": 0,
+  "source_writes": 0
+}

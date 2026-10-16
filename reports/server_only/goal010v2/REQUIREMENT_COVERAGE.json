@@ -1,0 +1,429 @@
+{
+  "analysis_label": "POST_HOC_EXPLORATORY / CPU_DIAGNOSTIC",
+  "api_key_queries": 0,
+  "created_at_utc": "2026-10-16T23:21:46.971359+00:00",
+  "legacy_canonical_run_root": "/root/minecraft-runs/goal010-20261016T223832Z",
+  "legacy_goal010_completed": true,
+  "legacy_goal010_manifest": {
+    "bytes": 21155,
+    "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/MANIFEST.json",
+    "sha256": "dcad6f41f991425063c239798fec9b8d3bec2c0474fde5f901205a67d1432d7f"
+  },
+  "model_queries": 0,
+  "new_actual_metric_calculations_completed": false,
+  "new_dependency_acquisitions": 0,
+  "new_required_outputs": [
+    "METRIC_SPEC.md",
+    "METRIC_REGISTRY.json",
+    "new_metric_values_960.csv",
+    "new_metric_values_960.json",
+    "metric_denominators.csv",
+    "metric_baselines_paired.csv",
+    "metric_counterexamples.md",
+    "metric_qa_report.json"
+  ],
+  "notes": [
+    "REUSED status refers to immutable completed Goal010 evidence, never completion of the newly requested metric suite.",
+    "All old evidence references were checked against the immutableGoal010 MANIFEST products bytes/SHA.",
+    "No run result,success count ormetric outcome has been invented. Draft will require completion receipts after the authorized stagedCPU work."
+  ],
+  "old_artifacts_changed": false,
+  "optional_outputs": [
+    "geometry_diagnostics.png",
+    "26-neighbor sensitivity",
+    "multiscale k8"
+  ],
+  "requirements": [
+    {
+      "evidence": [
+        {
+          "bytes": 21155,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/MANIFEST.json",
+          "sha256": "dcad6f41f991425063c239798fec9b8d3bec2c0474fde5f901205a67d1432d7f"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "New goal010v2 specification/run/final integrity must bind the immutable completed Goal010 source.",
+      "requirement": "旧Goal010完了時は別namespace/runで指標監査だけを追加し旧成果物を保全",
+      "requirement_id": "revision.completed_goal010",
+      "status": "REUSED_COMPLETION_EVIDENCE"
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 661,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/initial_audit.json",
+          "sha256": "26807046fb9061599b68086a94646c8bbc40378b63c9e8d6ed59cf149bd13bb9"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Repeat immutable inventories after new analysis and before final save.",
+      "requirement": "HEAD/branch/locks/source integrityと旧成果物不変",
+      "requirement_id": "initial.integrity",
+      "status": "INITIAL_AUDIT_PASS"
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 4305,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE0_RECEIPT.json",
+          "sha256": "ba21f8db48030eb2410af20ce88dbc1a7e777d86ace7828237646955bf721bbe"
+        },
+        {
+          "bytes": 3227,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/PROTOCOL_MANIFEST.json",
+          "sha256": "42d5285b0d8ed03c5ba87d7f4cfd7232973e781e49881a15193f925bc5c7b6e2"
+        },
+        {
+          "bytes": 2518866,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/view_and_generation_request_audit.json",
+          "sha256": "34aa34534ded18be41a09a6b4e37f3194f361a5b9f4605eea373d59973b81987"
+        },
+        {
+          "bytes": 1838715,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/SOURCE_BINDINGS.json",
+          "sha256": "cf6f1002328a2665cff12355bb4e7f3fee5ef105e820c504b49e870083caf3d7"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Bind these references and selected-slot source descriptors in each new metric row; no new image-description API requests.",
+      "requirement": "60/10/30抽出、180request、6入力/12保存、settings/timestamp、source mapping",
+      "requirement_id": "section1.protocol",
+      "status": "REUSED_COMPLETED_AUDIT"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Root/engine freeze METRIC_SPEC, METRIC_REGISTRY and post-hoc specification before actual pilots or scoring.",
+      "requirement": "新metric定義・分母・shift・欠測・比較・資源上限の計算前commit",
+      "requirement_id": "section1.precomputation_specification",
+      "status": "PENDING_NEW_SPECIFICATION"
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 13985,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/METRIC_AUDIT_JA.md",
+          "sha256": "f40da368d780c26931317606c3ecd5e4d97aea38dd1277cf6d2502b2e3585eb7"
+        },
+        {
+          "bytes": 14857,
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/core.py",
+          "sha256": "3c240becec802957a52e9f23c8d494644cc59fa86498b60527e132ff1a40c268"
+        },
+        {
+          "bytes": 14317,
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/alignment.py",
+          "sha256": "d64e062fd9ad7ad73cc8a7a3e2a5355cdd0a1c17766876bffd09cb85b02ee446"
+        },
+        {
+          "bytes": 25305,
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/analysis_v4.py",
+          "sha256": "33b8de23faaa73d884ffa9b88f040ed40eb83383e60f1e42fa3866ef14d553fc"
+        },
+        {
+          "bytes": 18114,
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal007/statistics.py",
+          "sha256": "ef834ea583ae640deec39aa47c6f4b332a178e2e0db5778beb089f57e4f78184"
+        },
+        {
+          "bytes": 7133,
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal008/scorer.py",
+          "sha256": "89a23f258817fa724fa971dee0fd6958734986614b1c3ffa7f6c2946861553c8"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "New independent count/metric QA must be executed later; this review does not claim actual new metrics.",
+      "requirement": "旧primary/secondary/proxyの式・実装・エラー・shiftを一覧化",
+      "requirement_id": "section1_5_1.old_metric_audit",
+      "status": "READ_ONLY_IMPLEMENTATION_AUDIT_COMPLETED"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
+      "requirement": "occupancy P/R/F1、FP/FN、volume ratio・relative volume error、IoU検算",
+      "requirement_id": "section1_5.A1",
+      "status": "PENDING_NEW_METRIC"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
+      "requirement": "XZ footprint IoUと投影集合分母",
+      "requirement_id": "section1_5.A2",
+      "status": "PENDING_NEW_METRIC"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
+      "requirement": "union列count誤差・common列top_y誤差・coverage",
+      "requirement_id": "section1_5.A3",
+      "status": "PENDING_NEW_METRIC"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
+      "requirement": "conditional exact M/C・M/g・GT材質別macro recall・exact confusion",
+      "requirement_id": "section1_5.A4",
+      "status": "PENDING_NEW_METRIC"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
+      "requirement": "保存strict shift XYZ/L1/L2・GT occupied寸法対比・IoU増分",
+      "requirement_id": "section1_5.A5",
+      "status": "PENDING_NEW_METRIC"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
+      "requirement": "6近傍boundary surface P/R/F1 @1/2、固定shift・<=距離・resource判定",
+      "requirement_id": "section1_5.A6",
+      "status": "PENDING_NEW_METRIC"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
+      "requirement": "数学的floor/固定anchor multiscale @1/2/4とanchor感度",
+      "requirement_id": "section1_5.A7",
+      "status": "PENDING_NEW_METRIC"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
+      "requirement": "6近傍連結成分数・最大成分率、26近傍はoptional別感度",
+      "requirement_id": "section1_5.B8",
+      "status": "PENDING_NEW_METRIC"
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 118425,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE4_RECEIPT.json",
+          "sha256": "a00e42af5c32529cbb4628298b1e860fd7dc7ae528c357f0ce1c58791d5910c5"
+        },
+        {
+          "bytes": 2307,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase4_visibility/VISIBILITY_FEASIBILITY.json",
+          "sha256": "d23cb693692c9677abd1afcd9884930f56edf88a33d748e5a3362c4c25c2ccc8"
+        },
+        {
+          "bytes": 1194,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase4_visibility/VISIBILITY_LIMITATIONS_JA.md",
+          "sha256": "b6d6059d1a4d432c8fb040a7cd3fac0078444b17164a4762e7350c0f268b8369"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "No new calibration evidence exists; retain NOT_VALIDATED and NULL/no visible percentages. New boundary surface metrics are not visible surfaces.",
+      "requirement": "rendered silhouette/visible-faceは独立pixel projection/occlusion検証後のみ",
+      "requirement_id": "section1_5.B9.visibility",
+      "status": "REUSED_NOT_VALIDATED_NO_NUMERICAL_VISIBILITY"
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 1425985,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/source_inventory_receipt.json",
+          "sha256": "06fb41dd7504aa7e85d32e1e5c6d45d603ae8e619cd02530d342101106f1d6c0"
+        },
+        {
+          "bytes": 65117,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_capacity_diagnostics.csv",
+          "sha256": "42572d5cec48c754736fe05a1542c0d85393dceee6b38ac8883d415f0b355124"
+        },
+        {
+          "bytes": 649103,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_error_taxonomy.json",
+          "sha256": "813d2e85600cf7e14111c233d49c3a0357f31d622837d406f1f107ba82be522d"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "New metric_denominators must preserve960/934/25/1 and explicit conditional-denominator/resource eligibility; reuse original E usage/caps without any token-count/model API.",
+      "requirement": "Builder×O/J/P/Eのvalid/model failure/operational/not-run分母、E容量をスコアと分離",
+      "requirement_id": "section1_5.B10.reliability",
+      "status": "REUSE_EVIDENCE_NEW_METRIC_DENOMINATORS_PENDING"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Bind source plan/attempt/input/GT/artifact SHA and stored strict shift; retain25 failures+942 missing withNULL/reason. Normal empty is distinct from failed generation.",
+      "requirement": "934 validに追加metric、全960行保持、原validated metric objects不変",
+      "requirement_id": "section1_5_6.all960",
+      "status": "PENDING_NEW_METRIC"
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 114580,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE1_RECEIPT.json",
+          "sha256": "91c2574fdfa259a3699e68be9bbf47d48735ca3a97a2f3353300a48daf048302"
+        },
+        {
+          "bytes": 1943,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/BASELINE_MANIFEST.json",
+          "sha256": "06d00a70548e9a8d1183046f6467329dac32076992c50999f159af33bb8ee6d3"
+        },
+        {
+          "bytes": 761749,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/baseline_predictions_manifest.json",
+          "sha256": "500c3eb33087ef9683496407ba69c67616a86c3c5e1849c60ad6d179a8cce678"
+        },
+        {
+          "bytes": 2600058,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/baseline_per_building.json",
+          "sha256": "db6cd7a5e2b3eb60204ea58ad224b257b696bdb21c279656eceaeb39982ecbc3"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Read canonical arrays through verified manifests and apply the same geometry suite/GT/stored shift. Artificial stone material metrics are not applicable. Existing480 strict checks and60 P-density checks are reused evidence, not new metric completion.",
+      "requirement": "O180/P60入力の固定filled/shell合計480を再生成・最適化せず再利用",
+      "requirement_id": "section2.baseline_reuse",
+      "status": "REUSED_IMMUTABLE_BASELINES_NEW_METRICS_PENDING"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Freeze whitelist/comparisons/seed/draws. No new p-values/Holm; do not zero normal empty Precision, C=0 conditional material, operational or resource NULLs.",
+      "requirement": "新metric paired effect+cluster CI、建築等重み、metric別common-valid、bounded failure0別表",
+      "requirement_id": "section1_5_6.paired_statistics",
+      "status": "PENDING_NEW_EXPLORATORY_STATISTICS"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Counterexamples must cover exact identity,shift,material substitution,surface boundaries,shell widths,negative floor,empty,top_y union/common denominators,connectivity,noGT-leakage and fixed-shift non-reoptimization; enforce explicit time/RAM caps.",
+      "requirement": "反証fixture・独立数値検算・1→10→全934+480 pilot",
+      "requirement_id": "section1_5_6.counterexamples_pilots",
+      "status": "PENDING_NEW_VALIDATION"
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 116009,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE2_RECEIPT.json",
+          "sha256": "1977c24314255fc69debbe43435fff1581c19218c9f0c4f22242c1780f7cbf7d"
+        },
+        {
+          "bytes": 5068119,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase2_factors/description_builder_analysis.json",
+          "sha256": "dc74a8b6ded6e9dc702960c58787a7a475551026e2c47dbae7422eab2c5244d8"
+        },
+        {
+          "bytes": 12186,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/FACTOR_FINDINGS_JA.md",
+          "sha256": "3573d1c6ddded1b913f53420d293bdad68d329cfa8b495e77f3bc4fded63d33b"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "No need to rerun or reinterpret36 as newmetric evidence; retain version/budget/time confounds.",
+      "requirement": "旧説明provider×Builder全36探索対比を保存",
+      "requirement_id": "section3.provider_contrasts",
+      "status": "REUSED_COMPLETED_ANALYSIS"
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 117623,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE3_RECEIPT.json",
+          "sha256": "9c7cfdc748cad599cee8f1e4cfa6c56a3da06213bbb401eb6a4f113236c3f037"
+        },
+        {
+          "bytes": 87193,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_AUDIT_MANIFEST.json",
+          "sha256": "e31876cffe2b4f2100f5d25e452fdcaad11eac9c216ad109f1e0127ccbfd31fc"
+        },
+        {
+          "bytes": 612293,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_material_confusion.csv",
+          "sha256": "eb34a06d675cea69c29267d548276e3a854d98483c3be261b6e163780b37b9d9"
+        },
+        {
+          "bytes": 134188,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_reference_controls.json",
+          "sha256": "b2fc29c5bf2b35c0956c8da02fa686e318855e6f8e55ed887ba4a307ad9e95a7"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "New M/C,M/g,macro recall for all eligible outputs extend this evidence; do not recode strict IDs,repair outputs or count CPU controls asmodel success.",
+      "requirement": "旧E120outcomes/60controls/101valid再照合/容量/alias不変",
+      "requirement_id": "section4.exact_oracle",
+      "status": "REUSED_COMPLETED_ANALYSIS_NEW_EXACT_MATERIAL_PENDING"
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 2307,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase4_visibility/VISIBILITY_FEASIBILITY.json",
+          "sha256": "d23cb693692c9677abd1afcd9884930f56edf88a33d748e5a3362c4c25c2ccc8"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "No synthesized visibility observations, no camera-dependent numerical metric without validated projection.",
+      "requirement": "6/12camera監査と可視性検証不能理由を保全",
+      "requirement_id": "section5.visibility_reuse",
+      "status": "REUSED_NOT_VALIDATED"
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 119322,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE5_RECEIPT.json",
+          "sha256": "b3d25473e1009e4c0ff08af3034dcc227d9bb32e735e7fe6c3c3eae0d0db18ee"
+        },
+        {
+          "bytes": 3360874,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase5_robustness/proxy_robustness.json",
+          "sha256": "806ac6add6e04ad2d57badf65c958b4d4e1f05d0d452ef3ea1a24e115e47b298"
+        },
+        {
+          "bytes": 18049,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/PROXY_FINDINGS_JA.md",
+          "sha256": "30d08bba86d479b2f405e008bebe4f9e92c6d3a37aa090c3aa01120c880b00cd"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "No new caption-quality proxy fitting or replacement; no re-execution required for metric-only addendum.",
+      "requirement": "Goal008180/360と旧Goal0101350proxy感度行を保全、旧RQ2not-testable",
+      "requirement_id": "section6.proxy_reuse",
+      "status": "REUSED_COMPLETED_ANALYSIS"
+    },
+    {
+      "evidence": [],
+      "new_metric_execution_completed": false,
+      "remaining_work": "After authorized CPU work, verify oldGoal007/008/010/ledgers/checkpoints/sourcehash unchanged; keep large artifacts in newrun, small summaries in newnamespace, no Draft mutation or paid API.",
+      "requirement": "新metric QA・前後source inventory・小規模公開copy・Git保存",
+      "requirement_id": "section7.final_qa_save",
+      "status": "PENDING_NEW_FINAL_QA"
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 15822,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/README.md",
+          "sha256": "b320ff35ef3a533c5f6e2bf2d533094e20de37b167c6a5aa77e6fa7fe64c4e71"
+        },
+        {
+          "bytes": 9205,
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/RESEARCH_DECISION_JA.md",
+          "sha256": "b7fe0cdfc3a813dae503f11bd191e8fcc86c41783e8e8be0d38e45900dfbe0d6"
+        }
+      ],
+      "new_metric_execution_completed": false,
+      "remaining_work": "Do not select favorable metric only. Keep independentN,conditionalcoverage/failurecounts,CI,resources,sends0 and finalcommit/remote state explicit.",
+      "requirement": "新metricがbaselineとの差の方向/限界をどう変えるか全固定比較で報告",
+      "requirement_id": "section7.final_interpretation",
+      "status": "PENDING_NEW_RESULTS_INTERPRETATION"
+    }
+  ],
+  "research_api_requests_sent": 0,
+  "status": "PRE_COMPUTATION_COVERAGE_DRAFT",
+  "token_count_api_requests": 0,
+  "version": "goal010v2_requirement_coverage_draft_v1"
+}

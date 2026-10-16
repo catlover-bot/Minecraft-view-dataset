@@ -1,0 +1,2032 @@
+{
+  "analysis_label": "POST_HOC_EXPLORATORY / CPU_DIAGNOSTIC",
+  "artifact_hash_note": "Caller additionally binds actual source/input/GT/pred file SHA and selected attempt provenance.",
+  "connectivity26": {
+    "reason": "6-neighbor required diagnostic fixed; avoid extra neighborhood-dependent metric and cost",
+    "status": "OMITTED_OPTIONAL"
+  },
+  "failure0_note": "engine never imputes; caller enforces eligibility in an explicitly separate table",
+  "metrics": [
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "g=|G|",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "gt_occupied_count",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "p=|P|",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "pred_occupied_count",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "C=|G intersect (P+tau)|",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "occupancy_intersection",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "g+p-C",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "occupancy_union",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "p",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "C/p",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "occupancy_precision",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "core",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "g",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "C/g",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "occupancy_recall",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "core",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "g+p",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "2*C/(g+p)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "occupancy_f1",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "g+p-C",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "C/(g+p-C)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "occupancy_iou",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "lower",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "p-C",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "excess_count",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "lower",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "g-C",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "omission_count",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "g",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "p/g",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "volume_ratio",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "g",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "(p-g)/g",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "relative_volume_error",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        -1,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "|F(G)|",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "gt_footprint_columns",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "|F(P+tau)|",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "pred_footprint_columns",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "|F(G) intersect F(P+tau)|",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "common_footprint_columns",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "|F(G) union F(P+tau)|",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "union_footprint_columns",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "union_footprint_columns",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "|F(G) intersect F(P+tau)| / |F(G) union F(P+tau)|",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "footprint_iou",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "core",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "union_footprint_columns",
+      "direction": "lower",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "sum_union_columns |n_G(x,z)-n_(P+tau)(x,z)| / union_footprint_columns",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "column_count_mae",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "blocks/column",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "common_footprint_columns",
+      "direction": "lower",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "sum_common_columns |topY_G(x,z)-topY_(P+tau)(x,z)| / common_footprint_columns",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "common_top_y_mae",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "blocks",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "gt_footprint_columns",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "common_footprint_columns/gt_footprint_columns",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "common_footprint_gt_coverage",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "pred_footprint_columns",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "common_footprint_columns/pred_footprint_columns",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "common_footprint_pred_coverage",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": false,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "M=count of common coordinates with identical canonical material ID",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "exact_material_match_count",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": false,
+      "coordinate_system": "world_XYZ",
+      "denominator": "C (common occupancy, not all GT)",
+      "direction": "higher",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "M/C",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "conditional_exact_material_accuracy",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "core",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": false,
+      "coordinate_system": "world_XYZ",
+      "denominator": "g",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "M/g",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "gt_material_recall",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": false,
+      "coordinate_system": "world_XYZ",
+      "denominator": "number of distinct GT material IDs",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "mean over GT material IDs of exact matches(ID)/GT count(ID)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "macro_gt_material_recall",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": false,
+      "coordinate_system": "world_XYZ",
+      "denominator": "g+p-M",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "M/(g+p-M)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "material_aware_iou",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "|B_G|",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "gt_surface_voxels",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "|B_(P+tau)|",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "pred_surface_voxels",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "|B_(P+tau)|",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "fraction of B_(P+tau) with Euclidean nearest boundary-center distance <= 1",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "surface_precision_at_1",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "|B_G|",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "fraction of B_G with Euclidean nearest boundary-center distance <= 1",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "surface_recall_at_1",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "surface precision + recall (defined empty conventions)",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "harmonic mean of surface_precision_at_1 and surface_recall_at_1",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "surface_f1_at_1",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "core",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "|B_(P+tau)|",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "fraction of B_(P+tau) with Euclidean nearest boundary-center distance <= 2",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "surface_precision_at_2",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "|B_G|",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "fraction of B_G with Euclidean nearest boundary-center distance <= 2",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "surface_recall_at_2",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "surface precision + recall (defined empty conventions)",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "harmonic mean of surface_precision_at_2 and surface_recall_at_2",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "surface_f1_at_2",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "core",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "union of pooled occupied cells",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "IoU of OR-pooled integer cells floor((XYZ-(0,0,0))/1)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "multiscale_iou_k1_anchor0",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "union of pooled occupied cells",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "IoU of OR-pooled integer cells floor((XYZ-(0,0,0))/2)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "multiscale_iou_k2_anchor0",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "union of pooled occupied cells",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "IoU of OR-pooled integer cells floor((XYZ-(1,1,1))/2)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "multiscale_iou_k2_anchorhalf",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "union of pooled occupied cells",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "IoU of OR-pooled integer cells floor((XYZ-(0,0,0))/4)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "multiscale_iou_k4_anchor0",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "union of pooled occupied cells",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "IoU of OR-pooled integer cells floor((XYZ-(2,2,2))/4)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "multiscale_iou_k4_anchorhalf",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "additional",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "union of pooled occupied cells",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "IoU of OR-pooled integer cells floor((XYZ-(0,0,0))/8)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "multiscale_iou_k8_anchor0",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "union of pooled occupied cells",
+      "direction": "higher",
+      "failure0_allowed": true,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "IoU of OR-pooled integer cells floor((XYZ-(4,4,4))/8)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "multiscale_iou_k8_anchorhalf",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "number of 6-neighbor components of G",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "gt_components6",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none (integer count)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "number of 6-neighbor components of P",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "pred_components6",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "count",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "g",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "largest 6-neighbor component(G)/g",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "gt_largest_component_fraction6",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": {
+        "absolute": [
+          0,
+          0,
+          0
+        ],
+        "aligned": "same saved strict occupancy-optimal tau; no new optimization"
+      },
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "p",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "failure0_scope": "only independently identified completed model-output failure; never successful NULL, unknown, resource, GT missing, or baseline missing",
+      "formula": "largest 6-neighbor component(P)/p",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "No semantic rooms, floors, visibility, human effort, causal effect or perceptual-quality claim.",
+        "Surface boundary includes cavity walls; integer voxel centers with <= thresholds.",
+        "OR pooling may hide errors and depends on anchor; k8 is diagnostic only.",
+        "Conditional material accuracy selects overlapping positions; accompany M/g and material IoU.",
+        "Material IDs are exact; artificial baseline material is not interpreted."
+      ],
+      "metric_id": "pred_largest_component_fraction6",
+      "null_policy": "NULL if its explicit denominator is zero, or resource/dependency failure; both-empty fixture IoU/F1=1; one-empty F1=0; P/R keep NULL for empty denominator. Invalid/unknown slots never enter compute_metrics and remain NULL. Successful NULL values are never failure0-imputed.",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.gt_grid_sha256",
+        "provenance.pred_grid_sha256",
+        "provenance.shift_sha256",
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "frame",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        1
+      ]
+    },
+    {
+      "alignment": "provided saved tau only; no new optimization",
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "formula": "saved tau=[dx,dy,dz]",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "World origin may be unidentifiable from images; shift magnitude is not a quality ranking.",
+        "Storage bbox is not used as the occupied bbox."
+      ],
+      "metric_id": "shift_xyz",
+      "null_policy": "relative displacement NULL for empty GT; no failure0",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "displacement",
+      "unit": "blocks",
+      "value_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "alignment": "provided saved tau only; no new optimization",
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "formula": "|dx|+|dy|+|dz|",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "World origin may be unidentifiable from images; shift magnitude is not a quality ranking.",
+        "Storage bbox is not used as the occupied bbox."
+      ],
+      "metric_id": "shift_l1",
+      "null_policy": "relative displacement NULL for empty GT; no failure0",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "displacement",
+      "unit": "blocks",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": "provided saved tau only; no new optimization",
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "formula": "sqrt(dx^2+dy^2+dz^2)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "World origin may be unidentifiable from images; shift magnitude is not a quality ranking.",
+        "Storage bbox is not used as the occupied bbox."
+      ],
+      "metric_id": "shift_l2",
+      "null_policy": "relative displacement NULL for empty GT; no failure0",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "displacement",
+      "unit": "blocks",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": "provided saved tau only; no new optimization",
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "formula": "maxXYZ(G)-minXYZ(G)+1, or [0,0,0] for empty fixture",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "World origin may be unidentifiable from images; shift magnitude is not a quality ranking.",
+        "Storage bbox is not used as the occupied bbox."
+      ],
+      "metric_id": "gt_occupied_dimensions_xyz",
+      "null_policy": "relative displacement NULL for empty GT; no failure0",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "displacement",
+      "unit": "blocks",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": "provided saved tau only; no new optimization",
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "inclusive occupied GT extent(s)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "formula": "|tau_axis| / inclusive occupied GT extent_axis",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "World origin may be unidentifiable from images; shift magnitude is not a quality ranking.",
+        "Storage bbox is not used as the occupied bbox."
+      ],
+      "metric_id": "shift_abs_relative_xyz",
+      "null_policy": "relative displacement NULL for empty GT; no failure0",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "displacement",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": "provided saved tau only; no new optimization",
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "inclusive occupied GT extent(s)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "formula": "L1(tau)/sum(inclusive occupied GT extents)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "World origin may be unidentifiable from images; shift magnitude is not a quality ranking.",
+        "Storage bbox is not used as the occupied bbox."
+      ],
+      "metric_id": "shift_l1_relative_extent_sum",
+      "null_policy": "relative displacement NULL for empty GT; no failure0",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "displacement",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": "provided saved tau only; no new optimization",
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "inclusive occupied GT extent(s)",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "formula": "L2(tau)/L2(inclusive occupied GT extents)",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "World origin may be unidentifiable from images; shift magnitude is not a quality ranking.",
+        "Storage bbox is not used as the occupied bbox."
+      ],
+      "metric_id": "shift_l2_relative_bbox_diagonal",
+      "null_policy": "relative displacement NULL for empty GT; no failure0",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "displacement",
+      "unit": "ratio",
+      "value_range": [
+        0,
+        null
+      ]
+    },
+    {
+      "alignment": "provided saved tau only; no new optimization",
+      "baseline_comparable": true,
+      "coordinate_system": "world_XYZ",
+      "denominator": "none",
+      "direction": "descriptive",
+      "failure0_allowed": false,
+      "formula": "aligned occupancy IoU - absolute occupancy IoU",
+      "implementation_sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "limitations": [
+        "World origin may be unidentifiable from images; shift magnitude is not a quality ranking.",
+        "Storage bbox is not used as the occupied bbox."
+      ],
+      "metric_id": "occupancy_iou_gain",
+      "null_policy": "relative displacement NULL for empty GT; no failure0",
+      "priority": "diagnostic",
+      "sample_hash_fields": [
+        "provenance.inputs_and_shift_sha256"
+      ],
+      "section": "displacement",
+      "unit": "ratio",
+      "value_range": [
+        -1,
+        1
+      ]
+    }
+  ],
+  "protocol_id": "goal010v2_fixed_shift_metrics_v1",
+  "resource_limits": {
+    "CPU_budget_seconds": 120.0,
+    "boundary_per_grid": 2000000,
+    "derived_aligned_coordinate_abs": 300000,
+    "estimated_scratch_bytes": 536870912,
+    "estimated_scratch_formula": "320*(g+p), conservative planning guard, not measured RSS",
+    "input_coordinate_abs": 100000,
+    "occupied_per_grid": 2000000,
+    "shift_coordinate_abs": 200000
+  },
+  "schema": "goal010v2_metric_registry_v1",
+  "specification_type": "post-hoc pre-computation specification"
+}

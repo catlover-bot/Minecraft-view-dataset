@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="34" time="1.310" timestamp="2026-10-17T02:27:06.378359+03:00" hostname="Minecraft"><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_pilot_selection_uses_bound60_not_full100_cohort" time="0.001" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_pilot_rejects_disagreeing_source_scene_sets[slots]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_pilot_rejects_disagreeing_source_scene_sets[descriptions]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_bind_original_strict_metrics_and_fixed_shift" time="0.052" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_corrupted_metric_families[occupancy_precision]" time="0.004" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_corrupted_metric_families[conditional_exact_material_accuracy]" time="0.004" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_corrupted_metric_families[macro_gt_material_recall]" time="0.004" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_corrupted_metric_families[footprint_iou]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_corrupted_metric_families[column_count_mae]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_corrupted_metric_families[common_top_y_mae]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_corrupted_metric_families[surface_f1_at_1]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_corrupted_metric_families[surface_recall_at_2]" time="0.004" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_corrupted_metric_families[multiscale_iou_k2_anchorhalf]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_corrupted_metric_families[pred_components6]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_displacement_corruption[shift_l1]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_displacement_corruption[shift_l2]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_displacement_corruption[shift_l1_relative_extent_sum]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_displacement_corruption[shift_l2_relative_bbox_diagonal]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_detect_displacement_corruption[occupancy_iou_gain]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_rejects_unexplained_optional_null" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_reports_resource_null_without_imputation" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_independent_checks_cannot_relabel_worse_shift_as_strict" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_previous_enforces_order_products_and_binding" time="0.003"><failure message="offline_evaluation.server_v2.generation.GenerationError: invalid or missing run file: 0_source_RECEIPT.json">tmp_path = PosixPath('/tmp/pytest-of-root/pytest-22/test_previous_enforces_order_p0')
+
+    def test_previous_enforces_order_products_and_binding(tmp_path):
+        bound = {'fixture': 'bound'}
+&gt;       with pytest.raises((ValueError, FileNotFoundError)): p.previous(tmp_path, 1, bound)
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal010v2/tests/test_pipeline.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010v2/pipeline.py:86: in previous
+    name=f'{i}_{STAGES[i]}_RECEIPT.json'; receipt=guard.read_json(root/name)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal007/audit.py:41: in read_json
+    return _read_json(Path(path))
+           ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/pytest-of-root/pytest-22/test_previous_enforces_order_p0/0_source_RECEIPT.json')
+
+    def read_json(path: Path):
+        try:
+            return json.loads(path.read_text("utf-8"))
+        except (OSError, UnicodeError, ValueError):
+&gt;           raise GenerationError(f"invalid or missing run file: {path.name}") from None
+E           offline_evaluation.server_v2.generation.GenerationError: invalid or missing run file: 0_source_RECEIPT.json
+
+offline_evaluation/server_v2/generation.py:93: GenerationError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_previous_rejects_receipt_with_wrong_stage_number" time="0.002" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_artifact_rejects_traversal_symlink_hash_and_size" time="0.002"><failure message="offline_evaluation.analysis.goal007.audit.AuditError: regular_file_required:/tmp/pytest-of-root/pytest-22/test_artifact_rejects_traversa0/link.json">tmp_path = PosixPath('/tmp/pytest-of-root/pytest-22/test_artifact_rejects_traversa0')
+
+    def test_artifact_rejects_traversal_symlink_hash_and_size(tmp_path):
+        path = tmp_path / 'safe.json'; write(path, {'safe': 1}); d = descriptor(path, tmp_path)
+        assert p.checked_artifact(tmp_path, d) == path
+        for change in ({'path': '../safe.json'}, {'bytes': d['bytes'] + 1}, {'sha256': '0' * 64}):
+            with pytest.raises(ValueError): p.checked_artifact(tmp_path, {**d, **change})
+        link = tmp_path / 'link.json'; link.symlink_to(path)
+&gt;       with pytest.raises(ValueError): p.checked_artifact(tmp_path, {**d, 'path': link.name})
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal010v2/tests/test_pipeline.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010v2/pipeline.py:121: in checked_artifact
+    p=guard.safe_child(root,record['path'])
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/source_guard.py:26: in safe_child
+    path = regular(root / relative)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal007/audit.py:55: in regular
+    require(not any(p.is_symlink() for p in (path, *path.parents)) and path.is_file(), 'regular_file_required:' + str(path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+code = 'regular_file_required:/tmp/pytest-of-root/pytest-22/test_artifact_rejects_traversa0/link.json'
+
+    def require(condition, code):
+        if not condition:
+&gt;           raise AuditError(code)
+E           offline_evaluation.analysis.goal007.audit.AuditError: regular_file_required:/tmp/pytest-of-root/pytest-22/test_artifact_rejects_traversa0/link.json
+
+offline_evaluation/analysis/goal007/audit.py:50: AuditError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_slot_source_rejects_provenance_corruption[input_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff]" time="0.027" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_slot_source_rejects_provenance_corruption[source_entry_hash-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff]" time="0.024" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_slot_source_rejects_provenance_corruption[source_plan_identity-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff]" time="0.025" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_slot_source_rejects_provenance_corruption[source_gt_descriptor_hash-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff]" time="0.025" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_complete_synthetic_stage_preserves16_slots8_baselines_and_sources" time="0.181" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_resource_limited_stage_keeps_nulls_and_cannot_claim_all_checks" time="0.096" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_capacity_uses_observed120_and_never_rewrites_csv" time="0.005" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_capacity_rejects_changed_count_or_output_cap[kwargs0]" time="0.002" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_pipeline" name="test_capacity_rejects_changed_count_or_output_cap[kwargs1]" time="0.002" /></testsuite></testsuites>
