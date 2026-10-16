@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{O error structure from the frozen strict evaluator, valid-only equal-building means. Material-set F1 compares sets; material-aware voxel IoU also requires the correct material at matching coordinates. Add/delete/replace are operation counts, not time. Denominators are the O rows of the main table; alignment optimizes occupancy translation, with material identities unchanged.}
+\label{tab:goal008-error-structure}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+O metric & OpenAI mean & Slots / buildings & Anthropic mean & Slots / buildings \\
+\midrule
+absolute occupancy iou & 0.0762 & 177/60 & 0.0874 & 179/60 \\
+aligned occupancy iou & 0.1760 & 177/60 & 0.1772 & 179/60 \\
+aligned material aware iou & 0.0210 & 177/60 & 0.0169 & 179/60 \\
+aligned material set f1 & 0.4145 & 177/60 & 0.4451 & 179/60 \\
+aligned total normalized repair cost & 1.4888 & 177/60 & 1.8732 & 179/60 \\
+aligned add count & 3666.4056 & 177/60 & 3364.8222 & 179/60 \\
+aligned delete count & 2622.6389 & 177/60 & 4553.0083 & 179/60 \\
+aligned replace count & 1200.8528 & 177/60 & 1511.9417 & 179/60 \\
+\bottomrule
+\end{tabular}}
+\end{table*}

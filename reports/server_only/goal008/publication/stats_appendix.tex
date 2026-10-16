@@ -1,0 +1,66 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Builder contrasts (family size 8). Unmodified Goal007 paired estimates, building-bootstrap intervals and sign-flip p-values. Direction is B-A; IoU higher and MAE lower are favorable. Pair and independent building denominators differ. Exact values and methods are retained in frozen\_comparisons\_20.json.}
+\label{tab:goal008-1}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllll}
+\toprule
+Contrast & Metric & Delta & 95\% CI & Raw p & Holm p & Pairs & Buildings \\
+\midrule
+Anthropic - OpenAI / O & IoU & 0.0006 & [-0.0056, 0.0069] & 0.860714 & 1 & 176 & 60 \\
+Anthropic - OpenAI / O & MAE & 0.6259 & [0.3963, 0.8584] & 9.999e-05 & 0.00079992 & 176 & 60 \\
+Anthropic - OpenAI / J & IoU & 0.0043 & [-0.0041, 0.0126] & 0.336866 & 1 & 177 & 60 \\
+Anthropic - OpenAI / J & MAE & 0.4185 & [0.0463, 0.8333] & 0.0343966 & 0.206379 & 177 & 60 \\
+Anthropic - OpenAI / P & IoU & 0.0017 & [-0.0159, 0.0184] & 0.845115 & 1 & 60 & 60 \\
+Anthropic - OpenAI / P & MAE & -4.3556 & [-5.4500, -3.3833] & 9.999e-05 & 0.00079992 & 60 & 60 \\
+Anthropic - OpenAI / E & IoU & -0.0028 & [-0.0105, 0.0062] & 0.526247 & 1 & 46 & 46 \\
+Anthropic - OpenAI / E & MAE & 0.0362 & [0.0072, 0.0652] & 0.0653935 & 0.326967 & 46 & 46 \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+\clearpage
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Lossless JSON reserialization (family size 4). Unmodified Goal007 paired estimates, building-bootstrap intervals and sign-flip p-values. Direction is B-A; IoU higher and MAE lower are favorable. Pair and independent building denominators differ. Exact values and methods are retained in frozen\_comparisons\_20.json.}
+\label{tab:goal008-2}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllll}
+\toprule
+Contrast & Metric & Delta & 95\% CI & Raw p & Holm p & Pairs & Buildings \\
+\midrule
+J - O / OpenAI & IoU & -0.0057 & [-0.0122, 0.0003] & 0.0768923 & 0.230677 & 175 & 60 \\
+J - O / OpenAI & MAE & 0.3352 & [0.1138, 0.5630] & 0.00319968 & 0.0127987 & 175 & 60 \\
+J - O / Anthropic & IoU & -0.0016 & [-0.0092, 0.0056] & 0.690331 & 0.966703 & 179 & 60 \\
+J - O / Anthropic & MAE & 0.1157 & [-0.1676, 0.4519] & 0.483352 & 0.966703 & 179 & 60 \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+\clearpage
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{GT diagnostic contrasts (family size 8). Unmodified Goal007 paired estimates, building-bootstrap intervals and sign-flip p-values. Direction is B-A; IoU higher and MAE lower are favorable. Pair and independent building denominators differ. Exact values and methods are retained in frozen\_comparisons\_20.json.}
+\label{tab:goal008-3}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllll}
+\toprule
+Contrast & Metric & Delta & 95\% CI & Raw p & Holm p & Pairs & Buildings \\
+\midrule
+P - O / OpenAI & IoU & -0.0087 & [-0.0248, 0.0066] & 0.289771 & 0.493951 & 60 & 60 \\
+P - O / OpenAI & MAE & -8.4259 & [-9.5463, -7.2100] & 9.999e-05 & 0.00079992 & 60 & 60 \\
+E - O / OpenAI & IoU & 0.7458 & [0.6862, 0.8017] & 9.999e-05 & 0.00079992 & 55 & 55 \\
+E - O / OpenAI & MAE & -12.3697 & [-13.2033, -11.5323] & 9.999e-05 & 0.00079992 & 55 & 55 \\
+P - O / Anthropic & IoU & -0.0081 & [-0.0207, 0.0062] & 0.246975 & 0.493951 & 60 & 60 \\
+P - O / Anthropic & MAE & -13.3426 & [-14.0315, -12.7000] & 9.999e-05 & 0.00079992 & 60 & 60 \\
+E - O / Anthropic & IoU & 0.8137 & [0.8007, 0.8262] & 9.999e-05 & 0.00079992 & 46 & 46 \\
+E - O / Anthropic & MAE & -13.4010 & [-14.2368, -12.5458] & 9.999e-05 & 0.00079992 & 46 & 46 \\
+\bottomrule
+\end{tabular}}
+\end{table*}

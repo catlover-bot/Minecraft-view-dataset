@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="34" time="4.005" timestamp="2026-10-16T18:15:10.429766+03:00" hostname="Minecraft"><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_gate_and_definition_freeze_precede_join[status-PENDING]" time="0.002" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_gate_and_definition_freeze_precede_join[phase0_binding-PENDING]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_gate_and_definition_freeze_precede_join[definitions_frozen-False]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_gate_and_definition_freeze_precede_join[definition_sha256-0000000000000000000000000000000000000000000000000000000000000000]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_gate_and_definition_freeze_precede_join[input_kind-unknown]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_source_bound_join_rejects_every_identity_mismatch[input_id]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_source_bound_join_rejects_every_identity_mismatch[input_sha256]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_source_bound_join_rejects_every_identity_mismatch[source_sha256]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_source_bound_join_rejects_every_identity_mismatch[gt_bbox_sha256]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_source_bound_join_rejects_every_identity_mismatch[gt_voxels_sha256]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_missing_hash_alias_is_never_guessed" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_duplicate_description_duplicate_builder_or_missing_builder_rejected" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_all360_records_preserve_original_input_and_builder_repetition_counts" time="0.346" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_tied_spearman_matches_scipy_exactly" time="0.005" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_bootstrap_weighted_ranks_match_explicit_duplicate_cluster_copies" time="0.007" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_within_bootstrap_duplicate_clusters_stay_separate_and_not_globally_reranked[within_building_centered_pearson]" time="0.004" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_within_bootstrap_duplicate_clusters_stay_separate_and_not_globally_reranked[within_building_midrank_association]" time="0.004" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_known_failure0_is_separate_and_two_builder_mean_requires_both[execution_failure]" time="0.271"><failure message="assert (0.24 is None)">failure = 'execution_failure'
+
+    @pytest.mark.parametrize('failure',sorted(stats.DEFINITIVE_FAILURES))
+    def test_known_failure0_is_separate_and_two_builder_mean_requires_both(failure):
+        scores,slots=fixture(3);slots[0].update(status='failed',metrics=None,failure_kind=failure)
+        result=analyze(scores,slots)
+        assert record(result)['counts']['complete_pairs']==8
+        assert record(result,policy='bounded_iou_failure0')['counts']['complete_pairs']==9
+        assert record(result,target='both_builders_mean')['counts']['complete_pairs']==8
+        assert record(result,target='both_builders_mean',policy='bounded_iou_failure0')['counts']['complete_pairs']==9
+        outcome=result['joined_descriptions'][0]['builders']['openai']
+&gt;       assert outcome['valid_only'] is None and outcome['bounded_iou_failure0']==0 and outcome['failure0_applied']
+E       assert (0.24 is None)
+
+offline_evaluation/analysis/goal008/tests/test_statistics.py:162: AssertionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_known_failure0_is_separate_and_two_builder_mean_requires_both[parse_failure]" time="0.270"><failure message="assert (0.24 is None)">failure = 'parse_failure'
+
+    @pytest.mark.parametrize('failure',sorted(stats.DEFINITIVE_FAILURES))
+    def test_known_failure0_is_separate_and_two_builder_mean_requires_both(failure):
+        scores,slots=fixture(3);slots[0].update(status='failed',metrics=None,failure_kind=failure)
+        result=analyze(scores,slots)
+        assert record(result)['counts']['complete_pairs']==8
+        assert record(result,policy='bounded_iou_failure0')['counts']['complete_pairs']==9
+        assert record(result,target='both_builders_mean')['counts']['complete_pairs']==8
+        assert record(result,target='both_builders_mean',policy='bounded_iou_failure0')['counts']['complete_pairs']==9
+        outcome=result['joined_descriptions'][0]['builders']['openai']
+&gt;       assert outcome['valid_only'] is None and outcome['bounded_iou_failure0']==0 and outcome['failure0_applied']
+E       assert (0.24 is None)
+
+offline_evaluation/analysis/goal008/tests/test_statistics.py:162: AssertionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_known_failure0_is_separate_and_two_builder_mean_requires_both[truncation]" time="0.272"><failure message="assert (0.24 is None)">failure = 'truncation'
+
+    @pytest.mark.parametrize('failure',sorted(stats.DEFINITIVE_FAILURES))
+    def test_known_failure0_is_separate_and_two_builder_mean_requires_both(failure):
+        scores,slots=fixture(3);slots[0].update(status='failed',metrics=None,failure_kind=failure)
+        result=analyze(scores,slots)
+        assert record(result)['counts']['complete_pairs']==8
+        assert record(result,policy='bounded_iou_failure0')['counts']['complete_pairs']==9
+        assert record(result,target='both_builders_mean')['counts']['complete_pairs']==8
+        assert record(result,target='both_builders_mean',policy='bounded_iou_failure0')['counts']['complete_pairs']==9
+        outcome=result['joined_descriptions'][0]['builders']['openai']
+&gt;       assert outcome['valid_only'] is None and outcome['bounded_iou_failure0']==0 and outcome['failure0_applied']
+E       assert (0.24 is None)
+
+offline_evaluation/analysis/goal008/tests/test_statistics.py:162: AssertionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_known_failure0_is_separate_and_two_builder_mean_requires_both[validation_failure]" time="0.271"><failure message="assert (0.24 is None)">failure = 'validation_failure'
+
+    @pytest.mark.parametrize('failure',sorted(stats.DEFINITIVE_FAILURES))
+    def test_known_failure0_is_separate_and_two_builder_mean_requires_both(failure):
+        scores,slots=fixture(3);slots[0].update(status='failed',metrics=None,failure_kind=failure)
+        result=analyze(scores,slots)
+        assert record(result)['counts']['complete_pairs']==8
+        assert record(result,policy='bounded_iou_failure0')['counts']['complete_pairs']==9
+        assert record(result,target='both_builders_mean')['counts']['complete_pairs']==8
+        assert record(result,target='both_builders_mean',policy='bounded_iou_failure0')['counts']['complete_pairs']==9
+        outcome=result['joined_descriptions'][0]['builders']['openai']
+&gt;       assert outcome['valid_only'] is None and outcome['bounded_iou_failure0']==0 and outcome['failure0_applied']
+E       assert (0.24 is None)
+
+offline_evaluation/analysis/goal008/tests/test_statistics.py:162: AssertionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_operational_unknown_and_other_failure_are_never_failure0" time="0.253" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_feature_missingness_is_feature_specific_with_explicit_reason" time="0.272" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_constants_and_singleton_buildings_have_explicit_diagnostics" time="0.048" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_unstable_bootstrap_keeps_point_but_nulls_interval" time="0.003" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_deterministic_cluster_draws_and_identical_reanalysis" time="0.459" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_real_input_kind_requires_actual180_by60_inventory_before_analysis" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_proxy_nonfinite_wrong_type_or_range_never_enters_statistics[True]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_proxy_nonfinite_wrong_type_or_range_never_enters_statistics[nan]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_proxy_nonfinite_wrong_type_or_range_never_enters_statistics[inf]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_proxy_nonfinite_wrong_type_or_range_never_enters_statistics[-0.1]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_proxy_nonfinite_wrong_type_or_range_never_enters_statistics[1.1]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_proxy_nonfinite_wrong_type_or_range_never_enters_statistics[0.5]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_statistics" name="test_fixed_definitions_explicitly_preserve_exploratory_and_original_rq2_scope" time="0.001" /></testsuite></testsuites>

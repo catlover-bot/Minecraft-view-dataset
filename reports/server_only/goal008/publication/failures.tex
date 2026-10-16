@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Final selected outcomes. F0 is a separate bounded aligned-IoU sensitivity: only identified completed model-output failures receive zero. Operational HTTP 520 at slot 942 remains null and is excluded from F0. F0 means weight buildings equally. Failure counts are slots, not independent buildings. The original HTTP 401 and approved retry belong to the attempt audit, not two selected slots.}
+\label{tab:goal008-failures}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllll}
+\toprule
+Builder & Cond. & Valid / planned & Trunc. & Validation & Missing & F0 eligible & F0 IoU \\
+\midrule
+OpenAI & O & 177/180 & 0 & 3 & 0 & 180 & 0.1735 \\
+Anthropic & O & 179/180 & 0 & 1 & 0 & 180 & 0.1765 \\
+OpenAI & J & 177/180 & 0 & 2 & 1 & 179 & 0.1696 \\
+Anthropic & J & 180/180 & 0 & 0 & 0 & 180 & 0.1754 \\
+OpenAI & P & 60/60 & 0 & 0 & 0 & 60 & 0.1674 \\
+Anthropic & P & 60/60 & 0 & 0 & 0 & 60 & 0.1691 \\
+OpenAI & E & 55/60 & 5 & 0 & 0 & 60 & 0.8451 \\
+Anthropic & E & 46/60 & 14 & 0 & 0 & 60 & 0.7604 \\
+\bottomrule
+\end{tabular}}
+\end{table*}

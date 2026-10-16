@@ -1,0 +1,1594 @@
+{
+  "E": "Complete discrete ground-truth cuboid specification with palette and coordinate semantics; exact decode verified for60 scenes. Valid-only outcomes condition on successful model output and are not a whole-population upper bound.",
+  "J": "Exact typed-JSON-tree-preserving reserialization of O, with sorted keys and compact formatting; not historical Structured IR.",
+  "O": "The complete saved v4 JSON visual-description record itself, including human-readable fields and original metadata; not free-form prose.",
+  "O_J_typed_tree_equal_count": 180,
+  "P": "Partial ground-truth oracle: occupied XYZ dimensions, world bbox, exact material set and voxel count; per-voxel geometry/material assignment omitted.",
+  "builder_models": {
+    "anthropic": "claude-haiku-4-5-20251001",
+    "openai": "gpt-5-mini"
+  },
+  "code_evidence": [
+    {
+      "function": "offline_evaluation.server_v2.cohort_v4.canonicalize_saved_text",
+      "line": 127,
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/cohort_v4.py",
+      "sha256": "45f9ed256938f0e9df8ffe0cb88ae81fdcfedf80354da91c6cd4eb0a1d930e88"
+    },
+    {
+      "function": "offline_evaluation.server_v2.cohort_v4.typed_tree",
+      "line": 83,
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/cohort_v4.py",
+      "sha256": "45f9ed256938f0e9df8ffe0cb88ae81fdcfedf80354da91c6cd4eb0a1d930e88"
+    },
+    {
+      "function": "offline_evaluation.server_v2.oracle.partial_oracle",
+      "line": 110,
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/oracle.py",
+      "sha256": "459b7448b38a990bd23595d2b372e2c29593328aa82ced960de439ab47fd690c"
+    },
+    {
+      "function": "offline_evaluation.resmoke_v2.cuboids.exact_builder_text",
+      "line": 138,
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/resmoke_v2/cuboids.py",
+      "sha256": "ded178ab7c4410b0e0a795963f97ef034973c5e2460f69fccebdc8867bba389c"
+    },
+    {
+      "function": "offline_evaluation.resmoke_v2.cuboids.decode_exact",
+      "line": 81,
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/resmoke_v2/cuboids.py",
+      "sha256": "ded178ab7c4410b0e0a795963f97ef034973c5e2460f69fccebdc8867bba389c"
+    },
+    {
+      "function": "offline_evaluation.resmoke_v2.adapter.build_payload",
+      "line": 27,
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/resmoke_v2/adapter.py",
+      "sha256": "b0845f0e66a297779fa8456ea71e0780a6760a78be9d0587afec53bdcd3ce646"
+    }
+  ],
+  "description_provider_models": {
+    "anthropic": {
+      "claude-haiku-4-5-20251001": 60
+    },
+    "gemini": {
+      "gemini-3.1-pro-preview": 60
+    },
+    "openai": {
+      "gpt-5-mini": 60
+    }
+  },
+  "description_sources_verified": 180,
+  "human_readable_field_presence": {
+    "anthropic": {
+      "building_type": 60,
+      "dimensions_estimate": 60,
+      "elements": 60,
+      "materials": 60,
+      "rebuild_hints": 60,
+      "shape": 60,
+      "summary": 60,
+      "uncertainties": 60
+    },
+    "gemini": {
+      "building_type": 60,
+      "dimensions_estimate": 60,
+      "elements": 60,
+      "materials": 60,
+      "rebuild_hints": 60,
+      "shape": 60,
+      "summary": 60,
+      "uncertainties": 60
+    },
+    "openai": {
+      "building_type": 60,
+      "dimensions_estimate": 60,
+      "elements": 60,
+      "materials": 60,
+      "rebuild_hints": 60,
+      "shape": 60,
+      "summary": 60,
+      "uncertainties": 60
+    }
+  },
+  "human_readable_field_types": {
+    "anthropic": {
+      "building_type:str": 60,
+      "dimensions_estimate:dict": 60,
+      "elements:list": 60,
+      "materials:list": 60,
+      "rebuild_hints:list": 60,
+      "shape:dict": 60,
+      "summary:str": 60,
+      "uncertainties:list": 60
+    },
+    "gemini": {
+      "building_type:str": 60,
+      "dimensions_estimate:dict": 60,
+      "elements:list": 60,
+      "materials:list": 60,
+      "rebuild_hints:list": 60,
+      "shape:dict": 60,
+      "summary:str": 60,
+      "uncertainties:list": 60
+    },
+    "openai": {
+      "building_type:str": 60,
+      "dimensions_estimate:dict": 60,
+      "elements:list": 60,
+      "materials:list": 60,
+      "rebuild_hints:list": 60,
+      "shape:dict": 60,
+      "summary:str": 60,
+      "uncertainties:list": 60
+    }
+  },
+  "oracle_GT_verification": [
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 192,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "dcea64f7ed5d7d6b469f491a3511df2087acc13df21ceeb5788c9d37d13c8099",
+      "E_input_sha256": "aabe0be1ec9444a098baa75185ce823ddc44ba3c0d8befe781ea131582f25805",
+      "E_palette_entries": 6,
+      "P_input_id": "59763391c8a9214f7f3894d0fc116e80d3eb140e56548362a2bc4f533f25e74b",
+      "P_input_sha256": "52eda2617b9f04ae3f40c9da99e1c325007c842602fb5404c31d90b0f91a929e",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "de04369ae646dd12251883d5a0779a24a0d401d4abe7c90a9c38654d3b44cec6",
+      "scene_id": "buildings_100_v4_building_087"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 554,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "4d4dd162ee6348735330c7e18ed35de33314664ba5016c0f6dba651367578e45",
+      "E_input_sha256": "cb3b27064fdd2948fc9504eaa39951a57ab024aa94c336de9736890d1f8b9948",
+      "E_palette_entries": 8,
+      "P_input_id": "638f15bfbfa40b8adcb95e9868799d7a171c18c54deab8a800d767dc2b502317",
+      "P_input_sha256": "60409c2706115af7c0a5a5acb4a83b858e9b2d832773b8a1eeeabb861ae15811",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "789bdddaa1a34775d81265515f43ecdcc2817f25ddb42611799eba4c384db6ca",
+      "scene_id": "buildings_100_v4_building_026"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 631,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "382d69edc328492e2168a49ffb76b2cb0af4c8e4afa2f8dea41242412619670b",
+      "E_input_sha256": "a4e4bb0adc6b780f1f24fa7c5c19136627cb7f5fb813b592db98f91d75184aeb",
+      "E_palette_entries": 7,
+      "P_input_id": "147db7ca51e6200614a7d18b30edf7ba02a8962708f409f62eba2df5b3c5a58a",
+      "P_input_sha256": "89cfb74ca59131462d164f2d2dd8089493610ae77e9dfd4916c345297cb485c4",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "ae4f13e611675e778189787b86a6cf65f29dda467acb644a7b5cea8a3c7c5007",
+      "scene_id": "buildings_100_v4_building_007"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 1309,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "863ca9a4eefb8dfa3cab7c5136df0e06cb13b72ca75cdb5bd3b5a1de4e082ad4",
+      "E_input_sha256": "85c5918697bdca63f77ab6ec35f1c687648451b80f0049e2ea051d58f512ea5e",
+      "E_palette_entries": 8,
+      "P_input_id": "c0d630069bfedc60fdea1b96fed29eca90fe82b30ad67850eebccb81b9725c9c",
+      "P_input_sha256": "7ad88d2fa1c1477a43c03e2b7f9f2dd53d105c6811e328d1129f802d5ebfc642",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "c4d9d8f23338dd43d3fbad0a6b93bc25eee69f22deb3e33a096d3657ee50888b",
+      "scene_id": "buildings_100_v4_building_032"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 874,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "2c09c62c59aefea15b6278c6fd436c7fd67921e6ed47edaeca069cf0205d1f89",
+      "E_input_sha256": "dd51ff33b82d85cc7ea939919741db4410d9331eb0226d419c0186b7152f2ca2",
+      "E_palette_entries": 8,
+      "P_input_id": "713ff1f1ef901fb08758ae34a2863e59c813c504c22c03fb73cf53b47a168f00",
+      "P_input_sha256": "5e0a9fe620af3f1f6417ca7059675bec61e31439829cce465d5fb9ae5892c0b9",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "4296d7ed77cfe7438f718b6e849040a04ff802d390faeaf231f3c5930a3c43ad",
+      "scene_id": "buildings_100_v4_building_092"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 636,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "03e5e49330f26e444fe8a673994a0b0f2e842b9bb6c5c509553947d269f87408",
+      "E_input_sha256": "c4340437b3a8c22fafa1f64943f218204e7669fec2699ae94173b21537b1a77d",
+      "E_palette_entries": 8,
+      "P_input_id": "d37cb9b87ba5cff5971df98de173420484ddc5d74c783048ad9cb40dbc4e4fe8",
+      "P_input_sha256": "6072192adea994dff33314442e17677c4026481b7bce6a764da432fac6a1113c",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "7cfeac01a570d62cf9d2cc517b66ba0ef65fc3056cdbdffaf749c6dde3730569",
+      "scene_id": "buildings_100_v4_building_078"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 419,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "a7510ae807e22e755c2d665420fa0d866cdff9d3d845cc22f893fe79621ccd86",
+      "E_input_sha256": "afaa638538df31f0955c82c9043c26214bda0b8b368b487cb5a998209c0365ca",
+      "E_palette_entries": 7,
+      "P_input_id": "66c6995f0b19a85617f80e734bb485478dcc3ef9d5307269f346d172425e122d",
+      "P_input_sha256": "127261ab3d989ccd006603cb1ae385a631d30ce25ae774b5e2bd774bcfed87bf",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "1066ee7194b1fe4b9d1f8319f726226f76073551cbc8d89771a651695a04e3dd",
+      "scene_id": "buildings_100_v4_building_045"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 480,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "f43c7061519ae09c839d0accfd2a497fb19d476f77228f330c9ebe1e419f38d3",
+      "E_input_sha256": "98db1e51627bcd64eebc4b29d9921bd5fa6ef7c5344ad8d6a039cc1dabbceae5",
+      "E_palette_entries": 7,
+      "P_input_id": "b0eb9b856e261fb639e05cec111217bc5d979055c841c99784fcd39e1e4277dd",
+      "P_input_sha256": "908762c619d20b6bd3770bb3ccc5501e102609b1b29810bd303cf9a86e7e9e13",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "f7e3b85a8de8f7b4f62de4b19358ba74978a0c5b310329d71656a9b31958ee0d",
+      "scene_id": "buildings_100_v4_building_023"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 636,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "7edf9808c4dbb794e36bfdf830b5819f0b60d415230b98bab32296b6a007c370",
+      "E_input_sha256": "7cceb38f43b164fc8315d795305b539845f6918de3d2a85edc2ed907f7647f50",
+      "E_palette_entries": 7,
+      "P_input_id": "ef26fad99813fbcd6bb7b70e5fbb8be7b07e4fe0f5f2f5d0c80e287ba7ac9fdd",
+      "P_input_sha256": "8403d0e877711349c44444ce3352ffea74ba3891d2cf01a00875c9bd878b0cc1",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "d5d49fc7f260dd24df5e86894b9269c51a16bb8bbb5bccf95ef1cdf314e95ea2",
+      "scene_id": "buildings_100_v4_building_055"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 392,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "669da4f76e3391aa864562d2e348058d559f76e729aa7fbf06d11f215c66ebf6",
+      "E_input_sha256": "b72fd1615778a0bae2b59d565cd44ebddb1cc2787c3d579329c4dfd0b70fdf9c",
+      "E_palette_entries": 8,
+      "P_input_id": "1921559e0c406ee83e5d40e649ccf4799c8f737d71d8ef11a2bcc3513d58f487",
+      "P_input_sha256": "0710f890274f0fefafcb57e5cd055accc777d1c3a04a0f864bf6b6f5081c17a2",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "a26131ebff50d27902747c068f1754ac6c9d9592e54c1f1d70be3177d45ff42d",
+      "scene_id": "buildings_100_v4_building_062"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 569,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "1979a3ea053a924e2856e91bc21190e57c8a81e6c85d135f55b93bd32845fcf7",
+      "E_input_sha256": "09f9e4237cf01daf3904c8c4f2f897a4582031032b01a85222715a697cfb45a2",
+      "E_palette_entries": 6,
+      "P_input_id": "a116424166dc541b32b1dbf0d4cc1bba986922ff06fc46975f5d1743dad05c3e",
+      "P_input_sha256": "0ee095132dfd73f9e70e0e9efb85c49091cb4813192d538395ccccba64a0fd64",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "d95036fa3bd5c333aebf77f3b6d84c342992f9986ab9a55f9bd07711998fcc9d",
+      "scene_id": "buildings_100_v4_building_033"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 414,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "84040dcbfc6d33ce74a185e366a09292ccc1e95bb1a18a3a865dc333b44e4aa3",
+      "E_input_sha256": "a3bd65170037de3854af6b0c60a279af2e27ac7defcc5895ecf0da47ab4ad28b",
+      "E_palette_entries": 7,
+      "P_input_id": "457297c5c4796ab33f77bde9f36241224e179652a4476ec898d2b6256cab80d7",
+      "P_input_sha256": "3e5c626e9e0293392bab5a23994197d932334b69fef0127b953497c4c4d28669",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "70dd8fc3dd011f87a33d371d1c4e697436ff55c33dcd6dcd4a9ff47ddd1b25f3",
+      "scene_id": "buildings_100_v4_building_065"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 606,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "9a928d13d985650997cbb3425cf97cc2bad7603f5e5bfbe81ef9ac809e94eddf",
+      "E_input_sha256": "82445177a5ab4ca27b38d11b01bc381ad4e01e5ee4dc20f4b57623754be6b018",
+      "E_palette_entries": 7,
+      "P_input_id": "c4ebcd70ff559bc57bcfc26fc86064b60b3f72a4751f92faae3ec269814f13a6",
+      "P_input_sha256": "6d898a6e858a5422aa1fa8960be9937ece12b0a71a3072d70670353a49819fb2",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "61bd9c7f76513dd5551354c4633f950420952a5b32e3dc45a00fe0cf03090c8a",
+      "scene_id": "buildings_100_v4_building_061"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 1247,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "b769929498ae254a3dc02481781288070fd652a5d3b26b64a2c60c62f1e58211",
+      "E_input_sha256": "b84531ebc78a315fb23f49b9431819541286c36e4553d0f7417aad3778d0a714",
+      "E_palette_entries": 6,
+      "P_input_id": "6fe3d9c4a4f7930d4534461d62a0af12307371ec937c24008bfa9b7b4919a036",
+      "P_input_sha256": "f7913557d3f0e256551156f1474e18843449db17a68bd251bc0122ed5905f112",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "7cd2876759d13a850c9d9151cb34d84fdf93d6646662a59a6037fb38b7d45268",
+      "scene_id": "buildings_100_v4_building_094"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 2046,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "28926b7736479a699044bf67feffc3ddd5d2302bea83f3978cf560a0b0536902",
+      "E_input_sha256": "005fd0ba6ddb9295bdef9120d6749289cbb7e93416db3ae015c0c5e2f4a1429e",
+      "E_palette_entries": 7,
+      "P_input_id": "3b2df56ca22ed82b343c2db4b07d702b8237b3f83c9aa61f84d7587336607a0a",
+      "P_input_sha256": "69af0c7ce985366daf532b3c84ae72b938c96038ae2ac47319f773cbb2e992ae",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "c5d5d8fad563d12b4c389bbecb9f5af016c0020d75512ef03d27f4eb78d4387a",
+      "scene_id": "buildings_100_v4_building_049"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 355,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "893bf236ddfd8bdbe73326cc62ed7c90e7c52d0eed660271a8d3086bb47883a5",
+      "E_input_sha256": "5569ae840768dcc03e53c91597a4bf4f4e39acce34c7a0592e346fddbe7c730a",
+      "E_palette_entries": 7,
+      "P_input_id": "11dd58d8f90baa07ced30f8ac75090a7a690674237d8750e61775056dccceec2",
+      "P_input_sha256": "10112801cd776203e9f847ddaf33953f6f241eb6cbdcb9f92bad3f8648935d63",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "7d63f0a14e9cb0b3051526f71f1d65f60ae744c549e305fb0f5f305a6d399f3f",
+      "scene_id": "buildings_100_v4_building_039"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 382,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "d60b6a719d3ac2850f61fa55a58904c02baf39adc49182a0181afb930472e10a",
+      "E_input_sha256": "445f74c172da5ec07f32c8aa56014d3716427aded00f50bc8669ab8c968dcef2",
+      "E_palette_entries": 6,
+      "P_input_id": "448ccf6cda67c101ed8841141f355aa9dacec4356f6a435904095ddab8030d2e",
+      "P_input_sha256": "15eb70ab6fa5f63aa08425569b3cb9ce9077cd36e34595102f8aa7496afc5bfd",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "f4fef01297f8d576dcc13f14f8b797173c7dbbdac1eb52f0f1aef117a3e839b1",
+      "scene_id": "buildings_100_v4_building_041"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 740,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "b9921ce01d10384835030ff957e74b864cf2cf8b73793a5f0493cc60679fe33c",
+      "E_input_sha256": "d15df0004c6e77273e990740d5068273a2800a9b8ef008c73437a4d44bed4fd5",
+      "E_palette_entries": 8,
+      "P_input_id": "e1a7bc62646fadec1d77cf66e4841b1206147f887dcac3b3785248a0588a1e68",
+      "P_input_sha256": "d9bf40171464fd715084995ac9b760c6fe4a01853ab3f4f5432d7a4bd3f66da1",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "f8bcaed05cd727b72a52968d32a330cf16bddf9c60ccb8660f648cfa2e5a0f8c",
+      "scene_id": "buildings_100_v4_building_042"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 333,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "cad98baa024115f6d3f97edd06405cc002700cc352fd68a77e052ccdda0625dd",
+      "E_input_sha256": "9dac46bc0cef2cb8ec562227a3326eb4fa7a3392f67a5a8b39ab5a8c8aecd91d",
+      "E_palette_entries": 7,
+      "P_input_id": "2c7afa46544637370c77cab4b529691fd29fd4ad352af5112b678c3a15bbf467",
+      "P_input_sha256": "54344bc9e0868210e37eb5a0518854289cd247ccc1b7807b1d92e54a4bd31ebd",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "bb23c685dd0520372436f6212d32d4b91b6e4f254607abc392d63c2788284b7c",
+      "scene_id": "buildings_100_v4_building_090"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 903,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "1bccb6873bfbf6e3a2b206ea4365688e252f4f184c676c3c738b203cbb27179d",
+      "E_input_sha256": "86e18e9bdff3d2fda1070143e71d4e6f65e20d4aaaf065736726ed4cf603facc",
+      "E_palette_entries": 7,
+      "P_input_id": "ba3a24d574d2213ebbc97f5f14df67211411da54fd306764c316e5d62b988284",
+      "P_input_sha256": "9b58ac5b87177eb15dc3775c218246d9444e5871ef634ce4216cdcf0d65b449e",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "3fbaf3c8f0ab6cde5ba5982c3cda1cb5991e10bfdb5e12b6cd69b416592d951c",
+      "scene_id": "buildings_100_v4_building_077"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 197,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "d8dd83e896a10e72bf1f774efdd795a4b644352d09d95a6733d59c53f393824d",
+      "E_input_sha256": "72aa3223d1816a8d6be19cf3d5fbecf36876a3e7cdf3c51265fb01673259b103",
+      "E_palette_entries": 6,
+      "P_input_id": "95882b7305217efc06a0122b16845ccc07682692384eb5b0d57450ea813ccd34",
+      "P_input_sha256": "fb828520b4484cc42401f28b3b404e570bf45f5e3a0068b174ebef9235431353",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "bee4d9b2b214894ee2a6a8226c66ce617ce995485e0b45c03a3d49c953025b68",
+      "scene_id": "buildings_100_v4_building_082"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 657,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "b4d3032b87d320d7586afe2c11e4c447e96f26d912468efcc0d41d7cbccbca03",
+      "E_input_sha256": "d409cf3a7ed5a6685a16420f726d30d10d1e533b337974409abd13b65a4a3915",
+      "E_palette_entries": 7,
+      "P_input_id": "c2265327225f36d0a5221ea416d577562b73065dd399adc13a262e3b6f337080",
+      "P_input_sha256": "4a6df55a4629db88f9bc955437fb51481d8c526d6a4eb72da6740b1872079a9a",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "9bfca72720d1dac93e2ae7894726559bbce7b8bfe7bf3ff5e46e4b46d34538a7",
+      "scene_id": "buildings_100_v4_building_093"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 546,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "aa14653c8ab176089febf7f089bb28baeab1bbfa1c8e414393d34332c2d10a77",
+      "E_input_sha256": "1af1504de9668ff09bd059ab908cb3ccf4b76edc6cc19a67751c85eca0170499",
+      "E_palette_entries": 7,
+      "P_input_id": "71de3dd603e66fa0965517578351cee268ca463d29b39c5a061f568eebadfd02",
+      "P_input_sha256": "e64f1eae85fbcaa90aa56bad2a9e3508aa77226fed79bd66d1dadb443704a85c",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "038d3c9b5253d2a0dfdb6d0fce0f380163f4302941d2f8a89523fa566e68c313",
+      "scene_id": "buildings_100_v4_building_057"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 737,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "1f160940ed4629bf04168aaed294ee68ec23b10dec74487a5af0036e18776a7e",
+      "E_input_sha256": "efd8d028b51c9e7829ea1fbb119e54a7b503c8e5979441d92a131cbac7d0c1c5",
+      "E_palette_entries": 7,
+      "P_input_id": "8e69bada0c1f80477f8428097ad8b0b7ba043bf37f5837113f43d83f61344fd8",
+      "P_input_sha256": "d19e4ea60f6787c4695bd4ef7791a0bd607ac060681cfdc62bccccbff11febec",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "2ff4d833e46c165cb124e01eed84d7249e2c6e88297964d39ec34a8ad2164137",
+      "scene_id": "buildings_100_v4_building_059"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 705,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "cef397349e36a52e8a1f18aba050c28e88b2c903b3bf3bb9214de97d77cdfd2d",
+      "E_input_sha256": "a6a66dd77f9c91438fe48d25d2af6569908005ed52a21d970b5e54a9aacf9a8c",
+      "E_palette_entries": 8,
+      "P_input_id": "cb0a74db507335085e7bd5e0a38ecd736351740b41eca69427d4260df2a02d47",
+      "P_input_sha256": "c4da6c64c7754bce62b86adaaae2a3b352c160a17aa4e2a3a20054fa3d585f5e",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "95c933544822dd00c3a034d7fc26acac4cabb8de9a63d38dca5316d58167097a",
+      "scene_id": "buildings_100_v4_building_024"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 522,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "213d71bc37401b4d02f013b0ccddf4d1336b6e554554f2576c65312615d4156f",
+      "E_input_sha256": "177f62a033d4a075d872a9354fd4aee373947d56951122055b780f6fdc86c001",
+      "E_palette_entries": 7,
+      "P_input_id": "fea93afe65cbd18d2cb2d44c5158f1d7902f7bb29e934948a8f0d65affdef124",
+      "P_input_sha256": "1c0056b9627b2aa34ab55df02b20cd39e7c87fef0808b8975219a12c4ab056c6",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "9a7dc84b657a0ce771479fa54eb7d033a41c89b38d567b82f0daa23a49aa626e",
+      "scene_id": "buildings_100_v4_building_021"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 320,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "d8c625d8896d3261ca72bfe75475df9a5bd6b72d79eba3f6668e3ec2e41042ff",
+      "E_input_sha256": "fb5d2ed354bf57d1df08005e0816eef513b13fa7592d253813baac9bab61954a",
+      "E_palette_entries": 7,
+      "P_input_id": "d09d98cd281cb5fcc8c1f969914121fdb17823118759a84d8389e34eab3b420a",
+      "P_input_sha256": "d8e0cc86146a7646d0ea998ad624fa8cc9fe256f4bb436b5bbdb2c8ec6d4e094",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "4ddb40cbe02e97726fb6b70351c7e3e2672352e23e510f2d9e5e3e7a76ce05e3",
+      "scene_id": "buildings_100_v4_building_003"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 447,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "81d966beb5d29b10af915e37da9cb8ea0497d49ef18a887433d625b5b9038e3e",
+      "E_input_sha256": "191c47dab5aa119a4b411a7ab8455c38908332ab7f3a36cd9aa43f5d556f0fcf",
+      "E_palette_entries": 7,
+      "P_input_id": "c9cd76fec5e2edd6792d4e210f13751590ee3613376a93757da249882400bff8",
+      "P_input_sha256": "6a0bf3384d71a2b1b6ad609cab62d3de3cf60c6475cd1e66036d05e3b5651216",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "f183c044469a73f06ebedeef9b06c350a31b45b935bc99c7412d581482b8b835",
+      "scene_id": "buildings_100_v4_building_051"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 679,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "f7b73fba4b44c471c6b22d20b99d0545a0db3e66da68d8cb4c1386cfea1c084f",
+      "E_input_sha256": "00260626634c0e8981d75dfe4b70b99ec89fad00df73fb499ac612ede9a9e461",
+      "E_palette_entries": 7,
+      "P_input_id": "910fe0a0e5679a9809a215f5aac32a1a63b11e1b4093d247aa87d2c8584d4172",
+      "P_input_sha256": "2d4c6c9925edf29f6ebdb569ae9dff41aeb2e41abf297b7abf5b9850d0d86f85",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "bf5e97c5082035b630ebe4ebbb90bf27d692cb68aeeea15716bc5c21ee11e216",
+      "scene_id": "buildings_100_v4_building_013"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 895,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "f04797a1b2916c32122e14b8657ce75e988c7acbfccfc476ee8f3f2b3496f169",
+      "E_input_sha256": "df8af1a5c63b5594d4f81c4ef3540a0bc474506c3098b67090cdba408c0d0cfa",
+      "E_palette_entries": 8,
+      "P_input_id": "05807814c3ce1b66d4cf65596c2030558209c3fb141da783472150d5847f4de8",
+      "P_input_sha256": "bf89f55a532a3868acab79bd653850ca16d97946040e5169a0c092a2613f6c42",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "5b201843b417c09497f3f447ba3431b7843d700fd372399700f69962f1ae0519",
+      "scene_id": "buildings_100_v4_building_037"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 241,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "9ba2bea033bd6e03e1a8b9a75f760d0df75bcd91f29fff3d616c19b1a17fe378",
+      "E_input_sha256": "29b6facae5cd1dd4666d8c7a0f9b8c117cc26927d2c2f3ba5580c803f072f0b6",
+      "E_palette_entries": 8,
+      "P_input_id": "6f441cb0c2e729fc8ffe3f6c363ed4aee583db8d4c29055fc674deb867eb47e5",
+      "P_input_sha256": "eef08934ba0c2f81ed1a95f0b41b2187f2cd9944684ae12486e665657985acdc",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "c458b226635858f6f470f2adfbd06c44e6ffaea05058101016e87cb7cd54ef85",
+      "scene_id": "buildings_100_v4_building_006"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 451,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "fc567fd55d25562c2ef8e2a3f43f691ac6ff4bdd9a3be346ecb1687b66d96f27",
+      "E_input_sha256": "f66a1d0b9f236d4395e13b8a0700c3a8af56b68522ff22b35ab1b7c12f02d906",
+      "E_palette_entries": 7,
+      "P_input_id": "86dc785c52da866888151525cc8d93cee676f2b4f8273608a7e59ce068af9b4f",
+      "P_input_sha256": "b4d522a924bbb748ba54517effa5ab69c59d1c095078aa789fa51c55e9795662",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "e779caca6e4739a4542a0c186db5f86cf37e61a72bfda28b26531f0481c5e0c4",
+      "scene_id": "buildings_100_v4_building_005"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 428,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "126c86ddb686229a16120cb5410a9a161517e7b0bda43e111c83661ea26ad695",
+      "E_input_sha256": "626a74e2f033aa55f940c11dbc0464f520eebfbdcecc864bb1a32f35bc32d346",
+      "E_palette_entries": 6,
+      "P_input_id": "2020fa8c8a7b7bf1f96002ec056acd178cbbf1b99d85870bc6b76e0b94126e65",
+      "P_input_sha256": "555122851648987cd8028f13f71c08c599cf693cbb6d7ca23cefb2c924c31e73",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "eab1bce6feb8a495eee5fb017343cce759244486ac4367ba98adede9f2a79376",
+      "scene_id": "buildings_100_v4_building_034"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 637,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "1e4e90c7c1bea3f870a2856bc24333bc05e31c1036ef5db19962c8e71f72facc",
+      "E_input_sha256": "46b3914f4ec235398c7038766d9b6f5a852ad3e265eea33b50471bdc2d929d05",
+      "E_palette_entries": 7,
+      "P_input_id": "7fa1affb838115407afb05042f8ea4485675035760fceacc02973686ca363951",
+      "P_input_sha256": "ef9467e4767605b2c74844559e9e0abe27fd67e13914134af807ea8d21bd0476",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "11326e18204286b73a64c84e12285307edc848f88d15f2fda223dbbed6d71eb2",
+      "scene_id": "buildings_100_v4_building_027"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 717,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "22184267a790d9395bade893c1107d918b84c60aa9df02884cb21acb0730dc9c",
+      "E_input_sha256": "4a712cfc0a31abe48f1fb08cecdf9c32c2cdce77f359ed52893f7949a891397f",
+      "E_palette_entries": 7,
+      "P_input_id": "96ea5949f0b9af815679d77540610a27d1570ccfa7931cc97b8d814e8b15c25c",
+      "P_input_sha256": "251a3dfde9609e1b4c91ed91e3b3462ab9434640b640dae00af441fc2df8d457",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "e0b385f37e9e158144129449e206d331e781a8baa7a7dc8bbdf551a171ea2d03",
+      "scene_id": "buildings_100_v4_building_031"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 273,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "3189226791e7345681acd307fe0ad7d67fa71e3f0953991dc216e002f155535e",
+      "E_input_sha256": "f7a198941f04da13efa3bab3f29947d8ee22847e027b1f5475d94d983777c5fb",
+      "E_palette_entries": 7,
+      "P_input_id": "44647836bcd0975a8dfff4133cad20bfef99aab5eff0f37d5a46b67bfef54e2d",
+      "P_input_sha256": "fea878ecb420dfd0fb5aedc70d65e7ca68c75a206fe40f6647ce125ada9ab65d",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "c94a858905aa29c21bd993f6205e04f8705c92b9da2162f87a7adc8456a20e88",
+      "scene_id": "buildings_100_v4_building_099"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 560,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "415493746275ee648cbbd1dadb42c225ff8083e2439dd0582d557d3d1b820dd5",
+      "E_input_sha256": "b79c28d6c52982abbfdc3fac99f6d9456427452d1493194b46e57011121b20a8",
+      "E_palette_entries": 6,
+      "P_input_id": "4f52503b1b41f46de1729371ea49651e4f61861e61f6455093faba8476889a7b",
+      "P_input_sha256": "fd75bbb6f3979b9c548169b50e411e128ec48ec99c70cf5533b7bbc65c271325",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "c2650752a3625d64664f47d0dd805c486bba27fab18528db390197e2b6f252bf",
+      "scene_id": "buildings_100_v4_building_016"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 630,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "8d3363bcca4a783edd83ae8694e52e5791cc58bd032715b991bece04642dc047",
+      "E_input_sha256": "96c1e5c8767391f10aca5f23bbd576a72d3e089cb28597e4349f795be2503473",
+      "E_palette_entries": 8,
+      "P_input_id": "8d95fd073cdc5a7c1e5fb649db617bf43263b7a9266856a1079a26c0f8dfcaaf",
+      "P_input_sha256": "b95d095260c8a2310f5dff3b4b0373bcb74651edfed27febad87296456a6fa5f",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "4886c75ab5d26d2e93fd20155a7ed65a2307939f7c19ecf0d604e000e4f32d02",
+      "scene_id": "buildings_100_v4_building_054"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 571,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "48debb6077ea0172fa265abf3fa88bde278f064dbd94c03964d107e79b1358c1",
+      "E_input_sha256": "7dc5641eece344e4f68dec63eb3d0c534eefa3a1230c72d649f313f9d6b65a9b",
+      "E_palette_entries": 7,
+      "P_input_id": "c4136c1ff2c390a6c40308f81e30d2841fbdcfc2d7e3fcc89a65c9d68d1e9b0c",
+      "P_input_sha256": "0f71f92bfaabeed5b0916c185a02c2effee953efb6578ac130b80504ff71862f",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "831b5862250550823a62d7284c2b8f35a1d08450af5a0a253608646e2e1c0833",
+      "scene_id": "buildings_100_v4_building_028"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 594,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "a2754988b38c6a23bbc07dcaf924b5fcf8f53a9bc6d124c5e69bd0a126d1e70d",
+      "E_input_sha256": "b35d62e57c0838c1239ef2cad24a0bfb8f1e11266d7be9a1d905b379e01e6103",
+      "E_palette_entries": 6,
+      "P_input_id": "d08fa1b14435af0f4ae7b9b7c5910f0b62703a070e992e3dc90c0fb5974bf3ee",
+      "P_input_sha256": "22129e8dbb24992e8c146d91c326ebca459878f6df363e93fdc74945d1569c97",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "d85f610b93f29c8f31cb3c2a66b553216cecef7d748afbb26baf7e8f51f0c78f",
+      "scene_id": "buildings_100_v4_building_070"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 589,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "63965b635e14210ed6ed6b3da524abe49cb27a029d3e99cbabfc1963d04f788e",
+      "E_input_sha256": "9061d7f992f1cb19f1783d06693535ca0e06878dfba062f0ee7ffc10568dd889",
+      "E_palette_entries": 6,
+      "P_input_id": "5dd18691a6348af6363df251a140926dddcfc90d9aa5a7c895fa32f82c26e3ba",
+      "P_input_sha256": "1b7486d0f6f365350e5bb1e820f5b8676bef356d88fa66db984b48bc12c8b70c",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "ce459fb51b1923143dee4e61417ba5bc9f513c76a32c743dfba0820d28e16200",
+      "scene_id": "buildings_100_v4_building_046"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 567,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "eefadcb81b77ddc802c959a0c2101836c48e2b5fada876b2ca2ec8497ef4bff3",
+      "E_input_sha256": "03a2436476a785bff61adaf9526f3ff56250510b95cd2cefb0efe4d9be2674b4",
+      "E_palette_entries": 7,
+      "P_input_id": "156d784c8f250bc9264116090b8a95d533517852fb002e88d57b52ed9c5e7bec",
+      "P_input_sha256": "e6f9c73189ea415dd36b5b2f9591111490c1d8ce76572bc122a4718d970400ee",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "f310385a25d621548ea8cde71daf80bbfe1676de3a6bc3219e88849e69d14480",
+      "scene_id": "buildings_100_v4_building_053"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 708,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "3e7aba312dcae1fdf9430c27412a922cb2c9726a1567cf49dfb5465920ed5edf",
+      "E_input_sha256": "a309fa98645af2429b2c0f37135d8c58507efd1fe3d2f12124b2cdecc4c68a31",
+      "E_palette_entries": 7,
+      "P_input_id": "ffb57506b571eb2207d76c8ffeef44beb27d01e4003c3778567d54c6e33aadcd",
+      "P_input_sha256": "dd1f1553e7179b9588713309a2ae9e699644708ae661745f6cb0fc5fc40f63eb",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "a0cf76777da6222ad6f536bdb96ed108d27dbc777ff973b2d8460109c44dab4d",
+      "scene_id": "buildings_100_v4_building_015"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 540,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "e632152470913c4a2bf41fd54825b8eae949b3456ee3ab93f8f8c79175a5a809",
+      "E_input_sha256": "86e292f184aa72477321f7d70c7ba21811b62713ef33f522c00e2a0ae7569d14",
+      "E_palette_entries": 7,
+      "P_input_id": "49995b2aa3a8945e032fdb149ddaa17755e6893a1f2714da1afd8f2eae5aa37e",
+      "P_input_sha256": "d64fff52fad9588306e483dd57562487cc6e61fce930beb4b511754c239fedc8",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "6a04e10fac95e2bbc49e75908ea63413108245cd54bdf196f0df7876f7075e0f",
+      "scene_id": "buildings_100_v4_building_025"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 1545,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "7d128aff99b4b81081d8d8baa9abfbafe3a5fce71a36695889d3d35de6945171",
+      "E_input_sha256": "e669995c04009ce82f05edf2a5eef975670b2a4ac4d3362659eb69ce763e7362",
+      "E_palette_entries": 7,
+      "P_input_id": "fcadf3f0fa251417a46de536dc2ce2239995a15e6cf337fd34ad4d95d04fa7f4",
+      "P_input_sha256": "f3e81677ca61b94b8614cd8dc03bac0574b736a4ce1de64331ccc51eb252cba8",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "a809a03e039f33d56d7d86e3d39a49c182a3aa868bf191bbb7267e3218a5066d",
+      "scene_id": "buildings_100_v4_building_001"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 401,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "7dd1446992c1ba59e5454fda255e87206e6425767f26e7625be84a6fa4880b3b",
+      "E_input_sha256": "0496431ae430e9d90c579d04b6b1a213dc591e81a23b37e1542d0d8b0c2d7180",
+      "E_palette_entries": 7,
+      "P_input_id": "6be407aeab27e3ad6ddd237ce8cc11d8ccac0e7dccbeb4f4c95562a2bc63eab6",
+      "P_input_sha256": "39766d581efab9269087cb099af86f951e8cf7b1759cf8996635d4770bd340dd",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "c292277483745d3c872588822233d934f0b06d9f1ea0156a3bd6d79088f8b148",
+      "scene_id": "buildings_100_v4_building_095"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 573,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "d00b2167cca41b27085882831c27f4fbb08c69f3ffb9a6fcbe3b4145505630e9",
+      "E_input_sha256": "b8a14a6100f5a3b651c7f3161ee98a8fca9abf48ee09716560a22658152a8735",
+      "E_palette_entries": 7,
+      "P_input_id": "998097b80b7d2e8afed624ce0a39e3a702ce736324d222dcb80b38d1e5126f0d",
+      "P_input_sha256": "a6b692b88a35244022cf3c556e6702c10831d3fbfc0bcd3a68ef454fb8b48e4d",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "d99fe8121f9a7a1bb708095780c1551f1028c312d03b553a553ef88198b4e71a",
+      "scene_id": "buildings_100_v4_building_047"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 897,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "c8187212b5568fa09ae1bd6d185cc69b433900fb0504edddad53cdd6956bbf4c",
+      "E_input_sha256": "57241a0a136337bbc386687cbd96a8a38c2c3d0801a70d88560faa153ef005dc",
+      "E_palette_entries": 6,
+      "P_input_id": "11fd3d252b94c812a4c4d852638b31cf535b8e706a457b28844195b2fef76fec",
+      "P_input_sha256": "b2634eb6c3ec9489b138e11fd8ba87b017225b21565e2e03e6979d6ab50c3452",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "d3ea78691c3a88921eb496c216046bfb7c5216a5835e21707c6ed40f8b257d69",
+      "scene_id": "buildings_100_v4_building_088"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 717,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "844e8cb88f7f3536b31b17d698a59bba2f17719756f68459e4edd7f829c05b13",
+      "E_input_sha256": "4fef52e664e6c34bf558ead0336fcd5030bc347911855b6047239d565da5f567",
+      "E_palette_entries": 6,
+      "P_input_id": "b3b535aa28d240f7365ea4be8405ab30da360eb3d2821b7a262d34ec6740d6b2",
+      "P_input_sha256": "ff5f7f414cbae186b46a97c2a7e9a64698bbb6c454eee2430779647f4c054c2f",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "82ffb60039d6486516e23da6680d8e060a91575497d161bcb41830a2be97e073",
+      "scene_id": "buildings_100_v4_building_064"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 401,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "b803db40217c4e826644092486700fe55846d9c38f34a6d334b577cf798ce538",
+      "E_input_sha256": "4847af3f4a0e700a9acf7f742c435ac1ec0f1537897e75b9400c204477bc6d6e",
+      "E_palette_entries": 7,
+      "P_input_id": "4c577f0381262148769de5bec717d0634d888e0d7b38409350f7760734e9632b",
+      "P_input_sha256": "94331993ee8c4b4f4a477d73d1f70761c078de61ab347d2c6cdd4d9a03258d78",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "6862dede9feca3e5ff7f6c445aacd6cb10f0df995d30b0b9e4f34bc202007dcc",
+      "scene_id": "buildings_100_v4_building_083"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 364,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "268be289fc0c7d905e99211be93e10f677a24de798a60a1095e5259d1c23d941",
+      "E_input_sha256": "7db794d4b15d55d01477ee2fabcceaf1f926f62b79307733f6f1749405847943",
+      "E_palette_entries": 8,
+      "P_input_id": "3d402653cbf0e936e39a081ee2ac857f1388bfc8ea7ac352e021efdef64dacee",
+      "P_input_sha256": "128a2dcc053f51cd4255cbcf95508fe346d4208fa571e0a5afe6a6cb328dff74",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "01e495521fa269c2d777176a5b24df53f85c8399e61e2f229bc3db1a6b8ce591",
+      "scene_id": "buildings_100_v4_building_096"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 498,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "9225529def784aa9e2cf24a11903b12e447a702f8b87066e1e5632fcdcefa1f1",
+      "E_input_sha256": "31e0603765860d9f7b19413c0a732cf1598927ec79e0ea810fcad4d21c713b7f",
+      "E_palette_entries": 8,
+      "P_input_id": "aaea812b444658302b346a23d1fb83c89e4283ce202980d1091cf5426bd1ff4e",
+      "P_input_sha256": "5b696c8f3897a5a958933ca57e3b72e6a793ed4a4ee7bd640285a57cd0ca1ef2",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "594dc36c664c3f871331d83b1cce7f27ae6ec5d477c75767cc6e62586476f6b3",
+      "scene_id": "buildings_100_v4_building_050"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 611,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "f4c2e23cfc062a831868a5a20013c7088034d3a579b58be1b0cd8ff27ede4106",
+      "E_input_sha256": "d4ede56791c10e8f6f018dc0813047818adde50c2fc099572297e34f1830b1d8",
+      "E_palette_entries": 7,
+      "P_input_id": "7edc78fa545ff5a5758bc9bb116a04990631e341037624207a64dcea8eb808c6",
+      "P_input_sha256": "e74c44271aa4153b7443c9200f0cb833117016f1634d3caefcec324e2a431687",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "7bb7127d6a529093ad973b4889382d2753afb093634630f695cd7f13dafb620d",
+      "scene_id": "buildings_100_v4_building_011"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 662,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "f44461c2b8da72fb069b75295c2647c67f8280ccd3006929c3e74442a816a4f0",
+      "E_input_sha256": "eefba33fa7190586d78757921e4ac60e8af475a26fe79d421ccb97ba0d5da128",
+      "E_palette_entries": 7,
+      "P_input_id": "844c6a8db6fcd4effa2ff4303a2375591f183994418ade78328abe4f3f97f9d7",
+      "P_input_sha256": "4350089f3188208af9f92f91814fd4a9a048a3b9bcc526e09e6d0f43f1473b7e",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "16a05d7fb418788319a06070a4e1ceacd627d2fcda1f173a133fdda014fcd4f7",
+      "scene_id": "buildings_100_v4_building_040"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 478,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "ae119d9a0d36904b1f31adf89b929583db51d86d9f48dffc2448d93b1b03a4c7",
+      "E_input_sha256": "61b4d4039244dff9ff54542d21fdbe5bc128c46b4278c257e18bf3879735afd7",
+      "E_palette_entries": 7,
+      "P_input_id": "120399de3d670bc4629e2a23d02c837a19ed02dd3dc7870baef05ceb491c7e64",
+      "P_input_sha256": "9f364bf5c9fa1e44c2503ec1f09ca5bf688fe93ecf075d0b750fa5f92ddbd106",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "09788484fe3334232d76580dfe5e28f455067c1794ddd9f4ad7b40d74c4828f0",
+      "scene_id": "buildings_100_v4_building_089"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 473,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "ecf5e48f836b288a1153d10f8b74e075092f06d4b4f8a789d8b202b78b3e5bdb",
+      "E_input_sha256": "c9603ab5becb1e9e6edee2f178e1301864dcbdacd14a606a14b6407b233e3064",
+      "E_palette_entries": 8,
+      "P_input_id": "dc6052a08608140bb2336b3faf8f6336557de0747342032813eaec9aa4057251",
+      "P_input_sha256": "e9b128d3d25d1b638a6c5734526ec44c6433e03cdd8e382540e5d9212ca155ae",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "8be9180d8d628b11ca26db692d20caeca3423254e97a00a65e39f972ed2ef12a",
+      "scene_id": "buildings_100_v4_building_048"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 490,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "adb068648da207c684f38008c22bb797cb601cd7dac07d26fa66ef9d69ebb0e2",
+      "E_input_sha256": "02c3bb240a147b758a0262cc19afcc4923660a44d955566915114cbb3d699a42",
+      "E_palette_entries": 7,
+      "P_input_id": "1fd0a8f07ed382b0dda242d65df09f239ccb5f3e52f35c9a0b64eac8aa846d24",
+      "P_input_sha256": "9a38e2bc2b52fa38087c0c952f0b8b4db3fa8716479238bd48c0f18e31563047",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "5d04a27f9e1c1c1df253d54dd0de4022b7101c1a50502056923f988a3022d578",
+      "scene_id": "buildings_100_v4_building_063"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 446,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "47eb71b6edcf1906b9a2413de0140c995c77d30ffd21ac4f367988e926bfc214",
+      "E_input_sha256": "a37798974baeeccc1a5fba8794b591e0ff2327d695be4488e2c3f95850a606b0",
+      "E_palette_entries": 6,
+      "P_input_id": "33fc4d6c107fd43b45c4b717bcfccf4cdeff7690fb8d6cb530e9aabcbf2752ef",
+      "P_input_sha256": "4be907fd4538d457061aebab6976209b1594cb4a6db52a9f9e843e73c50e73fd",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "459ad76afe7ea3e17fa622fd39556ae9ffa0a1fa1419d7ebf418124c56ce41e9",
+      "scene_id": "buildings_100_v4_building_052"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 1282,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "b57aa9fa70ccebe22716fb4b324142c3bba8ac2d55c0a8f49c02d2757bcf6d53",
+      "E_input_sha256": "eb83fa5899d584b08fe007a5c04c595fbcf13e7eb4000777321e02cfb62924c3",
+      "E_palette_entries": 7,
+      "P_input_id": "aae376e62651b0e18b0080c246c58061c8218b11244740572cb329c7aa755acd",
+      "P_input_sha256": "89f1ff39e2cb8e7c1a2d2a0fe45b9425d053eb187b54a17fb7667caf3a28cb48",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "48b50c263821e49b5215bfad781fef802663eaeaeae06274338dce3fae3b9dea",
+      "scene_id": "buildings_100_v4_building_085"
+    },
+    {
+      "E_coordinate_frame": "world",
+      "E_cuboids": 480,
+      "E_decoded_GT_exact": true,
+      "E_input_id": "2fa7dd0af3d7fa9f12e063c0d4610300c2ee9f4f69ba3fe25cba2ea9ef109db3",
+      "E_input_sha256": "4398aba17f4da1f17c34db72f553e59bcb1cd64f7ac9623c1be68e1f0e235c45",
+      "E_palette_entries": 7,
+      "P_input_id": "09546ccf7df75b6c108d70e574742209dc11b84fc09f3e5700adbd2fd94b83b5",
+      "P_input_sha256": "be944e49f50db9e55e375163355fa8fe6a0a6b927c900f6add1418025cf5ca60",
+      "P_not_provided": [
+        "individual_voxel_coordinates",
+        "material_at_each_coordinate"
+      ],
+      "P_provided_attributes": [
+        "occupied_dimensions_xyz",
+        "world_bbox",
+        "exact_material_set",
+        "voxel_count"
+      ],
+      "gt_grid_sha256": "b5b69a8c927bd77aef85c91be6526bfbf7a5034c63712e7f0533de05fc4459e5",
+      "scene_id": "buildings_100_v4_building_091"
+    }
+  ],
+  "oracle_effect_limit": "P/E also change available GT information and Builder decoding/execution demands. Their differences do not identify pure language-information loss.",
+  "samples": [
+    {
+      "description_provider": "openai",
+      "excerpt": {
+        "dimensions_estimate": {
+          "depth": 14,
+          "height": 8,
+          "width": 18
+        },
+        "elements_first_two": [
+          "windows",
+          "entrance"
+        ],
+        "materials_first_two": [
+          {
+            "confidence": 0.95,
+            "name": "stonebrick",
+            "role": "primary wall blocks and roof slab field"
+          },
+          {
+            "confidence": 0.95,
+            "name": "cobblestone",
+            "role": "decorative bands, buttresses and perimeter low blocks"
+          }
+        ],
+        "summary": "A single-story, hollow rectangular stone structure with an interior courtyard/open center (U-shaped roofline visible). Thick stone walls are patterned with alternating bands of smooth stonebrick and cobblestone; the roof is stepped with light-colored slabs and a dark stripe near the top. A small cen"
+      },
+      "excerpt_is_partial": true,
+      "input_sha256": "42549dd95ce4e4f5fb4a058c5353ae8d88272cf793dd543c37c2cc30b0898550",
+      "scene_id": "buildings_100_v4_building_087",
+      "source_path": "/root/workspace/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_087/description_openai_gpt_5_mini/description.json",
+      "source_sha256": "42549dd95ce4e4f5fb4a058c5353ae8d88272cf793dd543c37c2cc30b0898550",
+      "top_level_fields": [
+        "summary",
+        "building_type",
+        "shape",
+        "dimensions_estimate",
+        "materials",
+        "elements",
+        "rebuild_hints",
+        "uncertainties",
+        "provider",
+        "model",
+        "building",
+        "created_at"
+      ],
+      "typed_tree_sha256": "222624b2c3ebb1f50938101c21e7d3e928a1c52cc0afffcb79108f4bb7df547e"
+    },
+    {
+      "description_provider": "anthropic",
+      "excerpt": {
+        "dimensions_estimate": {
+          "depth": 20,
+          "height": 6,
+          "width": 16
+        },
+        "elements_first_two": [
+          "thick perimeter walls",
+          "corner buttress pillars"
+        ],
+        "materials_first_two": [
+          {
+            "confidence": 0.95,
+            "name": "stonebrick",
+            "role": "primary wall construction"
+          },
+          {
+            "confidence": 0.85,
+            "name": "nether_brick",
+            "role": "roof capping layers"
+          }
+        ],
+        "summary": "A rectangular fortification structure with thick stonebrick walls, a flat roof topped with dark wood/nether brick layers, and a central courtyard. The building features buttress-like corner pillars and a single entrance. The structure appears to be a defensive bunker or small fort with an open inter"
+      },
+      "excerpt_is_partial": true,
+      "input_sha256": "208d9c0cd78ddd873b7c915cbadf28b3ee251fa18fede86ec24aef26918d6173",
+      "scene_id": "buildings_100_v4_building_087",
+      "source_path": "/root/workspace/Minecraft-view-dataset/outputs/i2t2b/buildings_100_v4/building_087/description_anthropic_claude_haiku_4_5_20251001/description.json",
+      "source_sha256": "208d9c0cd78ddd873b7c915cbadf28b3ee251fa18fede86ec24aef26918d6173",
+      "top_level_fields": [
+        "summary",
+        "building_type",
+        "shape",
+        "dimensions_estimate",
+        "materials",
+        "elements",
+        "rebuild_hints",
+        "uncertainties",
+        "provider",
+        "model",
+        "building",
+        "created_at"
+      ],
+      "typed_tree_sha256": "8d363261c7394195b962257b61584a87867787b6f4d71272c943f2c66ceaa5be"
+    },
+    {
+      "description_provider": "gemini",
+      "excerpt": {
+        "dimensions_estimate": {
+          "depth": 21,
+          "height": 13,
+          "width": 25
+        },
+        "elements_first_two": [
+          "courtyard",
+          "tiered roof"
+        ],
+        "materials_first_two": [
+          {
+            "confidence": 0.9,
+            "name": "stone",
+            "role": "primary wall material"
+          },
+          {
+            "confidence": 0.9,
+            "name": "stonebrick",
+            "role": "wall banding"
+          }
+        ],
+        "summary": "A massive, U-shaped stone structure resembling a fortress or temple. It features thick walls with horizontal banding of different stone types, vertical cobblestone buttresses, and a tiered roof with dark accents. An inner courtyard is enclosed by the U-shape, and a low, broken cobblestone wall surro"
+      },
+      "excerpt_is_partial": true,
+      "input_sha256": "647615dcf49b44c3606bec57fdb70827aacdc3c5065e7b0ec8cfa732b9933f24",
+      "scene_id": "buildings_100_v4_building_087",
+      "source_path": "/root/workspace/Minecraft-view-dataset/datasets/buildings_100_v4/building_087/description_gemini_gemini_3_1_pro_preview/description.json",
+      "source_sha256": "647615dcf49b44c3606bec57fdb70827aacdc3c5065e7b0ec8cfa732b9933f24",
+      "top_level_fields": [
+        "summary",
+        "building_type",
+        "shape",
+        "dimensions_estimate",
+        "materials",
+        "elements",
+        "rebuild_hints",
+        "uncertainties",
+        "provider",
+        "model",
+        "building",
+        "created_at",
+        "llm_seed"
+      ],
+      "typed_tree_sha256": "e165ee14618c47f13fadbd49c78eb5ed9b1681c5b675ef7c0ce46ab301406472"
+    }
+  ],
+  "scores_computed": 0,
+  "status": "PASS"
+}

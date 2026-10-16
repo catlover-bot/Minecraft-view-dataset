@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Strict aligned metrics, with equal weight per building after within-building aggregation. IoU and exact-material-aware voxel IoU: higher is better; dimension MAE (blocks) and normalized repair cost: lower is better. Repair counts operations, not human time. All means condition on valid outputs; n is metric-specific independent buildings (at most 60). O/J use three description providers; P/E have one GT-derived input per building.}
+\label{tab:goal008-main}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllll}
+\toprule
+Builder & Cond. & Valid / planned & Buildings & IoU & Mat. IoU & MAE & Repair \\
+\midrule
+OpenAI & O & 177/180 & 60 & 0.1760 & 0.0210 & 12.8259 & 1.4888 \\
+Anthropic & O & 179/180 & 60 & 0.1772 & 0.0169 & 13.3870 & 1.8732 \\
+OpenAI & J & 177/180 & 60 & 0.1712 & 0.0210 & 13.1639 & 1.4311 \\
+Anthropic & J & 180/180 & 60 & 0.1754 & 0.0180 & 13.5648 & 1.8227 \\
+OpenAI & P & 60/60 & 60 & 0.1674 & 0.0563 & 4.4000 & 1.7079 \\
+Anthropic & P & 60/60 & 60 & 0.1691 & 0.0243 & 0.0444 & 5.3516 \\
+OpenAI & E & 55/60 & 55 & 0.9219 & 0.8274 & 0.3758 & 0.1401 \\
+Anthropic & E & 46/60 & 46 & 0.9919 & 0.8074 & 0.0362 & 0.1393 \\
+\bottomrule
+\end{tabular}}
+\end{table*}

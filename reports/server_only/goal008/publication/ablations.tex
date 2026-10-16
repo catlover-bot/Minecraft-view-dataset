@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{All 12 frozen J-O and diagnostic P/E-O contrasts. Delta is the named first condition minus O on common valid pairs; positive IoU favors the first condition, positive MAE favors O. Building bootstrap: 2,000 draws; sign-flip: 10,000 draws; Holm within the original families of 4 and 8. Nonsignificance is not equivalence. No exploratory proxy tests enter these families.}
+\label{tab:goal008-ablations}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Contrast & Metric & Delta & 95\% CI & Holm p & Pairs & Buildings \\
+\midrule
+J - O / OpenAI & IoU & -0.0057 & [-0.0122, 0.0003] & 0.230677 & 175 & 60 \\
+J - O / OpenAI & MAE & 0.3352 & [0.1138, 0.5630] & 0.0127987 & 175 & 60 \\
+J - O / Anthropic & IoU & -0.0016 & [-0.0092, 0.0056] & 0.966703 & 179 & 60 \\
+J - O / Anthropic & MAE & 0.1157 & [-0.1676, 0.4519] & 0.966703 & 179 & 60 \\
+P - O / OpenAI & IoU & -0.0087 & [-0.0248, 0.0066] & 0.493951 & 60 & 60 \\
+P - O / OpenAI & MAE & -8.4259 & [-9.5463, -7.2100] & 0.00079992 & 60 & 60 \\
+E - O / OpenAI & IoU & 0.7458 & [0.6862, 0.8017] & 0.00079992 & 55 & 55 \\
+E - O / OpenAI & MAE & -12.3697 & [-13.2033, -11.5323] & 0.00079992 & 55 & 55 \\
+P - O / Anthropic & IoU & -0.0081 & [-0.0207, 0.0062] & 0.493951 & 60 & 60 \\
+P - O / Anthropic & MAE & -13.3426 & [-14.0315, -12.7000] & 0.00079992 & 60 & 60 \\
+E - O / Anthropic & IoU & 0.8137 & [0.8007, 0.8262] & 0.00079992 & 46 & 46 \\
+E - O / Anthropic & MAE & -13.4010 & [-14.2368, -12.5458] & 0.00079992 & 46 & 46 \\
+\bottomrule
+\end{tabular}}
+\end{table*}

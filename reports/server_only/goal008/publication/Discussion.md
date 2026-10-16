@@ -1,0 +1,7 @@
+# Discussion
+
+The low O geometry overlap and still lower exact-material-aware overlap indicate distinct geometric and material-placement errors in this measured reconstruction setting. A material appearing in the description is insufficient to place it correctly. P illustrates that improved dimensions need not recover voxel layout; E illustrates that supplying the full discrete target can make valid outputs much closer while leaving output-capacity failures. Neither intervention identifies how much information natural language causally loses.
+
+The exploratory proxy associations concern explicitly scored attributes from the same frozen descriptions used by O. They provide a reproducible association analysis, not independent validation of the proxy. Material and dimension proxies share GT with reconstruction metrics, so construction effects can contribute to associations. Within-building centering removes additive building offsets for the complete pairs used; it does not remove all confounding or establish a causal quality effect. All fixed components, Builder targets, provider strata, failure0 sensitivities and nonestimable results remain visible to avoid choosing only favorable associations.
+
+The revised question structure below is post-hoc evidence-based reframing for the paper. It must not be described as preregistered. The original 20 comparisons retain their original families and status; the new 360-record exploratory grid was fixed before its computation and is separate from those comparisons.

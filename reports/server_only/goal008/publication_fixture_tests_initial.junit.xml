@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="18" time="0.625" timestamp="2026-10-16T18:27:55.214911+03:00" hostname="Minecraft"><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_compact_tables_keep_all_exact_statistics" time="0.048" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_zero_or_invalid_p_never_displayed[0]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_zero_or_invalid_p_never_displayed[-1]" time="0.000" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_zero_or_invalid_p_never_displayed[1.01]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_zero_or_invalid_p_never_displayed[nan]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_zero_or_invalid_p_never_displayed[inf]" time="0.000" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_zero_or_invalid_p_never_displayed[True]" time="0.000" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_tex_escapes_untrusted_text" time="0.000" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_complete_pair_scatter_does_not_impute_or_pool_builders" time="0.002" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_changed_phase1_product_stops_before_output" time="0.027" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_nonpassing_phase1_stops_before_output" time="0.024" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_source_join_tamper_is_rejected" time="0.033" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_omitted_nonsignificant_record_is_rejected" time="0.032" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_historical_rq2_cannot_be_reclassified" time="0.031" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_production_missing942_and_counts_are_gated" time="0.032" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_csv_json_numeric_disagreement_is_rejected" time="0.032" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_distinct_main_denominators_are_not_hidden" time="0.031" /><testcase classname="offline_evaluation.analysis.goal008.tests.test_publication" name="test_real_completion_figures_receipts_and_sources_unchanged" time="0.151"><failure message="ModuleNotFoundError: No module named 'matplotlib'">package = (PosixPath('/tmp/pytest-of-root/pytest-11/test_real_completion_figures_r0/old'), PosixPath('/tmp/pytest-of-root/pytest...t_real_completion_figures_r0/phase'), PosixPath('/tmp/pytest-of-root/pytest-11/test_real_completion_figures_r0/audit'))
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-11/test_real_completion_figures_r0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x702ecf570d40&gt;
+
+    def test_real_completion_figures_receipts_and_sources_unchanged(package, tmp_path, monkeypatch):
+        monkeypatch.setattr(pub.shutil, 'which', lambda executable: None)
+        before = {str(p): pub.sha256(p) for root in package for p in root.rglob('*') if p.is_file()}
+        out = tmp_path / 'publication'
+&gt;       receipt = pub.render_publication(*package, out)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal008/tests/test_publication.py:222: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal008/publication.py:511: in render_publication
+    figures = plot_figures(data['results'], data['associations'], output, fixture=data['results']['input_kind'] == 'fixture')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'comparisons': [{'a_condition': 'O', 'a_provider': 'openai', 'b_condition': 'O', 'b_provider': 'anthropic', ...}, {'a.....}, {'condition': 'O', 'description_model': None, 'equal_building_mean': 1.2, 'failure0_eligible_rows': 6, ...}, ...]}
+associations = {'associations': [{'association': 'pooled_spearman', 'bootstrap_planned': 2000, 'bootstrap_valid': 2000, 'ci95': [-0.2..._CURRENT_MATCHED_SCORES', 'inference': {'holm_family_changes': False, 'p_values': False}, 'input_kind': 'fixture', ...}
+output = PosixPath('/tmp/pytest-of-root/pytest-11/test_real_completion_figures_r0/publication')
+fixture = True
+
+    def plot_figures(results, associations, output, *, fixture):
+        import numpy as np
+        os.environ['MPLCONFIGDIR'] = str(output / '.matplotlib-cache')
+&gt;       import matplotlib
+E       ModuleNotFoundError: No module named 'matplotlib'
+
+offline_evaluation/analysis/goal008/publication.py:311: ModuleNotFoundError</failure></testcase></testsuite></testsuites>
