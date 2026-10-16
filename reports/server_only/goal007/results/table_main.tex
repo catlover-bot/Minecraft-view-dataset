@@ -1,0 +1,29 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption{Equal-building means. IoU higher is better; MAE lower is better. Valid-only denominators are metric-specific. F0 is an auxiliary bounded-IoU score with known completed model-output failures set to zero; operational missingness remains excluded. NA is not zero.}
+\label{tab:goal007-main}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllll}
+\toprule
+Builder & Condition & Metric & Valid/planned slots & Buildings & Mean & F0 IoU mean & F0 eligible slots \\
+\midrule
+OpenAI & O & IoU & 177/180 & 60 & 0.1760 & 0.1735 & 180 \\
+OpenAI & O & MAE & 177/180 & 60 & 12.8259 & NA & NA \\
+OpenAI & J & IoU & 177/180 & 60 & 0.1712 & 0.1696 & 179 \\
+OpenAI & J & MAE & 177/180 & 60 & 13.1639 & NA & NA \\
+OpenAI & P & IoU & 60/60 & 60 & 0.1674 & 0.1674 & 60 \\
+OpenAI & P & MAE & 60/60 & 60 & 4.4000 & NA & NA \\
+OpenAI & E & IoU & 55/60 & 55 & 0.9219 & 0.8451 & 60 \\
+OpenAI & E & MAE & 55/60 & 55 & 0.3758 & NA & NA \\
+Anthropic & O & IoU & 179/180 & 60 & 0.1772 & 0.1765 & 180 \\
+Anthropic & O & MAE & 179/180 & 60 & 13.3870 & NA & NA \\
+Anthropic & J & IoU & 180/180 & 60 & 0.1754 & 0.1754 & 180 \\
+Anthropic & J & MAE & 180/180 & 60 & 13.5648 & NA & NA \\
+Anthropic & P & IoU & 60/60 & 60 & 0.1691 & 0.1691 & 60 \\
+Anthropic & P & MAE & 60/60 & 60 & 0.0444 & NA & NA \\
+Anthropic & E & IoU & 46/60 & 46 & 0.9919 & 0.7604 & 60 \\
+Anthropic & E & MAE & 46/60 & 46 & 0.0362 & NA & NA \\
+\bottomrule
+\end{tabular}}
+\end{table*}

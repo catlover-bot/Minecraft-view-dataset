@@ -1,0 +1,253 @@
+{
+  "affected_comparisons": [
+    {
+      "a_condition": "J",
+      "a_provider": "openai",
+      "b_condition": "J",
+      "b_provider": "anthropic",
+      "bounded_failure0_mean_delta_bounds": [
+        0.0018301922679656438,
+        0.0073857478235212
+      ],
+      "effect_direction": "anthropic minus openai",
+      "endpoint_scenarios": [
+        {
+          "bounded_failure0_companion": {
+            "buildings": 60,
+            "mean_delta": 0.0073857478235212,
+            "pairs": 180
+          },
+          "common_valid": {
+            "buildings": 60,
+            "mean_delta": 0.005803457645417641,
+            "pairs": 178
+          },
+          "hypothetical_missing_iou": 0.0
+        },
+        {
+          "bounded_failure0_companion": {
+            "buildings": 60,
+            "mean_delta": 0.0018301922679656438,
+            "pairs": 180
+          },
+          "common_valid": {
+            "buildings": 60,
+            "mean_delta": 0.00024790208986208564,
+            "pairs": 178
+          },
+          "hypothetical_missing_iou": 1.0
+        }
+      ],
+      "family_id": "primary_builder_valid_pair",
+      "id": "anthropic-minus-openai:J:aligned_occupancy_iou",
+      "main_common_valid": {
+        "buildings": 60,
+        "mean_delta": 0.004295892813570825,
+        "pairs": 177
+      },
+      "main_missing_excluded": true,
+      "mean_delta_bounds": [
+        0.00024790208986208564,
+        0.005803457645417641
+      ],
+      "metric": "aligned_occupancy_iou",
+      "metric_preference": "higher is better",
+      "positive_delta_means": "higher aligned_occupancy_iou for anthropic",
+      "possible_additional_buildings": 0,
+      "possible_additional_pairs": 1
+    },
+    {
+      "a_condition": "J",
+      "a_provider": "openai",
+      "b_condition": "J",
+      "b_provider": "anthropic",
+      "bound_status": "NO_FINITE_0_TO1_BOUND_FOR_MAE",
+      "effect_direction": "anthropic minus openai",
+      "endpoint_scenarios": null,
+      "family_id": "primary_builder_valid_pair",
+      "id": "anthropic-minus-openai:J:aligned_dimension_mae",
+      "main_common_valid": {
+        "buildings": 60,
+        "mean_delta": 0.41851851851851846,
+        "pairs": 177
+      },
+      "main_missing_excluded": true,
+      "metric": "aligned_dimension_mae",
+      "metric_preference": "lower is better",
+      "positive_delta_means": "worse aligned_dimension_mae for anthropic",
+      "possible_additional_buildings": 0,
+      "possible_additional_pairs": 1
+    },
+    {
+      "a_condition": "O",
+      "a_provider": "openai",
+      "b_condition": "J",
+      "b_provider": "openai",
+      "bounded_failure0_mean_delta_bounds": [
+        -0.00555296970610642,
+        2.585849449134882e-06
+      ],
+      "effect_direction": "J minus O",
+      "endpoint_scenarios": [
+        {
+          "bounded_failure0_companion": {
+            "buildings": 60,
+            "mean_delta": -0.00555296970610642,
+            "pairs": 180
+          },
+          "common_valid": {
+            "buildings": 60,
+            "mean_delta": -0.006564128074535453,
+            "pairs": 176
+          },
+          "hypothetical_missing_iou": 0.0
+        },
+        {
+          "bounded_failure0_companion": {
+            "buildings": 60,
+            "mean_delta": 2.585849449134882e-06,
+            "pairs": 180
+          },
+          "common_valid": {
+            "buildings": 60,
+            "mean_delta": -0.0010085725189798978,
+            "pairs": 176
+          },
+          "hypothetical_missing_iou": 1.0
+        }
+      ],
+      "family_id": "secondary_lossless_J_minus_O",
+      "id": "J-minus-O:openai:aligned_occupancy_iou",
+      "main_common_valid": {
+        "buildings": 60,
+        "mean_delta": -0.0056969675549234456,
+        "pairs": 175
+      },
+      "main_missing_excluded": true,
+      "mean_delta_bounds": [
+        -0.006564128074535453,
+        -0.0010085725189798978
+      ],
+      "metric": "aligned_occupancy_iou",
+      "metric_preference": "higher is better",
+      "positive_delta_means": "higher aligned_occupancy_iou for J",
+      "possible_additional_buildings": 0,
+      "possible_additional_pairs": 1
+    },
+    {
+      "a_condition": "O",
+      "a_provider": "openai",
+      "b_condition": "J",
+      "b_provider": "openai",
+      "bound_status": "NO_FINITE_0_TO1_BOUND_FOR_MAE",
+      "effect_direction": "J minus O",
+      "endpoint_scenarios": null,
+      "family_id": "secondary_lossless_J_minus_O",
+      "id": "J-minus-O:openai:aligned_dimension_mae",
+      "main_common_valid": {
+        "buildings": 60,
+        "mean_delta": 0.33518518518518536,
+        "pairs": 175
+      },
+      "main_missing_excluded": true,
+      "metric": "aligned_dimension_mae",
+      "metric_preference": "lower is better",
+      "positive_delta_means": "worse aligned_dimension_mae for J",
+      "possible_additional_buildings": 0,
+      "possible_additional_pairs": 1
+    }
+  ],
+  "endpoint_assumption": "Hypothetical aligned occupancy IoU in [0,1], not observed outcomes or failure0 imputation.",
+  "exploratory": true,
+  "group_bounds": [
+    {
+      "condition": "J",
+      "description_model": null,
+      "endpoint_scenarios": [
+        {
+          "bounded_failure0_companion": {
+            "buildings": 60,
+            "mean": 0.1679881309121834,
+            "rows": 180
+          },
+          "hypothetical_missing_iou": 0.0,
+          "valid_only": {
+            "equal_building_mean": 0.16956027464091952,
+            "valid_buildings": 60,
+            "valid_rows": 178
+          }
+        },
+        {
+          "bounded_failure0_companion": {
+            "buildings": 60,
+            "mean": 0.17354368646773896,
+            "rows": 180
+          },
+          "hypothetical_missing_iou": 1.0,
+          "valid_only": {
+            "equal_building_mean": 0.1751158301964751,
+            "valid_buildings": 60,
+            "valid_rows": 178
+          }
+        }
+      ],
+      "group_level": "builder_condition",
+      "main_valid_only": {
+        "equal_building_mean": 0.17121059760761198,
+        "valid_buildings": 60,
+        "valid_rows": 177
+      },
+      "provider": "openai"
+    },
+    {
+      "condition": "J",
+      "description_model": "openai",
+      "endpoint_scenarios": [
+        {
+          "bounded_failure0_companion": {
+            "buildings": 60,
+            "mean": 0.1742053160712458,
+            "rows": 60
+          },
+          "hypothetical_missing_iou": 0.0,
+          "valid_only": {
+            "equal_building_mean": 0.18021239593577154,
+            "valid_buildings": 58,
+            "valid_rows": 58
+          }
+        },
+        {
+          "bounded_failure0_companion": {
+            "buildings": 60,
+            "mean": 0.19087198273791248,
+            "rows": 60
+          },
+          "hypothetical_missing_iou": 1.0,
+          "valid_only": {
+            "equal_building_mean": 0.19745377524611638,
+            "valid_buildings": 58,
+            "valid_rows": 58
+          }
+        }
+      ],
+      "group_level": "description_builder_condition",
+      "main_valid_only": {
+        "equal_building_mean": 0.18337401691710087,
+        "valid_buildings": 57,
+        "valid_rows": 57
+      },
+      "provider": "openai"
+    }
+  ],
+  "inference": "No p-values, confidence intervals, or post-hoc significance claims computed for endpoint scenarios.",
+  "missing_slot": {
+    "condition": "J",
+    "description_model": "openai",
+    "global_schedule_index": 942,
+    "metrics": null,
+    "provider": "openai",
+    "scene_id": "buildings_100_v4_building_085",
+    "status": "operational_unmeasurable"
+  },
+  "status": "EXPLORATORY_BOUNDS_ONLY"
+}

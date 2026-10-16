@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption{Selected-slot outcomes. Completed outcomes include known model-output failures. The HTTP401 at global940 remains in attempt history; its authorized successful retry supplies the selected observation. HTTP520 at global942 remains unmeasured. Attempt history and unknown-usage holds are reported separately.}
+\label{tab:goal007-failures}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllllllll}
+\toprule
+Builder & Condition & Slots & Completed outcomes & Valid IoU & Model failures & Operational missing & Unknown usage slots & F0 eligible \\
+\midrule
+OpenAI & O & 180 & 180 & 177 & 3 & 0 & 0 & 180 \\
+OpenAI & J & 180 & 179 & 177 & 2 & 1 & 1 & 179 \\
+OpenAI & P & 60 & 60 & 60 & 0 & 0 & 0 & 60 \\
+OpenAI & E & 60 & 60 & 55 & 5 & 0 & 0 & 60 \\
+Anthropic & O & 180 & 180 & 179 & 1 & 0 & 0 & 180 \\
+Anthropic & J & 180 & 180 & 180 & 0 & 0 & 0 & 180 \\
+Anthropic & P & 60 & 60 & 60 & 0 & 0 & 0 & 60 \\
+Anthropic & E & 60 & 60 & 46 & 14 & 0 & 0 & 60 \\
+\bottomrule
+\end{tabular}}
+\end{table*}

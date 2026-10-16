@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "reviewed_at_utc": "2026-10-16T13:32:05.102300+00:00",
+  "scope": "Independent publication output review; no new inference, evaluator calls, research API, credential access, Git or source mutation.",
+  "final_manifest": {
+    "path": "/root/minecraft-runs/goal007-analysis-20261016T130420Z-a8a7a399/analysis-final/MANIFEST.json",
+    "sha256": "ef05c2ed93247802e9a68a00d700d39a8934d6231c7787315ab37b01d2467714",
+    "status": "FIXED60_ONE_OPERATIONAL_MISSING",
+    "created_code_commit": "7500cea2160a8489f0e8bd06b6249d261226f943",
+    "products_hash_and_size_verified": 56
+  },
+  "final_results": {
+    "path": "/root/minecraft-runs/goal007-analysis-20261016T130420Z-a8a7a399/analysis-final/results/results.json",
+    "sha256": "166d46416fcbf36c450ffaf37310fc4f50ad48727fd6b4bb40d9767c38738dca"
+  },
+  "first_actual_review": {
+    "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal007/initial_actual_artifact_review.json",
+    "sha256": "707d35e23600f36d6750ecfad15f561e87b88aba7043d40b6ce49a4b7f165b14",
+    "pngs_inspected_with_view_image": 3,
+    "latex_data_rows_independently_checked": 56,
+    "prose": [
+      "ARR_RESULTS_EN.md",
+      "SUMMARY_JA.md"
+    ],
+    "latex_pdf_compilation": false
+  },
+  "byte_identical_to_reviewed_first_render": [
+    "ARR_RESULTS_EN.md",
+    "SUMMARY_JA.md",
+    "comparisons_20.csv",
+    "cost_verification.csv",
+    "denominators.json",
+    "failure_taxonomy.csv",
+    "figure_comparisons.png",
+    "figure_comparisons.svg",
+    "figure_description_builders.png",
+    "figure_description_builders.svg",
+    "figure_main.png",
+    "figure_main.svg",
+    "figure_sources.json",
+    "model_output_operational_errors.csv",
+    "per_group.csv",
+    "results.json",
+    "rq2_matched_scores_audit.json",
+    "sensitivity_missing942.json",
+    "table_ablation.tex",
+    "table_failures.tex",
+    "table_main.tex",
+    "table_statistics.tex"
+  ],
+  "expected_changed_files": {
+    "AUDIT.md": "Only the reproduction code commit was updated.",
+    "render_context.json": "Only code_commit and the same commit token within reproduction_command were updated.",
+    "render_artifacts.json": "Derived hashes for the two changed context/provenance files were updated; all24 final publication hashes match."
+  },
+  "final_render_artifact_count": 24,
+  "results_figures_tables_and_EN_JA_claims_unchanged": true,
+  "reported_counts": {
+    "alignment_resource_limit_slots": 0,
+    "bounded_iou_eligible_slots": 959,
+    "completed_request_outcome_slots": 959,
+    "failure0_definitive_model_failure_slots": 25,
+    "failure_kind_counts": {
+      "http_failure": 1,
+      "truncation": 19,
+      "validation_failure": 6
+    },
+    "gt_missing_slots": 0,
+    "independent_buildings": 60,
+    "known_completed_other_failure_slots": 0,
+    "model_output_failure_slots": 25,
+    "operational_unmeasurable_slots": 1,
+    "planned_slots": 960,
+    "selected_attempts": 960,
+    "status_counts": {
+      "failed": 25,
+      "operational_unmeasurable": 1,
+      "success": 934
+    },
+    "unknown_usage_slots": 1,
+    "valid_only_aligned_iou_slots": 934
+  },
+  "interpretation_caution": "E condition marginal means (OpenAI0.921894 on55 valid buildings, Anthropic0.991872 on46) must not be interpreted as the paired Builder effect. The common46 comparison is Anthropic-minus-OpenAI=-0.0027967115959685596,95%CI[-0.010450216655883944,0.006184535310249542],Holm p=1.0.",
+  "blocking_defects": [],
+  "limitations": [
+    "LaTeX source syntax and every numerical table row were checked, but noTeX engine is installed and PDF compilation was not performed.",
+    "All20effects share one axis per metric; largeoracle effects compress small effects, whose exactCI/pvalues remain in the complete tables."
+  ],
+  "research_api_requests_sent": 0,
+  "source_or_implementation_edits": false
+}

@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption{Predeclared J-O and oracle-O paired contrasts. J is lossless JSON reserialization of O. P and E add GT information and are diagnostic, not causal estimates of pure language-information loss. F0 is descriptive only.}
+\label{tab:goal007-ablation}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllll}
+\toprule
+Family & B - A contrast & Metric & Pairs/buildings & Delta & 95\% CI & Raw p & Holm p & F0 pairs/buildings & F0 delta \\
+\midrule
+secondary & J - O / OpenAI & IoU & 175/60 & -0.0057 & [-0.0122, 0.0003] & 0.0768923 & 0.230677 & 179/60 & -0.0047 \\
+secondary & J - O / OpenAI & MAE & 175/60 & 0.3352 & [0.1138, 0.5630] & 0.00319968 & 0.0127987 & NA & NA \\
+secondary & J - O / Anthropic & IoU & 179/60 & -0.0016 & [-0.0092, 0.0056] & 0.690331 & 0.966703 & 180/60 & -0.0012 \\
+secondary & J - O / Anthropic & MAE & 179/60 & 0.1157 & [-0.1676, 0.4519] & 0.483352 & 0.966703 & NA & NA \\
+diagnostic & P - O / OpenAI & IoU & 60/60 & -0.0087 & [-0.0248, 0.0066] & 0.289771 & 0.493951 & 60/60 & -0.0062 \\
+diagnostic & P - O / OpenAI & MAE & 60/60 & -8.4259 & [-9.5463, -7.2100] & 9.999e-05 & 0.00079992 & NA & NA \\
+diagnostic & E - O / OpenAI & IoU & 55/55 & 0.7458 & [0.6862, 0.8017] & 9.999e-05 & 0.00079992 & 60/60 & 0.6715 \\
+diagnostic & E - O / OpenAI & MAE & 55/55 & -12.3697 & [-13.2033, -11.5323] & 9.999e-05 & 0.00079992 & NA & NA \\
+diagnostic & P - O / Anthropic & IoU & 60/60 & -0.0081 & [-0.0207, 0.0062] & 0.246975 & 0.493951 & 60/60 & -0.0074 \\
+diagnostic & P - O / Anthropic & MAE & 60/60 & -13.3426 & [-14.0315, -12.7000] & 9.999e-05 & 0.00079992 & NA & NA \\
+diagnostic & E - O / Anthropic & IoU & 46/46 & 0.8137 & [0.8007, 0.8262] & 9.999e-05 & 0.00079992 & 60/60 & 0.5839 \\
+diagnostic & E - O / Anthropic & MAE & 46/46 & -13.4010 & [-14.2368, -12.5458] & 9.999e-05 & 0.00079992 & NA & NA \\
+\bottomrule
+\end{tabular}}
+\end{table*}

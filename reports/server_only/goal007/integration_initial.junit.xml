@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="11" time="40.357" timestamp="2026-10-16T16:10:15.061009+03:00" hostname="Minecraft"><testcase classname="offline_evaluation.analysis.goal007.tests.test_integration" name="test_exact960_961_retry_missing_and_conditions" time="4.196" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_integration" name="test_reject_invalid_retry_missing_and_attempt_inventory[retry_source]" time="3.633" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_integration" name="test_reject_invalid_retry_missing_and_attempt_inventory[retry_payload]" time="3.870" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_integration" name="test_reject_invalid_retry_missing_and_attempt_inventory[retry_flag]" time="3.680" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_integration" name="test_reject_invalid_retry_missing_and_attempt_inventory[extra_attempt]" time="3.859" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_integration" name="test_reject_invalid_retry_missing_and_attempt_inventory[missing_usage]" time="4.052" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_integration" name="test_reject_invalid_retry_missing_and_attempt_inventory[missing_artifact]" time="4.057" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_integration" name="test_new_metrics_only_gt_direction_and_source_immutability" time="4.777" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_integration" name="test_resource_limit_preserved_not_approximated" time="4.148"><failure message="TypeError: AlignmentResourceLimit.__init__() missing 1 required positional argument: 'metadata'">cohort = ({'identity': {'protocol_id': 'fixture_fixed60', 'full_schedule': [{'schedule_index': 0, 'scene_id': 'fixture_building...dinate_frame='world', origin=(0, 0, 0)), Grid(voxels={(1, 0, 0): 'stone'}, coordinate_frame='world', origin=(0, 0, 0)))
+tmp_path = PosixPath('/root/workspace/Minecraft-view-dataset/.pytest_cache/goal007-integration/test_resource_limit_preserved_0')
+
+    def test_resource_limit_preserved_not_approximated(cohort,tmp_path):
+        manifest,sources,gt,_=cohort; result=subject.integrate(manifest,sources)
+        def limited(*a,**k): raise subject.AlignmentResourceLimit('fixture_budget',{'fixture':'budget'})
+&gt;       subject.evaluate_missing(result,sources,tmp_path/'limits',gt_loader=lambda _:SimpleNamespace(grid=gt),evaluator=limited)
+
+offline_evaluation/analysis/goal007/tests/test_integration.py:135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal007/integration.py:256: in evaluate_missing
+    row['metrics']=evaluator(grids[row['scene_id']],predicted,alignment_mode='strict_translation')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (Grid(voxels={(0, 0, 0): 'stone', (1, 0, 0): 'stone'}, coordinate_frame='world', origin=(0, 0, 0)), Grid(voxels={(1, 0, 0): 'stone'}, coordinate_frame='world', origin=(0, 0, 0)))
+k = {'alignment_mode': 'strict_translation'}
+
+&gt;   def limited(*a,**k): raise subject.AlignmentResourceLimit('fixture_budget',{'fixture':'budget'})
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: AlignmentResourceLimit.__init__() missing 1 required positional argument: 'metadata'
+
+offline_evaluation/analysis/goal007/tests/test_integration.py:134: TypeError</failure></testcase><testcase classname="offline_evaluation.analysis.goal007.tests.test_integration" name="test_cached_non_strict_metrics_rejected" time="3.825" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_integration" name="test_overwrite_refused_and_gate_required" time="0.003" /></testsuite></testsuites>

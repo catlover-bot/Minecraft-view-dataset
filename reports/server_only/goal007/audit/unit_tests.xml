@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="23" time="0.228" timestamp="2026-10-16T16:11:24.730397+03:00" hostname="Minecraft"><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_exact_cached_metric_is_accepted" time="0.001" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_approximate_or_inconsistent_cached_metrics_rejected[radius-8]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_approximate_or_inconsistent_cached_metrics_rejected[rotation-True]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_approximate_or_inconsistent_cached_metrics_rejected[scale-True]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_approximate_or_inconsistent_cached_metrics_rejected[clipping-True]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_approximate_or_inconsistent_cached_metrics_rejected[search_complete-False]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_approximate_or_inconsistent_cached_metrics_rejected[globally_optimal_unrestricted-False]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_approximate_or_inconsistent_cached_metrics_rejected[all_aligned_metrics_share_shift-False]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_wrong_metric_version_rejected" time="0.000" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_inventory_checks_content_and_exact_tree[content]" time="0.004" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_inventory_checks_content_and_exact_tree[addition]" time="0.002" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_inventory_checks_content_and_exact_tree[deletion]" time="0.002" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_inventory_checks_content_and_exact_tree[symlink]" time="0.002" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_existing_audit_output_never_overwritten" time="0.001" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_python_network_disabled_and_restored" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">def test_python_network_disabled_and_restored():
+        original = socket.socket.connect
+        with audit.no_python_network():
+&gt;           with socket.socket() as s, pytest.raises(audit.AuditError, match='network_disabled'):
+                 ^^^^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal007/tests/test_audit.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/usr/lib/python3.12/socket.py:233: PermissionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_checkpoint_corruption_stops_gate[status]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_checkpoint_corruption_stops_gate[digest]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_checkpoint_corruption_stops_gate[upload]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_checkpoint_corruption_stops_gate[ledger]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_checkpoint_corruption_stops_gate[asset_duplicate]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_checkpoint_corruption_stops_gate[download_content]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_checkpoint_corruption_stops_gate[copied_plan]" time="0.003" /><testcase classname="offline_evaluation.analysis.goal007.tests.test_audit" name="test_partial_or_failed_gate_rejected" time="0.001" /></testsuite></testsuites>
