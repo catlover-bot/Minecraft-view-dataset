@@ -1,0 +1,74 @@
+{
+  "actual_artifact_bodies_read": false,
+  "actual_e_metrics_recomputed": false,
+  "actual_e_outcomes_reviewed": false,
+  "api_key_queries": 0,
+  "checks": [
+    {
+      "area": "source_schema",
+      "detail": "Verified frozen Goal007 MANIFEST SHA ef05c2ed93247802e9a68a00d700d39a8934d6231c7787315ab37b01d2467714; all four referenced plans match byte hashes, required schedule/gt_by_scene/limits and positive integer budgets.max_output_tokens exist, and canonical identity serialization reproduces all four identities.",
+      "result": "PASS"
+    },
+    {
+      "area": "object_hash",
+      "detail": "Exact match to generation.json_bytes: sorted keys, ensure_ascii false, allow_nan false, indent 2, final newline, UTF-8.",
+      "result": "PASS"
+    },
+    {
+      "area": "source_binding",
+      "detail": "Immutable full schedule, selected E entry/plan/GT/artifact hashes, canonical directory and original input text hashes are checked. Actual E binder and outcomes were not executed by this reviewer.",
+      "result": "PASS_CODE_REVIEW"
+    },
+    {
+      "area": "axes_origin",
+      "detail": "load_scene applies stored YXZ to world XYZ; fixed cuboid schema is checked by exact re-encoding and decoding. Reference actions already use world endpoints and execute defaults world mode, so origin remains metadata and is not added twice.",
+      "result": "PASS"
+    },
+    {
+      "area": "strict_metrics",
+      "detail": "Independent confusion mass checks, occupancy union, exact-material intersection/(GT+prediction-exact matches), exact material set F1, tight occupied dimensions and add/delete/replace normalization agree with frozen formulas. Aligned values use the stored certified common occupancy-optimal shift; no new alignment is claimed.",
+      "result": "PASS"
+    },
+    {
+      "area": "lexical_sensitivity",
+      "detail": "Only the seven frozen historical stone/brick lexical mappings are used. Brick and stonebrick remain distinct; no slab/fence/plank/glass merging, GT fitting or strict-metric replacement.",
+      "result": "PASS"
+    },
+    {
+      "area": "limits_controls",
+      "detail": "Original per-source Limits govern GT decode, fixed cuboid encode/decode, reference and observed action validation/execution, coordinate/operation/touched/live occupancy. Saved source files are hash-bound before parsing. Reference control success is never counted as model success.",
+      "result": "PASS"
+    },
+    {
+      "area": "failure_capacity_semantics",
+      "detail": "Failed outcomes retain null metrics/no invented voxels. Original output caps and saved usage are descriptive; unknown usage stays null. Reference bytes/actions are not certified token requirements and unfinished correctness is not extrapolated.",
+      "result": "PASS"
+    },
+    {
+      "area": "scope_safety",
+      "detail": "No API/tokenizer/model/key/network call, alignment search, old artifact mutation or data-dependent alias optimization is introduced.",
+      "result": "PASS"
+    }
+  ],
+  "created_at": "2026-10-16T22:39:01.428675+00:00",
+  "findings": [],
+  "formal_test_evidence": "Existing root-controlled full fixture suite and exact_oracle fixture JUnit; this source review did not rerun tests.",
+  "limitations": [
+    "This is an independent source/schema review, not proof that the authoritative actual E run has completed. Root must retain the run receipt and source before/after checks."
+  ],
+  "production_code_edits": 0,
+  "research_api_requests_sent": 0,
+  "reviewed_file_sha256": {
+    "offline_evaluation/analysis/goal010/exact_oracle.py": "601907554e01f24471a078a692d9729a2c286518c62f053a175c22feeb32be35",
+    "offline_evaluation/analysis/goal010/tests/test_exact_oracle.py": "8f857320217e4a004d044bec40d0a03bf4f3dff868a28d596bd4bd2fbd1d625d",
+    "offline_evaluation/resmoke_v2/cuboids.py": "ded178ab7c4410b0e0a795963f97ef034973c5e2460f69fccebdc8867bba389c",
+    "offline_evaluation/server_v2/core.py": "3c240becec802957a52e9f23c8d494644cc59fa86498b60527e132ff1a40c268",
+    "offline_evaluation/server_v2/data.py": "fd3cb451f27843bc246e865a26cf53ba77d08f587aac4287956389220c7a4c6f",
+    "offline_evaluation/server_v2/generation.py": "42303106e65c2f7dfc9e9c34c85404f4df09b0953659c8d224e351fcb35cc381",
+    "tools/evaluate_rebuild_metrics.py": "d67bd07007c9db56c532859763a41dbc26ced3d9c00e0905c24d38e6c5fb807c"
+  },
+  "reviewer": "independent_goal010_protocol_geometry_agent",
+  "scope": "Full exact_oracle.py source review and comparison with frozen core/data/cuboids/generation semantics; canonical source-manifest and four plan metadata/schema and identity hashes only.",
+  "source_writes": 0,
+  "status": "PASS_READ_ONLY_CODE_REVIEW_NO_BLOCKER_IDENTIFIED"
+}

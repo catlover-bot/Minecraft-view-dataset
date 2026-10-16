@@ -1,0 +1,7 @@
+# CPU属性proxyの頑健性
+
+POST_HOC_EXPLORATORY。元5特徴と4個の固定component除外感度、5観測共変量について全1350行を保存した。元の180 scoresと360結果は変更していない。定数・不足・欠損・不安定CIもstatus付きで残した。
+
+独立単位は最大60建築で、180記述や2 Buildersを独立Nとして扱わない。層境界はplanned cohortから固定し、同値を分割せず、空層も残す。未知usageは0へ補完しない。両Builder平均には双方のpolicy適格性を要求する。bootstrapは層内planned building clusterを再標本化し、pooled rankは複製後に再計算する。within法は建築内center/rank後にclusterを再標本化する。
+
+component除外は算術的感度で、新しい品質尺度や独立因果寄与ではない。文字数・GT量・密度による層別も因果調整ではなく、共有GTとvalid選択、多数の探索を考慮する。新p値・Holm・fit・CVを加えない。従来RQ2はNOT_TESTABLE_WITH_CURRENT_MATCHED_SCORESのままである。

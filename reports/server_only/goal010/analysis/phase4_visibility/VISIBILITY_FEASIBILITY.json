@@ -1,0 +1,58 @@
+{
+  "actual_image_resolution_counts": {
+    "960x540": 720
+  },
+  "actual_request_image_count_distribution": {
+    "6": 180
+  },
+  "analysis_label": "CPU_DIAGNOSTIC",
+  "api_key_queries": 0,
+  "claims_not_supported": [
+    "invisible regions are the main reconstruction-error cause",
+    "six-view/12-view voxel visibility percentages",
+    "visible surface material determines all interior occupied voxels or air cells"
+  ],
+  "image_modifications": 0,
+  "independent_occlusion_validation_performed": false,
+  "independent_pixel_projection_validation_performed": false,
+  "invisible_voxel_fraction": null,
+  "next_validation_required": [
+    "Recover actual renderer projection, optical center and pose conventions.",
+    "Verify projected GT surface landmarks against immutable RGB on a fixed sample with stated pixel residual tolerance.",
+    "Independently validate occlusion and block shape/transparency before six-vs-twelve visible-surface comparisons."
+  ],
+  "protocol_manifest_path": "/root/minecraft-runs/goal010-20261016T223832Z/phase0_protocol/PROTOCOL_MANIFEST.json",
+  "protocol_manifest_sha256": "42d5285b0d8ed03c5ba87d7f4cfd7232973e781e49881a15193f925bc5c7b6e2",
+  "reasons": [
+    "Saved yaw/pitch and FOV describe planned/requested poses; effective rendered projection is not recorded.",
+    "Saved actual XYZ is not a validated optical camera center or eye-height convention.",
+    "Actual yaw/pitch, effective intrinsics and synchronized depth/voxel correspondence are not validated against these RGB images.",
+    "No independently verified pixel reprojection/occlusion residuals are available; full-cube raycasting would assume block geometry/transparency."
+  ],
+  "recorded_camera_field_counts": {
+    "actual_pitch": 0,
+    "actual_x": 658,
+    "actual_y": 658,
+    "actual_yaw": 0,
+    "actual_z": 658,
+    "fov": 720,
+    "height": 720,
+    "pitch": 720,
+    "width": 720,
+    "x": 720,
+    "y": 720,
+    "yaw": 720,
+    "z": 720
+  },
+  "recorded_fov_values": [
+    70.0
+  ],
+  "request_records": 180,
+  "research_api_requests_sent": 0,
+  "six_vs_twelve_visibility_difference": null,
+  "source_binding": "PASS",
+  "status": "NOT_VALIDATED_NO_VISIBILITY_CONCLUSION",
+  "synthetic_images_presented_as_observations": 0,
+  "unique_saved_views": 720,
+  "visible_voxel_fraction": null
+}

@@ -1,0 +1,9 @@
+# 入力・評価・履歴の補足監査
+
+Oは保存された人間可読フィールド付きJSON、Jは同じtyped treeを再シリアライズした入力である。両者は別々の単発Builder生成で、sampling条件を制御した表記だけの因果比較ではない。Pは開示GTのworld_bbox・voxel count・material set等の部分属性、Eはresmoke_v2_exact_cuboids_v1のsorted exact paletteとinclusive cuboidsであり、自然言語品質の母集団上限とは呼ばない。
+
+GTはstorage bboxとNPY YXZ配列をworld XYZへ変換する。storage paddingとoccupied bbox、world originと撮影generation originを区別する。server_v2.2_strict_translationは占有最適の厳密平行移動だけを使い、その同じshiftで材質を評価する。rotation・scale・GT補修・指標別shift再選択は行わない。材質集合F1は座標上の材質一致とは異なる。既知失敗でもMAE/repairはnullであり、unknown-usageをfailure0へ変換しない。
+
+960固定slotsは934 valid・25既知出力失敗・global942の520欠測1件。固定範囲961 attempts、歴史的991 callsを維持する。global940は元401と明示承認retryの選択関係を保存し、成功を1回だけ数える。unknown-usage予約2件を解除しない。USD21.56083625は保守的予算計算値で請求書ではない。過去の20比較、180 proxy、360探索結果と全既存保存証拠は再利用し改変しない。
+
+元checkpointのローカル復元・GitHub検証証拠、旧manifestと全source inventoryを再照合した。今回GitHubから再取得していない。source_inventory_receipt.jsonとsource_gate.jsonにhash・選択provenance・定義commitを束縛する。研究API・キー・モデル・token-count照会は0件。Pythonの接続禁止と読取りlockはOSレベル隔離の保証ではない。
