@@ -1,0 +1,33 @@
+# Goal008 reconstruction example definition
+
+Rule ID: `goal008_examples_openai_roles_v1`. This specification is fixed before reading per-sample reconstruction scores for example selection. Actual selection and rendering require the completed Phase0/Phase1 source gate. Before that gate, only synthetic fixtures may be used. No research API, model, token-count API, key lookup, new construction, or human experiment is involved.
+
+## Fixed eligibility and sequential selection
+
+Use the frozen Goal007 fixed60 cohort and its selected final slots. Hold the Builder provider at `openai`; hold the saved description provider at `openai` for both O and J. P/E have no description provider and must not be duplicated across providers. For a building to be eligible, its GT must be available with verified SHA256, and its O, J, and P slots must all be valid strict-evaluator successes with finite aligned occupancy IoU and aligned dimension MAE. A success means an identified completed model output with its source artifact hashes. No failure or operational missing observation is converted to a numerical score.
+
+Select exactly three distinct buildings in this order:
+
+1. **Near median O**: compute the ordinary median of the eligible candidates' O aligned occupancy IoU (average the two middle values for an even count), then select the candidate minimizing absolute distance to that median.
+2. **Low O overlap**: among remaining eligible candidates, select the minimum O aligned occupancy IoU. This is the lowest eligible valid example, not a claim that invalid outputs are better or worse.
+3. **P dimension gain, low overlap**: among remaining eligible candidates with P aligned occupancy IoU **≤0.20** and positive improvement `O aligned dimension MAE − P aligned dimension MAE > 0`, select the maximum improvement.
+
+All ties use ascending exact scene-ID lexicographic order. No randomness, model average, quality proxy, significance result, or visual attractiveness enters selection. Do not round scores before ranking. Select without replacement. Do not relax the0.20 threshold or positive-improvement criterion after seeing the data. If there are fewer than three eligible buildings or the third category has no remaining eligible candidate, fail explicitly with the candidate inventory and reason; do not substitute an attractive example. Preserve all candidate IDs, source slot IDs, eligibility/exclusion reasons, selection rank values, and the specification SHA256.
+
+E uses the same building and Builder. A valid E displays its original observed voxels. A failed E displays its exact status/failure kind (including `truncation`) in an empty panel, with no fabricated voxel structure. Operationally missing or unavailable E also remains explicitly unmeasured, never zero. E success is not an eligibility criterion, so the display does not select only successful E outcomes.
+
+## Fixed depiction
+
+Each selected building receives one figure with five panels: **GT / O / J / P / E**. Use the original absolute world XYZ coordinates, no translation/alignment shift, rotation of data, scaling of an individual panel, GT correction, cropping, hidden-interior invention, or image generation. The camera is orthographic with elevation25° and azimuth−60° in every panel. Axes use voxel units and equal physical scale. The X/Y/Z extent is the union of all actually available GT/O/J/P/E occupied voxel coordinates for that building, with one voxel of margin. The plotted vertical coordinate is MinecraftY; display axes are labelled X/Z/Y explicitly. Axis extents may differ across separate building figures, but within each five-panel figure are identical. Figure captions state that selection used strict-aligned metrics while the visualization shows unmodified absolute coordinates.
+
+Render only exposed faces of the original occupied voxel grid. Deterministically merge adjacent coplanar exposed faces of the same exact material into rectangles; this changes mesh representation, not the occupied geometry or visible material boundaries. Do not allocate a dense enclosing volume. No hidden faces or interior voxels are invented. If resource or file-size limits prevent the complete figure, fail explicitly rather than silently crop/downsample/simplify the structure. Export a300-dpi PNG and vector SVG, each at most10MiB; use fresh output files only.
+
+One shared color lookup is used across all panels and selected buildings. The seven most frequent exact GT material identifiers across the selected buildings receive the fixed Okabe–Ito colors `#0072B2`, `#E69F00`, `#009E73`, `#CC79A7`, `#56B4E9`, `#D55E00`, `#F0E442` in descending GT-count order (ties by exact identifier). Remaining identifiers use neutral `#757575` labelled **Other exact materials**. This grouping is a display convention only: original exact material identities, voxel geometry and all evaluation metrics remain unchanged. Record the complete lookup and GT counts. Keep the shared legend outside the panels; do not overlay labels on the structure.
+
+## Source and example companion table
+
+For every GT and prediction, retain scene, condition, Builder and description-provider roles, input ID/hash, selected attempt ID, source artifact path/SHA256 and stored strict metric version. Retain GT voxel and bbox hashes, actual GT bbox and per-panel occupied bbox/dimensions, material-set F1, exact-material-aware voxel IoU, occupancy IoU, dimension MAE and repair counts where available. Do not calculate new outcome scores in the renderer: reuse the audited Goal007 metrics. Missing/failure metrics remain null.
+
+Attach a short literal excerpt from the same frozen original O JSON record's human-readable `summary` field (first240 Unicode characters, with an explicit truncation indicator when longer). Record the original JSON path/SHA256, excerpt field and full field length. Do not rewrite, translate, summarize or generate description text. The full original record remains immutable. O is itself the saved JSON-form visual description record; J preserves its typed JSON tree through reserialization. P/E add GT information. No panel is described as free-form-prose O, Structured-IR J, or a population-wide performance upper bound.
+
+The caption and companion table must state: **Illustrative examples selected by a fixed rule; these examples do not estimate population-average performance.** E success/failure and valid-only selection limitations must remain visible. JSON/CSV provenance and a figure manifest identify the selection definition SHA256, all source hashes, mesh/face counts, figure filenames, figure hashes, byte sizes, camera, coordinates, palette and API sends0.
