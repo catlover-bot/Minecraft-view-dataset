@@ -119,7 +119,7 @@ def run(args):
         audit.verify_gate(gate); audit.process_audit()
         if implementation_hashes()!=code_hashes:
             raise GenerationError('goal007_analysis_code_changed_during_run')
-        inventory=read_json(gate['inventory_path'])
+        inventory=read_json(Path(gate['inventory_path']))
         products={str(p.relative_to(destination)):{'sha256':sha256_file(p),'bytes':p.stat().st_size}
                   for p in sorted(destination.rglob('*')) if p.is_file() and not any(s.startswith('.') for s in p.relative_to(destination).parts)}
         final={'version':integration.VERSION,'analysis_label':integration.ANALYSIS_LABEL,'status':'FIXED60_ONE_OPERATIONAL_MISSING',
