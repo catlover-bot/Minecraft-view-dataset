@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="8" time="0.669" timestamp="2026-10-17T02:36:02.347702+03:00" hostname="Minecraft"><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_publication" name="test_small_identity_and_existing_destination" time="0.004" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_publication" name="test_large_json_is_lossless_deterministic_gzip" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_publication" name="test_large_non_json_kept_canonical" time="0.001" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_publication" name="test_uncompressible_oversize_not_written" time="0.002" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_publication" name="test_symlinks_rejected[source]" time="0.002"><failure message="offline_evaluation.analysis.goal007.audit.AuditError: regular_file_required:/tmp/pytest-of-root/pytest-25/test_symlinks_rejected_source_0/link.json">tmp_path = PosixPath('/tmp/pytest-of-root/pytest-25/test_symlinks_rejected_source_0')
+location = 'source'
+
+    @pytest.mark.parametrize('location',['source','destination','parent'])
+    def test_symlinks_rejected(tmp_path,location):
+        source=tmp_path/'source.json'; source.write_text('{}')
+        target=tmp_path/'copy.json'
+        if location=='source':
+            link=tmp_path/'link.json'; link.symlink_to(source); source=link
+        elif location=='destination': target.symlink_to(source)
+        else:
+            real=tmp_path/'real'; real.mkdir(); link=tmp_path/'link'; link.symlink_to(real,target_is_directory=True); target=link/'copy.json'
+&gt;       with pytest.raises(ValueError): p.copy_one(source,target)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal010v2/tests/test_publication.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010v2/publication/publish.py:33: in copy_one
+    source=guard.regular(source); scan_file(source)
+           ^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal007/audit.py:55: in regular
+    require(not any(p.is_symlink() for p in (path, *path.parents)) and path.is_file(), 'regular_file_required:' + str(path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+code = 'regular_file_required:/tmp/pytest-of-root/pytest-25/test_symlinks_rejected_source_0/link.json'
+
+    def require(condition, code):
+        if not condition:
+&gt;           raise AuditError(code)
+E           offline_evaluation.analysis.goal007.audit.AuditError: regular_file_required:/tmp/pytest-of-root/pytest-25/test_symlinks_rejected_source_0/link.json
+
+offline_evaluation/analysis/goal007/audit.py:50: AuditError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_publication" name="test_symlinks_rejected[destination]" time="0.002" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_publication" name="test_symlinks_rejected[parent]" time="0.002" /><testcase classname="offline_evaluation.analysis.goal010v2.tests.test_publication" name="test_allowlist_excludes_large_candidate_pairs_and_raw_predictions" time="0.001" /></testsuite></testsuites>
