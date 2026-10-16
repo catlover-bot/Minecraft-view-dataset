@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="27" time="23.811" timestamp="2026-10-16T03:10:29.137110+03:00" hostname="Minecraft"><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_b3_six_numeric_downloads_real_safe_restore_and_unknown_hold" time="0.793" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_paginated_draft_reuse_never_creates_duplicate" time="0.791" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_remote_collisions_fail_closed_before_any_mutation[duplicate_tag]" time="0.716" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_remote_collisions_fail_closed_before_any_mutation[duplicate_id_page]" time="0.719" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_remote_collisions_fail_closed_before_any_mutation[target]" time="0.731" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_remote_collisions_fail_closed_before_any_mutation[published]" time="0.955" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_remote_collisions_fail_closed_before_any_mutation[digest]" time="1.280" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_remote_collisions_fail_closed_before_any_mutation[extra_asset]" time="1.296" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_create_only_after_complete_absence_and_uploads_all_six" time="0.995"><failure message="offline_evaluation.operations.goal006c.archive.RecoveryError: commit_ancestry: local_verification_failed_AttributeError; exit=None; http=None">b_package = {'path': PosixPath('/root/workspace/Minecraft-view-dataset/.pytest_cache/goal006c-archive-final/test_create_only_after...l_checkpoint_v1",\n    "supplemental_unknown_usage_attempts": 1,\n    "terminal_reserved_attempts": 0\n  }\n}\n', ...}}
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x7acb6f072ea0&gt;
+tmp_path = PosixPath('/root/workspace/Minecraft-view-dataset/.pytest_cache/goal006c-archive-final/test_create_only_after_complet0')
+
+    def test_create_only_after_complete_absence_and_uploads_all_six(b_package, monkeypatch, tmp_path):
+        remote = Github(b_package); remote.releases = [[]]; remote.assets = []
+&gt;       result, remote = recover(b_package, monkeypatch, tmp_path, remote=remote, allow_create=True)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+offline_evaluation/operations/goal006c/tests/test_archive.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/operations/goal006c/tests/test_archive.py:97: in recover
+    result = archive.recover(fixture['path'], tmp_path / 'verification', **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+checkpoint_directory = PosixPath('/root/workspace/Minecraft-view-dataset/.pytest_cache/goal006c-archive-final/test_create_only_after_complet0/checkpoints/goal006b-cfc078c90d0a-0003-20261016T001037527704Z-e8d294b8')
+verification_directory = PosixPath('/root/workspace/Minecraft-view-dataset/.pytest_cache/goal006c-archive-final/test_create_only_after_complet0/verification')
+release_id = None, allow_create = True
+
+    def recover(checkpoint_directory, verification_directory, *, release_id=None, allow_create=False):
+        """Verify existing assets, or finish a future draft only when authorized.
+    
+        verification_directory must be new. allow_create=False is strictly read-only
+        against GitHub, including when an existing release has missing assets.
+        """
+        directory = Path(checkpoint_directory).absolute()
+        attempt = writable(verification_directory)
+        if attempt.exists():
+            _fail('verification_directory', 'new_directory_required')
+        attempt.mkdir(parents=True, exist_ok=False)
+        stage = 'local_package'
+        try:
+            package = _package(directory)
+            originals_before = {name: sha256_file(directory / name) for name in ASSET_NAMES | {'checkpoint.json'}}
+            archive = next(a for a in package['assets'] if a['name'] == package['archive'])
+            stage = 'preflight_restore'
+            preflight = attempt / 'preflight-restored'
+            restore_archive(directory / archive['name'], preflight, archive['sha256'])
+            verify_restored_prefix(preflight, package, directory)
+            stage = 'commit_ancestry'
+            ancestry = _gh(stage, ['api', f"repos/{REPOSITORY}/compare/{package['target_commitish']}...{quote(BRANCH, safe='')}"])
+            if (ancestry.get('status') not in {'ahead', 'identical'} or ancestry.get('behind_by') != 0
+                    or ancestry.get('base_commit', {}).get('sha') != package['target_commitish']):
+                _fail(stage, 'checkpoint_commit_not_on_dedicated_branch')
+            release = _release(package, attempt, release_id, allow_create)
+            current = _assets(release['id'], package, require_complete=not allow_create)
+            uploaded = []
+            for asset in package['assets']:
+                if asset['name'] in current:
+                    continue
+                stage = 'asset_upload'
+                if (sha256_file(_regular(directory / asset['name'])) != asset['sha256']
+                        or (directory / asset['name']).stat().st_size != asset['bytes']):
+                    _fail(stage, 'local_asset_changed_before_upload')
+                result = _gh(stage, ['api', '--method', 'POST',
+                    f"https://uploads.github.com/repos/{REPOSITORY}/releases/{release['id']}/assets?name={quote(asset['name'], safe='')}",
+                    '-H', 'Content-Type: application/octet-stream',
+                    '-H', f"Content-Length: {asset['bytes']}", '--input', str(directory / asset['name'])])
+                if not isinstance(result.get('id'), int):
+                    _fail(stage, 'uploaded_asset_id_missing')
+                uploaded.append({'name': asset['name'], 'asset_id': result['id']})
+            current = _assets(release['id'], package, require_complete=True)
+            download = attempt / 'redownload'
+            download.mkdir()
+            for asset in package['assets']:
+                live = current[asset['name']]
+                stage = 'asset_download'
+                _gh(stage, ['api', f"repos/{REPOSITORY}/releases/assets/{live['id']}",
+                            '-H', 'Accept: application/octet-stream'], output=download / asset['name'])
+                if sha256_file(download / asset['name']) != asset['sha256'] or (download / asset['name']).stat().st_size != asset['bytes']:
+                    _fail(stage, 'redownload_hash_or_size_mismatch')
+            stage = 'download_checksums'
+            _checksums(download, package)
+            stage = 'download_restore'
+            restored = attempt / 'restored'
+            restoration = restore_archive(download / archive['name'], restored, archive['sha256'])
+            prefix = verify_restored_prefix(restored, package, download)
+            # Prove GitHub did not change release identity or any asset during verify.
+            final_release = _release(package, attempt, release['id'], False)
+            final_assets = _assets(release['id'], package, require_complete=True)
+            # Downloads legitimately update download_count/updated_at. Only immutable
+            # identity and payload properties define whether the saved assets changed.
+            stable = lambda rows: {name: {k: row.get(k) for k in ('id', 'name', 'size', 'digest', 'state')}
+                                   for name, row in rows.items()}
+            if stable(final_assets) != stable(current):
+                _fail('final_asset_identity', 'github_assets_changed_during_verification')
+            if originals_before != {name: sha256_file(directory / name) for name in originals_before}:
+                _fail('final_local_identity', 'source_package_changed_during_verification')
+            result = {'status': 'GITHUB_VERIFIED', 'verified_at_utc': utc_now(),
+                'checkpoint_directory': str(directory), 'verification_directory': str(attempt),
+                'release_id': release['id'], 'tag': final_release['tag_name'], 'draft': True,
+                'target_commitish': package['target_commitish'],
+                'assets': [{**a, 'asset_id': current[a['name']]['id'], 'github_digest': current[a['name']]['digest']} for a in package['assets']],
+                'uploaded_assets': uploaded, 'restoration': restoration, **prefix,
+                'archive': package['archive'],
+                'target_commit_on_dedicated_branch': True, 'research_api_requests_sent': 0}
+            write_json(attempt / 'verification.json', result)
+            return result
+        except RecoveryError as exc:
+            write_json(attempt / 'failure.json', {'status': 'FAILED', **exc.report, 'research_api_requests_sent': 0})
+            raise
+        except Exception as exc:
+            error = RecoveryError(stage, 'local_verification_failed_' + type(exc).__name__)
+            write_json(attempt / 'failure.json', {'status': 'FAILED', **error.report, 'research_api_requests_sent': 0})
+&gt;           raise error from None
+E           offline_evaluation.operations.goal006c.archive.RecoveryError: commit_ancestry: local_verification_failed_AttributeError; exit=None; http=None
+
+offline_evaluation/operations/goal006c/archive.py:464: RecoveryError</failure></testcase><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_partial_upload_resumes_only_missing_without_overwrite[False]" time="0.759" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_partial_upload_resumes_only_missing_without_overwrite[True]" time="0.819" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_save_failure_never_claims_github_verified[download_digest]" time="0.747" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_save_failure_never_claims_github_verified[download_503]" time="0.772" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_save_failure_never_claims_github_verified[ancestry]" time="0.744" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_restored_prefix_control_corruption_rejected[claim]" time="0.719" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_restored_prefix_control_corruption_rejected[ledger_halt]" time="0.740" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_restored_prefix_control_corruption_rejected[authority]" time="0.732" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_restored_prefix_control_corruption_rejected[source_reference]" time="0.737" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_restored_prefix_control_corruption_rejected[snapshot]" time="0.728" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_restored_prefix_control_corruption_rejected[extra_file]" time="0.728" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_archive" name="test_archive_traversal_rejected_before_any_extraction" time="0.003" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_checkpoint" name="test_empty_c_snapshot_references_both_halts_and_all_source_controls" time="1.068" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_checkpoint" name="test_completed_c17_real_local_and_remote_fixture_restore" time="1.978" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_checkpoint" name="test_unknown_third_hold_is_saved_without_releasing_old_two" time="1.141" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_checkpoint" name="test_checkpoint_refuses_unapproved_paths_and_secret_fields[unexpected]" time="0.911" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_checkpoint" name="test_checkpoint_refuses_unapproved_paths_and_secret_fields[symlink]" time="0.925" /><testcase classname="offline_evaluation.operations.goal006c.tests.test_checkpoint" name="test_checkpoint_refuses_unapproved_paths_and_secret_fields[secret]" time="0.942" /></testsuite></testsuites>
