@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="9" skipped="0" tests="16" time="0.732" timestamp="2026-10-17T01:36:55.079484+03:00" hostname="Minecraft"><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_all_six_phases_complete_with_real_path_json_boundary" time="0.004"><failure message="PermissionError: [Errno 1] Operation not permitted">case = (PosixPath('/tmp/pytest-of-root/pytest-19/test_all_six_phases_complete_w0/runs/goal010-fixture-20261017T010203Z'), {'l...ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}}, &lt;function case.&lt;locals&gt;.execute at 0x755465063920&gt;)
+
+    def test_all_six_phases_complete_with_real_path_json_boundary(case):
+        root, state, binding, _ = case
+        for phase in range(6):
+&gt;           receipt = run(root, phase)
+                      ^^^^^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:63: in run
+    return p.run_phase(phase, root, CODE, SPEC)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/pipeline.py:242: in run_phase
+    result = execute_phase(phase, before, root, gate, binding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:46: in execute
+    with socket.socket() as connection:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/usr/lib/python3.12/socket.py:233: PermissionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_skip_phase_fails_before_source_or_analysis" time="0.002"><failure message="PermissionError: [Errno 1] Operation not permitted">case = (PosixPath('/tmp/pytest-of-root/pytest-19/test_skip_phase_fails_before_s0/runs/goal010-fixture-20261017T010203Z'), {'l...ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}}, &lt;function case.&lt;locals&gt;.execute at 0x75546500a2a0&gt;)
+
+    def test_skip_phase_fails_before_source_or_analysis(case):
+        root, state, _, _ = case
+&gt;       run(root, 0)
+
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:63: in run
+    return p.run_phase(phase, root, CODE, SPEC)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/pipeline.py:242: in run_phase
+    result = execute_phase(phase, before, root, gate, binding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:46: in execute
+    with socket.socket() as connection:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/usr/lib/python3.12/socket.py:233: PermissionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_no_overwrite_completed_phase[0]" time="0.002"><failure message="PermissionError: [Errno 1] Operation not permitted">case = (PosixPath('/tmp/pytest-of-root/pytest-19/test_no_overwrite_completed_ph0/runs/goal010-fixture-20261017T010203Z'), {'l...ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}}, &lt;function case.&lt;locals&gt;.execute at 0x75546500a340&gt;)
+phase = 0
+
+    @pytest.mark.parametrize('phase', [0, 1])
+    def test_no_overwrite_completed_phase(case, phase):
+        root, state, _, _ = case
+&gt;       for number in range(phase+1): run(root, number)
+                                      ^^^^^^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:63: in run
+    return p.run_phase(phase, root, CODE, SPEC)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/pipeline.py:242: in run_phase
+    result = execute_phase(phase, before, root, gate, binding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:46: in execute
+    with socket.socket() as connection:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/usr/lib/python3.12/socket.py:233: PermissionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_no_overwrite_completed_phase[1]" time="0.002"><failure message="PermissionError: [Errno 1] Operation not permitted">case = (PosixPath('/tmp/pytest-of-root/pytest-19/test_no_overwrite_completed_ph1/runs/goal010-fixture-20261017T010203Z'), {'l...ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}}, &lt;function case.&lt;locals&gt;.execute at 0x75546500a020&gt;)
+phase = 1
+
+    @pytest.mark.parametrize('phase', [0, 1])
+    def test_no_overwrite_completed_phase(case, phase):
+        root, state, _, _ = case
+&gt;       for number in range(phase+1): run(root, number)
+                                      ^^^^^^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:63: in run
+    return p.run_phase(phase, root, CODE, SPEC)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/pipeline.py:242: in run_phase
+    result = execute_phase(phase, before, root, gate, binding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:46: in execute
+    with socket.socket() as connection:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/usr/lib/python3.12/socket.py:233: PermissionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_previous_product_tamper_prevents_source_load" time="0.002"><failure message="PermissionError: [Errno 1] Operation not permitted">case = (PosixPath('/tmp/pytest-of-root/pytest-19/test_previous_product_tamper_p0/runs/goal010-fixture-20261017T010203Z'), {'l...ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}}, &lt;function case.&lt;locals&gt;.execute at 0x755465009e40&gt;)
+
+    def test_previous_product_tamper_prevents_source_load(case):
+&gt;       root, state, _, _ = case; run(root, 0)
+                                  ^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:63: in run
+    return p.run_phase(phase, root, CODE, SPEC)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/pipeline.py:242: in run_phase
+    result = execute_phase(phase, before, root, gate, binding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:46: in execute
+    with socket.socket() as connection:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/usr/lib/python3.12/socket.py:233: PermissionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_different_commit_prevents_next_phase" time="0.002"><failure message="PermissionError: [Errno 1] Operation not permitted">case = (PosixPath('/tmp/pytest-of-root/pytest-19/test_different_commit_prevents0/runs/goal010-fixture-20261017T010203Z'), {'l...ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}}, &lt;function case.&lt;locals&gt;.execute at 0x75546500b7e0&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x755465144920&gt;
+
+    def test_different_commit_prevents_next_phase(case, monkeypatch):
+&gt;       root, state, binding, _ = case; run(root, 0)
+                                        ^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:63: in run
+    return p.run_phase(phase, root, CODE, SPEC)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/pipeline.py:242: in run_phase
+    result = execute_phase(phase, before, root, gate, binding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:46: in execute
+    with socket.socket() as connection:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/usr/lib/python3.12/socket.py:233: PermissionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_source_changed_after_phase_preserves_stop_and_partial_output" time="0.002"><failure message="PermissionError: [Errno 1] Operation not permitted">case = (PosixPath('/tmp/pytest-of-root/pytest-19/test_source_changed_after_phas0/runs/goal010-fixture-20261017T010203Z'), {'l...ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}}, &lt;function case.&lt;locals&gt;.execute at 0x75546500bce0&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x755465145400&gt;
+
+    def test_source_changed_after_phase_preserves_stop_and_partial_output(case, monkeypatch):
+        root, state, _, execute = case
+        def changed(*args):
+            result = execute(*args); state['value'] = 'changed'; return result
+        monkeypatch.setattr(p, 'execute_phase', changed)
+&gt;       with pytest.raises(ValueError, match='sources changed'): run(root, 0)
+                                                                 ^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:63: in run
+    return p.run_phase(phase, root, CODE, SPEC)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/pipeline.py:242: in run_phase
+    result = execute_phase(phase, before, root, gate, binding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:121: in changed
+    result = execute(*args); state['value'] = 'changed'; return result
+             ^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:46: in execute
+    with socket.socket() as connection:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/usr/lib/python3.12/socket.py:233: PermissionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_changed_source_between_phases_stops_before_analysis" time="0.002"><failure message="PermissionError: [Errno 1] Operation not permitted">case = (PosixPath('/tmp/pytest-of-root/pytest-19/test_changed_source_between_ph0/runs/goal010-fixture-20261017T010203Z'), {'l...ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}}, &lt;function case.&lt;locals&gt;.execute at 0x75546500b740&gt;)
+
+    def test_changed_source_between_phases_stops_before_analysis(case):
+&gt;       root, state, _, _ = case; run(root, 0); state['value'] = 'changed'
+                                  ^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:63: in run
+    return p.run_phase(phase, root, CODE, SPEC)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/pipeline.py:242: in run_phase
+    result = execute_phase(phase, before, root, gate, binding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:46: in execute
+    with socket.socket() as connection:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/usr/lib/python3.12/socket.py:233: PermissionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_failure_reason_cannot_leak_exception_payload" time="0.003" /><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_exit_process_guard_failure_cannot_record_pass" time="0.002"><failure message="PermissionError: [Errno 1] Operation not permitted">case = (PosixPath('/tmp/pytest-of-root/pytest-19/test_exit_process_guard_failur0/runs/goal010-fixture-20261017T010203Z'), {'l...ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}}, &lt;function case.&lt;locals&gt;.execute at 0x75546500af20&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x755465146e70&gt;
+
+    def test_exit_process_guard_failure_cannot_record_pass(case, monkeypatch):
+        root, state, _, _ = case
+        @contextmanager
+        def failing_exit():
+            state['active'] = True
+            with p.guard.audit8.old_audit.no_python_network(): yield [1]
+            raise ValueError('post-lock process audit failed')
+        monkeypatch.setattr(p.guard, 'locked_sources', failing_exit)
+&gt;       with pytest.raises(ValueError): run(root, 0)
+                                        ^^^^^^^^^^^^
+
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:156: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:63: in run
+    return p.run_phase(phase, root, CODE, SPEC)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/pipeline.py:242: in run_phase
+    result = execute_phase(phase, before, root, gate, binding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+offline_evaluation/analysis/goal010/tests/test_pipeline.py:46: in execute
+    with socket.socket() as connection:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;socket.socket fd=-1, family=0, type=0, proto=0&gt;
+family = &lt;AddressFamily.AF_INET: 2&gt;, type = &lt;SocketKind.SOCK_STREAM: 1&gt;
+proto = 0, fileno = None
+
+    def __init__(self, family=-1, type=-1, proto=-1, fileno=None):
+        # For user code address family and type values are IntEnum members, but
+        # for the underlying _socket.socket they're just integers. The
+        # constructor of _socket.socket converts the given argument to an
+        # integer automatically.
+        if fileno is None:
+            if family == -1:
+                family = AF_INET
+            if type == -1:
+                type = SOCK_STREAM
+            if proto == -1:
+                proto = 0
+&gt;       _socket.socket.__init__(self, family, type, proto, fileno)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/usr/lib/python3.12/socket.py:233: PermissionError</failure></testcase><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_unsafe_root_names_rejected[other-20261017T010203Z]" time="0.002" /><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_unsafe_root_names_rejected[goal010-without-date]" time="0.002" /><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_unsafe_root_names_rejected[goal010-20261017T010203Z/child]" time="0.001" /><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_symlink_and_low_disk_rejected" time="0.002" /><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_prediction_arrays_are_verified_through_frozen_manifest" time="0.004" /><testcase classname="offline_evaluation.analysis.goal010.tests.test_pipeline" name="test_explicit_code_allowlist_and_both_commit_bindings" time="0.004" /></testsuite></testsuites>
