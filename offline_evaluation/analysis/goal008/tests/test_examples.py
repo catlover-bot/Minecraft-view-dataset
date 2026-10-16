@@ -218,6 +218,16 @@ class TestRender(unittest.TestCase):
         self.assertEqual(tex.count(r'\includegraphics'),3)
         self.assertIn('do not estimate population-average performance',tex)
 
+    def test_paper_width_typography_keeps_full_disclaimer(self):
+        layout = self.manifest['publication_layout']
+        self.assertEqual(layout['canvas_inches'], [22, 6.2])
+        self.assertGreaterEqual(layout['minimum_canvas_font_points'], 21)
+        self.assertGreaterEqual(layout['minimum_canvas_font_points'] * layout['intended_paper_width_inches'] / layout['canvas_inches'][0], 6.6)
+        self.assertIn('do not estimate population-average performance', layout['full_disclaimer'])
+        self.assertIn('strict-aligned metrics', layout['selection_metric_note'])
+        with (self.path / 'example_companion.csv').open() as stream:
+            self.assertEqual({r['scope_note'] for r in csv.DictReader(stream)}, {layout['full_disclaimer']})
+
     def test_no_failed_geometry_or_overwrite(self):
         data=copy.deepcopy(self.examples);data[2]['panels']['E']['world_voxels']=[[0,0,0,'stone']]
         with self.assertRaisesRegex(ValueError,'cannot fabricate'):

@@ -347,7 +347,9 @@ def render_examples(examples, selection, destination, *, definition_path, audit_
     from matplotlib.patches import Patch
     from mpl_toolkits.mplot3d.art3d import Poly3DCollection
     from matplotlib.ticker import MaxNLocator
-    plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 9, 'svg.fonttype': 'none', 'svg.hashsalt': RULE_ID})
+    # The 22-inch canvas is included at approximately 7 inches in the paper:
+    # 21-point canvas type therefore remains approximately 7-point body type.
+    plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 23, 'svg.fonttype': 'none', 'svg.hashsalt': RULE_ID})
     palette = _palette(examples)
     details, artifacts = [], []
     for index, (example, chosen) in enumerate(zip(examples, selected), 1):
@@ -357,44 +359,49 @@ def render_examples(examples, selection, destination, *, definition_path, audit_
             raise ValueError('GT occupied geometry required; no invented empty example')
         bounds = [[min(p[i] for p in positions) - 1, max(p[i] for p in positions) + 2] for i in range(3)]
         fig = plt.figure(figsize=(22, 6.2))
-        fig.subplots_adjust(left=.025, right=.99, bottom=.23, top=.77, wspace=.03)
+        fig.subplots_adjust(left=.04, right=.95, bottom=.30, top=.76, wspace=.13)
         panel_records = {}
         for number, name in enumerate(PANELS, 1):
             panel, world = example['panels'][name], worlds[name]
             ax = fig.add_subplot(1, 5, number, projection='3d', proj_type='ortho')
             ax.view_init(elev=25, azim=-60)
-            ax.set(xlim=bounds[0], ylim=bounds[2], zlim=bounds[1], xlabel='X (voxels)', ylabel='Z (voxels)', zlabel='Y (voxels)')
+            ax.set(xlim=bounds[0], ylim=bounds[2], zlim=bounds[1], xlabel='X', ylabel='Z', zlabel='Y')
+            for axis in (ax.xaxis, ax.yaxis, ax.zaxis):
+                axis.labelpad = 14
             ax.set_box_aspect([bounds[i][1] - bounds[i][0] for i in (0, 2, 1)])
             for axis in (ax.xaxis, ax.yaxis, ax.zaxis):
                 axis.set_major_locator(MaxNLocator(nbins=3, integer=True))
-                axis.set_tick_params(labelsize=7, pad=0)
+                axis.set_tick_params(labelsize=21, pad=0)
             source = {k: deepcopy(v) for k, v in panel.items() if k != 'world_voxels'}
             if world is None:
                 status = panel.get('failure_kind') or panel['status']
-                ax.text2D(.5, .5, status + '\nNo observed reconstruction', transform=ax.transAxes, ha='center', va='center', color='#9C2F21', fontsize=10)
+                ax.text2D(.5, .5, status + '\nNo observed\nreconstruction', transform=ax.transAxes, ha='center', va='center', color='#9C2F21', fontsize=22)
                 source.update(geometry=None, exposed_unit_faces=None, mesh_rectangles=None)
-                title = name + '\n' + status
+                title = name + ' (' + status + ')'
             else:
                 mesh = exposed_rectangles(world)
                 polygons = [r['vertices_display_XZY'] for r in mesh['rectangles']]
                 colors = [palette['exact_material_colors'][r['material']] for r in mesh['rectangles']]
                 ax.add_collection3d(Poly3DCollection(polygons, facecolors=colors, edgecolors=(0, 0, 0, .12), linewidths=.15, zsort='average'))
                 source.update(geometry=grid_description(world), exposed_unit_faces=mesh['exposed_unit_faces'], mesh_rectangles=mesh['rectangle_count'])
-                title = name + ('\nGround truth' if name == 'GT' else '\nValid observed output')
+                title = 'GT (ground truth)' if name == 'GT' else name
                 if not world:
                     ax.text2D(.5, .5, 'Valid empty output', transform=ax.transAxes, ha='center')
-            ax.set_title(title, fontsize=10, pad=6)
+            ax.set_title(title, fontsize=24, pad=6)
             panel_records[name] = source
-        fixture = 'SYNTHETIC FIXTURE — NOT RESEARCH RESULTS\n' if audit_gate['input_kind'] == 'fixture' else ''
-        fig.suptitle(fixture + example['scene_id'] + ' | ' + chosen['selection_category'].replace('_', ' ') + '\nBuilder: OpenAI; O/J description provider: OpenAI', fontsize=13, y=.98)
-        fig.text(.5, .145, 'Unmodified absolute world coordinates; same axes, camera and scale in all panels. Selection used stored strict-aligned metrics.', ha='center', fontsize=9)
-        fig.text(.5, .105, 'Illustrative examples selected by a fixed rule; these examples do not estimate population-average performance.', ha='center', fontsize=9)
+        heading = (('SYNTHETIC FIXTURE — NOT RESEARCH RESULTS | ' + example['scene_id'])
+                   if audit_gate['input_kind'] == 'fixture'
+                   else example['scene_id'] + ' | ' + chosen['selection_category'].replace('_', ' '))
+        fig.suptitle(heading + '\nBuilder: OpenAI; O/J description provider: OpenAI', fontsize=25, y=.98)
+        fig.text(.5, .19, 'Absolute XYZ (voxels); fixed-rule illustrations, not population-average estimates.', ha='center', fontsize=22)
         handles = [Patch(facecolor=x['color'], edgecolor='black', linewidth=.3, label=x['label']) for x in palette['legend']]
-        fig.legend(handles=handles, loc='lower center', ncol=4, bbox_to_anchor=(.5, -.005), fontsize=8, frameon=False)
+        fig.legend(handles=handles, loc='lower center', ncol=4, bbox_to_anchor=(.5, -.01), fontsize=21, frameon=False)
         base = f'example_{index:02d}'
         for ext in ('png', 'svg'):
             buf = io.BytesIO()
-            fig.savefig(buf, format=ext, dpi=300, bbox_inches='tight', metadata={'Software': RULE_ID} if ext == 'png' else {'Date': None, 'Creator': RULE_ID})
+            # A fixed full canvas retains projected 3D axis labels that tight
+            # bounding-box calculation can omit at the right edge.
+            fig.savefig(buf, format=ext, dpi=300, metadata={'Software': RULE_ID} if ext == 'png' else {'Date': None, 'Creator': RULE_ID})
             data = buf.getvalue()
             if len(data) > MAX_BYTES:
                 plt.close(fig)
@@ -415,7 +422,8 @@ def render_examples(examples, selection, destination, *, definition_path, audit_
                           'status': panel['status'], 'failure_kind': panel.get('failure_kind'), 'source': panel['source'],
                           'attempt_id': panel.get('attempt_id'), 'input_id': panel.get('input_id'), 'input_sha256': panel.get('input_sha256'),
                           'geometry': panel['geometry'], 'metrics': panel.get('metrics'),
-                          'description_sha256': detail['description']['sha256'], 'literal_summary_excerpt': detail['description']['excerpt']})
+                          'description_sha256': detail['description']['sha256'], 'literal_summary_excerpt': detail['description']['excerpt'],
+                          'scope_note': 'Illustrative examples selected by a fixed rule; these examples do not estimate population-average performance.'})
     handle = io.StringIO(newline=''); writer = csv.DictWriter(handle, fieldnames=list(table[0]), lineterminator='\n'); writer.writeheader()
     for row in table:
         writer.writerow({k: json.dumps(v, sort_keys=True, ensure_ascii=False, allow_nan=False) if isinstance(v, (dict, list)) else v for k, v in row.items()})
@@ -453,5 +461,9 @@ the accompanying example table and manifest.}
         'mesh_policy': 'exposed unit faces merged only across coplanar same-exact-material cells',
         'examples': [e['scene_id'] for e in examples], 'files': artifacts, 'research_api_requests_sent': 0,
         'model_generated_images': 0, 'reconstruction_metrics_recomputed': False, 'matplotlib_version': matplotlib.__version__}
+    manifest['publication_layout'] = {'canvas_inches': [22, 6.2], 'intended_paper_width_inches': 7,
+        'minimum_canvas_font_points': 21, 'typography_revision_only': True,
+        'full_disclaimer': 'Illustrative examples selected by a fixed rule; these examples do not estimate population-average performance.',
+        'selection_metric_note': 'Selection used stored strict-aligned metrics; display uses unmodified absolute world coordinates.'}
     with (target / 'example_manifest.json').open('x', encoding='utf-8') as f:f.write(_json(manifest))
     return manifest
