@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "created_utc": "2026-10-17T11:06:30.752721+00:00",
+  "scope": "READ_ONLY_OFFLINE_AVAILABILITY_AUDIT; no inference or outcome inspection",
+  "selection_before_availability_inspection": true,
+  "priority_order": [
+    {
+      "rank": 1,
+      "candidate": "Formal CLIPScore",
+      "requirements": [
+        "Author implementation with identifiable source/version and compatible license",
+        "Complete genuine OpenAI CLIP ViT-B/32 checkpoint with identifiable provenance and SHA-256",
+        "Required tokenizer vocabulary/merges and preprocessing implementation with context limit",
+        "Complete existing compatible dependencies; no download/install or environment modification",
+        "Formal CLIPScore definition reproduced from author implementation; generic cosine is not CLIPScore"
+      ]
+    },
+    {
+      "rank": 2,
+      "candidate": "Standard image-text cosine similarity",
+      "requirements": [
+        "A complete existing genuine pretrained image-text checkpoint",
+        "Verifiable provenance and license",
+        "Complete tokenizer and image preprocessing configuration/implementation",
+        "Known context limit and exact cosine definition",
+        "Complete existing compatible dependencies; no download/install or environment modification"
+      ]
+    }
+  ],
+  "multiple_eligible_candidate_tiebreakers": [
+    "Published reference implementation/model reproducibility",
+    "Documented or architecture-derived CPU cost, lowest first without benchmark inference",
+    "Lexicographic canonical checkpoint identifier"
+  ],
+  "no_result_dependent_choice": true,
+  "prohibited": [
+    "Inference including test inputs",
+    "Scoring real summaries or images",
+    "Reading reconstruction outcomes for selection",
+    "Network downloads or weight acquisition",
+    "pip/package installation",
+    "Modification of existing virtual environments or caches",
+    "Research/model/token-count/judge APIs",
+    "Reading secrets, authentication files, or environment variable values"
+  ],
+  "incomplete_or_ambiguous_provenance_policy": "Ineligible; do not infer completeness from a package name or cache directory",
+  "no_eligible_candidate_status": "BLOCKED_NO_VALIDATED_OFFLINE_SCORER",
+  "output": "/tmp/goal013-offline-scorer-audit.json"
+}
