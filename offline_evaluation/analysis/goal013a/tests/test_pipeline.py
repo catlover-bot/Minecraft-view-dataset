@@ -122,6 +122,28 @@ def test_public_score_copy_omits_token_ids_without_mutating_canonical_rows():
     assert copy[0]['token_diagnostics']['token_ids_sha256'] == 'a' * 64
 
 
+def test_json_publish_is_exclusive_and_nonfinite_values_create_no_output(tmp_path):
+    path = tmp_path / 'result.json'
+    p.write_json(path, {'status': 'original'})
+    before = path.read_bytes()
+    with pytest.raises(ValueError, match='exclusive'):
+        p.write_json(path, {'status': 'overwritten'})
+    assert path.read_bytes() == before and not list(tmp_path.glob('*.partial'))
+    with pytest.raises(ValueError):
+        p.write_json(tmp_path / 'bad.json', {'value': float('nan')})
+    assert not (tmp_path / 'bad.json').exists() and not (tmp_path / 'bad.json.partial').exists()
+
+
+def test_interrupted_json_publish_retains_partial_without_invalid_final(monkeypatch, tmp_path):
+    def interrupted(fd):
+        raise RuntimeError('synthetic fsync interruption')
+    monkeypatch.setattr(p.os, 'fsync', interrupted)
+    with pytest.raises(RuntimeError, match='synthetic fsync'):
+        p.write_json(tmp_path / 'row_001.json', {'score_status': 'COMPUTATION_VALID'})
+    assert not (tmp_path / 'row_001.json').exists()
+    assert (tmp_path / 'row_001.json.partial').is_file()
+
+
 def commit_fixture(monkeypatch, tmp_path):
     code_commit, spec_commit = '1' * 40, '2' * 40
     names = {code_commit: p.CODE + 'fake.py', spec_commit: p.REPORT + 'config.json'}
@@ -381,6 +403,30 @@ def test_association_stage_cannot_ignore_failed_freeze_gate(tmp_path, monkeypatc
         p.main()
     assert (out / 'STOP_RECEIPT.json').is_file()
     assert not (out / 'OUTCOME_BINDING.json').exists() and not (out / 'ASSOCIATIONS_FULL.json').exists()
+
+
+def test_stop_receipt_lists_incomplete_output_without_parsing_it(tmp_path, monkeypatch):
+    out, _ = main_fixture(tmp_path, monkeypatch)
+    def interrupted(config, output, *args):
+        p.write_json(output / 'row_001.json', {'score_status': 'COMPUTATION_VALID', 'score': .1})
+        (output / 'row_002.json.partial').write_text('{unfinished')
+        raise RuntimeError('synthetic write interruption')
+    monkeypatch.setattr(p, 'score_phase', interrupted)
+    with pytest.raises(RuntimeError, match='synthetic write'):
+        p.main()
+    stop = json.loads((out / 'STOP_RECEIPT.json').read_text())
+    assert stop['retained_planned_rows'] == 1 and stop['remaining_planned_rows'] == 179
+    assert stop['incomplete_output_files'] == ['row_002.json.partial']
+    assert not (out / 'SCORE_FREEZE.json').exists()
+
+
+def test_production_rejects_non_dedicated_root_before_writes(tmp_path, monkeypatch):
+    real_require = p.require
+    out, events = main_fixture(tmp_path, monkeypatch)
+    monkeypatch.setattr(p, 'require', real_require)
+    with pytest.raises(ValueError, match='dedicated tools root'):
+        p.main()
+    assert not out.exists() and 'scoring' not in events
 
 
 @pytest.mark.parametrize('variable', [*p.THREAD_ENV, 'TMPDIR', 'XDG_CACHE_HOME', 'TORCH_HOME', 'PIP_CACHE_DIR'])
