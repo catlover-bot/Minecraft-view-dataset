@@ -1,0 +1,96 @@
+{
+  "10_interpretation_and_stop": {
+    "details": "Distinguishes parity, fixed-gallery signal, limited RQ2, unvalidated human quality and unchanged original RQ2. Stops at12.",
+    "evidence": [
+      "RESEARCH_DECISION_JA.md",
+      "README.md"
+    ],
+    "status": "PASS"
+  },
+  "1_inheritance": {
+    "details": "Expected clean research branch/head, no prior Goal014, no active research run. All180 source and original score rows matched;60 scenes/178 valid/2 missing;59 truncated/119 not.",
+    "evidence": [
+      "ENTRY_STATE.json",
+      "CONFIG.json",
+      "INTEGRITY_BEFORE.json"
+    ],
+    "status": "PASS"
+  },
+  "2_boundaries": {
+    "details": "Existing fixed venv only; no downloads/installs/research or model APIs; old guarded code unchanged; outputs limited to new run and allowed repo prefixes; no Draft/new experiments/next Goal.",
+    "evidence": [
+      "EXECUTION_START.json",
+      "EXECUTION_RECEIPT.json",
+      "INTEGRITY_AFTER.json"
+    ],
+    "status": "PASS"
+  },
+  "3_fixed_questions": {
+    "details": "Only QA2 QB6 QC4; nonmatching provenance controls, no content-false claim, no other scales/subgroup correlations/regression.",
+    "evidence": [
+      "ANALYSIS_PLAN.md",
+      "ESTIMATES_12.csv"
+    ],
+    "status": "PASS"
+  },
+  "4_before_compute_freeze": {
+    "details": "Actual original score/config/freeze/source/token/code hashes bound before model inference. Surface identities joined to immutable selected O attempts. Full inventory once before and once after.",
+    "evidence": [
+      "ANALYSIS_PLAN.md",
+      "CONFIG.json",
+      "EXECUTION_START.json",
+      "OUTCOME_BINDING.json"
+    ],
+    "plan_commit": "6c7019094b0afdfe28ee88d5cc086797c62e457a",
+    "status": "PASS"
+  },
+  "5_matching_control": {
+    "details": "No persistent embeddings existed.360 image/178 text one extraction pass plus4/4 parity forwards. Private float32 numeric feature arrays and178x60 matrix.1068 original view/178 mean replay within1e-5. All59 controls, exact half-ties, missing2 retained, building-equal D/W, fixed gallery CI.",
+    "evidence": [
+      "FEATURE_AVAILABILITY.json",
+      "INFERENCE_COUNTS.json",
+      "TOKEN_REPLAY.json",
+      "REFERENCE_PARITY.json",
+      "SCORE_REPLAY.json",
+      "QA_FREEZE.json",
+      "QA_ROWS_180.json",
+      "INDEPENDENT_QA_REVIEW.json"
+    ],
+    "status": "PASS"
+  },
+  "6_surface_comparison": {
+    "details": "Saved aligned surface F1@1 at original occupancy shift only; same scene/provider/Builder/O input/attempt/predGTshift hashes. Two common-valid sets175/177 equal old IoU masks. Paired same-draw delta, no both-Builder/failure0 addition.",
+    "evidence": [
+      "OUTCOME_BINDING.json",
+      "RESULTS_SUMMARY.json",
+      "INDEPENDENT_BINDING_REVIEW.json"
+    ],
+    "status": "PASS"
+  },
+  "7_truncation": {
+    "details": "Original false119/true59 only; actual paired Ns118/119 untruncated and57/58 truncated. Provider/token descriptive counts retained, no primary promotion or causal interpretation.",
+    "evidence": [
+      "RESULTS_SUMMARY.json",
+      "ESTIMATES_12.csv"
+    ],
+    "status": "PASS"
+  },
+  "8_statistics": {
+    "details": "Exactly12, shared PCG64seed20261017 planned60/2000draws, multiplicity and reranking, paired delta. All2000finite, type7CI, NULL handling fixture-tested, no p/significance/Holm/equivalence.",
+    "evidence": [
+      "RESULTS_SUMMARY.json",
+      "INDEPENDENT_STATISTICS_REVIEW.json"
+    ],
+    "status": "PASS"
+  },
+  "9_validation_resources_preservation": {
+    "details": "81 new fixtures PASS;5 affected pipeline fixtures rerun PASS. Required ordering/replay/clip/norm/missing/tie/bootstrap/QC/old-write boundaries covered. CPU/RSS/wall/disk within fixed caps. Features/matrix/text/token originals private. Publication verification follows non-force push.",
+    "evidence": [
+      "FIXTURES.junit.xml",
+      "PIPELINE_FINAL.junit.xml",
+      "RESOURCE_CLOSURE.json",
+      "INTEGRITY_AFTER.json"
+    ],
+    "status": "PASS"
+  }
+}
