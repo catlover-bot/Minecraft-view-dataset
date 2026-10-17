@@ -1,0 +1,1288 @@
+{
+  "analysis_label": "PROSPECTIVE_UNAPPROVED_DESIGN_INFORMED_BY_EVAL60",
+  "api_key_queries": 0,
+  "baseline": "Same frozen O dimensions_estimate rounding, default world origin0 and fixed filled-box, no GT in construction; GT strict occupancy translation reused only for evaluation.",
+  "candidates": [
+    {
+      "builders": 2,
+      "candidate_id": "R1",
+      "condition": "O",
+      "description_provider": "openai",
+      "independent_N": 30,
+      "numeric_cost_usd": null,
+      "per_provider": [
+        {
+          "input_reservation_tokens": 6000000,
+          "numeric_cost_usd": null,
+          "official_rate_or_billable_feature_verification": "REQUIRES_CURRENT_PRICE_VERIFICATION",
+          "output_reservation_tokens": 983040,
+          "planned_calls": 30,
+          "provider": "anthropic",
+          "requested_model_id": "claude-haiku-4-5-20251001",
+          "symbolic_cost_usd": "(6000000 * future_anthropic_input_USD_per_1M + 983040 * future_anthropic_output_USD_per_1M) / 1000000",
+          "total_reserved_tokens": 6983040
+        },
+        {
+          "input_reservation_tokens": 12000000,
+          "numeric_cost_usd": null,
+          "official_rate_or_billable_feature_verification": "REQUIRES_CURRENT_PRICE_VERIFICATION",
+          "output_reservation_tokens": 983040,
+          "planned_calls": 30,
+          "provider": "openai",
+          "requested_model_id": "gpt-5-mini",
+          "symbolic_cost_usd": "(12000000 * future_openai_input_USD_per_1M + 983040 * future_openai_output_USD_per_1M) / 1000000",
+          "total_reserved_tokens": 12983040
+        }
+      ],
+      "planned_buildings": 30,
+      "planned_calls": 60,
+      "precision_scenarios": [
+        {
+          "builder": "openai",
+          "building_delta_vector_sha256": "6ec85735938f0d407ba8427810eb1bdc76c8b3b75d5201f28076a7373dc7ca54",
+          "eval60_delta_sd": 0.04838274396030503,
+          "limitations": "Repeat variance is unidentified. Bounds are planning scenarios, not confidence bounds; correlated repeats, validity selection or cohort shift can invalidate them. No power or sufficiency claim.",
+          "metric_id": "occupancy_iou",
+          "observed_valid_buildings": 57,
+          "scenarios": [
+            {
+              "approximate_halfwidth_range": [
+                0.01806641350797379,
+                0.01806641350797379
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 1,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.045229642132703,
+              "t_degrees_of_freedom": 29,
+              "target_buildings": 30,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            },
+            {
+              "approximate_halfwidth_range": [
+                0.012498588089541135,
+                0.012498588089541135
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 1,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.000995378088267,
+              "t_degrees_of_freedom": 59,
+              "target_buildings": 60,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            }
+          ]
+        },
+        {
+          "builder": "openai",
+          "building_delta_vector_sha256": "5b19184af1a368da6d89e00ff49ccb525e093d3063924171fdcd22d861ddd398",
+          "eval60_delta_sd": 0.09365449186109347,
+          "limitations": "Repeat variance is unidentified. Bounds are planning scenarios, not confidence bounds; correlated repeats, validity selection or cohort shift can invalidate them. No power or sufficiency claim.",
+          "metric_id": "surface_f1_at_1",
+          "observed_valid_buildings": 57,
+          "scenarios": [
+            {
+              "approximate_halfwidth_range": [
+                0.03497116199589382,
+                0.03497116199589382
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 1,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.045229642132703,
+              "t_degrees_of_freedom": 29,
+              "target_buildings": 30,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            },
+            {
+              "approximate_halfwidth_range": [
+                0.02419352067893154,
+                0.02419352067893154
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 1,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.000995378088267,
+              "t_degrees_of_freedom": 59,
+              "target_buildings": 60,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            }
+          ]
+        },
+        {
+          "builder": "anthropic",
+          "building_delta_vector_sha256": "48d3db0f6debc637ed24153937b11730721b5eb5aecb5c7e51664bb5666e09a9",
+          "eval60_delta_sd": 0.04172138338583788,
+          "limitations": "Repeat variance is unidentified. Bounds are planning scenarios, not confidence bounds; correlated repeats, validity selection or cohort shift can invalidate them. No power or sufficiency claim.",
+          "metric_id": "occupancy_iou",
+          "observed_valid_buildings": 59,
+          "scenarios": [
+            {
+              "approximate_halfwidth_range": [
+                0.015579020590309299,
+                0.015579020590309299
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 1,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.045229642132703,
+              "t_degrees_of_freedom": 29,
+              "target_buildings": 30,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            },
+            {
+              "approximate_halfwidth_range": [
+                0.010777776181798126,
+                0.010777776181798126
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 1,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.000995378088267,
+              "t_degrees_of_freedom": 59,
+              "target_buildings": 60,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            }
+          ]
+        },
+        {
+          "builder": "anthropic",
+          "building_delta_vector_sha256": "a345bb243cb89273131724e019ca0a190368a005ef443250f7a6e4bce85513b5",
+          "eval60_delta_sd": 0.08703458469679383,
+          "limitations": "Repeat variance is unidentified. Bounds are planning scenarios, not confidence bounds; correlated repeats, validity selection or cohort shift can invalidate them. No power or sufficiency claim.",
+          "metric_id": "surface_f1_at_1",
+          "observed_valid_buildings": 59,
+          "scenarios": [
+            {
+              "approximate_halfwidth_range": [
+                0.032499248035975425,
+                0.032499248035975425
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 1,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.045229642132703,
+              "t_degrees_of_freedom": 29,
+              "target_buildings": 30,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            },
+            {
+              "approximate_halfwidth_range": [
+                0.022483417322547578,
+                0.022483417322547578
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 1,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.000995378088267,
+              "t_degrees_of_freedom": 59,
+              "target_buildings": 60,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            }
+          ]
+        }
+      ],
+      "pricing_status": "REQUIRES_CURRENT_PRICE_VERIFICATION",
+      "repeats_per_building_builder": 1,
+      "retries": 0,
+      "status": "UNAPPROVED_NOT_RUN_NOT_ENABLED",
+      "total_input_reservation_tokens": 18000000,
+      "total_output_reservation_tokens": 1966080,
+      "total_reserved_tokens": 19966080
+    },
+    {
+      "builders": 2,
+      "candidate_id": "R3",
+      "condition": "O",
+      "description_provider": "openai",
+      "independent_N": 30,
+      "numeric_cost_usd": null,
+      "per_provider": [
+        {
+          "input_reservation_tokens": 18000000,
+          "numeric_cost_usd": null,
+          "official_rate_or_billable_feature_verification": "REQUIRES_CURRENT_PRICE_VERIFICATION",
+          "output_reservation_tokens": 2949120,
+          "planned_calls": 90,
+          "provider": "anthropic",
+          "requested_model_id": "claude-haiku-4-5-20251001",
+          "symbolic_cost_usd": "(18000000 * future_anthropic_input_USD_per_1M + 2949120 * future_anthropic_output_USD_per_1M) / 1000000",
+          "total_reserved_tokens": 20949120
+        },
+        {
+          "input_reservation_tokens": 36000000,
+          "numeric_cost_usd": null,
+          "official_rate_or_billable_feature_verification": "REQUIRES_CURRENT_PRICE_VERIFICATION",
+          "output_reservation_tokens": 2949120,
+          "planned_calls": 90,
+          "provider": "openai",
+          "requested_model_id": "gpt-5-mini",
+          "symbolic_cost_usd": "(36000000 * future_openai_input_USD_per_1M + 2949120 * future_openai_output_USD_per_1M) / 1000000",
+          "total_reserved_tokens": 38949120
+        }
+      ],
+      "planned_buildings": 30,
+      "planned_calls": 180,
+      "precision_scenarios": [
+        {
+          "builder": "openai",
+          "building_delta_vector_sha256": "6ec85735938f0d407ba8427810eb1bdc76c8b3b75d5201f28076a7373dc7ca54",
+          "eval60_delta_sd": 0.04838274396030503,
+          "limitations": "Repeat variance is unidentified. Bounds are planning scenarios, not confidence bounds; correlated repeats, validity selection or cohort shift can invalidate them. No power or sufficiency claim.",
+          "metric_id": "occupancy_iou",
+          "observed_valid_buildings": 57,
+          "scenarios": [
+            {
+              "approximate_halfwidth_range": [
+                0.01043064870211976,
+                0.01806641350797379
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 3,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.045229642132703,
+              "t_degrees_of_freedom": 29,
+              "target_buildings": 30,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            },
+            {
+              "approximate_halfwidth_range": [
+                0.007216063197986825,
+                0.012498588089541135
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 3,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.000995378088267,
+              "t_degrees_of_freedom": 59,
+              "target_buildings": 60,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            }
+          ]
+        },
+        {
+          "builder": "openai",
+          "building_delta_vector_sha256": "5b19184af1a368da6d89e00ff49ccb525e093d3063924171fdcd22d861ddd398",
+          "eval60_delta_sd": 0.09365449186109347,
+          "limitations": "Repeat variance is unidentified. Bounds are planning scenarios, not confidence bounds; correlated repeats, validity selection or cohort shift can invalidate them. No power or sufficiency claim.",
+          "metric_id": "surface_f1_at_1",
+          "observed_valid_buildings": 57,
+          "scenarios": [
+            {
+              "approximate_halfwidth_range": [
+                0.020190609792203308,
+                0.03497116199589382
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 3,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.045229642132703,
+              "t_degrees_of_freedom": 29,
+              "target_buildings": 30,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            },
+            {
+              "approximate_halfwidth_range": [
+                0.013968135676625902,
+                0.02419352067893154
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 3,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.000995378088267,
+              "t_degrees_of_freedom": 59,
+              "target_buildings": 60,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            }
+          ]
+        },
+        {
+          "builder": "anthropic",
+          "building_delta_vector_sha256": "48d3db0f6debc637ed24153937b11730721b5eb5aecb5c7e51664bb5666e09a9",
+          "eval60_delta_sd": 0.04172138338583788,
+          "limitations": "Repeat variance is unidentified. Bounds are planning scenarios, not confidence bounds; correlated repeats, validity selection or cohort shift can invalidate them. No power or sufficiency claim.",
+          "metric_id": "occupancy_iou",
+          "observed_valid_buildings": 59,
+          "scenarios": [
+            {
+              "approximate_halfwidth_range": [
+                0.008994551731525796,
+                0.015579020590309299
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 3,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.045229642132703,
+              "t_degrees_of_freedom": 29,
+              "target_buildings": 30,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            },
+            {
+              "approximate_halfwidth_range": [
+                0.006222551979826686,
+                0.010777776181798126
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 3,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.000995378088267,
+              "t_degrees_of_freedom": 59,
+              "target_buildings": 60,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            }
+          ]
+        },
+        {
+          "builder": "anthropic",
+          "building_delta_vector_sha256": "a345bb243cb89273131724e019ca0a190368a005ef443250f7a6e4bce85513b5",
+          "eval60_delta_sd": 0.08703458469679383,
+          "limitations": "Repeat variance is unidentified. Bounds are planning scenarios, not confidence bounds; correlated repeats, validity selection or cohort shift can invalidate them. No power or sufficiency claim.",
+          "metric_id": "surface_f1_at_1",
+          "observed_valid_buildings": 59,
+          "scenarios": [
+            {
+              "approximate_halfwidth_range": [
+                0.01876344960203083,
+                0.032499248035975425
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 3,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.045229642132703,
+              "t_degrees_of_freedom": 29,
+              "target_buildings": 30,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            },
+            {
+              "approximate_halfwidth_range": [
+                0.01298080704347554,
+                0.022483417322547578
+              ],
+              "independent_N_is_buildings": true,
+              "repeat_generations_per_building": 3,
+              "repeat_variance_identified": false,
+              "status": "ASSUMPTION_DEPENDENT_DESIGN_HEURISTIC",
+              "t_critical_975": 2.000995378088267,
+              "t_degrees_of_freedom": 59,
+              "target_buildings": 60,
+              "target_halfwidth_planning_tolerance": 0.03,
+              "validated_MCID": false
+            }
+          ]
+        }
+      ],
+      "pricing_status": "REQUIRES_CURRENT_PRICE_VERIFICATION",
+      "repeats_per_building_builder": 3,
+      "retries": 0,
+      "status": "UNAPPROVED_NOT_RUN_NOT_ENABLED",
+      "total_input_reservation_tokens": 54000000,
+      "total_output_reservation_tokens": 5898240,
+      "total_reserved_tokens": 59898240
+    }
+  ],
+  "causal_limitation": "Repeating O on the same saved JSON cannot identify information lost in image-to-text conversion. That would require a separate controlled paired intervention on available spatial information/input modality, holding tasks and relevant generation settings fixed; it is not implemented here.",
+  "checkpoint_policy": "Only a separately approved future plan may create fresh local immutable checkpoints and a new GitHub draft; verify byte digests and restoration, halt on save failure, never modify the existing three drafts.",
+  "conditional_candidate_preference": "R1_IF_FUTURE_INDEPENDENT_VALIDATION_IS_SEPARATELY_JUSTIFIED",
+  "critical_counter_metrics": [
+    "surface_f1_at_1",
+    "occupancy_precision",
+    "occupancy_recall",
+    "known_model_output_failure_rate",
+    "operational_missing_rate"
+  ],
+  "description_provider": "openai",
+  "execution_command": null,
+  "future_checks_before_approval": [
+    "verify selected rest input availability without silent replacement",
+    "resolve previous-exposure scope and acceptable independent-validation claim",
+    "verify current exact model IDs, schema support, context/output limits and official prices on execution date",
+    "freeze a separate future protocol before inspecting its outcomes",
+    "obtain explicit new cost/call/token scope and fresh real-TTY human authorization"
+  ],
+  "gate": {
+    "analysis_plan_sha256": "f2d630c836c5fa2a7ae7aff4dc886866791c1a0e37893c68a7f92cf260e2b963",
+    "code_commit": "93eaa3f8a06d0e32415fc4f565bb06b75ddcac70",
+    "definitions_frozen": true,
+    "goal007_manifest_sha256": "ef05c2ed93247802e9a68a00d700d39a8934d6231c7787315ab37b01d2467714",
+    "hashes": {
+      "offline_evaluation/analysis/goal011/__init__.py": "265ebbcc01985b77c6bc4aef7305724cc71db5f88f74130df179124939a4b2b4",
+      "offline_evaluation/analysis/goal011/material.py": "82aef5b11303009e10b46c975bd869951f4345e83c3f02b6cb3784505329f7a2",
+      "offline_evaluation/analysis/goal011/material_batch.py": "ce14e7846cf4f0a0033e934b4eb222481186e51e96f371e6c2012167d6ca7d26",
+      "offline_evaluation/analysis/goal011/pipeline.py": "f8bdc9068ca0df0a916b81fe744842237f67887eb377419cf5d3c469dbad6bba",
+      "offline_evaluation/analysis/goal011/prospective.py": "706f263c34250e2783aba91845486abf2bf48a4802fcaefa84640e6346167744",
+      "offline_evaluation/analysis/goal011/rest.py": "c45a4351d6b678a354c1457ad88ddb0c757d2c71c73f605c24516258e19ff66a",
+      "offline_evaluation/analysis/goal011/source_guard.py": "f018c98dcb4f3c118b651c99007106ec620e98e30bd5befafd927b2e6fd1be4e",
+      "offline_evaluation/analysis/goal011/tradeoff.py": "44cd1634fa21ebde6cf7633f4a81a7513e0cee251bd8b744bc6b3caaa7ca52f8",
+      "reports/server_only/goal011/ANALYSIS_PLAN.json": "f2d630c836c5fa2a7ae7aff4dc886866791c1a0e37893c68a7f92cf260e2b963",
+      "reports/server_only/goal011/QUESTION_REGISTER.md": "e110190d7d3b3fb130bc35eaf9b1aa225c65c3c192fa2bd1b3563983181e422a"
+    },
+    "input_kind": "verified_sources",
+    "phase0_binding": "PASS",
+    "plan_sha256": "f2d630c836c5fa2a7ae7aff4dc886866791c1a0e37893c68a7f92cf260e2b963",
+    "question_register_sha256": "e110190d7d3b3fb130bc35eaf9b1aa225c65c3c192fa2bd1b3563983181e422a",
+    "source_package_sha256": "01fcabeac3c37fd39868d90234781773ddf6215cca1f1af5fb331111139f9b51",
+    "specification_commit": "f91e62331df57a42404f6a9937669d7461586002",
+    "specification_sha256": "f2d630c836c5fa2a7ae7aff4dc886866791c1a0e37893c68a7f92cf260e2b963",
+    "status": "PASS"
+  },
+  "historical_991_calls_or_USD30_are_not_authorization": true,
+  "historical_protocol": {
+    "historical_reservation_policies": [
+      {
+        "plan_identity_hash": "db5533bffb583d0b1efcbcdb7c1563edf2ac87606334e6ce6cd766c650075843",
+        "policy": "full documented context input plus output cap; cumulative USD30 includes all old consumption; not completion cost prediction",
+        "source_label": "original781"
+      },
+      {
+        "plan_identity_hash": "f54ebfaa041a18cbbfb60d2d27f9e9c4a50d436545c7ed1175c60751be58816f",
+        "policy": "full documented context input plus output cap; not measured or guaranteed completion cost",
+        "source_label": "parent160"
+      }
+    ],
+    "max_output_tokens": 32768,
+    "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+    "providers": {
+      "anthropic": {
+        "current_context_and_output_support": "REQUIRES_FUTURE_OFFICIAL_VERIFICATION",
+        "historical_context_input_reservation_tokens": 200000,
+        "max_output_tokens": 32768,
+        "model_availability_now": "NOT_QUERIED_NOT_VERIFIED",
+        "provider": "anthropic",
+        "provider_defaults": "NOT_CONTROLLED_BY_OMITTED_PAYLOAD_FIELDS",
+        "requested_model_id": "claude-haiku-4-5-20251001",
+        "sampling_fields": {
+          "frequency_penalty": {
+            "explicit": false,
+            "value": null
+          },
+          "presence_penalty": {
+            "explicit": false,
+            "value": null
+          },
+          "seed": {
+            "explicit": false,
+            "value": null
+          },
+          "temperature": {
+            "explicit": false,
+            "value": null
+          },
+          "top_k": {
+            "explicit": false,
+            "value": null
+          },
+          "top_p": {
+            "explicit": false,
+            "value": null
+          }
+        }
+      },
+      "openai": {
+        "current_context_and_output_support": "REQUIRES_FUTURE_OFFICIAL_VERIFICATION",
+        "historical_context_input_reservation_tokens": 400000,
+        "max_output_tokens": 32768,
+        "model_availability_now": "NOT_QUERIED_NOT_VERIFIED",
+        "provider": "openai",
+        "provider_defaults": "NOT_CONTROLLED_BY_OMITTED_PAYLOAD_FIELDS",
+        "requested_model_id": "gpt-5-mini",
+        "sampling_fields": {
+          "frequency_penalty": {
+            "explicit": false,
+            "value": null
+          },
+          "presence_penalty": {
+            "explicit": false,
+            "value": null
+          },
+          "seed": {
+            "explicit": false,
+            "value": null
+          },
+          "temperature": {
+            "explicit": false,
+            "value": null
+          },
+          "top_k": {
+            "explicit": false,
+            "value": null
+          },
+          "top_p": {
+            "explicit": false,
+            "value": null
+          }
+        }
+      }
+    },
+    "reservation_interpretation": "Historic full-context input plus output-cap reservation; not a measured token count, future context-fit proof, empirical completion cost, or invoice.",
+    "schema_sha256": "41a28cf6044541d67f794b5705b934749f94ef882732becb325d8cd1af2fdf83",
+    "source_plan_proofs": [
+      {
+        "payload_constructed_locally_only": true,
+        "plan_identity_hash": "db5533bffb583d0b1efcbcdb7c1563edf2ac87606334e6ce6cd766c650075843",
+        "pricing_record_content_sha256": "6ed811d71f643deed11c983637315988f7deb31d742ff2179d953cd52e2289ba",
+        "provider": "anthropic",
+        "representative_payload_sha256": "65f42e340c5c37db8057beea7372efd46e935ecba0904e697a3ca52c98525677",
+        "source_label": "original781"
+      },
+      {
+        "payload_constructed_locally_only": true,
+        "plan_identity_hash": "db5533bffb583d0b1efcbcdb7c1563edf2ac87606334e6ce6cd766c650075843",
+        "pricing_record_content_sha256": "01c98f724b9296a2961a15e45271723caed89b065c0a57c2efc689cc64390bbd",
+        "provider": "openai",
+        "representative_payload_sha256": "4133d317aa1637c3fee49065167e989f86437e6127c85132dad111d74e4bed2d",
+        "source_label": "original781"
+      },
+      {
+        "payload_constructed_locally_only": true,
+        "plan_identity_hash": "f54ebfaa041a18cbbfb60d2d27f9e9c4a50d436545c7ed1175c60751be58816f",
+        "pricing_record_content_sha256": "13cdb59eaeb77da1c3e1ada8f4f59f64187f418c8e031a26eefbe76f6d093e05",
+        "provider": "anthropic",
+        "representative_payload_sha256": "3a652ac5043e72cf3d83ce727fc764930017fada0a0eecbce39d9c8a67d44be3",
+        "source_label": "parent160"
+      },
+      {
+        "payload_constructed_locally_only": true,
+        "plan_identity_hash": "f54ebfaa041a18cbbfb60d2d27f9e9c4a50d436545c7ed1175c60751be58816f",
+        "pricing_record_content_sha256": "d20a735f622f434a6cad214b5b116d5694c8015e4e9135bd8c944554769f2ce4",
+        "provider": "openai",
+        "representative_payload_sha256": "73d0484cc548e236394349fa2243b75844cb417542d23cc4847b034cd300c85f",
+        "source_label": "parent160"
+      },
+      {
+        "payload_constructed_locally_only": true,
+        "plan_identity_hash": "03340ae00dab4ab13be7cc8e9de379652a0ea92cf2cec2edda38e006c2668e4c",
+        "pricing_record_content_sha256": "16c893c1fa0c859d468c2af740d7553f61b766f7bacf51fe944dbf3bed6448c0",
+        "provider": "anthropic",
+        "representative_payload_sha256": "c3f76271bbfca9a71aadf7e1cc528f276e322fd86f35c1e9ab9fbf3aeb4a0934",
+        "source_label": "supplement17"
+      },
+      {
+        "payload_constructed_locally_only": true,
+        "plan_identity_hash": "03340ae00dab4ab13be7cc8e9de379652a0ea92cf2cec2edda38e006c2668e4c",
+        "pricing_record_content_sha256": "bd565b8d72cb248c2ceadac859d888c2a8bbef01f8e73d34b2e101b509dba873",
+        "provider": "openai",
+        "representative_payload_sha256": "2ec1590937d1a1e439759d2892edbaf9cf3625432813c4fffa0c94be62ca75b2",
+        "source_label": "supplement17"
+      },
+      {
+        "payload_constructed_locally_only": true,
+        "plan_identity_hash": "206dfda6468a90b8d67700e3799571ff0de5aabe1263c15754efe242887f8922",
+        "pricing_record_content_sha256": "41d390a39761d66d91b782b8b705ad39ee8a924f8be94f7f8ce8d367cb0cbf96",
+        "provider": "anthropic",
+        "representative_payload_sha256": "9ed2857f646a2ad15b985d6e327c8d8bf27a665d3a90cd37d7fc99b0c9e68b20",
+        "source_label": "supplement3"
+      },
+      {
+        "payload_constructed_locally_only": true,
+        "plan_identity_hash": "206dfda6468a90b8d67700e3799571ff0de5aabe1263c15754efe242887f8922",
+        "pricing_record_content_sha256": "3de1d848aca4e9c5afdc2ac54db9eb8bbc0efc1d37f1b4cb1bcbe056333efb14",
+        "provider": "openai",
+        "representative_payload_sha256": "b31b7d3474c6fa5c023a327e555354789fa98809c62f7a3d33a8c581809e0fc0",
+        "source_label": "supplement3"
+      }
+    ]
+  },
+  "model_queries": 0,
+  "new_authority_ledger_approval_or_launcher_created": false,
+  "one_builder_scope_limit": "Dropping one Builder reduces calls but cannot independently check the trade-off for both systems; not added as a third candidate.",
+  "preference_reason": "R1 uses 60 calls and R3 uses 180; single-generation eval60 cannot identify within-building repeat variance or establish the precision gain needed to justify R3. Neither 30 buildings nor either configuration is certified sufficient.",
+  "pricing": {
+    "empirical_cost_prediction_usd": null,
+    "historical_dollar_prices_reused": false,
+    "invoice_usd": null,
+    "status": "REQUIRES_CURRENT_PRICE_VERIFICATION",
+    "symbolic_formula_requires_verification_of_all_billable_features": true
+  },
+  "primary_estimand": "equal-building mean aligned occupancy IoU: Builder minus same-input deterministic filled-box",
+  "provider_selection": "Fixed in QUESTION_REGISTER/ANALYSIS_PLAN before new Goal011 arithmetic; historical provenance and shared 1800-cap description design, not favorable downstream effect selection.",
+  "registration_claim": false,
+  "research_api_requests_sent": 0,
+  "rest_evidence": {
+    "feasibility_sha256": "f917c4ef7217d66acb01e21a5032e470135816383eb28e1a00ad4f7a9bd56feb",
+    "missing_selected_input_scenes": [],
+    "new_distribution": false,
+    "no_silent_scene_or_provider_substitution": true,
+    "not_evaluated_in_verified_fixed_plans": true,
+    "prior_exposure_audit_sha256": "c6fc7f002031c284eb8fb249198e02056621e1acadf6f64f69e3059e231e62f0",
+    "readiness_status": "NOT_VERIFIED_NO_PAID_EXECUTION_APPROVAL",
+    "rest_source_rows_sha256": "6b11b070afd70adee58ed145f754d04adda25be32c5cbf81c0afb0aaaab43f48",
+    "selected_inputs": [
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "b3c6f729a983c2e30b4445003ed3fa409dab8c3ebaa22f9ba0e57dfa6b99de12",
+        "description_provider": "openai",
+        "description_request_sha256": "18021b7f06c86b7f203830d8ccab53ccd1f5e9c19bb3d239debedcd0e8dba0ea",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "00ddf2b36d7bc23e175622284b340bcb959bfd826d1ce12d34f197df41c2aaf8",
+        "input_characters": 3830,
+        "input_sha256": "0939226de468d16c795f63f493fc7c8ba3d1793e798791684f703ac76056cb9a",
+        "input_utf8_bytes": 3830,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_000",
+        "scene_source_manifest_sha256": "2d7f5c17339fd99b0956a01d4538987c3f0a32f86c54fcf9a502d100c5e5081f",
+        "size_rank_stratum": 1,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "777c58aaee5366362d03db2aa36fb56ed8c9d9a32833d2ec35819bed8813c702"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "6bd4aab6cc32ec983a92261daa3b762db976ca508f382079d9b669fbf74f1f87",
+        "description_provider": "openai",
+        "description_request_sha256": "42bd9d66f604704661fca765a62baf64a9bc92cd44e26738c198edcb7c5e24fc",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "85b032d0d25d6c1b51fea4cd2e9ebacaed48f7eabbe24d5c52ff3440ded36486",
+        "input_characters": 3395,
+        "input_sha256": "95e0adffc75b18b8ebef89c12e525b5b2e83ce5cb883e7df0a2590f0deb383c8",
+        "input_utf8_bytes": 3397,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_004",
+        "scene_source_manifest_sha256": "89c82e69610afd1fe27d16bcba6f57245765af07dcf3c11bb7f7e4aea2548f2f",
+        "size_rank_stratum": 4,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "fdd53c26c1a4a611b38c63f314f40ddb1eabca18746e43c50c5054939df0e631"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "95b2de5e9047a1c18446be64216a602ecd02128ca25d59767bdc10cbd78b4cc5",
+        "description_provider": "openai",
+        "description_request_sha256": "afe620306b0e22b8c2652599f6c3579591cf63302b475f6d53cc0b1a60df1c3c",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "87c82a39c0d332e661619aafb41092ba08f505c21c55997dc2bcaea1de379ad7",
+        "input_characters": 3934,
+        "input_sha256": "cb3d464a42a4f3b21c57b67c59a3653e79f37989533773c10ee17fffc86a9729",
+        "input_utf8_bytes": 3934,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_008",
+        "scene_source_manifest_sha256": "74ece6c69de68dd0580dfb057e694cb1d66b8c4a9eb0ed357571d263f8ff3941",
+        "size_rank_stratum": 0,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "cecafd474c72574d2503afab0b69d077f84332a721e9df057a7513af6ff5e4e5"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "4bd8195deb2861dc94a288963eefe2a23d08a27456cad71340ffe39d102bbc3f",
+        "description_provider": "openai",
+        "description_request_sha256": "9ff52783a52bbb0edc39d1a38cd76d0ee41a13d27e2363ba849d1b6572679f7c",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "5fa4c841804435a13ee7b99be4d9b0d44ae437de3740e7c12692a7a54be2f682",
+        "input_characters": 3270,
+        "input_sha256": "c9fbde12b09b1ee68ff1892d634c4e62fccd945dfecfa467a8cadec4764ede74",
+        "input_utf8_bytes": 3270,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_009",
+        "scene_source_manifest_sha256": "f295af098c501f72c79da76e6f3c76bbcc94a33c7350301fb62ab53f97fa0080",
+        "size_rank_stratum": 0,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "83bf2d73ee7aa2e1705c59ec97c372b169f34b53a46c666df38d964d8d368762"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "0c6aacfb4853affa04964b2d768ccd3e19ab63ce7ec51c85322e7964f8d48704",
+        "description_provider": "openai",
+        "description_request_sha256": "bec96c61eb5aac7b5a1e3a9f524cafcd7a646967ee0bcf9e389efd31e0db1da3",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "da847b118f2bb462edb1cabe8013f2b5db0baf81b1038103e00ee0db8a1a8b61",
+        "input_characters": 3389,
+        "input_sha256": "2250e59de9c4dced74a68470cf7c617b729622d9981d1cb7a79dd385566f9d7a",
+        "input_utf8_bytes": 3389,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_010",
+        "scene_source_manifest_sha256": "615576904fdf5844da45df1ae77d25be77ce4a6a3e9ad726ad8ede726fa1cdea",
+        "size_rank_stratum": 2,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "307b2c128c7b2b2e62d4e0b04c3d107176170eca2ce03cfd7da764c384966b22"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "d28298c442dc3b23bd972266d1093ec6d2ffe6653221ab6246396f985b953f4a",
+        "description_provider": "openai",
+        "description_request_sha256": "166aed6f4a7e48325e8ec43276608132a60683532fe053d24ac1ae31f653ccba",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "5869e41682d0b16f97db978a80e26656be06763d8b0f0056ef3b2f0cfd974018",
+        "input_characters": 3536,
+        "input_sha256": "e1e013701acec65e90328eef2abb06d6f9da2c670dd8bb59bafb2c39106cbe04",
+        "input_utf8_bytes": 3536,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_012",
+        "scene_source_manifest_sha256": "32508250dc340a4108532951e659b104d26df31af681edf542b90737b932e2a1",
+        "size_rank_stratum": 3,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "bf97c95183ea97bd805dfb389c117b52806b056ccffbd092502b82d8a08736a5"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "e9e98db983367a45cf2c9e658270377ecd27d710d7e1eebbd68abd51de301975",
+        "description_provider": "openai",
+        "description_request_sha256": "a103f5e3967e43b1a1576253f17e0ca66fb5cf93e7da41f4f1dae12ea2554a93",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "eeeaf0b7737e28693f362630691f7c974580b30791107b1cf9058177b199428a",
+        "input_characters": 3675,
+        "input_sha256": "df883426d5f93f2d4e0bf7300615633d0f1aaf78f72c4c35fe3deecdd376ea9f",
+        "input_utf8_bytes": 3677,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_014",
+        "scene_source_manifest_sha256": "91a9bbd7ef47622922dbbac5a08ad5cb37684146cbd8f06ce16aaad504fff65b",
+        "size_rank_stratum": 4,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "c5260703500d5bccbda35cd82e80dec2411568c3f2245fa035c1a3d975f7ef77"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "efb251a3b5a0fb07156a63725fbf2a0cf1c301c0cccea8dc2e67bceef7c5c522",
+        "description_provider": "openai",
+        "description_request_sha256": "8dfee5dd85bac7e41e5b4bc5862cbfab11ccc7185f2277c73d08e5d32d339ed7",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "7c72622f79f831eec0d31c5f36b5ff07aeef1adda47f0d85d566601bf36a4d54",
+        "input_characters": 3868,
+        "input_sha256": "d1a3e331b124376b7d0095e1cd0b75c3b82e51c27079aa42cd5dcdf827d69ff5",
+        "input_utf8_bytes": 3870,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_017",
+        "scene_source_manifest_sha256": "16d5e34afed3802c131c35163ad4e8f28134182a8b4aec773ec80117ee60e552",
+        "size_rank_stratum": 2,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "29de30461c8ba77c97cd403f017ca69adcfcc184687dc000d9618e216c0d5c84"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "de5f1e97793d9a1b2a66da3a0ebd7fe1084e264da2ab0ec4f3d169b489220652",
+        "description_provider": "openai",
+        "description_request_sha256": "a84552825b1efba6b9b9095d6b8dbf4d706563b67941140c37c30cb5081d2699",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "d2f4edaa3ae8e105e60c3b4cb125a7cade1c57c7ecc64ea5aefc3f24870cc9e9",
+        "input_characters": 4114,
+        "input_sha256": "f7c000952439ee1a3cce8909c0b29dc5be861642b571961a7e907053ffe2d6a3",
+        "input_utf8_bytes": 4116,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_018",
+        "scene_source_manifest_sha256": "8fc65277d2e0452bda33011130883eedc12c901c1b95273eb9e02f659eb5a833",
+        "size_rank_stratum": 1,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "1563620a970c8a52b5c568c21996123f6cf200e1720fd729c83e5d3d1fd96e23"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "df29a41ead1cfe502557b455e0fea36de24a31b4986cca04246c885bf48636c9",
+        "description_provider": "openai",
+        "description_request_sha256": "c534167fa50a3b539fcee287d1c65bdf5ce016fe9b5ab2d316e2459cecfb1ce8",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "e0d1911bc16c7efd19740dabafd30d24e1b06063593d106c1ebba540d08a9d25",
+        "input_characters": 3837,
+        "input_sha256": "f83379290aa55ad08a04005069ff8492aa3663503feee0387f4a143419c1ecd7",
+        "input_utf8_bytes": 3837,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_019",
+        "scene_source_manifest_sha256": "0ff6fff113a88441373185ed5964941e53731c0c7e8a9d6c70551d492b4da390",
+        "size_rank_stratum": 0,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "0a049735c5dc459fb4346a874240cfd93d7686d0b3e15678af0976682b4438b6"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "d91d144b59b01a11aea69f737e26eb3a9d2b0ed23cf8f218adcd5b2924433894",
+        "description_provider": "openai",
+        "description_request_sha256": "5ac2410b0a50e707a6320ce9821978681ae4ebed0f55afe0af829a55b5dcf712",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "c8636df365612497693fe5dd38b61fd36a36ab51b75b81f39cdd33c712568cb2",
+        "input_characters": 4080,
+        "input_sha256": "a4aba1b9531e89e72fdec91f7827012740095631b17365898e81195f64e9ae91",
+        "input_utf8_bytes": 4080,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_020",
+        "scene_source_manifest_sha256": "5c8b720ff1da0d875345d62f90dd5fc837568c454f97e2882de3b21a80b28b38",
+        "size_rank_stratum": 1,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "b20f20c43309fb960c76d4d97075ba9e701c583a34729b6715f886ec6701e09e"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "729b909c0f808f2ba3e8d2350949ff1ec3da07697b40ef24db67249277a9e7d9",
+        "description_provider": "openai",
+        "description_request_sha256": "6be1048432f518f7fd22e59fd3d3bb18cfc252103e2a90c652439e9ba0747a12",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "24fac8fb16fafe694a8ee63670d59dd2224defdf6c4d07b5e50fb468010925d0",
+        "input_characters": 3509,
+        "input_sha256": "ca841b5f0d389a16b806d47b7f8c8b766895e4e414af0e697aa27d99596c1efd",
+        "input_utf8_bytes": 3511,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_029",
+        "scene_source_manifest_sha256": "78cd30dd14b5f38e8ba44fa1c0631ce0165d0c9033993fd72b01491c8f83b4eb",
+        "size_rank_stratum": 3,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "96f9d41dbc6c098e759ab6298317529b3a55e043c3d64c24da201c27677d7430"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "55a142663cfd725777d45141cb1c88d9873697869546591cc51ffa6d9917b706",
+        "description_provider": "openai",
+        "description_request_sha256": "fbc115fd7c51d75190ecfdc9df8e84831a23f155eb1e4c283e96407116592e21",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "96cf281fd4c4085ea14519b39ff533d1ee4bc45198661e614869e737a3c8e246",
+        "input_characters": 3870,
+        "input_sha256": "37f30212442f57e03321f931a648d85589e53a36d630dbf30950a652acb4eddf",
+        "input_utf8_bytes": 3872,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_030",
+        "scene_source_manifest_sha256": "ef5bd57feec62c8d28a8e82723733419bc4d7f9eddde6185dad923910ce7cfea",
+        "size_rank_stratum": 2,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "2909a68d6a9ef2e04febb40a64c25e03dbc5dd579cfd03edc8d45d0bd157125c"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "cd0af71b881a184ad7e96cdb691cacdb35a2632fd9dc6894e2f28e27229f4d28",
+        "description_provider": "openai",
+        "description_request_sha256": "a5a005c9f9319301a64b236f463c2a3b76ca1bef5631b4a77f84756269cc97a7",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "053a1c721601cf55b6133a1451159b261477a6610afea6ffd4a3c3408f61a1c8",
+        "input_characters": 3909,
+        "input_sha256": "900b43c6f5fbbbbe7a5f0052cf1acecd4c222b283c762633e5fa25960b03d18b",
+        "input_utf8_bytes": 3911,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_035",
+        "scene_source_manifest_sha256": "5fed7c317689efd091f5d8ac4006989fefc1decf5d48e11ab59ab063d9e5dd31",
+        "size_rank_stratum": 1,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "455cc7a84fc2b60c7538a856ff6592bc7dd75e19280abd9bd6f37f4dcfa8954f"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "7d5e907c6e9af27c8114735bf182040215ed0b842c53a5d2f1bfcc3fe60dd187",
+        "description_provider": "openai",
+        "description_request_sha256": "cee88f0bcb42451d12629184b24ed784b712022a2b33c33ba2ab86dc50c76b08",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "5dcacd5722d402b6d4075f7ad86bffd6c2d93fc6dbaee8a2131e700c621bcc4b",
+        "input_characters": 3707,
+        "input_sha256": "10353baae33191e7777824c17255facf841e7a1cb100679cb2c3da0ab07d5ff2",
+        "input_utf8_bytes": 3707,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_038",
+        "scene_source_manifest_sha256": "90277def4e562ddfc2f0b48b8f6aadcd2425809e6dad0f695a810b6657981bcd",
+        "size_rank_stratum": 1,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "2d232df431bc00166ccb22d398d8dda0cff4e5b2db1d49b1795b3008e856e958"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "0858c2ef085e69716188c16c3a53dbe7a4e64048772345c0533ff438c7f22e32",
+        "description_provider": "openai",
+        "description_request_sha256": "55343277fe71ee761e061f9d6ae9a4e0f3e8590f11b9f5b757ad6dff842dde35",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "1fc74c92118053162fb361c01f9a71553a8812a5a561b13640005a54fc006695",
+        "input_characters": 3733,
+        "input_sha256": "23d1e2545a35c1a3870d7d2734cc362b7647f87f808cc4dc1e3ff35de70c6d68",
+        "input_utf8_bytes": 3735,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_043",
+        "scene_source_manifest_sha256": "04e1345c237dd4a9b03c8c7ad3562d9de854e481acea3096b3a614a016d884a4",
+        "size_rank_stratum": 4,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "d3540a37e2f485fda170e6adc251ab448d2350df2bcd910848cba1d43d5828fd"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "c7753797d1056c2c5d9b8ca7059f173ff94ac131a5faa41968aa288a819a269c",
+        "description_provider": "openai",
+        "description_request_sha256": "74c2620182a22ff6177d04af7cda9925ffc6bfb0bf52c4da628ebc792d1ce3cf",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "45f9b14d57f70f6233f349321b5e80cafc9b26f671a6b714c1533d6825860763",
+        "input_characters": 3233,
+        "input_sha256": "2dc3a139e08304ffe497a2e7d0ca49ae300396dd0309bbc7ad2b31eabeca8e36",
+        "input_utf8_bytes": 3233,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_044",
+        "scene_source_manifest_sha256": "a03b76de9bea937bb80bab9f23352bb1974fb7103c76fd38773ed3b8fde1fada",
+        "size_rank_stratum": 0,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "d8144669dfccc5210cceae7f4be46c23bf72f0dbc4e8cac49b30e8fb99149cec"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "995017aaa458537bddef69ebcc589fe18738e3cdac49b35022a21e7ed5777bed",
+        "description_provider": "openai",
+        "description_request_sha256": "2b163879f5c0d0e6a3ca61a4521d204ef549f9326a1f744108dd85d78825bb69",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "ab4106b9e8ea756361fd3580678b2e5cd291b0864693ca8ccbe83be35ac00bf6",
+        "input_characters": 3915,
+        "input_sha256": "d994e33ea7e08c6bdfa664aa7d387cc5a6189121ff3df8a79600a5125b5b340f",
+        "input_utf8_bytes": 3919,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_056",
+        "scene_source_manifest_sha256": "5d1a0dca92951a09906a60adfe5a52e600fd3e60d0b9faed49a2011fd144164e",
+        "size_rank_stratum": 1,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "84c71d4128e91a5475d06260a6c52e0901e8e9966fa5e70c42c0d0bf569c1ac7"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "309b7ae140ffcd3d007679ab76d7491ee0b3240736c0ba9001af0631503948d3",
+        "description_provider": "openai",
+        "description_request_sha256": "af9ea491167eba3089cad5e4096a25e7df0dd82faf1728f200fbd6ddaf9ae03c",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "dfd022afffa55a5a9db477c29199af0b09b2730da84361caa6f6a05246005a2c",
+        "input_characters": 3426,
+        "input_sha256": "be8475bef335bb94737ba373666ed7b6170b1bd2d3831cb186756716719d0ad9",
+        "input_utf8_bytes": 3429,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_066",
+        "scene_source_manifest_sha256": "bcbefec5809c883d8502b9cf7f8f8c1bb7816504dacdc6611564844937d15ba1",
+        "size_rank_stratum": 3,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "0145ac43dc8f7a6e9ded9f8f32d491b03a2a4922934a1a79117b2850ad4f346d"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "8259e3748ad6047fc53d63e069a77dddcaee46f0baf405457735b629a50c2ca8",
+        "description_provider": "openai",
+        "description_request_sha256": "c3b7b62b66edcf26caafa298308397575357506f564afb746a38feb720c0d543",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "aec57641ac902f861cc46539de3acb1386b0969bc74e4dd60cfe9aeb144f2b66",
+        "input_characters": 3570,
+        "input_sha256": "72514721ba1100670e0edb447167823b55c89e87590e4f9ac7c3032c992531df",
+        "input_utf8_bytes": 3570,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_068",
+        "scene_source_manifest_sha256": "db5bd35e6347286df266332862af900cf2085a98522706360e326a154fc627f5",
+        "size_rank_stratum": 2,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "ff850a7a38446b138ffb6ab2401d9403773b5559d3d5c115dd81fc5b549cafdd"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "14ab4e6538001b53fd7bdce1af47eecbc2cb310b2abd10b7990172c50e3ef54a",
+        "description_provider": "openai",
+        "description_request_sha256": "7b41406deb5f6f3183c58c9e7d88bf6f40ee873a463a4bf6462673e1a0726c7a",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "79dd090d4639bdae9fc0e070501467d0c14146ad198fab089d0c520f2cf88875",
+        "input_characters": 3477,
+        "input_sha256": "9b711159f49184d65f9dcfadc2b33e62de79ea5729e3ed5e1c14ebb2d447678d",
+        "input_utf8_bytes": 3477,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_069",
+        "scene_source_manifest_sha256": "4bf555dc19ca0f33e2833065bb04f232d00f09ad2f73dc5e895d44848d9eabea",
+        "size_rank_stratum": 2,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "9e3e24f81b30a2e0a815483b20b1c4f9edaa6bdb0d6a2c85ee35c651c000a04c"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "b1cd7fb89a4daef8ac4ed70756b34fa31eb6581f7684ffce1747b4a21aee53c4",
+        "description_provider": "openai",
+        "description_request_sha256": "22621f308452959b91f09e54a3b4910ed3017057bd5084a8624f1496168ef6dd",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "e2f62fcb13dcbcccfc7683579d91dda4e7cdafb116146cdb006b1bd5add42535",
+        "input_characters": 3646,
+        "input_sha256": "63b47875ac3c990ddbdfbd276fe2b810aaceede770c651995d4fde7467af1025",
+        "input_utf8_bytes": 3646,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_071",
+        "scene_source_manifest_sha256": "e5e78176831cc50cc971794901a713e9d32d3a89eb51cb0ccaa67ad592b14004",
+        "size_rank_stratum": 2,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "7a2084999b0f97813afa0a101e2ede7b8f1677e76e424b0df05214c2f33ce60e"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "6ec30a8f7dedf2932cc74d610ad6476d2e7a1d2dee06d82bf2cf99ea30bd282c",
+        "description_provider": "openai",
+        "description_request_sha256": "fc63a3ee0dbacf902c7f1b6448fb8c6a114eaa7d4080e9aec4f38b3036ef9a62",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "5a78fd45b251b8b25bb8eb1b67b2ec85b37cad1cf3d061cc40cb3d39e46442e7",
+        "input_characters": 4167,
+        "input_sha256": "bd6b540483a9ce3c9bce996426d6c130d8d6d6673a51299544bdb20baa928c68",
+        "input_utf8_bytes": 4167,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_073",
+        "scene_source_manifest_sha256": "711d0249b8469c62703bf525887ce8e09437c34c5664bb5d7cae070d23cb3f48",
+        "size_rank_stratum": 3,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "13cb738a3550483d01a46201fbb0929144dfa0966d478524d8fbcfb8b8c82148"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "9c8bff45cd6ca754710474f20aefed14116e967458f9730a12ce0aa4c519ad38",
+        "description_provider": "openai",
+        "description_request_sha256": "73f56a1b35311ffe5154dd4332263534b033d079265de6c83755b152e26fd317",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "0d2e451a58c29430d9eac28c801195fd78fb81a86faeb772f66e15aaab521d2d",
+        "input_characters": 3473,
+        "input_sha256": "ae2ed91a6ac783ce7182082796a72e353281185b69de265af4b03ee4e6f4591f",
+        "input_utf8_bytes": 3473,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_076",
+        "scene_source_manifest_sha256": "77a7fc61348b921f5bb2fac36e7c89b02830a763368927e39c48ab3dcbc7762c",
+        "size_rank_stratum": 4,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "7770977ac5464b2360acea13632f134f66bcccf6318043913278161c02d39506"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "a749e84230a23e86327f757e108438e57b0c2958951bdab1309c0b5ecce15d21",
+        "description_provider": "openai",
+        "description_request_sha256": "0111732429c42f75845be685fb725d8ba918b1a96339d6dbd66dedb7f6a4faf0",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "2f811a668b27effcbebaabbf01b02f818b40954e400fd84201e729a0595844bb",
+        "input_characters": 4040,
+        "input_sha256": "8ac65aa1cc3dffc90ed413d5f347071817ddbcf1b9a8f959f57f122202c06c42",
+        "input_utf8_bytes": 4048,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_079",
+        "scene_source_manifest_sha256": "6a2f76ec08d0542ddbbe2a03a50250ba5788ba5b030bcfa75a01d3f25ea4371e",
+        "size_rank_stratum": 3,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "811f1eb34f02ea463c60e1c2dd590828a75c034f28fccede40242bb2eae99667"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "27ffb5465ee0347ce24f335f7030328bb72598039c8d00886e9674923dac374b",
+        "description_provider": "openai",
+        "description_request_sha256": "f17446f23d009361ea0902bfa047c113577ee78535a90b23fe4231377d9d887d",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "f1b0abc44c34157f0ffe97a84dd4e94d9c5f020b4b2250e2f03f87a775c84399",
+        "input_characters": 3590,
+        "input_sha256": "73e6bc6c5b37fe19b3c4c12e6e5031d7f052eceff056985da7338218ee673f43",
+        "input_utf8_bytes": 3594,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_080",
+        "scene_source_manifest_sha256": "1e405570532c16dce1a56a7294a60dc3847af729e46dcf4cef80d413f2f86d10",
+        "size_rank_stratum": 4,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "2170f51cc98426accd76ad99787af91baef4aab9cc465b36830c5f75a9960309"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "5e0a77bd9f158cdb7640dbc97648d3451a4117e7ccaf0bad86eed55c23e40bb6",
+        "description_provider": "openai",
+        "description_request_sha256": "2667444443cf2ca1796826e6915e175772a969b7eedebf5742fdb933504cadb4",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "003865b328d8450f9b78688c3a17bf888403cf0e10816a992d85f194b7dfc586",
+        "input_characters": 3428,
+        "input_sha256": "47dfffcdf2a3d547868f5f3985dcfcd765e66868309d4b28363db165602e6425",
+        "input_utf8_bytes": 3428,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_084",
+        "scene_source_manifest_sha256": "8ad841382e0a4048cbdbe6b55fad154830adf5fb80eed2e8207fb0dfebee90c1",
+        "size_rank_stratum": 0,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "2f4c728bc757ae7e182c049681719a9965517ea5003aabe65c0848fb6eb6c5ec"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "2abc137a7802f8fedb82747b68e34ea67561c7c230d7a9b50d0cf131da00e6d8",
+        "description_provider": "openai",
+        "description_request_sha256": "db36239ce6524f70a81a2090febfa7c573ddf53e4ca083f19ee40f874b64ad90",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "301f26446d2e36fb8463b7e65c6c21b987ac8383b1cbe51daddbfbb91e7a4beb",
+        "input_characters": 3514,
+        "input_sha256": "d07a8935afed9448efd5648779be669cb97cb8fe0bdf927c9ec3c34e536ea03f",
+        "input_utf8_bytes": 3515,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_086",
+        "scene_source_manifest_sha256": "b5e618eeb1753f3f4cf0229ea64fadfe1587a5fc87a8e156ecd74c1a34d13ddf",
+        "size_rank_stratum": 4,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "8d41f8a140d31be8d28d506e27852b726918525fa0f0d84c1ebb104bcc6103b9"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "3f5337559015dfccb8568532c9e6b42513080accbc36aac64364d4c81c9b168d",
+        "description_provider": "openai",
+        "description_request_sha256": "0c78718fda05a8803f03ea6afb9669ccd4803e00d29a12c7edc5a00c4f60cd91",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "0cb4919f614b4780640939fdcc42b94dcea6a6954fd8f84a41eb6c11650b93ee",
+        "input_characters": 3772,
+        "input_sha256": "b0f24876065fba35fb4805e3e457d384761bbbd8b49dae3032f30b3f2e55b1be",
+        "input_utf8_bytes": 3772,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_097",
+        "scene_source_manifest_sha256": "dd8ce8725270b93ea9b70e2e59a6c8ff5269d9b19b9a659629e9831a5931c205",
+        "size_rank_stratum": 3,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "ccb8144f36b596823a36f58a4d3f8e63397aa6d3877bfac9d2a27f41a076795d"
+      },
+      {
+        "actual_description_request_view_count": 6,
+        "bbox_sha256": "ab37aa47ba0be30e064ea05833666043e0e2cd16b5638af481c2ca0c1a09ce24",
+        "description_provider": "openai",
+        "description_request_sha256": "4d2b14add2012c2d0fdfe9adba239f6fe001f710a00e3a18fd58055e887890a8",
+        "exact_v4_prior_builder_artifact_references": 0,
+        "future_context_fit_status": "NOT_VERIFIED",
+        "future_output_length_status": "NOT_VERIFIED_NO_MODEL_OUTPUT_OR_PROVIDER_TOKENIZATION",
+        "gt_sha256": "67ba402ca8e63c495eea5f9af8ea961c8fe2ea031a7614754657a29397944bd0",
+        "input_characters": 3575,
+        "input_sha256": "3d55bd560c3ff84279dbbdfb7812be77f9b35fb22f16714caa876af5c50d3880",
+        "input_utf8_bytes": 3575,
+        "prior_use_status": "EXPOSURE_REFERENCES_FOUND",
+        "request_view_count_status": "VERIFIED_SAVED_REQUEST_IMAGE_BINDINGS",
+        "scene_id": "buildings_100_v4_building_098",
+        "scene_source_manifest_sha256": "5df79fba232942f7c8f39edb62b26747716195f508e575c4393af9109c93c7f3",
+        "size_rank_stratum": 0,
+        "source_status": "VERIFIED_FROZEN_O_SOURCE",
+        "truly_unseen_anywhere": "NOT_VERIFIED",
+        "typed_tree_sha256": "ef6ce5977f12978fd488f3fcc0a2b6db9cbcb12f45ddfe27d10df18da1edc7d0"
+      }
+    ],
+    "source_inventory_sha256": "ff4d39ddcffe72f7a3d78b66da99247c6555312f04dd22d567ffa25b15389b4f",
+    "truly_unseen_anywhere": "NOT_VERIFIED",
+    "verified_inputs": 30
+  },
+  "source_bundle_before_after_unchanged": true,
+  "status": "UNAPPROVED_NOT_RUN_NO_LAUNCHER",
+  "token_count_api_requests": 0,
+  "unknown_usage_policy": "Reserve before any future POST; retain unknown-use holds, halt on uncertain response, no automatic resend or retry.",
+  "validity_and_missing_policy": {
+    "no_eligible_repeat_for_building": "Exclude only from the conditional common-valid mean; retain planned N30 and report actual eligible buildings and pairs for each Builder.",
+    "primary": "common-valid identical core-mask; average eligible repeats within each building before equal-building mean",
+    "reliability_denominator": "All fixed planned slots per Builder:30*r; unknown/operational missing and known output failures remain separate.",
+    "repeated_samples_are_not_independent_buildings": true,
+    "secondary": "separate bounded known-definitive-output-failure0 sensitivity and independent failure/unknown rates",
+    "successful_empty_output": "Retain as normal success; undefined metrics remain NULL and never reclassify as model failure.",
+    "unknown_or_resource_missing": "NULL, never0; retain fixed planned buildings, attempt identities and missing reasons"
+  }
+}
