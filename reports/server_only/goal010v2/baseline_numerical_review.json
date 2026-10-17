@@ -1,0 +1,135 @@
+{
+  "analysis_label": "READ_ONLY_SAVED_TABLE_RECONCILIATION",
+  "api_key_queries": 0,
+  "bindings": {
+    "new_stage4_receipt": {
+      "bytes": 11220,
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary_RECEIPT.json",
+      "sha256": "8db54ceab4fe674be40cd1ce985f7e2c5cd02f542bc34822eb7fac2af4367eb2"
+    },
+    "new_table": {
+      "bytes": 2746463,
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary/metric_baselines_paired.json",
+      "sha256": "2cccef4f8095fd0ccebfed547fdf33778cac4d63745c398941ec0832bd655117"
+    },
+    "old_manifest": {
+      "bytes": 21155,
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/MANIFEST.json",
+      "sha256": "dcad6f41f991425063c239798fec9b8d3bec2c0474fde5f901205a67d1432d7f"
+    },
+    "old_table": {
+      "bytes": 28339,
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/baseline_matched_deltas.csv",
+      "sha256": "f585fcad6dd8a6acbd7388d2585b6fc221b2d61c09e3512d64ae1c53cb6f6adf"
+    }
+  },
+  "bootstrap_recomputations": 0,
+  "checked_at_utc": "2026-10-17T00:06:18.764278+00:00",
+  "ci95_endpoints_compared": 160,
+  "ci95_endpoints_exactly_equal": 160,
+  "comparison_metric": "occupancy_iou",
+  "exact_field_comparison_counts": {
+    "baseline_value": {
+      "exact_equal_cells": 80,
+      "matched_cells": 80,
+      "new_field": "baseline_value"
+    },
+    "bootstrap_valid": {
+      "exact_equal_cells": 80,
+      "matched_cells": 80,
+      "new_field": "bootstrap_valid"
+    },
+    "builder_value": {
+      "exact_equal_cells": 80,
+      "matched_cells": 80,
+      "new_field": "builder_value"
+    },
+    "ci95": {
+      "exact_equal_cells": 80,
+      "matched_cells": 80,
+      "new_field": "ci95"
+    },
+    "common_pairs": {
+      "exact_equal_cells": 80,
+      "matched_cells": 80,
+      "new_field": "eligible_pairs"
+    },
+    "excluded_pairs": {
+      "exact_equal_cells": 80,
+      "matched_cells": 80,
+      "new_field": "excluded_pairs"
+    },
+    "failure0_imputed_pairs": {
+      "exact_equal_cells": 80,
+      "matched_cells": 80,
+      "new_field": "failure0_imputed_pairs"
+    },
+    "independent_buildings": {
+      "exact_equal_cells": 80,
+      "matched_cells": 80,
+      "new_field": "independent_buildings"
+    },
+    "mean_delta": {
+      "exact_equal_cells": 78,
+      "matched_cells": 80,
+      "new_field": "mean_delta"
+    },
+    "planned_buildings": {
+      "exact_equal_cells": 80,
+      "matched_cells": 80,
+      "new_field": "planned_buildings"
+    }
+  },
+  "frozen_code_changes": 0,
+  "interpretation": "Both saved tables reproduce all denominators, Builder/baseline means and confidence limits exactly. Mean deltas match exactly in 78/80 cells; two floating-point summation roundoff differences are retained and disclosed, so this is not a claim of bit-identical 80/80 mean deltas.",
+  "matched_cells": 80,
+  "matching_keys": [
+    "condition",
+    "description_provider",
+    "structure",
+    "builder",
+    "frame",
+    "policy"
+  ],
+  "maximum_absolute_mean_delta_difference": 1.3877787807814457e-17,
+  "mean_delta_roundoff_differences": [
+    {
+      "absolute_difference": 1.3877787807814457e-17,
+      "field": "mean_delta",
+      "key": {
+        "builder": "anthropic",
+        "condition": "O",
+        "description_provider": "all",
+        "frame": "absolute",
+        "policy": "common_valid",
+        "structure": "filled_box"
+      },
+      "new": -0.03662413091598011,
+      "old": -0.036624130915980095
+    },
+    {
+      "absolute_difference": 6.938893903907228e-18,
+      "field": "mean_delta",
+      "key": {
+        "builder": "anthropic",
+        "condition": "O",
+        "description_provider": "all",
+        "frame": "aligned",
+        "policy": "known_failure0",
+        "structure": "six_face_shell"
+      },
+      "new": 0.05647731624715694,
+      "old": 0.05647731624715695
+    }
+  ],
+  "metric_recomputations": 0,
+  "model_queries": 0,
+  "old_manifest_binds_old_table": true,
+  "research_api_requests_sent": 0,
+  "source_tables_before_after_unchanged": true,
+  "stage4_receipt_binds_new_table": true,
+  "status": "PASS_WITH_REPORTED_FLOAT_ROUNDOFF",
+  "token_count_api_requests": 0,
+  "unmatched_new_cells": 0,
+  "unmatched_old_cells": 0
+}

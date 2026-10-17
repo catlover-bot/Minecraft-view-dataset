@@ -1,0 +1,386 @@
+{
+  "analysis_binding": {
+    "code_commit": "d862a55134bba85a6a5e9677bcc6e94c719ca1aa",
+    "hashes": {
+      "offline_evaluation/analysis/goal010v2/__init__.py": "f4fb224eff51f1af766a0aa258b59cf75e9545fa35f7102ce0e1e0fab7ce820e",
+      "offline_evaluation/analysis/goal010v2/independent.py": "b10aaef73725b8b5e099182c5e03aecd961c972614964c16cc0bd90368a5d35e",
+      "offline_evaluation/analysis/goal010v2/metrics.py": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123",
+      "offline_evaluation/analysis/goal010v2/pipeline.py": "130de9f29ddfd2da5ff16699eea3b02defe762bb5ae7f6b0e3f7f7fddcac03cc",
+      "offline_evaluation/analysis/goal010v2/statistics.py": "0d30e02b4e3936aaea07ad562efb3472f8bfc2534afa0df9bc3951427da666e6",
+      "reports/server_only/goal010v2/METRIC_REGISTRY.json": "a413910ececffa02b1d98da0694cd556933c690945dc116432ad0ed9371980a0",
+      "reports/server_only/goal010v2/METRIC_SPEC.md": "c33ebe48b960a99711875edccc1760273df244297da661d9e9689cfaa9426ecf",
+      "reports/server_only/goal010v2/STATS_SPEC.md": "cd482ab203a28a211e6eed3eb05ec14da00100e71e79d2e0456f4ed17e66908d",
+      "reports/server_only/goal010v2/posthoc_specification.md": "b8a09c380a220a3002c9877efa58ce3b31198f5f9854d80c7eb1fb34c8abb0f6"
+    },
+    "old_goal010_manifest_sha256": "dcad6f41f991425063c239798fec9b8d3bec2c0474fde5f901205a67d1432d7f",
+    "specification_commit": "d862a55134bba85a6a5e9677bcc6e94c719ca1aa",
+    "specification_sha256": "c33ebe48b960a99711875edccc1760273df244297da661d9e9689cfaa9426ecf"
+  },
+  "analysis_label": "POST_HOC_EXPLORATORY / CPU_DIAGNOSTIC",
+  "analysis_stages_cpu_seconds": 1617.145521516,
+  "api_key_queries": 0,
+  "branch": "research/server-only-20261013",
+  "canonical_receipts": {
+    "0_source_RECEIPT.json": "c636b2033378ed9d64f284617476b6bd559e79376fafbe6d55a65dfa66d925f7",
+    "1_pilot1_RECEIPT.json": "e25c1794809fa53bff5f89e6685f8fac1ecbd81a7e96df98d664866195e3b30d",
+    "2_pilot10_RECEIPT.json": "165313daf93deb96abf7832ec3b888360f91f0f3f8221a79ac2b91606bf6b584",
+    "3_full_RECEIPT.json": "16e2bcbc08c196ecd42f722548267eb8ba9d1196311b95a4881e1f6db49fab64",
+    "4_summary_RECEIPT.json": "8db54ceab4fe674be40cd1ce985f7e2c5cd02f542bc34822eb7fac2af4367eb2"
+  },
+  "canonical_run": "/root/minecraft-runs/goal010-v2-20261016T233143Z",
+  "checkpoint_mutations": 0,
+  "code_file_count": 12,
+  "code_files": {
+    "offline_evaluation/analysis/goal010v2/__init__.py": {
+      "bytes": 71,
+      "sha256": "f4fb224eff51f1af766a0aa258b59cf75e9545fa35f7102ce0e1e0fab7ce820e"
+    },
+    "offline_evaluation/analysis/goal010v2/independent.py": {
+      "bytes": 4655,
+      "sha256": "b10aaef73725b8b5e099182c5e03aecd961c972614964c16cc0bd90368a5d35e"
+    },
+    "offline_evaluation/analysis/goal010v2/metrics.py": {
+      "bytes": 29121,
+      "sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123"
+    },
+    "offline_evaluation/analysis/goal010v2/pipeline.py": {
+      "bytes": 32168,
+      "sha256": "130de9f29ddfd2da5ff16699eea3b02defe762bb5ae7f6b0e3f7f7fddcac03cc"
+    },
+    "offline_evaluation/analysis/goal010v2/publication/__init__.py": {
+      "bytes": 61,
+      "sha256": "a5a46dba8f1521f3eba3a04c56f7e37cb32ea20187980878b0f757852b5381fd"
+    },
+    "offline_evaluation/analysis/goal010v2/publication/publish.py": {
+      "bytes": 5672,
+      "sha256": "4ba350ce8c230c5882f0e9a82d3f365f41376408f1aaa469c96cb9dfbc32bc8e"
+    },
+    "offline_evaluation/analysis/goal010v2/statistics.py": {
+      "bytes": 27616,
+      "sha256": "0d30e02b4e3936aaea07ad562efb3472f8bfc2534afa0df9bc3951427da666e6"
+    },
+    "offline_evaluation/analysis/goal010v2/tests/test_independent.py": {
+      "bytes": 1519,
+      "sha256": "73b258c301c0a7c105c6e2bce7bf6616c702640177c0a5f5afa0dcbd4fb39e03"
+    },
+    "offline_evaluation/analysis/goal010v2/tests/test_metrics.py": {
+      "bytes": 19267,
+      "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+    },
+    "offline_evaluation/analysis/goal010v2/tests/test_pipeline.py": {
+      "bytes": 24052,
+      "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+    },
+    "offline_evaluation/analysis/goal010v2/tests/test_publication.py": {
+      "bytes": 2737,
+      "sha256": "1433ac71d1fa5801b8edfe40bc1b367a786e3ce0d0452ded10c203cb905ae194"
+    },
+    "offline_evaluation/analysis/goal010v2/tests/test_statistics.py": {
+      "bytes": 15364,
+      "sha256": "f0fbbb8e34eee530a6fef3043b4e3ddecc90d7cd4b38a5c93d7173b0b9e31c3e"
+    }
+  },
+  "coverage_evidence_paths_rechecked": 104,
+  "created_at_utc": "2026-10-17T00:08:21.327659+00:00",
+  "draft_updates": 0,
+  "full_measurement": {
+    "baseline_computed": 480,
+    "buildings": 60,
+    "computed_valid": 934,
+    "identified_failures": 25,
+    "operational_missing": 1,
+    "resource_unavailable": 0,
+    "slots": 960
+  },
+  "human_experiments": 0,
+  "initial_head": "080df2be3c5e949ff9bab6029d8b349fa7ed84d0",
+  "main_baseline": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+  "maximum_measured_rss_kib": 1082060,
+  "model_queries": 0,
+  "new_dependencies": 0,
+  "normal_empty_valid_outputs": 1,
+  "old_80_summary_reconciliation": "All counts/Builder and baseline means/160 CI endpoints exact; two mean_delta rounding differences <=1.39e-17 retained",
+  "post_commit_verification": "Final commit/remote equality, unchanged main, and clean worktree are verified after committing this manifest; the manifest cannot self-bind its containing commit.",
+  "pre_save_head": "7ffd18744ef91b99fc9acb4e3e16fdb98d056ee1",
+  "product_count": 62,
+  "products": {
+    "BASELINE_METRIC_FINDINGS_JA.md": {
+      "bytes": 24385,
+      "sha256": "98dafd584617ff152289333855f5c3462b6e5c0b259a403ae272e0a4abce2d89"
+    },
+    "MATERIAL_GEOMETRY_FINDINGS_JA.md": {
+      "bytes": 13226,
+      "sha256": "a825019da443aa536e7b6cf346efa24e381c586c048749b08e2fdb395174130c"
+    },
+    "METRIC_AUDIT_JA.md": {
+      "bytes": 13985,
+      "sha256": "f40da368d780c26931317606c3ecd5e4d97aea38dd1277cf6d2502b2e3585eb7"
+    },
+    "METRIC_REGISTRY.json": {
+      "bytes": 92710,
+      "sha256": "a413910ececffa02b1d98da0694cd556933c690945dc116432ad0ed9371980a0"
+    },
+    "METRIC_SPEC.md": {
+      "bytes": 12267,
+      "sha256": "c33ebe48b960a99711875edccc1760273df244297da661d9e9689cfaa9426ecf"
+    },
+    "README.md": {
+      "bytes": 12585,
+      "sha256": "1d9bbddedba0801808cbbf54c5bc4637e3b7f45364dd46235fa9619bc1b13c2e"
+    },
+    "REQUIREMENT_COVERAGE.json": {
+      "bytes": 129735,
+      "sha256": "9136d6a3ac3b30875a52c143cab1a9d4e2a075702a353796d0e234202809f82b"
+    },
+    "RESEARCH_DECISION_JA.md": {
+      "bytes": 8030,
+      "sha256": "3d1ea44d90669f45e2908eaa55b116f9d00ebae727a19fe521c1602fec993887"
+    },
+    "STATS_SPEC.md": {
+      "bytes": 10950,
+      "sha256": "cd482ab203a28a211e6eed3eb05ec14da00100e71e79d2e0456f4ed17e66908d"
+    },
+    "analysis/0_source/SOURCE_BINDINGS.json": {
+      "bytes": 1425985,
+      "sha256": "06fb41dd7504aa7e85d32e1e5c6d45d603ae8e619cd02530d342101106f1d6c0"
+    },
+    "analysis/0_source/source_gate.json": {
+      "bytes": 2891,
+      "sha256": "b0719d4d23f7a02a796e69d45677bd54e54a0213207f211bfc8409bfb253e96c"
+    },
+    "analysis/0_source_RECEIPT.json": {
+      "bytes": 5691,
+      "sha256": "c636b2033378ed9d64f284617476b6bd559e79376fafbe6d55a65dfa66d925f7"
+    },
+    "analysis/1_pilot1/metric_qa_report.json": {
+      "bytes": 983,
+      "sha256": "3a6b3ecac4f6bd2d4a5dbd2919e2254f89dea77975fa26572f2dfb63e3640246"
+    },
+    "analysis/1_pilot1_RECEIPT.json": {
+      "bytes": 5499,
+      "sha256": "e25c1794809fa53bff5f89e6685f8fac1ecbd81a7e96df98d664866195e3b30d"
+    },
+    "analysis/2_pilot10/metric_qa_report.json": {
+      "bytes": 1366,
+      "sha256": "7d31d459d5b0fc22a813957f8f1b08c3dd573e4e26768f38f5b5539f18c682d7"
+    },
+    "analysis/2_pilot10_RECEIPT.json": {
+      "bytes": 7724,
+      "sha256": "165313daf93deb96abf7832ec3b888360f91f0f3f8221a79ac2b91606bf6b584"
+    },
+    "analysis/3_full/alignment_displacement.csv": {
+      "bytes": 363313,
+      "sha256": "36a632ba4dc8289b0443f34a42a177a7f5cb623efb9c2327e7e0e21366b982d7"
+    },
+    "analysis/3_full/baseline_new_metric_values.csv": {
+      "bytes": 2073182,
+      "sha256": "5d29e60e2a06a9cb47e8bb0f8ec72e6e95ec6cfe3cd0172b3c21888262ec3584"
+    },
+    "analysis/3_full/baseline_new_metric_values.json": {
+      "bytes": 5431593,
+      "sha256": "8a7a15a6125ccbc5ba46b18c5fa7efa65063091ff743c00c5c969da90f047d05"
+    },
+    "analysis/3_full/exact_material_confusion.csv": {
+      "bytes": 3501445,
+      "sha256": "ec745a03551d861f21ea4674732e8f12676271a18fbf79cf2fbc70b39dec7bea"
+    },
+    "analysis/3_full/gt_material_frequency_recall.csv": {
+      "bytes": 1004696,
+      "sha256": "bfb8755326093ec741e5aecc1a899d0c221e74c2ffd1479d5854a7a5f335f8f1"
+    },
+    "analysis/3_full/material_and_geometry_details.json": {
+      "bytes": 7960857,
+      "sha256": "3ee74d3fcb45032cbabe834fc33b23285cc3aa9cd043cd99abc8eb7ae5a7c3db"
+    },
+    "analysis/3_full/metric_qa_report.json": {
+      "bytes": 3256,
+      "sha256": "df2f5606d71094d5aa3e18da94c09f6924a7dea90d59c45a592ed1d85b5003f7"
+    },
+    "analysis/3_full/new_metric_values_960.csv": {
+      "bytes": 4085694,
+      "sha256": "95baf840befca4703070f545a3fdb1ea6fa0980818780b51af44012ee027e6ed"
+    },
+    "analysis/3_full/new_metric_values_960.json.gz": {
+      "bytes": 1449968,
+      "sha256": "4097021232f2185c5438d0707451a9413c16048abeeda74b9ff4da42c28cfd0b"
+    },
+    "analysis/3_full_RECEIPT.json": {
+      "bytes": 11522,
+      "sha256": "16e2bcbc08c196ecd42f722548267eb8ba9d1196311b95a4881e1f6db49fab64"
+    },
+    "analysis/4_summary/E_capacity_diagnostic.svg": {
+      "bytes": 30232,
+      "sha256": "8207222becc8e75fbacbe469a25c8c9f02157b62156103289a8b82c861123cd9"
+    },
+    "analysis/4_summary/E_capacity_plot_receipt.json": {
+      "bytes": 463,
+      "sha256": "f03f901e58187c1a21a1fcc6cc441a1e81d8d0d01a70a03d55028a9f85825d8d"
+    },
+    "analysis/4_summary/metric_baselines_paired.csv": {
+      "bytes": 1377709,
+      "sha256": "dcf553a1e774fa79b872ab68c4ac4ff17d897acbee600297fde89ba1203ad06e"
+    },
+    "analysis/4_summary/metric_baselines_paired.json": {
+      "bytes": 2746463,
+      "sha256": "2cccef4f8095fd0ccebfed547fdf33778cac4d63745c398941ec0832bd655117"
+    },
+    "analysis/4_summary/metric_denominators.csv": {
+      "bytes": 512973,
+      "sha256": "02da993ccde25a604097f7aad67d1fef24e20e600256307beb23d8eb3a636937"
+    },
+    "analysis/4_summary/metric_denominators.json": {
+      "bytes": 1254855,
+      "sha256": "b6dc94bbf0e24b9c284e27812976f68998fd71395b58dbbd92caedd23ccc236a"
+    },
+    "analysis/4_summary/metric_rank_reversals.csv": {
+      "bytes": 521228,
+      "sha256": "c611206e3b3463a4795d524de76bc10223b987f051c97d6d254b522b9cfa918b"
+    },
+    "analysis/4_summary/metric_rank_reversals.json": {
+      "bytes": 1113484,
+      "sha256": "731708704942749e64c8a95d4e08b3e85c86cebabd7f54bb65fca8374c76c346"
+    },
+    "analysis/4_summary/reliability_outcomes.csv": {
+      "bytes": 1355,
+      "sha256": "7b6cb61db9581b38ad66723aa108ed0ef3379db9d03798c0f252ec9ec4f8ba75"
+    },
+    "analysis/4_summary/reliability_outcomes.json": {
+      "bytes": 3433,
+      "sha256": "afff630c66bee308bcfafee528e57825f8bd297ed042afff2f70246587c1d920"
+    },
+    "analysis/4_summary/statistics_metadata.json": {
+      "bytes": 5549,
+      "sha256": "260c9fc4508f1e503fe6736a1a63b8352755f1bbfd02bce058c5305160fd9f0b"
+    },
+    "analysis/4_summary_RECEIPT.json": {
+      "bytes": 11220,
+      "sha256": "8db54ceab4fe674be40cd1ce985f7e2c5cd02f542bc34822eb7fac2af4367eb2"
+    },
+    "analysis/PUBLIC_COPY_RECEIPT.json": {
+      "bytes": 21573,
+      "sha256": "a60156d69046cc8319c7112f84a94cbe705138093cdf494a1da1465d647e0223"
+    },
+    "baseline_numerical_review.json": {
+      "bytes": 4289,
+      "sha256": "418364d6f7805ad966faa70e1c382c86ae704433cc806a59bba49f4f9dce0992"
+    },
+    "cpu_fixture_final.junit.xml": {
+      "bytes": 54388,
+      "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+    },
+    "cpu_fixture_resources.txt": {
+      "bytes": 1292,
+      "sha256": "a8066dc1f5141d4e0b840cd5a8e61ec0adf5e720d95f17d98ed50688f2c68aed"
+    },
+    "execution_environment.json": {
+      "bytes": 940,
+      "sha256": "caf4c8858e11479889586186f05ddc1ad0422704a01510c22ede2ef854b56181"
+    },
+    "execution_preflight_recovery.json": {
+      "bytes": 1128,
+      "sha256": "0fd567d706de6d3554e5994744c116d41ac7f3b5420062701e890695f5159482"
+    },
+    "existing_drafts_readonly_verification.json": {
+      "bytes": 7917,
+      "sha256": "2fa9ddb0d23ffdf761081dc1b8ab7c175a998246a6383a6da759785bc97bb983"
+    },
+    "final_integrity_audit.json": {
+      "bytes": 3746,
+      "sha256": "75fd5030b2032cb0b6db282edd4ce787a01d1a7ad180621237eb7d175315dcb2"
+    },
+    "fixture_counterexamples.json": {
+      "bytes": 80202,
+      "sha256": "af8fc9d53729c5223476b5713f83bb97682a6987ba8ca25258ab9be288644f32"
+    },
+    "initial_audit.json": {
+      "bytes": 661,
+      "sha256": "26807046fb9061599b68086a94646c8bbc40378b63c9e8d6ed59cf149bd13bb9"
+    },
+    "metric_counterexamples.md": {
+      "bytes": 1873,
+      "sha256": "6180fe47ed5d5529d19ba28fc3fd5538a9be3670c2d9b35e308e085bfe172d47"
+    },
+    "metrics_fixture_added.junit.xml": {
+      "bytes": 424,
+      "sha256": "45d470744cee9b2c37fc8672ec97ef4d1a2f74af870c061854360381627baa0b"
+    },
+    "metrics_fixture_initial.junit.xml": {
+      "bytes": 9659,
+      "sha256": "6c8b2f762bdcd02b7c5e5eb46686f572368d26c9e09aba58a7a42169ae8e6c55"
+    },
+    "pipeline_fixture_final.junit.xml": {
+      "bytes": 7678,
+      "sha256": "97e27cc471dc4bdc778abf12ac178ff08995091bf441b44760c4d1a259afb132"
+    },
+    "pipeline_fixture_initial.junit.xml": {
+      "bytes": 10046,
+      "sha256": "4c8aec1936322c6f1dfba4f286fb4b2fd73085cb6b47ca2c67779d3872d7b283"
+    },
+    "pipeline_fixture_review.json": {
+      "bytes": 3383,
+      "sha256": "2e132a31628898b8dcb5bf0e978cb88af262f1168f203e269cb759acee349559"
+    },
+    "posthoc_specification.md": {
+      "bytes": 7924,
+      "sha256": "b8a09c380a220a3002c9877efa58ce3b31198f5f9854d80c7eb1fb34c8abb0f6"
+    },
+    "pre_save_git_verification.json": {
+      "bytes": 575,
+      "sha256": "b9832e094adfd119ff4d8c814181361d3db6a7d194af15ecac68ade3afc5a154"
+    },
+    "publication_fixture_final.junit.xml": {
+      "bytes": 1417,
+      "sha256": "db9f86d0286d27e8015d9a9dee2eaf39fa0b2af8ac783b400759588bb3be72f3"
+    },
+    "publication_fixture_initial.junit.xml": {
+      "bytes": 3417,
+      "sha256": "82bde25c86cd7de13a9e65ca767b6712866f1d1699788a44f73bdfdfb44fb84f"
+    },
+    "statistics_fixture_corrected.junit.xml": {
+      "bytes": 6616,
+      "sha256": "4ba45c5e1fbd6d70ae10c91a77708dbca96e422616e39ae255e2422b9c904e2f"
+    },
+    "statistics_fixture_initial.junit.xml": {
+      "bytes": 7157,
+      "sha256": "f90f633acf18cffc62796497c606291eadac6458df32268e0405f6df2ba7621c"
+    },
+    "statistics_fixture_registry.junit.xml": {
+      "bytes": 6782,
+      "sha256": "3bb71421398c901376b98fd3073e8c73a59133c76e8c03c99dc163c3fc473938"
+    },
+    "validation_summary.json": {
+      "bytes": 2322,
+      "sha256": "d0f43bd65b6197f24fc0bba10d87df61dd4d4355b3ab2d03368e7dcffaed5e99"
+    }
+  },
+  "publish_requests": 0,
+  "repository": "catlover-bot/Minecraft-view-dataset",
+  "research_api_requests_sent": 0,
+  "schema": "goal010v2_verified_cpu_metric_addendum_v1",
+  "scope": "Separate metric audit after completed Goal010; immutable Goal007/008/010 inputs and outputs",
+  "secret_scan": {
+    "files": 74,
+    "maximum_public_file_bytes": 7960857,
+    "rule": "<=10 MiB each; oversized metric JSON is lossless gzip; raw GT/responses and detailed pair files excluded",
+    "status": "PASS"
+  },
+  "source_package_sha256": "01fcabeac3c37fd39868d90234781773ddf6215cca1f1af5fb331111139f9b51",
+  "status": "VERIFIED_CPU_ONLY_ADDENDUM",
+  "summary_counts": {
+    "metric_baselines_paired": 2320,
+    "metric_denominators": 2640,
+    "metric_pairs": 111360,
+    "metric_rank_reversals": 1560,
+    "reliability_outcomes": 8
+  },
+  "test_counts": {
+    "errors": 0,
+    "failed": 0,
+    "inherited": 178,
+    "new_v2": 152,
+    "passed": 330,
+    "skipped": 0
+  },
+  "token_count_api_requests": 0,
+  "visibility": "NOT_VALIDATED_NO_VISIBILITY_CONCLUSION"
+}

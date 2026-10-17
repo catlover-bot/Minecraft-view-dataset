@@ -1,429 +1,3311 @@
 {
+  "schema": "goal010v2_requirement_coverage_v2",
+  "status": "COMPLETED_METRIC_ADDENDUM_WITH_EXPLICIT_OPTIONAL_AND_VISIBILITY_LIMITS",
   "analysis_label": "POST_HOC_EXPLORATORY / CPU_DIAGNOSTIC",
-  "api_key_queries": 0,
-  "created_at_utc": "2026-10-16T23:21:46.971359+00:00",
-  "legacy_canonical_run_root": "/root/minecraft-runs/goal010-20261016T223832Z",
+  "created_at_utc": "2026-10-17T00:07:10.140494+00:00",
+  "scope": "Completed immutable Goal010 reused; only metric audit/addendum newly executed. No old experiments rerun.",
+  "source_instruction": {
+    "path": "/root/.codex/attachments/7f9ed564-ccd5-4178-86fc-37f881c9dce4/pasted-text-1.txt",
+    "bytes": 34586,
+    "sha256": "8136cbf164556b7c93c3c7886911fca75ccc1ff66bb7dcc4340f282341b1126f"
+  },
+  "frozen_code_and_specification_commit": "d862a55134bba85a6a5e9677bcc6e94c719ca1aa",
+  "initial_coverage_version": {
+    "sha256": "3db918798582fd15b37d118f83d1b8fffa06b716e7a28165c2ce283a254677ee",
+    "retained_in_commit": "d862a55134bba85a6a5e9677bcc6e94c719ca1aa"
+  },
   "legacy_goal010_completed": true,
   "legacy_goal010_manifest": {
-    "bytes": 21155,
     "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/MANIFEST.json",
+    "bytes": 21155,
     "sha256": "dcad6f41f991425063c239798fec9b8d3bec2c0474fde5f901205a67d1432d7f"
   },
-  "model_queries": 0,
-  "new_actual_metric_calculations_completed": false,
-  "new_dependency_acquisitions": 0,
-  "new_required_outputs": [
-    "METRIC_SPEC.md",
-    "METRIC_REGISTRY.json",
-    "new_metric_values_960.csv",
-    "new_metric_values_960.json",
-    "metric_denominators.csv",
-    "metric_baselines_paired.csv",
-    "metric_counterexamples.md",
-    "metric_qa_report.json"
-  ],
-  "notes": [
-    "REUSED status refers to immutable completed Goal010 evidence, never completion of the newly requested metric suite.",
-    "All old evidence references were checked against the immutableGoal010 MANIFEST products bytes/SHA.",
-    "No run result,success count ormetric outcome has been invented. Draft will require completion receipts after the authorized stagedCPU work."
-  ],
-  "old_artifacts_changed": false,
-  "optional_outputs": [
-    "geometry_diagnostics.png",
-    "26-neighbor sensitivity",
-    "multiscale k8"
-  ],
+  "legacy_canonical_run_root": "/root/minecraft-runs/goal010-20261016T223832Z",
+  "canonical_addendum_run_root": "/root/minecraft-runs/goal010-v2-20261016T233143Z",
   "requirements": [
     {
-      "evidence": [
-        {
-          "bytes": 21155,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/MANIFEST.json",
-          "sha256": "dcad6f41f991425063c239798fec9b8d3bec2c0474fde5f901205a67d1432d7f"
-        }
+      "requirement_id": "revision.metric_only_addendum",
+      "requirement": "完了済み旧Goal010を保持し、新namespace/runで指標監査だけを追加する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "old_manifest",
+        "new_spec",
+        "stage0",
+        "stage4"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "New goal010v2 specification/run/final integrity must bind the immutable completed Goal010 source.",
-      "requirement": "旧Goal010完了時は別namespace/runで指標監査だけを追加し旧成果物を保全",
-      "requirement_id": "revision.completed_goal010",
-      "status": "REUSED_COMPLETION_EVIDENCE"
+      "fixture_cases": [],
+      "interpretation_or_limit": "旧Phase0–5は保存済み証跡を再拘束して再利用。実験をやり直さない。"
     },
     {
-      "evidence": [
-        {
-          "bytes": 661,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/initial_audit.json",
-          "sha256": "26807046fb9061599b68086a94646c8bbc40378b63c9e8d6ed59cf149bd13bb9"
-        }
+      "requirement_id": "0.workspace_branch_environment",
+      "requirement": "root接続、既存専用branch、現在HEAD/dirty/process/locksとsandbox実効設定を記録する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "environment",
+        "initial_audit",
+        "stage0",
+        "final_integrity",
+        "preflight_recovery"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Repeat immutable inventories after new analysis and before final save.",
-      "requirement": "HEAD/branch/locks/source integrityと旧成果物不変",
-      "requirement_id": "initial.integrity",
-      "status": "INITIAL_AUDIT_PASS"
+      "fixture_cases": [],
+      "interpretation_or_limit": "workspace-write/auto_reviewの設定とコマンド成功を、OS隔離の証明とは扱わない。"
     },
     {
-      "evidence": [
-        {
-          "bytes": 4305,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE0_RECEIPT.json",
-          "sha256": "ba21f8db48030eb2410af20ce88dbc1a7e777d86ace7828237646955bf721bbe"
-        },
-        {
-          "bytes": 3227,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/PROTOCOL_MANIFEST.json",
-          "sha256": "42d5285b0d8ed03c5ba87d7f4cfd7232973e781e49881a15193f925bc5c7b6e2"
-        },
-        {
-          "bytes": 2518866,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/view_and_generation_request_audit.json",
-          "sha256": "34aa34534ded18be41a09a6b4e37f3194f361a5b9f4605eea373d59973b81987"
-        },
-        {
-          "bytes": 1838715,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/SOURCE_BINDINGS.json",
-          "sha256": "cf6f1002328a2665cff12355bb4e7f3fee5ef105e820c504b49e870083caf3d7"
-        }
+      "requirement_id": "0.no_calls_or_credentials",
+      "requirement": "API生成・モデル照会・token-count・キー参照・人手実験・新依存取得を0に保つ。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_spec",
+        "stage0",
+        "stage1",
+        "stage2",
+        "stage3",
+        "stage4",
+        "final_integrity"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Bind these references and selected-slot source descriptors in each new metric row; no new image-description API requests.",
-      "requirement": "60/10/30抽出、180request、6入力/12保存、settings/timestamp、source mapping",
-      "requirement_id": "section1.protocol",
-      "status": "REUSED_COMPLETED_AUDIT"
+      "fixture_cases": []
     },
     {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Root/engine freeze METRIC_SPEC, METRIC_REGISTRY and post-hoc specification before actual pilots or scoring.",
-      "requirement": "新metric定義・分母・shift・欠測・比較・資源上限の計算前commit",
-      "requirement_id": "section1.precomputation_specification",
-      "status": "PENDING_NEW_SPECIFICATION"
-    },
-    {
-      "evidence": [
-        {
-          "bytes": 13985,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/METRIC_AUDIT_JA.md",
-          "sha256": "f40da368d780c26931317606c3ecd5e4d97aea38dd1277cf6d2502b2e3585eb7"
-        },
-        {
-          "bytes": 14857,
-          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/core.py",
-          "sha256": "3c240becec802957a52e9f23c8d494644cc59fa86498b60527e132ff1a40c268"
-        },
-        {
-          "bytes": 14317,
-          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/alignment.py",
-          "sha256": "d64e062fd9ad7ad73cc8a7a3e2a5355cdd0a1c17766876bffd09cb85b02ee446"
-        },
-        {
-          "bytes": 25305,
-          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/analysis_v4.py",
-          "sha256": "33b8de23faaa73d884ffa9b88f040ed40eb83383e60f1e42fa3866ef14d553fc"
-        },
-        {
-          "bytes": 18114,
-          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal007/statistics.py",
-          "sha256": "ef834ea583ae640deec39aa47c6f4b332a178e2e0db5778beb089f57e4f78184"
-        },
-        {
-          "bytes": 7133,
-          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal008/scorer.py",
-          "sha256": "89a23f258817fa724fa971dee0fd6958734986614b1c3ffa7f6c2946861553c8"
-        }
+      "requirement_id": "0.fixed_history_budget",
+      "requirement": "960 slots/934 valid/25 failures/942 unknown、940選択、961attempts/991歴史calls、401/520保留と予算の意味を保持する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "source_bindings",
+        "old_bindings",
+        "stage3",
+        "reliability",
+        "final_integrity"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "New independent count/metric QA must be executed later; this review does not claim actual new metrics.",
-      "requirement": "旧primary/secondary/proxyの式・実装・エラー・shiftを一覧化",
-      "requirement_id": "section1_5_1.old_metric_audit",
-      "status": "READ_ONLY_IMPLEMENTATION_AUDIT_COMPLETED"
+      "fixture_cases": [],
+      "interpretation_or_limit": "歴史callsを今回の送信数と混同しない。USD21.56083625は保守的予算額で請求書ではない。"
     },
     {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
-      "requirement": "occupancy P/R/F1、FP/FN、volume ratio・relative volume error、IoU検算",
-      "requirement_id": "section1_5.A1",
-      "status": "PENDING_NEW_METRIC"
-    },
-    {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
-      "requirement": "XZ footprint IoUと投影集合分母",
-      "requirement_id": "section1_5.A2",
-      "status": "PENDING_NEW_METRIC"
-    },
-    {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
-      "requirement": "union列count誤差・common列top_y誤差・coverage",
-      "requirement_id": "section1_5.A3",
-      "status": "PENDING_NEW_METRIC"
-    },
-    {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
-      "requirement": "conditional exact M/C・M/g・GT材質別macro recall・exact confusion",
-      "requirement_id": "section1_5.A4",
-      "status": "PENDING_NEW_METRIC"
-    },
-    {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
-      "requirement": "保存strict shift XYZ/L1/L2・GT occupied寸法対比・IoU増分",
-      "requirement_id": "section1_5.A5",
-      "status": "PENDING_NEW_METRIC"
-    },
-    {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
-      "requirement": "6近傍boundary surface P/R/F1 @1/2、固定shift・<=距離・resource判定",
-      "requirement_id": "section1_5.A6",
-      "status": "PENDING_NEW_METRIC"
-    },
-    {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
-      "requirement": "数学的floor/固定anchor multiscale @1/2/4とanchor感度",
-      "requirement_id": "section1_5.A7",
-      "status": "PENDING_NEW_METRIC"
-    },
-    {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Define in registry, implement/test synthetic counterexamples, then stage 1-building, 10-building and full source-bound evaluation; preserve per-metric NULL reasons.",
-      "requirement": "6近傍連結成分数・最大成分率、26近傍はoptional別感度",
-      "requirement_id": "section1_5.B8",
-      "status": "PENDING_NEW_METRIC"
-    },
-    {
-      "evidence": [
-        {
-          "bytes": 118425,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE4_RECEIPT.json",
-          "sha256": "a00e42af5c32529cbb4628298b1e860fd7dc7ae528c357f0ce1c58791d5910c5"
-        },
-        {
-          "bytes": 2307,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase4_visibility/VISIBILITY_FEASIBILITY.json",
-          "sha256": "d23cb693692c9677abd1afcd9884930f56edf88a33d748e5a3362c4c25c2ccc8"
-        },
-        {
-          "bytes": 1194,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase4_visibility/VISIBILITY_LIMITATIONS_JA.md",
-          "sha256": "b6d6059d1a4d432c8fb040a7cd3fac0078444b17164a4762e7350c0f268b8369"
-        }
+      "requirement_id": "0.fixed_prior_analyses",
+      "requirement": "Goal007 20比較/8・4・8 familiesとGoal008 180 proxy/360探索分析・元RQ2不可を変更しない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "old_manifest",
+        "new_spec",
+        "source_bindings",
+        "stage4",
+        "final_integrity"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "No new calibration evidence exists; retain NOT_VALIDATED and NULL/no visible percentages. New boundary surface metrics are not visible surfaces.",
-      "requirement": "rendered silhouette/visible-faceは独立pixel projection/occlusion検証後のみ",
-      "requirement_id": "section1_5.B9.visibility",
-      "status": "REUSED_NOT_VALIDATED_NO_NUMERICAL_VISIBILITY"
+      "fixture_cases": []
     },
     {
-      "evidence": [
-        {
-          "bytes": 1425985,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/source_inventory_receipt.json",
-          "sha256": "06fb41dd7504aa7e85d32e1e5c6d45d603ae8e619cd02530d342101106f1d6c0"
-        },
-        {
-          "bytes": 65117,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_capacity_diagnostics.csv",
-          "sha256": "42572d5cec48c754736fe05a1542c0d85393dceee6b38ac8883d415f0b355124"
-        },
-        {
-          "bytes": 649103,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_error_taxonomy.json",
-          "sha256": "813d2e85600cf7e14111c233d49c3a0357f31d622837d406f1f107ba82be522d"
-        }
+      "requirement_id": "0.drafts_and_originals",
+      "requirement": "4 source/checkpoint、既存Draft 3件×6assets、旧code・原本・台帳・approvalを保持する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "old_manifest",
+        "old_drafts",
+        "initial_audit",
+        "final_integrity",
+        "new_drafts"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "New metric_denominators must preserve960/934/25/1 and explicit conditional-denominator/resource eligibility; reuse original E usage/caps without any token-count/model API.",
-      "requirement": "Builder×O/J/P/Eのvalid/model failure/operational/not-run分母、E容量をスコアと分離",
-      "requirement_id": "section1_5.B10.reliability",
-      "status": "REUSE_EVIDENCE_NEW_METRIC_DENOMINATORS_PENDING"
+      "fixture_cases": []
     },
     {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Bind source plan/attempt/input/GT/artifact SHA and stored strict shift; retain25 failures+942 missing withNULL/reason. Normal empty is distinct from failed generation.",
-      "requirement": "934 validに追加metric、全960行保持、原validated metric objects不変",
-      "requirement_id": "section1_5_6.all960",
-      "status": "PENDING_NEW_METRIC"
-    },
-    {
-      "evidence": [
-        {
-          "bytes": 114580,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE1_RECEIPT.json",
-          "sha256": "91c2574fdfa259a3699e68be9bbf47d48735ca3a97a2f3353300a48daf048302"
-        },
-        {
-          "bytes": 1943,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/BASELINE_MANIFEST.json",
-          "sha256": "06d00a70548e9a8d1183046f6467329dac32076992c50999f159af33bb8ee6d3"
-        },
-        {
-          "bytes": 761749,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/baseline_predictions_manifest.json",
-          "sha256": "500c3eb33087ef9683496407ba69c67616a86c3c5e1849c60ad6d179a8cce678"
-        },
-        {
-          "bytes": 2600058,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/baseline_per_building.json",
-          "sha256": "db6cd7a5e2b3eb60204ea58ad224b257b696bdb21c279656eceaeb39982ecbc3"
-        }
+      "requirement_id": "0.excluded_work",
+      "requirement": "再生成・論文/Overleaf/投稿資料・OS/SSH/ユーザー変更・reset/rebase/forceを行わない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_spec",
+        "environment",
+        "final_integrity"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Read canonical arrays through verified manifests and apply the same geometry suite/GT/stored shift. Artificial stone material metrics are not applicable. Existing480 strict checks and60 P-density checks are reused evidence, not new metric completion.",
-      "requirement": "O180/P60入力の固定filled/shell合計480を再生成・最適化せず再利用",
-      "requirement_id": "section2.baseline_reuse",
-      "status": "REUSED_IMMUTABLE_BASELINES_NEW_METRICS_PENDING"
+      "fixture_cases": []
     },
     {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Freeze whitelist/comparisons/seed/draws. No new p-values/Holm; do not zero normal empty Precision, C=0 conditional material, operational or resource NULLs.",
-      "requirement": "新metric paired effect+cluster CI、建築等重み、metric別common-valid、bounded failure0別表",
-      "requirement_id": "section1_5_6.paired_statistics",
-      "status": "PENDING_NEW_EXPLORATORY_STATISTICS"
-    },
-    {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Counterexamples must cover exact identity,shift,material substitution,surface boundaries,shell widths,negative floor,empty,top_y union/common denominators,connectivity,noGT-leakage and fixed-shift non-reoptimization; enforce explicit time/RAM caps.",
-      "requirement": "反証fixture・独立数値検算・1→10→全934+480 pilot",
-      "requirement_id": "section1_5_6.counterexamples_pilots",
-      "status": "PENDING_NEW_VALIDATION"
-    },
-    {
-      "evidence": [
-        {
-          "bytes": 116009,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE2_RECEIPT.json",
-          "sha256": "1977c24314255fc69debbe43435fff1581c19218c9f0c4f22242c1780f7cbf7d"
-        },
-        {
-          "bytes": 5068119,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase2_factors/description_builder_analysis.json",
-          "sha256": "dc74a8b6ded6e9dc702960c58787a7a475551026e2c47dbae7422eab2c5244d8"
-        },
-        {
-          "bytes": 12186,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/FACTOR_FINDINGS_JA.md",
-          "sha256": "3573d1c6ddded1b913f53420d293bdad68d329cfa8b495e77f3bc4fded63d33b"
-        }
+      "requirement_id": "1.source_binding",
+      "requirement": "scene/provider/Builder/input/source/GT/plan/original attempt/selected slotを各段階で再検証する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "pipeline",
+        "source_bindings",
+        "stage0",
+        "stage1",
+        "stage2",
+        "stage3",
+        "stage4"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "No need to rerun or reinterpret36 as newmetric evidence; retain version/budget/time confounds.",
-      "requirement": "旧説明provider×Builder全36探索対比を保存",
-      "requirement_id": "section3.provider_contrasts",
-      "status": "REUSED_COMPLETED_ANALYSIS"
+      "fixture_cases": [
+        "test_slot_source_rejects_provenance_corruption",
+        "test_source_design_and_metric_corruption_fails_closed"
+      ]
     },
     {
-      "evidence": [
-        {
-          "bytes": 117623,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE3_RECEIPT.json",
-          "sha256": "9c7cfdc748cad599cee8f1e4cfa6c56a3da06213bbb401eb6a4f113236c3f037"
-        },
-        {
-          "bytes": 87193,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_AUDIT_MANIFEST.json",
-          "sha256": "e31876cffe2b4f2100f5d25e452fdcaad11eac9c216ad109f1e0127ccbfd31fc"
-        },
-        {
-          "bytes": 612293,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_material_confusion.csv",
-          "sha256": "eb34a06d675cea69c29267d548276e3a854d98483c3be261b6e163780b37b9d9"
-        },
-        {
-          "bytes": 134188,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_reference_controls.json",
-          "sha256": "b2fc29c5bf2b35c0956c8da02fa686e318855e6f8e55ed887ba4a307ad9e95a7"
-        }
+      "requirement_id": "1.posthoc_freeze",
+      "requirement": "新規則・比較・欠測を実計算前commitで固定し、事前登録と呼ばない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_spec",
+        "metric_spec",
+        "stats_spec",
+        "registry",
+        "stage0",
+        "stage4"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "New M/C,M/g,macro recall for all eligible outputs extend this evidence; do not recode strict IDs,repair outputs or count CPU controls asmodel success.",
-      "requirement": "旧E120outcomes/60controls/101valid再照合/容量/alias不変",
-      "requirement_id": "section4.exact_oracle",
-      "status": "REUSED_COMPLETED_ANALYSIS_NEW_EXACT_MATERIAL_PENDING"
+      "fixture_cases": []
     },
     {
-      "evidence": [
-        {
-          "bytes": 2307,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase4_visibility/VISIBILITY_FEASIBILITY.json",
-          "sha256": "d23cb693692c9677abd1afcd9884930f56edf88a33d748e5a3362c4c25c2ccc8"
-        }
+      "requirement_id": "1.selection60_10_30",
+      "requirement": "100建築から層化60評価/10smoke/30未評価と独立unit60を保持する。",
+      "status": "REUSED_COMPLETED_AUDIT",
+      "evidence_ids": [
+        "old_protocol",
+        "old_protocol_manifest",
+        "source_gate"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "No synthesized visibility observations, no camera-dependent numerical metric without validated projection.",
-      "requirement": "6/12camera監査と可視性検証不能理由を保全",
-      "requirement_id": "section5.visibility_reuse",
-      "status": "REUSED_NOT_VALIDATED"
+      "fixture_cases": [
+        "test_601030_selection_replay_and_independent_unit",
+        "test_pilot_selection_uses_bound60_not_full100_cohort"
+      ]
     },
     {
-      "evidence": [
-        {
-          "bytes": 119322,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE5_RECEIPT.json",
-          "sha256": "b3d25473e1009e4c0ff08af3034dcc227d9bb32e735e7fe6c3c3eae0d0db18ee"
-        },
-        {
-          "bytes": 3360874,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase5_robustness/proxy_robustness.json",
-          "sha256": "806ac6add6e04ad2d57badf65c958b4d4e1f05d0d452ef3ea1a24e115e47b298"
-        },
-        {
-          "bytes": 18049,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/PROXY_FINDINGS_JA.md",
-          "sha256": "30d08bba86d479b2f405e008bebe4f9e92c6d3a37aa090c3aa01120c880b00cd"
-        }
+      "requirement_id": "1.requests180",
+      "requirement": "全180requestの実入力6枚/候補12枚、image path/hash/count/camera/prompt/model/settings/UTCを全件照合する。",
+      "status": "REUSED_COMPLETED_AUDIT",
+      "evidence_ids": [
+        "old_view_json",
+        "old_view_csv",
+        "old_image_audit",
+        "old_protocol_manifest"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "No new caption-quality proxy fitting or replacement; no re-execution required for metric-only addendum.",
-      "requirement": "Goal008180/360と旧Goal0101350proxy感度行を保全、旧RQ2not-testable",
-      "requirement_id": "section6.proxy_reuse",
-      "status": "REUSED_COMPLETED_ANALYSIS"
+      "fixture_cases": [
+        "test_complete180_request_counts_and_budget_confound",
+        "test_request_settings_are_not_default_imputed"
+      ]
     },
     {
-      "evidence": [],
-      "new_metric_execution_completed": false,
-      "remaining_work": "After authorized CPU work, verify oldGoal007/008/010/ledgers/checkpoints/sourcehash unchanged; keep large artifacts in newrun, small summaries in newnamespace, no Draft mutation or paid API.",
-      "requirement": "新metric QA・前後source inventory・小規模公開copy・Git保存",
-      "requirement_id": "section7.final_qa_save",
-      "status": "PENDING_NEW_FINAL_QA"
-    },
-    {
-      "evidence": [
-        {
-          "bytes": 15822,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/README.md",
-          "sha256": "b320ff35ef3a533c5f6e2bf2d533094e20de37b167c6a5aa77e6fa7fe64c4e71"
-        },
-        {
-          "bytes": 9205,
-          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/RESEARCH_DECISION_JA.md",
-          "sha256": "b7fe0cdfc3a813dae503f11bd191e8fcc86c41783e8e8be0d38e45900dfbe0d6"
-        }
+      "requirement_id": "1.request_confound",
+      "requirement": "1800/1800/4096、temperature0.2、version・生成日付差・request記録時刻の限界を明示する。",
+      "status": "REUSED_COMPLETED_AUDIT",
+      "evidence_ids": [
+        "old_protocol",
+        "old_protocol_note",
+        "old_view_json"
       ],
-      "new_metric_execution_completed": false,
-      "remaining_work": "Do not select favorable metric only. Keep independentN,conditionalcoverage/failurecounts,CI,resources,sends0 and finalcommit/remote state explicit.",
-      "requirement": "新metricがbaselineとの差の方向/限界をどう変えるか全固定比較で報告",
-      "requirement_id": "section7.final_interpretation",
-      "status": "PENDING_NEW_RESULTS_INTERPRETATION"
+      "fixture_cases": [
+        "test_actual_six_vs_candidate_twelve_and_timestamp_semantics"
+      ]
+    },
+    {
+      "requirement_id": "1.OJPE_semantics",
+      "requirement": "O保存レコード/J typed tree再直列化/P開示GT属性/E実schemaを固定versionで確認する。",
+      "status": "REUSED_COMPLETED_AUDIT",
+      "evidence_ids": [
+        "old_protocol_supplement",
+        "old_bindings",
+        "old_e_spec",
+        "new_audit"
+      ],
+      "fixture_cases": []
+    },
+    {
+      "requirement_id": "1.OJ_causal_limit",
+      "requirement": "O/J別API単発生成でdecoding未固定であり、純粋な表記因果効果とは言わない。",
+      "status": "REUSED_COMPLETED_AUDIT",
+      "evidence_ids": [
+        "old_protocol_supplement",
+        "new_audit",
+        "new_spec"
+      ],
+      "fixture_cases": []
+    },
+    {
+      "requirement_id": "1.YXZ_world_and_padding",
+      "requirement": "generation origin/storage bbox/occupied bboxを区別し、既存readerでYXZ→XYZ worldを一度だけ変換する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "new_audit",
+        "pipeline",
+        "full_rows",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_complete_synthetic_stage_preserves16_slots8_baselines_and_sources",
+        "test_asymmetric_yxz_storage_maps_to_negative_world_origin"
+      ]
+    },
+    {
+      "requirement_id": "1.frozen_evaluator_and_missing",
+      "requirement": "strict translation、exact ID、rotation/scale無し、旧エラーNULLと942/940/25失敗を保持する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_audit",
+        "source_bindings",
+        "full_rows",
+        "qa",
+        "reliability"
+      ],
+      "fixture_cases": []
+    },
+    {
+      "requirement_id": "1.5.1.old_metrics",
+      "requirement": "旧occupancy/material IoU・set F1・dimension MAE・add/delete/replace・repair・absolute/alignedとエラー挙動をコード・実値で確認する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_audit",
+        "old_core",
+        "old_alignment",
+        "qa",
+        "full_rows"
+      ],
+      "fixture_cases": [
+        "test_independent_checks_bind_original_strict_metrics_and_fixed_shift"
+      ]
+    },
+    {
+      "requirement_id": "1.5.1.iou_construct",
+      "requirement": "IoUはintersection/unionであり、外形/見た目や一致ブロック率そのものではない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_audit",
+        "metric_spec",
+        "metric_counterexamples"
+      ],
+      "fixture_cases": [
+        "test_filled_box_vs_shell_surface_saturates_but_occupancy_differs"
+      ]
+    },
+    {
+      "requirement_id": "1.5.1.strict_alignment",
+      "requirement": "全整数occupancy最適τ、L1/XYZ tie、rotation/scale無しを維持し、absolute IoU・τXYZ/L1/L2を併記する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_audit",
+        "metric_spec",
+        "displacement",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_frozen_strict_translation_selected_shift_and_exact_overlap_metrics_match",
+        "test_tie_uses_world_L1_then_XYZ_and_never_material_favorable_shift"
+      ],
+      "interpretation_or_limit": "GT参照位置合わせは生成側の世界原点推定成功ではない。"
+    },
+    {
+      "requirement_id": "1.5.1.material_exact",
+      "requirement": "material IoUは位置と厳密ID双方を要求し、set F1は配置を無視する。alias補正をexact指標に加えない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_audit",
+        "metric_spec",
+        "confusion",
+        "material_recalls"
+      ],
+      "fixture_cases": [
+        "test_exact_material_ids_and_conditional_zero_without_aliases",
+        "test_material_set_identity_can_hide_complete_spatial_swap"
+      ]
+    },
+    {
+      "requirement_id": "1.5.1.f1_redundancy",
+      "requirement": "入力ごとにF1=2IoU/(1+IoU)を検算し、独立した追加証拠と数えない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "pipeline",
+        "qa",
+        "metric_counterexamples"
+      ],
+      "fixture_cases": [
+        "test_identical_grids_exact_scores_and_identity",
+        "test_random_tiny_sets_match_brute_surface_floor_components_columns_and_frozen"
+      ]
+    },
+    {
+      "requirement_id": "1.5.1.repair_interpretation",
+      "requirement": "repairを仮想体素編集数として扱い、人間の労力/クリック/時間と同一視しない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_audit",
+        "old_core",
+        "metric_spec"
+      ],
+      "fixture_cases": []
+    },
+    {
+      "requirement_id": "1.5.2.world_sets",
+      "requirement": "G/Pは非air整数XYZ/Y-up。storage/occupied bboxを区別し、absolute τ0・aligned保存τを全metricで共用する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "registry",
+        "engine",
+        "full_rows",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_fixed_saved_shift_recovers_without_reoptimization",
+        "test_alignment_can_leave_input_coordinate_box_without_clipping"
+      ]
+    },
+    {
+      "requirement_id": "1.5.2.hash_binding",
+      "requirement": "G/P/τの結合hashとGT/pred元file・input/source/plan/attempt/selected-slot SHAを各結果へ紐付ける。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "registry",
+        "engine",
+        "pipeline",
+        "full_rows",
+        "baseline_rows",
+        "metric_pairs"
+      ],
+      "fixture_cases": [
+        "test_hash_binds_material_coordinates_shift_and_is_insertion_order_independent",
+        "test_slot_source_rejects_provenance_corruption"
+      ]
+    },
+    {
+      "requirement_id": "1.5.2.invalid_null",
+      "requirement": "不正/truncation/validation/unknownは960slotsに保持し、幾何値NULLと理由を残す。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "full_rows",
+        "qa",
+        "reliability",
+        "denominators"
+      ],
+      "fixture_cases": [
+        "test_complete_synthetic_stage_preserves16_slots8_baselines_and_sources",
+        "test_common_valid_and_known_failure0_are_separate_and_unbounded_not_imputed"
+      ]
+    },
+    {
+      "requirement_id": "1.5.2.failure0",
+      "requirement": "既知completed output failureだけに固定[0,1] higher whitelistの別policyを使い、942/過去401/resource/GT欠落を0にしない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "registry",
+        "stats_spec",
+        "statistics",
+        "denominators",
+        "paired",
+        "exclusions"
+      ],
+      "fixture_cases": [
+        "test_unknown942_style_missing_never_imputed_even_with_failure_label",
+        "test_successful_empty_precision_and_resource_null_stay_null_in_failure0",
+        "test_baseline_missing_is_never_zero_and_both_reasons_preserved"
+      ]
+    },
+    {
+      "requirement_id": "1.5.2.empty",
+      "requirement": "正常emptyのflag、GT非空時IoU/recall/F1=0・precision=NULL、両空fixture規約を保持する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "metric_counterexamples",
+        "engine",
+        "material_details"
+      ],
+      "fixture_cases": [
+        "test_empty_conventions_preserve_denominator_nulls",
+        "test_successful_empty_precision_and_resource_null_stay_null_in_failure0"
+      ]
+    },
+    {
+      "requirement_id": "1.5.2.registry",
+      "requirement": "各metric ID/式/単位/範囲/方向/座標/shift/分母/NULL/限界/実装hash/sample hash参照を機械・人間双方の仕様へ記載する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "registry",
+        "stage0",
+        "full_rows"
+      ],
+      "fixture_cases": [
+        "test_registry_is_complete_and_failure0_strictly_bounded_and_material_baselines_excluded"
+      ]
+    },
+    {
+      "requirement_id": "1.5.2.frozen_thresholds",
+      "requirement": "閾値/尺度/anchor/NULL規約を実解析前commitに固定し、post-hoc pre-computation specificationと明示する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_spec",
+        "metric_spec",
+        "stats_spec",
+        "registry",
+        "stage0"
+      ],
+      "fixture_cases": []
+    },
+    {
+      "requirement_id": "1.5.3.1.occupancy_prf",
+      "requirement": "全934成功×absolute/alignedでg,p,C,U,P=C/p,R=C/g,F1=2C/(g+p),IoU=C/Uを計算する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "registry",
+        "full_rows",
+        "qa",
+        "denominators"
+      ],
+      "fixture_cases": [
+        "test_frozen_strict_translation_selected_shift_and_exact_overlap_metrics_match"
+      ]
+    },
+    {
+      "requirement_id": "1.5.3.1.excess_omission",
+      "requirement": "excess=p−C、omission=g−C、volume_ratio=p/g、relative_volume_error=(p−g)/gを保存する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "full_rows",
+        "denominators",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_random_tiny_sets_match_brute_surface_floor_components_columns_and_frozen"
+      ]
+    },
+    {
+      "requirement_id": "1.5.3.1.nonempty_and_invariance",
+      "requirement": "原本GT非空を要求し、g/pがshiftで変わらずC/Uだけframeで変わることを確認する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "pipeline",
+        "full_rows",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_fixed_saved_shift_recovers_without_reoptimization"
+      ]
+    },
+    {
+      "requirement_id": "1.5.3.2.footprint",
+      "requirement": "XZ存在投影intersection/unionをabsolute/aligned両方計算し、外壁輪郭/間取り/用途とは呼ばない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "full_rows",
+        "denominators",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_column_union_and_common_top_have_different_denominators"
+      ]
+    },
+    {
+      "requirement_id": "1.5.3.3.column_union",
+      "requirement": "投影union上で片側欠落0の列占有数MAEを計算し、blocks/columnとunion列数を記録する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "full_rows",
+        "material_details",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_column_union_and_common_top_have_different_denominators",
+        "test_empty_negative_floor_and_column_union"
+      ]
+    },
+    {
+      "requirement_id": "1.5.3.3.top_height",
+      "requirement": "common footprintのみのtop_y MAE、common/GT・common/pred被覆率、分母とNULLを保存する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "full_rows",
+        "material_details",
+        "denominators"
+      ],
+      "fixture_cases": [
+        "test_column_union_and_common_top_have_different_denominators"
+      ],
+      "interpretation_or_limit": "階数や室内意味構造の評価ではない。"
+    },
+    {
+      "requirement_id": "1.5.3.4.conditional_material",
+      "requirement": "C>0ならM/C、C=0ならNULL。M/g・M/(g+p−M)を併記し、少数重なりへの条件付けを説明する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "full_rows",
+        "denominators",
+        "confusion",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_no_intersection_conditional_null_even_successful_input",
+        "test_exact_material_ids_and_conditional_zero_without_aliases"
+      ]
+    },
+    {
+      "requirement_id": "1.5.3.4.material_frequency_macro",
+      "requirement": "GT材質頻度別recall、GT材質等重みmacro recall、固定ID confusionを別に保持し、同義語補正しない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "material_recalls",
+        "confusion",
+        "full_rows"
+      ],
+      "fixture_cases": [
+        "test_macro_material_recall_and_confusion_include_missing_and_extra"
+      ]
+    },
+    {
+      "requirement_id": "1.5.3.5.displacement",
+      "requirement": "保存τXYZ/L1/L2とGT occupied bbox相対変位、aligned−absolute IoU gainを別表に記録する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "displacement",
+        "full_rows",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_independent_checks_detect_displacement_corruption"
+      ],
+      "interpretation_or_limit": "原点の観測不能性があるので変位の大小を単純順位にしない。"
+    },
+    {
+      "requirement_id": "1.5.4.6.boundary",
+      "requirement": "6近傍の少なくとも1セルが空のoccupied cellをboundaryとし、空洞内壁を含み可視外表面とは扱わない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "material_details",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_one_or_two_cell_width_all_occupied_are_boundary",
+        "test_cavity_boundary_counts_internal_walls"
+      ]
+    },
+    {
+      "requirement_id": "1.5.4.6.surface_prf",
+      "requirement": "セル中心の最近傍ユークリッド距離<=1/2の両方向P/R/F1を保存し、同じτを使う。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "registry",
+        "full_rows",
+        "material_details",
+        "denominators",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_surface_euclidean_inclusive_threshold",
+        "test_fixed_saved_shift_recovers_without_reoptimization"
+      ]
+    },
+    {
+      "requirement_id": "1.5.4.6.surface_resources",
+      "requirement": "KD-treeを単一worker/eps0で使用し全ペア距離行列を作らず、独立EDT/有限7・33offsetで検算。資源超過はNULL理由。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "engine",
+        "independent",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_dense_and_offset_methods_agree",
+        "test_random_surface_matches_bruteforce",
+        "test_optional_resource_and_dependency_failures_are_null_with_reason"
+      ]
+    },
+    {
+      "requirement_id": "1.5.4.7.multiscale",
+      "requirement": "k=1/2/4および任意拡張8のOR pooling、world anchor0、数学的floorを固定し追加alignmentしない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "registry",
+        "full_rows",
+        "material_details",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_negative_floor_and_fixed_half_anchor",
+        "test_empty_negative_floor_and_column_union"
+      ]
+    },
+    {
+      "requirement_id": "1.5.4.7.k1_exact",
+      "requirement": "k1は同frameの旧strict occupancy IoUと一致させる。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "pipeline",
+        "qa",
+        "full_rows"
+      ],
+      "fixture_cases": [
+        "test_frozen_strict_translation_selected_shift_and_exact_overlap_metrics_match",
+        "test_random_tiny_sets_match_brute_surface_floor_components_columns_and_frozen"
+      ]
+    },
+    {
+      "requirement_id": "1.5.4.7.anchor_sensitivity",
+      "requirement": "anchor0と各軸k//2の感度を同時保存し、粗視化の隙間見逃し/anchor依存、k8診断限定を説明する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "registry",
+        "full_rows",
+        "denominators"
+      ],
+      "fixture_cases": [
+        "test_negative_floor_and_fixed_half_anchor"
+      ]
+    },
+    {
+      "requirement_id": "1.5.4.core_no_composite",
+      "requirement": "P/R・surfaceF1@1/2・conditional material・footprintを小コアとし、恣意的な単一合成scoreを作らない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "stats_spec",
+        "registry",
+        "paired",
+        "denominators"
+      ],
+      "fixture_cases": []
+    },
+    {
+      "requirement_id": "1.5.5.8.connectivity6",
+      "requirement": "6近傍連結成分数/最大成分割合をGTと予測に保存する。部屋/扉/通行可能性や穴埋めの正しさと同一視しない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "registry",
+        "full_rows",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_six_neighbor_components_do_not_connect_corner_touching_cells",
+        "test_random_tiny_sets_match_brute_surface_floor_components_columns_and_frozen"
+      ]
+    },
+    {
+      "requirement_id": "1.5.5.8.connectivity26",
+      "requirement": "26近傍感度は任意項目として省略を明示する。",
+      "status": "OPTIONAL_NOT_PERFORMED",
+      "evidence_ids": [
+        "metric_spec",
+        "registry"
+      ],
+      "fixture_cases": [],
+      "interpretation_or_limit": "固定6近傍診断を採用。未計算を成功表示しない。"
+    },
+    {
+      "requirement_id": "1.5.5.9.visibility",
+      "requirement": "実入力6枚の投影・カメラ・遮蔽を独立に再現検証できた場合だけsilhouette/visible-faceを数値化する。",
+      "status": "NOT_VALIDATED_NO_VISIBILITY_CONCLUSION",
+      "evidence_ids": [
+        "old_visibility",
+        "old_visibility_note",
+        "old_image_audit",
+        "source_gate"
+      ],
+      "fixture_cases": [
+        "test_all_metadata_is_not_projection_validation",
+        "test_visibility_gate_stops_on_modified_protocol_product"
+      ],
+      "interpretation_or_limit": "yaw/pitch・実投影/遮蔽対応が未検証。可視性percent、silhouette IoU、visible material数値を作らない。"
+    },
+    {
+      "requirement_id": "1.5.5.10.reliability",
+      "requirement": "Builder×O/J/P/Eのvalid/identified failure種別/operational unknown/not-runを独立の分母表で示す。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "reliability",
+        "full_rows",
+        "denominators",
+        "stats_metadata"
+      ],
+      "fixture_cases": [
+        "test_complete_grid_reliability_denominators_and_no_artificial_material"
+      ]
+    },
+    {
+      "requirement_id": "1.5.5.10.E_capacity",
+      "requirement": "E valid-onlyとdefinitive bounded failure0を分け、既存120outcomesの32768cap・GTサイズ・参照命令数・観測tokensを可視化する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "old_capacity",
+        "capacity_svg",
+        "capacity_receipt",
+        "denominators",
+        "reliability"
+      ],
+      "fixture_cases": [
+        "test_capacity_uses_observed120_and_never_rewrites_csv",
+        "test_capacity_rejects_changed_count_or_output_cap"
+      ],
+      "interpretation_or_limit": "成功率をscoreへ乗算せず、未完了出力の完成時品質やtoken換算を推定しない。"
+    },
+    {
+      "requirement_id": "1.5.6.readonly_934_960",
+      "requirement": "既存成功voxels934をread-only拡張し、旧metric objectsとsource/checkpointを維持、全960slotsとNULL理由を残す。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "stage3",
+        "qa",
+        "full_rows",
+        "final_integrity"
+      ],
+      "fixture_cases": [
+        "test_complete_synthetic_stage_preserves16_slots8_baselines_and_sources",
+        "test_resource_limited_stage_keeps_nulls_and_cannot_claim_all_checks"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.fixed_baselines",
+      "requirement": "旧O180×2/P60×2の計480固定予測へ同じgeometry suiteを適用し、形状を新metricに合わせて調整しない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "old_baselines_manifest",
+        "baseline_rows",
+        "qa",
+        "stage3"
+      ],
+      "fixture_cases": [
+        "test_generation_freezes_every_prediction_before_gt_evaluation",
+        "test_complete_synthetic_stage_preserves16_slots8_baselines_and_sources"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.paired_cluster",
+      "requirement": "説明元・Builder・建築・input/GTを対応付け、building N<=60の等重みeffectとcluster CIだけを報告する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "stats_spec",
+        "paired",
+        "metric_pairs",
+        "denominators",
+        "stats_metadata"
+      ],
+      "fixture_cases": [
+        "test_equal_building_mean_avoids_counting_more_provider_pairs_as_more_buildings",
+        "test_bootstrap_matches_explicit_planned_cluster_draws_with_missing_building"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.no_confirmatory_changes",
+      "requirement": "旧20比較/360分析を保全し、新p値/有意性/Holm familyを作らない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_spec",
+        "stats_spec",
+        "stats_metadata",
+        "stage4",
+        "final_integrity"
+      ],
+      "fixture_cases": []
+    },
+    {
+      "requirement_id": "1.5.6.metric_specific_n",
+      "requirement": "common-valid N/除外理由をmetricごとに保持し、bounded failure0補助表を主表と分ける。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "paired",
+        "metric_pairs",
+        "exclusions",
+        "denominators",
+        "stats_metadata"
+      ],
+      "fixture_cases": [
+        "test_baseline_missing_is_never_zero_and_both_reasons_preserved",
+        "test_common_valid_and_known_failure0_are_separate_and_unbounded_not_imputed"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.fixture.identical",
+      "requirement": "同一GT/predの適格exact類似指標1・誤差0を反証fixtureで確認する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_counterexamples",
+        "counterexample_json",
+        "final_tests"
+      ],
+      "fixture_cases": [
+        "test_identical_grids_exact_scores_and_identity"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.fixture.shift",
+      "requirement": "既知shiftでaligned IoU1/absolute<1、誤った固定shiftを他metricで再最適化しないことを確認する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_counterexamples",
+        "counterexample_json",
+        "final_tests"
+      ],
+      "fixture_cases": [
+        "test_fixed_saved_shift_recovers_without_reoptimization",
+        "test_independent_checks_cannot_relabel_worse_shift_as_strict"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.fixture.material",
+      "requirement": "占有同一・全材質不一致でIoU1/M/C0/materialIoU0、C0ならconditionalNULLを確認する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_counterexamples",
+        "counterexample_json",
+        "final_tests"
+      ],
+      "fixture_cases": [
+        "test_exact_material_ids_and_conditional_zero_without_aliases",
+        "test_no_intersection_conditional_null_even_successful_input"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.fixture.surface",
+      "requirement": "1ブロック距離F@1=1、<=境界・sqrt2・2ブロック境界を確認する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_counterexamples",
+        "counterexample_json",
+        "final_tests"
+      ],
+      "fixture_cases": [
+        "test_surface_euclidean_inclusive_threshold"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.fixture.filled_shell_thin",
+      "requirement": "filled/shell、1/2セル幅のboundary、空洞内壁を確認する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_counterexamples",
+        "counterexample_json",
+        "final_tests"
+      ],
+      "fixture_cases": [
+        "test_filled_box_vs_shell_surface_saturates_but_occupancy_differs",
+        "test_one_or_two_cell_width_all_occupied_are_boundary",
+        "test_cavity_boundary_counts_internal_walls"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.fixture.negative_empty_components",
+      "requirement": "負座標floor、正常empty/両空、複数6近傍成分を確認する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_counterexamples",
+        "counterexample_json",
+        "final_tests"
+      ],
+      "fixture_cases": [
+        "test_negative_floor_and_fixed_half_anchor",
+        "test_empty_conventions_preserve_denominator_nulls",
+        "test_six_neighbor_components_do_not_connect_corner_touching_cells"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.fixture.leakage",
+      "requirement": "Oは説明寸法のみ、Pは開示bboxのみを構築に使いhiddenGT位置へアクセスできないことを確認する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "old_baselines_code",
+        "final_tests",
+        "old_baselines_manifest"
+      ],
+      "fixture_cases": [
+        "test_leakage_boundary_signatures_do_not_accept_gt",
+        "test_original_invalid_dimensions_never_filled_from_gt"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.independent_all",
+      "requirement": "同じ保存τで旧strict指標・k1・C/M・bbox/axis/count・surface/footprint/columns/multiscaleを独立実装で検算する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "independent",
+        "pipeline",
+        "qa",
+        "stage3"
+      ],
+      "fixture_cases": [
+        "test_independent_checks_detect_corrupted_metric_families",
+        "test_independent_checks_detect_displacement_corruption"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.rank_reversal",
+      "requirement": "IoU/surface/footprint等の順位変化を同一適格pair集合上で報告し、N差や新有意性と混同しない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "stats_spec",
+        "reversals",
+        "stats_metadata",
+        "baseline_findings",
+        "baseline_numerical_review"
+      ],
+      "fixture_cases": [
+        "test_rank_reversal_uses_exact_pair_intersection_and_direction"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.resource_null",
+      "requirement": "依存不在/CPU/RAM超過は方法・範囲・未計算数・NULL理由を報告し、旧metric差替え/近似/無断pipをしない。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "registry",
+        "qa",
+        "full_rows",
+        "final_tests"
+      ],
+      "fixture_cases": [
+        "test_count_and_planned_scratch_caps_fail_closed",
+        "test_optional_resource_and_dependency_failures_are_null_with_reason",
+        "test_resource_limited_stage_keeps_nulls_and_cannot_claim_all_checks"
+      ]
+    },
+    {
+      "requirement_id": "1.5.6.pilot_order",
+      "requirement": "1棟複数形状→10棟→全60/934の順序と前段PASS/hashを要求し、CPU/wall/RSS上限・実測を保持する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_spec",
+        "stage1",
+        "stage2",
+        "stage3",
+        "stage4",
+        "final_tests"
+      ],
+      "fixture_cases": [
+        "test_previous_rejects_wrong_pilot_or_full_scope",
+        "test_previous_retains_every_prior_receipt_hash",
+        "test_nested_resource_budget_preserves_outer_remaining_time"
+      ]
+    },
+    {
+      "requirement_id": "2.O.baseline",
+      "requirement": "O dimensions_estimateのみ・原点0・filled/shell・inclusive/重複排除・missing無補完・資源fail-closed。",
+      "status": "REUSED_COMPLETED_BASELINES",
+      "evidence_ids": [
+        "old_baselines_code",
+        "old_baselines_manifest",
+        "old_baseline_results",
+        "old_baseline_note",
+        "final_tests"
+      ],
+      "fixture_cases": [
+        "test_leakage_boundary_signatures_do_not_accept_gt",
+        "test_inclusive_negative_box_and_shell_unique_voxels",
+        "test_original_invalid_dimensions_never_filled_from_gt"
+      ]
+    },
+    {
+      "requirement_id": "2.P.baseline",
+      "requirement": "P開示world_bboxだけ・定数材質・voxel_count不使用・GT個別位置不使用・固定2構造。",
+      "status": "REUSED_COMPLETED_BASELINES",
+      "evidence_ids": [
+        "old_baselines_code",
+        "old_baselines_manifest",
+        "old_baseline_results",
+        "old_baseline_note",
+        "final_tests"
+      ],
+      "fixture_cases": [
+        "test_leakage_boundary_signatures_do_not_accept_gt"
+      ]
+    },
+    {
+      "requirement_id": "2.P.density",
+      "requirement": "P filled IoU=GT occupied/storage bbox volumeを全60で検算しpadded airと034を限定的に説明する。",
+      "status": "REUSED_COMPLETED_BASELINES",
+      "evidence_ids": [
+        "old_baseline_manifest",
+        "old_baseline_results",
+        "old_baseline_note"
+      ],
+      "fixture_cases": []
+    },
+    {
+      "requirement_id": "2.geometry_only_comparison",
+      "requirement": "新geometryを全480baselineに同規約適用し、人工材質5指標をNULLにして能力比較から除く。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "metric_spec",
+        "baseline_rows",
+        "paired",
+        "qa"
+      ],
+      "fixture_cases": [
+        "test_complete_synthetic_stage_preserves16_slots8_baselines_and_sources",
+        "test_registry_cannot_enable_artificial_material_or_invalid_failure0"
+      ]
+    },
+    {
+      "requirement_id": "2.paired_and_size",
+      "requirement": "同一入力Builderに対応、独立N60、common-valid/knownfailure0/unknownを分離しサイズ48分布と全baselineを保管する。",
+      "status": "REUSED_AND_NEW_ADDENDUM",
+      "evidence_ids": [
+        "old_baseline_pairs",
+        "old_baseline_sizes",
+        "old_baseline_note",
+        "paired",
+        "denominators"
+      ],
+      "fixture_cases": [
+        "test_all80_comparisons_are_paired_and_equal_building_weight_with_explicit_missingness",
+        "test_size_distributions_keep_all48_cells_and_average_within_building"
+      ]
+    },
+    {
+      "requirement_id": "3.description_factors",
+      "requirement": "O/J×2Builders×3providerpairs×3旧metricの36対応比較、共通valid N/差方向/clusterCIと設定交絡を保持する。",
+      "status": "REUSED_COMPLETED_ANALYSIS",
+      "evidence_ids": [
+        "old_factors",
+        "old_factor_confounds",
+        "old_factor_note",
+        "old_phase2"
+      ],
+      "fixture_cases": [
+        "test_all36_paired_cells_and_direction_without_pvalues",
+        "test_common_valid_excludes_known_failures_and_unknowns_without_zero"
+      ],
+      "interpretation_or_limit": "設定込みの差でありモデル固有能力や因果効果ではない。"
+    },
+    {
+      "requirement_id": "4.E.exact_control",
+      "requirement": "60GT→固定exactspec→CPU actions/execute同値を保持し、120E outcomes/101validと034誤材質confusionを再利用する。",
+      "status": "REUSED_COMPLETED_ANALYSIS",
+      "evidence_ids": [
+        "old_e_control",
+        "old_e_manifest",
+        "old_e_confusion",
+        "old_e_taxonomy",
+        "old_material_note",
+        "old_phase3"
+      ],
+      "fixture_cases": [
+        "test_reference_control_preserves_padding_negative_origin_and_yxz",
+        "test_unknown_outcome_is_null_never_zero_or_reference_success"
+      ]
+    },
+    {
+      "requirement_id": "4.E.new_material",
+      "requirement": "Eを含む全条件にM/C・M/g・macro recall・exactconfusionを追加し、034のM/Cを実ラベルcountで独立検算する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "full_rows",
+        "confusion",
+        "material_recalls",
+        "denominators",
+        "qa",
+        "new_material_review"
+      ],
+      "fixture_cases": []
+    },
+    {
+      "requirement_id": "4.E.alias_capacity",
+      "requirement": "旧alias感度をexactから分離保存し、5/14truncationと既存token/capacityを保持、完成時の品質を推定しない。",
+      "status": "REUSED_AND_NEW_ADDENDUM",
+      "evidence_ids": [
+        "old_material_note",
+        "old_e_taxonomy",
+        "old_capacity",
+        "capacity_svg",
+        "capacity_receipt"
+      ],
+      "fixture_cases": [
+        "test_alias_is_static_narrow_and_never_replaces_strict_values"
+      ]
+    },
+    {
+      "requirement_id": "5.visibility_limit",
+      "requirement": "6vs12・camera/image存在を監査し、未検証投影/遮蔽では不可視割合やvisible/silhouette値を作らない。",
+      "status": "NOT_VALIDATED_NO_VISIBILITY_CONCLUSION",
+      "evidence_ids": [
+        "old_image_audit",
+        "old_visibility",
+        "old_visibility_note",
+        "source_gate"
+      ],
+      "fixture_cases": []
+    },
+    {
+      "requirement_id": "6.proxy_robustness",
+      "requirement": "旧180proxy/360分析を維持し、長さ・サイズ・密度・provider・層・component ablationの1350posthoc結果を別に再利用する。",
+      "status": "REUSED_COMPLETED_ANALYSIS",
+      "evidence_ids": [
+        "old_proxy",
+        "old_proxy_note",
+        "old_phase5"
+      ],
+      "fixture_cases": [
+        "test_complete1350_grid_and_n_do_not_count_builders_independently",
+        "test_leave_one_component_out_keeps_frozen_values_and_missing_propagates"
+      ],
+      "interpretation_or_limit": "GT属性忠実度proxyであり元caption-quality RQ2や独立因果寄与の検証ではない。grouped CVは任意、実施なし。"
+    },
+    {
+      "requirement_id": "7.fail_closed_safety",
+      "requirement": "safe path/asset hash・read-only locks・Python network blockade・前後監査・途中出力保全・exit監査完了後だけPASSを保証する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "pipeline",
+        "final_tests",
+        "pipeline_review",
+        "stage4",
+        "final_integrity",
+        "validation_summary",
+        "public_tests"
+      ],
+      "fixture_cases": [
+        "test_run_phase0_holds_network_and_locks_until_exit_audit",
+        "test_run_source_mismatch_creates_no_output",
+        "test_run_exit_process_audit_failure_never_writes_pass",
+        "test_run_never_overwrites_partial_stage"
+      ]
+    },
+    {
+      "requirement_id": "7.final_report",
+      "requirement": "日本語README/研究判断に独立N/pairs/CI/失敗/結論変更/制限/最小の未実行追加実験を記載する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "readme",
+        "decision"
+      ],
+      "fixture_cases": []
+    },
+    {
+      "requirement_id": "7.git_save",
+      "requirement": "専用branchへ10MiB以下のcode/aggregate/docs/図のみ保存しraw response/GT/keys/privateURLを含めずremote一致/main不変/cleanを確認する。",
+      "status": "REPORT_SAVE_POLICY_VERIFIED_FINAL_COMMIT_CHECK_EXTERNAL",
+      "evidence_ids": [
+        "final_integrity",
+        "publication_receipt"
+      ],
+      "fixture_cases": [],
+      "interpretation_or_limit": "小さな保存allowlistと原本不変を検証。自己参照commit SHAはこの文書に埋めず、含有Git commitとrootのpush後照合・完了報告を参照する。ここでは未実施の最終commit一致やcleanを先取りしない。"
+    },
+    {
+      "requirement_id": "8.order_and_stop",
+      "requirement": "旧実験は再実行せず、新source→fixture/pilot1→pilot10→full→summaryを順に実行。不一致時STOP・visibility制限を明示する。",
+      "status": "COMPLETED_NEW_ADDENDUM",
+      "evidence_ids": [
+        "new_spec",
+        "stage0",
+        "stage1",
+        "stage2",
+        "stage3",
+        "stage4",
+        "final_tests"
+      ],
+      "fixture_cases": [
+        "test_previous_enforces_order_products_and_binding",
+        "test_previous_rejects_receipt_with_wrong_stage_number"
+      ]
     }
   ],
+  "requirement_counts": {
+    "total": 81,
+    "section1_5_explicit_subrequirements": 50,
+    "by_disposition": {
+      "COMPLETED_NEW_ADDENDUM": 64,
+      "REUSED_COMPLETED_AUDIT": 5,
+      "OPTIONAL_NOT_PERFORMED": 1,
+      "NOT_VALIDATED_NO_VISIBILITY_CONCLUSION": 2,
+      "REUSED_COMPLETED_BASELINES": 3,
+      "REUSED_AND_NEW_ADDENDUM": 2,
+      "REUSED_COMPLETED_ANALYSIS": 3,
+      "REPORT_SAVE_POLICY_VERIFIED_FINAL_COMMIT_CHECK_EXTERNAL": 1
+    }
+  },
+  "named_requested_artifacts": [
+    {
+      "requested_name": "PROTOCOL_AUDIT.md",
+      "evidence_ids": [
+        "old_protocol"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "view_and_generation_request_audit.csv",
+      "evidence_ids": [
+        "old_view_csv"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "view_and_generation_request_audit.json",
+      "evidence_ids": [
+        "old_view_json"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "SOURCE_BINDINGS.json",
+      "evidence_ids": [
+        "source_bindings",
+        "old_bindings"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "posthoc_specification.md",
+      "evidence_ids": [
+        "new_spec"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "METRIC_AUDIT_JA.md",
+      "evidence_ids": [
+        "new_audit"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "METRIC_SPEC.md",
+      "evidence_ids": [
+        "metric_spec"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "METRIC_REGISTRY.json",
+      "evidence_ids": [
+        "registry"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "new_metric_values_960.csv",
+      "evidence_ids": [
+        "full_csv"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "new_metric_values_960.json",
+      "evidence_ids": [
+        "full_rows"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "metric_denominators.csv",
+      "evidence_ids": [
+        "denominators"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "metric_baselines_paired.csv",
+      "evidence_ids": [
+        "paired"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "metric_counterexamples.md",
+      "evidence_ids": [
+        "metric_counterexamples"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "metric_qa_report.json",
+      "evidence_ids": [
+        "qa"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "geometry_diagnostics.png",
+      "evidence_ids": [],
+      "disposition": "OPTIONAL_NOT_CREATED",
+      "condition_or_limit": "必要なら、という任意出力。数値診断表と固定E容量SVGを保存。論文用図の作成はしない。"
+    },
+    {
+      "requested_name": "baseline_predictions_manifest.json",
+      "evidence_ids": [
+        "old_baselines_manifest"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "baseline_per_building.csv",
+      "evidence_ids": [
+        "old_baseline_csv"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "baseline_matched_deltas.csv",
+      "evidence_ids": [
+        "old_baseline_deltas"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "BASELINE_INTERPRETATION_JA.md",
+      "evidence_ids": [
+        "old_baseline_note"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "description_builder_matched.csv",
+      "evidence_ids": [
+        "old_factors"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "description_builder_confounds.json",
+      "evidence_ids": [
+        "old_factor_confounds"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "FACTOR_INTERPRETATION_JA.md",
+      "evidence_ids": [
+        "old_factor_note"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "E_material_confusion.csv",
+      "evidence_ids": [
+        "old_e_confusion"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "E_error_taxonomy.json",
+      "evidence_ids": [
+        "old_e_taxonomy"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "E_capacity_diagnostics.csv",
+      "evidence_ids": [
+        "old_capacity"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "MATERIAL_VALIDITY_JA.md",
+      "evidence_ids": [
+        "old_material_note"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "image_request_view_audit.csv",
+      "evidence_ids": [
+        "old_image_audit"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "VISIBILITY_FEASIBILITY.json",
+      "evidence_ids": [
+        "old_visibility"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "VISIBILITY_LIMITATIONS_JA.md",
+      "evidence_ids": [
+        "old_visibility_note"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "proxy_robustness.csv",
+      "evidence_ids": [
+        "old_proxy"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "PROXY_VALIDITY_JA.md",
+      "evidence_ids": [
+        "old_proxy_note"
+      ],
+      "disposition": "REUSED_IMMUTABLE_COMPLETED_GOAL010"
+    },
+    {
+      "requested_name": "visibility_region_metrics.csv",
+      "evidence_ids": [
+        "old_visibility",
+        "old_visibility_note"
+      ],
+      "disposition": "CONDITIONAL_NOT_PRODUCED",
+      "condition_or_limit": "投影・遮蔽の再現検証が成立していないためNOT_VALIDATED。値を捏造しない。"
+    },
+    {
+      "requested_name": "README.md",
+      "evidence_ids": [
+        "readme"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    },
+    {
+      "requested_name": "RESEARCH_DECISION_JA.md",
+      "evidence_ids": [
+        "decision"
+      ],
+      "disposition": "NEW_ADDENDUM_OUTPUT"
+    }
+  ],
+  "evidence_catalog": {
+    "new_spec": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/posthoc_specification.md",
+      "bytes": 7924,
+      "sha256": "b8a09c380a220a3002c9877efa58ce3b31198f5f9854d80c7eb1fb34c8abb0f6"
+    },
+    "metric_spec": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/METRIC_SPEC.md",
+      "bytes": 12267,
+      "sha256": "c33ebe48b960a99711875edccc1760273df244297da661d9e9689cfaa9426ecf"
+    },
+    "stats_spec": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/STATS_SPEC.md",
+      "bytes": 10950,
+      "sha256": "cd482ab203a28a211e6eed3eb05ec14da00100e71e79d2e0456f4ed17e66908d"
+    },
+    "registry": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/METRIC_REGISTRY.json",
+      "bytes": 92710,
+      "sha256": "a413910ececffa02b1d98da0694cd556933c690945dc116432ad0ed9371980a0"
+    },
+    "new_audit": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/METRIC_AUDIT_JA.md",
+      "bytes": 13985,
+      "sha256": "f40da368d780c26931317606c3ecd5e4d97aea38dd1277cf6d2502b2e3585eb7"
+    },
+    "environment": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/execution_environment.json",
+      "bytes": 940,
+      "sha256": "caf4c8858e11479889586186f05ddc1ad0422704a01510c22ede2ef854b56181"
+    },
+    "initial_audit": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/initial_audit.json",
+      "bytes": 661,
+      "sha256": "26807046fb9061599b68086a94646c8bbc40378b63c9e8d6ed59cf149bd13bb9"
+    },
+    "metric_counterexamples": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/metric_counterexamples.md",
+      "bytes": 1873,
+      "sha256": "6180fe47ed5d5529d19ba28fc3fd5538a9be3670c2d9b35e308e085bfe172d47"
+    },
+    "counterexample_json": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/fixture_counterexamples.json",
+      "bytes": 80202,
+      "sha256": "af8fc9d53729c5223476b5713f83bb97682a6987ba8ca25258ab9be288644f32"
+    },
+    "final_tests": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+      "bytes": 54388,
+      "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+    },
+    "pipeline_review": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/pipeline_fixture_review.json",
+      "bytes": 3383,
+      "sha256": "2e132a31628898b8dcb5bf0e978cb88af262f1168f203e269cb759acee349559"
+    },
+    "readme": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/README.md",
+      "bytes": 12585,
+      "sha256": "1d9bbddedba0801808cbbf54c5bc4637e3b7f45364dd46235fa9619bc1b13c2e"
+    },
+    "decision": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/RESEARCH_DECISION_JA.md",
+      "bytes": 8030,
+      "sha256": "3d1ea44d90669f45e2908eaa55b116f9d00ebae727a19fe521c1602fec993887"
+    },
+    "final_integrity": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/final_integrity_audit.json",
+      "bytes": 3746,
+      "sha256": "75fd5030b2032cb0b6db282edd4ce787a01d1a7ad180621237eb7d175315dcb2"
+    },
+    "old_manifest": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/MANIFEST.json",
+      "bytes": 21155,
+      "sha256": "dcad6f41f991425063c239798fec9b8d3bec2c0474fde5f901205a67d1432d7f"
+    },
+    "old_drafts": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/existing_drafts_readonly_verification.json",
+      "bytes": 7611,
+      "sha256": "d844326d53a4f323cbe23c3a6ac37c608e8e01b8887d3642933e26a2b4ce1204"
+    },
+    "old_protocol": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/PROTOCOL_AUDIT.md",
+      "bytes": 2462,
+      "sha256": "06dab3e8a9a9aea83fefff2e214781444d37259b61b42a12b99e53753b1580b4"
+    },
+    "old_protocol_manifest": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/PROTOCOL_MANIFEST.json",
+      "bytes": 3227,
+      "sha256": "42d5285b0d8ed03c5ba87d7f4cfd7232973e781e49881a15193f925bc5c7b6e2"
+    },
+    "old_protocol_note": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/PROTOCOL_INTERPRETATION_JA.md",
+      "bytes": 7061,
+      "sha256": "a96d31878ef35d6e9b99d8078a85bd1bc873443a992a9df53f83695f6e542db6"
+    },
+    "old_protocol_supplement": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/PROTOCOL_EVALUATION_SUPPLEMENT_JA.md",
+      "bytes": 1875,
+      "sha256": "5057d89d5493cefc2de327f0252a87a306768f1aa5a86c30627af5d17a80318b"
+    },
+    "old_bindings": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/SOURCE_BINDINGS.json",
+      "bytes": 1838715,
+      "sha256": "cf6f1002328a2665cff12355bb4e7f3fee5ef105e820c504b49e870083caf3d7"
+    },
+    "old_view_json": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/view_and_generation_request_audit.json",
+      "bytes": 2518866,
+      "sha256": "34aa34534ded18be41a09a6b4e37f3194f361a5b9f4605eea373d59973b81987"
+    },
+    "old_view_csv": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/view_and_generation_request_audit.csv",
+      "bytes": 1318803,
+      "sha256": "3026439064f86354d7a03b5a7509296b7caa31d248c55f27ed40366a44933dff"
+    },
+    "old_image_audit": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase0_protocol/image_request_view_audit.csv",
+      "bytes": 491935,
+      "sha256": "0aa37e8ea7e03a65ea971cf7b782130459f4d373ca6cc1e28fd3353a84e2ea67"
+    },
+    "old_e_spec": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_specification_receipt.json",
+      "bytes": 1661,
+      "sha256": "c52ee0bb7b354fbcedec98a1b30117aacd8c93560278fc0ad4d7ee8cb0274771"
+    },
+    "old_visibility": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase4_visibility/VISIBILITY_FEASIBILITY.json",
+      "bytes": 2307,
+      "sha256": "d23cb693692c9677abd1afcd9884930f56edf88a33d748e5a3362c4c25c2ccc8"
+    },
+    "old_visibility_note": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase4_visibility/VISIBILITY_LIMITATIONS_JA.md",
+      "bytes": 1194,
+      "sha256": "b6d6059d1a4d432c8fb040a7cd3fac0078444b17164a4762e7350c0f268b8369"
+    },
+    "old_baselines_manifest": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/baseline_predictions_manifest.json",
+      "bytes": 761749,
+      "sha256": "500c3eb33087ef9683496407ba69c67616a86c3c5e1849c60ad6d179a8cce678"
+    },
+    "old_baseline_manifest": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/BASELINE_MANIFEST.json",
+      "bytes": 1943,
+      "sha256": "06d00a70548e9a8d1183046f6467329dac32076992c50999f159af33bb8ee6d3"
+    },
+    "old_baseline_results": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/baseline_per_building.json",
+      "bytes": 2600058,
+      "sha256": "db6cd7a5e2b3eb60204ea58ad224b257b696bdb21c279656eceaeb39982ecbc3"
+    },
+    "old_baseline_csv": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/baseline_per_building.csv",
+      "bytes": 1784231,
+      "sha256": "e8f297875c75081233f36df4f2f7b01ea83c722d69cbd55112e8a4e4e60b07bb"
+    },
+    "old_baseline_deltas": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/baseline_matched_deltas.csv",
+      "bytes": 28339,
+      "sha256": "f585fcad6dd8a6acbd7388d2585b6fc221b2d61c09e3512d64ae1c53cb6f6adf"
+    },
+    "old_baseline_note": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/BASELINE_INTERPRETATION_JA.md",
+      "bytes": 10193,
+      "sha256": "f7a391168b237f0e5eb06ad5ca61c1a2981a458e1cf91c823768c9fd9fa0d4a2"
+    },
+    "old_baseline_pairs": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/baseline_pairs.csv",
+      "bytes": 1877743,
+      "sha256": "805caa8237479a32b2bc10a9c4b285ef45ecb149ef0ba26c2cebe42c9c52725c"
+    },
+    "old_baseline_sizes": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase1_baselines/baseline_size_distributions.csv",
+      "bytes": 10865,
+      "sha256": "4dd54e779ac7347d7ec372baca788f0a5d0e76da7035e65f2ee99bf894a296d7"
+    },
+    "old_factors": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase2_factors/description_builder_matched.csv",
+      "bytes": 15030,
+      "sha256": "fc01597b13e5f1e513d6f5d69bf3680e5c2b08c916da728f5841505eb933df82"
+    },
+    "old_factor_confounds": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase2_factors/description_builder_confounds.json",
+      "bytes": 2279,
+      "sha256": "263ece2198fc8c11a705bd9b18c853ac1e21417f5bae3d87a34a34c514e2c415"
+    },
+    "old_factor_note": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase2_factors/FACTOR_INTERPRETATION_JA.md",
+      "bytes": 772,
+      "sha256": "f8722ffb8f65af1ebbc9313d53e5ba9974749b82dd78204c2e765279238428ef"
+    },
+    "old_e_control": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_reference_controls.json",
+      "bytes": 134188,
+      "sha256": "b2fc29c5bf2b35c0956c8da02fa686e318855e6f8e55ed887ba4a307ad9e95a7"
+    },
+    "old_e_manifest": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_AUDIT_MANIFEST.json",
+      "bytes": 87193,
+      "sha256": "e31876cffe2b4f2100f5d25e452fdcaad11eac9c216ad109f1e0127ccbfd31fc"
+    },
+    "old_e_confusion": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_material_confusion.csv",
+      "bytes": 612293,
+      "sha256": "eb34a06d675cea69c29267d548276e3a854d98483c3be261b6e163780b37b9d9"
+    },
+    "old_e_taxonomy": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_error_taxonomy.json",
+      "bytes": 649103,
+      "sha256": "813d2e85600cf7e14111c233d49c3a0357f31d622837d406f1f107ba82be522d"
+    },
+    "old_material_note": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/MATERIAL_VALIDITY_JA.md",
+      "bytes": 3986,
+      "sha256": "faccb9aab161048fde68e1ed9b1658d8be07c8763368bf9b06e00f08a43a7e87"
+    },
+    "old_capacity": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase3_exact_oracle/E_capacity_diagnostics.csv",
+      "bytes": 65117,
+      "sha256": "42572d5cec48c754736fe05a1542c0d85393dceee6b38ac8883d415f0b355124"
+    },
+    "old_proxy": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase5_robustness/proxy_robustness.csv",
+      "bytes": 1999866,
+      "sha256": "cf05593759ca188f40adc86b304d697e87ed4390389d88cd130f5c0b0ecdbb07"
+    },
+    "old_proxy_note": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/phase5_robustness/PROXY_VALIDITY_JA.md",
+      "bytes": 1081,
+      "sha256": "962e91e7340eb1d85c4fd1813a1b250e8e10d66c995d086e59d8a0eb329ddfca"
+    },
+    "old_final_tests": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+      "bytes": 45121,
+      "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+    },
+    "old_phase0": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE0_RECEIPT.json",
+      "bytes": 4305,
+      "sha256": "ba21f8db48030eb2410af20ce88dbc1a7e777d86ace7828237646955bf721bbe"
+    },
+    "old_phase1": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE1_RECEIPT.json",
+      "bytes": 114580,
+      "sha256": "91c2574fdfa259a3699e68be9bbf47d48735ca3a97a2f3353300a48daf048302"
+    },
+    "old_phase2": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE2_RECEIPT.json",
+      "bytes": 116009,
+      "sha256": "1977c24314255fc69debbe43435fff1581c19218c9f0c4f22242c1780f7cbf7d"
+    },
+    "old_phase3": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE3_RECEIPT.json",
+      "bytes": 117623,
+      "sha256": "9c7cfdc748cad599cee8f1e4cfa6c56a3da06213bbb401eb6a4f113236c3f037"
+    },
+    "old_phase4": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE4_RECEIPT.json",
+      "bytes": 118425,
+      "sha256": "a00e42af5c32529cbb4628298b1e860fd7dc7ae528c357f0ce1c58791d5910c5"
+    },
+    "old_phase5": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE5_RECEIPT.json",
+      "bytes": 119322,
+      "sha256": "b3d25473e1009e4c0ff08af3034dcc227d9bb32e735e7fe6c3c3eae0d0db18ee"
+    },
+    "old_core": {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/core.py",
+      "bytes": 14857,
+      "sha256": "3c240becec802957a52e9f23c8d494644cc59fa86498b60527e132ff1a40c268"
+    },
+    "old_alignment": {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/alignment.py",
+      "bytes": 14317,
+      "sha256": "d64e062fd9ad7ad73cc8a7a3e2a5355cdd0a1c17766876bffd09cb85b02ee446"
+    },
+    "old_baselines_code": {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/baselines.py",
+      "bytes": 22029,
+      "sha256": "348590cb0e5fda7f4f04e0d6384b6945fb7839d9968bead1b61b1e288bbdb462"
+    },
+    "pipeline": {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/pipeline.py",
+      "bytes": 32168,
+      "sha256": "130de9f29ddfd2da5ff16699eea3b02defe762bb5ae7f6b0e3f7f7fddcac03cc"
+    },
+    "engine": {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/metrics.py",
+      "bytes": 29121,
+      "sha256": "703c55bd12c99950a66b468101bcbd99a11c1d713ba270a316d31c560d90d123"
+    },
+    "independent": {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/independent.py",
+      "bytes": 4655,
+      "sha256": "b10aaef73725b8b5e099182c5e03aecd961c972614964c16cc0bd90368a5d35e"
+    },
+    "statistics": {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/statistics.py",
+      "bytes": 27616,
+      "sha256": "0d30e02b4e3936aaea07ad562efb3472f8bfc2534afa0df9bc3951427da666e6"
+    },
+    "source_bindings": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/0_source/SOURCE_BINDINGS.json",
+      "bytes": 1425985,
+      "sha256": "06fb41dd7504aa7e85d32e1e5c6d45d603ae8e619cd02530d342101106f1d6c0"
+    },
+    "source_gate": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/0_source/source_gate.json",
+      "bytes": 2891,
+      "sha256": "b0719d4d23f7a02a796e69d45677bd54e54a0213207f211bfc8409bfb253e96c"
+    },
+    "full_rows": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/3_full/new_metric_values_960.json",
+      "bytes": 10910284,
+      "sha256": "1d15032a58f9eacb272b87eb2a425fc283266d9ec596e283aa2dddb3d97ae54e"
+    },
+    "full_csv": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/3_full/new_metric_values_960.csv",
+      "bytes": 4085694,
+      "sha256": "95baf840befca4703070f545a3fdb1ea6fa0980818780b51af44012ee027e6ed"
+    },
+    "baseline_rows": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/3_full/baseline_new_metric_values.json",
+      "bytes": 5431593,
+      "sha256": "8a7a15a6125ccbc5ba46b18c5fa7efa65063091ff743c00c5c969da90f047d05"
+    },
+    "material_details": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/3_full/material_and_geometry_details.json",
+      "bytes": 7960857,
+      "sha256": "3ee74d3fcb45032cbabe834fc33b23285cc3aa9cd043cd99abc8eb7ae5a7c3db"
+    },
+    "displacement": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/3_full/alignment_displacement.csv",
+      "bytes": 363313,
+      "sha256": "36a632ba4dc8289b0443f34a42a177a7f5cb623efb9c2327e7e0e21366b982d7"
+    },
+    "confusion": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/3_full/exact_material_confusion.csv",
+      "bytes": 3501445,
+      "sha256": "ec745a03551d861f21ea4674732e8f12676271a18fbf79cf2fbc70b39dec7bea"
+    },
+    "material_recalls": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/3_full/gt_material_frequency_recall.csv",
+      "bytes": 1004696,
+      "sha256": "bfb8755326093ec741e5aecc1a899d0c221e74c2ffd1479d5854a7a5f335f8f1"
+    },
+    "qa": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/3_full/metric_qa_report.json",
+      "bytes": 3256,
+      "sha256": "df2f5606d71094d5aa3e18da94c09f6924a7dea90d59c45a592ed1d85b5003f7"
+    },
+    "denominators": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary/metric_denominators.csv",
+      "bytes": 512973,
+      "sha256": "02da993ccde25a604097f7aad67d1fef24e20e600256307beb23d8eb3a636937"
+    },
+    "paired": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary/metric_baselines_paired.csv",
+      "bytes": 1377709,
+      "sha256": "dcf553a1e774fa79b872ab68c4ac4ff17d897acbee600297fde89ba1203ad06e"
+    },
+    "metric_pairs": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary/metric_pairs.json",
+      "bytes": 326452663,
+      "sha256": "8d3aa05d6b251276e56634b45dadbb42f2c48eb319f6a08b38534c2e0c2a7d45"
+    },
+    "exclusions": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary/metric_exclusions.csv",
+      "bytes": 1490596,
+      "sha256": "b4d0312a92d53d8b2706450cc1cc88e1ed69d4c1601def5c99e94ffdb44a3334"
+    },
+    "reliability": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary/reliability_outcomes.csv",
+      "bytes": 1355,
+      "sha256": "7b6cb61db9581b38ad66723aa108ed0ef3379db9d03798c0f252ec9ec4f8ba75"
+    },
+    "reversals": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary/metric_rank_reversals.csv",
+      "bytes": 521228,
+      "sha256": "c611206e3b3463a4795d524de76bc10223b987f051c97d6d254b522b9cfa918b"
+    },
+    "stats_metadata": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary/statistics_metadata.json",
+      "bytes": 5549,
+      "sha256": "260c9fc4508f1e503fe6736a1a63b8352755f1bbfd02bce058c5305160fd9f0b"
+    },
+    "capacity_svg": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary/E_capacity_diagnostic.svg",
+      "bytes": 30232,
+      "sha256": "8207222becc8e75fbacbe469a25c8c9f02157b62156103289a8b82c861123cd9"
+    },
+    "capacity_receipt": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary/E_capacity_plot_receipt.json",
+      "bytes": 463,
+      "sha256": "f03f901e58187c1a21a1fcc6cc441a1e81d8d0d01a70a03d55028a9f85825d8d"
+    },
+    "stage0": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/0_source_RECEIPT.json",
+      "bytes": 5691,
+      "sha256": "c636b2033378ed9d64f284617476b6bd559e79376fafbe6d55a65dfa66d925f7"
+    },
+    "stage1": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/1_pilot1_RECEIPT.json",
+      "bytes": 5499,
+      "sha256": "e25c1794809fa53bff5f89e6685f8fac1ecbd81a7e96df98d664866195e3b30d"
+    },
+    "stage2": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/2_pilot10_RECEIPT.json",
+      "bytes": 7724,
+      "sha256": "165313daf93deb96abf7832ec3b888360f91f0f3f8221a79ac2b91606bf6b584"
+    },
+    "stage3": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/3_full_RECEIPT.json",
+      "bytes": 11522,
+      "sha256": "16e2bcbc08c196ecd42f722548267eb8ba9d1196311b95a4881e1f6db49fab64"
+    },
+    "stage4": {
+      "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary_RECEIPT.json",
+      "bytes": 11220,
+      "sha256": "8db54ceab4fe674be40cd1ce985f7e2c5cd02f542bc34822eb7fac2af4367eb2"
+    },
+    "new_material_review": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/MATERIAL_GEOMETRY_FINDINGS_JA.md",
+      "bytes": 13226,
+      "sha256": "a825019da443aa536e7b6cf346efa24e381c586c048749b08e2fdb395174130c"
+    },
+    "new_drafts": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/existing_drafts_readonly_verification.json",
+      "bytes": 7917,
+      "sha256": "2fa9ddb0d23ffdf761081dc1b8ab7c175a998246a6383a6da759785bc97bb983"
+    },
+    "baseline_findings": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/BASELINE_METRIC_FINDINGS_JA.md",
+      "bytes": 24385,
+      "sha256": "98dafd584617ff152289333855f5c3462b6e5c0b259a403ae272e0a4abce2d89"
+    },
+    "publication_receipt": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/analysis/PUBLIC_COPY_RECEIPT.json",
+      "bytes": 21573,
+      "sha256": "a60156d69046cc8319c7112f84a94cbe705138093cdf494a1da1465d647e0223"
+    },
+    "validation_summary": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/validation_summary.json",
+      "bytes": 2322,
+      "sha256": "d0f43bd65b6197f24fc0bba10d87df61dd4d4355b3ab2d03368e7dcffaed5e99"
+    },
+    "public_tests": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/publication_fixture_final.junit.xml",
+      "bytes": 1417,
+      "sha256": "db9f86d0286d27e8015d9a9dee2eaf39fa0b2af8ac783b400759588bb3be72f3"
+    },
+    "baseline_numerical_review": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/baseline_numerical_review.json",
+      "bytes": 4289,
+      "sha256": "418364d6f7805ad966faa70e1c382c86ae704433cc806a59bba49f4f9dce0992"
+    },
+    "preflight_recovery": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/execution_preflight_recovery.json",
+      "bytes": 1128,
+      "sha256": "0fd567d706de6d3554e5994744c116d41ac7f3b5420062701e890695f5159482"
+    }
+  },
+  "fixture_case_evidence": {
+    "test_601030_selection_replay_and_independent_unit": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_protocol.py",
+          "bytes": 12667,
+          "sha256": "f63c56980fc0626750381ddd1cfd446ae018132bc93c3c22f0e4bb8f7a0d488a"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_actual_six_vs_candidate_twelve_and_timestamp_semantics": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_protocol.py",
+          "bytes": 12667,
+          "sha256": "f63c56980fc0626750381ddd1cfd446ae018132bc93c3c22f0e4bb8f7a0d488a"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_alias_is_static_narrow_and_never_replaces_strict_values": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_exact_oracle.py",
+          "bytes": 17188,
+          "sha256": "8f857320217e4a004d044bec40d0a03bf4f3dff868a28d596bd4bd2fbd1d625d"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_alignment_can_leave_input_coordinate_box_without_clipping": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_all36_paired_cells_and_direction_without_pvalues": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_factors.py",
+          "bytes": 7543,
+          "sha256": "c3c283db7a4371d0959e5840e4082ab88c346ac0d7c1fbe113c75cbec71a4e4d"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_all80_comparisons_are_paired_and_equal_building_weight_with_explicit_missingness": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_baselines.py",
+          "bytes": 15492,
+          "sha256": "7c8d8d10fe9841a2dfc5befd604f9801ca674a75a5f37c2f1509907de08569ae"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        },
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_all_metadata_is_not_projection_validation": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_protocol.py",
+          "bytes": 12667,
+          "sha256": "f63c56980fc0626750381ddd1cfd446ae018132bc93c3c22f0e4bb8f7a0d488a"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_asymmetric_yxz_storage_maps_to_negative_world_origin": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/tests/test_geometry_data.py",
+          "bytes": 4237,
+          "sha256": "9c174bb42c57329f94af56026ab58ae29da3ebebf8e903fa1b5c86d5dfbbf06f"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_baseline_missing_is_never_zero_and_both_reasons_preserved": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_statistics.py",
+          "bytes": 15364,
+          "sha256": "f0fbbb8e34eee530a6fef3043b4e3ddecc90d7cd4b38a5c93d7173b0b9e31c3e"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_bootstrap_matches_explicit_planned_cluster_draws_with_missing_building": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_statistics.py",
+          "bytes": 15364,
+          "sha256": "f0fbbb8e34eee530a6fef3043b4e3ddecc90d7cd4b38a5c93d7173b0b9e31c3e"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_capacity_rejects_changed_count_or_output_cap": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_capacity_uses_observed120_and_never_rewrites_csv": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_cavity_boundary_counts_internal_walls": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_column_union_and_common_top_have_different_denominators": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_common_valid_and_known_failure0_are_separate_and_unbounded_not_imputed": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_statistics.py",
+          "bytes": 15364,
+          "sha256": "f0fbbb8e34eee530a6fef3043b4e3ddecc90d7cd4b38a5c93d7173b0b9e31c3e"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_common_valid_excludes_known_failures_and_unknowns_without_zero": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_factors.py",
+          "bytes": 7543,
+          "sha256": "c3c283db7a4371d0959e5840e4082ab88c346ac0d7c1fbe113c75cbec71a4e4d"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_complete1350_grid_and_n_do_not_count_builders_independently": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_robustness.py",
+          "bytes": 9648,
+          "sha256": "dbc37eefb4f5641c281a763fe446ec9a92af55e5249d65751891520a447ace5c"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_complete180_request_counts_and_budget_confound": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_protocol.py",
+          "bytes": 12667,
+          "sha256": "f63c56980fc0626750381ddd1cfd446ae018132bc93c3c22f0e4bb8f7a0d488a"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_complete_grid_reliability_denominators_and_no_artificial_material": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_statistics.py",
+          "bytes": 15364,
+          "sha256": "f0fbbb8e34eee530a6fef3043b4e3ddecc90d7cd4b38a5c93d7173b0b9e31c3e"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_complete_synthetic_stage_preserves16_slots8_baselines_and_sources": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_count_and_planned_scratch_caps_fail_closed": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_dense_and_offset_methods_agree": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_independent.py",
+          "bytes": 1519,
+          "sha256": "73b258c301c0a7c105c6e2bce7bf6616c702640177c0a5f5afa0dcbd4fb39e03"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_empty_conventions_preserve_denominator_nulls": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_empty_negative_floor_and_column_union": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_independent.py",
+          "bytes": 1519,
+          "sha256": "73b258c301c0a7c105c6e2bce7bf6616c702640177c0a5f5afa0dcbd4fb39e03"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_equal_building_mean_avoids_counting_more_provider_pairs_as_more_buildings": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_statistics.py",
+          "bytes": 15364,
+          "sha256": "f0fbbb8e34eee530a6fef3043b4e3ddecc90d7cd4b38a5c93d7173b0b9e31c3e"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_exact_material_ids_and_conditional_zero_without_aliases": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_filled_box_vs_shell_surface_saturates_but_occupancy_differs": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_fixed_saved_shift_recovers_without_reoptimization": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_frozen_strict_translation_selected_shift_and_exact_overlap_metrics_match": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_generation_freezes_every_prediction_before_gt_evaluation": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_baselines.py",
+          "bytes": 15492,
+          "sha256": "7c8d8d10fe9841a2dfc5befd604f9801ca674a75a5f37c2f1509907de08569ae"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        },
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_hash_binds_material_coordinates_shift_and_is_insertion_order_independent": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_identical_grids_exact_scores_and_identity": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_inclusive_negative_box_and_shell_unique_voxels": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_baselines.py",
+          "bytes": 15492,
+          "sha256": "7c8d8d10fe9841a2dfc5befd604f9801ca674a75a5f37c2f1509907de08569ae"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        },
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_independent_checks_bind_original_strict_metrics_and_fixed_shift": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_independent_checks_cannot_relabel_worse_shift_as_strict": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_independent_checks_detect_corrupted_metric_families": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_independent_checks_detect_displacement_corruption": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_leakage_boundary_signatures_do_not_accept_gt": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_baselines.py",
+          "bytes": 15492,
+          "sha256": "7c8d8d10fe9841a2dfc5befd604f9801ca674a75a5f37c2f1509907de08569ae"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        },
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_leave_one_component_out_keeps_frozen_values_and_missing_propagates": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_robustness.py",
+          "bytes": 9648,
+          "sha256": "dbc37eefb4f5641c281a763fe446ec9a92af55e5249d65751891520a447ace5c"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_macro_material_recall_and_confusion_include_missing_and_extra": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_material_set_identity_can_hide_complete_spatial_swap": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_exact_oracle.py",
+          "bytes": 17188,
+          "sha256": "8f857320217e4a004d044bec40d0a03bf4f3dff868a28d596bd4bd2fbd1d625d"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_negative_floor_and_fixed_half_anchor": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_nested_resource_budget_preserves_outer_remaining_time": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_no_intersection_conditional_null_even_successful_input": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_one_or_two_cell_width_all_occupied_are_boundary": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_optional_resource_and_dependency_failures_are_null_with_reason": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_original_invalid_dimensions_never_filled_from_gt": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_baselines.py",
+          "bytes": 15492,
+          "sha256": "7c8d8d10fe9841a2dfc5befd604f9801ca674a75a5f37c2f1509907de08569ae"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        },
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_pilot_selection_uses_bound60_not_full100_cohort": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_previous_enforces_order_products_and_binding": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_previous_rejects_receipt_with_wrong_stage_number": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_previous_rejects_wrong_pilot_or_full_scope": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_previous_retains_every_prior_receipt_hash": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_random_surface_matches_bruteforce": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_independent.py",
+          "bytes": 1519,
+          "sha256": "73b258c301c0a7c105c6e2bce7bf6616c702640177c0a5f5afa0dcbd4fb39e03"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_random_tiny_sets_match_brute_surface_floor_components_columns_and_frozen": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_rank_reversal_uses_exact_pair_intersection_and_direction": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_statistics.py",
+          "bytes": 15364,
+          "sha256": "f0fbbb8e34eee530a6fef3043b4e3ddecc90d7cd4b38a5c93d7173b0b9e31c3e"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_reference_control_preserves_padding_negative_origin_and_yxz": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_exact_oracle.py",
+          "bytes": 17188,
+          "sha256": "8f857320217e4a004d044bec40d0a03bf4f3dff868a28d596bd4bd2fbd1d625d"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_registry_cannot_enable_artificial_material_or_invalid_failure0": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_statistics.py",
+          "bytes": 15364,
+          "sha256": "f0fbbb8e34eee530a6fef3043b4e3ddecc90d7cd4b38a5c93d7173b0b9e31c3e"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_registry_is_complete_and_failure0_strictly_bounded_and_material_baselines_excluded": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_request_settings_are_not_default_imputed": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_protocol.py",
+          "bytes": 12667,
+          "sha256": "f63c56980fc0626750381ddd1cfd446ae018132bc93c3c22f0e4bb8f7a0d488a"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_resource_limited_stage_keeps_nulls_and_cannot_claim_all_checks": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_run_exit_process_audit_failure_never_writes_pass": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_run_never_overwrites_partial_stage": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_run_phase0_holds_network_and_locks_until_exit_audit": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_run_source_mismatch_creates_no_output": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_six_neighbor_components_do_not_connect_corner_touching_cells": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_size_distributions_keep_all48_cells_and_average_within_building": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_baselines.py",
+          "bytes": 15492,
+          "sha256": "7c8d8d10fe9841a2dfc5befd604f9801ca674a75a5f37c2f1509907de08569ae"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        },
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_slot_source_rejects_provenance_corruption": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_pipeline.py",
+          "bytes": 24052,
+          "sha256": "3c7e600e341ebfe857c92d88f4836a309c6b82708e8304188aaad987ed8beafe"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_source_design_and_metric_corruption_fails_closed": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_statistics.py",
+          "bytes": 15364,
+          "sha256": "f0fbbb8e34eee530a6fef3043b4e3ddecc90d7cd4b38a5c93d7173b0b9e31c3e"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_successful_empty_precision_and_resource_null_stay_null_in_failure0": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_statistics.py",
+          "bytes": 15364,
+          "sha256": "f0fbbb8e34eee530a6fef3043b4e3ddecc90d7cd4b38a5c93d7173b0b9e31c3e"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_surface_euclidean_inclusive_threshold": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_metrics.py",
+          "bytes": 19267,
+          "sha256": "2acb1d331eea888488825b5b65edc5eeba0a8d5b0345e030ccb29296700f7095"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_tie_uses_world_L1_then_XYZ_and_never_material_favorable_shift": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/tests/test_alignment.py",
+          "bytes": 10962,
+          "sha256": "5921c9bebb3cd474c8c851948284bd7f53588a3e8d07cd1a4fb3c8c8f1a17a89"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        },
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_unknown942_style_missing_never_imputed_even_with_failure_label": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010v2/tests/test_statistics.py",
+          "bytes": 15364,
+          "sha256": "f0fbbb8e34eee530a6fef3043b4e3ddecc90d7cd4b38a5c93d7173b0b9e31c3e"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010v2/cpu_fixture_final.junit.xml",
+          "bytes": 54388,
+          "sha256": "c33aa2e24f8fa79922eb4de78f998c51d9abe66131efe07c7d529ee6dafbe621"
+        }
+      ]
+    },
+    "test_unknown_outcome_is_null_never_zero_or_reference_success": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_exact_oracle.py",
+          "bytes": 17188,
+          "sha256": "8f857320217e4a004d044bec40d0a03bf4f3dff868a28d596bd4bd2fbd1d625d"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    },
+    "test_visibility_gate_stops_on_modified_protocol_product": {
+      "source_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/analysis/goal010/tests/test_protocol.py",
+          "bytes": 12667,
+          "sha256": "f63c56980fc0626750381ddd1cfd446ae018132bc93c3c22f0e4bb8f7a0d488a"
+        }
+      ],
+      "passing_junit_files": [
+        {
+          "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/cpu_fixture_final.junit.xml",
+          "bytes": 45121,
+          "sha256": "bfcab957da12abac99ca50d6957f5ce076a8a0c680f8792c93985de096963f72"
+        }
+      ]
+    }
+  },
+  "fixture_evidence_summary": {
+    "referenced_functions": 74,
+    "all_have_source_and_passing_execution": true,
+    "new_unique_total_tests_including_publication": 330,
+    "publication_tests": 8,
+    "validation_summary_evidence_id": "validation_summary",
+    "new_combined_suite_tests": 322,
+    "new_combined_suite_failures": 0,
+    "new_combined_suite_errors": 0,
+    "new_combined_suite_skips": 0,
+    "legacy_case_proofs_reused_not_added_to_new_total": true
+  },
+  "stage_proofs": [
+    {
+      "stage": 0,
+      "receipt": {
+        "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/0_source_RECEIPT.json",
+        "bytes": 5691,
+        "sha256": "c636b2033378ed9d64f284617476b6bd559e79376fafbe6d55a65dfa66d925f7"
+      },
+      "performance": {
+        "cpu_seconds": 19.816408955,
+        "elapsed_seconds": 19.859361046983395,
+        "free_disk_bytes": 69270253568,
+        "max_rss_kib": 413024
+      },
+      "source_lock_count": 14,
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "receipt": {
+        "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/1_pilot1_RECEIPT.json",
+        "bytes": 5499,
+        "sha256": "e25c1794809fa53bff5f89e6685f8fac1ecbd81a7e96df98d664866195e3b30d"
+      },
+      "performance": {
+        "cpu_seconds": 41.961910782,
+        "elapsed_seconds": 42.01140331896022,
+        "free_disk_bytes": 69269221376,
+        "max_rss_kib": 413024
+      },
+      "source_lock_count": 14,
+      "status": "PASS"
+    },
+    {
+      "stage": 2,
+      "receipt": {
+        "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/2_pilot10_RECEIPT.json",
+        "bytes": 7724,
+        "sha256": "165313daf93deb96abf7832ec3b888360f91f0f3f8221a79ac2b91606bf6b584"
+      },
+      "performance": {
+        "cpu_seconds": 234.719504154,
+        "elapsed_seconds": 234.8980838030111,
+        "free_disk_bytes": 69268553728,
+        "max_rss_kib": 413024
+      },
+      "source_lock_count": 14,
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "receipt": {
+        "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/3_full_RECEIPT.json",
+        "bytes": 11522,
+        "sha256": "16e2bcbc08c196ecd42f722548267eb8ba9d1196311b95a4881e1f6db49fab64"
+      },
+      "performance": {
+        "cpu_seconds": 1268.42650058,
+        "elapsed_seconds": 1268.7047568359994,
+        "free_disk_bytes": 69232926720,
+        "max_rss_kib": 413024
+      },
+      "source_lock_count": 14,
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "receipt": {
+        "path": "/root/minecraft-runs/goal010-v2-20261016T233143Z/4_summary_RECEIPT.json",
+        "bytes": 11220,
+        "sha256": "8db54ceab4fe674be40cd1ce985f7e2c5cd02f542bc34822eb7fac2af4367eb2"
+      },
+      "performance": {
+        "cpu_seconds": 52.221197045,
+        "elapsed_seconds": 52.30001435795566,
+        "free_disk_bytes": 68603584512,
+        "max_rss_kib": 413024
+      },
+      "source_lock_count": 14,
+      "status": "PASS"
+    }
+  ],
+  "actual_scope": {
+    "independent_buildings": 60,
+    "fixed_slots": 960,
+    "valid_originals_computed": 934,
+    "identified_model_output_failures": 25,
+    "operational_unknown_slots": 1,
+    "not_evaluable_rows_retained": 26,
+    "baseline_predictions_computed": 480,
+    "optional_metric_checks_unavailable": 0,
+    "paired_summary_cells": 2320,
+    "candidate_paired_rows": 111360,
+    "denominator_rows": 2640,
+    "rank_reversal_diagnostic_rows": 1560,
+    "candidate_pair_exclusions": 644,
+    "public_products_verified": 29,
+    "new_actual_metric_calculations_completed": true
+  },
+  "legacy_phase_evidence": [
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE0_RECEIPT.json",
+      "bytes": 4305,
+      "sha256": "ba21f8db48030eb2410af20ce88dbc1a7e777d86ace7828237646955bf721bbe"
+    },
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE1_RECEIPT.json",
+      "bytes": 114580,
+      "sha256": "91c2574fdfa259a3699e68be9bbf47d48735ca3a97a2f3353300a48daf048302"
+    },
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE2_RECEIPT.json",
+      "bytes": 116009,
+      "sha256": "1977c24314255fc69debbe43435fff1581c19218c9f0c4f22242c1780f7cbf7d"
+    },
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE3_RECEIPT.json",
+      "bytes": 117623,
+      "sha256": "9c7cfdc748cad599cee8f1e4cfa6c56a3da06213bbb401eb6a4f113236c3f037"
+    },
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE4_RECEIPT.json",
+      "bytes": 118425,
+      "sha256": "a00e42af5c32529cbb4628298b1e860fd7dc7ae528c357f0ce1c58791d5910c5"
+    },
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal010/analysis/PHASE5_RECEIPT.json",
+      "bytes": 119322,
+      "sha256": "b3d25473e1009e4c0ff08af3034dcc227d9bb32e735e7fe6c3c3eae0d0db18ee"
+    }
+  ],
+  "legacy_reverification": {
+    "old_manifest_report_products": 67,
+    "old_manifest_code_files": 20,
+    "old_phase_receipts": 6,
+    "old_baseline_predictions": 480,
+    "method": "Every new stage called frozen source_guard loaders and verify_old before/after; verified product bytes/SHA and saved actions/arrays without rerunning legacy analyses."
+  },
+  "optional_or_conditional_limits": {
+    "connectivity26": "OPTIONAL_NOT_PERFORMED",
+    "geometry_diagnostics_png": "OPTIONAL_NOT_CREATED",
+    "multiscale_k8": "COMPUTED_DIAGNOSTIC_ONLY",
+    "rendered_visibility": "NOT_VALIDATED_NO_VISIBILITY_CONCLUSION",
+    "visible_face_material_and_silhouette": "NO_NUMERICAL_RESULTS_WITHOUT_CALIBRATION"
+  },
+  "final_git_save_note": "No self-referential final SHA. The containing Git commit, root post-push verification and completion response record final remote/main/clean checks after this document is saved.",
   "research_api_requests_sent": 0,
-  "status": "PRE_COMPUTATION_COVERAGE_DRAFT",
+  "model_queries": 0,
   "token_count_api_requests": 0,
-  "version": "goal010v2_requirement_coverage_draft_v1"
+  "api_key_queries": 0,
+  "human_experiments": 0,
+  "new_dependency_acquisitions": 0,
+  "old_artifacts_changed": false,
+  "OS_level_isolation_guaranteed": false
 }

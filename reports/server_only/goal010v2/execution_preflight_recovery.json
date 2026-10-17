@@ -1,0 +1,14 @@
+{
+  "status": "PRE_COMPUTATION_ARGUMENT_REJECTED_AND_CORRECTED",
+  "stage": 3,
+  "failed_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 .venv-server-v2-20261013/bin/python -B -m offline_evaluation.analysis.goal010v2.pipeline --stage 3 --run-root /root/minecraft-runs/goal010-v2-20261016T233143Z --code-commit d862a55134bba85a6a5e9677bcc6e94c719ca1aa --specification-commit d862a55134bba85a6e9677bcc6e94c719ca1aa",
+  "exit_code": 1,
+  "actual_error": "ValueError: explicit full code/specification commit required",
+  "cause": "Assistant omitted one hexadecimal character from the specification commit CLI argument. The full-SHA guard rejected the argument before stage STARTED or computation.",
+  "failed_attempt_created_stage_artifacts": false,
+  "sandbox_startup_error": false,
+  "corrected_specification_commit": "d862a55134bba85a6a5e9677bcc6e94c719ca1aa",
+  "frozen_code_or_specification_changes": 0,
+  "research_api_requests_sent": 0,
+  "completion_evidence": "See analysis/3_full_RECEIPT.json for the separately completed corrected command; this preflight record itself does not claim completion."
+}
