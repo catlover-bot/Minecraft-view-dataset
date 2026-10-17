@@ -1,0 +1,100 @@
+{
+  "schema": "goal015_independent_input_cost_review_v1",
+  "selected_scene_ids": [
+    "buildings_100_v4_building_082",
+    "buildings_100_v4_building_003",
+    "buildings_100_v4_building_092",
+    "buildings_100_v4_building_025",
+    "buildings_100_v4_building_042",
+    "buildings_100_v4_building_052",
+    "buildings_100_v4_building_013",
+    "buildings_100_v4_building_024",
+    "buildings_100_v4_building_033",
+    "buildings_100_v4_building_047"
+  ],
+  "selection_uses_outcomes": false,
+  "selection_rule_commit": "9c32add47cb724b1afc01924aa047cbd5619258a",
+  "selection_commit_precedes_selection": true,
+  "five_saved_strata_two_each": true,
+  "presentation_rounds_each_contain_five_strata": true,
+  "source_descriptions_verified": 10,
+  "summary_and_typed_field_pairs_verified": 10,
+  "condition_inputs_verified": 20,
+  "unique_provider_payloads_verified": 40,
+  "scheduled_calls_verified": 80,
+  "paired_blocks_verified": 40,
+  "payload_repeats_byte_identical": true,
+  "actual_wire_bytes_and_hashes_verified": 80,
+  "public_manifests_match_private_and_exclude_original_summary_text": true,
+  "complete_official_doc_hashes_verified": 11,
+  "full80_maximum_reservation_usd": "21.175040",
+  "historical_reference80_usd": "1.098149219",
+  "tokenizer_absence_verified": true,
+  "new_api_calls": 0,
+  "key_queries": 0,
+  "GT_voxel_contents_used": false,
+  "status": "PASS",
+  "created_at_utc": "2026-10-17T17:29:03.098989+00:00",
+  "source_files_hashed": 93,
+  "core_arithmetic_evidence": {
+    "path": "/root/minecraft-runs/goal015-20261017T170546Z/tmp/INDEPENDENT_INPUT_COST_CORE.json",
+    "bytes": 23791,
+    "sha256": "181676c9be2fede165a15a4d43dc4c698949d88dba6a5d7d3341b6084f81fc10"
+  },
+  "reviewed_code": [
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/experiments/goal015/planning.py",
+      "bytes": 8541,
+      "sha256": "82a7a84f46135f115df1e98b6a8e5e396ef1b0154085ea3cab5e7ce0dc5cdf2b"
+    },
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/experiments/goal015/adapter.py",
+      "bytes": 11186,
+      "sha256": "5b7fb52532fec4dcf5feb0c5f211dddf537a42d2eff59072b7546e5815ef834f"
+    },
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/experiments/goal015/cli.py",
+      "bytes": 3628,
+      "sha256": "bda803aa36857fc3cadb077257abc8fd7740ba2217e34c47ba36e92bec544f60"
+    },
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/experiments/goal015/pricing.py",
+      "bytes": 4527,
+      "sha256": "6634d9ab830c036283e20324a120c01e2913dfc272d9e43ac88eabe48d89d4fa"
+    },
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/experiments/goal015/runtime.py",
+      "bytes": 26968,
+      "sha256": "03ef0c5d138d9448f6f3b987a2c947e2dd4ca2f97d0a72db06f320f0afeafeda"
+    }
+  ],
+  "code_review_findings": [
+    {
+      "issue": "pricing capture allowed traversal/symlink writes before late path validation",
+      "resolution": "path_safe(output_dir) now runs before directory creation, HTTP GET, or file writes",
+      "status": "FIXED_REVIEWED"
+    },
+    {
+      "issue": "runtime direct pricing evidence could omit original sources or use stale per-document evidence",
+      "resolution": "runtime now requires original URL multiset, HTTP200, exact saved document hashes, UTC per-document freshness and summary timestamp no later than oldest document",
+      "status": "FIXED_REVIEWED"
+    }
+  ],
+  "pricing_capture_seal_review": {
+    "get_only_official_https_hosts": true,
+    "redirects_restricted_to_official_hosts": true,
+    "bounded_document_bytes": true,
+    "capture_not_marked_semantically_reviewed": true,
+    "seal_requires_same_contract_and_review_note": true,
+    "seal_requires_all_original_sources_and_fresh_hash_bound_documents": true,
+    "seal_new_output_exclusive_with_safe_path": true,
+    "runtime_independently_checks_refresh_evidence": true,
+    "changed_contract_requires_new_explicit_approval": true
+  },
+  "remaining_blockers": [],
+  "validation_mode": "Independent arithmetic/hash checks plus read-only code review; no research API, key lookup, model call, inference, or full old-tree scan; owner runs code fixtures",
+  "core_check_cpu_seconds": 0.197010401,
+  "core_check_elapsed_seconds": 0.20188997802324593,
+  "final_receipt_cpu_seconds": 0.0015398399999999937,
+  "final_receipt_elapsed_seconds": 0.0015455139800906181
+}

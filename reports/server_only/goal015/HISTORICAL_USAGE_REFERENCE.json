@@ -1,0 +1,4138 @@
+{
+  "schema": "goal015_historical_usage_reference_v1",
+  "created_at_utc": "2026-10-17T17:22:09.980504+00:00",
+  "status": "PASS",
+  "method": "Inspect all991 historical attempt records; include every known-usage attempt whose saved input has description_model=openai and condition=O, irrespective of success/failure/retry. Match input_id+Builder using saved schedules or old inputs, rehash source descriptors and every eligible known raw response, verify raw usage equals ledger usage, conservatively reprice at standard rates without cache discounts. Multiply mean per Builder by40 solely as a reference scenario.",
+  "limitation": "Old O input includes metadata and uses old raw serialization. New S/F input/output lengths are unknown. Earlier smoke14 also used a different prompt/output protocol and cap16384; native resmoke16/fixed961 use cap32768 and frozen builder prompt. Do not treat reference extrapolation as prediction, guarantee, approval, invoice or new results.",
+  "historical_attempts_inspected": 991,
+  "fixed_scope_attempts": 961,
+  "prior_smoke_attempts": 30,
+  "eligible_attempts": 129,
+  "eligible_known_usage_attempts": 128,
+  "eligible_unknown_usage_attempts": 1,
+  "raw_usage_hashes_verified": 128,
+  "historical_budget_accounting_usd": "21.56083625",
+  "historical_accounting_reference_only": true,
+  "standard_rates_per_million": {
+    "openai": {
+      "input_usd_per_million": ".25",
+      "output_usd_per_million": "2"
+    },
+    "anthropic": {
+      "input_usd_per_million": "1",
+      "output_usd_per_million": "5"
+    }
+  },
+  "summary": {
+    "all_991_history": {
+      "openai": {
+        "eligible_attempts": 65,
+        "known_usage_attempts": 64,
+        "unknown_usage_attempts": 1,
+        "independent_scenes": 62,
+        "input_tokens_sum": 105891,
+        "output_tokens_sum": 511347,
+        "standard_cost_sum_usd": "1.04916675",
+        "mean_cost_per_attempt_usd": "0.01639323046875",
+        "reference_40_calls_usd": "0.655729219",
+        "model_output_successes": 60,
+        "known_failed_attempts": 4,
+        "included_retries": 1
+      },
+      "anthropic": {
+        "eligible_attempts": 64,
+        "known_usage_attempts": 64,
+        "unknown_usage_attempts": 0,
+        "independent_scenes": 62,
+        "input_tokens_sum": 153677,
+        "output_tokens_sum": 110839,
+        "standard_cost_sum_usd": "0.707872",
+        "mean_cost_per_attempt_usd": "0.0110605",
+        "reference_40_calls_usd": "0.442420000",
+        "model_output_successes": 61,
+        "known_failed_attempts": 3,
+        "included_retries": 1
+      }
+    },
+    "fixed_scope_961": {
+      "openai": {
+        "eligible_attempts": 61,
+        "known_usage_attempts": 60,
+        "unknown_usage_attempts": 1,
+        "independent_scenes": 60,
+        "input_tokens_sum": 99883,
+        "output_tokens_sum": 478464,
+        "standard_cost_sum_usd": "0.98189875",
+        "mean_cost_per_attempt_usd": "0.01636497916666666666666666667",
+        "reference_40_calls_usd": "0.654599167",
+        "model_output_successes": 57,
+        "known_failed_attempts": 3,
+        "included_retries": 1
+      },
+      "anthropic": {
+        "eligible_attempts": 60,
+        "known_usage_attempts": 60,
+        "unknown_usage_attempts": 0,
+        "independent_scenes": 60,
+        "input_tokens_sum": 145884,
+        "output_tokens_sum": 103571,
+        "standard_cost_sum_usd": "0.663739",
+        "mean_cost_per_attempt_usd": "0.01106231666666666666666666667",
+        "reference_40_calls_usd": "0.442492667",
+        "model_output_successes": 59,
+        "known_failed_attempts": 1,
+        "included_retries": 0
+      }
+    },
+    "prior_resmoke16": {
+      "openai": {
+        "eligible_attempts": 2,
+        "known_usage_attempts": 2,
+        "unknown_usage_attempts": 0,
+        "independent_scenes": 2,
+        "input_tokens_sum": 3352,
+        "output_tokens_sum": 14364,
+        "standard_cost_sum_usd": "0.029566",
+        "mean_cost_per_attempt_usd": "0.014783",
+        "reference_40_calls_usd": "0.591320000",
+        "model_output_successes": 1,
+        "known_failed_attempts": 1,
+        "included_retries": 0
+      },
+      "anthropic": {
+        "eligible_attempts": 2,
+        "known_usage_attempts": 2,
+        "unknown_usage_attempts": 0,
+        "independent_scenes": 2,
+        "input_tokens_sum": 4865,
+        "output_tokens_sum": 2846,
+        "standard_cost_sum_usd": "0.019095",
+        "mean_cost_per_attempt_usd": "0.0095475",
+        "reference_40_calls_usd": "0.381900000",
+        "model_output_successes": 2,
+        "known_failed_attempts": 0,
+        "included_retries": 0
+      }
+    },
+    "prior_smoke14": {
+      "openai": {
+        "eligible_attempts": 2,
+        "known_usage_attempts": 2,
+        "unknown_usage_attempts": 0,
+        "independent_scenes": 2,
+        "input_tokens_sum": 2656,
+        "output_tokens_sum": 18519,
+        "standard_cost_sum_usd": "0.037702",
+        "mean_cost_per_attempt_usd": "0.018851",
+        "reference_40_calls_usd": "0.754040000",
+        "model_output_successes": 2,
+        "known_failed_attempts": 0,
+        "included_retries": 0
+      },
+      "anthropic": {
+        "eligible_attempts": 2,
+        "known_usage_attempts": 2,
+        "unknown_usage_attempts": 0,
+        "independent_scenes": 1,
+        "input_tokens_sum": 2928,
+        "output_tokens_sum": 4422,
+        "standard_cost_sum_usd": "0.025038",
+        "mean_cost_per_attempt_usd": "0.012519",
+        "reference_40_calls_usd": "0.500760000",
+        "model_output_successes": 0,
+        "known_failed_attempts": 2,
+        "included_retries": 1
+      }
+    },
+    "same_native_prompt_cap": {
+      "openai": {
+        "eligible_attempts": 63,
+        "known_usage_attempts": 62,
+        "unknown_usage_attempts": 1,
+        "independent_scenes": 62,
+        "input_tokens_sum": 103235,
+        "output_tokens_sum": 492828,
+        "standard_cost_sum_usd": "1.01146475",
+        "mean_cost_per_attempt_usd": "0.01631394758064516129032258065",
+        "reference_40_calls_usd": "0.652557904",
+        "model_output_successes": 58,
+        "known_failed_attempts": 4,
+        "included_retries": 1
+      },
+      "anthropic": {
+        "eligible_attempts": 62,
+        "known_usage_attempts": 62,
+        "unknown_usage_attempts": 0,
+        "independent_scenes": 62,
+        "input_tokens_sum": 150749,
+        "output_tokens_sum": 106417,
+        "standard_cost_sum_usd": "0.682834",
+        "mean_cost_per_attempt_usd": "0.01101345161290322580645161290",
+        "reference_40_calls_usd": "0.440538065",
+        "model_output_successes": 61,
+        "known_failed_attempts": 1,
+        "included_retries": 0
+      }
+    }
+  },
+  "eligible_attempts_audit": [
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_033",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "71a8c957a2f84779b0e671efe634b5f4",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1647,
+      "output_tokens": 6247,
+      "repriced_standard_cost_usd": "0.01290575",
+      "historical_budget_charge_usd": "0.01290575",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/71a8c957a2f84779b0e671efe634b5f4/raw.json",
+        "bytes": 65204,
+        "sha256": "36edf2d98d4ea39fd5c326fe9c2e258e96a9a14a541b6368ae080630c14b3edd"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "9c282907ffbfa54f2d671e0d40b776784c6b02cb6156175e722b82657db238dd",
+      "input_source_sha256": "dc549ff64e3ffc58707f5287d83050cd639ade0f9cc4e6a000780db8560466fd"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_033",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "230c8b359cff48ed8ffe76f38208beb8",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2402,
+      "output_tokens": 1972,
+      "repriced_standard_cost_usd": "0.012262",
+      "historical_budget_charge_usd": "0.012262",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/230c8b359cff48ed8ffe76f38208beb8/raw.json",
+        "bytes": 4798,
+        "sha256": "cb86c1d071a8c8d3f62f01e306d8fdd2a965eb2d8c038663d342f56a1d75f4be"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "9c282907ffbfa54f2d671e0d40b776784c6b02cb6156175e722b82657db238dd",
+      "input_source_sha256": "dc549ff64e3ffc58707f5287d83050cd639ade0f9cc4e6a000780db8560466fd"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_065",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "d986618a93034879a7e7d3a0fe56a0ed",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1671,
+      "output_tokens": 8297,
+      "repriced_standard_cost_usd": "0.01701175",
+      "historical_budget_charge_usd": "0.01701175",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/d986618a93034879a7e7d3a0fe56a0ed/raw.json",
+        "bytes": 86659,
+        "sha256": "9522c7757865b8725411d74671c3b9fb043181ebd9031234065f32637542fa91"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "35cc68fcd58746f0df91f06c4eb7d524015588c09540332ce727dbd97d91a1c1",
+      "input_source_sha256": "aca48c89df87598436956e2e3a75b04cecbc5b919ea7033ffcb715515e5d8940"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_065",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "5934a01d359e45cf99b6b9543457b081",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2454,
+      "output_tokens": 1074,
+      "repriced_standard_cost_usd": "0.007824",
+      "historical_budget_charge_usd": "0.007824",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/5934a01d359e45cf99b6b9543457b081/raw.json",
+        "bytes": 2758,
+        "sha256": "3de3aa76dae7cac5d36f7c0a61b03bdce730d176773506edbf6322f9f4c38527"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "35cc68fcd58746f0df91f06c4eb7d524015588c09540332ce727dbd97d91a1c1",
+      "input_source_sha256": "aca48c89df87598436956e2e3a75b04cecbc5b919ea7033ffcb715515e5d8940"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_061",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "197be8cb82544960a63d8233cce0968e",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1719,
+      "output_tokens": 8531,
+      "repriced_standard_cost_usd": "0.01749175",
+      "historical_budget_charge_usd": "0.01749175",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/197be8cb82544960a63d8233cce0968e/raw.json",
+        "bytes": 84276,
+        "sha256": "7e9e373f7774a8c97bff9d877ffd692e8ae547bd763716dee2b70ea65db44871"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "ccbeff6b020f6c75215262189ee820abdd1c08f8bf6babf1d0394aa0c5077cef",
+      "input_source_sha256": "71668275e0cfd73de8bbeb06bc6ec3fe1602c937d9ed5457b27ee8251f9615b9"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_061",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "8b3733425af4433e91f4ddc1ac6a8a54",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2503,
+      "output_tokens": 1454,
+      "repriced_standard_cost_usd": "0.009773",
+      "historical_budget_charge_usd": "0.009773",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/8b3733425af4433e91f4ddc1ac6a8a54/raw.json",
+        "bytes": 4248,
+        "sha256": "293ce3235303b6f07ee427e9952be45aa04a6ba58e5d52bd3d8e285f4f82e2bd"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "ccbeff6b020f6c75215262189ee820abdd1c08f8bf6babf1d0394aa0c5077cef",
+      "input_source_sha256": "71668275e0cfd73de8bbeb06bc6ec3fe1602c937d9ed5457b27ee8251f9615b9"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_094",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "3a8f5038f9c34593b815b83afa882a50",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1676,
+      "output_tokens": 8885,
+      "repriced_standard_cost_usd": "0.018189",
+      "historical_budget_charge_usd": "0.018189",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/3a8f5038f9c34593b815b83afa882a50/raw.json",
+        "bytes": 83367,
+        "sha256": "260b47ae8f48c0442d03e677fa6d811fd392af8291ece785ebb9f1a80736194d"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "e9f3f29038be520df5f12398060364586194c5d6aa1e4fc8db2db8ce3b24e109",
+      "input_source_sha256": "294e2aa23fb79c5362077656a5433aeae681546ba2421beef053bee957e49517"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_094",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "2bd26c13bfad4535b8b7f0dd2ee94f51",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2445,
+      "output_tokens": 2836,
+      "repriced_standard_cost_usd": "0.016625",
+      "historical_budget_charge_usd": "0.016625",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/2bd26c13bfad4535b8b7f0dd2ee94f51/raw.json",
+        "bytes": 6502,
+        "sha256": "d7b6ea887eea534f7d77acbac5b8cf4bc76b0e9fd719975d24dc35de5f447336"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "e9f3f29038be520df5f12398060364586194c5d6aa1e4fc8db2db8ce3b24e109",
+      "input_source_sha256": "294e2aa23fb79c5362077656a5433aeae681546ba2421beef053bee957e49517"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_049",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "b0229cf9d20345e8aed61e3662c74869",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1671,
+      "output_tokens": 7407,
+      "repriced_standard_cost_usd": "0.01523175",
+      "historical_budget_charge_usd": "0.01523175",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b0229cf9d20345e8aed61e3662c74869/raw.json",
+        "bytes": 75174,
+        "sha256": "f62e10914d5210d86611b6454557384edb8e8eb43b6041d36c36aac8d57ebf53"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "50e781478e05ec64b9e801bf1c8fd3333d62a498b0520a657b87e8136e348341",
+      "input_source_sha256": "c7da18a6d11746172640bbf59829d2e4dc0c23111f06de76e4baa7c114ea919b"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_049",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "7fa13a66c02a484bace526a3d231db82",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2443,
+      "output_tokens": 1636,
+      "repriced_standard_cost_usd": "0.010623",
+      "historical_budget_charge_usd": "0.010623",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7fa13a66c02a484bace526a3d231db82/raw.json",
+        "bytes": 4790,
+        "sha256": "1bbeb6f486bd06c33e4e81d3586a07869328363403c6b99c6f56c43c3ed61acd"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "50e781478e05ec64b9e801bf1c8fd3333d62a498b0520a657b87e8136e348341",
+      "input_source_sha256": "c7da18a6d11746172640bbf59829d2e4dc0c23111f06de76e4baa7c114ea919b"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_039",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "4bf943ba17794b61bcc9cafc70172afb",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1635,
+      "output_tokens": 6706,
+      "repriced_standard_cost_usd": "0.01382075",
+      "historical_budget_charge_usd": "0.01382075",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4bf943ba17794b61bcc9cafc70172afb/raw.json",
+        "bytes": 67824,
+        "sha256": "c16994cfc5591b291b400c174f4bf9187db8c1ebbefeb642eb07885fbe49d15a"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "1a9db04f8f2ecbee81a65bb333f9395454f70318d14d3ba0099c8ee0b873b705",
+      "input_source_sha256": "6e224530cdba5ba0bbb4157eeb74c0155d55c7b83834106b9448e379068bc808"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_039",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "a6e81377fb4549b4a8de0610efb45847",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2396,
+      "output_tokens": 1843,
+      "repriced_standard_cost_usd": "0.011611",
+      "historical_budget_charge_usd": "0.011611",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/a6e81377fb4549b4a8de0610efb45847/raw.json",
+        "bytes": 5264,
+        "sha256": "c6d55f7a66b0258297cdb45c72765ebd65f727d0119ea991d4ee35f5fd1a5706"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "1a9db04f8f2ecbee81a65bb333f9395454f70318d14d3ba0099c8ee0b873b705",
+      "input_source_sha256": "6e224530cdba5ba0bbb4157eeb74c0155d55c7b83834106b9448e379068bc808"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_041",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "776a87294dad4c96be65c4c6e45f9837",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1594,
+      "output_tokens": 7034,
+      "repriced_standard_cost_usd": "0.0144665",
+      "historical_budget_charge_usd": "0.0144665",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/776a87294dad4c96be65c4c6e45f9837/raw.json",
+        "bytes": 75098,
+        "sha256": "9a10387319adf5e545d5ad2591c4f316c7e8fcfe1c51ad60ff35f67610f1f7f6"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "57365d40920640027f40d01690529b67e0b20c785adf3d06165c11d112128702",
+      "input_source_sha256": "cc52896af3d3ffe8c8924a5bdf58a5ed0331798769e24d1743a5c000d58aa8cd"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_041",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "86391fac8014410684774fad5447bf51",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2349,
+      "output_tokens": 1210,
+      "repriced_standard_cost_usd": "0.008399",
+      "historical_budget_charge_usd": "0.008399",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/86391fac8014410684774fad5447bf51/raw.json",
+        "bytes": 2940,
+        "sha256": "8cd6a0ce7f1973393153d222768a9003f5366d0e2b289e0474dd9c1093b7e4cf"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "57365d40920640027f40d01690529b67e0b20c785adf3d06165c11d112128702",
+      "input_source_sha256": "cc52896af3d3ffe8c8924a5bdf58a5ed0331798769e24d1743a5c000d58aa8cd"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_042",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "e9bf936d6bac4fd383ea15380fa31a85",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1608,
+      "output_tokens": 9249,
+      "repriced_standard_cost_usd": "0.0189",
+      "historical_budget_charge_usd": "0.0189",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/e9bf936d6bac4fd383ea15380fa31a85/raw.json",
+        "bytes": 86952,
+        "sha256": "52d216456d7da097f1a45062df870f96dd56534387ae0d01a352c3ee4ad54dea"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "108467714d1511a14f62792d3b6a98e593ae446e64ba27f8cf326b6dca1cdfc7",
+      "input_source_sha256": "f60270f603f4e89eab24e999731e5e5c75e6f2dc92c3fe683cd9e5ce277b4b35"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_042",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "2243dc7689804e4a935e3811434d9d28",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2380,
+      "output_tokens": 1386,
+      "repriced_standard_cost_usd": "0.00931",
+      "historical_budget_charge_usd": "0.00931",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/2243dc7689804e4a935e3811434d9d28/raw.json",
+        "bytes": 3800,
+        "sha256": "a57a783a428b0107cbdddcf066e0c7f3ccd15379889074445e527b6c8bf79781"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "108467714d1511a14f62792d3b6a98e593ae446e64ba27f8cf326b6dca1cdfc7",
+      "input_source_sha256": "f60270f603f4e89eab24e999731e5e5c75e6f2dc92c3fe683cd9e5ce277b4b35"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_090",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "61fbbf347ce04630b584fdf5e5a83515",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1708,
+      "output_tokens": 6924,
+      "repriced_standard_cost_usd": "0.014275",
+      "historical_budget_charge_usd": "0.014275",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/61fbbf347ce04630b584fdf5e5a83515/raw.json",
+        "bytes": 75984,
+        "sha256": "d21b653e504be6b28d68ef5e8beed0b9fcf05f0110f1d755e2b157c5cdff2775"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "a1ba553d6e937f8886d7e3b697cee2294872b6c3ceefaed58ac4686ff6263cf7",
+      "input_source_sha256": "93575231435baa79cdfb8d209b3a9b7a8f5163f748e124db43a95b4a19286144"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_090",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "0a0acce11e5a4035bd928f2f8439a7d9",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2481,
+      "output_tokens": 814,
+      "repriced_standard_cost_usd": "0.006551",
+      "historical_budget_charge_usd": "0.006551",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/0a0acce11e5a4035bd928f2f8439a7d9/raw.json",
+        "bytes": 2450,
+        "sha256": "b48a7d7a544de6dcc36e2bc000a20b342b0ad755d67c5c5fdd0ead609639dfa0"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "a1ba553d6e937f8886d7e3b697cee2294872b6c3ceefaed58ac4686ff6263cf7",
+      "input_source_sha256": "93575231435baa79cdfb8d209b3a9b7a8f5163f748e124db43a95b4a19286144"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_077",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "36e0761bd2924907a383cb37a5e7bb5b",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1595,
+      "output_tokens": 6337,
+      "repriced_standard_cost_usd": "0.01307275",
+      "historical_budget_charge_usd": "0.01307275",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/36e0761bd2924907a383cb37a5e7bb5b/raw.json",
+        "bytes": 64821,
+        "sha256": "dae32ca8dabaa3017ee740ad769044ba75c423534bdf616c765ecae7b862aa98"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "b738e87579a3880d95c7a218eb6c3fd7fa4ed5e50ebfa5e4db8f63372e672ed4",
+      "input_source_sha256": "bdafe4b996bd403bb7310d845abeab8180858abc8998d596d1b865b76597f294"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_077",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "19d8073345394e31ac09ea240278c3c9",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2362,
+      "output_tokens": 2139,
+      "repriced_standard_cost_usd": "0.013057",
+      "historical_budget_charge_usd": "0.013057",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/19d8073345394e31ac09ea240278c3c9/raw.json",
+        "bytes": 5045,
+        "sha256": "37e7719215c1a845c73a3c366289ccfe1a7790cd37b3e3dd6dd81c25199cfab8"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "b738e87579a3880d95c7a218eb6c3fd7fa4ed5e50ebfa5e4db8f63372e672ed4",
+      "input_source_sha256": "bdafe4b996bd403bb7310d845abeab8180858abc8998d596d1b865b76597f294"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_082",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "48ac2c5ef66a408d865a868d2bf85654",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1560,
+      "output_tokens": 5636,
+      "repriced_standard_cost_usd": "0.011662",
+      "historical_budget_charge_usd": "0.011662",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/48ac2c5ef66a408d865a868d2bf85654/raw.json",
+        "bytes": 64805,
+        "sha256": "7b13d62314715029b049c4f006e6b62942cf78e2b6a1ef607e36ee3a022d6d5a"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "8842a1a18ff05fa214d154d86f42c002c8b5f07bb5f2bacb5cf8e693898c10f6",
+      "input_source_sha256": "008156e58085b9e0fdacc1318df1ce22b5e5910f21a05ade4bf9f024606edaec"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_082",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "fb9fed59726544bcb44a9a5853de9b62",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2307,
+      "output_tokens": 860,
+      "repriced_standard_cost_usd": "0.006607",
+      "historical_budget_charge_usd": "0.006607",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/fb9fed59726544bcb44a9a5853de9b62/raw.json",
+        "bytes": 2621,
+        "sha256": "8fbf33f1a4eaa094793bc4654699b965aa72f9a09d2e723268504b3cda1c8e7e"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "8842a1a18ff05fa214d154d86f42c002c8b5f07bb5f2bacb5cf8e693898c10f6",
+      "input_source_sha256": "008156e58085b9e0fdacc1318df1ce22b5e5910f21a05ade4bf9f024606edaec"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_093",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "8027f21b4c2446ef8d43efb41f9d312e",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1653,
+      "output_tokens": 6806,
+      "repriced_standard_cost_usd": "0.01402525",
+      "historical_budget_charge_usd": "0.01402525",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/8027f21b4c2446ef8d43efb41f9d312e/raw.json",
+        "bytes": 70392,
+        "sha256": "edfb1e8837222eda421dbb0704f77f27b19e9b87fb7224fd200aaea67d2875fb"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "a93b009058720b246a6b9670a28afa81607a3fb1100c6d2d0f22acaaf3798e55",
+      "input_source_sha256": "6220f3f51246fad7267d10b299e2ad56c49d218e5ad1a34b2178eb3a8185d1a1"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_093",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "4eebef070a3145d1aacb8830c1f16409",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2433,
+      "output_tokens": 1619,
+      "repriced_standard_cost_usd": "0.010528",
+      "historical_budget_charge_usd": "0.010528",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4eebef070a3145d1aacb8830c1f16409/raw.json",
+        "bytes": 4398,
+        "sha256": "bc4c765f0582460b840c10b449a833d17e4de6e74c6ec3eec6fe8ea147dc9f38"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "a93b009058720b246a6b9670a28afa81607a3fb1100c6d2d0f22acaaf3798e55",
+      "input_source_sha256": "6220f3f51246fad7267d10b299e2ad56c49d218e5ad1a34b2178eb3a8185d1a1"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_057",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "2e459938d3394e69b53442b011b37682",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1599,
+      "output_tokens": 8760,
+      "repriced_standard_cost_usd": "0.01791975",
+      "historical_budget_charge_usd": "0.01791975",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/2e459938d3394e69b53442b011b37682/raw.json",
+        "bytes": 84227,
+        "sha256": "e697bc60c15efdd849677206954b6d45fba15595de92f3160b377a84610c38b5"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "b96551d1cbb9567d45c3766611d1774a49bad2bc67b3a7ef0e7e3f80c4b39967",
+      "input_source_sha256": "30df0d8cbabfcc7e18e015d3629621ea2d19b3316aac8149509c26007520920e"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_057",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "4692ea95edc94dc89b0603ceca3302e5",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2349,
+      "output_tokens": 1515,
+      "repriced_standard_cost_usd": "0.009924",
+      "historical_budget_charge_usd": "0.009924",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4692ea95edc94dc89b0603ceca3302e5/raw.json",
+        "bytes": 4452,
+        "sha256": "fbaaf8b82bc8610e89c62e8377478b1b7caa18532d88cad4fe5a62bb84cf1f28"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "b96551d1cbb9567d45c3766611d1774a49bad2bc67b3a7ef0e7e3f80c4b39967",
+      "input_source_sha256": "30df0d8cbabfcc7e18e015d3629621ea2d19b3316aac8149509c26007520920e"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_059",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "7c88c8ce5ce946e0a03e49ffbd1a47a1",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1695,
+      "output_tokens": 8039,
+      "repriced_standard_cost_usd": "0.01650175",
+      "historical_budget_charge_usd": "0.01650175",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7c88c8ce5ce946e0a03e49ffbd1a47a1/raw.json",
+        "bytes": 76643,
+        "sha256": "03a64bb71c108072ff6b86a3a6553e11104d8e6991f0b14fac9830a676039a7d"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "65de7312ba2df0d4e0edc0c2479d8861e2fdaab355c22516a1e857289896af79",
+      "input_source_sha256": "a0ec1673518c009616b261600582564e35363d321b1bd66dc94cde04d0bf72ec"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_059",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "a57068758a5c43c08f5a5da61241dcc4",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2461,
+      "output_tokens": 2504,
+      "repriced_standard_cost_usd": "0.014981",
+      "historical_budget_charge_usd": "0.014981",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/a57068758a5c43c08f5a5da61241dcc4/raw.json",
+        "bytes": 7326,
+        "sha256": "42e247bf1d7c5625623b912df1149551ba6dd5eaaae0fe413153e6e32259400c"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "65de7312ba2df0d4e0edc0c2479d8861e2fdaab355c22516a1e857289896af79",
+      "input_source_sha256": "a0ec1673518c009616b261600582564e35363d321b1bd66dc94cde04d0bf72ec"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_024",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "b2e8ec3150ef4d8eb32fbe1993222f8f",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1712,
+      "output_tokens": 9484,
+      "repriced_standard_cost_usd": "0.019396",
+      "historical_budget_charge_usd": "0.019396",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b2e8ec3150ef4d8eb32fbe1993222f8f/raw.json",
+        "bytes": 87060,
+        "sha256": "47d8cfae351b06e56b86d478f1a51300a18f33f633767da30080fa4f40074951"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "32b3181724ee928b929756b1a5b5dda195fc3e37a459d59373de52ed211ff3e6",
+      "input_source_sha256": "23262187a1e20e083c38b4c2deb26a679ad691c8c402d9cf361f6a4dac386596"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_024",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "b6d5f83465904d638db13fe1142b397c",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2490,
+      "output_tokens": 2707,
+      "repriced_standard_cost_usd": "0.016025",
+      "historical_budget_charge_usd": "0.016025",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b6d5f83465904d638db13fe1142b397c/raw.json",
+        "bytes": 6727,
+        "sha256": "3584faf1eda20f553c47bd34b566a4974525d6b14c788f436bb27d99c3b41dce"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "32b3181724ee928b929756b1a5b5dda195fc3e37a459d59373de52ed211ff3e6",
+      "input_source_sha256": "23262187a1e20e083c38b4c2deb26a679ad691c8c402d9cf361f6a4dac386596"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_021",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "c9152afcf3044dccbfb860ed72f00396",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1606,
+      "output_tokens": 6887,
+      "repriced_standard_cost_usd": "0.0141755",
+      "historical_budget_charge_usd": "0.0141755",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c9152afcf3044dccbfb860ed72f00396/raw.json",
+        "bytes": 74294,
+        "sha256": "44df45a84638d5ce52a07a6d13d2dd2ade0ba0b93a9842d7523b65a8bca86359"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "b370d7c03f23eb5e289afea07d32dfd80021eeeaa2071099f5b4b313c5b2239b",
+      "input_source_sha256": "c49b8e7b9238658c339b27bce022c7b9e5809a380108cf8b0497ee2eca1878dc"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_021",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "d7bbb32f965b41f69c8821812a00c742",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2370,
+      "output_tokens": 920,
+      "repriced_standard_cost_usd": "0.00697",
+      "historical_budget_charge_usd": "0.00697",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/d7bbb32f965b41f69c8821812a00c742/raw.json",
+        "bytes": 2743,
+        "sha256": "ad3d3b2b3d39ab76af17347c0ba465f2b50b0b40e640adc13e487de13e0f7bf1"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "b370d7c03f23eb5e289afea07d32dfd80021eeeaa2071099f5b4b313c5b2239b",
+      "input_source_sha256": "c49b8e7b9238658c339b27bce022c7b9e5809a380108cf8b0497ee2eca1878dc"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_003",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "c8d15efee21c4e2780f0689cc64f5fda",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1637,
+      "output_tokens": 8726,
+      "repriced_standard_cost_usd": "0.01786125",
+      "historical_budget_charge_usd": "0.01786125",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c8d15efee21c4e2780f0689cc64f5fda/raw.json",
+        "bytes": 85670,
+        "sha256": "b9fcb2ccf18c25e3f0c81c00093cad779d6b2fa6e6af1139d1e36b933e5bf6af"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "c13c8f6ed260a2f51cb89f1ce3bee91705344f11f3ec034a8649ed092539f818",
+      "input_source_sha256": "8e60a138e9ab520a00644aedf3bf3b2ca58340b390011e7dc09ae766b9d62cc9"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_003",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "0b3bed83070649ebafb3a5e50308ff73",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2413,
+      "output_tokens": 1789,
+      "repriced_standard_cost_usd": "0.011358",
+      "historical_budget_charge_usd": "0.011358",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/0b3bed83070649ebafb3a5e50308ff73/raw.json",
+        "bytes": 5160,
+        "sha256": "0601fe8c0a064cb2c9bbdbbc1bdf520cf4884c3f489c13ef05302384372b5e73"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "c13c8f6ed260a2f51cb89f1ce3bee91705344f11f3ec034a8649ed092539f818",
+      "input_source_sha256": "8e60a138e9ab520a00644aedf3bf3b2ca58340b390011e7dc09ae766b9d62cc9"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_051",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "05521c4ec5dd48618adeeafc412fbf03",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1627,
+      "output_tokens": 8118,
+      "repriced_standard_cost_usd": "0.01664275",
+      "historical_budget_charge_usd": "0.01664275",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/05521c4ec5dd48618adeeafc412fbf03/raw.json",
+        "bytes": 81507,
+        "sha256": "80ec906f547cdb891237b7ed657656559f1bc44c6a16fc772f60cf0160f376b7"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "b38be5b9408e2d06aaf76c5a4ef7922efcaa1ad9b1bad3746780c56d5da5939e",
+      "input_source_sha256": "7bb5347a0d5a0a7c8437b3a5b94a97f327ae06b40a0fa73621ae3b9d6ab0bd37"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_051",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "7d8016bf14664170bb97d5e837eec0ac",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2399,
+      "output_tokens": 2505,
+      "repriced_standard_cost_usd": "0.014924",
+      "historical_budget_charge_usd": "0.014924",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7d8016bf14664170bb97d5e837eec0ac/raw.json",
+        "bytes": 6101,
+        "sha256": "400ac753b4dfa368b45e8b886cf4b7b21669c948ea46aa7e6cdfbedc4d1e582f"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "b38be5b9408e2d06aaf76c5a4ef7922efcaa1ad9b1bad3746780c56d5da5939e",
+      "input_source_sha256": "7bb5347a0d5a0a7c8437b3a5b94a97f327ae06b40a0fa73621ae3b9d6ab0bd37"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_013",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "5810c43736c840a3bebe0bd97d2e979d",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1755,
+      "output_tokens": 6517,
+      "repriced_standard_cost_usd": "0.01347275",
+      "historical_budget_charge_usd": "0.01347275",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/5810c43736c840a3bebe0bd97d2e979d/raw.json",
+        "bytes": 73482,
+        "sha256": "f54b21f95ee62a983f56a497146b07bb804f7912ed40c33c43e18e26c623ec8d"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "27c416a38c202cbbec4585da3346136fd15482fc150eac9297af9347c8a0d25d",
+      "input_source_sha256": "7d62aa6292b0d0d7d563b6bd9efb45d17248ae9a131b7731d20ac5013b86e177"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_013",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "f0260fd6d4ba4023ac07637660146695",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2528,
+      "output_tokens": 1049,
+      "repriced_standard_cost_usd": "0.007773",
+      "historical_budget_charge_usd": "0.007773",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/f0260fd6d4ba4023ac07637660146695/raw.json",
+        "bytes": 3193,
+        "sha256": "1120a6d2b5a301e7bdffab8510792eb75a3122b3d85582f731f9adec1c552c38"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "27c416a38c202cbbec4585da3346136fd15482fc150eac9297af9347c8a0d25d",
+      "input_source_sha256": "7d62aa6292b0d0d7d563b6bd9efb45d17248ae9a131b7731d20ac5013b86e177"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_037",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "a8abb9c8e42d40f78f6d328777cfeb8c",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1694,
+      "output_tokens": 8045,
+      "repriced_standard_cost_usd": "0.0165135",
+      "historical_budget_charge_usd": "0.0165135",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/a8abb9c8e42d40f78f6d328777cfeb8c/raw.json",
+        "bytes": 75044,
+        "sha256": "10cec8ecb7325e028fd9c47b91dd8634cd747058106c248d83b83a070d4a378d"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "fd5ba9c930a6068eb9f0c484adad77ea9591a36634fe273a2b9050698ed8de2b",
+      "input_source_sha256": "7f8942e2c9af4f85d6ef8bf20628caef8b01a5f1accc008e13824a02b10e2783"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_037",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "bd31262e38c4446dac23ce92ae8bf522",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2464,
+      "output_tokens": 1716,
+      "repriced_standard_cost_usd": "0.011044",
+      "historical_budget_charge_usd": "0.011044",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/bd31262e38c4446dac23ce92ae8bf522/raw.json",
+        "bytes": 4820,
+        "sha256": "06fa120c536f48fcc51aaf98836ce95cd557b031d5c8e94725a5534214e202b7"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "fd5ba9c930a6068eb9f0c484adad77ea9591a36634fe273a2b9050698ed8de2b",
+      "input_source_sha256": "7f8942e2c9af4f85d6ef8bf20628caef8b01a5f1accc008e13824a02b10e2783"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_006",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "930024fe682c4cb88c06418209a29bfb",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1700,
+      "output_tokens": 8142,
+      "repriced_standard_cost_usd": "0.016709",
+      "historical_budget_charge_usd": "0.016709",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/930024fe682c4cb88c06418209a29bfb/raw.json",
+        "bytes": 73817,
+        "sha256": "2492286e05bd4948e4e5cf737e6779a3b3aa8fd265996d7ee183fd6e716453a6"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "ba8cb8c3258f98002e6970be5890ae8128574f8115737b616cde6d33f699167f",
+      "input_source_sha256": "d063c622720f03381a37dd73e566ef78ad72fff8d25c022fba9c1b7e00af71f2"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_006",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "560efd830acf4eab826656d485a42e04",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2480,
+      "output_tokens": 1545,
+      "repriced_standard_cost_usd": "0.010205",
+      "historical_budget_charge_usd": "0.010205",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/560efd830acf4eab826656d485a42e04/raw.json",
+        "bytes": 4207,
+        "sha256": "a33b4e9a9c5b96d695957c7203e97ee7e28877918a026fba16c8004c923f4308"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "ba8cb8c3258f98002e6970be5890ae8128574f8115737b616cde6d33f699167f",
+      "input_source_sha256": "d063c622720f03381a37dd73e566ef78ad72fff8d25c022fba9c1b7e00af71f2"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_005",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "7077738c7af844fe8f4d5a29f5a4adbc",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1700,
+      "output_tokens": 8097,
+      "repriced_standard_cost_usd": "0.016619",
+      "historical_budget_charge_usd": "0.016619",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7077738c7af844fe8f4d5a29f5a4adbc/raw.json",
+        "bytes": 84870,
+        "sha256": "10f815b831c2475104f227e0e886905c3ed69b9c03b343bc8ebec3442b6adf7a"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "480a6a8d180f5ddaa710d4547d721798131c14fc3616f3df96ccce4e9422df99",
+      "input_source_sha256": "94322864ce2a0733974881891de49d2dc59c086b463d20491428e0d065b4aa40"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_005",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "b64294429d574f6a99424cc8ae7377bc",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2468,
+      "output_tokens": 1782,
+      "repriced_standard_cost_usd": "0.011378",
+      "historical_budget_charge_usd": "0.011378",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b64294429d574f6a99424cc8ae7377bc/raw.json",
+        "bytes": 4085,
+        "sha256": "53fff5cb0a02e034c9483cf8b403efaa8049b79906c93756c2ec69ce08e16916"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "480a6a8d180f5ddaa710d4547d721798131c14fc3616f3df96ccce4e9422df99",
+      "input_source_sha256": "94322864ce2a0733974881891de49d2dc59c086b463d20491428e0d065b4aa40"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_034",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "6912ea3b9b024f35bb270564ba26653b",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1575,
+      "output_tokens": 7740,
+      "repriced_standard_cost_usd": "0.01587375",
+      "historical_budget_charge_usd": "0.01587375",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/6912ea3b9b024f35bb270564ba26653b/raw.json",
+        "bytes": 71058,
+        "sha256": "ea2d53e84c5b17618c8bea3b22018761fbd3c5201b7f0f1afc702a66488fc674"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "db288fa9a7d2a2f65efa9a70c7356bea22cd40463884d064d2d6652a6a47e0dc",
+      "input_source_sha256": "b8be575f250238621c65ff3b0b04b04adb7591a771a4fdbc71946dd5b286560e"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_034",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "cfd0389a267343b684bba34ff78c3e81",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2320,
+      "output_tokens": 1682,
+      "repriced_standard_cost_usd": "0.01073",
+      "historical_budget_charge_usd": "0.01073",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/cfd0389a267343b684bba34ff78c3e81/raw.json",
+        "bytes": 4800,
+        "sha256": "d95e5e3569d4125d2497ef3f5e649dad5990ccec2f109a04e4b6fab61a7a163e"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "db288fa9a7d2a2f65efa9a70c7356bea22cd40463884d064d2d6652a6a47e0dc",
+      "input_source_sha256": "b8be575f250238621c65ff3b0b04b04adb7591a771a4fdbc71946dd5b286560e"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_027",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "4ac7f0ef9f604030b05df48e5575e816",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1684,
+      "output_tokens": 7238,
+      "repriced_standard_cost_usd": "0.014897",
+      "historical_budget_charge_usd": "0.014897",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4ac7f0ef9f604030b05df48e5575e816/raw.json",
+        "bytes": 76721,
+        "sha256": "4b6c61f346919c0c5cde13eb5319ae7292628bea8719414ac46d4c47d0e0b709"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "8b465cfd806e38d879318953750984556bb9d7355ec054246d5634e308fa5b68",
+      "input_source_sha256": "d20ff4ef60630f519c5c1a86774884a3125d950e02f0944f8b1aabeee8085f5d"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_027",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "93313fce533546728f26b4ec408d5096",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2461,
+      "output_tokens": 1747,
+      "repriced_standard_cost_usd": "0.011196",
+      "historical_budget_charge_usd": "0.011196",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/93313fce533546728f26b4ec408d5096/raw.json",
+        "bytes": 4691,
+        "sha256": "27429e5cbf162fb3cea36449b0e73971c305d012e815391824c0d7c2b0b8eb62"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "8b465cfd806e38d879318953750984556bb9d7355ec054246d5634e308fa5b68",
+      "input_source_sha256": "d20ff4ef60630f519c5c1a86774884a3125d950e02f0944f8b1aabeee8085f5d"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_031",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "f4633b698d0349aaadbcd30280687f3d",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1645,
+      "output_tokens": 7672,
+      "repriced_standard_cost_usd": "0.01575525",
+      "historical_budget_charge_usd": "0.01575525",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/f4633b698d0349aaadbcd30280687f3d/raw.json",
+        "bytes": 77930,
+        "sha256": "9d0d6e5df09202d2ad1e985290942f6f1071df1e43d105e028b90b0c8d83ccf1"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "c98b1ebe52491d82339929767e3ea75f5a7ee4ef94a657388666a8e585f05c64",
+      "input_source_sha256": "9b8d928238c793e29417c44ecc8067d11f2c7bde01adead090832845a7126344"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_031",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "3d8020a667924682a83b4c9ff0bdfb91",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2406,
+      "output_tokens": 1443,
+      "repriced_standard_cost_usd": "0.009621",
+      "historical_budget_charge_usd": "0.009621",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/3d8020a667924682a83b4c9ff0bdfb91/raw.json",
+        "bytes": 4101,
+        "sha256": "d925ab721ae5207d4246fec3d530e496529b13f3c068f13ef3bd791a1b48b6e7"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "c98b1ebe52491d82339929767e3ea75f5a7ee4ef94a657388666a8e585f05c64",
+      "input_source_sha256": "9b8d928238c793e29417c44ecc8067d11f2c7bde01adead090832845a7126344"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_099",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "1b9259c2c9c34f2698cb447c46909136",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1654,
+      "output_tokens": 9492,
+      "repriced_standard_cost_usd": "0.0193975",
+      "historical_budget_charge_usd": "0.0193975",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/1b9259c2c9c34f2698cb447c46909136/raw.json",
+        "bytes": 86528,
+        "sha256": "982e6a7e180b871297b07ca74537cbf1d2b0241b5f677259d17a21b0632a4b3c"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "4ca55efb9b6d755b4bcad3ba3213393067b479c7f77cb8758a1d213c3e0578d4",
+      "input_source_sha256": "86474fa4ef078cd66e941d706d4e3c04a710f2821cf4bd1001e78fabdc285088"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_099",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "1d61b744332d45808278e3c301761d60",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2437,
+      "output_tokens": 2031,
+      "repriced_standard_cost_usd": "0.012592",
+      "historical_budget_charge_usd": "0.012592",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/1d61b744332d45808278e3c301761d60/raw.json",
+        "bytes": 5902,
+        "sha256": "4a08020d14683b2c12eca84980c5fda7c38016cb3b779e99f5884e867575abd8"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "4ca55efb9b6d755b4bcad3ba3213393067b479c7f77cb8758a1d213c3e0578d4",
+      "input_source_sha256": "86474fa4ef078cd66e941d706d4e3c04a710f2821cf4bd1001e78fabdc285088"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_016",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "f4552001d6a4485589dc011a5357686e",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1671,
+      "output_tokens": 5727,
+      "repriced_standard_cost_usd": "0.01187175",
+      "historical_budget_charge_usd": "0.01187175",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/f4552001d6a4485589dc011a5357686e/raw.json",
+        "bytes": 62786,
+        "sha256": "a73a91b824b5d6919dd3774daaed4b848a4fb11054b4b276e07730bb45b086b5"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "ab026a5b6200e8696ba6be7a658c1e45c23b7733a12345fee7ac5a9207e715b3",
+      "input_source_sha256": "252aa1130531b3501bfd4188b081cd510340a5af44e65a79e45ee33791bdfdf2"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_016",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "66aaa5ce2d1e42cc94e63df59ccec58d",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2427,
+      "output_tokens": 2258,
+      "repriced_standard_cost_usd": "0.013717",
+      "historical_budget_charge_usd": "0.013717",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/66aaa5ce2d1e42cc94e63df59ccec58d/raw.json",
+        "bytes": 6051,
+        "sha256": "102c4cd8e02df731e820723b98f300bdb54c32a2ccda7463a0fc4df92a318294"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "ab026a5b6200e8696ba6be7a658c1e45c23b7733a12345fee7ac5a9207e715b3",
+      "input_source_sha256": "252aa1130531b3501bfd4188b081cd510340a5af44e65a79e45ee33791bdfdf2"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_054",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "95b4be19b32549a6bbfe1b6372b9ce27",
+      "retry": false,
+      "status": "failed",
+      "failure_kind": "validation_failure",
+      "usage_known": true,
+      "input_tokens": 1711,
+      "output_tokens": 7913,
+      "repriced_standard_cost_usd": "0.01625375",
+      "historical_budget_charge_usd": "0.01625375",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/95b4be19b32549a6bbfe1b6372b9ce27/raw.json",
+        "bytes": 81975,
+        "sha256": "9dea15057e41b7933c80396dfc51a938a655b6d8b1a1212c5f0ca33464036dd0"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "d4cb590a0f6760a3c47a3a5128a15d6fd06bd5fe2fed5a6b95087d5b15c86831",
+      "input_source_sha256": "ddb186046e7353710ac860739099e2bdda4e748451858b6af9730cb75841de28"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_054",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "0e5ee05d4d9f4a7e9d6f8bf948571e87",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2493,
+      "output_tokens": 1400,
+      "repriced_standard_cost_usd": "0.009493",
+      "historical_budget_charge_usd": "0.009493",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/0e5ee05d4d9f4a7e9d6f8bf948571e87/raw.json",
+        "bytes": 3929,
+        "sha256": "c4495a0d5176506b3dcd15b7d3e1ee4ac6dd0bbc3259971b199825638eba7ea2"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "d4cb590a0f6760a3c47a3a5128a15d6fd06bd5fe2fed5a6b95087d5b15c86831",
+      "input_source_sha256": "ddb186046e7353710ac860739099e2bdda4e748451858b6af9730cb75841de28"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_028",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "78a8269fb6474a6ca418584f06cdc727",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1686,
+      "output_tokens": 6895,
+      "repriced_standard_cost_usd": "0.0142115",
+      "historical_budget_charge_usd": "0.0142115",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/78a8269fb6474a6ca418584f06cdc727/raw.json",
+        "bytes": 64687,
+        "sha256": "4e3765963869231ba521e12ad19b1b42f5e63a78f3294c9d38d4aaa3725e95da"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "11024c77182c5b4cc145bfda2219f18a4d50896496b9ac11a81e10a7efa83223",
+      "input_source_sha256": "9bbc6c320ec5b1ca5c6334a139b896251d6df68ff876ec86b4462fdf00f887ff"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_028",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "c5570f6a9a644c4cbd3e623da518caaf",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2451,
+      "output_tokens": 2126,
+      "repriced_standard_cost_usd": "0.013081",
+      "historical_budget_charge_usd": "0.013081",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c5570f6a9a644c4cbd3e623da518caaf/raw.json",
+        "bytes": 5933,
+        "sha256": "0c689ed7ced26643776ffc7a1915f5efaeb1ae9317ae2b8e75a3e54c22131246"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "11024c77182c5b4cc145bfda2219f18a4d50896496b9ac11a81e10a7efa83223",
+      "input_source_sha256": "9bbc6c320ec5b1ca5c6334a139b896251d6df68ff876ec86b4462fdf00f887ff"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_070",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "7b42ed0e86e4444f904ba31d02a172ef",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1720,
+      "output_tokens": 9478,
+      "repriced_standard_cost_usd": "0.019386",
+      "historical_budget_charge_usd": "0.019386",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7b42ed0e86e4444f904ba31d02a172ef/raw.json",
+        "bytes": 97687,
+        "sha256": "827a2c721fb79daf31fad9ff5775c71a4735dfe35aeb8e8575670d96128cb8b8"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "cccdc9d050493d86e59214ed0b7c995eab8a16da400f082ee4243ca2d820b1fc",
+      "input_source_sha256": "8bf68a17668d8a569d1d262d811230a83566b012acaaada7dba750443387e9c0"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_070",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "bccd6c8ffe1f473aa0cf69e1bde0b8d7",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2500,
+      "output_tokens": 2143,
+      "repriced_standard_cost_usd": "0.013215",
+      "historical_budget_charge_usd": "0.013215",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/bccd6c8ffe1f473aa0cf69e1bde0b8d7/raw.json",
+        "bytes": 5022,
+        "sha256": "ea61eca8bd71deced1bf81af58b5bf60059e9f9b2ad38018c76fbbc776ff2bc0"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "cccdc9d050493d86e59214ed0b7c995eab8a16da400f082ee4243ca2d820b1fc",
+      "input_source_sha256": "8bf68a17668d8a569d1d262d811230a83566b012acaaada7dba750443387e9c0"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_046",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "c2a8bb0b4d514fd98b95454731860ece",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1610,
+      "output_tokens": 7656,
+      "repriced_standard_cost_usd": "0.0157145",
+      "historical_budget_charge_usd": "0.0157145",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c2a8bb0b4d514fd98b95454731860ece/raw.json",
+        "bytes": 81702,
+        "sha256": "87df39d1e4031784a1c77c7c2bdaefacaa329d43f5a54de93b597f2c5cc724d5"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "4a5d7540ee42066a19d462af345e649b405a48363c0b4b5b25a69e70c5f1f5ea",
+      "input_source_sha256": "b27503d4d25d09153eab9c157db6cdb56da0c5213c041c9f4dcffc6019ebafcb"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_046",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "b7665d97c1b0481880d34091ff0f6134",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2384,
+      "output_tokens": 1740,
+      "repriced_standard_cost_usd": "0.011084",
+      "historical_budget_charge_usd": "0.011084",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b7665d97c1b0481880d34091ff0f6134/raw.json",
+        "bytes": 4759,
+        "sha256": "86eece0d7c5a87be4c3620e78f41e2da0d30ff2d94e502ee95f29938ef3f6a08"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "4a5d7540ee42066a19d462af345e649b405a48363c0b4b5b25a69e70c5f1f5ea",
+      "input_source_sha256": "b27503d4d25d09153eab9c157db6cdb56da0c5213c041c9f4dcffc6019ebafcb"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_053",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "0a7da7284e0144efbe6ead30b296389b",
+      "retry": false,
+      "status": "failed",
+      "failure_kind": "validation_failure",
+      "usage_known": true,
+      "input_tokens": 1684,
+      "output_tokens": 9863,
+      "repriced_standard_cost_usd": "0.020147",
+      "historical_budget_charge_usd": "0.020147",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/0a7da7284e0144efbe6ead30b296389b/raw.json",
+        "bytes": 99274,
+        "sha256": "bd59b814f64740b694fd04c983d83c7f481080d22fec1bf484c73df19f0abd25"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "27738a52018249e299e5b26aa5955337902b3a39d859fa426d0ea6a1a1c09245",
+      "input_source_sha256": "8c0ecb9774e828799cd642feea2a847e867b872fde6cf0656a50e3f012a67aa5"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_053",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "6021b9c56c724be797413d70f6141f8c",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2462,
+      "output_tokens": 4658,
+      "repriced_standard_cost_usd": "0.025752",
+      "historical_budget_charge_usd": "0.025752",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/6021b9c56c724be797413d70f6141f8c/raw.json",
+        "bytes": 13433,
+        "sha256": "3028f7b6ed1e2df433dfbcaaf2a96f8099079a9393989152d9ef6582b3010379"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "27738a52018249e299e5b26aa5955337902b3a39d859fa426d0ea6a1a1c09245",
+      "input_source_sha256": "8c0ecb9774e828799cd642feea2a847e867b872fde6cf0656a50e3f012a67aa5"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_015",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "8b62438a93e14200b2c3237a8ed0b7f2",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1654,
+      "output_tokens": 9398,
+      "repriced_standard_cost_usd": "0.0192095",
+      "historical_budget_charge_usd": "0.0192095",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/8b62438a93e14200b2c3237a8ed0b7f2/raw.json",
+        "bytes": 92406,
+        "sha256": "1968ed36fc1261ad3b888ff79b45f64e7e2a01a95e9b268fe8167c834401d5f4"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "4bfc1d4842f1c1442758150e58fef1d5fe393a817ad49291d50fe3cd7d3374d5",
+      "input_source_sha256": "cfda5123ff66d28555f56cb86d6744aaf7922fab02322d5e4fc337b706bdff8c"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_015",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "05d3b82f8eb44ff5b58ba79cbed91b2c",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2407,
+      "output_tokens": 2217,
+      "repriced_standard_cost_usd": "0.013492",
+      "historical_budget_charge_usd": "0.013492",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/05d3b82f8eb44ff5b58ba79cbed91b2c/raw.json",
+        "bytes": 6040,
+        "sha256": "2b8bda71149aaeb3f287e055f251c716f0961eca6041dfb4416545d28dc8aa01"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "4bfc1d4842f1c1442758150e58fef1d5fe393a817ad49291d50fe3cd7d3374d5",
+      "input_source_sha256": "cfda5123ff66d28555f56cb86d6744aaf7922fab02322d5e4fc337b706bdff8c"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_025",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "d58f448ad20a4f4fb5b232d0dafb034f",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1625,
+      "output_tokens": 9870,
+      "repriced_standard_cost_usd": "0.02014625",
+      "historical_budget_charge_usd": "0.02014625",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/d58f448ad20a4f4fb5b232d0dafb034f/raw.json",
+        "bytes": 87069,
+        "sha256": "cea714b187d0720c95d89386cbfe59e5404881ff52595366e43bc7f4cf16a675"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "c8216c2cf2672e7eb523a7039827e998b02455b67e6e536d6f88fe651cdc8dec",
+      "input_source_sha256": "84657c4aa7265d0f16246d4e0d417b674a1e40e02e35e76d2e600b4441d8955e"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_025",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "01de83e414534dada2d249e4311f4843",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2388,
+      "output_tokens": 1677,
+      "repriced_standard_cost_usd": "0.010773",
+      "historical_budget_charge_usd": "0.010773",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/01de83e414534dada2d249e4311f4843/raw.json",
+        "bytes": 4071,
+        "sha256": "0b6f61a2b712d8dfcd85c403e2e43ae6c5555568c55efe9fc71473b88a3240d2"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "c8216c2cf2672e7eb523a7039827e998b02455b67e6e536d6f88fe651cdc8dec",
+      "input_source_sha256": "84657c4aa7265d0f16246d4e0d417b674a1e40e02e35e76d2e600b4441d8955e"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_001",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "4fcaea2f4bdd41c6901a1f7025203953",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1661,
+      "output_tokens": 6265,
+      "repriced_standard_cost_usd": "0.01294525",
+      "historical_budget_charge_usd": "0.01294525",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4fcaea2f4bdd41c6901a1f7025203953/raw.json",
+        "bytes": 65542,
+        "sha256": "a0e92c2dde9b3683b3e4b018ce00c609a8114aa0a1e46dc1b618cdccdc3072f7"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "28c42c5251f9fba1a1ff189f6e97ccbafc02981b99eb391dd930b31b6e808a9c",
+      "input_source_sha256": "03b06d2e205c9273434475ee3a31d52167650af8d26b4b8eedfb99f7fa62b4a7"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_001",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "8124243f463a493283d5248f9af18e83",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2405,
+      "output_tokens": 2131,
+      "repriced_standard_cost_usd": "0.01306",
+      "historical_budget_charge_usd": "0.01306",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/8124243f463a493283d5248f9af18e83/raw.json",
+        "bytes": 4842,
+        "sha256": "bb08958d6b25f13d0587051cc8d7420003731b2055575bdced4a37993bdc27f2"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "28c42c5251f9fba1a1ff189f6e97ccbafc02981b99eb391dd930b31b6e808a9c",
+      "input_source_sha256": "03b06d2e205c9273434475ee3a31d52167650af8d26b4b8eedfb99f7fa62b4a7"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_095",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "c55bc625812f4d6eb0569e2ec54879da",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1771,
+      "output_tokens": 7422,
+      "repriced_standard_cost_usd": "0.01528675",
+      "historical_budget_charge_usd": "0.01528675",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c55bc625812f4d6eb0569e2ec54879da/raw.json",
+        "bytes": 79359,
+        "sha256": "f9ba52c8fd375e68563797976b1d00e847abeab1fa7c3fa873b25dce32848257"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "ee31d8969b04929003b43177eb7ce8516c263a30e449f7c3b7036ea029b0f997",
+      "input_source_sha256": "58a2c66b3febef81fef2028b7305d7de4647d74ef55017278193fe8bdd7bff30"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_095",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "538570eb959a4fdd9996c35f27bb37b3",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2546,
+      "output_tokens": 1564,
+      "repriced_standard_cost_usd": "0.010366",
+      "historical_budget_charge_usd": "0.010366",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/538570eb959a4fdd9996c35f27bb37b3/raw.json",
+        "bytes": 4435,
+        "sha256": "55ed984012bd399453019ce5bccf05565a638d65500b9ed20e97de639612f742"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "ee31d8969b04929003b43177eb7ce8516c263a30e449f7c3b7036ea029b0f997",
+      "input_source_sha256": "58a2c66b3febef81fef2028b7305d7de4647d74ef55017278193fe8bdd7bff30"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_047",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "4db9b90948ae4f5fa31727a24916d44b",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1722,
+      "output_tokens": 9738,
+      "repriced_standard_cost_usd": "0.0199065",
+      "historical_budget_charge_usd": "0.0199065",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4db9b90948ae4f5fa31727a24916d44b/raw.json",
+        "bytes": 92231,
+        "sha256": "e99145f2e9a70f5f6f6e9036815265013df6483b56c0b9c5caed3894b5036fd8"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "4635e71f0b864210fb2c21a5310a5ccb3ea147db42fb1d16ae03baf79af85895",
+      "input_source_sha256": "db7509a0c33bc8cc0a0dfcced0433a8fbcf4c8b6a34d17e7afecc65f361acdde"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_047",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "257590308573404bacf3012f38cc10ca",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2495,
+      "output_tokens": 2000,
+      "repriced_standard_cost_usd": "0.012495",
+      "historical_budget_charge_usd": "0.012495",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/257590308573404bacf3012f38cc10ca/raw.json",
+        "bytes": 5402,
+        "sha256": "998f36f82b5b86c5d2f8410ef8ec7bcca6db7b67183920168fdf47da64549cdb"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "4635e71f0b864210fb2c21a5310a5ccb3ea147db42fb1d16ae03baf79af85895",
+      "input_source_sha256": "db7509a0c33bc8cc0a0dfcced0433a8fbcf4c8b6a34d17e7afecc65f361acdde"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_088",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "fa7c92a7bf1f47919fb513326988491d",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1672,
+      "output_tokens": 8211,
+      "repriced_standard_cost_usd": "0.01684",
+      "historical_budget_charge_usd": "0.01684",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/fa7c92a7bf1f47919fb513326988491d/raw.json",
+        "bytes": 80466,
+        "sha256": "f17ea2cb7b6a7e024faf70684c80d4cf20d40d4330060daa8ef3967618f17298"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "d1454ae7e2800d4a009a745b7d54dc606d42408eaef922fa5e3fee3d4ddac06b",
+      "input_source_sha256": "4eba73786fe8e960c6391aabbdbb2cac9b0f8b73128b5e8dcf11a0391d860df2"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_088",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "897e438b43584fd8a9966c890e4131ba",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2441,
+      "output_tokens": 1464,
+      "repriced_standard_cost_usd": "0.009761",
+      "historical_budget_charge_usd": "0.009761",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/897e438b43584fd8a9966c890e4131ba/raw.json",
+        "bytes": 3497,
+        "sha256": "341645aa8037957628234e68a62a7a8c85e9eb14a1bbc8b871051355e4710579"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "d1454ae7e2800d4a009a745b7d54dc606d42408eaef922fa5e3fee3d4ddac06b",
+      "input_source_sha256": "4eba73786fe8e960c6391aabbdbb2cac9b0f8b73128b5e8dcf11a0391d860df2"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_064",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "aee6005ceaa94e83bdcec2ba7e0e385a",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1596,
+      "output_tokens": 6520,
+      "repriced_standard_cost_usd": "0.013439",
+      "historical_budget_charge_usd": "0.013439",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/aee6005ceaa94e83bdcec2ba7e0e385a/raw.json",
+        "bytes": 67731,
+        "sha256": "b4f02deebad9228daf7ed2e489bc5387e31de6a04f68c776285f7c16be326e7d"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "0618d7957795ba627431e34efac4b0961af04f5ed01d39e23de70f570e3c37b8",
+      "input_source_sha256": "c523a29156d94ec97ce7ac883b0a2ca1ba889048bec9de9db2025db57c1d41f0"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_064",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "c6b1d60c893b47efa64a420aae12743b",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2335,
+      "output_tokens": 1353,
+      "repriced_standard_cost_usd": "0.0091",
+      "historical_budget_charge_usd": "0.0091",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c6b1d60c893b47efa64a420aae12743b/raw.json",
+        "bytes": 3229,
+        "sha256": "936957ada1e13c24945828562dfe74a004843cf4771d4d1e24ff1e6682f67de1"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "0618d7957795ba627431e34efac4b0961af04f5ed01d39e23de70f570e3c37b8",
+      "input_source_sha256": "c523a29156d94ec97ce7ac883b0a2ca1ba889048bec9de9db2025db57c1d41f0"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_083",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "3eec6a240e1f46a9a575e1e0988783ba",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1679,
+      "output_tokens": 7490,
+      "repriced_standard_cost_usd": "0.01539975",
+      "historical_budget_charge_usd": "0.01539975",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/3eec6a240e1f46a9a575e1e0988783ba/raw.json",
+        "bytes": 77139,
+        "sha256": "b42bbadc53202a066df8da4539f79ad848ce9091c0673bc159c910eba03f161c"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "50fd6bc2dd329983996a3694cbffe57af79d692efba09ca82191b3a257516d42",
+      "input_source_sha256": "9e11f04ce1f14bffdbf3664b250e132f1890e77b8c049db9e4a4dba38e192252"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_083",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "21b118d0f4b74e8eb3640bed98ccf16a",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2440,
+      "output_tokens": 1932,
+      "repriced_standard_cost_usd": "0.0121",
+      "historical_budget_charge_usd": "0.0121",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/21b118d0f4b74e8eb3640bed98ccf16a/raw.json",
+        "bytes": 5680,
+        "sha256": "bd4e198d6b1b4e773cb0f77e2c715846af911bc1e701998d4a1c4179c2978e2b"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "50fd6bc2dd329983996a3694cbffe57af79d692efba09ca82191b3a257516d42",
+      "input_source_sha256": "9e11f04ce1f14bffdbf3664b250e132f1890e77b8c049db9e4a4dba38e192252"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_096",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "e88164bb4c124e03aee8e6d28243826a",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1695,
+      "output_tokens": 8411,
+      "repriced_standard_cost_usd": "0.01724575",
+      "historical_budget_charge_usd": "0.01724575",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/e88164bb4c124e03aee8e6d28243826a/raw.json",
+        "bytes": 84259,
+        "sha256": "eea61e4189650c86ca61a8ddeb4d4fff5999866ad6f499c105a4cc1b4fa48b49"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "e7439c3b41af8594efe5141325415334ea0a6e8d58def7c0a5e26024ca3df2ae",
+      "input_source_sha256": "4c8e5f4c89a66c6dc8bad1d09c1e25f949d354121f81c99d5d20f4a1c06445e0"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_096",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "54c1954b6332482c88ccb4188a46d1e1",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2484,
+      "output_tokens": 1151,
+      "repriced_standard_cost_usd": "0.008239",
+      "historical_budget_charge_usd": "0.008239",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/54c1954b6332482c88ccb4188a46d1e1/raw.json",
+        "bytes": 3249,
+        "sha256": "b835b0460e84b7b2b91a8ac4c04f6e89cdf3a6bef57a9249c6a0710a7d86001a"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "e7439c3b41af8594efe5141325415334ea0a6e8d58def7c0a5e26024ca3df2ae",
+      "input_source_sha256": "4c8e5f4c89a66c6dc8bad1d09c1e25f949d354121f81c99d5d20f4a1c06445e0"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_050",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "42c3617406ee46e2b907c2977714d8c1",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1621,
+      "output_tokens": 9057,
+      "repriced_standard_cost_usd": "0.01851925",
+      "historical_budget_charge_usd": "0.01851925",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/42c3617406ee46e2b907c2977714d8c1/raw.json",
+        "bytes": 89331,
+        "sha256": "12bd9114d0c87bac821b0159d830f306174de77c058ac170231ae469ca5084ef"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "9b87670cbe20d22e44a602071c3b0401b03bb8646cf066d3dcd8fa0593d24162",
+      "input_source_sha256": "47ec0b8964c0a6963f8f9470160f99b0dc8e32f2b9a22f8fa976becab90dc794"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_050",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "8e08bb245f40464eaa887d78acd5a6c9",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2387,
+      "output_tokens": 1130,
+      "repriced_standard_cost_usd": "0.008037",
+      "historical_budget_charge_usd": "0.008037",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/8e08bb245f40464eaa887d78acd5a6c9/raw.json",
+        "bytes": 3303,
+        "sha256": "40e4be66ad20324a3e7bc96a2efaa523409be12e0e742f0ce71bde04ab72be80"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "9b87670cbe20d22e44a602071c3b0401b03bb8646cf066d3dcd8fa0593d24162",
+      "input_source_sha256": "47ec0b8964c0a6963f8f9470160f99b0dc8e32f2b9a22f8fa976becab90dc794"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_011",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "7e1f18da72a448cba48b05ebfe6eedd3",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1642,
+      "output_tokens": 8371,
+      "repriced_standard_cost_usd": "0.0171525",
+      "historical_budget_charge_usd": "0.0171525",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7e1f18da72a448cba48b05ebfe6eedd3/raw.json",
+        "bytes": 87201,
+        "sha256": "f44beac991fa8b6989a615b70c09e8ea5326948af471710160f66d022d196a7c"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "079050eb514470da75068883326793528a5fb21c2c7277f7154b369ebcd914ec",
+      "input_source_sha256": "4e0f452e8d5646a4ededb1da984315ef18e7154c1ea31590f0fe716b929c8bbc"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_011",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "3698039cdb0242578f9af6a4fe1fe0af",
+      "retry": false,
+      "status": "failed",
+      "failure_kind": "validation_failure",
+      "usage_known": true,
+      "input_tokens": 2400,
+      "output_tokens": 1780,
+      "repriced_standard_cost_usd": "0.0113",
+      "historical_budget_charge_usd": "0.0113",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/3698039cdb0242578f9af6a4fe1fe0af/raw.json",
+        "bytes": 5015,
+        "sha256": "f7187075c91d1dd5de7953a1efd1f7b51252ed5ae353f537d750dd267023d6e0"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "079050eb514470da75068883326793528a5fb21c2c7277f7154b369ebcd914ec",
+      "input_source_sha256": "4e0f452e8d5646a4ededb1da984315ef18e7154c1ea31590f0fe716b929c8bbc"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_040",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "b5231f4cd3f04efeaad2c28920e22052",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1664,
+      "output_tokens": 6961,
+      "repriced_standard_cost_usd": "0.014338",
+      "historical_budget_charge_usd": "0.014338",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b5231f4cd3f04efeaad2c28920e22052/raw.json",
+        "bytes": 71548,
+        "sha256": "b78113460a84b7cf31c3a6cf1c50f9d7424ac31b6059f986b967bba5e9e97b80"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "7621d3d20586259334996a95ab646057a8a3a78a61f9b20363da497b735216f1",
+      "input_source_sha256": "9bb879c2f4746bbd4e7f5c0b2d1b68e00b9ccee66c6c7c97310880ff33aeba4f"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_040",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "3af6d948168a41789e0633731457f88d",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2419,
+      "output_tokens": 2774,
+      "repriced_standard_cost_usd": "0.016289",
+      "historical_budget_charge_usd": "0.016289",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/3af6d948168a41789e0633731457f88d/raw.json",
+        "bytes": 6617,
+        "sha256": "ca9c796c0c1ecea5ee1482374b18c9d23b9a2f88c643ce46ad55cc4f6dd6bbc2"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "7621d3d20586259334996a95ab646057a8a3a78a61f9b20363da497b735216f1",
+      "input_source_sha256": "9bb879c2f4746bbd4e7f5c0b2d1b68e00b9ccee66c6c7c97310880ff33aeba4f"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_089",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "419d2fc9ce5343deb3dc7af4ab1ea1fa",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1651,
+      "output_tokens": 5464,
+      "repriced_standard_cost_usd": "0.01134075",
+      "historical_budget_charge_usd": "0.01134075",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/419d2fc9ce5343deb3dc7af4ab1ea1fa/raw.json",
+        "bytes": 56180,
+        "sha256": "39704438a882c1653309ea6a62ebeec72e09eac6906a8ace016e1a23912fba04"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "d33632406c8bf25c3f895aeffad154cfc7cf09a5e52f55bf06e11aac6a89a784",
+      "input_source_sha256": "8d366ddb65622e1e5546ca1ab23ff36e6ef8bca01d96b1843976bda365f8d318"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_089",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "5e55b171e79b42f9a70ad9d096caa779",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2415,
+      "output_tokens": 1157,
+      "repriced_standard_cost_usd": "0.0082",
+      "historical_budget_charge_usd": "0.0082",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/5e55b171e79b42f9a70ad9d096caa779/raw.json",
+        "bytes": 3354,
+        "sha256": "a2d9063cda85e14b93af9d926ae6408396815e17bc1623aedb36fa39637bb0b6"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "d33632406c8bf25c3f895aeffad154cfc7cf09a5e52f55bf06e11aac6a89a784",
+      "input_source_sha256": "8d366ddb65622e1e5546ca1ab23ff36e6ef8bca01d96b1843976bda365f8d318"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_048",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "1d042f937cd2462ba23616c85cb90782",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1616,
+      "output_tokens": 7352,
+      "repriced_standard_cost_usd": "0.015108",
+      "historical_budget_charge_usd": "0.015108",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/1d042f937cd2462ba23616c85cb90782/raw.json",
+        "bytes": 78028,
+        "sha256": "c24d855456d20fba4a8b49d0471516bef2f25e4f0643391038cbff65bdee8bb3"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "21ef1ca2d15557392edc90f87c5534566df79fe207de6ca330b2f3674dc38461",
+      "input_source_sha256": "fdb9e69ca5dc442d82b16d352f9812f5abb058ba66732d6340978b9c70fb7b47"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_048",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "b942729284424adfbc4222c2a5cf61bb",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2369,
+      "output_tokens": 1175,
+      "repriced_standard_cost_usd": "0.008244",
+      "historical_budget_charge_usd": "0.008244",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b942729284424adfbc4222c2a5cf61bb/raw.json",
+        "bytes": 3506,
+        "sha256": "9e065fd6a65e9524560ec4ac2d80e2cbb15ec1abea14f2b8d97a3c0f64d14525"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "21ef1ca2d15557392edc90f87c5534566df79fe207de6ca330b2f3674dc38461",
+      "input_source_sha256": "fdb9e69ca5dc442d82b16d352f9812f5abb058ba66732d6340978b9c70fb7b47"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_063",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "30e2a5bf3550429195368cb6dfbdb204",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1673,
+      "output_tokens": 11369,
+      "repriced_standard_cost_usd": "0.02315625",
+      "historical_budget_charge_usd": "0.02315625",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/30e2a5bf3550429195368cb6dfbdb204/raw.json",
+        "bytes": 124146,
+        "sha256": "3c6edad4d319d5388eb847716bb80be47b15dea159635b821f34ba3d7ec6880d"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "68385884a78c3ffa07509262cbe3b0f8b1f6e6f94d6595db000ba8c2aaec506b",
+      "input_source_sha256": "bf846fc676b94cfbfdce5d7f68f4afb05e6e48aa8ab3b95f62155b4967356abb"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_063",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "a3c73518ea864a4ea6d5a1102b8eeaa1",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2439,
+      "output_tokens": 1562,
+      "repriced_standard_cost_usd": "0.010249",
+      "historical_budget_charge_usd": "0.010249",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/a3c73518ea864a4ea6d5a1102b8eeaa1/raw.json",
+        "bytes": 3643,
+        "sha256": "6b8988cbb846e9fd6ec5f80e2605cd8bcb429e18d080edab1880b43de0d86815"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "68385884a78c3ffa07509262cbe3b0f8b1f6e6f94d6595db000ba8c2aaec506b",
+      "input_source_sha256": "bf846fc676b94cfbfdce5d7f68f4afb05e6e48aa8ab3b95f62155b4967356abb"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_052",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "cffc67928c1c49af8d821cb02688afcd",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1702,
+      "output_tokens": 7483,
+      "repriced_standard_cost_usd": "0.0153915",
+      "historical_budget_charge_usd": "0.0153915",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/cffc67928c1c49af8d821cb02688afcd/raw.json",
+        "bytes": 80110,
+        "sha256": "e6f0f9ad6ce615be2e05fa931d95840cdcda02f5e4db2bb62e32a65b610a7137"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "cc88ba4ab3463b8535cfbdc2a5910fd0110676d1206d25b3d79d3f09845c2aa6",
+      "input_source_sha256": "8949aedcea8c69fefc00b51853686bede025dc16a835df4443f896647a45259b"
+    },
+    {
+      "source_group": "original781",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_052",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "c1aa6b5138184ed088f5c2f844fa07f6",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2472,
+      "output_tokens": 1839,
+      "repriced_standard_cost_usd": "0.011667",
+      "historical_budget_charge_usd": "0.011667",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c1aa6b5138184ed088f5c2f844fa07f6/raw.json",
+        "bytes": 4287,
+        "sha256": "504211f43d887dadbf11a45a725b58ff29ea36531725b2e6bb72aba52e259b20"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "cc88ba4ab3463b8535cfbdc2a5910fd0110676d1206d25b3d79d3f09845c2aa6",
+      "input_source_sha256": "8949aedcea8c69fefc00b51853686bede025dc16a835df4443f896647a45259b"
+    },
+    {
+      "source_group": "original781",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_085",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "2a912564cd574eeea2f6fa75d1683420",
+      "retry": false,
+      "status": "failed",
+      "failure_kind": "auth_failure",
+      "usage_known": false,
+      "input_tokens": null,
+      "output_tokens": null,
+      "repriced_standard_cost_usd": null,
+      "historical_budget_charge_usd": "0.165536",
+      "raw_response": null,
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "2b68b76a990f74d1ea2c075e208c568dbebc5916ba54193c9e1cd372acc0d0c5",
+      "input_source_sha256": "9ca1509d0f5bcacb5683fb52e9a28d54507971a44f957f1fe897922aff27d697"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_087",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "301ae27e3d8246abb460415563808bb1",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1619,
+      "output_tokens": 9026,
+      "repriced_standard_cost_usd": "0.01845675",
+      "historical_budget_charge_usd": "0.01845675",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/301ae27e3d8246abb460415563808bb1/raw.json",
+        "bytes": 91691,
+        "sha256": "4d6df9f02c6bb57975a8974180eb8cfb28462d348c526fe77290ef18aff4561a"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "a43906e0bb92293ac2b7b74729a7b0b51b2f6f88d6445b408bf9fbf48e70d775",
+      "input_source_sha256": "42549dd95ce4e4f5fb4a058c5353ae8d88272cf793dd543c37c2cc30b0898550"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_087",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "cfc2b9f6d53a48179ed5eb9ed0c980b9",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2378,
+      "output_tokens": 1469,
+      "repriced_standard_cost_usd": "0.009723",
+      "historical_budget_charge_usd": "0.009723",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/cfc2b9f6d53a48179ed5eb9ed0c980b9/raw.json",
+        "bytes": 3640,
+        "sha256": "6b38fa6da402de9691fe74d3a5f10e1d65dc4b6bbc50484fb066fb149789b687"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "a43906e0bb92293ac2b7b74729a7b0b51b2f6f88d6445b408bf9fbf48e70d775",
+      "input_source_sha256": "42549dd95ce4e4f5fb4a058c5353ae8d88272cf793dd543c37c2cc30b0898550"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_026",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "1357449ff35a40cea94f9064816e9704",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1752,
+      "output_tokens": 8286,
+      "repriced_standard_cost_usd": "0.01701",
+      "historical_budget_charge_usd": "0.01701",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1357449ff35a40cea94f9064816e9704/raw.json",
+        "bytes": 84186,
+        "sha256": "f8da282736a83114c963ed009a382e2209e9faeb1c9fc19a2e982295d06b0660"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "0f4ac4c5a74eca0189155ed3d6f5de4bf5893ed51da7d4886a5c55f61ee05d3d",
+      "input_source_sha256": "c3337a0cda12c823d0e7790e434a23aeb4a265d406671b37cbfca02567980007"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_026",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "f7594841281c4199945d0ca8a575127f",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2518,
+      "output_tokens": 1069,
+      "repriced_standard_cost_usd": "0.007863",
+      "historical_budget_charge_usd": "0.007863",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f7594841281c4199945d0ca8a575127f/raw.json",
+        "bytes": 3087,
+        "sha256": "6bb76c6e71174f1978aeab6e5b91d2655b7313b033853297026f60a0ac90d077"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "0f4ac4c5a74eca0189155ed3d6f5de4bf5893ed51da7d4886a5c55f61ee05d3d",
+      "input_source_sha256": "c3337a0cda12c823d0e7790e434a23aeb4a265d406671b37cbfca02567980007"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_007",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "ad85c79e9add450b83dcddee44c4c1b1",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1678,
+      "output_tokens": 6982,
+      "repriced_standard_cost_usd": "0.0143835",
+      "historical_budget_charge_usd": "0.0143835",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ad85c79e9add450b83dcddee44c4c1b1/raw.json",
+        "bytes": 76519,
+        "sha256": "ee8d8b5c285cc02afe8de7d7fed0f5e9b0b94a82b8dd2c487e688cab385d764b"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "0260bb05905e427b71dd17029f559f50a1c9ab25111df44f17df22cda4ba6dc3",
+      "input_source_sha256": "c7105f98529d9bb3f55a94c8d624afd00516c0151a3347794ea202d2c60280a8"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_007",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "ee5ea1a070254cd28a504e7e7eff0ea5",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2452,
+      "output_tokens": 1203,
+      "repriced_standard_cost_usd": "0.008467",
+      "historical_budget_charge_usd": "0.008467",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ee5ea1a070254cd28a504e7e7eff0ea5/raw.json",
+        "bytes": 3559,
+        "sha256": "570b6c4942ab3932febd8c0fec97492cce60f3b9fa64f249b56d24cf629c5c79"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "0260bb05905e427b71dd17029f559f50a1c9ab25111df44f17df22cda4ba6dc3",
+      "input_source_sha256": "c7105f98529d9bb3f55a94c8d624afd00516c0151a3347794ea202d2c60280a8"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_032",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "964bdb97f00d4eba8a5fa605d8720d7c",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1703,
+      "output_tokens": 8465,
+      "repriced_standard_cost_usd": "0.01735575",
+      "historical_budget_charge_usd": "0.01735575",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/964bdb97f00d4eba8a5fa605d8720d7c/raw.json",
+        "bytes": 91104,
+        "sha256": "9542e945c0aac6c912731788ceaf394f7efad4a135c729706550810cee692877"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "8da0135239b14bd69d329e127a46ab3e86d80466ce735f198deff24717e78d75",
+      "input_source_sha256": "c863585f36d26073c2be762eb644367cbac6fd8dc4d8b7783397db1dc74c8be0"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_032",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "e0ca5de5e52243be9cb7b96a4f4350bb",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2471,
+      "output_tokens": 1638,
+      "repriced_standard_cost_usd": "0.010661",
+      "historical_budget_charge_usd": "0.010661",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e0ca5de5e52243be9cb7b96a4f4350bb/raw.json",
+        "bytes": 4949,
+        "sha256": "9c1049eb2dcae94f22b70fcdd0de594ab77f9c4a41d0a9ad92740313c112551d"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "8da0135239b14bd69d329e127a46ab3e86d80466ce735f198deff24717e78d75",
+      "input_source_sha256": "c863585f36d26073c2be762eb644367cbac6fd8dc4d8b7783397db1dc74c8be0"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_092",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "3171eb46a1d0483e8a59afc35946ca52",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1788,
+      "output_tokens": 11603,
+      "repriced_standard_cost_usd": "0.023653",
+      "historical_budget_charge_usd": "0.023653",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3171eb46a1d0483e8a59afc35946ca52/raw.json",
+        "bytes": 89435,
+        "sha256": "29947f6ee46e07f7f92c46cd4b2b7416250f358b4c8eaaa98ecf369002fb3a2f"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "3825fdcc1f167289262af7a08f2a0b147554118aba594e75b3e79cf454a8e56a",
+      "input_source_sha256": "ffb226ebe487a87f2eb2e08bb17ab4c6e988a8c5032a4ad5a3fb036a6ea2afaa"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_092",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "c81eee5c4bda4ed8ac626eced427e2e7",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2567,
+      "output_tokens": 3241,
+      "repriced_standard_cost_usd": "0.018772",
+      "historical_budget_charge_usd": "0.018772",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/c81eee5c4bda4ed8ac626eced427e2e7/raw.json",
+        "bytes": 7313,
+        "sha256": "576866908a4c71e90dcfab3dec2e2d8571bda5422aaa4a5339d4491560964d9b"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "3825fdcc1f167289262af7a08f2a0b147554118aba594e75b3e79cf454a8e56a",
+      "input_source_sha256": "ffb226ebe487a87f2eb2e08bb17ab4c6e988a8c5032a4ad5a3fb036a6ea2afaa"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_078",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "78ace148583f48c3a438a9f9d2b3586e",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1708,
+      "output_tokens": 10144,
+      "repriced_standard_cost_usd": "0.020715",
+      "historical_budget_charge_usd": "0.020715",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/78ace148583f48c3a438a9f9d2b3586e/raw.json",
+        "bytes": 95352,
+        "sha256": "f6a4dd30bf04fbea699e400cf4100951f7931ce3ffadc9e651bb0b6f3436b459"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "f45005e1a9497b97ea220e32f2a11eb8d44c5c4c4a00b23c9d33cf3ab3d389ee",
+      "input_source_sha256": "742f6900ef84b1dea5720a9e6e557d9bbc73a7f0e94c83acc6fbb70096b0dfe1"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_078",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "721642785c8f48b2a904162c6fcd68e3",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2482,
+      "output_tokens": 1269,
+      "repriced_standard_cost_usd": "0.008827",
+      "historical_budget_charge_usd": "0.008827",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/721642785c8f48b2a904162c6fcd68e3/raw.json",
+        "bytes": 3869,
+        "sha256": "03bcf6beacd204899664f2948c7c8cfa3fccb4fc540840703b896db2875b8635"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "f45005e1a9497b97ea220e32f2a11eb8d44c5c4c4a00b23c9d33cf3ab3d389ee",
+      "input_source_sha256": "742f6900ef84b1dea5720a9e6e557d9bbc73a7f0e94c83acc6fbb70096b0dfe1"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_045",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "02395914491646c98f5283ab31dad54e",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1580,
+      "output_tokens": 9842,
+      "repriced_standard_cost_usd": "0.020079",
+      "historical_budget_charge_usd": "0.020079",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/02395914491646c98f5283ab31dad54e/raw.json",
+        "bytes": 94877,
+        "sha256": "55a7ccb9ae542e49e02da32b0d06ac52073baa7e75a374d67a75a68c421715c5"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "5abc3b8861c993ac11d4cfc91b1317ce93fda416a0f80b0678c30b48ebd2ae29",
+      "input_source_sha256": "69ef1f65b0154a8e44458653a44fa1262ba5f8054d96cc708776fe9c02e89e01"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_045",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "53e684c09fde46449d86d7b24ce0efc7",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2341,
+      "output_tokens": 1828,
+      "repriced_standard_cost_usd": "0.011481",
+      "historical_budget_charge_usd": "0.011481",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/53e684c09fde46449d86d7b24ce0efc7/raw.json",
+        "bytes": 4352,
+        "sha256": "e050669ef82954132b1100ce246ce6100ae4fda5ea0fb0bfce789a4f77d409a5"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "5abc3b8861c993ac11d4cfc91b1317ce93fda416a0f80b0678c30b48ebd2ae29",
+      "input_source_sha256": "69ef1f65b0154a8e44458653a44fa1262ba5f8054d96cc708776fe9c02e89e01"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_023",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "27f9ae17a9244400bf110a18eab273a1",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1626,
+      "output_tokens": 5601,
+      "repriced_standard_cost_usd": "0.0116085",
+      "historical_budget_charge_usd": "0.0116085",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/27f9ae17a9244400bf110a18eab273a1/raw.json",
+        "bytes": 61422,
+        "sha256": "eef9dd1b03c0257be69faed91f358fb4cbe692ef71ebe76f25b9b018dbcf6145"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "775f024ac49c02c27186449ba8849cbdae42d8d6818f784bb1e69ab6f092affb",
+      "input_source_sha256": "e09b30213a75869a7bfafb6f0edf3d8f58ed4d4ebc6c3ea7b4c1d4433e4ae7e5"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_023",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "5640626b6aec49eda650829e214bd7b9",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2384,
+      "output_tokens": 1665,
+      "repriced_standard_cost_usd": "0.010709",
+      "historical_budget_charge_usd": "0.010709",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5640626b6aec49eda650829e214bd7b9/raw.json",
+        "bytes": 4468,
+        "sha256": "b12ba0af7cde399a40d5cf73d495ed0289b79709d4afdfb0c5716ed3199a86df"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "775f024ac49c02c27186449ba8849cbdae42d8d6818f784bb1e69ab6f092affb",
+      "input_source_sha256": "e09b30213a75869a7bfafb6f0edf3d8f58ed4d4ebc6c3ea7b4c1d4433e4ae7e5"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_055",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "1d22053cbfbf4dc2aeaf791528885780",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1661,
+      "output_tokens": 9203,
+      "repriced_standard_cost_usd": "0.01882125",
+      "historical_budget_charge_usd": "0.01882125",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1d22053cbfbf4dc2aeaf791528885780/raw.json",
+        "bytes": 82440,
+        "sha256": "c21a9c1bf725218244ffacf3d3b334cc9b16c2f4e848e4fc4878c75786197d7b"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "c158c579a8c9c178f3ea0ecf78021a974031570b0c418699d84e53989183c71f",
+      "input_source_sha256": "059bc6544b0b3c6e1535ffbfdcb4fa2496334125d4ce6664b25c643817860019"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_055",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "a0e3bd24a1fe4b65ad8b9ab83a7549d8",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2422,
+      "output_tokens": 1541,
+      "repriced_standard_cost_usd": "0.010127",
+      "historical_budget_charge_usd": "0.010127",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a0e3bd24a1fe4b65ad8b9ab83a7549d8/raw.json",
+        "bytes": 4206,
+        "sha256": "66f46f71e53160152aa67715b58a1234b8d5db1860f2f1897e765fbd0711507f"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "c158c579a8c9c178f3ea0ecf78021a974031570b0c418699d84e53989183c71f",
+      "input_source_sha256": "059bc6544b0b3c6e1535ffbfdcb4fa2496334125d4ce6664b25c643817860019"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_062",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "b1e4d66adda64ad3b2c970ae3db70d1c",
+      "retry": false,
+      "status": "failed",
+      "failure_kind": "validation_failure",
+      "usage_known": true,
+      "input_tokens": 1583,
+      "output_tokens": 9274,
+      "repriced_standard_cost_usd": "0.01894375",
+      "historical_budget_charge_usd": "0.01894375",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b1e4d66adda64ad3b2c970ae3db70d1c/raw.json",
+        "bytes": 93587,
+        "sha256": "f9d9422e3e1802c27e2e0a6be902b0f09fc264ccabad380421c14d5c7013c73f"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "6d31526444faa5ee4b8204d59c9669ab5697f9a41c849e1a8cf01e906e42c4f1",
+      "input_source_sha256": "f8f939ff54f7d4243179d7838384c34722308cce7adf827fb7e2eaef29867560"
+    },
+    {
+      "source_group": "parent160",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_062",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "a744220c50a74828af8bb122f6fd171d",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2336,
+      "output_tokens": 1306,
+      "repriced_standard_cost_usd": "0.008866",
+      "historical_budget_charge_usd": "0.008866",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a744220c50a74828af8bb122f6fd171d/raw.json",
+        "bytes": 3764,
+        "sha256": "b42fa122f9b91ad7fa567dc9624134ed5001f5251a482ac72156389542d6b2d6"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "6d31526444faa5ee4b8204d59c9669ab5697f9a41c849e1a8cf01e906e42c4f1",
+      "input_source_sha256": "f8f939ff54f7d4243179d7838384c34722308cce7adf827fb7e2eaef29867560"
+    },
+    {
+      "source_group": "supplement17",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_091",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "fbabd574185140cda9405a585c9ee0ec",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1647,
+      "output_tokens": 4853,
+      "repriced_standard_cost_usd": "0.01011775",
+      "historical_budget_charge_usd": "0.01011775",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006c-remaining17-20261016T001844Z/enabled/attempts/fbabd574185140cda9405a585c9ee0ec/raw.json",
+        "bytes": 54461,
+        "sha256": "b2fdf0d6517993810f0832660f52c7a3f67ac0ff8e04070e04d2dc9c84207065"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "c0549b6990a7f5b634693519183ca8757cc409fc9846db12de8d00db56b54b99",
+      "input_source_sha256": "f7aa7a047d74230954fcddd401aa291a88d3bb3aea30ae7dc1b2505d932dc631"
+    },
+    {
+      "source_group": "supplement17",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_091",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "05091eb2d41e4ee5b08070c7663726d3",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2404,
+      "output_tokens": 999,
+      "repriced_standard_cost_usd": "0.007399",
+      "historical_budget_charge_usd": "0.007399",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006c-remaining17-20261016T001844Z/enabled/attempts/05091eb2d41e4ee5b08070c7663726d3/raw.json",
+        "bytes": 2978,
+        "sha256": "63a5fd65ec3ba20bc8adee8378c6021e2c98a7d58224a31ec679351d3357c2ab"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "c0549b6990a7f5b634693519183ca8757cc409fc9846db12de8d00db56b54b99",
+      "input_source_sha256": "f7aa7a047d74230954fcddd401aa291a88d3bb3aea30ae7dc1b2505d932dc631"
+    },
+    {
+      "source_group": "supplement3",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_085",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "4a7901468e2544fe96f1326fc78a8a1a",
+      "retry": true,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1792,
+      "output_tokens": 7255,
+      "repriced_standard_cost_usd": "0.014958",
+      "historical_budget_charge_usd": "0.014958",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006b-ttyfix20-20261015T201419244530Z/enabled/attempts/4a7901468e2544fe96f1326fc78a8a1a/raw.json",
+        "bytes": 81313,
+        "sha256": "8ddc0be17e9954315fb71c2f88ab0c448288f3fcfa548b9fe0fd96545efcf3c3"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "2b68b76a990f74d1ea2c075e208c568dbebc5916ba54193c9e1cd372acc0d0c5",
+      "input_source_sha256": "9ca1509d0f5bcacb5683fb52e9a28d54507971a44f957f1fe897922aff27d697"
+    },
+    {
+      "source_group": "supplement3",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_085",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "35911dd30da34dcf9b5f9922733450ab",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2569,
+      "output_tokens": 1334,
+      "repriced_standard_cost_usd": "0.009239",
+      "historical_budget_charge_usd": "0.009239",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal006b-ttyfix20-20261015T201419244530Z/enabled/attempts/35911dd30da34dcf9b5f9922733450ab/raw.json",
+        "bytes": 3664,
+        "sha256": "28ebd593dc3fd31a23365c28c58e568f12fbd0c86bb5090bbda9fd5e5633ae32"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "2b68b76a990f74d1ea2c075e208c568dbebc5916ba54193c9e1cd372acc0d0c5",
+      "input_source_sha256": "9ca1509d0f5bcacb5683fb52e9a28d54507971a44f957f1fe897922aff27d697"
+    },
+    {
+      "source_group": "prior_resmoke16",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_060",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "e67d1ed9d5624911901b9673da5d857b",
+      "retry": false,
+      "status": "failed",
+      "failure_kind": "validation_failure",
+      "usage_known": true,
+      "input_tokens": 1656,
+      "output_tokens": 6512,
+      "repriced_standard_cost_usd": "0.013438",
+      "historical_budget_charge_usd": "0.013438",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/e67d1ed9d5624911901b9673da5d857b/raw.json",
+        "bytes": 69375,
+        "sha256": "ec74926ba21150c9081f904973d3a2a03e74ff0e0f11948d3492e59d9a038fb1"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "58823699ec90f8c3919c65a1dd03d517de90e3631049c22e8f38c5047ac6fb4f",
+      "input_source_sha256": "621906b7ac2c019da58c708d505cf1b7efa7cc7bb33aa8793807b311fa92bd4e"
+    },
+    {
+      "source_group": "prior_resmoke16",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_060",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "5cb9bdc2eb4a473e93b61910910e4ad1",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2407,
+      "output_tokens": 954,
+      "repriced_standard_cost_usd": "0.007177",
+      "historical_budget_charge_usd": "0.007177",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/5cb9bdc2eb4a473e93b61910910e4ad1/raw.json",
+        "bytes": 2816,
+        "sha256": "e611ebe70d3d155fbcd108e3a0a532cb5d735a94512249c60cb8f7ee13d6dc21"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "58823699ec90f8c3919c65a1dd03d517de90e3631049c22e8f38c5047ac6fb4f",
+      "input_source_sha256": "621906b7ac2c019da58c708d505cf1b7efa7cc7bb33aa8793807b311fa92bd4e"
+    },
+    {
+      "source_group": "prior_resmoke16",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_075",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "6afe325ed55d457abfbbe19bc62da029",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1696,
+      "output_tokens": 7852,
+      "repriced_standard_cost_usd": "0.016128",
+      "historical_budget_charge_usd": "0.016128",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/6afe325ed55d457abfbbe19bc62da029/raw.json",
+        "bytes": 80099,
+        "sha256": "45d30df305edaf35b38b13d344ca1742ed8c8ebcb6db7e116167ac5f17516563"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "a03517328bb06a7505ff4ca907e8cdc63c975e339f7e9136643931d13da931e9",
+      "input_source_sha256": "8d2c26c46c21119b4d28d55519130a263dbdd69ec17d08f6fbb1d0ea8662b177"
+    },
+    {
+      "source_group": "prior_resmoke16",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_075",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "7d2425f79e7c4fe383a5bb97ca014e2b",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 2458,
+      "output_tokens": 1892,
+      "repriced_standard_cost_usd": "0.011918",
+      "historical_budget_charge_usd": "0.011918",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/7d2425f79e7c4fe383a5bb97ca014e2b/raw.json",
+        "bytes": 4604,
+        "sha256": "caf54ddcc54c7d66d765e4308c3bb77c91987a1a70dddff591766f24f81cada7"
+      },
+      "prompt_sha256": "ba7a555860628c1ad55ba5b65200ac3cf0d528be86c42f46dbb5bbdd61e6ccac",
+      "output_cap": 32768,
+      "input_id": "a03517328bb06a7505ff4ca907e8cdc63c975e339f7e9136643931d13da931e9",
+      "input_source_sha256": "8d2c26c46c21119b4d28d55519130a263dbdd69ec17d08f6fbb1d0ea8662b177"
+    },
+    {
+      "source_group": "prior_smoke14",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_060",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "416fa64024984552b76b887c1c4f6a55",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1308,
+      "output_tokens": 8020,
+      "repriced_standard_cost_usd": "0.016367",
+      "historical_budget_charge_usd": "0.016367",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/openai/attempts/416fa64024984552b76b887c1c4f6a55/raw.json",
+        "bytes": 68696,
+        "sha256": "172f522cb092803e0bbb1be76a1eb683738b442bc0e953ff32e57fbaea5c8256"
+      },
+      "prompt_sha256": "976b44c4e88627e60722e4982ca08a58869c6501f7058d54db5eb09a9fd806e9",
+      "output_cap": 16384,
+      "input_id": "87b41311abf64f23c9c8e5df50e5e804847890062f80d4e3560762a71332cf25",
+      "input_source_sha256": "621906b7ac2c019da58c708d505cf1b7efa7cc7bb33aa8793807b311fa92bd4e"
+    },
+    {
+      "source_group": "prior_smoke14",
+      "provider": "openai",
+      "scene_id": "buildings_100_v4_building_075",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "919bcc9a8a77444dac70ddf6822821a5",
+      "retry": false,
+      "status": "success",
+      "failure_kind": null,
+      "usage_known": true,
+      "input_tokens": 1348,
+      "output_tokens": 10499,
+      "repriced_standard_cost_usd": "0.021335",
+      "historical_budget_charge_usd": "0.021335",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/openai/attempts/919bcc9a8a77444dac70ddf6822821a5/raw.json",
+        "bytes": 77572,
+        "sha256": "4ca413f07e9e11786cf6b1dbe9ce53c7a986fcd364328c163585ef96e528cbf1"
+      },
+      "prompt_sha256": "976b44c4e88627e60722e4982ca08a58869c6501f7058d54db5eb09a9fd806e9",
+      "output_cap": 16384,
+      "input_id": "7a6b74e7b1c1f0a12c3f120fd08d1fcff054ca6b8764d86eed5e3c1f40f7ae53",
+      "input_source_sha256": "8d2c26c46c21119b4d28d55519130a263dbdd69ec17d08f6fbb1d0ea8662b177"
+    },
+    {
+      "source_group": "prior_smoke14",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_060",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "1631891350dc4c1db486fd706c342007",
+      "retry": false,
+      "status": "failed",
+      "failure_kind": "parse_failure",
+      "usage_known": true,
+      "input_tokens": 1464,
+      "output_tokens": 1779,
+      "repriced_standard_cost_usd": "0.010359",
+      "historical_budget_charge_usd": "0.010359",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/anthropic/attempts/1631891350dc4c1db486fd706c342007/raw.json",
+        "bytes": 4169,
+        "sha256": "d4867053c21ad01d843d9f1bc61b0bfc28eeeedc81721e7316814f7a3a1b6bd5"
+      },
+      "prompt_sha256": "976b44c4e88627e60722e4982ca08a58869c6501f7058d54db5eb09a9fd806e9",
+      "output_cap": 16384,
+      "input_id": "87b41311abf64f23c9c8e5df50e5e804847890062f80d4e3560762a71332cf25",
+      "input_source_sha256": "621906b7ac2c019da58c708d505cf1b7efa7cc7bb33aa8793807b311fa92bd4e"
+    },
+    {
+      "source_group": "prior_smoke14",
+      "provider": "anthropic",
+      "scene_id": "buildings_100_v4_building_060",
+      "description_provider": "openai",
+      "condition": "O",
+      "attempt_id": "92cd5b2a361a477f9ba4c4128f5cd552",
+      "retry": true,
+      "status": "failed",
+      "failure_kind": "parse_failure",
+      "usage_known": true,
+      "input_tokens": 1464,
+      "output_tokens": 2643,
+      "repriced_standard_cost_usd": "0.014679",
+      "historical_budget_charge_usd": "0.014679",
+      "raw_response": {
+        "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/anthropic/attempts/92cd5b2a361a477f9ba4c4128f5cd552/raw.json",
+        "bytes": 6773,
+        "sha256": "4e5ccc3593c22d05ffd71b7b81d19a89e78a9a8ba1ea4572aeded22a2619ccc6"
+      },
+      "prompt_sha256": "976b44c4e88627e60722e4982ca08a58869c6501f7058d54db5eb09a9fd806e9",
+      "output_cap": 16384,
+      "input_id": "87b41311abf64f23c9c8e5df50e5e804847890062f80d4e3560762a71332cf25",
+      "input_source_sha256": "621906b7ac2c019da58c708d505cf1b7efa7cc7bb33aa8793807b311fa92bd4e"
+    }
+  ],
+  "source_descriptors": [
+    {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal007/MANIFEST.json",
+      "bytes": 2090635,
+      "sha256": "ef05c2ed93247802e9a68a00d700d39a8934d6231c7787315ab37b01d2467714"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/plan.json",
+      "bytes": 4493172,
+      "sha256": "db78ec8e59b5921e248af42a7c8390647bd549c09c11e055c144729a247a2dce"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/ledger.json",
+      "bytes": 1685880,
+      "sha256": "6c301ecb572f232bc8464bcbbd42ff229ac588929bb8497601fefc063298ff35"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/71a8c957a2f84779b0e671efe634b5f4/raw.json",
+      "bytes": 65204,
+      "sha256": "36edf2d98d4ea39fd5c326fe9c2e258e96a9a14a541b6368ae080630c14b3edd"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/230c8b359cff48ed8ffe76f38208beb8/raw.json",
+      "bytes": 4798,
+      "sha256": "cb86c1d071a8c8d3f62f01e306d8fdd2a965eb2d8c038663d342f56a1d75f4be"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/d986618a93034879a7e7d3a0fe56a0ed/raw.json",
+      "bytes": 86659,
+      "sha256": "9522c7757865b8725411d74671c3b9fb043181ebd9031234065f32637542fa91"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/5934a01d359e45cf99b6b9543457b081/raw.json",
+      "bytes": 2758,
+      "sha256": "3de3aa76dae7cac5d36f7c0a61b03bdce730d176773506edbf6322f9f4c38527"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/197be8cb82544960a63d8233cce0968e/raw.json",
+      "bytes": 84276,
+      "sha256": "7e9e373f7774a8c97bff9d877ffd692e8ae547bd763716dee2b70ea65db44871"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/8b3733425af4433e91f4ddc1ac6a8a54/raw.json",
+      "bytes": 4248,
+      "sha256": "293ce3235303b6f07ee427e9952be45aa04a6ba58e5d52bd3d8e285f4f82e2bd"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/3a8f5038f9c34593b815b83afa882a50/raw.json",
+      "bytes": 83367,
+      "sha256": "260b47ae8f48c0442d03e677fa6d811fd392af8291ece785ebb9f1a80736194d"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/2bd26c13bfad4535b8b7f0dd2ee94f51/raw.json",
+      "bytes": 6502,
+      "sha256": "d7b6ea887eea534f7d77acbac5b8cf4bc76b0e9fd719975d24dc35de5f447336"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b0229cf9d20345e8aed61e3662c74869/raw.json",
+      "bytes": 75174,
+      "sha256": "f62e10914d5210d86611b6454557384edb8e8eb43b6041d36c36aac8d57ebf53"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7fa13a66c02a484bace526a3d231db82/raw.json",
+      "bytes": 4790,
+      "sha256": "1bbeb6f486bd06c33e4e81d3586a07869328363403c6b99c6f56c43c3ed61acd"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4bf943ba17794b61bcc9cafc70172afb/raw.json",
+      "bytes": 67824,
+      "sha256": "c16994cfc5591b291b400c174f4bf9187db8c1ebbefeb642eb07885fbe49d15a"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/a6e81377fb4549b4a8de0610efb45847/raw.json",
+      "bytes": 5264,
+      "sha256": "c6d55f7a66b0258297cdb45c72765ebd65f727d0119ea991d4ee35f5fd1a5706"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/776a87294dad4c96be65c4c6e45f9837/raw.json",
+      "bytes": 75098,
+      "sha256": "9a10387319adf5e545d5ad2591c4f316c7e8fcfe1c51ad60ff35f67610f1f7f6"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/86391fac8014410684774fad5447bf51/raw.json",
+      "bytes": 2940,
+      "sha256": "8cd6a0ce7f1973393153d222768a9003f5366d0e2b289e0474dd9c1093b7e4cf"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/e9bf936d6bac4fd383ea15380fa31a85/raw.json",
+      "bytes": 86952,
+      "sha256": "52d216456d7da097f1a45062df870f96dd56534387ae0d01a352c3ee4ad54dea"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/2243dc7689804e4a935e3811434d9d28/raw.json",
+      "bytes": 3800,
+      "sha256": "a57a783a428b0107cbdddcf066e0c7f3ccd15379889074445e527b6c8bf79781"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/61fbbf347ce04630b584fdf5e5a83515/raw.json",
+      "bytes": 75984,
+      "sha256": "d21b653e504be6b28d68ef5e8beed0b9fcf05f0110f1d755e2b157c5cdff2775"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/0a0acce11e5a4035bd928f2f8439a7d9/raw.json",
+      "bytes": 2450,
+      "sha256": "b48a7d7a544de6dcc36e2bc000a20b342b0ad755d67c5c5fdd0ead609639dfa0"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/36e0761bd2924907a383cb37a5e7bb5b/raw.json",
+      "bytes": 64821,
+      "sha256": "dae32ca8dabaa3017ee740ad769044ba75c423534bdf616c765ecae7b862aa98"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/19d8073345394e31ac09ea240278c3c9/raw.json",
+      "bytes": 5045,
+      "sha256": "37e7719215c1a845c73a3c366289ccfe1a7790cd37b3e3dd6dd81c25199cfab8"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/48ac2c5ef66a408d865a868d2bf85654/raw.json",
+      "bytes": 64805,
+      "sha256": "7b13d62314715029b049c4f006e6b62942cf78e2b6a1ef607e36ee3a022d6d5a"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/fb9fed59726544bcb44a9a5853de9b62/raw.json",
+      "bytes": 2621,
+      "sha256": "8fbf33f1a4eaa094793bc4654699b965aa72f9a09d2e723268504b3cda1c8e7e"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/8027f21b4c2446ef8d43efb41f9d312e/raw.json",
+      "bytes": 70392,
+      "sha256": "edfb1e8837222eda421dbb0704f77f27b19e9b87fb7224fd200aaea67d2875fb"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4eebef070a3145d1aacb8830c1f16409/raw.json",
+      "bytes": 4398,
+      "sha256": "bc4c765f0582460b840c10b449a833d17e4de6e74c6ec3eec6fe8ea147dc9f38"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/2e459938d3394e69b53442b011b37682/raw.json",
+      "bytes": 84227,
+      "sha256": "e697bc60c15efdd849677206954b6d45fba15595de92f3160b377a84610c38b5"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4692ea95edc94dc89b0603ceca3302e5/raw.json",
+      "bytes": 4452,
+      "sha256": "fbaaf8b82bc8610e89c62e8377478b1b7caa18532d88cad4fe5a62bb84cf1f28"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7c88c8ce5ce946e0a03e49ffbd1a47a1/raw.json",
+      "bytes": 76643,
+      "sha256": "03a64bb71c108072ff6b86a3a6553e11104d8e6991f0b14fac9830a676039a7d"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/a57068758a5c43c08f5a5da61241dcc4/raw.json",
+      "bytes": 7326,
+      "sha256": "42e247bf1d7c5625623b912df1149551ba6dd5eaaae0fe413153e6e32259400c"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b2e8ec3150ef4d8eb32fbe1993222f8f/raw.json",
+      "bytes": 87060,
+      "sha256": "47d8cfae351b06e56b86d478f1a51300a18f33f633767da30080fa4f40074951"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b6d5f83465904d638db13fe1142b397c/raw.json",
+      "bytes": 6727,
+      "sha256": "3584faf1eda20f553c47bd34b566a4974525d6b14c788f436bb27d99c3b41dce"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c9152afcf3044dccbfb860ed72f00396/raw.json",
+      "bytes": 74294,
+      "sha256": "44df45a84638d5ce52a07a6d13d2dd2ade0ba0b93a9842d7523b65a8bca86359"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/d7bbb32f965b41f69c8821812a00c742/raw.json",
+      "bytes": 2743,
+      "sha256": "ad3d3b2b3d39ab76af17347c0ba465f2b50b0b40e640adc13e487de13e0f7bf1"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c8d15efee21c4e2780f0689cc64f5fda/raw.json",
+      "bytes": 85670,
+      "sha256": "b9fcb2ccf18c25e3f0c81c00093cad779d6b2fa6e6af1139d1e36b933e5bf6af"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/0b3bed83070649ebafb3a5e50308ff73/raw.json",
+      "bytes": 5160,
+      "sha256": "0601fe8c0a064cb2c9bbdbbc1bdf520cf4884c3f489c13ef05302384372b5e73"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/05521c4ec5dd48618adeeafc412fbf03/raw.json",
+      "bytes": 81507,
+      "sha256": "80ec906f547cdb891237b7ed657656559f1bc44c6a16fc772f60cf0160f376b7"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7d8016bf14664170bb97d5e837eec0ac/raw.json",
+      "bytes": 6101,
+      "sha256": "400ac753b4dfa368b45e8b886cf4b7b21669c948ea46aa7e6cdfbedc4d1e582f"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/5810c43736c840a3bebe0bd97d2e979d/raw.json",
+      "bytes": 73482,
+      "sha256": "f54b21f95ee62a983f56a497146b07bb804f7912ed40c33c43e18e26c623ec8d"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/f0260fd6d4ba4023ac07637660146695/raw.json",
+      "bytes": 3193,
+      "sha256": "1120a6d2b5a301e7bdffab8510792eb75a3122b3d85582f731f9adec1c552c38"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/a8abb9c8e42d40f78f6d328777cfeb8c/raw.json",
+      "bytes": 75044,
+      "sha256": "10cec8ecb7325e028fd9c47b91dd8634cd747058106c248d83b83a070d4a378d"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/bd31262e38c4446dac23ce92ae8bf522/raw.json",
+      "bytes": 4820,
+      "sha256": "06fa120c536f48fcc51aaf98836ce95cd557b031d5c8e94725a5534214e202b7"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/930024fe682c4cb88c06418209a29bfb/raw.json",
+      "bytes": 73817,
+      "sha256": "2492286e05bd4948e4e5cf737e6779a3b3aa8fd265996d7ee183fd6e716453a6"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/560efd830acf4eab826656d485a42e04/raw.json",
+      "bytes": 4207,
+      "sha256": "a33b4e9a9c5b96d695957c7203e97ee7e28877918a026fba16c8004c923f4308"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7077738c7af844fe8f4d5a29f5a4adbc/raw.json",
+      "bytes": 84870,
+      "sha256": "10f815b831c2475104f227e0e886905c3ed69b9c03b343bc8ebec3442b6adf7a"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b64294429d574f6a99424cc8ae7377bc/raw.json",
+      "bytes": 4085,
+      "sha256": "53fff5cb0a02e034c9483cf8b403efaa8049b79906c93756c2ec69ce08e16916"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/6912ea3b9b024f35bb270564ba26653b/raw.json",
+      "bytes": 71058,
+      "sha256": "ea2d53e84c5b17618c8bea3b22018761fbd3c5201b7f0f1afc702a66488fc674"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/cfd0389a267343b684bba34ff78c3e81/raw.json",
+      "bytes": 4800,
+      "sha256": "d95e5e3569d4125d2497ef3f5e649dad5990ccec2f109a04e4b6fab61a7a163e"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4ac7f0ef9f604030b05df48e5575e816/raw.json",
+      "bytes": 76721,
+      "sha256": "4b6c61f346919c0c5cde13eb5319ae7292628bea8719414ac46d4c47d0e0b709"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/93313fce533546728f26b4ec408d5096/raw.json",
+      "bytes": 4691,
+      "sha256": "27429e5cbf162fb3cea36449b0e73971c305d012e815391824c0d7c2b0b8eb62"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/f4633b698d0349aaadbcd30280687f3d/raw.json",
+      "bytes": 77930,
+      "sha256": "9d0d6e5df09202d2ad1e985290942f6f1071df1e43d105e028b90b0c8d83ccf1"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/3d8020a667924682a83b4c9ff0bdfb91/raw.json",
+      "bytes": 4101,
+      "sha256": "d925ab721ae5207d4246fec3d530e496529b13f3c068f13ef3bd791a1b48b6e7"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/1b9259c2c9c34f2698cb447c46909136/raw.json",
+      "bytes": 86528,
+      "sha256": "982e6a7e180b871297b07ca74537cbf1d2b0241b5f677259d17a21b0632a4b3c"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/1d61b744332d45808278e3c301761d60/raw.json",
+      "bytes": 5902,
+      "sha256": "4a08020d14683b2c12eca84980c5fda7c38016cb3b779e99f5884e867575abd8"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/f4552001d6a4485589dc011a5357686e/raw.json",
+      "bytes": 62786,
+      "sha256": "a73a91b824b5d6919dd3774daaed4b848a4fb11054b4b276e07730bb45b086b5"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/66aaa5ce2d1e42cc94e63df59ccec58d/raw.json",
+      "bytes": 6051,
+      "sha256": "102c4cd8e02df731e820723b98f300bdb54c32a2ccda7463a0fc4df92a318294"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/95b4be19b32549a6bbfe1b6372b9ce27/raw.json",
+      "bytes": 81975,
+      "sha256": "9dea15057e41b7933c80396dfc51a938a655b6d8b1a1212c5f0ca33464036dd0"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/0e5ee05d4d9f4a7e9d6f8bf948571e87/raw.json",
+      "bytes": 3929,
+      "sha256": "c4495a0d5176506b3dcd15b7d3e1ee4ac6dd0bbc3259971b199825638eba7ea2"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/78a8269fb6474a6ca418584f06cdc727/raw.json",
+      "bytes": 64687,
+      "sha256": "4e3765963869231ba521e12ad19b1b42f5e63a78f3294c9d38d4aaa3725e95da"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c5570f6a9a644c4cbd3e623da518caaf/raw.json",
+      "bytes": 5933,
+      "sha256": "0c689ed7ced26643776ffc7a1915f5efaeb1ae9317ae2b8e75a3e54c22131246"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7b42ed0e86e4444f904ba31d02a172ef/raw.json",
+      "bytes": 97687,
+      "sha256": "827a2c721fb79daf31fad9ff5775c71a4735dfe35aeb8e8575670d96128cb8b8"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/bccd6c8ffe1f473aa0cf69e1bde0b8d7/raw.json",
+      "bytes": 5022,
+      "sha256": "ea61eca8bd71deced1bf81af58b5bf60059e9f9b2ad38018c76fbbc776ff2bc0"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c2a8bb0b4d514fd98b95454731860ece/raw.json",
+      "bytes": 81702,
+      "sha256": "87df39d1e4031784a1c77c7c2bdaefacaa329d43f5a54de93b597f2c5cc724d5"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b7665d97c1b0481880d34091ff0f6134/raw.json",
+      "bytes": 4759,
+      "sha256": "86eece0d7c5a87be4c3620e78f41e2da0d30ff2d94e502ee95f29938ef3f6a08"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/0a7da7284e0144efbe6ead30b296389b/raw.json",
+      "bytes": 99274,
+      "sha256": "bd59b814f64740b694fd04c983d83c7f481080d22fec1bf484c73df19f0abd25"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/6021b9c56c724be797413d70f6141f8c/raw.json",
+      "bytes": 13433,
+      "sha256": "3028f7b6ed1e2df433dfbcaaf2a96f8099079a9393989152d9ef6582b3010379"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/8b62438a93e14200b2c3237a8ed0b7f2/raw.json",
+      "bytes": 92406,
+      "sha256": "1968ed36fc1261ad3b888ff79b45f64e7e2a01a95e9b268fe8167c834401d5f4"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/05d3b82f8eb44ff5b58ba79cbed91b2c/raw.json",
+      "bytes": 6040,
+      "sha256": "2b8bda71149aaeb3f287e055f251c716f0961eca6041dfb4416545d28dc8aa01"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/d58f448ad20a4f4fb5b232d0dafb034f/raw.json",
+      "bytes": 87069,
+      "sha256": "cea714b187d0720c95d89386cbfe59e5404881ff52595366e43bc7f4cf16a675"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/01de83e414534dada2d249e4311f4843/raw.json",
+      "bytes": 4071,
+      "sha256": "0b6f61a2b712d8dfcd85c403e2e43ae6c5555568c55efe9fc71473b88a3240d2"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4fcaea2f4bdd41c6901a1f7025203953/raw.json",
+      "bytes": 65542,
+      "sha256": "a0e92c2dde9b3683b3e4b018ce00c609a8114aa0a1e46dc1b618cdccdc3072f7"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/8124243f463a493283d5248f9af18e83/raw.json",
+      "bytes": 4842,
+      "sha256": "bb08958d6b25f13d0587051cc8d7420003731b2055575bdced4a37993bdc27f2"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c55bc625812f4d6eb0569e2ec54879da/raw.json",
+      "bytes": 79359,
+      "sha256": "f9ba52c8fd375e68563797976b1d00e847abeab1fa7c3fa873b25dce32848257"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/538570eb959a4fdd9996c35f27bb37b3/raw.json",
+      "bytes": 4435,
+      "sha256": "55ed984012bd399453019ce5bccf05565a638d65500b9ed20e97de639612f742"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/4db9b90948ae4f5fa31727a24916d44b/raw.json",
+      "bytes": 92231,
+      "sha256": "e99145f2e9a70f5f6f6e9036815265013df6483b56c0b9c5caed3894b5036fd8"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/257590308573404bacf3012f38cc10ca/raw.json",
+      "bytes": 5402,
+      "sha256": "998f36f82b5b86c5d2f8410ef8ec7bcca6db7b67183920168fdf47da64549cdb"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/fa7c92a7bf1f47919fb513326988491d/raw.json",
+      "bytes": 80466,
+      "sha256": "f17ea2cb7b6a7e024faf70684c80d4cf20d40d4330060daa8ef3967618f17298"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/897e438b43584fd8a9966c890e4131ba/raw.json",
+      "bytes": 3497,
+      "sha256": "341645aa8037957628234e68a62a7a8c85e9eb14a1bbc8b871051355e4710579"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/aee6005ceaa94e83bdcec2ba7e0e385a/raw.json",
+      "bytes": 67731,
+      "sha256": "b4f02deebad9228daf7ed2e489bc5387e31de6a04f68c776285f7c16be326e7d"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c6b1d60c893b47efa64a420aae12743b/raw.json",
+      "bytes": 3229,
+      "sha256": "936957ada1e13c24945828562dfe74a004843cf4771d4d1e24ff1e6682f67de1"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/3eec6a240e1f46a9a575e1e0988783ba/raw.json",
+      "bytes": 77139,
+      "sha256": "b42bbadc53202a066df8da4539f79ad848ce9091c0673bc159c910eba03f161c"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/21b118d0f4b74e8eb3640bed98ccf16a/raw.json",
+      "bytes": 5680,
+      "sha256": "bd4e198d6b1b4e773cb0f77e2c715846af911bc1e701998d4a1c4179c2978e2b"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/e88164bb4c124e03aee8e6d28243826a/raw.json",
+      "bytes": 84259,
+      "sha256": "eea61e4189650c86ca61a8ddeb4d4fff5999866ad6f499c105a4cc1b4fa48b49"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/54c1954b6332482c88ccb4188a46d1e1/raw.json",
+      "bytes": 3249,
+      "sha256": "b835b0460e84b7b2b91a8ac4c04f6e89cdf3a6bef57a9249c6a0710a7d86001a"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/42c3617406ee46e2b907c2977714d8c1/raw.json",
+      "bytes": 89331,
+      "sha256": "12bd9114d0c87bac821b0159d830f306174de77c058ac170231ae469ca5084ef"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/8e08bb245f40464eaa887d78acd5a6c9/raw.json",
+      "bytes": 3303,
+      "sha256": "40e4be66ad20324a3e7bc96a2efaa523409be12e0e742f0ce71bde04ab72be80"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/7e1f18da72a448cba48b05ebfe6eedd3/raw.json",
+      "bytes": 87201,
+      "sha256": "f44beac991fa8b6989a615b70c09e8ea5326948af471710160f66d022d196a7c"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/3698039cdb0242578f9af6a4fe1fe0af/raw.json",
+      "bytes": 5015,
+      "sha256": "f7187075c91d1dd5de7953a1efd1f7b51252ed5ae353f537d750dd267023d6e0"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b5231f4cd3f04efeaad2c28920e22052/raw.json",
+      "bytes": 71548,
+      "sha256": "b78113460a84b7cf31c3a6cf1c50f9d7424ac31b6059f986b967bba5e9e97b80"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/3af6d948168a41789e0633731457f88d/raw.json",
+      "bytes": 6617,
+      "sha256": "ca9c796c0c1ecea5ee1482374b18c9d23b9a2f88c643ce46ad55cc4f6dd6bbc2"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/419d2fc9ce5343deb3dc7af4ab1ea1fa/raw.json",
+      "bytes": 56180,
+      "sha256": "39704438a882c1653309ea6a62ebeec72e09eac6906a8ace016e1a23912fba04"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/5e55b171e79b42f9a70ad9d096caa779/raw.json",
+      "bytes": 3354,
+      "sha256": "a2d9063cda85e14b93af9d926ae6408396815e17bc1623aedb36fa39637bb0b6"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/1d042f937cd2462ba23616c85cb90782/raw.json",
+      "bytes": 78028,
+      "sha256": "c24d855456d20fba4a8b49d0471516bef2f25e4f0643391038cbff65bdee8bb3"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/b942729284424adfbc4222c2a5cf61bb/raw.json",
+      "bytes": 3506,
+      "sha256": "9e065fd6a65e9524560ec4ac2d80e2cbb15ec1abea14f2b8d97a3c0f64d14525"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/30e2a5bf3550429195368cb6dfbdb204/raw.json",
+      "bytes": 124146,
+      "sha256": "3c6edad4d319d5388eb847716bb80be47b15dea159635b821f34ba3d7ec6880d"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/a3c73518ea864a4ea6d5a1102b8eeaa1/raw.json",
+      "bytes": 3643,
+      "sha256": "6b8988cbb846e9fd6ec5f80e2605cd8bcb429e18d080edab1880b43de0d86815"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/cffc67928c1c49af8d821cb02688afcd/raw.json",
+      "bytes": 80110,
+      "sha256": "e6f0f9ad6ce615be2e05fa931d95840cdcda02f5e4db2bb62e32a65b610a7137"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006-remaining800-20261014T101309Z-v2/enabled/attempts/c1aa6b5138184ed088f5c2f844fa07f6/raw.json",
+      "bytes": 4287,
+      "sha256": "504211f43d887dadbf11a45a725b58ff29ea36531725b2e6bb72aba52e259b20"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/plan.json",
+      "bytes": 908861,
+      "sha256": "231b6daffb671511cd3adc22847d9d72c26a37db14b5c6793520a6f987001b13"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/ledger.json",
+      "bytes": 340603,
+      "sha256": "43e52211d44a1dc9f515601437787810892e6805a346a7a4b839131d20c8b778"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/301ae27e3d8246abb460415563808bb1/raw.json",
+      "bytes": 91691,
+      "sha256": "4d6df9f02c6bb57975a8974180eb8cfb28462d348c526fe77290ef18aff4561a"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/cfc2b9f6d53a48179ed5eb9ed0c980b9/raw.json",
+      "bytes": 3640,
+      "sha256": "6b38fa6da402de9691fe74d3a5f10e1d65dc4b6bbc50484fb066fb149789b687"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1357449ff35a40cea94f9064816e9704/raw.json",
+      "bytes": 84186,
+      "sha256": "f8da282736a83114c963ed009a382e2209e9faeb1c9fc19a2e982295d06b0660"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/f7594841281c4199945d0ca8a575127f/raw.json",
+      "bytes": 3087,
+      "sha256": "6bb76c6e71174f1978aeab6e5b91d2655b7313b033853297026f60a0ac90d077"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ad85c79e9add450b83dcddee44c4c1b1/raw.json",
+      "bytes": 76519,
+      "sha256": "ee8d8b5c285cc02afe8de7d7fed0f5e9b0b94a82b8dd2c487e688cab385d764b"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/ee5ea1a070254cd28a504e7e7eff0ea5/raw.json",
+      "bytes": 3559,
+      "sha256": "570b6c4942ab3932febd8c0fec97492cce60f3b9fa64f249b56d24cf629c5c79"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/964bdb97f00d4eba8a5fa605d8720d7c/raw.json",
+      "bytes": 91104,
+      "sha256": "9542e945c0aac6c912731788ceaf394f7efad4a135c729706550810cee692877"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/e0ca5de5e52243be9cb7b96a4f4350bb/raw.json",
+      "bytes": 4949,
+      "sha256": "9c1049eb2dcae94f22b70fcdd0de594ab77f9c4a41d0a9ad92740313c112551d"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/3171eb46a1d0483e8a59afc35946ca52/raw.json",
+      "bytes": 89435,
+      "sha256": "29947f6ee46e07f7f92c46cd4b2b7416250f358b4c8eaaa98ecf369002fb3a2f"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/c81eee5c4bda4ed8ac626eced427e2e7/raw.json",
+      "bytes": 7313,
+      "sha256": "576866908a4c71e90dcfab3dec2e2d8571bda5422aaa4a5339d4491560964d9b"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/78ace148583f48c3a438a9f9d2b3586e/raw.json",
+      "bytes": 95352,
+      "sha256": "f6a4dd30bf04fbea699e400cf4100951f7931ce3ffadc9e651bb0b6f3436b459"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/721642785c8f48b2a904162c6fcd68e3/raw.json",
+      "bytes": 3869,
+      "sha256": "03bcf6beacd204899664f2948c7c8cfa3fccb4fc540840703b896db2875b8635"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/02395914491646c98f5283ab31dad54e/raw.json",
+      "bytes": 94877,
+      "sha256": "55a7ccb9ae542e49e02da32b0d06ac52073baa7e75a374d67a75a68c421715c5"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/53e684c09fde46449d86d7b24ce0efc7/raw.json",
+      "bytes": 4352,
+      "sha256": "e050669ef82954132b1100ce246ce6100ae4fda5ea0fb0bfce789a4f77d409a5"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/27f9ae17a9244400bf110a18eab273a1/raw.json",
+      "bytes": 61422,
+      "sha256": "eef9dd1b03c0257be69faed91f358fb4cbe692ef71ebe76f25b9b018dbcf6145"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/5640626b6aec49eda650829e214bd7b9/raw.json",
+      "bytes": 4468,
+      "sha256": "b12ba0af7cde399a40d5cf73d495ed0289b79709d4afdfb0c5716ed3199a86df"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/1d22053cbfbf4dc2aeaf791528885780/raw.json",
+      "bytes": 82440,
+      "sha256": "c21a9c1bf725218244ffacf3d3b334cc9b16c2f4e848e4fc4878c75786197d7b"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a0e3bd24a1fe4b65ad8b9ab83a7549d8/raw.json",
+      "bytes": 4206,
+      "sha256": "66f46f71e53160152aa67715b58a1234b8d5db1860f2f1897e765fbd0711507f"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/b1e4d66adda64ad3b2c970ae3db70d1c/raw.json",
+      "bytes": 93587,
+      "sha256": "f9d9422e3e1802c27e2e0a6be902b0f09fc264ccabad380421c14d5c7013c73f"
+    },
+    {
+      "path": "/root/minecraft-runs/goal005-batch1-20261013T213420Z/enabled/attempts/a744220c50a74828af8bb122f6fd171d/raw.json",
+      "bytes": 3764,
+      "sha256": "b42fa122f9b91ad7fa567dc9624134ed5001f5251a482ac72156389542d6b2d6"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006c-remaining17-20261016T001844Z/plan.json",
+      "bytes": 2607934,
+      "sha256": "79e24a6a494bc69fedc2b7c7d4319e5daad946dda4d56fbd0cf77131c1866c69"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006c-remaining17-20261016T001844Z/enabled/ledger.json",
+      "bytes": 38443,
+      "sha256": "91c06101cd0420cca41e0ff3f57365f958ed0eb7b206e16dfb96d829070aaba5"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006c-remaining17-20261016T001844Z/enabled/attempts/fbabd574185140cda9405a585c9ee0ec/raw.json",
+      "bytes": 54461,
+      "sha256": "b2fdf0d6517993810f0832660f52c7a3f67ac0ff8e04070e04d2dc9c84207065"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006c-remaining17-20261016T001844Z/enabled/attempts/05091eb2d41e4ee5b08070c7663726d3/raw.json",
+      "bytes": 2978,
+      "sha256": "63a5fd65ec3ba20bc8adee8378c6021e2c98a7d58224a31ec679351d3357c2ab"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006b-ttyfix20-20261015T201419244530Z/plan.json",
+      "bytes": 1587388,
+      "sha256": "088e7f5253c078ea310a7130e88c23df602a26910a61a0785266fd8af3c4ed21"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006b-ttyfix20-20261015T201419244530Z/enabled/ledger.json",
+      "bytes": 5916,
+      "sha256": "f3ae55def9d780dc3a9614406aa5d4a0382d52f3112f6edd71584107f65c5864"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006b-ttyfix20-20261015T201419244530Z/enabled/attempts/4a7901468e2544fe96f1326fc78a8a1a/raw.json",
+      "bytes": 81313,
+      "sha256": "8ddc0be17e9954315fb71c2f88ab0c448288f3fcfa548b9fe0fd96545efcf3c3"
+    },
+    {
+      "path": "/root/minecraft-runs/goal006b-ttyfix20-20261015T201419244530Z/enabled/attempts/35911dd30da34dcf9b5f9922733450ab/raw.json",
+      "bytes": 3664,
+      "sha256": "28ebd593dc3fd31a23365c28c58e568f12fbd0c86bb5090bbda9fd5e5633ae32"
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/plan.json",
+      "bytes": 111018,
+      "sha256": "c1fbd060b0d7459ad26d74b27994f9f2b891264a21d4835bf81bec32679c1030"
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/ledger.json",
+      "bytes": 33633,
+      "sha256": "10222aad7e3156f0cbd4603f650a7fd3bc85bf65b8a3fd30b42dda895809edb1"
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/e67d1ed9d5624911901b9673da5d857b/raw.json",
+      "bytes": 69375,
+      "sha256": "ec74926ba21150c9081f904973d3a2a03e74ff0e0f11948d3492e59d9a038fb1"
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/5cb9bdc2eb4a473e93b61910910e4ad1/raw.json",
+      "bytes": 2816,
+      "sha256": "e611ebe70d3d155fbcd108e3a0a532cb5d735a94512249c60cb8f7ee13d6dc21"
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/6afe325ed55d457abfbbe19bc62da029/raw.json",
+      "bytes": 80099,
+      "sha256": "45d30df305edaf35b38b13d344ca1742ed8c8ebcb6db7e116167ac5f17516563"
+    },
+    {
+      "path": "/root/minecraft-runs/goal004a-ttyfix-20261013T194600Z/enabled/attempts/7d2425f79e7c4fe383a5bb97ca014e2b/raw.json",
+      "bytes": 4604,
+      "sha256": "caf54ddcc54c7d66d765e4308c3bb77c91987a1a70dddff591766f24f81cada7"
+    },
+    {
+      "path": "/root/minecraft-runs/goal002-approved-smoke-001/ledger.json",
+      "bytes": 17292,
+      "sha256": "6aaca585baf7a8dac2c66284f23eb110b2913ce0bad7119f1aaf5cd7044468c0"
+    },
+    {
+      "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/openai/state.json",
+      "bytes": 25859,
+      "sha256": "b22cf118b8187febb43194c88e3241bca53bd1a479d7141fc4607e625fd27c76"
+    },
+    {
+      "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/openai/inputs.json",
+      "bytes": 66227,
+      "sha256": "7a228f8c801b42a70c741f67530b1a2892834d1a74ebe87f395bef49457d208b"
+    },
+    {
+      "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/openai/config.json",
+      "bytes": 2400,
+      "sha256": "4ff07707d99f8f0b6bd5f7513f922bbe2c2f93c6caa1e21e11b12f2284f0a101"
+    },
+    {
+      "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/openai/attempts/416fa64024984552b76b887c1c4f6a55/raw.json",
+      "bytes": 68696,
+      "sha256": "172f522cb092803e0bbb1be76a1eb683738b442bc0e953ff32e57fbaea5c8256"
+    },
+    {
+      "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/openai/attempts/919bcc9a8a77444dac70ddf6822821a5/raw.json",
+      "bytes": 77572,
+      "sha256": "4ca413f07e9e11786cf6b1dbe9ce53c7a986fcd364328c163585ef96e528cbf1"
+    },
+    {
+      "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/anthropic/state.json",
+      "bytes": 6633,
+      "sha256": "e6ce73578273fddc702c520af379720aecc114b61ed881d18df27b95f28d6c3c"
+    },
+    {
+      "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/anthropic/inputs.json",
+      "bytes": 66227,
+      "sha256": "7a228f8c801b42a70c741f67530b1a2892834d1a74ebe87f395bef49457d208b"
+    },
+    {
+      "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/anthropic/config.json",
+      "bytes": 2073,
+      "sha256": "206a667b594d2850121405b7ad4082cf91c4384d20a19199c56158bc88f302a0"
+    },
+    {
+      "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/anthropic/attempts/1631891350dc4c1db486fd706c342007/raw.json",
+      "bytes": 4169,
+      "sha256": "d4867053c21ad01d843d9f1bc61b0bfc28eeeedc81721e7316814f7a3a1b6bd5"
+    },
+    {
+      "path": "/root/minecraft-runs/goal002-approved-smoke-001/runs/anthropic/attempts/92cd5b2a361a477f9ba4c4128f5cd552/raw.json",
+      "bytes": 6773,
+      "sha256": "4e5ccc3593c22d05ffd71b7b81d19a89e78a9a8ba1ea4572aeded22a2619ccc6"
+    }
+  ],
+  "research_api_requests_sent": 0,
+  "model_or_key_queries": 0,
+  "cpu_seconds": 0.16834501600000001,
+  "elapsed_seconds": 0.16844964801566675,
+  "reference_80_calls_usd": "1.098149219"
+}
