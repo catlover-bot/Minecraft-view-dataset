@@ -1,0 +1,259 @@
+{
+  "schema": "goal011_precomputation_plan_v1",
+  "analysis_label": "POST_HOC_EXPLORATORY / CPU_DIAGNOSTIC",
+  "prior_results_informed_design": true,
+  "registration_claim": false,
+  "questions": [
+    "A_coverage_selectivity_tradeoff",
+    "B_E_label_binding_patterns",
+    "C_rest30_validation_feasibility",
+    "D_claim_identifiability"
+  ],
+  "scope": {
+    "evaluation_buildings": 60,
+    "fixed_slots": 960,
+    "valid_predictions": 934,
+    "identified_failures": 25,
+    "operational_missing": 1,
+    "E_valid_by_builder": {
+      "openai": 55,
+      "anthropic": 46
+    },
+    "E_truncation_by_builder": {
+      "openai": 5,
+      "anthropic": 14
+    },
+    "rest_expected": 30,
+    "rest_per_five_frozen_strata": 6
+  },
+  "immutable": {
+    "entry_head": "d973269219f73a3ec52f94fe4508385681696114",
+    "main": "7309327efd1c19dda793b19e8d8e6ce0b5868db9",
+    "goal010_manifest_sha256": "dcad6f41f991425063c239798fec9b8d3bec2c0474fde5f901205a67d1432d7f",
+    "goal010v2_manifest_sha256": "f286aa20562b0954fc42ab479100b416066eedb0551ea4d9df34264773f98a14",
+    "source_package_sha256": "01fcabeac3c37fd39868d90234781773ddf6215cca1f1af5fb331111139f9b51",
+    "paths_resolved_from_verified_manifests": true
+  },
+  "tradeoff": {
+    "condition": "O",
+    "builders": [
+      "openai",
+      "anthropic"
+    ],
+    "core_metrics": [
+      "occupancy_iou",
+      "occupancy_precision",
+      "occupancy_recall",
+      "surface_f1_at_1"
+    ],
+    "reliability": "known completed model-output failures separate from operational unknown and normal empty success",
+    "sensitivity_metrics": [
+      "surface_f1_at_2",
+      "footprint_iou"
+    ],
+    "frames": [
+      "aligned",
+      "absolute"
+    ],
+    "structures": [
+      "filled_box",
+      "six_face_shell"
+    ],
+    "description_scopes": [
+      "all",
+      "openai",
+      "anthropic",
+      "gemini"
+    ],
+    "strata": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "independent_unit": "building",
+    "weighting": "average eligible description pairs within each building, then equal building weights",
+    "core_valid_masks": "require identical core pair IDs per comparison; preserve and report any actual deviations",
+    "quintile_valid_mask": "common intersection across the six fixed metrics; audit differences from each individual and four-core mask, with exact pair/building denominators",
+    "new_quintile_summaries": "descriptive means, counts, sign patterns and building SD only; no new p-values or confidence intervals",
+    "intervals": "only already saved Goal010/v2 intervals, independently reconciled",
+    "critical_mismatch_policy": "halt with proof and narrowly scoped correction proposal; never modify historical results"
+  },
+  "material": {
+    "geometry": "immutable world XYZ; absolute plus saved strict occupancy shift; no new alignment",
+    "cases": "all101 already-valid E outputs;19 truncations retained separately",
+    "exact_ids": true,
+    "alias_rewriting": false,
+    "confusion": "complete GT-ID by predicted-ID counts on shared occupancy; missing and extra geometry use explicit category with absent side null",
+    "bounds": [
+      "one_to_one_predicted_label_to_gt_label",
+      "unrestricted_many_to_one_predicted_label_to_gt_label"
+    ],
+    "objective": "maximize exact material matches on common occupied coordinates; geometry held fixed",
+    "one_to_one": "injective partial map; unassigned prediction labels null; maximum integer-weight bipartite assignment",
+    "tie_rule": "sorted predicted IDs; lexicographically sorted GT IDs before null; choose lexicographically first optimal assignment; enumerate each label's possible targets among all optimal assignments",
+    "many_to_one": "each predicted ID independently selects GT ID with largest column count; lexicographic tie selection; report all maximizing alternatives",
+    "diagnostic_values": [
+      "original_g_p_C_M",
+      "original_M_over_C_if_C_positive",
+      "original_M_over_g",
+      "original_material_aware_iou",
+      "upper_bound_M",
+      "upper_bound_M_over_C_if_C_positive",
+      "upper_bound_M_over_g",
+      "upper_bound_material_iou",
+      "recoverable_common_mismatches",
+      "unrecoverable_common_mismatches"
+    ],
+    "empty_intersection": "counts0, conditional ratiosnull, mapping mechanism UNIDENTIFIABLE",
+    "interpretation": "GT-informed oracle diagnostic upper bounds only; never predictions, corrections, alias sensitivity, new successful reconstructions or cognitive mechanism proof",
+    "actions": "validate original schema; compare exact absolute world inclusive bounds and strict labels; classify only unique nonoverlapping one-to-one reference/action matches; duplicates,overwrites,carve,unmatched/shifted/merged/split candidates AMBIGUOUS_NOT_CLASSIFIED",
+    "near_perfect_occupancy": 0.99,
+    "low_material_iou": 0.5,
+    "highlight_required": "building_034/openai/E included regardless of mapping result",
+    "independent_checks": "brute force optimal matchings on small fixtures; separate per-coordinate counts and source metrics on real cases; preserve source/actions bytes"
+  },
+  "rest": {
+    "selection": "original100 cohort split=rest; exact30 unique,6 eachstratum; disjoint eval60/smoke10",
+    "source_inventory": [
+      "GT NPY",
+      "GT bbox",
+      "metadata",
+      "all bound input images",
+      "all existing provider descriptions",
+      "canonical typed O input"
+    ],
+    "preferred_description_provider": "openai",
+    "provider_rationale": "fixed provenance/earliest stored description system and shared1800 output-cap design, not favorable downstream effects; availability required with no silent replacement",
+    "exposure_search": "manifest-derived canonical runs and explicit repository dataset/output/offline_evaluation/experiments/report/figure/human-study paths; bounded text and path inventory; no unrelated home/auth traversal",
+    "search_caps": {
+      "files": 100000,
+      "total_text_bytes": 1073741824,
+      "per_text_file_bytes": 33554432
+    },
+    "evidence_states": [
+      "VERIFIED_PRESENT",
+      "VERIFIED_ABSENT_WITHIN_SEARCH_SCOPE",
+      "PREVIOUSLY_EXPOSED",
+      "NOT_VERIFIED",
+      "MISSING"
+    ],
+    "unseen_claim": "No fully-unseen or new-distribution designation; distinguish no Goal005-010 evaluation from historical descriptions/v5/predictions/figures/human exposure",
+    "input_length": "local UTF8 bytes/characters and existing context/cap constraints; no tokenizer/API estimate presented as exact tokens; unknown remainsNOT_VERIFIED"
+  },
+  "prospective": {
+    "status": "UNAPPROVED_NOT_RUN_NO_LAUNCHER",
+    "maximum_protocols": 2,
+    "primary_estimand": "equal-building mean strictly aligned occupancy IoU delta, Builder minus same-input filled-box",
+    "critical_countermetrics": [
+      "surface_f1_at_1",
+      "occupancy_precision",
+      "occupancy_recall",
+      "known_failure_rate",
+      "operational_missing_rate"
+    ],
+    "description_provider": "openai",
+    "builders": "same explicit frozen model IDs from original plans; currently available models not queried; no silent substitution",
+    "candidates": [
+      {
+        "id": "R1",
+        "buildings": 30,
+        "builders": 2,
+        "repeats": 1,
+        "planned_calls": 60
+      },
+      {
+        "id": "R3",
+        "buildings": 30,
+        "builders": 2,
+        "repeats": 3,
+        "planned_calls": 180
+      }
+    ],
+    "planned_output_token_cap": 32768,
+    "precision": {
+      "design_source": "eval60 per-building paired delta SD only; observed outcomes informed design",
+      "N_values": [
+        30,
+        60
+      ],
+      "planning_halfwidth": 0.03,
+      "planning_halfwidth_is_validated_MCID": false,
+      "method": "two-sided t0.975,N-1 * eval60 SD / sqrt(N), illustrative assumed transport only, no power or sufficiency guarantee",
+      "repeat_variation": "r3 halfwidth range factors1/sqrt(3)..1 under nonnegative between/within variance components; actual repeat variance unidentifiable from single-generation design"
+    },
+    "sampling": "reuse exact historical prompt/schema and document recorded sampling omissions; future platform support/settings require separate verification before approval",
+    "pricing_status": "REQUIRES_CURRENT_PRICE_VERIFICATION",
+    "costs": "explicit input-token reservation limits from frozenplan, outputcap×plannedcalls; symbolic official unit-price formula; no dollars invented, no price/model/token APIs",
+    "new_authority_or_ledger": false,
+    "automatic_retries": 0,
+    "consent": "future fresh real-TTY human authorization; old USD30/991calls are not approval",
+    "causality": "same-description O repetitions cannot identify information lost by image-to-text conversion; controlled paired intervention would be a different future study"
+  },
+  "execution": {
+    "new_dependencies": 0,
+    "threads": 1,
+    "random_seed": 20261017,
+    "max_stage_cpu_seconds": 1800,
+    "max_stage_wall_seconds": 3600,
+    "max_address_space_bytes": 4294967296,
+    "max_case_cpu_seconds": 120,
+    "max_case_wall_seconds": 180,
+    "max_material_labels": 64,
+    "min_free_disk_bytes": 10737418240,
+    "max_public_file_bytes": 10485760,
+    "overwrite": false,
+    "source_locks": true,
+    "python_network_block": true,
+    "OS_isolation_guaranteed": false,
+    "commit_plan_before_new_derived_results": true,
+    "commit_code_before_real_analysis": true
+  },
+  "forbidden": {
+    "research_api_requests_sent": 0,
+    "model_queries": 0,
+    "token_count_api_requests": 0,
+    "api_key_queries": 0,
+    "human_studies": 0,
+    "new_generation": 0,
+    "retries": 0,
+    "checkpoint_uploads_or_mutations": 0,
+    "existing_draft_mutations": 0
+  },
+  "deliverables": [
+    "README.md",
+    "QUESTION_REGISTER.md",
+    "ANALYSIS_PLAN.json",
+    "TRADEOFF_EXPLANATION_JA.md",
+    "CLAIM_AUDIT_FINDINGS.json",
+    "E_SYMBOL_BINDING_FINDINGS_JA.md",
+    "E_CASES_101.csv",
+    "E_GLOBAL_CONFUSION.csv",
+    "E_MAPPING_UPPER_BOUNDS.csv",
+    "E_FAILURE_MECHANISM_AUDIT.json",
+    "REST30_FEASIBILITY.json",
+    "REST30_SOURCES.csv",
+    "PROSPECTIVE_PROTOCOL_UNAPPROVED.md",
+    "RESEARCH_DECISION_JA.md",
+    "MANIFEST.json",
+    "test receipts",
+    "resource receipts"
+  ],
+  "decision_gate": {
+    "categories": [
+      "cohort descriptive ordering",
+      "E geometry conditional validity with label caveat",
+      "O-v-J language information-loss causality",
+      "conventional caption quality versus GT proxy",
+      "rest30 readiness and unapprovedcost scope",
+      "visibility/aesthetic/functional fidelity"
+    ],
+    "outcomes": [
+      "PASS",
+      "FAIL",
+      "INDETERMINATE"
+    ],
+    "recommendation": "Choose A no more paid experiments or B exactly one narrowly scoped future rest30 test after feasibility/precision review; no automatic execution"
+  }
+}
