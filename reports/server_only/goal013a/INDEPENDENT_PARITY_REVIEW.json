@@ -1,0 +1,164 @@
+{
+  "GT_or_Builder_outcome_reads_by_review": 0,
+  "checkpoint_hash_check_scope": "Saved execution file hashes match the frozen config; the 353976522-byte checkpoint was not rehashed by this review.",
+  "checks": {
+    "all_saved_numeric_checks_pass_fixed_tolerances": true,
+    "cache_replay_and_reversed_mean_pass": true,
+    "first_one_and_first_ten_fixed_scene_frames_match": true,
+    "fixed_input_and_cpu_float32_match": true,
+    "original_author_ast_hashes_lines_and_function_set_match": true,
+    "original_function_execution_receipt_all_three_counts_one": true,
+    "pilot_outcomes_not_joined_and_quality_not_used": true,
+    "pilot_resource_and_saved_projection_bounds_pass": true,
+    "read_files_unchanged_before_after": true,
+    "six_token_sequences_and_preprocessing_tensors_exact": true
+  },
+  "code_commit": "de7c1cf3c6ddaf1f2b84ed467375bbf4de805642",
+  "cumulative_resources_at_parity": {
+    "cpu_seconds": 19.148018132999997,
+    "elapsed_seconds": 19.22641017800197,
+    "max_rss_kib": 1746452
+  },
+  "human_quality_validity": "NOT_VALIDATED",
+  "input_files": {
+    "COMMITTED_INPUT_FILES.json": {
+      "bytes": 7904,
+      "path": "/root/minecraft-runs/goal013a-20261017T131846Z/score/COMMITTED_INPUT_FILES.json",
+      "sha256": "43ff1931e486c273388ca612a8e0c4f840a1934aa294f04bbec881fb5454457f"
+    },
+    "PILOT_01.json": {
+      "bytes": 426,
+      "path": "/root/minecraft-runs/goal013a-20261017T131846Z/score/PILOT_01.json",
+      "sha256": "88b72b0236b98f962229d86362c3bed36e7a8e969219ac5896fbff0588e4e838"
+    },
+    "PILOT_10.json": {
+      "bytes": 972,
+      "path": "/root/minecraft-runs/goal013a-20261017T131846Z/score/PILOT_10.json",
+      "sha256": "12f66684538b4d27ce57402c3be601a064a1cf5b2e0fea11f3e9a6408fa63267"
+    },
+    "REFERENCE_PARITY.json": {
+      "bytes": 9245,
+      "path": "/root/minecraft-runs/goal013a-20261017T131846Z/score/REFERENCE_PARITY.json",
+      "sha256": "bef199a5e8d853aeab2bd478d3dc78fcb26fece5f512b7d5c54079008ea21d52"
+    },
+    "SCORER_CONFIG.json": {
+      "bytes": 8186,
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal013a/SCORER_CONFIG.json",
+      "sha256": "589ed76a43061d966f2cf99ebbb0721f9331bcc1ea0f94f5119a39a523d2670c"
+    },
+    "original_clipscore_source": {
+      "bytes": 10013,
+      "path": "/root/minecraft-tools/goal013a-20261017T131846Z/sources/clipscore/clipscore.py",
+      "sha256": "203b63b680b6a5207ebc7b169a4cce164221a76e8d0adb78e8f6bd4220dfce72"
+    }
+  },
+  "limitations": [
+    "This review did not rerun the model or reconstruct saved features; execution evidence is the committed runner and completed receipt.",
+    "Parity covers one fixed summary repeated across six requested images, not all summaries.",
+    "RSS is process high-water RSS at each checkpoint, not isolated per-stage memory.",
+    "The projection is the saved precommitted estimate, not a guarantee or a new forecast.",
+    "Human quality validity in Minecraft, external prediction and 2021 GPU float16 bit parity are not established.",
+    "Final all-180 completion and end-of-run source integrity are outside this three-artifact review."
+  ],
+  "model_inferences_by_review": 0,
+  "original_function_calls": {
+    "extract_all_captions": 1,
+    "extract_all_images": 1,
+    "get_clip_score": 1
+  },
+  "original_summary_reads_by_review": 0,
+  "parity_stage_resources": {
+    "cpu_seconds": 5.054622183999996,
+    "elapsed_seconds": 5.067960751010105
+  },
+  "pilot_one": {
+    "Builder_outcomes_joined": false,
+    "buildings": 1,
+    "cache": {
+      "image_encoded": 6,
+      "image_hits": 0,
+      "text_encoded": 3,
+      "text_hits": 0
+    },
+    "computed_rows": 3,
+    "cpu_seconds": 1.525166415000001,
+    "elapsed_seconds": 1.5314068740117364,
+    "max_rss_kib": 1746452,
+    "planned_rows": 3,
+    "scene_ids": [
+      "buildings_100_v4_building_001"
+    ],
+    "score_quality_used_for_pass": false,
+    "status": "PASS"
+  },
+  "pilot_ten": {
+    "Builder_outcomes_joined": false,
+    "buildings": 10,
+    "cache": {
+      "image_encoded": 60,
+      "image_hits": 0,
+      "text_encoded": 30,
+      "text_hits": 0
+    },
+    "computed_rows": 30,
+    "cpu_seconds": 15.095309668999999,
+    "elapsed_seconds": 15.15229023899883,
+    "max_rss_kib": 1746452,
+    "planned_rows": 30,
+    "projection": {
+      "projected_total_cpu_seconds": 185.197863698,
+      "projected_total_wall_seconds": 185.9049401920056,
+      "remaining_buildings": 50,
+      "safety_multiplier": 2,
+      "status": "PASS"
+    },
+    "scene_ids": [
+      "buildings_100_v4_building_001",
+      "buildings_100_v4_building_003",
+      "buildings_100_v4_building_005",
+      "buildings_100_v4_building_006",
+      "buildings_100_v4_building_007",
+      "buildings_100_v4_building_011",
+      "buildings_100_v4_building_013",
+      "buildings_100_v4_building_015",
+      "buildings_100_v4_building_016",
+      "buildings_100_v4_building_021"
+    ],
+    "score_quality_used_for_pass": false,
+    "status": "PASS"
+  },
+  "raw_summary_exported": false,
+  "real_checkpoint_loads_by_review": 0,
+  "research_api_requests_sent": 0,
+  "reviewed_utc": "2026-10-17T13:41:17.244445+00:00",
+  "saved_max_absolute_differences": {
+    "batch_one_images": 1.4901161193847656e-07,
+    "batch_one_texts": 8.940696716308594e-08,
+    "cache_images": 0.0,
+    "cache_replay_images": 0.0,
+    "cache_replay_texts": 0.0,
+    "cache_texts": 8.940696716308594e-08,
+    "independent_scalar_formula": 5.5235862661540125e-08,
+    "normalized_image_features": 0.0,
+    "normalized_text_features": 0.0,
+    "per_image_q": 0.0
+  },
+  "schema": "goal013a_independent_saved_parity_review_v1",
+  "scope": "Read-only independent validation of completed parity and first-one/first-ten pilot evidence against frozen configuration, original author AST and committed runner. No model execution or feature recomputation.",
+  "spec_commit": "ded60648d0e0cb9a7892bef451e8696657d4e58b",
+  "status": "PASS",
+  "verified_committed_code": {
+    "offline_evaluation/analysis/goal013a/reference_parity.py": {
+      "bytes": 10158,
+      "sha256": "e35d30656d440ecf64566e0b331a9f13a3033dbe2cc987d18ed1b8a3da9cd044"
+    },
+    "offline_evaluation/analysis/goal013a/run_pipeline.py": {
+      "bytes": 20960,
+      "sha256": "f16ddd433f0121d3478b5f7777f663a473822c735f8f90df2e8dca68b678536f"
+    },
+    "offline_evaluation/analysis/goal013a/scorer.py": {
+      "bytes": 18553,
+      "sha256": "041638a21b63eefc63df7ad4d4d9d1510375b71aad41d67c4c9c8bd53387aa70"
+    }
+  }
+}

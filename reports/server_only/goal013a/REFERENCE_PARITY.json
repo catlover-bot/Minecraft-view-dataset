@@ -1,0 +1,343 @@
+{
+  "cache_replay_without_encoding": true,
+  "device": "cpu",
+  "dtype": "float32",
+  "gpu_2021_fp16_bit_parity_claimed": false,
+  "human_quality_validity": "NOT_VALIDATED",
+  "input_selection": {
+    "description_provider": "anthropic",
+    "scene_id": "buildings_100_v4_building_001",
+    "summary_sha256": "38f6d4b4b07dd02fdc4bd365b03acc318d0de34a46aa3a9dd06ac01a092dd55b"
+  },
+  "numeric_checks": {
+    "batch_one_images": {
+      "atol": 1e-05,
+      "max_absolute_difference": 1.4901161193847656e-07,
+      "pass": true,
+      "rtol": 1e-05,
+      "shape": [
+        6,
+        512
+      ]
+    },
+    "batch_one_texts": {
+      "atol": 1e-05,
+      "max_absolute_difference": 8.940696716308594e-08,
+      "pass": true,
+      "rtol": 1e-05,
+      "shape": [
+        6,
+        512
+      ]
+    },
+    "cache_images": {
+      "atol": 1e-05,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 1e-05,
+      "shape": [
+        6,
+        512
+      ]
+    },
+    "cache_replay_images": {
+      "atol": 0,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 0,
+      "shape": [
+        6,
+        512
+      ]
+    },
+    "cache_replay_texts": {
+      "atol": 0,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 0,
+      "shape": [
+        6,
+        512
+      ]
+    },
+    "cache_texts": {
+      "atol": 1e-05,
+      "max_absolute_difference": 8.940696716308594e-08,
+      "pass": true,
+      "rtol": 1e-05,
+      "shape": [
+        6,
+        512
+      ]
+    },
+    "independent_scalar_formula": {
+      "atol": 1e-05,
+      "max_absolute_difference": 5.5235862661540125e-08,
+      "pass": true,
+      "rtol": 1e-05,
+      "shape": [
+        6
+      ]
+    },
+    "normalized_image_features": {
+      "atol": 1e-05,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 1e-05,
+      "shape": [
+        6,
+        512
+      ]
+    },
+    "normalized_text_features": {
+      "atol": 1e-05,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 1e-05,
+      "shape": [
+        6,
+        512
+      ]
+    },
+    "per_image_q": {
+      "atol": 1e-05,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 1e-05,
+      "shape": [
+        6
+      ]
+    }
+  },
+  "original_function_calls": {
+    "extract_all_captions": 1,
+    "extract_all_images": 1,
+    "get_clip_score": 1
+  },
+  "paired_inputs": 6,
+  "preprocess_checks": [
+    {
+      "atol": 0.0,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 0.0,
+      "shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "atol": 0.0,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 0.0,
+      "shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "atol": 0.0,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 0.0,
+      "shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "atol": 0.0,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 0.0,
+      "shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "atol": 0.0,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 0.0,
+      "shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "atol": 0.0,
+      "max_absolute_difference": 0.0,
+      "pass": true,
+      "rtol": 0.0,
+      "shape": [
+        3,
+        224,
+        224
+      ]
+    }
+  ],
+  "raw_summary_exported": false,
+  "real_reference_function_executed": true,
+  "reference_mean": 0.5546931624412537,
+  "reference_warning_categories": [
+    "UserWarning"
+  ],
+  "resources": {
+    "cpu_seconds": 19.148018132999997,
+    "elapsed_seconds": 19.22641017800197,
+    "max_rss_kib": 1746452
+  },
+  "score_id": "MEAN6_CLIPSCORE_VITB32_CPU_FP32_SUMMARY_ONLY_GOAL013A",
+  "six_view_order_mean_exact": true,
+  "source_extraction": {
+    "definitions": [
+      {
+        "ast_sha256": "d355e4c7cce225132e2a44a3d44587921480d84ea6354115d2c82f38d6bfa45c",
+        "first_line": 66,
+        "last_line": 79,
+        "name": "CLIPCapDataset"
+      },
+      {
+        "ast_sha256": "99398742ab83fea8d9c2393c733c8b2db83fd490020d73aa4fc23bb1b8357bc0",
+        "first_line": 82,
+        "last_line": 104,
+        "name": "CLIPImageDataset"
+      },
+      {
+        "ast_sha256": "dc9fdc96503e748a31d2499fa2c59688ddddb724d0e6a5f6243ea1346eb346ce",
+        "first_line": 107,
+        "last_line": 117,
+        "name": "extract_all_captions"
+      },
+      {
+        "ast_sha256": "5110aadc1f039f58fd7a33e27cb37461e7c00ea5d0fc99722009eac2d16c320b",
+        "first_line": 120,
+        "last_line": 132,
+        "name": "extract_all_images"
+      },
+      {
+        "ast_sha256": "ab8387202b04c565796852058f712440cf9a5a78ca4d1c689b6ba0202cae4699",
+        "first_line": 135,
+        "last_line": 160,
+        "name": "get_clip_score"
+      }
+    ],
+    "excluded_entrypoints": [
+      "parse_args",
+      "get_refonlyclipscore",
+      "main",
+      "__main__ block"
+    ],
+    "execution_overrides": {
+      "DataLoader": "batch_size=8 and num_workers=0 passed by wrappers; unchanged original extractors execute",
+      "numpy_branch": ">=1.21 explicit float32 L2 normalization",
+      "tqdm": "progress display disabled; iterable unchanged",
+      "unused_imports_not_required": [
+        "sklearn",
+        "generation_eval_utils",
+        "reference-caption metrics and CLI imports"
+      ]
+    },
+    "omitted_top_level_imports": [
+      "import argparse",
+      "import clip",
+      "import torch",
+      "from PIL import Image",
+      "from sklearn.preprocessing import normalize",
+      "from torchvision.transforms import Compose, Resize, CenterCrop, ToTensor, Normalize",
+      "import torch",
+      "import tqdm",
+      "import numpy as np",
+      "import sklearn.preprocessing",
+      "import collections",
+      "import os",
+      "import pathlib",
+      "import json",
+      "import generation_eval_utils",
+      "import pprint",
+      "import warnings",
+      "from packaging import version"
+    ],
+    "original_function_bodies_modified": false,
+    "source_path": "/root/minecraft-tools/goal013a-20261017T131846Z/sources/clipscore/clipscore.py",
+    "source_revision": "1036465276513621f77f1c2208d742e4a430781f",
+    "source_sha256": "203b63b680b6a5207ebc7b169a4cce164221a76e8d0adb78e8f6bd4220dfce72"
+  },
+  "source_hashes": {
+    "/root/minecraft-tools/goal013a-20261017T131846Z/models/ViT-B-32.pt": {
+      "bytes": 353976522,
+      "sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af"
+    },
+    "/root/minecraft-tools/goal013a-20261017T131846Z/sources/clipscore/LICENSE": {
+      "bytes": 1125,
+      "sha256": "dfaa45d06d24953577ddf48b3a00295c3032bac441f151085502b85c035693b6"
+    },
+    "/root/minecraft-tools/goal013a-20261017T131846Z/sources/clipscore/README.md": {
+      "bytes": 5545,
+      "sha256": "04927f1e752a0e1d0c5eb07deab93965763729e5c6910394000419eb1f3ab338"
+    },
+    "/root/minecraft-tools/goal013a-20261017T131846Z/sources/clipscore/clipscore.py": {
+      "bytes": 10013,
+      "sha256": "203b63b680b6a5207ebc7b169a4cce164221a76e8d0adb78e8f6bd4220dfce72"
+    },
+    "/root/minecraft-tools/goal013a-20261017T131846Z/sources/openai_clip/LICENSE": {
+      "bytes": 1064,
+      "sha256": "987e63b32f6c89ff5160e429458a872ff048e6860b590a3912e938f9da8f14db"
+    },
+    "/root/minecraft-tools/goal013a-20261017T131846Z/sources/openai_clip/README.md": {
+      "bytes": 7306,
+      "sha256": "f82c5c75e140532eb37a7d943921e1bdd57d740c6b40d0030985bc5b5d11d6f1"
+    },
+    "/root/minecraft-tools/goal013a-20261017T131846Z/sources/openai_clip/clip/__init__.py": {
+      "bytes": 20,
+      "sha256": "d7930eb290ebed432116795c91473200d098451a94c0aedd4ae0f934f97955e8"
+    },
+    "/root/minecraft-tools/goal013a-20261017T131846Z/sources/openai_clip/clip/bpe_simple_vocab_16e6.txt.gz": {
+      "bytes": 1356917,
+      "sha256": "924691ac288e54409236115652ad4aa250f48203de50a9e4722a6ecd48d6804a"
+    },
+    "/root/minecraft-tools/goal013a-20261017T131846Z/sources/openai_clip/clip/clip.py": {
+      "bytes": 9644,
+      "sha256": "9540f200fbf8145479fa655382a56dab048d238cc698b9cbd8df3b6d86d3f1b6"
+    },
+    "/root/minecraft-tools/goal013a-20261017T131846Z/sources/openai_clip/clip/model.py": {
+      "bytes": 17374,
+      "sha256": "9902cbe5ee90a1da2aa3e6f043e8a23dc1f8831193b963785c9af03d5c7bef2c"
+    },
+    "/root/minecraft-tools/goal013a-20261017T131846Z/sources/openai_clip/clip/simple_tokenizer.py": {
+      "bytes": 4632,
+      "sha256": "d1b09f10ed3d1e2c343619cb98cbfacb92363dd8607526a43aa7fe2d60d15bad"
+    },
+    "/root/minecraft-tools/goal013a-20261017T131846Z/sources/openai_clip/model-card.md": {
+      "bytes": 7733,
+      "sha256": "7baf04f60c6234b301ec2c9ca39e67a3ca54b47c05e9509bddf732cbcbec8b7f"
+    }
+  },
+  "stage_cpu_seconds": 5.054622183999996,
+  "stage_elapsed_seconds": 5.067960751010105,
+  "status": "PASS",
+  "token_rows_exact": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "tolerances": {
+    "normalized_feature_atol": 1e-05,
+    "normalized_feature_rtol": 1e-05,
+    "preprocess_atol": 0.0,
+    "preprocess_rtol": 0.0,
+    "score_atol": 1e-05,
+    "score_rtol": 1e-05,
+    "token_ids": "EXACT"
+  }
+}

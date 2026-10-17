@@ -1,0 +1,137 @@
+{
+  "Builder_outcome_files_opened": 0,
+  "arithmetic_verification": {
+    "atol": 1e-05,
+    "independent_implementation": "Python standard library statistics.mean and statistics.pstdev; six stored finite per-view q values only",
+    "maximum_absolute_errors": {
+      "maximum": 0.0,
+      "mean6": 0.0,
+      "minimum": 0.0,
+      "population_sd": 1.3877787807814457e-17
+    },
+    "recomputed_model_scores": false,
+    "rows_checked": 178,
+    "rtol": 1e-05,
+    "tolerance_source": "pre-frozen SCORER_CONFIG score_atol/score_rtol"
+  },
+  "checks": {
+    "actual_token_ids_absent_from_public": true,
+    "canonical_token_ids_sha256_matches_public": true,
+    "freeze_all_embedded_artifact_descriptors_match_bytes": true,
+    "missing_scores_not_zero_filled": true,
+    "public_equals_canonical_after_removing_actual_token_ids_only": true,
+    "raw_summary_text_absent_from_public": true,
+    "reviewed_artifacts_unchanged": true,
+    "score_freeze_after_exit_integrity_supported_by_frozen_runner_and_pass_receipt": true,
+    "six_ordered_image_descriptors_match_source": true,
+    "source_metadata_preserved_except_previously_uncomputed_score_fields": true,
+    "three_providers_share_ordered_image_descriptors": true,
+    "token_length_retained_dropped_fraction_and_special_pooling_metadata_consistent": true
+  },
+  "counts": {
+    "computed_descriptions": 178,
+    "computed_image_text_pairs": 1068,
+    "missing_empty_summaries": 2,
+    "planned_buildings": 60,
+    "planned_descriptions": 180,
+    "planned_image_references": 1080,
+    "truncated_nonempty_summaries": 59,
+    "unique_image_paths": 360
+  },
+  "frozen_method": {
+    "code_commit": "de7c1cf3c6ddaf1f2b84ed467375bbf4de805642",
+    "score_id": "MEAN6_CLIPSCORE_VITB32_CPU_FP32_SUMMARY_ONLY_GOAL013A",
+    "spec_commit": "ded60648d0e0cb9a7892bef451e8696657d4e58b"
+  },
+  "independent_representativeness_counts": {
+    "ALL": {
+      "coverage_unverified": 0,
+      "nonempty_summaries": 178,
+      "status": "PASS",
+      "unread_fraction_over_half": 0,
+      "verified": 178
+    },
+    "anthropic": {
+      "coverage_unverified": 0,
+      "nonempty_summaries": 60,
+      "status": "PASS",
+      "unread_fraction_over_half": 0,
+      "verified": 60
+    },
+    "gemini": {
+      "coverage_unverified": 0,
+      "nonempty_summaries": 58,
+      "status": "PASS",
+      "unread_fraction_over_half": 0,
+      "verified": 58
+    },
+    "openai": {
+      "coverage_unverified": 0,
+      "nonempty_summaries": 60,
+      "status": "PASS",
+      "unread_fraction_over_half": 0,
+      "verified": 60
+    }
+  },
+  "input_artifacts": {
+    "/root/minecraft-runs/goal013-20261017T111808Z/phase0/SOURCE_BINDING_180.json": {
+      "bytes": 830260,
+      "sha256": "b52ba0e3280e23661710cb9c572ec2b298c40d28a54181ac247e40840f674107"
+    },
+    "/root/minecraft-runs/goal013a-20261017T131846Z/score/EXECUTION_RECEIPT.json": {
+      "bytes": 491,
+      "sha256": "466a962850715ba06df08c7873bd1cf463fa77617272827d77f73e6277669047"
+    },
+    "/root/minecraft-runs/goal013a-20261017T131846Z/score/SCORES_180.json": {
+      "bytes": 1657989,
+      "sha256": "53a53f9581907a45ee28042db3bbdfacc30b019531461b4b8a43a7d4bf50c096"
+    },
+    "/root/minecraft-runs/goal013a-20261017T131846Z/score/SCORES_180_CANONICAL.json": {
+      "bytes": 1849589,
+      "sha256": "6e586bb0c8026e92a5d46e45d43e579dde40f1b58f372af72fadaa4c7ba2794c"
+    },
+    "/root/minecraft-runs/goal013a-20261017T131846Z/score/SCORE_FREEZE.json": {
+      "bytes": 2215,
+      "sha256": "b014460fc3119c2ba6066f7e87d4bf5ba09cef3390f4be57c47729cb205b3ae0"
+    },
+    "/root/minecraft-runs/goal013a-20261017T131846Z/score/SCORING_SUMMARY.json": {
+      "bytes": 2526,
+      "sha256": "7a879f67d8dd5984b9f4ea9fbabe5b9d7bd1a37d70a5fc446ab7986e463f3b91"
+    },
+    "/root/minecraft-runs/goal013a-20261017T131846Z/score/TOKEN_REPRESENTATIVENESS.json": {
+      "bytes": 1487,
+      "sha256": "ae5fba0aaccb383e479ce844d26bfeb954d71b25645b845246ad8fe27c2b1b6f"
+    },
+    "/root/workspace/Minecraft-view-dataset/reports/server_only/goal013a/SCORER_CONFIG.json": {
+      "bytes": 8186,
+      "sha256": "589ed76a43061d966f2cf99ebbb0721f9331bcc1ea0f94f5119a39a523d2670c"
+    }
+  },
+  "limitations": [
+    "Arithmetic check reuses the already stored per-view model scores; it does not rerun image/text encoding.",
+    "Source image descriptors were compared to the frozen Goal013 binding; image bytes and original summary JSON were not reopened by this reviewer.",
+    "Token length and pooling checks verify consistency of saved diagnostics and canonical actual token IDs; no new tokenization was performed.",
+    "Representativeness PASS is the fixed operational truncation gate, not validated Minecraft human quality or resolution of original RQ2.",
+    "Saved request image binding does not independently prove original transport submission or model visibility."
+  ],
+  "missing_keys": [
+    {
+      "description_provider": "gemini",
+      "scene_id": "buildings_100_v4_building_054"
+    },
+    {
+      "description_provider": "gemini",
+      "scene_id": "buildings_100_v4_building_061"
+    }
+  ],
+  "new_association_or_bootstrap_calculations": 0,
+  "new_model_inference_calls": 0,
+  "new_tokenizer_runs": 0,
+  "original_or_frozen_files_modified": 0,
+  "representativeness_gate": "PASS",
+  "research_api_requests_sent": 0,
+  "reviewed_at_utc": "2026-10-17T13:43:51.524626+00:00",
+  "reviewer": "tradeoff_audit",
+  "schema": "goal013a_independent_score_review_v1",
+  "status": "PASS"
+}
