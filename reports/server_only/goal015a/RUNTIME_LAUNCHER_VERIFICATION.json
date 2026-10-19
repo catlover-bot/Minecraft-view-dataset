@@ -1,0 +1,106 @@
+{
+  "implementation": [
+    {
+      "bytes": 25787,
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal015a/runtime.py",
+      "sha256": "844f0ecad37f5694a524ec1661f3c125712f7eaf03e24656bf2955e75d6cbfdc"
+    },
+    {
+      "bytes": 4052,
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal015a/planning.py",
+      "sha256": "19f673d4c0962a072021173aaf4fcefb3fb52ddc6de22e60ccc349fb6a6b07a1"
+    },
+    {
+      "bytes": 7111,
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal015a/start-reviewed.sh",
+      "sha256": "f3e7cfc1a7029815f19aeff8d86e21185b2a94ab3c9e85cd7c5547f7f2a096a9"
+    },
+    {
+      "bytes": 12957,
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal015a/tests/test_runtime.py",
+      "sha256": "33ae2d449f5863c2b9383b49a9c66e23cdaf9856491bfb4e65f5a8989af603c6"
+    },
+    {
+      "bytes": 10924,
+      "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/operations/goal015a/tests/test_launcher.py",
+      "sha256": "9229404b8362b3835963316f1ac52b39b07cc6aa9be05a1fa3d065266041e6ec"
+    }
+  ],
+  "launcher_checks": [
+    "both missing credentials hidden",
+    "only missing credential prompted",
+    "existing credentials preserved",
+    "both preflight gates before launch",
+    "actual controlling TTY versus fake pane lookup mismatch rejected",
+    "one run invocation",
+    "partial and save-failure exit codes retained",
+    "log writer failure exits74",
+    "empty hidden entry refuses",
+    "non-TTY refuses",
+    "private unique log path and actual exit status printed"
+  ],
+  "launcher_scope": "Original wrapper checked with bash -n and embedded Python ast.parse only. Real PTY executions used rewritten isolated copies, fake Python CLI/preflight and fake tmux lookup with an explicit synthetic environment.",
+  "launcher_tests": 12,
+  "launcher_tests_cpu_seconds": 1.78,
+  "launcher_tests_max_rss_kib": 30216,
+  "launcher_tests_wall_seconds": 1.87,
+  "limitations": [
+    "Launcher shell tests mock the embedded preflight; its actual guards are independently tested in runtime and contract suites. No production launcher or production approval was executed."
+  ],
+  "model_account_queries": 0,
+  "prior_fixture_run": "LAUNCHER_TESTS.xml: one static check passed; eleven fixtures stopped before execution on an overbroad isolation assertion. The assertion was narrowed to original canonical declarations, and all12 then passed.",
+  "production_child_execution_present_at_review": false,
+  "production_child_plan_present_at_review": false,
+  "real_key_environment_inspected": false,
+  "research_api_requests_sent": 0,
+  "resource_receipts": [
+    {
+      "bytes": 57,
+      "path": "/root/minecraft-runs/goal015a-20261019T141842Z-13cfbc79/RUNTIME_RESUMED_TARGET_RESOURCES.txt",
+      "sha256": "18830660624b7d6ff3fc81edd4b0c20c97069c71e09a35afa2d69cfdfea53c86"
+    },
+    {
+      "bytes": 74,
+      "path": "/root/minecraft-runs/goal015a-20261019T141842Z-13cfbc79/LAUNCHER_TEST_RESOURCES_V2.txt",
+      "sha256": "b37fb3943b92da4919b9d9662e4fed3fbcbbd78813f3ba9306e5e9a7eabfafd7"
+    }
+  ],
+  "runtime_checks": [
+    "parent and child authority status authenticated",
+    "combined parent charge and reservations retained",
+    "only original8 rows",
+    "uncertain rows never resent",
+    "real-PTY exact approval then duplicate refused"
+  ],
+  "runtime_final_targeted_tests": 7,
+  "runtime_tests_cpu_seconds": 5.35,
+  "runtime_tests_max_rss_kib": 37232,
+  "runtime_tests_wall_seconds": 5.73,
+  "schema": "goal015a_runtime_launcher_verification_v1",
+  "status": "PASS",
+  "test_results": [
+    {
+      "bytes": 1313,
+      "counts": {
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "7"
+      },
+      "path": "/root/minecraft-runs/goal015a-20261019T141842Z-13cfbc79/RUNTIME_RESUMED_TARGET_TESTS.xml",
+      "sha256": "38d5747346862e5f6712b7db4503b9cc3738863d1967d2885fa6711b436af32e"
+    },
+    {
+      "bytes": 2110,
+      "counts": {
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "12"
+      },
+      "path": "/root/minecraft-runs/goal015a-20261019T141842Z-13cfbc79/LAUNCHER_TESTS_V2.xml",
+      "sha256": "b76205d08515954170e0f150cacd679eb1152a29e2f4bb781a12609a8b36b371"
+    }
+  ],
+  "verified_at_utc": "2026-10-19T14:47:56.024848+00:00"
+}
