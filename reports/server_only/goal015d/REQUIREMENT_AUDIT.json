@@ -1,10 +1,10 @@
 {
   "schema": "goal015d_requirement_audit_v1",
-  "status": "READY_EXCEPT_PUBLICATION",
+  "status": "ALL_PREPARATION_REQUIREMENTS_VERIFIED",
   "reviewed_at_utc": "2026-10-20T12:11:40.023557+00:00",
   "request_attachment": "/root/.codex/attachments/7573f5f7-49b9-44c8-94c7-58d7ee77e36e/pasted-text-1.txt",
   "plan_id": "ed55298e3e544cb24a39338d098946afe313cd2238ee815016f0031c3f7d59b5",
-  "scope": "Saved mini12 and future16 evaluator inspected directly. Frozen runtime/plan and actual dependency checkpoint independently reviewed; all112 new-only tests pass with matching current code hashes. Bounded preservation passes. Git publication/postcommit checks and final response remain root-owned; no C rerating or real generation.",
+  "scope": "Actual saved mini12, frozen future16 plan and evaluators, mock runtime/save/restore, bounded preservation, committed publication and production read-only preflight verified. User-facing report content is present in README and will be delivered in final response. Actual model calls and actual approval remain deliberately unperformed.",
   "evidence": {
     "plan": {
       "path": "/root/minecraft-runs/goal015d-20261020T114450Z-ebe767ac/plan.json",
@@ -123,8 +123,23 @@
     },
     "readme": {
       "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal015d/README.md",
-      "bytes": 8249,
-      "sha256": "fa9a86ce8e6615e1cbce860eda3d683afe35cead1a6a3ec9691fc819bf601d74"
+      "bytes": 8932,
+      "sha256": "558be34a20475a69e0520903c09a6b398a9f14b23f8fb7e52603eb51c2d0cae6"
+    },
+    "postcommit_preflight": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal015d/POSTCOMMIT_PREFLIGHT.json",
+      "bytes": 1717,
+      "sha256": "a513c23119444fa2845d6a41c186c43b3d54e6f20b5515fd2851a55d0c9580d4"
+    },
+    "public_plan_copy": {
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal015d/CANARY_PLAN.json",
+      "bytes": 42671,
+      "sha256": "a1b9db528c68fd9a0cebe5238ba65aad4cad39de7fb83cb578f72e3285ae739e"
+    },
+    "scoped_secret_scan": {
+      "path": "/root/minecraft-runs/goal015d-20261020T114450Z-ebe767ac/SECRET_SCAN_BEFORE_COMMIT.json",
+      "bytes": 8872,
+      "sha256": "ff34ae60c6e4e0e5ec7051b8feb2ed01dcd2fd83682bc7d01de4483c77ef3bc3"
     }
   },
   "criteria": [
@@ -300,7 +315,7 @@
       "id": "3.2",
       "requirement": "Bind implementation/spec/inputs/wires/order/budget/parent provenance in new plan",
       "status": "PASS",
-      "finding": "Canonical plan and bound spec/launcher/reports checked against current bytes; all17 current code/test files match final test receipt. Git publication is a separate pending closure item.",
+      "finding": "Canonical plan and bound spec/launcher/reports checked against current bytes; all17 current code/test files match final test receipt. Execution commit cb086672c37fd6767b5c874f214c278b5890a9ae is published; committed preflight PASS.",
       "evidence_keys": [
         "plan",
         "execution_binding",
@@ -562,8 +577,8 @@
     {
       "id": "S.4",
       "requirement": "Bounded original preservation and final worktree accounting",
-      "status": "PASS_PRESERVATION_PUBLICATION_SEPARATE",
-      "finding": "134 bounded old files match start/end hashes; extra old reference test matches entryGitobject;17 final test code hashes unchanged. Production controls and oldchild controls absent; old8 held. Final staged-content/remote/worktree publication is tracked separately inS.5.",
+      "status": "PASS",
+      "finding": "134 bounded old files match start/end hashes; extra old reference test matches entryGitobject;17 final test code hashes unchanged. Production controls and oldchild controls absent; old8 held. Final staged-content/remote/worktree publication is tracked separately inS.5. Published execution commit cb086672 has matching remote and clean tracked/untracked worktree before recording closure receipts; final publication receipt records the later report-only commit.",
       "evidence_keys": [
         "entry",
         "preservation"
@@ -573,19 +588,22 @@
     {
       "id": "S.5",
       "requirement": "Commit/push only small new artifacts; no raw/headers/keys/environment; preserve completed Draft",
-      "status": "PENDING_ROOT_PUBLICATION",
-      "finding": "Reports/spec/newcode/wires prepared; actual newGit publication and staged-content checks not claimed by this subaudit.",
+      "status": "PASS",
+      "finding": "Only47 new D code/spec/plan/wire/report files published in cb086672. Scoped token/private-key scan passes; no model raw,headers,credentials,weights or environments included. Preflight receipt proves matching remote and clean worktree. Final report-only publication is checked again in canonical PUBLICATION_RECEIPT.json.",
       "evidence_keys": [
         "specification",
-        "execution_binding"
+        "execution_binding",
+        "postcommit_preflight",
+        "scoped_secret_scan",
+        "public_plan_copy"
       ],
       "passing_fixture_test_names": []
     },
     {
       "id": "S.6",
       "requirement": "Record UTC/test CPU/RSS and preparation duration without hidden scope expansion",
-      "status": "PASS_TEST_RESOURCES_PENDING_OVERALL_CLOSURE",
-      "finding": "Final tests checked2026-10-20T11:57:12.639834Z; CPU32.882694s,wall36.48121478s,RSS80,708KiB. Start11:44:50.106659Z. Overall end/duration with intervening goal pauses belongs to final root report.",
+      "status": "PASS",
+      "finding": "Start2026-10-20T11:44:50.106659Z; preparation final audit 2026-10-20T12:15:59.675008+00:00; elapsed 1869.568s, below45-minute guidance. New tests CPU32.882694s/wall36.481215s/RSS80,708KiB; actual-dependency mock process CPU8.57s/wall8.72s/RSS83,212KiB.",
       "evidence_keys": [
         "entry",
         "final_test_receipt"
@@ -595,8 +613,8 @@
     {
       "id": "F.1",
       "requirement": "Lead final response with exact requested Goal015D title and six mini pass fractions/fence reason",
-      "status": "PENDING_FINAL_RESPONSE",
-      "finding": "Evidence prepared; final user-facing completion wording and publication facts remain root-owned.",
+      "status": "PASS_REPORT_CONTENT_VERIFIED",
+      "finding": "Required content verified in published README and concrete final response prepared from these authenticated facts. Final git identity is refreshed after the report-only commit.",
       "evidence_keys": [
         "mini_summary",
         "mini_interpretation",
@@ -607,8 +625,8 @@
     {
       "id": "F.2",
       "requirement": "State local interpretation and unproven mechanism/generalization",
-      "status": "PENDING_FINAL_RESPONSE",
-      "finding": "Evidence prepared; final user-facing completion wording and publication facts remain root-owned.",
+      "status": "PASS_REPORT_CONTENT_VERIFIED",
+      "finding": "Required content verified in published README and concrete final response prepared from these authenticated facts. Final git identity is refreshed after the report-only commit.",
       "evidence_keys": [
         "mini_interpretation",
         "specification",
@@ -619,8 +637,8 @@
     {
       "id": "F.3",
       "requirement": "Name082/003, FULL byte identity and properties-only intervention",
-      "status": "PENDING_FINAL_RESPONSE",
-      "finding": "Evidence prepared; final user-facing completion wording and publication facts remain root-owned.",
+      "status": "PASS_REPORT_CONTENT_VERIFIED",
+      "finding": "Required content verified in published README and concrete final response prepared from these authenticated facts. Final git identity is refreshed after the report-only commit.",
       "evidence_keys": [
         "input_proof",
         "execution_binding",
@@ -631,8 +649,8 @@
     {
       "id": "F.4",
       "requirement": "State max16,unapprovedUSD5,reserve4.235008 and separated old costs",
-      "status": "PENDING_FINAL_RESPONSE",
-      "finding": "Evidence prepared; final user-facing completion wording and publication facts remain root-owned.",
+      "status": "PASS_REPORT_CONTENT_VERIFIED",
+      "finding": "Required content verified in published README and concrete final response prepared from these authenticated facts. Final git identity is refreshed after the report-only commit.",
       "evidence_keys": [
         "plan",
         "mini_summary",
@@ -644,8 +662,8 @@
     {
       "id": "F.5",
       "requirement": "Report tests,preservation,remote and tracked/untracked status",
-      "status": "PENDING_FINAL_RESPONSE",
-      "finding": "Evidence prepared; final user-facing completion wording and publication facts remain root-owned.",
+      "status": "PASS_REPORT_CONTENT_VERIFIED",
+      "finding": "Required content verified in published README and concrete final response prepared from these authenticated facts. Final git identity is refreshed after the report-only commit.",
       "evidence_keys": [
         "final_tests",
         "entry",
@@ -656,8 +674,8 @@
     {
       "id": "F.6",
       "requirement": "Provide existing canonical launcher one-line and evidence expiry",
-      "status": "PENDING_FINAL_RESPONSE",
-      "finding": "Evidence prepared; final user-facing completion wording and publication facts remain root-owned.",
+      "status": "PASS_REPORT_CONTENT_VERIFIED",
+      "finding": "Required content verified in published README and concrete final response prepared from these authenticated facts. Final git identity is refreshed after the report-only commit.",
       "evidence_keys": [
         "execution_binding",
         "specification",
@@ -668,8 +686,8 @@
     {
       "id": "F.7",
       "requirement": "State researchAPI0,realapproval0,old8stillheld",
-      "status": "PENDING_FINAL_RESPONSE",
-      "finding": "Evidence prepared; final user-facing completion wording and publication facts remain root-owned.",
+      "status": "PASS_REPORT_CONTENT_VERIFIED",
+      "finding": "Required content verified in published README and concrete final response prepared from these authenticated facts. Final git identity is refreshed after the report-only commit.",
       "evidence_keys": [
         "mini_summary",
         "plan",
@@ -693,20 +711,14 @@
     "enabled": "ABSENT",
     "execution.lock": "ABSENT",
     "completion.lock": "ABSENT",
-    "completion_progress.json": "ABSENT"
+    "completion-progress.json": "ABSENT"
   },
-  "pending_root_closure": [
-    {
-      "item": "Git publication, postcommit read-only preflight, remote equality, final worktree/secret-scan reporting and final user response",
-      "owner": "root"
-    }
-  ],
+  "pending_root_closure": [],
   "blocking_implementation_findings": [],
   "limitations": [
     "No actualGoal015D model results exist; fixture metrics demonstrate implementation only.",
     "No existingGoal015C output was rerated; existing pinned receipts establish the12 result facts.",
-    "This audit does not assert remote receipt of future wire payloads or causality/generalization.",
-    "Git publication, postcommit preflight/remote equality and final response are not passed until root adds their actual receipts."
+    "This audit does not assert remote receipt of future wire payloads or causality/generalization."
   ],
   "actions_this_audit": {
     "research_API_calls": 0,
@@ -716,5 +728,15 @@
     "C_raw_or_text_rereads": 0,
     "frozen_code_spec_plan_edits": 0
   },
-  "updated_utc": "2026-10-20T12:12:30.008282+00:00"
+  "updated_utc": "2026-10-20T12:15:59.675008+00:00",
+  "root_closure": {
+    "execution_commit": "cb086672c37fd6767b5c874f214c278b5890a9ae",
+    "committed_preflight": "PASS",
+    "remote_at_execution_commit_equal": true,
+    "real_API_calls": 0,
+    "real_approvals": 0,
+    "production_launcher_runs": 0,
+    "final_publication_receipt": "/root/minecraft-runs/goal015d-20261020T114450Z-ebe767ac/PUBLICATION_RECEIPT.json",
+    "note": "Final publication receipt is stored outside Git to avoid a self-referential commit hash."
+  }
 }

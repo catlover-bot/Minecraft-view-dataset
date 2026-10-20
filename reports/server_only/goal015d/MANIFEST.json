@@ -1,6 +1,6 @@
 {
   "schema": "goal015d_preparation_manifest_v1",
-  "status": "PREPARED_UNAPPROVED_PENDING_COMMITTED_PREFLIGHT",
+  "status": "PREPARATION_COMPLETE_UNAPPROVED",
   "started_utc": "2026-10-20T11:44:50.106659+00:00",
   "prepared_utc": "2026-10-20T12:13:29.614689+00:00",
   "entry_head": "abe9d3869b2fee7d6bd734eac8cb22594c04988c",
@@ -146,9 +146,13 @@
       "bytes": 5561,
       "sha256": "5f44576ff1e59f2755deeae8dc99a871b4f6e7ddad46bdf64b3f5f587bb6e13b"
     },
+    "POSTCOMMIT_PREFLIGHT.json": {
+      "bytes": 1717,
+      "sha256": "a513c23119444fa2845d6a41c186c43b3d54e6f20b5515fd2851a55d0c9580d4"
+    },
     "PRESERVATION.json": {
-      "bytes": 44059,
-      "sha256": "42fcaa8e92f06360bb528bd2ef95419a2c0b634690f05a4f997485a4f85fe1a9"
+      "bytes": 44426,
+      "sha256": "c2b6b1d1fda0b09e9a4495e6e6961e7d1c9b9a2f718890be876a30aa0d2d8634"
     },
     "PRICING_REUSE.json": {
       "bytes": 9751,
@@ -159,8 +163,8 @@
       "sha256": "558be34a20475a69e0520903c09a6b398a9f14b23f8fb7e52603eb51c2d0cae6"
     },
     "REQUIREMENT_AUDIT.json": {
-      "bytes": 30852,
-      "sha256": "6a30af8ac2e495697d3bff9d47a8039d70e2d4e8397aa595d1b035456f52930a"
+      "bytes": 32865,
+      "sha256": "d863837ba814078c2d19852b58c24221b21f0171d8a2e86507962e902c9838df"
     },
     "UNAPPROVED_STATUS.json": {
       "bytes": 590,
@@ -260,13 +264,21 @@
     "sha256": "ff34ae60c6e4e0e5ec7051b8feb2ed01dcd2fd83682bc7d01de4483c77ef3bc3"
   },
   "publication": {
-    "state": "PENDING_COMMIT_PUSH_AND_READONLY_PREFLIGHT",
-    "scope": "New Goal015D files only"
+    "execution_commit": "cb086672c37fd6767b5c874f214c278b5890a9ae",
+    "execution_commit_pushed": true,
+    "remote_equal_at_execution_check": true,
+    "committed_readonly_preflight": "PASS",
+    "scope": "Only new Goal015D code and reports; later closure changes only D reports",
+    "final_publication_receipt": "/root/minecraft-runs/goal015d-20261020T114450Z-ebe767ac/PUBLICATION_RECEIPT.json",
+    "reason_for_external_final_receipt": "Record actual final commit and remote without self-reference."
   },
   "limits": [
     "Development canary with two previously used buildings, not unseen holdout",
     "No generalization, isolated op-position effect, provider internal bug or old72 causal attribution",
     "Mock saving verifies local orchestration, not live future GitHub success",
     "Python environment and deeper historical provenance remain external"
-  ]
+  ],
+  "ended_preparation_utc": "2026-10-20T12:15:59.675008+00:00",
+  "preparation_wall_seconds": 1869.568349,
+  "within_45_minute_guidance": true
 }
