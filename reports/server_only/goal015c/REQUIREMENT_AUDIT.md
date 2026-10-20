@@ -4,7 +4,7 @@ Goal015C：schemaキー順序の局所検証と12呼出し診断の未承認準�
 
 監査対象plan IDは `95ef8e4c7e0d8e261087944374e1a690f32516caa91cf06fd95740a75b453503`、plan bytes SHA256は `065fe859b152912e41e0b5ef8697fa11c6e2764a862a7f23528654a8e7a21995`（25,074 bytes）。canonical rootは `/root/minecraft-runs/goal015c-20261020T094646Z-fcb2ec03`。実装67ファイル、wire6種類、12予定行、prompt・task・spec・旧状態へのbindingを[EXECUTION_BINDING.json](EXECUTION_BINDING.json)で公開する。read-onlyの `planning.verify_plan`、`pricing.verify_evidence`、`runtime.status` はこの実物に対して一致を確認した。planの `api_allowed=false`、`budget_approved=false`、`fixture_only=false` と、approval/authority/ledger/実行lock未作成を確認した。
 
-以下で「確認済み」は局所CPU・保存証拠・コード読取り・fixtureの範囲を表す。「将来」は利用者の別承認後だけに許される動作。「公開確認待ち」は、この文書作成時点でまだPASSとしないcommit/push等を表す。最終公開状態は[README.md](README.md)から辿る。
+以下で「確認済み」は局所CPU・保存証拠・コード読取り・fixtureの範囲を表す。「将来」は利用者の別承認後だけに許される動作。初回監査後に実装commit/pushと本番read-only preflightを完了し、下表へ追記した。最終公開状態は[README.md](README.md)から辿る。
 
 **証拠とテストの照合**
 
@@ -108,8 +108,8 @@ Goal015C：schemaキー順序の局所検証と12呼出し診断の未承認準�
 | 旧コード・親子plan/ledger/approval/authorityを変更しない | ENTRYの70paths、scoring/local-order補足とのunionは76paths。親現物は72SETTLED・8NOT_SENT・unknown0・USD4.43765700、子はdisabled | [PRESERVATION.json](PRESERVATION.json) の2026-10-20T10:29:24.051292+00:00閉鎖receiptを確認。76pathsの全before/after一致、67実装・129test・6public wire一致、必要controls不在を記録。対象外の旧全treeまで確認したとは主張しない |
 | 新領域だけで作業、未commit作業を保全 | 新コード・新report・専用run。旧残8件を開始しない。reset/clean/recloneや既存artifact削除を要しない | 最終diff/clean判定はREADMEとprivate `PUBLICATION_RECEIPT.json` |
 | 研究API、model-list/auth/token-count、キー照会、実承認、既存Draft変更なし | local audit、129 fixtures、BOUND fixture、UNAPPROVED_STATUSが各scopeで0を記録。公開文書GETは料金資料取得として別扱い | model account availabilityはNOT_RUN。現在の文書は過去provider内部仕様を証明しない |
-| 通常commit/push、専用branch、remote一致 | **この監査表作成時点では公開確認待ち**。registry commit前のproduction preflightは意図的に拒否する | まず実装・reportをcommitし、read-onlyの本番 `preflight --require-unstarted` を実行。結果は `POSTCOMMIT_PREFLIGHT.json` に記録する予定。launcher/start/runは実行しない |
+| 通常commit/push、専用branch、remote一致 | 実装commit `7f4ab6f4b13627d6a6009894635640f60a6e08a6` を通常pushしremote一致を確認 | [POSTCOMMIT_PREFLIGHT.json](POSTCOMMIT_PREFLIGHT.json) はcommitted registryを使った本番 `preflight --require-unstarted` のPASS。76原本も再照合し、controls不在。launcher/start/runは実行していない |
 | 最終SHA、remote/clean、実在launcherの1行、期限 | READMEが公開結果と利用者向け起動コマンドを提供する。承認文は `approval_text` の実表示に従い推測転記しない | 最終push/remote照合はprivate `PUBLICATION_RECEIPT.json`、public manifest/copy照合は `MANIFEST.json/PUBLIC_COPY_RECEIPT.json`。作成前に成功したとは記載しない |
 | 完了冒頭と7必須事項 | 冒頭文、順序差と証明限界、未確定原因、3条件/3操作8セル/固定12順、未承認独立予算、tests/code-plan-wire、実在起動行/期限、API0/承認0/保全/残8保留 | READMEと最終ユーザー報告で満たす。実モデル結果や旧原因の確定を追加しない |
 
-監査時点で、コード・fixture・凍結planに関する新たな完了阻害事項は認めなかった。必要76ファイルの保全閉鎖receiptも確認済み。残る作業は表に明示した公開・commit後read-only preflight・remote照合である。これらは生成承認の代わりにはならず、実研究APIを実行して準備を「確認」することもない。
+要件別にコード・fixture・凍結planを照合し、必要76ファイルの保全、実装commit/push、commit後read-only preflightを確認した。本追記とmanifestを含む最終commitのremote/cleanはcanonical `PUBLICATION_RECEIPT.json` に保存する。これらは生成承認の代わりにはならず、実研究APIを実行して準備を「確認」することもない。
