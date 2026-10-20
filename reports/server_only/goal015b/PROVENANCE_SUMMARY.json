@@ -1,0 +1,151 @@
+{
+  "approval_method": "EXACT_REAL_TTY",
+  "approved_at_utc": "2026-10-19T10:01:56.232171+00:00",
+  "archive_restore_proof_reused": {
+    "archive_sha256": "c16c6e954518808e4bc4bb56f777599099693beef65801df2779bca5e5e70a3c",
+    "asset_id": 656494745,
+    "fresh_download_or_restore_performed": false,
+    "previously_restored_files": 297,
+    "release_id": 417384305,
+    "source": {
+      "bytes": 2264,
+      "path": "/root/workspace/Minecraft-view-dataset/reports/server_only/goal015a/PARENT_SAVE_AUDIT.json",
+      "sha256": "a23042fe0aa959281dcb523a4fb7187310289a218701c7f9d7b3c2d8b3cb5674"
+    }
+  },
+  "canonical_call_raw_text_mapping_verified": true,
+  "checked_at_utc": "2026-10-20T09:12:40.591899+00:00",
+  "cli_exposes_mock_hooks": false,
+  "cpu_seconds": 0.048497888,
+  "default_transport": "stdlib urllib, one POST, no redirects/retries/model fallback",
+  "delivery_conclusion": "Saved canonical payloads are hash-bound to schedule/ledger; frozen code validates them then constructs a POST from their parsed JSON. Local HTTP200 envelopes and IDs plus logs are consistent with that path. No independent remote delivery attestation is present; exact transmitted body hashes were not recorded.",
+  "elapsed_seconds": 0.048504556994885206,
+  "environment_or_key_values_inspected": false,
+  "fixture_contamination_conclusion": "No fixture-plan, runtime injected-hook, noncanonical response-path, or fixture/mock response-ID evidence was found. This is bounded local provenance evidence, not proof based solely on string absence.",
+  "fixture_or_mock_marker_in_response_ids": [],
+  "launcher": {
+    "bytes": 7186,
+    "path": "/root/minecraft-runs/goal015-20261017T170546Z/pricing-refresh-20261018T173449Z-fd5237eb/start-reviewed.sh",
+    "sha256": "33008d246f8406236b6531aedcfbff7add7de92d2780a286da2693413c4efe09"
+  },
+  "launcher_arguments_evidence": "Configured source plus saved wrapper result logs; no independent process-exec audit or remote request-body log.",
+  "launcher_configured_argv": [
+    "/root/workspace/Minecraft-view-dataset/.venv-server-v2-20261013/bin/python",
+    "-B",
+    "-m",
+    "offline_evaluation.experiments.goal015.cli",
+    "start",
+    "--plan",
+    "/root/minecraft-runs/goal015-20261017T170546Z/plan.json",
+    "--pricing-evidence",
+    "/root/minecraft-runs/goal015-20261017T170546Z/pricing-refresh-20261018T173449Z-fd5237eb/reviewed.json"
+  ],
+  "ledger_delivery_counts": {
+    "NOT_SENT": 8,
+    "POST_RETURNED": 72
+  },
+  "low_level_injection_limitation": "The adapter/providers expose a transport argument for isolated tests. Frozen CLI/runtime do not supply it for this real plan. Local source and artifacts cannot prove absence of arbitrary external monkeypatching.",
+  "low_level_transport_injection_exists": true,
+  "max_rss_kib": 380784,
+  "network_requests": 0,
+  "old_paths_written": 0,
+  "production_plan_fixture_only": false,
+  "research_api_requests_sent": 0,
+  "response_id_prefix_counts": {
+    "msg_": 36,
+    "resp_": 36
+  },
+  "runtime_mock_hooks_forbidden_for_real_plan": true,
+  "schema": "goal015b_transport_provenance_v1",
+  "settled_http_status_counts": {
+    "200": 72
+  },
+  "settled_response_model_counts": {
+    "claude-haiku-4-5-20251001": 36,
+    "gpt-5-mini-2025-08-07": 36
+  },
+  "snapshot": {
+    "bytes": 189690,
+    "path": "/root/minecraft-runs/goal015b-20261020T090529Z-5f01c85f/PROTECTED_INPUTS_BEFORE.json",
+    "sha256": "aa4a9aaf84ddb8a3324b1799eda38853c0a00a48cd65e1d98547b02ff7907ece"
+  },
+  "source_boundaries": {
+    "adapter": {
+      "evidence": [
+        {
+          "fragment": "transport=transport or http_transport",
+          "line": 178
+        },
+        {
+          "fragment": "urllib.request.build_opener(providers._NoRedirect())",
+          "line": 129
+        }
+      ],
+      "source": {
+        "bytes": 11186,
+        "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/experiments/goal015/adapter.py",
+        "sha256": "5b7fb52532fec4dcf5feb0c5f211dddf537a42d2eff59072b7546e5815ef834f"
+      }
+    },
+    "cli": {
+      "evidence": [
+        {
+          "fragment": "result=runtime.execute(args.plan,resume=args.command=='resume',refresh_evidence=evidence)",
+          "line": 28
+        }
+      ],
+      "source": {
+        "bytes": 3762,
+        "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/experiments/goal015/cli.py",
+        "sha256": "c15caa7b8ebd92592b8afcdf81d98061d15d868ea7901e54aec9d7e63949ef33"
+      }
+    },
+    "providers": {
+      "evidence": [
+        {
+          "fragment": "data=json.dumps(payload, ensure_ascii=False, allow_nan=False).encode(\"utf-8\")",
+          "line": 173
+        },
+        {
+          "fragment": "method=\"POST\"",
+          "line": 175
+        }
+      ],
+      "source": {
+        "bytes": 11782,
+        "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/server_v2/providers.py",
+        "sha256": "09096fb7b10a1cb0c84ff0aebf5baf5c335db0ca2b5e0f8f97b2aed57fe07ad8"
+      }
+    },
+    "runtime": {
+      "evidence": [
+        {
+          "fragment": "require(fixture or (adapter is None and confirmation is None and checkpoint_callback is None),'mock hooks forbidden for real plan')",
+          "line": 287
+        },
+        {
+          "fragment": "payload=bound(row['payload']);adapter.validate_payload(row['builder'],payload)",
+          "line": 351
+        },
+        {
+          "fragment": "raw=adapter.send_request(row['builder'],payload,api_allowed=True,permission=True,timeout=plan['timeout_seconds'])",
+          "line": 356
+        }
+      ],
+      "source": {
+        "bytes": 27048,
+        "path": "/root/workspace/Minecraft-view-dataset/offline_evaluation/experiments/goal015/runtime.py",
+        "sha256": "1491ee323450ebaafac8750e66d8b5f6fac0db85534bbb85acb41e0265c8dcc8"
+      }
+    }
+  },
+  "status": "PASS_WITH_DELIVERY_LIMITATION",
+  "unique_raw_sha256": 72,
+  "unique_saved_text_sha256": 71,
+  "unique_settled_response_ids": 72,
+  "complete_private_receipt": {
+    "path": "/root/minecraft-runs/goal015b-20261020T090529Z-5f01c85f/TRANSPORT_PROVENANCE.json",
+    "bytes": 43830,
+    "sha256": "c02448ebefa5ca4b7b54b39d8733857e106ebdbb274327229557a54b4636e6a0"
+  }
+}
