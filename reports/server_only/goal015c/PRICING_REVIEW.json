@@ -1,0 +1,93 @@
+{
+  "schema": "goal015c_explicit_document_review_v1",
+  "reviewed": true,
+  "read_actual_bodies": true,
+  "reviewed_utc": "2026-10-20T10:04:58.867191+00:00",
+  "reviewer": "Codex: explicit inspection of locally captured actual document bodies",
+  "contract": {
+    "schema": "goal015c_contract_v1",
+    "providers": {
+      "openai": {
+        "model": "gpt-5-mini-2025-08-07",
+        "endpoint": "https://api.openai.com/v1/responses",
+        "context_window_tokens": 400000,
+        "max_output_tokens": 32768,
+        "documented_max_input_tokens": 272000,
+        "documented_max_output_tokens": 128000,
+        "input_usd_per_million": "0.25",
+        "output_usd_per_million": "2.00",
+        "service_tier": "default",
+        "reasoning_effort": "medium",
+        "sampling_omitted": [
+          "temperature",
+          "top_p",
+          "seed"
+        ],
+        "documented_shutdown_date": "2026-12-11"
+      },
+      "anthropic": {
+        "model": "claude-haiku-4-5-20251001",
+        "endpoint": "https://api.anthropic.com/v1/messages",
+        "context_window_tokens": 200000,
+        "max_output_tokens": 32768,
+        "documented_max_output_tokens": 64000,
+        "input_usd_per_million": "1.00",
+        "output_usd_per_million": "5.00",
+        "service_tier": "standard_only",
+        "temperature": 1.0,
+        "thinking": "disabled"
+      }
+    },
+    "conditions": {
+      "NATIVE_CURRENT_ORDER": {
+        "native": true,
+        "properties_order": "sorted"
+      },
+      "NATIVE_ORIGINAL_PROPERTY_ORDER": {
+        "native": true,
+        "properties_order": "original"
+      },
+      "TEXT_JSON_INSTRUCTION_ONLY": {
+        "native": false,
+        "text_output": true,
+        "format": null,
+        "JSON_mode": false
+      }
+    },
+    "timeout_seconds": 600,
+    "concurrency": 1,
+    "retries": 0,
+    "cache_discount_applied": false,
+    "tools": false,
+    "images": false,
+    "reservation": "full_context_input_plus_output_cap",
+    "fees_scope": "standard first-party token prices; no service upgrades or paid tools"
+  },
+  "sources": {
+    "openai_model": "Read model details, pricing, endpoints, features and snapshots: exact 2025-08-07 snapshot; text/Responses/structured support; 400000 context, documented maximum input272000 and output128000; normal input0.25/output2 USD per million. Keep conservative400000 input reservation unchanged, not an assertion that400000 input tokens are accepted.",
+    "openai_structured": "Read key ordering and schema limitations: schema key order controls emitted order; nested anyOf supported, root must be object; all operation properties are required. This describes current documented behavior, not the cause of prior carve-only outputs.",
+    "openai_reasoning": "Read effort and output accounting sections: medium is a supported effort value subject to model; max_output_tokens includes reasoning plus visible/nonvisible generated tokens. No separate additive reasoning charge in reservation.",
+    "openai_gpt5": "Read GPT-5 family feature section naming mini and effort minimal/low/medium/high. This URL currently serves GPT-5 guidance with a prompting guide; do not treat irrelevant example temperatures as sampling contract evidence.",
+    "openai_deprecations": "Read explicit snapshot table: gpt-5-mini-2025-08-07 shutdown December11 2026. Preparation retains the requested snapshot and refuses starts on or after that date; no fallback.",
+    "openai_responses": "Read input, max_output_tokens, service_tier, temperature and text.format definitions: string input supported; default tier standard pricing; optional temperature and top_p left absent, seed also absent; omitted format is ordinary text. json_schema enables native formatting. No separate JSON mode is added in C.",
+    "anthropic_model": "Read exact claude-haiku-4-5-20251001 ID, still-available legacy status, text output,200K context,64K maximum output and normal1/5 USD per million. Do not migrate to the recommended newer model.",
+    "anthropic_pricing": "Read standard pricing table Haiku4.5 row: input1/output5 USD per million. Cache or batch discount not used; standard global first-party endpoint. This is a conservative token-cost bound, not billing-account verification or tax estimate.",
+    "anthropic_structured": "Read frontmatter supportedModels explicitly listing claude-haiku-4-5-20251001, property ordering, prompt modification, JSON output configuration, and supported schema sections. Required properties come first in schema order; all our properties are required. Native formatting can add a provider system prompt and billable input tokens; C comparison does not isolate constraint decoding alone.",
+    "anthropic_messages": "Read Messages body fields: max_tokens model-dependent maximum, output_config.format optional, service_tier standard_only, temperature1.0 accepted, ThinkingConfigDisabled type disabled, text message content. Omitting output format leaves ordinary text output. Requested cap32768 below documented64000.",
+    "json_schema": "Read anyOf definition: at least one subschema must validate. Reordering object property enumeration does not change these validation constraints; actual generative distributions are not asserted equal."
+  },
+  "unknowns": [
+    "No research API, authentication, model-list or token-count call performed. Account access and current remote behavior unverified.",
+    "Current official documents do not establish that provider internals matched prior October19 runs.",
+    "No old complete wire body or independent remote-receipt attestation exists for selected reconstructed O examples.",
+    "Paid currency conversion/tax/account-specific billing not queried; proposed USD3.25 caps conservative standard-token reservations."
+  ],
+  "reservation_check": {
+    "openai_each_usd": "0.165536",
+    "anthropic_each_usd": "0.36384",
+    "twelve_maximum_usd": "3.176256",
+    "proposed_cap_usd": "3.25",
+    "approved": false,
+    "old_parent_known_cost_usd_separate": "4.43765700"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "status": "PASS",
+  "schema": "goal015c_known_task_cpu_v1",
+  "operations": {
+    "operations": [
+      {
+        "op": "fill",
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1,
+        "block": "stone"
+      },
+      {
+        "op": "carve",
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0,
+        "y2": 0,
+        "z2": 0
+      },
+      {
+        "op": "set",
+        "x": 3,
+        "y": 0,
+        "z": 0,
+        "block": "glass"
+      }
+    ]
+  },
+  "operation_count": 3,
+  "final_voxel_count": 8,
+  "stone": 7,
+  "glass": 1,
+  "exact_old_independent_match": true,
+  "grid": [
+    [
+      0,
+      0,
+      1,
+      "stone"
+    ],
+    [
+      0,
+      1,
+      0,
+      "stone"
+    ],
+    [
+      0,
+      1,
+      1,
+      "stone"
+    ],
+    [
+      1,
+      0,
+      0,
+      "stone"
+    ],
+    [
+      1,
+      0,
+      1,
+      "stone"
+    ],
+    [
+      1,
+      1,
+      0,
+      "stone"
+    ],
+    [
+      1,
+      1,
+      1,
+      "stone"
+    ],
+    [
+      3,
+      0,
+      0,
+      "glass"
+    ]
+  ],
+  "independent_trace": {
+    "schema": "goal015b_independent_trace_v1",
+    "operation_index_base": 0,
+    "coordinate_frame": "world",
+    "axis_order": "XYZ",
+    "operation_count": 3,
+    "operation_counts": {
+      "set": 1,
+      "fill": 1,
+      "carve": 1
+    },
+    "touched_voxel_visits": 10,
+    "air_write_visits": 1,
+    "non_air_write_visits": 9,
+    "carve_delete_visits": 1,
+    "deleted_occupied_voxels": 1,
+    "new_occupied_voxels": 9,
+    "material_replacements": 0,
+    "first_occupied_operation_index": 0,
+    "max_occupied_voxels": 8,
+    "max_occupied_operation_index": 0,
+    "last_zero_transition_operation_index": null,
+    "zero_transition_count": 0,
+    "operation_trace": [
+      {
+        "operation_index": 0,
+        "op": "fill",
+        "original_operation_sha256": "64b47537d7d3bdc0f87ecf90ff6917fecce34e51d0bf30b931e61cfc69a957d6",
+        "occupied_before": 0,
+        "occupied_after": 8,
+        "touched_voxel_visits": 8,
+        "air_write_visits": 0,
+        "non_air_write_visits": 8,
+        "deleted_occupied_voxels": 0,
+        "new_occupied_voxels": 8,
+        "material_replacements": 0
+      },
+      {
+        "operation_index": 1,
+        "op": "carve",
+        "original_operation_sha256": "1f43a17b5ebddc6bd8bbe5697a72c69872db1e1a677f8eed4c40d79fa5e7a25c",
+        "occupied_before": 8,
+        "occupied_after": 7,
+        "touched_voxel_visits": 1,
+        "air_write_visits": 1,
+        "non_air_write_visits": 0,
+        "deleted_occupied_voxels": 1,
+        "new_occupied_voxels": 0,
+        "material_replacements": 0
+      },
+      {
+        "operation_index": 2,
+        "op": "set",
+        "original_operation_sha256": "22ca0ab3a703be0feda61acff09c1e08b68ae3f467e953202245a9d0684b4fe3",
+        "occupied_before": 7,
+        "occupied_after": 8,
+        "touched_voxel_visits": 1,
+        "air_write_visits": 0,
+        "non_air_write_visits": 1,
+        "deleted_occupied_voxels": 0,
+        "new_occupied_voxels": 1,
+        "material_replacements": 0
+      }
+    ],
+    "grid_hash_encoding": "SHA256 compact UTF8 JSON of sorted [x,y,z,material] rows",
+    "final_occupied_voxels": 8,
+    "final_grid_sha256": "fe63f20b3d7f2205c89a914dacdb4551928ffe28bbc79ad55c178dea763a8094",
+    "empty_classification": "NONEMPTY"
+  },
+  "summary_exact_request_match": true,
+  "research_api_requests": 0
+}
